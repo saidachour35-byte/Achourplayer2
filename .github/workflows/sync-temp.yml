@@ -1,0 +1,72 @@
+
+name: Sync Achourtv updates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout original repository
+        uses: actions/checkout@v4
+
+      - name: Checkout temporary repository
+        uses: actions/checkout@v4
+        with:
+          repository: saidachour35-byte/Achourtv-
+          ref: main
+          path: temp-source
+
+      - name: Copy updated files
+        run: |
+          files=(
+            ".gitignore"
+            "android/gradle.properties"
+            "index.html"
+            "metadata.json"
+            "package.json"
+            "server.ts"
+            "src/App.tsx"
+            "src/components/AddPlaylistModal.tsx"
+            "src/components/AnimatedBackground.tsx"
+            "src/components/Dashboard.tsx"
+            "src/components/ExtractionProgressModal.tsx"
+            "src/components/LivePlayer.tsx"
+            "src/components/PlaylistManager.tsx"
+            "src/components/VirtualizedChannelList.tsx"
+            "src/components/VodPlayerModal.tsx"
+            "src/index.css"
+            "src/lib/db.ts"
+            "src/utils/extractionService.ts"
+            "src/utils/iptv.ts"
+            "src/utils/platform.ts"
+            "src/utils/tvNavigation.ts"
+            "tsconfig.json"
+            "vite.config.ts"
+            "README.md"
+            "src/utils/streamScanner.ts"
+            "src/workers/iptvExtractor.worker.ts"
+          )
+
+          for file in "${files[@]}"; do
+            mkdir -p "$(dirname "$file")"
+            cp "temp-source/$file" "$file"
+          done
+
+          rm -rf temp-source
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: sync-temp-updates
+          delete-branch: true
+          title: "Sync updates from Achourtv-"
+          body: "Copies 26 updated and new files from Achourtv-."
+          commit-message: "Sync updates from temporary repository"

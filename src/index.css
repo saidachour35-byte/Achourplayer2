@@ -1,0 +1,420 @@
+/* Original path: src/index.css */
+
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-dark: #997B2C;
+}
+
+/* Disable all default browser & stacked Tailwind focus outlines/rings — replaced by ONE unified TV focus ring */
+:focus,
+:focus-visible {
+  outline: none !important;
+}
+
+/* Unified Exclusive TV Focus Ring (Single crisp 3px ring driven by data-tv-active-focus="true") */
+[data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--theme-primary, #D4AF37) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+}
+
+[data-tv-theme-block="true"][data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #020205, 0 0 0 5px var(--theme-accent, #ffffff) !important;
+  border-color: var(--theme-accent, #ffffff) !important;
+}
+
+/* Inside overflow-hidden rows/lists/posters, inset shadow guarantees zero edge clipping and strictly 1 ring */
+[data-tv-focus-inset="true"][data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: inset 0 0 0 3px var(--theme-primary, #D4AF37) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+}
+
+/* Categories TV focus: crisp inset ring with rounded corners, guaranteed never to clip */
+[data-tv-pane="categories"][data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: inset 0 0 0 2.5px var(--theme-primary, #D4AF37) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+}
+
+/* Stunning cinematic focus strictly for VOD Poster cards (3px ring + 1.03x zoom stays well inside dynamic spacing) */
+.achour-app-shell [data-tv-vod-poster="true"][data-tv-active-focus="true"] {
+  outline: none !important;
+  transform: scale(1.03) !important;
+  z-index: 50 !important;
+  box-shadow: 0 0 0 3px var(--theme-primary, #D4AF37), 0 12px 24px rgba(0, 0, 0, 0.7) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+}
+
+/* Crystal-clear unclipped TV focus for Series Season tabs & Episode rows */
+[data-season-tab="true"][data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #0b0d14, 0 0 0 4.5px var(--theme-primary, #D4AF37) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+}
+
+[data-episode-item="true"][data-tv-active-focus="true"] {
+  outline: none !important;
+  background-color: color-mix(in srgb, var(--theme-primary, #D4AF37) 24%, rgba(15, 18, 28, 0.92)) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+  box-shadow: 0 0 0 3px var(--theme-primary, #D4AF37) !important;
+}
+
+[data-episode-item="true"][data-tv-active-focus="true"] p {
+  color: var(--theme-primary, #D4AF37) !important;
+}
+
+/* Inputs keep a subtle clean inner glow when focused for typing (except top search which remains frameless) */
+input[data-tv-active-focus="true"]:not(#channel-search-input),
+textarea[data-tv-active-focus="true"],
+select[data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: 0 0 0 2.5px var(--theme-primary, #D4AF37) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+}
+
+#channel-search-input,
+#channel-search-input[data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#channel-search-input[data-tv-active-focus="true"],
+#channel-search-input[data-tv-active-focus="true"]::placeholder {
+  color: var(--theme-primary, #D4AF37) !important;
+  opacity: 1 !important;
+}
+
+/* Base styles */
+@layer base {
+  :root {
+    --font-sans: 'Tajawal', 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: transparent;
+    color: #f3f4f6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Lightweight dark translucent glass overlays & backdrops (zero backdrop-blur for Fire TV OS 6 1.5GB RAM smoothness) */
+  .achour-modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.56);
+  }
+
+  .achour-glass-modal {
+    background: linear-gradient(180deg, rgba(14, 17, 25, 0.84) 0%, rgba(9, 11, 17, 0.78) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  }
+
+  .achour-glass-bar {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--theme-primary, #e5a00d) 14%, rgba(13, 15, 22, 0.80)), rgba(10, 12, 18, 0.82));
+    border: 0 !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+  }
+
+  html.native-player-active,
+  html.native-player-active body,
+  html.native-player-active #root,
+  body.native-player-active,
+  body.native-player-active #root,
+  body.native-player-active .achour-app-shell {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  html.native-player-active:not(.native-player-preview) .achour-animated-bg,
+  body.native-player-active:not(.native-player-preview) .achour-animated-bg {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  html.native-player-preview .achour-animated-bg,
+  body.native-player-preview .achour-animated-bg {
+    opacity: 1 !important;
+    -webkit-clip-path: var(--native-preview-clip, none) !important;
+    clip-path: var(--native-preview-clip, none) !important;
+  }
+}
+
+/* Fire TV Stick 4K (1st Gen / API 25) compositor optimization mode */
+html.achour-tv-perf .backdrop-blur-3xl,
+html.achour-tv-perf .backdrop-blur-2xl,
+html.achour-tv-perf .backdrop-blur-xl,
+html.achour-tv-perf .backdrop-blur-lg,
+html.achour-tv-perf .backdrop-blur-md,
+html.achour-tv-perf .backdrop-blur-sm,
+html.achour-tv-perf .backdrop-blur {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.achour-tv-perf .blur-3xl,
+html.achour-tv-perf .blur-2xl,
+html.achour-tv-perf .blur-xl {
+  filter: none !important;
+}
+
+html.achour-tv-perf .animate-bokeh,
+html.achour-tv-perf .animate-pulse {
+  animation: none !important;
+}
+
+html.achour-tv-perf .shadow-2xl {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35) !important;
+}
+
+html.achour-tv-perf .transition-all {
+  transition-property: opacity, transform !important;
+  transition-duration: 120ms !important;
+}
+
+/* Fire TV performance mode: lightweight 3px ring focus without expensive shadow layers */
+html.achour-tv-perf [data-tv-vod-poster="true"][data-tv-active-focus="true"] {
+  box-shadow: 0 0 0 3px var(--theme-primary, #D4AF37) !important;
+  border-color: var(--theme-primary, #D4AF37) !important;
+  transform: scale(1.03) !important;
+  z-index: 50 !important;
+  transition: none !important;
+}
+
+/* Hide all scrollbars globally across the application */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Code editor glow & diff styling */
+.diff-added {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-right: 3px solid #10b981;
+}
+
+.diff-removed {
+  background-color: rgba(244, 63, 94, 0.15);
+  border-right: 3px solid #f43f5e;
+}
+
+/* GPU-composited scenic background animations (transform & opacity only for Fire TV Stick 4K smoothness) */
+@keyframes achour-wave-slide {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-16%, 5px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes achour-wave-slide-reverse {
+  0% { transform: translate3d(-14%, 0, 0); }
+  50% { transform: translate3d(0, -4px, 0); }
+  100% { transform: translate3d(-14%, 0, 0); }
+}
+
+@keyframes achour-cloud-drift {
+  0% { transform: translate3d(-8%, 0, 0); }
+  50% { transform: translate3d(8%, 3px, 0); }
+  100% { transform: translate3d(-8%, 0, 0); }
+}
+
+@keyframes achour-flame-flicker {
+  0%, 100% { transform: translate3d(0, 0, 0) scaleY(1) scaleX(1); opacity: 0.92; }
+  25% { transform: translate3d(-2px, -4px, 0) scaleY(1.08) scaleX(0.96); opacity: 1; }
+  50% { transform: translate3d(2px, -2px, 0) scaleY(0.94) scaleX(1.04); opacity: 0.85; }
+  75% { transform: translate3d(-1px, -6px, 0) scaleY(1.1) scaleX(0.97); opacity: 0.98; }
+}
+
+@keyframes achour-smoke-rise {
+  0% { transform: translate3d(0, 12px, 0) scale(0.85); opacity: 0; }
+  25% { opacity: 0.55; }
+  70% { opacity: 0.32; }
+  100% { transform: translate3d(18px, -110px, 0) scale(1.45); opacity: 0; }
+}
+
+@keyframes achour-waterfall-pour {
+  0% { transform: translate3d(0, -25%, 0); opacity: 0.65; }
+  50% { opacity: 0.95; }
+  100% { transform: translate3d(0, 25%, 0); opacity: 0.65; }
+}
+
+@keyframes achour-petal-fall {
+  0% { transform: translate3d(-15px, -10vh, 0) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.9; }
+  85% { opacity: 0.85; }
+  100% { transform: translate3d(45px, 105vh, 0) rotate(220deg); opacity: 0; }
+}
+
+@keyframes achour-lantern-float {
+  0% { transform: translate3d(0, 25vh, 0) scale(0.9); opacity: 0; }
+  20% { opacity: 0.95; }
+  80% { opacity: 0.9; }
+  100% { transform: translate3d(18px, -85vh, 0) scale(1.08); opacity: 0; }
+}
+
+@keyframes achour-aurora-sway {
+  0%, 100% { transform: translate3d(-4%, 0, 0) skewX(-6deg) scaleY(1); opacity: 0.65; }
+  50% { transform: translate3d(4%, -8px, 0) skewX(6deg) scaleY(1.1); opacity: 0.92; }
+}
+
+@keyframes achour-sunbeam-pulse {
+  0%, 100% { transform: translate3d(-2%, 0, 0) rotate(-6deg); opacity: 0.35; }
+  50% { transform: translate3d(2%, 0, 0) rotate(-2deg); opacity: 0.6; }
+}
+
+@keyframes achour-fish-swim {
+  0% { transform: translate3d(-15vw, 0, 0); opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { transform: translate3d(110vw, -12px, 0); opacity: 0; }
+}
+
+@keyframes achour-bubble-rise {
+  0% { transform: translate3d(0, 0, 0) scale(0.8); opacity: 0; }
+  20% { opacity: 0.65; }
+  100% { transform: translate3d(-10px, -90vh, 0) scale(1.15); opacity: 0; }
+}
+
+@keyframes achour-rain-streak {
+  0% { transform: translate3d(0, -20vh, 0); opacity: 0; }
+  20% { opacity: 0.55; }
+  100% { transform: translate3d(-18px, 110vh, 0); opacity: 0; }
+}
+
+@keyframes achour-boat-bob {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1.5deg); }
+  50% { transform: translate3d(8px, -4px, 0) rotate(1.5deg); }
+}
+
+@keyframes animate-bokeh-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.65; }
+  50% { transform: translate3d(2%, -2%, 0) scale(1.06); opacity: 0.9; }
+}
+
+@keyframes rain-move {
+  0% { transform: translate3d(0, -25%, 0); }
+  100% { transform: translate3d(0, 0%, 0); }
+}
+
+.animate-bokeh {
+  animation: animate-bokeh-drift 9s ease-in-out infinite;
+}
+
+.achour-wave-slide { animation: achour-wave-slide 11s ease-in-out infinite; will-change: transform; }
+.achour-wave-slide-reverse { animation: achour-wave-slide-reverse 14s ease-in-out infinite; will-change: transform; }
+.achour-cloud-drift { animation: achour-cloud-drift 22s ease-in-out infinite; will-change: transform; }
+.achour-flame-flicker { animation: achour-flame-flicker 1.9s ease-in-out infinite; transform-origin: center bottom; will-change: transform, opacity; }
+.achour-smoke-rise { animation: achour-smoke-rise 6.5s ease-out infinite; will-change: transform, opacity; }
+.achour-waterfall-pour { animation: achour-waterfall-pour 2.8s linear infinite; will-change: transform, opacity; }
+.achour-petal-fall { animation: achour-petal-fall 11s linear infinite; will-change: transform, opacity; }
+.achour-lantern-float { animation: achour-lantern-float 14s linear infinite; will-change: transform, opacity; }
+.achour-aurora-sway { animation: achour-aurora-sway 10s ease-in-out infinite; will-change: transform, opacity; }
+.achour-sunbeam-pulse { animation: achour-sunbeam-pulse 7s ease-in-out infinite; will-change: transform, opacity; }
+.achour-fish-swim { animation: achour-fish-swim 18s linear infinite; will-change: transform, opacity; }
+.achour-bubble-rise { animation: achour-bubble-rise 9s ease-in infinite; will-change: transform, opacity; }
+.achour-rain-streak { animation: achour-rain-streak 1.6s linear infinite; will-change: transform, opacity; }
+.achour-boat-bob { animation: achour-boat-bob 5.5s ease-in-out infinite; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .achour-wave-slide,
+  .achour-wave-slide-reverse,
+  .achour-cloud-drift,
+  .achour-flame-flicker,
+  .achour-smoke-rise,
+  .achour-waterfall-pour,
+  .achour-petal-fall,
+  .achour-lantern-float,
+  .achour-aurora-sway,
+  .achour-sunbeam-pulse,
+  .achour-fish-swim,
+  .achour-bubble-rise,
+  .achour-rain-streak,
+  .achour-boat-bob,
+  .animate-bokeh {
+    animation: none !important;
+  }
+}
+
+
+/* TV-only compact dialogs: reduce oversized detail windows without changing phone layouts or D-pad logic. */
+html.achour-tv-ui [data-tv-details-dialog="true"] {
+  width: 68vw !important;
+  max-width: 900px !important;
+  max-height: 74vh !important;
+}
+html.achour-tv-ui [data-tv-details-dialog="true"].achour-tv-details-popup {
+  height: auto !important;
+}
+html.achour-tv-ui .achour-modal-backdrop > div:not([data-tv-details-dialog="true"]) {
+  zoom: 0.86 !important;
+  max-height: 78vh !important;
+}
+
+/* GPU-composited Splash Screen animations (zero JS main-thread animation overhead on Fire TV / low-RAM devices) */
+@keyframes achour-splash-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes achour-splash-spin-rev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes achour-splash-pulse {
+  0%, 100% { transform: scale3d(0.95, 0.95, 1); opacity: 0.45; }
+  50% { transform: scale3d(1.12, 1.12, 1); opacity: 0.74; }
+}
+
+@keyframes achour-splash-logo-float {
+  0%, 100% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.03, 1.03, 1); }
+}
+
+@keyframes achour-splash-sweep {
+  0% { transform: translate3d(-220%, 0, 0) skewX(-16deg); opacity: 0; }
+  18% { opacity: 0.85; }
+  62% { transform: translate3d(260%, 0, 0) skewX(-16deg); opacity: 0; }
+  100% { transform: translate3d(260%, 0, 0) skewX(-16deg); opacity: 0; }
+}
+
+@keyframes achour-splash-letter {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -5px, 0); }
+}
+
+@keyframes achour-splash-particle {
+  0%, 100% { transform: translate3d(0, 0, 0) scale3d(0.75, 0.75, 1); opacity: 0.28; }
+  50% { transform: translate3d(var(--dx, 24px), var(--dy, -36px), 0) scale3d(1.22, 1.22, 1); opacity: 0.9; }
+}
+
+.achour-splash-spin { animation: achour-splash-spin 14s linear infinite; will-change: transform; }
+.achour-splash-spin-fast { animation: achour-splash-spin 8s linear infinite; will-change: transform; }
+.achour-splash-spin-rev { animation: achour-splash-spin-rev 12s linear infinite; will-change: transform; }
+.achour-splash-pulse { animation: achour-splash-pulse 6s ease-in-out infinite; will-change: transform, opacity; }
+.achour-splash-logo-float { animation: achour-splash-logo-float 3.4s ease-in-out infinite; will-change: transform; }
+.achour-splash-sweep { animation: achour-splash-sweep 3.2s ease-in-out infinite; will-change: transform, opacity; }
+.achour-splash-letter { animation: achour-splash-letter 2.4s ease-in-out infinite; will-change: transform; }
+.achour-splash-particle { animation: achour-splash-particle var(--dur, 4s) ease-in-out infinite; will-change: transform, opacity; }
+
