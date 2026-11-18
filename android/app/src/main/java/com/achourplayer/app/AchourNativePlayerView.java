@@ -53,12 +53,14 @@ public class AchourNativePlayerView extends FrameLayout {
     private int retryCount = 0;
     private static final int MAX_RETRIES = 3;
 
+    private final boolean isMultiSlot;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private volatile boolean currentIsLive = false;
     private volatile long cachedPositionMs = 0L;
     private volatile long cachedDurationMs = 0L;
     private volatile boolean cachedIsPlaying = false;
     private volatile boolean cachedIsEnded = false;
+    private volatile boolean cachedHasError = false;
     private volatile String cachedVideoResolution = "";
     private volatile String cachedAudioTracksJson = "[]";
     private volatile String cachedSubtitleTracksJson = "[]";
@@ -85,7 +87,12 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     public AchourNativePlayerView(Context context) {
+        this(context, false);
+    }
+
+    public AchourNativePlayerView(Context context, boolean isMultiSlot) {
         super(context);
+        this.isMultiSlot = isMultiSlot;
         initialize(context);
     }
 
@@ -117,17 +124,29 @@ public class AchourNativePlayerView extends FrameLayout {
         persistentHlsFactory = new HlsMediaSource.Factory(persistentHttpFactory)
                 .setAllowChunklessPreparation(true);
 
-        DefaultLoadControl loadControl = new DefaultLoadControl.Builder()
-                .setBufferDurationsMs(
-                        6000,   // minBufferMs (smooth Wi-Fi jitter absorption on Fire TV 4K 1st Gen)
-                        18000,  // maxBufferMs
-                        600,    // bufferForPlaybackMs (crisp zapping without micro-stutter)
-                        1500    // bufferForPlaybackAfterRebufferMs
-                )
-                .setTargetBufferBytes(16 * 1024 * 1024)
-                .setPrioritizeTimeOverSizeThresholds(true)
-                .setBackBuffer(2000, false)
-                .build();
+        DefaultLoadControl loadControl = isMultiSlot
+                ? new DefaultLoadControl.Builder()
+                        .setBufferDurationsMs(
+                                2500,   // minBufferMs (lightweight for 2-4 concurrent slots)
+                                7000,   // maxBufferMs
+                                450,    // bufferForPlaybackMs
+                                1000    // bufferForPlaybackAfterRebufferMs
+                        )
+                        .setTargetBufferBytes(6 * 1024 * 1024)
+                        .setPrioritizeTimeOverSizeThresholds(true)
+                        .setBackBuffer(0, false)
+                        .build()
+                : new DefaultLoadControl.Builder()
+                        .setBufferDurationsMs(
+                                6000,   // minBufferMs (smooth Wi-Fi jitter absorption on Fire TV 4K 1st Gen)
+                                18000,  // maxBufferMs
+                                600,    // bufferForPlaybackMs (crisp zapping without micro-stutter)
+                                1500    // bufferForPlaybackAfterRebufferMs
+                        )
+                        .setTargetBufferBytes(16 * 1024 * 1024)
+                        .setPrioritizeTimeOverSizeThresholds(true)
+                        .setBackBuffer(2000, false)
+                        .build();
 
         DefaultRenderersFactory renderersFactory =
                 new DefaultRenderersFactory(context)
@@ -143,7 +162,8 @@ public class AchourNativePlayerView extends FrameLayout {
                 .setMediaSourceFactory(persistentMediaSourceFactory)
                 .build();
 
-        player.setAudioAttributes(audioAttributes, true);
+        // Only single-player holds Android AudioFocus so 2-4 MultiView ExoPlayers never pause each other
+        player.setAudioAttributes(audioAttributes, !isMultiSlot);
         player.setVideoScalingMode(C.VIDEO_SCALING_MODE_SCALE_TO_FIT);
         player.setSeekParameters(SeekParameters.CLOSEST_SYNC);
 
@@ -154,6 +174,9 @@ public class AchourNativePlayerView extends FrameLayout {
                     retryCount++;
                     player.prepare();
                     player.play();
+                } else {
+                    cachedHasError = true;
+                    cachedIsPlaying = false;
                 }
             }
 
@@ -161,6 +184,7 @@ public class AchourNativePlayerView extends FrameLayout {
             public void onPlaybackStateChanged(int playbackState) {
                 if (playbackState == Player.STATE_READY) {
                     cachedIsEnded = false;
+                    cachedHasError = false;
                     retryCount = 0;
                     refreshPositionSnapshot();
                     refreshTrackSnapshots();
@@ -260,6 +284,7 @@ public class AchourNativePlayerView extends FrameLayout {
         cachedPositionMs = 0L;
         cachedDurationMs = 0L;
         cachedIsEnded = false;
+        cachedHasError = false;
         cachedVideoResolution = "";
         cachedAudioTracksJson = "[]";
         cachedSubtitleTracksJson = "[]";
@@ -267,6 +292,8 @@ public class AchourNativePlayerView extends FrameLayout {
         String title = "Achour Player";
         boolean isLiveStream = false;
         boolean autoPlay = true;
+        boolean initialMuted = false;
+        float initialVolume = 1f;
         long startPositionMs = 0L;
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
@@ -280,6 +307,9 @@ public class AchourNativePlayerView extends FrameLayout {
             title = parsedOptions.optString("title", title);
             isLiveStream = parsedOptions.optBoolean("isLive", false);
             autoPlay = parsedOptions.optBoolean("autoPlay", true);
+            initialMuted = parsedOptions.optBoolean("muted", false);
+            double volOpt = parsedOptions.optDouble("volume", initialMuted ? 0.0 : 1.0);
+            initialVolume = initialMuted ? 0f : (float) Math.max(0.0, Math.min(1.0, volOpt));
             startPositionMs = Math.max(0L, parsedOptions.optLong("startPositionMs", 0L));
 
             JSONObject headerObject = parsedOptions.optJSONObject("headers");
@@ -417,6 +447,7 @@ public class AchourNativePlayerView extends FrameLayout {
         if (initialPosMs != C.TIME_UNSET) {
             cachedPositionMs = initialPosMs;
         }
+        player.setVolume(initialVolume);
         player.setPlayWhenReady(autoPlay);
         player.prepare();
         cachedIsPlaying = autoPlay;
@@ -637,6 +668,10 @@ public class AchourNativePlayerView extends FrameLayout {
         return cachedIsEnded;
     }
 
+    public boolean getCachedHasError() {
+        return cachedHasError;
+    }
+
     private String buildAudioTracksJson() {
         JSONArray result = new JSONArray();
         if (player == null) return "[]";
@@ -730,6 +765,7 @@ public class AchourNativePlayerView extends FrameLayout {
         stopPositionTicker();
         cachedIsPlaying = false;
         cachedIsEnded = false;
+        cachedHasError = false;
         cachedPositionMs = 0L;
         cachedDurationMs = 0L;
         cachedVideoResolution = "";

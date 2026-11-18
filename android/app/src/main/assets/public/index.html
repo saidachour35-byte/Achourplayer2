@@ -47,6 +47,14 @@
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         user-select: none;
       }
+      @keyframes preSplashPulse {
+        0%, 100% { transform: scale3d(0.95, 0.95, 1); opacity: 0.45; }
+        50% { transform: scale3d(1.08, 1.08, 1); opacity: 0.72; }
+      }
+      @keyframes preSplashSpin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
       .pre-splash-glow {
         position: absolute;
         width: 760px;
@@ -55,6 +63,8 @@
         pointer-events: none;
         opacity: 0.55;
         background: radial-gradient(circle at center, rgba(255,215,0,0.34) 0%, rgba(124,77,255,0.22) 38%, rgba(255,75,75,0.12) 58%, transparent 74%);
+        animation: preSplashPulse 6s ease-in-out infinite;
+        will-change: transform, opacity;
       }
       .pre-splash-content {
         position: relative;
@@ -78,7 +88,7 @@
         height: 96px;
         border-radius: 18px;
         overflow: hidden;
-        background: #000000;
+        background: #0b0d14;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -119,6 +129,8 @@
         inset: 0;
         width: 100%;
         height: 100%;
+        animation: preSplashSpin 14s linear infinite;
+        will-change: transform;
       }
       .pre-splash-count {
         display: flex;
@@ -133,7 +145,7 @@
         line-height: 28px;
         font-weight: 900;
         color: #ff6e40;
-        text-shadow: 0 0 15px #ff6e40;
+        text-shadow: 0 0 12px rgba(255,110,64,0.8);
       }
       .pre-splash-sec {
         font-size: 7px;
@@ -157,8 +169,8 @@
         .pre-splash-title { font-size: 30px; line-height: 36px; }
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-Z8FiD9tF.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BMsCZ68G.css">
+    <script type="module" crossorigin src="./assets/index-mODsAOif.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B3hgirmv.css">
   </head>
   <body style="margin: 0; padding: 0;">
     <div id="root" style="min-height: 100vh; width: 100%;">

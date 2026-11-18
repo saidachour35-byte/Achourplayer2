@@ -788,11 +788,57 @@ if (typeof window !== 'undefined') {
   });
 }
 
-// High-performance, lightweight video player dedicated for each active Multi-View slot
+// Keep WebView wallpaper cutout polygon & native transparency classes synced across all active MultiView ExoPlayer slots
+const syncMultiViewNativeOverlay = (isFullscreenSlot: boolean) => {
+  if (typeof document === 'undefined' || typeof window === 'undefined') return;
+  const native = (window as any).AchourNative;
+  if (!isNativeApp() || !native?.showMultiSlot) return;
+
+  const docEl = document.documentElement;
+  const bodyEl = document.body;
+
+  if (isFullscreenSlot) {
+    docEl.classList.add('native-player-active');
+    bodyEl.classList.add('native-player-active');
+    docEl.classList.remove('native-player-preview');
+    bodyEl.classList.remove('native-player-preview');
+    docEl.style.removeProperty('--native-preview-clip');
+    return;
+  }
+
+  const holeEls = Array.from(document.querySelectorAll<HTMLElement>('[data-multiview-native-hole="true"]'));
+  const holes: string[] = [];
+  for (const el of holeEls) {
+    const r = el.getBoundingClientRect();
+    if (r.width > 10 && r.height > 10) {
+      const x = Math.max(0, Math.round(r.left));
+      const y = Math.max(0, Math.round(r.top));
+      const w = Math.max(0, Math.round(r.width));
+      const h = Math.max(0, Math.round(r.height));
+      holes.push(`${x}px ${y}px, ${x}px ${y + h}px, ${x + w}px ${y + h}px, ${x + w}px ${y}px, ${x}px ${y}px, 0px 0px`);
+    }
+  }
+
+  if (holes.length > 0) {
+    docEl.classList.add('native-player-active', 'native-player-preview');
+    bodyEl.classList.add('native-player-active', 'native-player-preview');
+    docEl.style.setProperty(
+      '--native-preview-clip',
+      `polygon(evenodd, 0px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 0px, ${holes.join(', ')})`
+    );
+  } else {
+    docEl.classList.remove('native-player-active', 'native-player-preview');
+    bodyEl.classList.remove('native-player-active', 'native-player-preview');
+    docEl.style.removeProperty('--native-preview-clip');
+  }
+};
+
+// High-performance, lightweight video player dedicated for each active Multi-View slot (ExoPlayer on APK, Hls.js on Web)
 const MultiViewSlotPlayer: React.FC<{
   channel: ParsedChannel;
   isActive: boolean;
   isMuted: boolean;
+  isFullscreenSlot?: boolean;
   settings: AppSettings;
   onSelectSlot: () => void;
   onToggleMute: (e: React.MouseEvent) => void;
@@ -804,6 +850,7 @@ const MultiViewSlotPlayer: React.FC<{
   channel,
   isActive,
   isMuted,
+  isFullscreenSlot = false,
   settings,
   onSelectSlot,
   onToggleMute,
@@ -812,21 +859,85 @@ const MultiViewSlotPlayer: React.FC<{
   slotIndex,
   isRtl,
 }) => {
+  const slotRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
+  const isMutedRef = useRef(isMuted);
+  isMutedRef.current = isMuted;
+  const isFullscreenRef = useRef(isFullscreenSlot);
+  isFullscreenRef.current = isFullscreenSlot;
+
+  const native = typeof window !== 'undefined' ? (window as any).AchourNative : null;
+  const isNativeActive = isNativeApp() && !!native?.showMultiSlot;
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  // Sync audio mute/unmute instantly on native ExoPlayer slot
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !channel) return;
+    if (!isNativeActive) return;
+    try {
+      native.setMultiSlotVolume?.(slotIndex, isMuted ? 0 : 1);
+    } catch {}
+  }, [isNativeActive, isMuted, slotIndex]);
+
+  // Keep native ExoPlayer slot bounds & WebView transparency cutout synced on split <-> fullscreen <-> resize
+  useEffect(() => {
+    if (!isNativeActive) return;
+
+    let lastKey = '';
+    const syncSlotBounds = () => {
+      syncMultiViewNativeOverlay(Boolean(isFullscreenRef.current));
+      let b = { x: 0, y: 0, width: 0, height: 0 };
+      if (!isFullscreenRef.current) {
+        const rect = slotRef.current?.getBoundingClientRect();
+        if (rect && rect.width > 10 && rect.height > 10) {
+          b = {
+            x: Math.round(rect.left),
+            y: Math.round(rect.top),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height),
+          };
+        } else {
+          return;
+        }
+      }
+      const key = `${b.x},${b.y},${b.width},${b.height}`;
+      if (key === lastKey) return;
+      lastKey = key;
+      try {
+        native.updateMultiSlotBounds?.(slotIndex, b.x, b.y, b.width, b.height);
+      } catch {}
+    };
+
+    const rafId = requestAnimationFrame(syncSlotBounds);
+    const settleTimer = setTimeout(syncSlotBounds, 90);
+    window.addEventListener('resize', syncSlotBounds);
+
+    let ro: ResizeObserver | null = null;
+    if (slotRef.current && typeof ResizeObserver !== 'undefined') {
+      ro = new ResizeObserver(syncSlotBounds);
+      ro.observe(slotRef.current);
+    }
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(settleTimer);
+      ro?.disconnect();
+      window.removeEventListener('resize', syncSlotBounds);
+    };
+  }, [isNativeActive, isFullscreenSlot, slotIndex, channel?.stream_id, channel?.url]);
+
+  // Start stream playback (AndroidX Media3 ExoPlayer on APK, Hls.js on Web preview)
+  useEffect(() => {
+    if (!channel) return;
 
     let destroyed = false;
     setLoading(true);
     setError(false);
 
     let playUrl = channel.url || (channel as any).stream_url || '';
-    if (playUrl && ((playUrl.includes('/live/') && playUrl.endsWith('.ts')) || playUrl.endsWith('.ts'))) {
+    if (!isNativeActive && playUrl && ((playUrl.includes('/live/') && playUrl.endsWith('.ts')) || playUrl.endsWith('.ts'))) {
       playUrl = playUrl.replace(/\.ts$/, '.m3u8');
     }
 
@@ -839,6 +950,78 @@ const MultiViewSlotPlayer: React.FC<{
       setLoading(false);
       return;
     }
+
+    if (isNativeActive && native?.showMultiSlot) {
+      let b = { x: 0, y: 0, width: 0, height: 0 };
+      if (!isFullscreenRef.current) {
+        const rect = slotRef.current?.getBoundingClientRect();
+        if (rect && rect.width > 10 && rect.height > 10) {
+          b = {
+            x: Math.round(rect.left),
+            y: Math.round(rect.top),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height),
+          };
+        }
+      }
+      syncMultiViewNativeOverlay(Boolean(isFullscreenRef.current));
+
+      try {
+        native.showMultiSlot(
+          slotIndex,
+          activeStreamUrl,
+          JSON.stringify({
+            title: channel.name || 'Achour TV',
+            isLive: true,
+            autoPlay: true,
+            muted: isMutedRef.current,
+            volume: isMutedRef.current ? 0 : 1,
+            headers: {
+              'User-Agent': 'Android/Media3/1.4.1',
+              'X-Requested-With': 'com.achourplayer.app'
+            }
+          }),
+          b.x,
+          b.y,
+          b.width,
+          b.height
+        );
+      } catch (e) {
+        console.warn('AchourNative showMultiSlot failed:', e);
+        setError(true);
+        setLoading(false);
+      }
+
+      const startedAt = Date.now();
+      const pollTimer = setInterval(() => {
+        if (destroyed) return;
+        try {
+          const playing = Boolean(native.isMultiSlotPlaying?.(slotIndex));
+          const hasErr = Boolean(native.hasMultiSlotError?.(slotIndex));
+          if (playing) {
+            setLoading(false);
+            setError(false);
+          } else if (hasErr) {
+            setLoading(false);
+            setError(true);
+          } else if (Date.now() - startedAt > 12000) {
+            setLoading(false);
+          }
+        } catch {}
+      }, 300);
+
+      return () => {
+        destroyed = true;
+        clearInterval(pollTimer);
+        try {
+          native.hideMultiSlot?.(slotIndex);
+        } catch {}
+        requestAnimationFrame(() => syncMultiViewNativeOverlay(false));
+      };
+    }
+
+    const video = videoRef.current;
+    if (!video) return;
 
     if (Hls.isSupported()) {
       const hls = new Hls({
@@ -903,33 +1086,37 @@ const MultiViewSlotPlayer: React.FC<{
         video.load();
       }
     };
-  }, [channel?.stream_id, channel?.url, settings?.vpnRegion]);
+  }, [channel?.stream_id, channel?.url, settings?.vpnRegion, isNativeActive, slotIndex]);
 
   return (
     <div
+      ref={slotRef}
       id={`multiview-slot-${slotIndex}`}
       data-tv-focusable="true"
       data-multiview-slot="true"
+      data-multiview-native-hole={isNativeActive ? 'true' : undefined}
       data-slot-index={slotIndex}
       tabIndex={0}
       onClick={onSelectSlot}
       onDoubleClick={onOpenFullscreen}
-      className={`group relative w-full h-full rounded-2xl overflow-hidden bg-black border transition-all cursor-pointer ${
+      className={`group relative w-full h-full rounded-2xl overflow-hidden ${isNativeActive ? 'bg-transparent' : 'bg-black'} border transition-all cursor-pointer ${
         isActive
           ? 'border-gold shadow-[0_0_15px_var(--theme-glow)] ring-2 ring-gold/40'
           : 'border-white/15 hover:border-gold/50'
       }`}
     >
-      <video
-        ref={videoRef}
-        playsInline
-        autoPlay
-        muted={isMuted}
-        className="w-full h-full object-contain pointer-events-none"
-      />
+      {!isNativeActive && (
+        <video
+          ref={videoRef}
+          playsInline
+          autoPlay
+          muted={isMuted}
+          className="w-full h-full object-contain pointer-events-none"
+        />
+      )}
 
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/60 pointer-events-none z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50 pointer-events-none z-10">
           <div className="w-7 h-7 border-2 border-gold border-t-transparent rounded-full animate-spin" />
         </div>
       )}
@@ -1456,6 +1643,40 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
   const [selectedSlotIndex, setSelectedSlotIndex] = useState<number>(0);
   const [audioSlotIndex, setAudioSlotIndex] = useState<number>(0);
   const preMultiViewChannelRef = useRef<ParsedChannel | null>(null);
+
+  // Sync WebView transparency cutouts & guarantee native MultiView ExoPlayer cleanup on exit/unmount
+  useEffect(() => {
+    const native = typeof window !== 'undefined' ? (window as any).AchourNative : null;
+    if (!isNativeApp() || !native?.showMultiSlot) return;
+
+    if (!multiViewActive) {
+      try {
+        native.hideAllMultiSlots?.();
+      } catch {}
+      if (!selectedChannel && !activeVodPlayer) {
+        document.documentElement.classList.remove('native-player-active', 'native-player-preview');
+        document.body.classList.remove('native-player-active', 'native-player-preview');
+        document.documentElement.style.removeProperty('--native-preview-clip');
+      }
+      return;
+    }
+
+    const rafId = requestAnimationFrame(() => {
+      syncMultiViewNativeOverlay(multiViewFullscreenSlot !== null);
+    });
+    return () => cancelAnimationFrame(rafId);
+  }, [multiViewActive, multiViewMode, multiViewFullscreenSlot, multiViewSlots, selectedChannel?.stream_id, activeVodPlayer]);
+
+  useEffect(() => {
+    return () => {
+      const native = typeof window !== 'undefined' ? (window as any).AchourNative : null;
+      if (isNativeApp() && native?.hideAllMultiSlots) {
+        try {
+          native.hideAllMultiSlots();
+        } catch {}
+      }
+    };
+  }, []);
 
   // D-Pad TV Remote Control Navigation States & Preview Refs
   const tvFocusedPane = useRef<'categories' | 'channels' | 'header' | 'player' | 'player-controls' | 'multiview'>('categories');
@@ -4669,13 +4890,14 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         {(mediaType === 'live' || mediaType === 'favorites') && (
           <main className="flex-1 flex flex-col gap-3 bg-transparent relative min-w-0 h-full overflow-hidden p-2 sm:p-3">
             {multiViewActive ? (
-              <div data-multiview-container="true" className={`${multiViewFullscreenSlot !== null ? 'fixed inset-0 z-[90] bg-black p-1 grid-cols-1 grid-rows-1' : 'flex-1 min-h-0'} grid gap-2 ${multiViewFullscreenSlot === null ? (multiViewMode === 1 ? 'grid-cols-1 grid-rows-1' : multiViewMode === 2 ? 'grid-cols-2 grid-rows-1' : 'grid-cols-2 grid-rows-2') : ''}`}>
+              <div data-multiview-container="true" className={`${multiViewFullscreenSlot !== null ? `fixed inset-0 z-[90] ${isNativeApp() && (window as any).AchourNative?.showMultiSlot ? 'bg-transparent' : 'bg-black'} p-1 grid-cols-1 grid-rows-1` : 'flex-1 min-h-0'} grid gap-2 ${multiViewFullscreenSlot === null ? (multiViewMode === 1 ? 'grid-cols-1 grid-rows-1' : multiViewMode === 2 ? 'grid-cols-2 grid-rows-1' : 'grid-cols-2 grid-rows-2') : ''}`}>
                 {Array.from({ length: multiViewFullscreenSlot !== null ? 1 : multiViewMode }, (_, visibleIndex) => {
                   const slotIndex = multiViewFullscreenSlot !== null ? multiViewFullscreenSlot : visibleIndex;
                   const slotChannel = multiViewSlots[slotIndex];
                   return slotChannel ? (
                     <MultiViewSlotPlayer key={`multiview-${slotIndex}-${slotChannel.stream_id}`} channel={slotChannel}
                       slotIndex={slotIndex} isActive={selectedSlotIndex === slotIndex} isMuted={audioSlotIndex !== slotIndex}
+                      isFullscreenSlot={multiViewFullscreenSlot === slotIndex}
                       settings={settings} isRtl={isRtl}
                       onSelectSlot={() => { setSelectedSlotIndex(slotIndex); setAudioSlotIndex(slotIndex); tvFocusedPane.current = 'multiview'; }}
                       onToggleMute={(e) => { e.stopPropagation(); setAudioSlotIndex(current => current === slotIndex ? -1 : slotIndex); }}

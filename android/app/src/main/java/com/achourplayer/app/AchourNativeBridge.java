@@ -15,6 +15,12 @@ public class AchourNativeBridge {
     private final Activity activity;
     private final WebView webView;
     private volatile AchourNativePlayerView playerView;
+    private final AchourNativePlayerView[] multiSlotViews = new AchourNativePlayerView[4];
+    private final boolean[] multiSlotPlayingBeforePause = new boolean[4];
+    private final int[] lastSlotX = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
+    private final int[] lastSlotY = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
+    private final int[] lastSlotW = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
+    private final int[] lastSlotH = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
     private FrameLayout.LayoutParams layoutParams;
     private boolean wasPlayingBeforePause = false;
     private boolean transparencyConfigured = false;
@@ -79,6 +85,9 @@ public class AchourNativeBridge {
             int height
     ) {
         activity.runOnUiThread(() -> {
+            // Stop any active MultiView slots when single player takes over
+            releaseAllMultiSlotsOnUiThread();
+
             ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content);
             int[] bounds = calculateBounds(rootView, x, y, width, height);
 
@@ -322,12 +331,183 @@ public class AchourNativeBridge {
         });
     }
 
+    private void releaseMultiSlotOnUiThread(int slotIndex) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return;
+        multiSlotPlayingBeforePause[slotIndex] = false;
+        AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+        if (slotView != null) {
+            ViewGroup parent = (ViewGroup) slotView.getParent();
+            if (parent != null) {
+                parent.removeView(slotView);
+            }
+            slotView.release();
+            multiSlotViews[slotIndex] = null;
+        }
+        lastSlotX[slotIndex] = Integer.MIN_VALUE;
+        lastSlotY[slotIndex] = Integer.MIN_VALUE;
+        lastSlotW[slotIndex] = Integer.MIN_VALUE;
+        lastSlotH[slotIndex] = Integer.MIN_VALUE;
+    }
+
+    private void releaseAllMultiSlotsOnUiThread() {
+        for (int i = 0; i < multiSlotViews.length; i++) {
+            releaseMultiSlotOnUiThread(i);
+        }
+    }
+
+    @JavascriptInterface
+    public void showMultiSlot(
+            int slotIndex,
+            String url,
+            String options,
+            int x,
+            int y,
+            int width,
+            int height
+    ) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return;
+        activity.runOnUiThread(() -> {
+            if (playerView != null) {
+                wasPlayingBeforePause = false;
+                playerView.stopAndHide();
+            }
+
+            ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content);
+            int[] bounds = calculateBounds(rootView, x, y, width, height);
+            AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+
+            if (slotView == null) {
+                ensureWebViewTransparent(rootView);
+                slotView = new AchourNativePlayerView(activity, true);
+                multiSlotViews[slotIndex] = slotView;
+
+                FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(bounds[2], bounds[3]);
+                params.gravity = Gravity.TOP | Gravity.LEFT;
+                params.leftMargin = bounds[0];
+                params.topMargin = bounds[1];
+
+                lastSlotX[slotIndex] = bounds[0];
+                lastSlotY[slotIndex] = bounds[1];
+                lastSlotW[slotIndex] = bounds[2];
+                lastSlotH[slotIndex] = bounds[3];
+
+                if (rootView != null) {
+                    rootView.addView(slotView, 0, params);
+                } else {
+                    activity.addContentView(slotView, params);
+                }
+                slotView.setVisibility(View.VISIBLE);
+                slotView.requestLayout();
+            } else {
+                boolean boundsChanged = bounds[0] != lastSlotX[slotIndex] || bounds[1] != lastSlotY[slotIndex]
+                        || bounds[2] != lastSlotW[slotIndex] || bounds[3] != lastSlotH[slotIndex];
+                if (boundsChanged) {
+                    FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) slotView.getLayoutParams();
+                    if (params != null) {
+                        params.gravity = Gravity.TOP | Gravity.LEFT;
+                        params.leftMargin = bounds[0];
+                        params.topMargin = bounds[1];
+                        params.width = bounds[2];
+                        params.height = bounds[3];
+                        slotView.setLayoutParams(params);
+                    }
+                    lastSlotX[slotIndex] = bounds[0];
+                    lastSlotY[slotIndex] = bounds[1];
+                    lastSlotW[slotIndex] = bounds[2];
+                    lastSlotH[slotIndex] = bounds[3];
+                }
+                if (slotView.getVisibility() != View.VISIBLE) {
+                    slotView.setVisibility(View.VISIBLE);
+                }
+            }
+
+            slotView.setMedia(url, options);
+        });
+    }
+
+    @JavascriptInterface
+    public void updateMultiSlotBounds(int slotIndex, int x, int y, int width, int height) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return;
+        activity.runOnUiThread(() -> {
+            AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+            if (slotView == null) return;
+
+            ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content);
+            int[] bounds = calculateBounds(rootView, x, y, width, height);
+            if (bounds[0] == lastSlotX[slotIndex] && bounds[1] == lastSlotY[slotIndex]
+                    && bounds[2] == lastSlotW[slotIndex] && bounds[3] == lastSlotH[slotIndex]) {
+                return;
+            }
+
+            FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) slotView.getLayoutParams();
+            if (params == null) return;
+
+            params.gravity = Gravity.TOP | Gravity.LEFT;
+            params.leftMargin = bounds[0];
+            params.topMargin = bounds[1];
+            params.width = bounds[2];
+            params.height = bounds[3];
+            lastSlotX[slotIndex] = bounds[0];
+            lastSlotY[slotIndex] = bounds[1];
+            lastSlotW[slotIndex] = bounds[2];
+            lastSlotH[slotIndex] = bounds[3];
+
+            slotView.setLayoutParams(params);
+        });
+    }
+
+    @JavascriptInterface
+    public void setMultiSlotVolume(int slotIndex, float volume) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return;
+        activity.runOnUiThread(() -> {
+            AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+            if (slotView != null) {
+                slotView.setVolume(volume);
+            }
+        });
+    }
+
+    @JavascriptInterface
+    public void hideMultiSlot(int slotIndex) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return;
+        activity.runOnUiThread(() -> releaseMultiSlotOnUiThread(slotIndex));
+    }
+
+    @JavascriptInterface
+    public void hideAllMultiSlots() {
+        activity.runOnUiThread(this::releaseAllMultiSlotsOnUiThread);
+    }
+
+    @JavascriptInterface
+    public boolean isMultiSlotPlaying(int slotIndex) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return false;
+        AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+        return slotView != null && slotView.getCachedIsPlaying();
+    }
+
+    @JavascriptInterface
+    public boolean hasMultiSlotError(int slotIndex) {
+        if (slotIndex < 0 || slotIndex >= multiSlotViews.length) return false;
+        AchourNativePlayerView slotView = multiSlotViews[slotIndex];
+        return slotView != null && slotView.getCachedHasError();
+    }
+
     public void onHostPause() {
         activity.runOnUiThread(() -> {
             if (playerView != null) {
                 wasPlayingBeforePause = playerView.isPlaying();
                 if (wasPlayingBeforePause) {
                     playerView.pause();
+                }
+            }
+            for (int i = 0; i < multiSlotViews.length; i++) {
+                AchourNativePlayerView slotView = multiSlotViews[i];
+                if (slotView != null) {
+                    boolean playing = slotView.isPlaying();
+                    multiSlotPlayingBeforePause[i] = playing;
+                    if (playing) {
+                        slotView.pause();
+                    }
                 }
             }
         });
@@ -339,10 +519,18 @@ public class AchourNativeBridge {
                 wasPlayingBeforePause = false;
                 playerView.play();
             }
+            for (int i = 0; i < multiSlotViews.length; i++) {
+                AchourNativePlayerView slotView = multiSlotViews[i];
+                if (slotView != null && multiSlotPlayingBeforePause[i]) {
+                    multiSlotPlayingBeforePause[i] = false;
+                    slotView.play();
+                }
+            }
         });
     }
 
     public void onHostDestroy() {
+        activity.runOnUiThread(this::releaseAllMultiSlotsOnUiThread);
         destroyPlayer();
     }
 }
