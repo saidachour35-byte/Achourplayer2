@@ -842,8 +842,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
             startPositionMs: startPositionSec > 0 ? Math.round(startPositionSec * 1000) : 0,
             subtitles: !isLive && externalSubtitles.length > 0 ? externalSubtitles : undefined,
             headers: {
-              'User-Agent': 'Android/Media3/1.4.1',
-              'X-Requested-With': 'com.achourplayer.app'
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             }
           }),
           initialBounds.x,
@@ -1065,19 +1064,19 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
       const lowMem = isTVOrLowEndDevice();
       hls = new Hls({
         enableWorker: true,
-        lowLatencyMode: isLive && !lowMem,
+        lowLatencyMode: false,
         startFragPrefetch: isLive,
-        backBufferLength: isLive ? (lowMem ? 4 : 6) : (lowMem ? 12 : 30),
-        maxBufferLength: isLive ? 6 : (lowMem ? 20 : 60),
-        maxMaxBufferLength: isLive ? (lowMem ? 12 : 15) : (lowMem ? 45 : 120),
+        backBufferLength: isLive ? (lowMem ? 4 : 8) : (lowMem ? 12 : 30),
+        maxBufferLength: isLive ? 10 : (lowMem ? 20 : 60),
+        maxMaxBufferLength: isLive ? (lowMem ? 16 : 24) : (lowMem ? 45 : 120),
         maxBufferSize: isLive
           ? (lowMem ? 16 * 1024 * 1024 : 32 * 1024 * 1024)
           : (lowMem ? 48 * 1024 * 1024 : 128 * 1024 * 1024),
-        liveSyncDurationCount: isLive ? (lowMem ? 2 : 1) : 2,
-        liveMaxLatencyDurationCount: isLive ? 5 : Infinity,
+        liveSyncDurationCount: isLive ? 3 : 2,
+        liveMaxLatencyDurationCount: isLive ? 8 : Infinity,
         maxBufferHole: 0.5,
         highBufferWatchdogPeriod: isLive ? 1 : 0,
-        maxStarvationDelay: isLive ? 2 : 4,
+        maxStarvationDelay: isLive ? 3 : 4,
         nudgeOffset: 0.1,
         nudgeMaxRetry: 5,
         manifestLoadingMaxRetry: 3,

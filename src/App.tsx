@@ -287,6 +287,10 @@ export default function App() {
     <div
       className={`achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-[#D4AF37]/30 ${isRtl ? 'font-cairo' : 'font-sans'} relative overflow-hidden`}
       style={{ '--achour-zoom-scale': effectiveScale } as React.CSSProperties}
+      onScroll={(e) => {
+        if (e.currentTarget.scrollTop !== 0) e.currentTarget.scrollTop = 0;
+        if (e.currentTarget.scrollLeft !== 0) e.currentTarget.scrollLeft = 0;
+      }}
     >
       {/* App Backgrounds (mounted right after Splash first paint so Splash never stutters & Home reveals cleanly) */}
       {homeStageReady && (
@@ -351,7 +355,13 @@ export default function App() {
       </AnimatePresence>
 
       {/* Main Dashboard & Content — Proportional Width/Height Compensation for 95% Viewport Scale */}
-      <div className="fixed inset-0 z-10 overflow-hidden bg-transparent">
+      <div
+        className="fixed inset-0 z-10 overflow-hidden bg-transparent"
+        onScroll={(e) => {
+          if (e.currentTarget.scrollTop !== 0) e.currentTarget.scrollTop = 0;
+          if (e.currentTarget.scrollLeft !== 0) e.currentTarget.scrollLeft = 0;
+        }}
+      >
         <div
           className={`bg-transparent transition-transform duration-200 ${isRestricted ? 'opacity-25 pointer-events-none' : ''}`}
           style={{

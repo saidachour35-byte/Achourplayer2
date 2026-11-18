@@ -51,11 +51,21 @@ public class AchourNativePlayerView extends FrameLayout {
     private DefaultMediaSourceFactory persistentMediaSourceFactory;
     private HlsMediaSource.Factory persistentHlsFactory;
     private int retryCount = 0;
-    private static final int MAX_RETRIES = 3;
+    private static final int MAX_RETRIES = 5;
 
     private final boolean isMultiSlot;
+    private boolean configuredForLive = false;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private volatile boolean currentIsLive = false;
+    private final Runnable retryRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (player != null) {
+                player.prepare();
+                player.play();
+            }
+        }
+    };
     private volatile long cachedPositionMs = 0L;
     private volatile long cachedDurationMs = 0L;
     private volatile boolean cachedIsPlaying = false;
@@ -117,36 +127,72 @@ public class AchourNativePlayerView extends FrameLayout {
         persistentHttpFactory =
                 new DefaultHttpDataSource.Factory()
                         .setAllowCrossProtocolRedirects(true)
-                        .setConnectTimeoutMs(6000)
-                        .setReadTimeoutMs(10000);
+                        .setConnectTimeoutMs(8000)
+                        .setReadTimeoutMs(15000);
 
         persistentMediaSourceFactory = new DefaultMediaSourceFactory(persistentHttpFactory);
         persistentHlsFactory = new HlsMediaSource.Factory(persistentHttpFactory)
                 .setAllowChunklessPreparation(true);
 
-        DefaultLoadControl loadControl = isMultiSlot
-                ? new DefaultLoadControl.Builder()
-                        .setBufferDurationsMs(
-                                2500,   // minBufferMs (lightweight for 2-4 concurrent slots)
-                                7000,   // maxBufferMs
-                                450,    // bufferForPlaybackMs
-                                1000    // bufferForPlaybackAfterRebufferMs
-                        )
-                        .setTargetBufferBytes(6 * 1024 * 1024)
-                        .setPrioritizeTimeOverSizeThresholds(true)
-                        .setBackBuffer(0, false)
-                        .build()
-                : new DefaultLoadControl.Builder()
-                        .setBufferDurationsMs(
-                                6000,   // minBufferMs (smooth Wi-Fi jitter absorption on Fire TV 4K 1st Gen)
-                                18000,  // maxBufferMs
-                                600,    // bufferForPlaybackMs (crisp zapping without micro-stutter)
-                                1500    // bufferForPlaybackAfterRebufferMs
-                        )
-                        .setTargetBufferBytes(16 * 1024 * 1024)
-                        .setPrioritizeTimeOverSizeThresholds(true)
-                        .setBackBuffer(2000, false)
-                        .build();
+        buildExoPlayer(context, false);
+    }
+
+    private DefaultLoadControl createLoadControl(boolean forLive) {
+        if (isMultiSlot) {
+            return new DefaultLoadControl.Builder()
+                    .setBufferDurationsMs(
+                            2500,   // minBufferMs (lightweight for 2-4 concurrent slots)
+                            7000,   // maxBufferMs
+                            450,    // bufferForPlaybackMs
+                            1000    // bufferForPlaybackAfterRebufferMs
+                    )
+                    .setTargetBufferBytes(6 * 1024 * 1024)
+                    .setPrioritizeTimeOverSizeThresholds(true)
+                    .setBackBuffer(0, false)
+                    .build();
+        }
+        if (forLive) {
+            return new DefaultLoadControl.Builder()
+                    .setBufferDurationsMs(
+                            3000,   // minBufferMs (keeps HTTP live socket draining continuously without server idle drops)
+                            8000,   // maxBufferMs (prevents 12-18s burst-idle stalls on TS/HLS IPTV streams)
+                            700,    // bufferForPlaybackMs (crisp zapping without immediate underrun)
+                            1400    // bufferForPlaybackAfterRebufferMs
+                    )
+                    .setTargetBufferBytes(10 * 1024 * 1024)
+                    .setPrioritizeTimeOverSizeThresholds(true)
+                    .setBackBuffer(0, false)
+                    .build();
+        }
+        return new DefaultLoadControl.Builder()
+                .setBufferDurationsMs(
+                        6000,   // minBufferMs (smooth Wi-Fi jitter absorption for VOD)
+                        18000,  // maxBufferMs
+                        600,    // bufferForPlaybackMs
+                        1500    // bufferForPlaybackAfterRebufferMs
+                )
+                .setTargetBufferBytes(16 * 1024 * 1024)
+                .setPrioritizeTimeOverSizeThresholds(true)
+                .setBackBuffer(3000, false)
+                .build();
+    }
+
+    private void buildExoPlayer(Context context, boolean forLive) {
+        mainHandler.removeCallbacks(retryRunnable);
+        stopPositionTicker();
+        if (playerView != null) {
+            playerView.setPlayer(null);
+        }
+        if (player != null) {
+            try {
+                player.release();
+            } catch (Exception ignored) {
+            }
+            player = null;
+        }
+
+        configuredForLive = forLive;
+        DefaultLoadControl loadControl = createLoadControl(forLive);
 
         DefaultRenderersFactory renderersFactory =
                 new DefaultRenderersFactory(context)
@@ -170,10 +216,26 @@ public class AchourNativePlayerView extends FrameLayout {
         player.addListener(new Player.Listener() {
             @Override
             public void onPlayerError(PlaybackException error) {
-                if (retryCount < MAX_RETRIES && player != null) {
+                mainHandler.removeCallbacks(retryRunnable);
+                if (player == null) return;
+                if (error.errorCode == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
+                    if (retryCount < MAX_RETRIES) {
+                        retryCount++;
+                        player.seekToDefaultPosition();
+                        player.prepare();
+                        player.play();
+                    } else {
+                        cachedHasError = true;
+                        cachedIsPlaying = false;
+                    }
+                    return;
+                }
+                if (retryCount < MAX_RETRIES) {
                     retryCount++;
-                    player.prepare();
-                    player.play();
+                    if (currentIsLive) {
+                        player.seekToDefaultPosition();
+                    }
+                    mainHandler.postDelayed(retryRunnable, 250L * retryCount);
                 } else {
                     cachedHasError = true;
                     cachedIsPlaying = false;
@@ -232,7 +294,9 @@ public class AchourNativePlayerView extends FrameLayout {
             }
         });
 
-        playerView.setPlayer(player);
+        if (playerView != null) {
+            playerView.setPlayer(player);
+        }
     }
 
     private void refreshPositionSnapshot() {
@@ -271,7 +335,7 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     public void setMedia(String url, String optionsJson) {
-        if (url == null || url.trim().isEmpty() || player == null) return;
+        if (url == null || url.trim().isEmpty()) return;
 
         if (getVisibility() != VISIBLE) {
             setVisibility(VISIBLE);
@@ -280,6 +344,7 @@ public class AchourNativePlayerView extends FrameLayout {
             playerView.setKeepScreenOn(true);
         }
 
+        mainHandler.removeCallbacks(retryRunnable);
         retryCount = 0;
         cachedPositionMs = 0L;
         cachedDurationMs = 0L;
@@ -331,6 +396,11 @@ public class AchourNativePlayerView extends FrameLayout {
 
         currentIsLive = isLiveStream;
         stopPositionTicker();
+        if (!isMultiSlot && (player == null || configuredForLive != isLiveStream)) {
+            buildExoPlayer(getContext(), isLiveStream);
+        }
+        if (player == null) return;
+
         if (persistentHttpFactory != null) {
             persistentHttpFactory.setDefaultRequestProperties(headers);
         }
@@ -359,14 +429,12 @@ public class AchourNativePlayerView extends FrameLayout {
             item.setMimeType(MimeTypes.VIDEO_FLV);
         }
 
-        if (isLiveStream) {
+        if (isLiveStream && isHlsStream) {
+            // Keep natural playlist live hold-back at steady 1.0x speed so Fire TV never starves or resamples audio every ~20s
             item.setLiveConfiguration(
                     new MediaItem.LiveConfiguration.Builder()
-                            .setTargetOffsetMs(2200)
-                            .setMinOffsetMs(1000)
-                            .setMaxOffsetMs(8000)
-                            .setMinPlaybackSpeed(0.98f)
-                            .setMaxPlaybackSpeed(1.02f)
+                            .setMinPlaybackSpeed(1.0f)
+                            .setMaxPlaybackSpeed(1.0f)
                             .build()
             );
         }
@@ -762,6 +830,7 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     public void stopAndHide() {
+        mainHandler.removeCallbacks(retryRunnable);
         stopPositionTicker();
         cachedIsPlaying = false;
         cachedIsEnded = false;
@@ -786,6 +855,7 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     public void release() {
+        mainHandler.removeCallbacks(retryRunnable);
         stopPositionTicker();
         cachedIsPlaying = false;
         cachedIsEnded = false;

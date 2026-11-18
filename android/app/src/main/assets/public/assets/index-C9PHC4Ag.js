@@ -63512,7 +63512,6 @@ const layout = {
 };
 const featureBundle = /* @__PURE__ */ Object.assign({}, animations, gestureAnimations, drag, layout);
 const motion = /* @__PURE__ */ createMotionProxy(featureBundle, createDomVisualElement);
-const logoImg$1 = "" + new URL("logo-Brqceik3.jpg", import.meta.url).href;
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63618,11 +63617,24 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$X = [
+const __iconNode$Y = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$X);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$Y);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$X = [
+  ["path", { d: "m21 16-4 4-4-4", key: "f6ql7i" }],
+  ["path", { d: "M17 20V4", key: "1ejh1v" }],
+  ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
+  ["path", { d: "M7 4v16", key: "1glfcx" }]
+];
+const ArrowUpDown = createLucideIcon("arrow-up-down", __iconNode$X);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63630,12 +63642,12 @@ const ArrowLeft = createLucideIcon("arrow-left", __iconNode$X);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$W = [
-  ["path", { d: "m21 16-4 4-4-4", key: "f6ql7i" }],
-  ["path", { d: "M17 20V4", key: "1ejh1v" }],
-  ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
-  ["path", { d: "M7 4v16", key: "1glfcx" }]
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const ArrowUpDown = createLucideIcon("arrow-up-down", __iconNode$W);
+const Calendar = createLucideIcon("calendar", __iconNode$W);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63643,63 +63655,62 @@ const ArrowUpDown = createLucideIcon("arrow-up-down", __iconNode$W);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$V = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }]
-];
-const Calendar = createLucideIcon("calendar", __iconNode$V);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$U = [
   ["rect", { width: "18", height: "14", x: "3", y: "5", rx: "2", ry: "2", key: "12ruh7" }],
   ["path", { d: "M7 15h4M15 15h2M7 11h2M13 11h4", key: "1ueiar" }]
 ];
-const Captions = createLucideIcon("captions", __iconNode$U);
+const Captions = createLucideIcon("captions", __iconNode$V);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$T = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$T);
+const __iconNode$U = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$U);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$S = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$S);
+const __iconNode$T = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$T);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$R = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$R);
+const __iconNode$S = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$S);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Q = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$Q);
+const __iconNode$R = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$R);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$P = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$P);
+const __iconNode$Q = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$Q);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$P = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$P);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63708,10 +63719,9 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$P);
  */
 const __iconNode$O = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$O);
+const CircleCheck = createLucideIcon("circle-check", __iconNode$O);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63719,17 +63729,6 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$O);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$N = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$N);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$M = [
   [
     "path",
     {
@@ -63739,14 +63738,14 @@ const __iconNode$M = [
   ],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const CirclePlay = createLucideIcon("circle-play", __iconNode$M);
+const CirclePlay = createLucideIcon("circle-play", __iconNode$N);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$L = [
+const __iconNode$M = [
   [
     "path",
     { d: "M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z", key: "1tn4o7" }
@@ -63755,7 +63754,18 @@ const __iconNode$L = [
   ["path", { d: "m12.4 3.4 3.1 4", key: "6hsd6n" }],
   ["path", { d: "M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z", key: "ltgou9" }]
 ];
-const Clapperboard = createLucideIcon("clapperboard", __iconNode$L);
+const Clapperboard = createLucideIcon("clapperboard", __iconNode$M);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$L = [
+  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
+];
+const Clock = createLucideIcon("clock", __iconNode$L);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63763,10 +63773,10 @@ const Clapperboard = createLucideIcon("clapperboard", __iconNode$L);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$K = [
-  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
+  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
+  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$K);
+const Copy = createLucideIcon("copy", __iconNode$K);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63774,29 +63784,6 @@ const Clock = createLucideIcon("clock", __iconNode$K);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$J = [
-  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
-  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
-];
-const Copy = createLucideIcon("copy", __iconNode$J);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$I = [
-  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
-  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
-  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
-];
-const Database = createLucideIcon("database", __iconNode$I);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$H = [
   [
     "path",
     {
@@ -63814,14 +63801,14 @@ const __iconNode$H = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$H);
+const EyeOff = createLucideIcon("eye-off", __iconNode$J);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$G = [
+const __iconNode$I = [
   [
     "path",
     {
@@ -63831,28 +63818,28 @@ const __iconNode$G = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$G);
+const Eye = createLucideIcon("eye", __iconNode$I);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$F = [
+const __iconNode$H = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M10 9H8", key: "b1mrlr" }],
   ["path", { d: "M16 13H8", key: "t4e002" }],
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ];
-const FileText = createLucideIcon("file-text", __iconNode$F);
+const FileText = createLucideIcon("file-text", __iconNode$H);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$E = [
+const __iconNode$G = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 3v18", key: "bbkbws" }],
   ["path", { d: "M3 7.5h4", key: "zfgn84" }],
@@ -63862,7 +63849,31 @@ const __iconNode$E = [
   ["path", { d: "M17 7.5h4", key: "myr1c1" }],
   ["path", { d: "M17 16.5h4", key: "go4c1d" }]
 ];
-const Film = createLucideIcon("film", __iconNode$E);
+const Film = createLucideIcon("film", __iconNode$G);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$F = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$F);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$E = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+];
+const Image$1 = createLucideIcon("image", __iconNode$E);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63870,30 +63881,6 @@ const Film = createLucideIcon("film", __iconNode$E);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$D = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("globe", __iconNode$D);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$C = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
-];
-const Image$1 = createLucideIcon("image", __iconNode$C);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$B = [
   ["path", { d: "m5 8 6 6", key: "1wu5hv" }],
   ["path", { d: "m4 14 6-6 2-3", key: "1k1g8d" }],
   ["path", { d: "M2 5h12", key: "or177f" }],
@@ -63901,14 +63888,14 @@ const __iconNode$B = [
   ["path", { d: "m22 22-5-10-5 10", key: "don7ne" }],
   ["path", { d: "M14 18h6", key: "1m8k6r" }]
 ];
-const Languages = createLucideIcon("languages", __iconNode$B);
+const Languages = createLucideIcon("languages", __iconNode$D);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$A = [
+const __iconNode$C = [
   [
     "path",
     {
@@ -63931,7 +63918,33 @@ const __iconNode$A = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$A);
+const Layers = createLucideIcon("layers", __iconNode$C);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$B = [
+  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
+  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
+  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
+  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+];
+const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$B);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$A = [
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
+];
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$A);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63939,32 +63952,6 @@ const Layers = createLucideIcon("layers", __iconNode$A);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$z = [
-  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
-  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
-  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
-  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
-];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$z);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$y = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$y);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$x = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M10 12H3", key: "1ulcyk" }],
   ["path", { d: "M10 19H3", key: "108z41" }],
@@ -63976,15 +63963,38 @@ const __iconNode$x = [
     }
   ]
 ];
-const ListVideo = createLucideIcon("list-video", __iconNode$x);
+const ListVideo = createLucideIcon("list-video", __iconNode$z);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$w = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$w);
+const __iconNode$y = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$y);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$x = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+];
+const Lock = createLucideIcon("lock", __iconNode$x);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$w = [
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+];
+const LogOut = createLucideIcon("log-out", __iconNode$w);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63992,10 +64002,12 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$v = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "m21 3-7 7", key: "1l2asr" }],
+  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
+  ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
 ];
-const Lock = createLucideIcon("lock", __iconNode$v);
+const Maximize2 = createLucideIcon("maximize-2", __iconNode$v);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64003,11 +64015,12 @@ const Lock = createLucideIcon("lock", __iconNode$v);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$u = [
-  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
-  ["path", { d: "M21 12H9", key: "dn1m92" }],
-  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+  ["path", { d: "M8 3H5a2 2 0 0 0-2 2v3", key: "1dcmit" }],
+  ["path", { d: "M21 8V5a2 2 0 0 0-2-2h-3", key: "1e4gt3" }],
+  ["path", { d: "M3 16v3a2 2 0 0 0 2 2h3", key: "wsl5sc" }],
+  ["path", { d: "M16 21h3a2 2 0 0 0 2-2v-3", key: "18trek" }]
 ];
-const LogOut = createLucideIcon("log-out", __iconNode$u);
+const Maximize = createLucideIcon("maximize", __iconNode$u);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64015,12 +64028,12 @@ const LogOut = createLucideIcon("log-out", __iconNode$u);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$t = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "m21 3-7 7", key: "1l2asr" }],
+  ["path", { d: "m14 10 7-7", key: "oa77jy" }],
+  ["path", { d: "M20 10h-6V4", key: "mjg0md" }],
   ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
-  ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
+  ["path", { d: "M4 14h6v6", key: "rmj7iw" }]
 ];
-const Maximize2 = createLucideIcon("maximize-2", __iconNode$t);
+const Minimize2 = createLucideIcon("minimize-2", __iconNode$t);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64028,12 +64041,11 @@ const Maximize2 = createLucideIcon("maximize-2", __iconNode$t);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$s = [
-  ["path", { d: "m14 10 7-7", key: "oa77jy" }],
-  ["path", { d: "M20 10h-6V4", key: "mjg0md" }],
-  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
-  ["path", { d: "M4 14h6v6", key: "rmj7iw" }]
+  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
+  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
+  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
 ];
-const Minimize2 = createLucideIcon("minimize-2", __iconNode$s);
+const Monitor = createLucideIcon("monitor", __iconNode$s);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64041,18 +64053,14 @@ const Minimize2 = createLucideIcon("minimize-2", __iconNode$s);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$r = [
-  [
-    "path",
-    {
-      d: "M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z",
-      key: "vbtd3f"
-    }
-  ],
-  ["path", { d: "M12 17v4", key: "1riwvh" }],
-  ["path", { d: "M8 21h8", key: "1ev6f3" }],
-  ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }]
+  ["path", { d: "M12 2v20", key: "t6zp3m" }],
+  ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
+  ["path", { d: "m19 9 3 3-3 3", key: "1mg7y2" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }],
+  ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }],
+  ["path", { d: "m9 5 3-3 3 3", key: "l8vdw6" }]
 ];
-const MonitorPlay = createLucideIcon("monitor-play", __iconNode$r);
+const Move = createLucideIcon("move", __iconNode$r);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64060,18 +64068,6 @@ const MonitorPlay = createLucideIcon("monitor-play", __iconNode$r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$q = [
-  ["rect", { width: "20", height: "14", x: "2", y: "3", rx: "2", key: "48i651" }],
-  ["line", { x1: "8", x2: "16", y1: "21", y2: "21", key: "1svkeh" }],
-  ["line", { x1: "12", x2: "12", y1: "17", y2: "21", key: "vw1qmm" }]
-];
-const Monitor = createLucideIcon("monitor", __iconNode$q);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
   [
     "path",
     {
@@ -64084,7 +64080,18 @@ const __iconNode$p = [
   ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
 ];
-const Palette = createLucideIcon("palette", __iconNode$p);
+const Palette = createLucideIcon("palette", __iconNode$q);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
+  ["rect", { x: "14", y: "3", width: "5", height: "18", rx: "1", key: "kaeet6" }],
+  ["rect", { x: "5", y: "3", width: "5", height: "18", rx: "1", key: "1wsw3u" }]
+];
+const Pause = createLucideIcon("pause", __iconNode$p);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64092,17 +64099,6 @@ const Palette = createLucideIcon("palette", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
-  ["rect", { x: "14", y: "3", width: "5", height: "18", rx: "1", key: "kaeet6" }],
-  ["rect", { x: "5", y: "3", width: "5", height: "18", rx: "1", key: "1wsw3u" }]
-];
-const Pause = createLucideIcon("pause", __iconNode$o);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$n = [
   [
     "path",
     {
@@ -64111,7 +64107,18 @@ const __iconNode$n = [
     }
   ]
 ];
-const Play = createLucideIcon("play", __iconNode$n);
+const Play = createLucideIcon("play", __iconNode$o);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$n);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -68641,6 +68648,7 @@ const translations = {
     exit_confirm_no: "لا، البقاء",
     exit_app: "خروج من التطبيق",
     dashboard_layouts: "شكل واجهة التطبيق",
+    dashboard_alignment: "موضع الأيقونات على الشاشة",
     icon_size: "حجم الأيقونات العام",
     screen_zoom: "تكبير وتصغير الشاشة",
     players_title: "مشغلات الفيديو",
@@ -68815,6 +68823,7 @@ const translations = {
     exit_confirm_no: "No, Stay",
     exit_app: "Exit Application",
     dashboard_layouts: "App UI Layout Style",
+    dashboard_alignment: "Icons Screen Position",
     icon_size: "Global Icon Size",
     screen_zoom: "Screen Zoom & TV Scale",
     players_title: "Media Players",
@@ -68989,6 +68998,7 @@ const translations = {
     exit_confirm_no: "Nein, Bleiben",
     exit_app: "Anwendung beenden",
     dashboard_layouts: "App-Oberflächenlayout",
+    dashboard_alignment: "Symbolposition auf dem Bildschirm",
     icon_size: "Globale Symbolgröße",
     screen_zoom: "Bildschirmzoom & TV-Skalierung",
     players_title: "Mediaplayer",
@@ -69163,6 +69173,7 @@ const translations = {
     exit_confirm_no: "Non, Rester",
     exit_app: "Quitter l'application",
     dashboard_layouts: "Style et disposition de l'interface",
+    dashboard_alignment: "Position des icônes à l'écran",
     icon_size: "Taille globale des icônes",
     screen_zoom: "Zoom écran & TV",
     players_title: "Lecteurs multimédias",
@@ -74025,11 +74036,7 @@ function PlaylistManager({ userId, settings, onUpdateSettings, onBack }) {
           return /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
             {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              role: "button",
-              onClick: () => handleSelect(p2),
-              className: `flex items-center justify-between p-3 rounded-xl border transition-colors cursor-pointer group relative ${isActive ? "border-gold bg-gold/15" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.08]"} ${isRtl ? "flex-row-reverse text-right" : "text-left"}`,
+              className: `flex items-center justify-between p-3 rounded-xl border transition-colors group relative ${isActive ? "border-gold bg-gold/15" : "border-white/10 bg-white/[0.04]"} ${isRtl ? "flex-row-reverse text-right" : "text-left"}`,
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-2.5 min-w-0 flex-1 ${isRtl ? "flex-row-reverse" : ""}`, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-9 h-9 rounded-lg flex items-center justify-center transition-colors shrink-0 ${isActive ? "bg-gold text-black shadow-md" : "bg-gold/15 text-gold"}`, children: p2.type === "xtream" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Server, { size: 17 }) : p2.type === "stalker" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 17 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { size: 17 }) }),
@@ -74439,172 +74446,6 @@ function PlaylistManager({ userId, settings, onUpdateSettings, onBack }) {
       }
     ) })
   ] });
-}
-const PLAYER_PACKAGES = {
-  "VLC Media Player": "org.videolan.vlc",
-  "MX Player Pro": "com.mxtech.videoplayer.pro",
-  "MX Player": "com.mxtech.videoplayer.ad",
-  "MPV Player": "is.xyz.mpv",
-  "Kodi": "org.xbmc.kodi",
-  "Just Player": "com.brouken.player",
-  "Nova Video Player": "org.courville.nova",
-  "IJK Player": "tv.danmaku.ijk.media.example",
-  "PotPlayer": "com.potplayer.video.player",
-  "KMPlayer": "com.kmplayer",
-  "ExoPlayer": "com.google.android.exoplayer2"
-};
-const getPlayerPackage = (playerName) => {
-  if (!playerName) return "";
-  if (PLAYER_PACKAGES[playerName]) return PLAYER_PACKAGES[playerName];
-  try {
-    const customMap = JSON.parse(localStorage.getItem("achour_custom_players_map") || "{}");
-    if (customMap[playerName]) return customMap[playerName];
-  } catch (e2) {
-  }
-  return "";
-};
-const saveCustomPlayerPackage = (playerName, packageName) => {
-  if (!playerName || !packageName) return;
-  try {
-    const customMap = JSON.parse(localStorage.getItem("achour_custom_players_map") || "{}");
-    customMap[playerName] = packageName;
-    localStorage.setItem("achour_custom_players_map", JSON.stringify(customMap));
-    PLAYER_PACKAGES[playerName] = packageName;
-  } catch (e2) {
-  }
-};
-function AIOcrModal({ onClose, onSelectChannel, language = "en" }) {
-  const { t, isRtl } = useI18n(language);
-  const [file, setFile] = reactExports.useState(null);
-  const [preview, setPreview] = reactExports.useState(null);
-  const [loading, setLoading] = reactExports.useState(false);
-  const [results, setResults] = reactExports.useState([]);
-  const handleFileChange = (e2) => {
-    var _a2;
-    const f2 = (_a2 = e2.target.files) == null ? void 0 : _a2[0];
-    if (f2) {
-      setFile(f2);
-      const reader = new FileReader();
-      reader.onloadend = () => setPreview(reader.result);
-      reader.readAsDataURL(f2);
-    }
-  };
-  const handleAnalyze = async () => {
-    if (!preview) return;
-    setLoading(true);
-    try {
-      const response = await fetch("/api/gemini/ocr", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: preview })
-      });
-      const data = await response.json();
-      if (data.result) {
-        if (data.result.trim().startsWith("{")) {
-          try {
-            const parsed = JSON.parse(data.result.replace(/```json|```/g, "").trim());
-            if (parsed.channels) setResults(parsed.channels);
-            else setResults([parsed.name || parsed.host || "Unknown"]);
-          } catch (e2) {
-            setResults(data.result.split(",").map((s) => s.trim()));
-          }
-        } else {
-          setResults(data.result.split(",").map((s) => s.trim()));
-        }
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `fixed inset-0 z-[100] flex items-center justify-center p-4 achour-modal-backdrop ${isRtl ? "font-cairo" : "font-sans"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      initial: { scale: 0.9, opacity: 0, y: 20 },
-      animate: { scale: 1, opacity: 1, y: 0 },
-      className: "w-full max-w-2xl achour-glass-modal border-gold/35 rounded-[2.5rem] overflow-hidden",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between p-6 border-b border-white/10 bg-white/[0.04] ${isRtl ? "flex-row-reverse" : ""}`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-4 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 bg-gold/20 text-gold rounded-2xl", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 24 }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: isRtl ? "text-right" : "text-left", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl font-black text-white uppercase tracking-wider", children: t("ai_discovery") }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-gold font-bold", children: isRtl ? "التعرف على القنوات من الصور" : "Visual Channel Recognition" })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: onClose, className: "p-2.5 hover:bg-white/10 rounded-xl transition-all text-zinc-400 hover:text-white", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 20 }) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-8", children: !preview ? /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex flex-col items-center justify-center aspect-video border-2 border-dashed border-white/10 rounded-[2rem] cursor-pointer hover:border-gold/50 hover:bg-gold/5 transition-all group relative overflow-hidden", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Upload, { size: 56, className: "text-zinc-600 group-hover:text-gold mb-4 transition-colors duration-300" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400 font-black uppercase tracking-widest text-xs group-hover:text-white transition-colors", children: isRtl ? "انقر لرفع لقطة شاشة" : "Upload Screenshot" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "file", className: "hidden", accept: "image/*", onChange: handleFileChange })
-        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative aspect-video rounded-3xl overflow-hidden border-2 border-gold/30", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: preview, className: "w-full h-full object-cover", alt: "Preview" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                onClick: () => {
-                  setFile(null);
-                  setPreview(null);
-                  setResults([]);
-                },
-                className: "absolute top-4 right-4 p-2 bg-black/75 hover:bg-red-600 text-white rounded-full transition-all border border-white/15",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
-              }
-            )
-          ] }),
-          results.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between ${isRtl ? "flex-row-reverse" : ""}`, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-black text-gold uppercase tracking-widest", children: isRtl ? "القنوات التي تم اكتشافها" : "Detected Channels" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-lg border border-emerald-500/30", children: [
-                results.length,
-                " ",
-                isRtl ? "نتائج" : "Results"
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex flex-wrap gap-2 ${isRtl ? "flex-row-reverse" : ""}`, children: results.map((res, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                "data-tv-focusable": "true",
-                onClick: () => onSelectChannel(res),
-                className: "px-5 py-2.5 bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold rounded-2xl text-sm font-bold transition-all active:scale-95 shadow-md",
-                children: res
-              },
-              i2
-            )) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                onClick: () => {
-                  setResults([]);
-                  setPreview(null);
-                },
-                className: "w-full py-3 text-zinc-500 hover:text-white text-xs font-bold uppercase transition-colors",
-                children: isRtl ? "إعادة المحاولة" : "Try Another Image"
-              }
-            )
-          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              disabled: loading,
-              "data-tv-focusable": "true",
-              onClick: handleAnalyze,
-              className: "w-full py-5 bg-gold text-black font-black uppercase tracking-[0.2em] rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-98 disabled:opacity-50 transition-all group overflow-hidden relative",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12" }),
-                loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { size: 20, className: "fill-current" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: loading ? t("ai_analyzing") : isRtl ? "بدء التحليل الذكي" : "Start AI Analysis" })
-              ]
-            }
-          )
-        ] }) })
-      ]
-    }
-  ) });
 }
 const isFiniteNumber = Number.isFinite || function(value) {
   return typeof value === "number" && isFinite(value);
@@ -111943,6 +111784,172 @@ class Hls {
   }
 }
 Hls.defaultConfig = void 0;
+const PLAYER_PACKAGES = {
+  "VLC Media Player": "org.videolan.vlc",
+  "MX Player Pro": "com.mxtech.videoplayer.pro",
+  "MX Player": "com.mxtech.videoplayer.ad",
+  "MPV Player": "is.xyz.mpv",
+  "Kodi": "org.xbmc.kodi",
+  "Just Player": "com.brouken.player",
+  "Nova Video Player": "org.courville.nova",
+  "IJK Player": "tv.danmaku.ijk.media.example",
+  "PotPlayer": "com.potplayer.video.player",
+  "KMPlayer": "com.kmplayer",
+  "ExoPlayer": "com.google.android.exoplayer2"
+};
+const getPlayerPackage = (playerName) => {
+  if (!playerName) return "";
+  if (PLAYER_PACKAGES[playerName]) return PLAYER_PACKAGES[playerName];
+  try {
+    const customMap = JSON.parse(localStorage.getItem("achour_custom_players_map") || "{}");
+    if (customMap[playerName]) return customMap[playerName];
+  } catch (e2) {
+  }
+  return "";
+};
+const saveCustomPlayerPackage = (playerName, packageName) => {
+  if (!playerName || !packageName) return;
+  try {
+    const customMap = JSON.parse(localStorage.getItem("achour_custom_players_map") || "{}");
+    customMap[playerName] = packageName;
+    localStorage.setItem("achour_custom_players_map", JSON.stringify(customMap));
+    PLAYER_PACKAGES[playerName] = packageName;
+  } catch (e2) {
+  }
+};
+function AIOcrModal({ onClose, onSelectChannel, language = "en" }) {
+  const { t, isRtl } = useI18n(language);
+  const [file, setFile] = reactExports.useState(null);
+  const [preview, setPreview] = reactExports.useState(null);
+  const [loading, setLoading] = reactExports.useState(false);
+  const [results, setResults] = reactExports.useState([]);
+  const handleFileChange = (e2) => {
+    var _a2;
+    const f2 = (_a2 = e2.target.files) == null ? void 0 : _a2[0];
+    if (f2) {
+      setFile(f2);
+      const reader = new FileReader();
+      reader.onloadend = () => setPreview(reader.result);
+      reader.readAsDataURL(f2);
+    }
+  };
+  const handleAnalyze = async () => {
+    if (!preview) return;
+    setLoading(true);
+    try {
+      const response = await fetch("/api/gemini/ocr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: preview })
+      });
+      const data = await response.json();
+      if (data.result) {
+        if (data.result.trim().startsWith("{")) {
+          try {
+            const parsed = JSON.parse(data.result.replace(/```json|```/g, "").trim());
+            if (parsed.channels) setResults(parsed.channels);
+            else setResults([parsed.name || parsed.host || "Unknown"]);
+          } catch (e2) {
+            setResults(data.result.split(",").map((s) => s.trim()));
+          }
+        } else {
+          setResults(data.result.split(",").map((s) => s.trim()));
+        }
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `fixed inset-0 z-[100] flex items-center justify-center p-4 achour-modal-backdrop ${isRtl ? "font-cairo" : "font-sans"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { scale: 0.9, opacity: 0, y: 20 },
+      animate: { scale: 1, opacity: 1, y: 0 },
+      className: "w-full max-w-2xl achour-glass-modal border-gold/35 rounded-[2.5rem] overflow-hidden",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between p-6 border-b border-white/10 bg-white/[0.04] ${isRtl ? "flex-row-reverse" : ""}`, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-4 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 bg-gold/20 text-gold rounded-2xl", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { size: 24 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: isRtl ? "text-right" : "text-left", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl font-black text-white uppercase tracking-wider", children: t("ai_discovery") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-gold font-bold", children: isRtl ? "التعرف على القنوات من الصور" : "Visual Channel Recognition" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: onClose, className: "p-2.5 hover:bg-white/10 rounded-xl transition-all text-zinc-400 hover:text-white", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 20 }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-8", children: !preview ? /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex flex-col items-center justify-center aspect-video border-2 border-dashed border-white/10 rounded-[2rem] cursor-pointer hover:border-gold/50 hover:bg-gold/5 transition-all group relative overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Upload, { size: 56, className: "text-zinc-600 group-hover:text-gold mb-4 transition-colors duration-300" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400 font-black uppercase tracking-widest text-xs group-hover:text-white transition-colors", children: isRtl ? "انقر لرفع لقطة شاشة" : "Upload Screenshot" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "file", className: "hidden", accept: "image/*", onChange: handleFileChange })
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative aspect-video rounded-3xl overflow-hidden border-2 border-gold/30", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: preview, className: "w-full h-full object-cover", alt: "Preview" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: () => {
+                  setFile(null);
+                  setPreview(null);
+                  setResults([]);
+                },
+                className: "absolute top-4 right-4 p-2 bg-black/75 hover:bg-red-600 text-white rounded-full transition-all border border-white/15",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
+              }
+            )
+          ] }),
+          results.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between ${isRtl ? "flex-row-reverse" : ""}`, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-black text-gold uppercase tracking-widest", children: isRtl ? "القنوات التي تم اكتشافها" : "Detected Channels" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded-lg border border-emerald-500/30", children: [
+                results.length,
+                " ",
+                isRtl ? "نتائج" : "Results"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex flex-wrap gap-2 ${isRtl ? "flex-row-reverse" : ""}`, children: results.map((res, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                "data-tv-focusable": "true",
+                onClick: () => onSelectChannel(res),
+                className: "px-5 py-2.5 bg-white/5 hover:bg-gold hover:text-black border border-white/10 hover:border-gold rounded-2xl text-sm font-bold transition-all active:scale-95 shadow-md",
+                children: res
+              },
+              i2
+            )) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: () => {
+                  setResults([]);
+                  setPreview(null);
+                },
+                className: "w-full py-3 text-zinc-500 hover:text-white text-xs font-bold uppercase transition-colors",
+                children: isRtl ? "إعادة المحاولة" : "Try Another Image"
+              }
+            )
+          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              disabled: loading,
+              "data-tv-focusable": "true",
+              onClick: handleAnalyze,
+              className: "w-full py-5 bg-gold text-black font-black uppercase tracking-[0.2em] rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-98 disabled:opacity-50 transition-all group overflow-hidden relative",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12" }),
+                loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { size: 20, className: "fill-current" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: loading ? t("ai_analyzing") : isRtl ? "بدء التحليل الذكي" : "Start AI Analysis" })
+              ]
+            }
+          )
+        ] }) })
+      ]
+    }
+  ) });
+}
 const LANG_MAP = {
   ar: "العربية (Arabic)",
   en: "English",
@@ -113117,8 +113124,7 @@ const VodPlayerModal = ({
             startPositionMs: startPositionSec > 0 ? Math.round(startPositionSec * 1e3) : 0,
             subtitles: !isLive && externalSubtitles.length > 0 ? externalSubtitles : void 0,
             headers: {
-              "User-Agent": "Android/Media3/1.4.1",
-              "X-Requested-With": "com.achourplayer.app"
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             }
           }),
           initialBounds.x,
@@ -113321,17 +113327,17 @@ const VodPlayerModal = ({
       const lowMem = isTVOrLowEndDevice();
       hls = new Hls({
         enableWorker: true,
-        lowLatencyMode: isLive && !lowMem,
+        lowLatencyMode: false,
         startFragPrefetch: isLive,
-        backBufferLength: isLive ? lowMem ? 4 : 6 : lowMem ? 12 : 30,
-        maxBufferLength: isLive ? 6 : lowMem ? 20 : 60,
-        maxMaxBufferLength: isLive ? lowMem ? 12 : 15 : lowMem ? 45 : 120,
+        backBufferLength: isLive ? lowMem ? 4 : 8 : lowMem ? 12 : 30,
+        maxBufferLength: isLive ? 10 : lowMem ? 20 : 60,
+        maxMaxBufferLength: isLive ? lowMem ? 16 : 24 : lowMem ? 45 : 120,
         maxBufferSize: isLive ? lowMem ? 16 * 1024 * 1024 : 32 * 1024 * 1024 : lowMem ? 48 * 1024 * 1024 : 128 * 1024 * 1024,
-        liveSyncDurationCount: isLive ? lowMem ? 2 : 1 : 2,
-        liveMaxLatencyDurationCount: isLive ? 5 : Infinity,
+        liveSyncDurationCount: isLive ? 3 : 2,
+        liveMaxLatencyDurationCount: isLive ? 8 : Infinity,
         maxBufferHole: 0.5,
         highBufferWatchdogPeriod: isLive ? 1 : 0,
-        maxStarvationDelay: isLive ? 2 : 4,
+        maxStarvationDelay: isLive ? 3 : 4,
         nudgeOffset: 0.1,
         nudgeMaxRetry: 5,
         manifestLoadingMaxRetry: 3,
@@ -114628,7 +114634,7 @@ const VodPlayerModal = ({
                     children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: "w-full achour-glass-bar rounded-3xl px-4 py-3 sm:px-6 sm:py-4.5 flex items-center justify-between gap-3 sm:gap-4 min-w-0",
+                        className: "w-full bg-black/45 border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] rounded-3xl px-4 py-3 sm:px-6 sm:py-4.5 flex items-center justify-between gap-3 sm:gap-4 min-w-0",
                         children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--theme-primary,#e5a00d)] text-black font-mono font-black text-sm sm:text-lg rounded-2xl shrink-0 shadow-inner", children: String(channelIndex).padStart(3, "0") }),
                           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-13 h-13 sm:w-20 sm:h-20 rounded-2xl bg-white/95 border border-white/25 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shrink-0 shadow-md", children: activeVod.stream_icon || activeVod.logo || activeVod.cover ? /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -114706,7 +114712,7 @@ const VodPlayerModal = ({
                       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                         "div",
                         {
-                          className: "w-full achour-glass-bar rounded-3xl px-3.5 py-2.5 flex flex-col gap-2",
+                          className: "w-full bg-black/45 border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] rounded-3xl px-3.5 py-2.5 flex flex-col gap-2",
                           children: [
                             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
                               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-11 h-14 rounded-xl border border-white/20 bg-black/60 overflow-hidden shrink-0 shadow-md flex items-center justify-center", children: activeVod.stream_icon || activeVod.cover || activeVod.logo ? /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -115585,7 +115591,7 @@ const VOD_LIST_ITEM_HEIGHT = 78;
 const GRID_ROW_HEIGHT = 380;
 const FIRE_TV_GRID_ROW_HEIGHT = 380;
 const LIST_TOP_PADDING = 4;
-const LIST_BOTTOM_PADDING = 64;
+const LIST_BOTTOM_PADDING = 8;
 const FAILED_URL_CAP = 800;
 const LOADED_URL_CAP = 400;
 const failedImageUrls = /* @__PURE__ */ new Set();
@@ -115859,7 +115865,7 @@ const LiveChannelRow = React$2.memo(({
             onSelectChannel(ch);
             if (onDoubleClickChannel) onDoubleClickChannel(ch);
           },
-          className: `w-full h-full flex items-center gap-3 px-3 py-2 rounded-2xl transition-colors relative group cursor-pointer outline-none bg-transparent ${isSelected ? "text-gold font-bold" : "text-zinc-300 hover:text-white"} ${isRtl ? "flex-row-reverse text-right" : "text-left"}`,
+          className: `w-full h-full flex items-center gap-3 px-3 py-2 rounded-2xl transition-colors relative group cursor-pointer outline-none bg-transparent ${isSelected ? "text-gold font-bold" : "text-zinc-300 hover:text-white"} ${isRtl ? "text-right" : "text-left"}`,
           title: mediaType === "live" ? isRtl ? "اضغط مطولاً أو انقر بالزر الأيمن لنقل القناة أو تغيير رقمها" : "Long press or right click to reorder channel position" : void 0,
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-9 text-xs sm:text-sm text-gold font-mono font-black shrink-0 text-center select-none", tabIndex: -1, children: idx + 1 }),
@@ -115931,7 +115937,7 @@ const VodListRow = React$2.memo(({
             onSelectChannel(ch);
             if (fetchMediaDetails) fetchMediaDetails(ch);
           },
-          className: `w-full h-full flex items-center gap-3 px-3 py-1.5 rounded-2xl transition-colors relative group cursor-pointer outline-none bg-transparent ${isSelected ? "text-gold font-bold" : "text-zinc-200 hover:text-white"} ${isRtl ? "flex-row-reverse text-right" : "text-left"}`,
+          className: `w-full h-full flex items-center gap-3 px-3 py-1.5 rounded-2xl transition-colors relative group cursor-pointer outline-none bg-transparent ${isSelected ? "text-gold font-bold" : "text-zinc-200 hover:text-white"} ${isRtl ? "text-right" : "text-left"}`,
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-11 h-16 rounded-xl bg-transparent flex items-center justify-center overflow-hidden shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               CachedMediaImage,
@@ -115945,7 +115951,7 @@ const VodListRow = React$2.memo(({
             ) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col flex-1 min-w-0 justify-center gap-1", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-sm sm:text-base font-bold truncate leading-tight ${isSelected ? "text-gold" : "text-white group-hover:text-gold"}`, children: ch.name }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center flex-wrap gap-2 text-[11px] font-medium text-zinc-400 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center flex-wrap gap-2 text-[11px] font-medium text-zinc-400", children: [
                 ch.category_name && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold/90 truncate max-w-[180px]", children: ch.category_name }),
                 ratingVal && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-gold flex items-center gap-1 font-mono", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { size: 10, className: "fill-gold" }),
@@ -116026,7 +116032,6 @@ const VodPosterCard = React$2.memo(({
                   thumbnailVariant: "poster"
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-150 z-10 pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 20, className: "fill-black ml-0.5" }) }) }),
               Number(ch.progressPositionSec || 0) >= 8 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-0 left-0 right-0 h-1.5 bg-black/75 z-10 pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
@@ -116105,7 +116110,7 @@ const VirtualizedChannelList = React$2.forwardRef(({
   const posterHeight = isVodGrid ? posterSize === "small" ? Math.max(70, Math.min(maxPosterHFromWidth, Math.floor(maxPosterHFromTwoRows * 0.8))) : posterSize === "large" ? Math.max(100, Math.min(maxPosterHFromWidth, Math.floor(containerHeight * 0.72) - titleStripHeight)) : Math.max(80, Math.min(maxPosterHFromTwoRows, maxPosterHFromWidth)) : 340;
   const gridCardHeight = isVodGrid ? posterHeight + titleStripHeight : 340;
   const gridCardWidth = isVodGrid ? Math.max(56, Math.round(posterHeight * (2 / 3))) : 226;
-  const gridBottomPad = isVodGrid ? posterSize === "large" ? Math.max(gridTopPad, 24) : Math.max(gridTopPad, containerHeight - gridTopPad - gridCardHeight * 2 - gridVertGap) : 36;
+  const gridBottomPad = isVodGrid ? Math.max(6, gridTopPad) : 8;
   const extraHorizSpace = Math.max(0, containerWidth - gridCardWidth * activeCols);
   const gridHorizGap = activeCols > 1 ? Math.max(minHorizGap, Math.min(56, Math.floor(extraHorizSpace / (activeCols + 1)))) : 0;
   const gridHorizPad = Math.max(
@@ -116206,17 +116211,22 @@ const VirtualizedChannelList = React$2.forwardRef(({
     const currentContainerHeight = container.clientHeight && container.clientHeight > 50 ? container.clientHeight : containerHeight > 50 ? containerHeight : 600;
     if (isVodGrid) {
       const rowIndex = Math.floor(safeIdx / activeCols);
+      const totalRows = Math.ceil(items.length / activeCols);
+      const totalContentH = totalRows > 0 ? gridTopPad + totalRows * gridRowHeight - gridVertGap + gridBottomPad : 0;
+      const maxScroll = Math.max(0, totalContentH - currentContainerHeight);
       const rowTop = gridTopPad + rowIndex * gridRowHeight;
       const rowBottom = rowTop + gridCardHeight;
       const viewTop = container.scrollTop;
       const viewBottom = viewTop + currentContainerHeight;
       if (rowTop - gridTopPad < viewTop) {
-        targetScroll = Math.max(0, rowIndex * gridRowHeight);
+        targetScroll = Math.max(0, rowTop - gridTopPad);
       } else if (rowBottom + gridBottomPad > viewBottom) {
-        targetScroll = posterSize === "large" ? Math.max(0, rowBottom + gridBottomPad - currentContainerHeight) : Math.max(0, (rowIndex - 1) * gridRowHeight);
+        targetScroll = Math.min(maxScroll, Math.max(0, rowBottom + gridBottomPad - currentContainerHeight));
       }
     } else {
       const safeMargin = 36;
+      const totalContentH = LIST_TOP_PADDING + items.length * activeListItemHeight + LIST_BOTTOM_PADDING;
+      const maxScroll = Math.max(0, totalContentH - currentContainerHeight);
       const itemTop = LIST_TOP_PADDING + safeIdx * activeListItemHeight;
       const itemBottom = itemTop + activeListItemHeight;
       const viewTop = container.scrollTop;
@@ -116224,13 +116234,14 @@ const VirtualizedChannelList = React$2.forwardRef(({
       if (itemTop - safeMargin < viewTop) {
         targetScroll = Math.max(0, itemTop - safeMargin);
       } else if (itemBottom + safeMargin > viewBottom) {
-        targetScroll = Math.max(0, itemBottom + safeMargin - currentContainerHeight);
+        targetScroll = Math.min(maxScroll, Math.max(0, itemBottom + safeMargin - currentContainerHeight));
       }
     }
     if (targetScroll !== null && Math.abs(targetScroll - container.scrollTop) > 1) {
       container.scrollTop = targetScroll;
-      lastScrollTopRef.current = targetScroll;
-      setScrollTop(targetScroll);
+      const actualTop = container.scrollTop;
+      lastScrollTopRef.current = actualTop;
+      setScrollTop(actualTop);
       if (!focusDomItemByIndex(safeIdx)) {
         pendingFocusIdxRef.current = safeIdx;
       } else {
@@ -116299,18 +116310,21 @@ const VirtualizedChannelList = React$2.forwardRef(({
       }
     } else {
       const rowIndex = Math.floor(index2 / activeCols);
+      const totalRows = Math.ceil(items.length / activeCols);
+      const totalContentH = totalRows > 0 ? gridTopPad + totalRows * gridRowHeight - gridVertGap + gridBottomPad : 0;
+      const maxScroll = Math.max(0, totalContentH - containerHeight);
       const rowTop = gridTopPad + rowIndex * gridRowHeight;
       const rowBottom = rowTop + gridCardHeight;
       const viewTop = container.scrollTop;
       const viewBottom = viewTop + containerHeight;
       if (rowTop - gridTopPad < viewTop) {
-        const target = Math.max(0, rowIndex * gridRowHeight);
+        const target = Math.max(0, rowTop - gridTopPad);
         container.scrollTop = target;
-        setScrollTop(target);
+        setScrollTop(container.scrollTop);
       } else if (rowBottom + gridBottomPad > viewBottom) {
-        const target = posterSize === "large" ? Math.max(0, rowBottom + gridBottomPad - containerHeight) : Math.max(0, (rowIndex - 1) * gridRowHeight);
+        const target = Math.min(maxScroll, Math.max(0, rowBottom + gridBottomPad - containerHeight));
         container.scrollTop = target;
-        setScrollTop(target);
+        setScrollTop(container.scrollTop);
       }
     }
   }, [
@@ -116343,9 +116357,10 @@ const VirtualizedChannelList = React$2.forwardRef(({
   const listVirtualBounds = reactExports.useMemo(() => {
     var _a2;
     const totalCount = items.length;
-    const totalHeight = LIST_TOP_PADDING + totalCount * activeListItemHeight + LIST_BOTTOM_PADDING;
     const listScrollTop = Math.max(0, scrollTop - LIST_TOP_PADDING);
     const effectiveHeight = ((_a2 = containerRef.current) == null ? void 0 : _a2.clientHeight) && containerRef.current.clientHeight > 50 ? containerRef.current.clientHeight : containerHeight > 50 ? containerHeight : 600;
+    const adaptiveBottomPad = LIST_BOTTOM_PADDING;
+    const totalHeight = LIST_TOP_PADDING + totalCount * activeListItemHeight + adaptiveBottomPad;
     let startIndex = Math.max(0, Math.floor(listScrollTop / activeListItemHeight) - listOverscan);
     let endIndex = Math.min(
       totalCount,
@@ -116559,11 +116574,11 @@ function PositionEditModal({
   }, [maxPosition]);
   const handleMoveUp = () => {
     const currentNum = parseInt(position, 10) || currentIndex + 1;
-    setPosition(clampPos(currentNum - 1).toString());
+    onSave(clampPos(currentNum - 1));
   };
   const handleMoveDown = () => {
     const currentNum = parseInt(position, 10) || currentIndex + 1;
-    setPosition(clampPos(currentNum + 1).toString());
+    onSave(clampPos(currentNum + 1));
   };
   const handleSave = reactExports.useCallback(() => {
     const targetPos = parseInt(position, 10);
@@ -116744,7 +116759,6 @@ function PositionEditModal({
     }
   );
 }
-const logoImg = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><rect width="200" height="200" rx="40" fill="%23000000"/><rect x="10" y="10" width="180" height="180" rx="30" fill="none" stroke="%23D4AF37" stroke-width="4"/><path d="M75 55 L145 100 L75 145 Z" fill="%23D4AF37"/><circle cx="100" cy="100" r="85" fill="none" stroke="%23D4AF37" stroke-width="2" stroke-dasharray="8,6"/></svg>`;
 const STORAGE_KEY = "achour_recents";
 const MAX_RECENTS = 50;
 let recentsCache = null;
@@ -117024,7 +117038,7 @@ const useLongPress = (callback, ms = 500, enabled = true) => {
     onClick
   };
 };
-const CategoryButton = React$2.memo(({ cat, catIdx, isSelected, onSelect, onFocusIdx, onReorder, categories }) => {
+const CategoryButton = React$2.memo(({ cat, catIdx, isSelected, onSelect, onFocusIdx, onReorder, categories, showNumber }) => {
   const canReorder = Boolean(onReorder) && (cat == null ? void 0 : cat.category_id) !== WATCH_HISTORY_CAT_ID && (cat == null ? void 0 : cat.category_id) !== CONTINUE_WATCHING_CAT_ID && (cat == null ? void 0 : cat.category_id) !== "favorites";
   const longPress = useLongPress(() => {
     if (canReorder && onReorder) {
@@ -117052,6 +117066,7 @@ const CategoryButton = React$2.memo(({ cat, catIdx, isSelected, onSelect, onFocu
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 min-w-0 flex-1 pr-1", children: [
           isSelected && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-4 rounded-full bg-gold shrink-0" }),
+          showNumber && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono font-bold text-gold/80 shrink-0 min-w-[1.5rem] text-center select-none", children: catIdx + 1 }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate text-xs sm:text-sm md:text-base font-medium leading-snug", children: cat.category_name })
         ] }),
         cat.count > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] sm:text-xs font-mono font-bold text-zinc-400 shrink-0", children: cat.count })
@@ -117060,9 +117075,9 @@ const CategoryButton = React$2.memo(({ cat, catIdx, isSelected, onSelect, onFocu
   );
 });
 const CAT_ROW_HEIGHT = 44;
-const CAT_TOP_INSET = 8;
-const CAT_BOTTOM_BUFFER = 160;
-const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, selectedCategory, onSelect, onFocusIdx, onReorder }, ref) => {
+const CAT_TOP_INSET = 4;
+const CAT_BOTTOM_BUFFER = 4;
+const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, selectedCategory, onSelect, onFocusIdx, onReorder, showNumber = false }, ref) => {
   const scrollRef = reactExports.useRef(null);
   const [scrollTop, setScrollTop] = reactExports.useState(0);
   const [viewportH, setViewportH] = reactExports.useState(560);
@@ -117073,16 +117088,18 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
     const rect = el.getBoundingClientRect();
     const winH = typeof window !== "undefined" && window.innerHeight > 0 ? window.innerHeight : 0;
     const rawH = el.clientHeight > 40 ? el.clientHeight : viewportH;
+    const zoomFactor = rect.height > 0 && rawH > 0 ? rect.height / rawH : 1;
     if (winH > 0 && rect.height > 0) {
       const clampedBottom = Math.min(rect.bottom, winH);
-      const visibleFromWindow = Math.floor(clampedBottom - Math.max(0, rect.top));
+      const visibleFromWindow = Math.floor((clampedBottom - Math.max(0, rect.top)) / zoomFactor);
       const effectiveH = Math.max(120, Math.min(rawH, visibleFromWindow));
-      return { effectiveH, visibleTop: Math.max(0, rect.top), visibleBottom: clampedBottom };
+      return { effectiveH, visibleTop: Math.max(0, rect.top), visibleBottom: clampedBottom, zoomFactor };
     }
     return {
       effectiveH: Math.max(120, rawH),
       visibleTop: rect.top,
-      visibleBottom: rect.top + rawH
+      visibleBottom: rect.top + rawH,
+      zoomFactor: 1
     };
   }, [viewportH]);
   React$2.useLayoutEffect(() => {
@@ -117116,26 +117133,28 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
     if (curFocusIdx > endIdx) endIdx = Math.min(total - 1, curFocusIdx + 2);
   }
   const ensureTargetRectVisible = reactExports.useCallback((el, target) => {
-    const { effectiveH, visibleTop, visibleBottom } = getVisibleViewportMetrics(el);
-    const safePad = Math.max(76, Math.min(120, Math.round(effectiveH * 0.14)));
+    const { effectiveH, visibleTop, visibleBottom, zoomFactor } = getVisibleViewportMetrics(el);
+    const safePad = Math.max(64, Math.min(104, Math.round(effectiveH * 0.12))) * zoomFactor;
     const targetRect = target.getBoundingClientRect();
     if (targetRect.height <= 0) return;
     if (targetRect.top < visibleTop + safePad) {
-      const delta = visibleTop + safePad - targetRect.top;
+      const delta = (visibleTop + safePad - targetRect.top) / zoomFactor;
       const nextTop = Math.max(0, el.scrollTop - delta);
       if (Math.abs(nextTop - el.scrollTop) > 1) {
         el.scrollTop = nextTop;
-        lastScrollTopRef.current = nextTop;
-        setScrollTop(nextTop);
+        const clampedTop = el.scrollTop;
+        lastScrollTopRef.current = clampedTop;
+        setScrollTop(clampedTop);
       }
     } else if (targetRect.bottom > visibleBottom - safePad) {
-      const delta = targetRect.bottom - (visibleBottom - safePad);
+      const delta = (targetRect.bottom - (visibleBottom - safePad)) / zoomFactor;
       const maxScroll = Math.max(0, el.scrollHeight - el.clientHeight);
       const nextTop = Math.min(maxScroll, el.scrollTop + delta);
       if (Math.abs(nextTop - el.scrollTop) > 1) {
         el.scrollTop = nextTop;
-        lastScrollTopRef.current = nextTop;
-        setScrollTop(nextTop);
+        const clampedTop = el.scrollTop;
+        lastScrollTopRef.current = clampedTop;
+        setScrollTop(clampedTop);
       }
     }
   }, [getVisibleViewportMetrics]);
@@ -117158,7 +117177,7 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
       const el = scrollRef.current;
       if (el) {
         const { effectiveH } = getVisibleViewportMetrics(el);
-        const safePad = Math.max(76, Math.min(120, Math.round(effectiveH * 0.14)));
+        const safePad = Math.max(64, Math.min(104, Math.round(effectiveH * 0.12)));
         const rowTop = CAT_TOP_INSET + safeIdx * CAT_ROW_HEIGHT;
         const rowBottom = rowTop + CAT_ROW_HEIGHT;
         const curTop = el.scrollTop;
@@ -117168,15 +117187,17 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
           const nextTop = Math.max(0, rowTop - safePad);
           if (Math.abs(nextTop - curTop) > 1) {
             el.scrollTop = nextTop;
-            lastScrollTopRef.current = nextTop;
-            setScrollTop(nextTop);
+            const clampedTop = el.scrollTop;
+            lastScrollTopRef.current = clampedTop;
+            setScrollTop(clampedTop);
           }
         } else if (rowBottom + safePad > curTop + effectiveH) {
           const nextTop = Math.min(maxScroll, Math.max(0, rowBottom + safePad - effectiveH));
           if (Math.abs(nextTop - curTop) > 1) {
             el.scrollTop = nextTop;
-            lastScrollTopRef.current = nextTop;
-            setScrollTop(nextTop);
+            const clampedTop = el.scrollTop;
+            lastScrollTopRef.current = clampedTop;
+            setScrollTop(clampedTop);
           }
         }
       }
@@ -117231,7 +117252,8 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
               isSelected: selectedCategory === cat.category_id,
               onSelect,
               onFocusIdx,
-              onReorder
+              onReorder,
+              showNumber
             }
           )
         },
@@ -117239,6 +117261,7 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
       )
     );
   }
+  const adaptiveBottomBuf = CAT_BOTTOM_BUFFER;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
@@ -117258,14 +117281,14 @@ const VirtualizedCategoryList = React$2.forwardRef(({ categories, realLiveCats, 
       className: "flex-1 min-h-0 overflow-y-auto overflow-x-hidden no-scrollbar px-2",
       style: {
         contain: "layout style",
-        scrollPaddingTop: "76px",
-        scrollPaddingBottom: `${CAT_BOTTOM_BUFFER}px`
+        scrollPaddingTop: "64px",
+        scrollPaddingBottom: `${adaptiveBottomBuf}px`
       },
       children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
           style: {
-            height: `${CAT_TOP_INSET + total * CAT_ROW_HEIGHT + CAT_BOTTOM_BUFFER}px`,
+            height: `${CAT_TOP_INSET + total * CAT_ROW_HEIGHT + adaptiveBottomBuf}px`,
             position: "relative",
             width: "100%"
           },
@@ -117445,8 +117468,352 @@ if (typeof window !== "undefined") {
     trimDbMemoryCaches();
   });
 }
+const syncMultiViewNativeOverlay = (isFullscreenSlot) => {
+  if (typeof document === "undefined" || typeof window === "undefined") return;
+  const native = window.AchourNative;
+  if (!isNativeApp() || !(native == null ? void 0 : native.showMultiSlot)) return;
+  const docEl = document.documentElement;
+  const bodyEl = document.body;
+  if (isFullscreenSlot) {
+    docEl.classList.add("native-player-active");
+    bodyEl.classList.add("native-player-active");
+    docEl.classList.remove("native-player-preview");
+    bodyEl.classList.remove("native-player-preview");
+    docEl.style.removeProperty("--native-preview-clip");
+    return;
+  }
+  const holeEls = Array.from(document.querySelectorAll('[data-multiview-native-hole="true"]'));
+  const holes = [];
+  for (const el of holeEls) {
+    const r = el.getBoundingClientRect();
+    if (r.width > 10 && r.height > 10) {
+      const x2 = Math.max(0, Math.round(r.left));
+      const y2 = Math.max(0, Math.round(r.top));
+      const w = Math.max(0, Math.round(r.width));
+      const h = Math.max(0, Math.round(r.height));
+      holes.push(`${x2}px ${y2}px, ${x2}px ${y2 + h}px, ${x2 + w}px ${y2 + h}px, ${x2 + w}px ${y2}px, ${x2}px ${y2}px, 0px 0px`);
+    }
+  }
+  if (holes.length > 0) {
+    docEl.classList.add("native-player-active", "native-player-preview");
+    bodyEl.classList.add("native-player-active", "native-player-preview");
+    docEl.style.setProperty(
+      "--native-preview-clip",
+      `polygon(evenodd, 0px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 0px, ${holes.join(", ")})`
+    );
+  } else {
+    docEl.classList.remove("native-player-active", "native-player-preview");
+    bodyEl.classList.remove("native-player-active", "native-player-preview");
+    docEl.style.removeProperty("--native-preview-clip");
+  }
+};
+const MultiViewSlotPlayer = ({
+  channel: channel2,
+  isActive,
+  isMuted,
+  isFullscreenSlot = false,
+  settings,
+  onSelectSlot,
+  onToggleMute,
+  onOpenFullscreen,
+  onRemove,
+  slotIndex,
+  isRtl
+}) => {
+  const slotRef = reactExports.useRef(null);
+  const videoRef = reactExports.useRef(null);
+  const hlsRef = reactExports.useRef(null);
+  const isMutedRef = reactExports.useRef(isMuted);
+  isMutedRef.current = isMuted;
+  const isFullscreenRef = reactExports.useRef(isFullscreenSlot);
+  isFullscreenRef.current = isFullscreenSlot;
+  const native = typeof window !== "undefined" ? window.AchourNative : null;
+  const isNativeActive = isNativeApp() && !!(native == null ? void 0 : native.showMultiSlot);
+  const [loading, setLoading] = reactExports.useState(true);
+  const [error, setError] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    var _a2;
+    if (!isNativeActive) return;
+    try {
+      (_a2 = native.setMultiSlotVolume) == null ? void 0 : _a2.call(native, slotIndex, isMuted ? 0 : 1);
+    } catch {
+    }
+  }, [isNativeActive, isMuted, slotIndex]);
+  reactExports.useEffect(() => {
+    if (!isNativeActive) return;
+    let lastKey2 = "";
+    const syncSlotBounds = () => {
+      var _a2, _b2;
+      syncMultiViewNativeOverlay(Boolean(isFullscreenRef.current));
+      let b2 = { x: 0, y: 0, width: 0, height: 0 };
+      if (!isFullscreenRef.current) {
+        const rect = (_a2 = slotRef.current) == null ? void 0 : _a2.getBoundingClientRect();
+        if (rect && rect.width > 10 && rect.height > 10) {
+          b2 = {
+            x: Math.round(rect.left),
+            y: Math.round(rect.top),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height)
+          };
+        } else {
+          return;
+        }
+      }
+      const key = `${b2.x},${b2.y},${b2.width},${b2.height}`;
+      if (key === lastKey2) return;
+      lastKey2 = key;
+      try {
+        (_b2 = native.updateMultiSlotBounds) == null ? void 0 : _b2.call(native, slotIndex, b2.x, b2.y, b2.width, b2.height);
+      } catch {
+      }
+    };
+    const rafId = requestAnimationFrame(syncSlotBounds);
+    const settleTimer = setTimeout(syncSlotBounds, 90);
+    window.addEventListener("resize", syncSlotBounds);
+    let ro = null;
+    if (slotRef.current && typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(syncSlotBounds);
+      ro.observe(slotRef.current);
+    }
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(settleTimer);
+      ro == null ? void 0 : ro.disconnect();
+      window.removeEventListener("resize", syncSlotBounds);
+    };
+  }, [isNativeActive, isFullscreenSlot, slotIndex, channel2 == null ? void 0 : channel2.stream_id, channel2 == null ? void 0 : channel2.url]);
+  reactExports.useEffect(() => {
+    var _a2;
+    if (!channel2) return;
+    let destroyed = false;
+    setLoading(true);
+    setError(false);
+    let playUrl = channel2.url || channel2.stream_url || "";
+    if (!isNativeActive && playUrl && (playUrl.includes("/live/") && playUrl.endsWith(".ts") || playUrl.endsWith(".ts"))) {
+      playUrl = playUrl.replace(/\.ts$/, ".m3u8");
+    }
+    const activeStreamUrl = playUrl && (playUrl.startsWith("http://") || playUrl.startsWith("https://")) && !playUrl.includes("/api/proxy/stream") ? getPlatformUrl("stream", playUrl, { vpnRegion: (settings == null ? void 0 : settings.vpnRegion) || "auto" }) : playUrl;
+    if (!activeStreamUrl) {
+      setError(true);
+      setLoading(false);
+      return;
+    }
+    if (isNativeActive && (native == null ? void 0 : native.showMultiSlot)) {
+      let b2 = { x: 0, y: 0, width: 0, height: 0 };
+      if (!isFullscreenRef.current) {
+        const rect = (_a2 = slotRef.current) == null ? void 0 : _a2.getBoundingClientRect();
+        if (rect && rect.width > 10 && rect.height > 10) {
+          b2 = {
+            x: Math.round(rect.left),
+            y: Math.round(rect.top),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height)
+          };
+        }
+      }
+      syncMultiViewNativeOverlay(Boolean(isFullscreenRef.current));
+      try {
+        native.showMultiSlot(
+          slotIndex,
+          activeStreamUrl,
+          JSON.stringify({
+            title: channel2.name || "Achour TV",
+            isLive: true,
+            autoPlay: true,
+            muted: isMutedRef.current,
+            volume: isMutedRef.current ? 0 : 1,
+            headers: {
+              "User-Agent": "Android/Media3/1.4.1",
+              "X-Requested-With": "com.achourplayer.app"
+            }
+          }),
+          b2.x,
+          b2.y,
+          b2.width,
+          b2.height
+        );
+      } catch (e2) {
+        console.warn("AchourNative showMultiSlot failed:", e2);
+        setError(true);
+        setLoading(false);
+      }
+      const startedAt = Date.now();
+      const pollTimer = setInterval(() => {
+        var _a3, _b2;
+        if (destroyed) return;
+        try {
+          const playing = Boolean((_a3 = native.isMultiSlotPlaying) == null ? void 0 : _a3.call(native, slotIndex));
+          const hasErr = Boolean((_b2 = native.hasMultiSlotError) == null ? void 0 : _b2.call(native, slotIndex));
+          if (playing) {
+            setLoading(false);
+            setError(false);
+          } else if (hasErr) {
+            setLoading(false);
+            setError(true);
+          } else if (Date.now() - startedAt > 12e3) {
+            setLoading(false);
+          }
+        } catch {
+        }
+      }, 300);
+      return () => {
+        var _a3;
+        destroyed = true;
+        clearInterval(pollTimer);
+        try {
+          (_a3 = native.hideMultiSlot) == null ? void 0 : _a3.call(native, slotIndex);
+        } catch {
+        }
+        requestAnimationFrame(() => syncMultiViewNativeOverlay(false));
+      };
+    }
+    const video = videoRef.current;
+    if (!video) return;
+    if (Hls.isSupported()) {
+      const hls = new Hls({
+        maxBufferLength: 8,
+        maxMaxBufferLength: 15,
+        enableWorker: true,
+        capLevelToPlayerSize: true
+      });
+      hlsRef.current = hls;
+      hls.loadSource(activeStreamUrl);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        if (destroyed) return;
+        setLoading(false);
+        video.play().catch(() => {
+        });
+      });
+      hls.on(Hls.Events.ERROR, (_event, data) => {
+        if (data.fatal) {
+          switch (data.type) {
+            case Hls.ErrorTypes.NETWORK_ERROR:
+              hls.startLoad();
+              break;
+            case Hls.ErrorTypes.MEDIA_ERROR:
+              hls.recoverMediaError();
+              break;
+            default:
+              setError(true);
+              setLoading(false);
+              hls.destroy();
+              break;
+          }
+        }
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = activeStreamUrl;
+      video.addEventListener("loadedmetadata", () => {
+        if (destroyed) return;
+        setLoading(false);
+        video.play().catch(() => {
+        });
+      });
+      video.addEventListener("error", () => {
+        if (destroyed) return;
+        setError(true);
+        setLoading(false);
+      });
+    } else {
+      video.src = activeStreamUrl;
+      video.play().catch(() => {
+      });
+    }
+    return () => {
+      destroyed = true;
+      if (hlsRef.current) {
+        hlsRef.current.destroy();
+        hlsRef.current = null;
+      }
+      if (video) {
+        video.removeAttribute("src");
+        video.load();
+      }
+    };
+  }, [channel2 == null ? void 0 : channel2.stream_id, channel2 == null ? void 0 : channel2.url, settings == null ? void 0 : settings.vpnRegion, isNativeActive, slotIndex]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      ref: slotRef,
+      id: `multiview-slot-${slotIndex}`,
+      "data-tv-focusable": "true",
+      "data-multiview-slot": "true",
+      "data-multiview-native-hole": isNativeActive ? "true" : void 0,
+      "data-slot-index": slotIndex,
+      tabIndex: 0,
+      onClick: onSelectSlot,
+      onDoubleClick: onOpenFullscreen,
+      className: `group relative w-full h-full rounded-2xl overflow-hidden ${isNativeActive ? "bg-transparent" : "bg-black"} border transition-all cursor-pointer ${isActive ? "border-gold shadow-[0_0_15px_var(--theme-glow)] ring-2 ring-gold/40" : "border-white/15 hover:border-gold/50"}`,
+      children: [
+        !isNativeActive && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "video",
+          {
+            ref: videoRef,
+            playsInline: true,
+            autoPlay: true,
+            muted: isMuted,
+            className: "w-full h-full object-contain pointer-events-none"
+          }
+        ),
+        loading && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-center justify-center bg-black/50 pointer-events-none z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 border-2 border-gold border-t-transparent rounded-full animate-spin" }) }),
+        error && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/80 text-zinc-400 p-2 text-center pointer-events-none z-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { size: 20, className: "text-amber-400" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold", children: isRtl ? "تعذر تشغيل البث" : "Playback error" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-2 inset-x-2 flex items-center justify-between gap-1.5 z-20 pointer-events-auto", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-black/75 backdrop-blur-sm border border-white/10 text-white min-w-0 max-w-[70%]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono font-black text-gold", children: [
+              "#",
+              slotIndex + 1
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold truncate", children: channel2.name })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: onToggleMute,
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                title: isMuted ? isRtl ? "تشغيل الصوت" : "Unmute" : isRtl ? "كتم الصوت" : "Mute",
+                className: `p-1.5 rounded-lg backdrop-blur-sm transition-colors cursor-pointer ${!isMuted ? "bg-gold text-black" : "bg-black/70 text-white hover:bg-white/20"}`,
+                children: !isMuted ? /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { size: 13 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(VolumeX, { size: 13 })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: (e2) => {
+                  e2.stopPropagation();
+                  onOpenFullscreen();
+                },
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                title: isRtl ? "ملء الشاشة" : "Fullscreen",
+                className: "p-1.5 rounded-lg bg-black/70 hover:bg-gold hover:text-black text-white backdrop-blur-sm transition-colors cursor-pointer",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Maximize, { size: 13 })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: onRemove,
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                title: isRtl ? "إزالة القناة" : "Remove channel",
+                className: "p-1.5 rounded-lg bg-black/70 hover:bg-rose-500 hover:text-white text-zinc-400 backdrop-blur-sm transition-colors cursor-pointer",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 13 })
+              }
+            )
+          ] })
+        ] })
+      ]
+    }
+  );
+};
 function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = "live", initialChannelToPlay = null, onAutoPlayFallback }) {
-  var _a2;
+  var _a2, _b2;
   const { t, isRtl } = useI18n(settings.language);
   const playlistId = settings.activePlaylistId || "default";
   const [historyRevision, setHistoryRevision] = reactExports.useState(0);
@@ -117851,6 +118218,47 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   const detailsSeasonsScrollRef = reactExports.useRef(null);
   const detailsEpisodesScrollRef = reactExports.useRef(null);
   const autoFocusedSeriesIdRef = reactExports.useRef(null);
+  const [multiViewMode, setMultiViewMode] = reactExports.useState(1);
+  const [showMultiViewMenu, setShowMultiViewMenu] = reactExports.useState(false);
+  const [multiViewActive, setMultiViewActive] = reactExports.useState(false);
+  const [multiViewPickingSlot, setMultiViewPickingSlot] = reactExports.useState(null);
+  const [multiViewFullscreenSlot, setMultiViewFullscreenSlot] = reactExports.useState(null);
+  const [multiViewSlots, setMultiViewSlots] = reactExports.useState([null, null, null, null]);
+  const [selectedSlotIndex, setSelectedSlotIndex] = reactExports.useState(0);
+  const [audioSlotIndex, setAudioSlotIndex] = reactExports.useState(0);
+  const preMultiViewChannelRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    var _a3;
+    const native = typeof window !== "undefined" ? window.AchourNative : null;
+    if (!isNativeApp() || !(native == null ? void 0 : native.showMultiSlot)) return;
+    if (!multiViewActive) {
+      try {
+        (_a3 = native.hideAllMultiSlots) == null ? void 0 : _a3.call(native);
+      } catch {
+      }
+      if (!selectedChannel && !activeVodPlayer) {
+        document.documentElement.classList.remove("native-player-active", "native-player-preview");
+        document.body.classList.remove("native-player-active", "native-player-preview");
+        document.documentElement.style.removeProperty("--native-preview-clip");
+      }
+      return;
+    }
+    const rafId = requestAnimationFrame(() => {
+      syncMultiViewNativeOverlay(multiViewFullscreenSlot !== null);
+    });
+    return () => cancelAnimationFrame(rafId);
+  }, [multiViewActive, multiViewMode, multiViewFullscreenSlot, multiViewSlots, selectedChannel == null ? void 0 : selectedChannel.stream_id, activeVodPlayer]);
+  reactExports.useEffect(() => {
+    return () => {
+      const native = typeof window !== "undefined" ? window.AchourNative : null;
+      if (isNativeApp() && (native == null ? void 0 : native.hideAllMultiSlots)) {
+        try {
+          native.hideAllMultiSlots();
+        } catch {
+        }
+      }
+    };
+  }, []);
   const tvFocusedPane = reactExports.useRef("categories");
   const tvFocusedCatIndex = reactExports.useRef(0);
   const tvFocusedChannelIndex = reactExports.useRef(0);
@@ -117982,6 +118390,14 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       autoFocusedSeriesIdRef.current = null;
       return;
     }
+    try {
+      window.scrollTo(0, 0);
+      document.querySelectorAll('.achour-app-shell, [data-live-root="true"]').forEach((el) => {
+        if (el.scrollTop !== 0) el.scrollTop = 0;
+        if (el.scrollLeft !== 0) el.scrollLeft = 0;
+      });
+    } catch {
+    }
     const timer = setTimeout(() => {
       const dialog = document.querySelector('[data-tv-details-dialog="true"]');
       if (!dialog) return;
@@ -117995,11 +118411,18 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         initialTarget = dialog.querySelector('[data-tv-play-now="true"]') || dialog.querySelector('[data-episode-item="true"][data-episode-resume="true"]') || dialog.querySelector('[data-season-tab="true"][data-season-active="true"]') || dialog.querySelector('[data-season-tab="true"]') || dialog.querySelector('[data-episode-item="true"]') || dialog.querySelector('[data-modal-role="favorite"]') || dialog.querySelector('[data-tv-modal="details"]');
       }
       if (initialTarget) {
-        setTVFocus(initialTarget, { scroll: true });
+        setTVFocus(initialTarget, { scroll: false });
+        requestAnimationFrame(() => {
+          if (initialTarget == null ? void 0 : initialTarget.hasAttribute("data-episode-item")) {
+            scrollModalItemIntoContainer(detailsEpisodesScrollRef.current, initialTarget, "y");
+          } else if (initialTarget == null ? void 0 : initialTarget.hasAttribute("data-season-tab")) {
+            scrollModalItemIntoContainer(detailsSeasonsScrollRef.current, initialTarget, "x");
+          }
+        });
       }
     }, 35);
     return () => clearTimeout(timer);
-  }, [movieDetailsModal]);
+  }, [movieDetailsModal, scrollModalItemIntoContainer]);
   reactExports.useCallback((e2) => {
     const { scrollTop, scrollHeight, clientHeight } = e2.currentTarget;
     if (scrollHeight - scrollTop <= clientHeight + 100) {
@@ -118076,7 +118499,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
           return aNum - bNum;
         });
         const episodesList = sortedRawEps.map((ep, idx) => {
-          var _a4, _b2, _c2;
+          var _a4, _b3, _c2;
           const epNum = parseInt(String(ep.episode_num ?? ep.episode ?? idx + 1), 10) || idx + 1;
           const trueEpId = cleanVodEntityId(
             ep.xtream_id ?? ep.original_id ?? ep.stream_id ?? ep.id,
@@ -118102,7 +118525,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
             series_name: parentSeriesTitle,
             type: "series",
             name: `${parentSeriesTitle} - S${seasonNum} E${epNum}: ${ep.title || ep.name || (isRtl ? `الحلقة ${epNum}` : `Episode ${epNum}`)}`,
-            stream_icon: ((_a4 = ep.info) == null ? void 0 : _a4.movie_image) || ((_b2 = ep.info) == null ? void 0 : _b2.cover_big) || targetMedia.stream_icon,
+            stream_icon: ((_a4 = ep.info) == null ? void 0 : _a4.movie_image) || ((_b3 = ep.info) == null ? void 0 : _b3.cover_big) || targetMedia.stream_icon,
             url: epDirectUrl,
             category_id: targetMedia.category_id,
             category_name: targetMedia.category_name,
@@ -118259,6 +118682,29 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         setReorderTarget(null);
         return true;
       }
+      if (showMultiViewMenu) {
+        setShowMultiViewMenu(false);
+        return true;
+      }
+      if (multiViewFullscreenSlot !== null) {
+        const slot = multiViewFullscreenSlot;
+        setMultiViewFullscreenSlot(null);
+        tvFocusedPane.current = "multiview";
+        setTimeout(() => {
+          const el = document.getElementById(`multiview-slot-${slot}`);
+          if (el) setTVFocus(el);
+        }, 40);
+        return true;
+      }
+      if (multiViewPickingSlot !== null) {
+        setMultiViewPickingSlot(null);
+        tvFocusedPane.current = "multiview";
+        setTimeout(() => {
+          const el = document.getElementById(`multiview-slot-${selectedSlotIndex}`);
+          if (el) setTVFocus(el);
+        }, 40);
+        return true;
+      }
       if (movieDetailsModal) {
         setMovieDetailsModal(null);
         setTimeout(() => {
@@ -118304,6 +118750,11 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         }
         return true;
       }
+      if (tvFocusedPane.current === "multiview") {
+        tvFocusedPane.current = "channels";
+        focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+        return true;
+      }
       if (tvFocusedPane.current === "channels" || tvFocusedPane.current === "player") {
         tvFocusedPane.current = "categories";
         focusCategoryAtIdx(tvFocusedCatIndex.current);
@@ -118319,6 +118770,10 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     showRemoteHelp,
     showOverlayChannelDrawer,
     reorderTarget,
+    showMultiViewMenu,
+    multiViewFullscreenSlot,
+    multiViewPickingSlot,
+    selectedSlotIndex,
     movieDetailsModal,
     showEpgGrid,
     showEpgTimeline,
@@ -118378,7 +118833,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   };
   const normalizeEpgKey = (val) => String(val || "").replace(/\|AR\||\|EN\||HD|FHD|4K|RAW|SD|HEVC|\+|:-/gi, "").trim().toLowerCase();
   const parseXMLTV = async (xmlText, isCancelled) => {
-    var _a3, _b2, _c2, _d2, _e2, _f2;
+    var _a3, _b3, _c2, _d2, _e2, _f2;
     try {
       if (!xmlText || typeof xmlText !== "string") return;
       const lowMem = isTVOrLowEndDevice();
@@ -118421,7 +118876,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         const attrs = pMatch[1];
         const body = pMatch[2];
         const startAttr = (_a3 = attrs.match(/\bstart=["']([^"']+)["']/i)) == null ? void 0 : _a3[1];
-        const stopAttr = (_b2 = attrs.match(/\bstop=["']([^"']+)["']/i)) == null ? void 0 : _b2[1];
+        const stopAttr = (_b3 = attrs.match(/\bstop=["']([^"']+)["']/i)) == null ? void 0 : _b3[1];
         const channelId = (_d2 = (_c2 = attrs.match(/\bchannel=["']([^"']+)["']/i)) == null ? void 0 : _c2[1]) == null ? void 0 : _d2.trim();
         if (!channelId || !startAttr || !stopAttr) continue;
         const startTime = parseXmlTvTimestamp(startAttr);
@@ -118485,13 +118940,13 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     return null;
   };
   const fetchEPG = async (streamId) => {
-    var _a3, _b2;
+    var _a3, _b3;
     if ((activePlaylist == null ? void 0 : activePlaylist.type) !== "xtream") return;
     setEpgLoading(true);
     try {
       const host = (activePlaylist.url || "").trim().replace(/\/+$/, "").replace(/\/(player_api|get|index)\.php.*$/i, "").replace(/\/c\/?$/i, "").replace(/\?.*$/, "");
       const res = await xtreamFetch(host, activePlaylist.username || "", activePlaylist.password || "", "get_short_epg", { stream_id: streamId, limit: "10" });
-      const listings = ((_a3 = res.data) == null ? void 0 : _a3.epg_listings) || ((_b2 = res.data) == null ? void 0 : _b2.listings) || (Array.isArray(res.data) ? res.data : []);
+      const listings = ((_a3 = res.data) == null ? void 0 : _a3.epg_listings) || ((_b3 = res.data) == null ? void 0 : _b3.listings) || (Array.isArray(res.data) ? res.data : []);
       if (res.ok && Array.isArray(listings)) setEpgData(listings);
       else setEpgData([]);
     } catch (e2) {
@@ -118607,9 +119062,9 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       shortEpgFetchedRef.current.add(cid);
       const host = (activePlaylist.url || "").trim().replace(/\/+$/, "").replace(/\/(player_api|get|index)\.php.*$/i, "").replace(/\/c\/?$/i, "").replace(/\?.*$/, "");
       xtreamFetch(host, activePlaylist.username || "", activePlaylist.password || "", "get_short_epg", { stream_id: cid, limit: "10" }, 1).then((res) => {
-        var _a3, _b2;
+        var _a3, _b3;
         if (cancelled) return;
-        const listings = ((_a3 = res.data) == null ? void 0 : _a3.epg_listings) || ((_b2 = res.data) == null ? void 0 : _b2.listings) || (Array.isArray(res.data) ? res.data : []);
+        const listings = ((_a3 = res.data) == null ? void 0 : _a3.epg_listings) || ((_b3 = res.data) == null ? void 0 : _b3.listings) || (Array.isArray(res.data) ? res.data : []);
         if (res.ok && Array.isArray(listings) && listings.length > 0) {
           const normalized = listings.map((item) => {
             const startDate = parseXtreamEpgTimestamp(item.start_timestamp, item.start);
@@ -118668,7 +119123,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     return cid ? { [cid]: programs } : {};
   }, [selectedChannel, xmltvData, shortEpgCache]);
   function findProgramsForChannel(channel2) {
-    var _a3, _b2;
+    var _a3, _b3;
     if (!channel2) return null;
     const cid = String(channel2.stream_id || "");
     const epgId = String(channel2.epg_channel_id || "");
@@ -118688,7 +119143,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     ].filter(Boolean);
     for (const k of keys) {
       if ((_a3 = shortEpgCache[k]) == null ? void 0 : _a3.length) return shortEpgCache[k];
-      if ((_b2 = xmltvData[k]) == null ? void 0 : _b2.length) return xmltvData[k];
+      if ((_b3 = xmltvData[k]) == null ? void 0 : _b3.length) return xmltvData[k];
     }
     return null;
   }
@@ -118718,7 +119173,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   const lastDpadKeyTimeRef = reactExports.useRef(0);
   reactExports.useEffect(() => {
     const handleKeyDown = (e2) => {
-      var _a3, _b2;
+      var _a3, _b3;
       const key = e2.key;
       const code = e2.keyCode;
       const isBackKey = key === "Escape" || key === "Backspace" || key === "GoBack" || key === "Back" || code === 4 || code === 10009 || code === 461 || code === 27 || code === 8;
@@ -118975,7 +119430,62 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
           } else if (key === "Enter" || code === 13 || key === "Select" || code === 23) {
             e2.preventDefault();
             e2.stopPropagation();
-            (_b2 = headerTabs[cur]) == null ? void 0 : _b2.click();
+            (_b3 = headerTabs[cur]) == null ? void 0 : _b3.click();
+          }
+        }
+        return;
+      }
+      if (tvFocusedPane.current === "multiview") {
+        const container = document.querySelector('[data-multiview-container="true"]');
+        const focusables = container ? Array.from(container.querySelectorAll('[data-tv-focusable="true"]')) : [];
+        const currentEl = getCurrentTVFocus() || document.activeElement;
+        const curRect = currentEl == null ? void 0 : currentEl.getBoundingClientRect();
+        const isUp = key === "ArrowUp" || code === 38 || code === 19;
+        const isDown = key === "ArrowDown" || code === 40 || code === 20;
+        const isRight = key === "ArrowRight" || code === 39 || code === 22;
+        const isLeft = key === "ArrowLeft" || code === 37 || code === 21;
+        if (isUp || isDown || isRight || isLeft) {
+          e2.preventDefault();
+          e2.stopPropagation();
+          let bestEl = null;
+          let bestScore = Infinity;
+          if (curRect && focusables.length > 0) {
+            const cx = curRect.left + curRect.width / 2;
+            const cy = curRect.top + curRect.height / 2;
+            for (const cand of focusables) {
+              if (cand === currentEl) continue;
+              const r = cand.getBoundingClientRect();
+              if (r.width === 0 || r.height === 0) continue;
+              const tx = r.left + r.width / 2;
+              const ty = r.top + r.height / 2;
+              const dx = tx - cx;
+              const dy = ty - cy;
+              if (isUp && dy >= -6) continue;
+              if (isDown && dy <= 6) continue;
+              if (isLeft && dx >= -6) continue;
+              if (isRight && dx <= 6) continue;
+              const dist = isUp || isDown ? Math.abs(dy) + Math.abs(dx) * 1.4 : Math.abs(dx) + Math.abs(dy) * 1.4;
+              if (dist < bestScore) {
+                bestScore = dist;
+                bestEl = cand;
+              }
+            }
+          }
+          if (bestEl) {
+            setTVFocus(bestEl, { scroll: false });
+          } else if (isUp) {
+            tvFocusedPane.current = "header";
+            const headerTabs = document.querySelectorAll('[data-tv-pane="header"]');
+            if (headerTabs.length > 0) setTVFocus(headerTabs[0], { scroll: true });
+          } else if (isLeft && !isRtl || isRight && isRtl) {
+            tvFocusedPane.current = "channels";
+            focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+          }
+        } else if (key === "Enter" || code === 13 || key === "Select" || code === 23) {
+          e2.preventDefault();
+          e2.stopPropagation();
+          if (currentEl && (container == null ? void 0 : container.contains(currentEl))) {
+            currentEl.click();
           }
         }
         return;
@@ -118988,15 +119498,19 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         if (key === "ArrowDown" || code === 40 || code === 20) {
           e2.preventDefault();
           e2.stopPropagation();
-          const next = Math.min(curCats.length - 1, cur + 1);
+          const next = mediaType === "live" && cur === curCats.length - 1 ? 0 : Math.min(curCats.length - 1, cur + 1);
           focusCategoryAtIdx(next);
         } else if (key === "ArrowUp" || code === 38 || code === 19) {
           e2.preventDefault();
           e2.stopPropagation();
           if (cur === 0) {
-            tvFocusedPane.current = "header";
-            const headerTabs = document.querySelectorAll('[data-tv-pane="header"]');
-            if (headerTabs.length > 0) setTVFocus(headerTabs[0], { scroll: true });
+            if (mediaType === "live") {
+              focusCategoryAtIdx(curCats.length - 1);
+            } else {
+              tvFocusedPane.current = "header";
+              const headerTabs = document.querySelectorAll('[data-tv-pane="header"]');
+              if (headerTabs.length > 0) setTVFocus(headerTabs[0], { scroll: true });
+            }
           } else {
             focusCategoryAtIdx(cur - 1);
           }
@@ -119009,10 +119523,12 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
               okPressedCatIndexRef.current = cur;
               const catItem = curCats[cur];
               if (okCatPressTimerRef.current) clearTimeout(okCatPressTimerRef.current);
-              if (catItem && catItem.category_id !== "favorites") {
+              if (catItem && catItem.category_id !== "favorites" && catItem.category_id !== WATCH_HISTORY_CAT_ID && catItem.category_id !== CONTINUE_WATCHING_CAT_ID) {
                 okCatPressTimerRef.current = setTimeout(() => {
                   okCatLongPressFiredRef.current = true;
-                  const realCats = curCats.filter((c) => c.category_id !== "favorites");
+                  const realCats = curCats.filter(
+                    (c) => c.category_id !== "favorites" && c.category_id !== WATCH_HISTORY_CAT_ID && c.category_id !== CONTINUE_WATCHING_CAT_ID
+                  );
                   const realIdx = Math.max(0, realCats.findIndex((c) => c.category_id === catItem.category_id));
                   setReorderTarget({
                     type: "category",
@@ -119113,6 +119629,12 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
             if (isRtl) {
               tvFocusedPane.current = "categories";
               focusCategoryAtIdx(tvFocusedCatIndex.current);
+            } else if (document.querySelector('[data-multiview-container="true"]')) {
+              const firstSlot = document.getElementById("multiview-slot-0");
+              if (firstSlot) {
+                tvFocusedPane.current = "multiview";
+                setTVFocus(firstSlot, { scroll: false });
+              }
             }
           }
         } else if (key === "ArrowLeft" || code === 37 || code === 21) {
@@ -119136,6 +119658,12 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
             if (!isRtl) {
               tvFocusedPane.current = "categories";
               focusCategoryAtIdx(tvFocusedCatIndex.current);
+            } else if (document.querySelector('[data-multiview-container="true"]')) {
+              const firstSlot = document.getElementById("multiview-slot-0");
+              if (firstSlot) {
+                tvFocusedPane.current = "multiview";
+                setTVFocus(firstSlot, { scroll: false });
+              }
             }
           }
         } else if (key === "Enter" || code === 13 || key === "Select" || code === 23) {
@@ -119307,7 +119835,9 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     if (type === "category") {
       setCategories((prev) => {
         const favEntries = prev.filter((c) => c.category_id === "favorites");
-        const realCats = prev.filter((c) => c.category_id !== "favorites");
+        const realCats = prev.filter(
+          (c) => c.category_id !== "favorites" && c.category_id !== WATCH_HISTORY_CAT_ID && c.category_id !== CONTINUE_WATCHING_CAT_ID
+        );
         const fromIdx = realCats.findIndex((c) => c.category_id === id2);
         if (fromIdx === -1) return prev;
         const toIdx = Math.max(0, Math.min(realCats.length - 1, toPosNum - 1));
@@ -119324,6 +119854,10 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
           localStorage.setItem(`achour_category_orders_${mediaType}`, JSON.stringify(newOrderIds));
         } catch (e2) {
         }
+        setTimeout(() => {
+          const visIdx = visibleCategoriesRef.current.findIndex((c) => c.category_id === id2);
+          if (visIdx !== -1) focusCategoryAtIdx(visIdx);
+        }, 40);
         return [...favEntries, ...copy];
       });
     } else {
@@ -119599,7 +120133,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
     }
   };
   const fetchStalkerStreams = async (catId, p2) => {
-    var _a3, _b2, _c2, _d2;
+    var _a3, _b3, _c2, _d2;
     try {
       const fetchUrl = getPlatformUrl("stalker", p2.url || p2.portal || "", {
         action: "get_ordered_list",
@@ -119608,7 +120142,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
         mac: p2.macAddress || ""
       });
       const chRes = await axios.get(fetchUrl);
-      const rawData = ((_b2 = (_a3 = chRes.data) == null ? void 0 : _a3.js) == null ? void 0 : _b2.data) || ((_c2 = chRes.data) == null ? void 0 : _c2.js) || ((_d2 = chRes.data) == null ? void 0 : _d2.data);
+      const rawData = ((_b3 = (_a3 = chRes.data) == null ? void 0 : _a3.js) == null ? void 0 : _b3.data) || ((_c2 = chRes.data) == null ? void 0 : _c2.js) || ((_d2 = chRes.data) == null ? void 0 : _d2.data);
       if (Array.isArray(rawData)) {
         const cleanHost = (p2.url || p2.portal || "").replace(/\/+$/, "");
         const mapped = rawData.map((ch, idx) => ({
@@ -119680,7 +120214,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   const visibleCategories = reactExports.useMemo(() => {
     const seen2 = /* @__PURE__ */ new Set();
     const cleanCats = categories.filter((cat) => {
-      if (!cat || !cat.category_id) return false;
+      if (!cat || !cat.category_id || !cat.category_name || !cat.category_name.trim()) return false;
       if (hiddenSet.has(cat.category_id) || hiddenSet.has(cat.category_name)) return false;
       if (cat.category_name === "جميع المجموعات" || cat.category_name === "All Groups" || cat.category_name === "ALL" || cat.category_name === "All") return false;
       if (isFavCategory(cat)) return false;
@@ -119704,12 +120238,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       count: watchHistoryCount
     };
     if (mediaType === "movie" || mediaType === "series") {
-      const continueCat = {
-        category_id: CONTINUE_WATCHING_CAT_ID,
-        category_name: t("continue_watching"),
-        count: continueWatchingCount
-      };
-      return [continueCat, historyCat, ...cleanCats];
+      return watchHistoryCount > 0 ? [historyCat, ...cleanCats] : cleanCats;
     }
     if (mediaType === "live" && favorites.length > 0) {
       const favLabel = t("favorites");
@@ -119911,6 +120440,23 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   }, [mediaType, settings.useExternalPlayer, settings.activePlaylistId, activePlaylist]);
   const handleChannelClick = reactExports.useCallback((ch) => {
     if (!ch) return;
+    if (multiViewActive && multiViewPickingSlot !== null && (mediaType === "live" || mediaType === "favorites")) {
+      const targetSlot = multiViewPickingSlot;
+      setMultiViewSlots((prev) => {
+        const next = [...prev];
+        next[targetSlot] = ch;
+        return next;
+      });
+      setSelectedSlotIndex(targetSlot);
+      setMultiViewPickingSlot(null);
+      addToRecents(ch);
+      tvFocusedPane.current = "multiview";
+      setTimeout(() => {
+        const el = document.getElementById(`multiview-slot-${targetSlot}`);
+        if (el) setTVFocus(el);
+      }, 50);
+      return;
+    }
     if (mediaType === "movie" || mediaType === "series") {
       handleOpenFullscreen(ch);
       return;
@@ -119922,7 +120468,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       setActivePlayingMovie(ch);
       addToRecents(ch);
     }
-  }, [mediaType, selectedChannel == null ? void 0 : selectedChannel.stream_id, activeVodPlayer, handleOpenFullscreen]);
+  }, [mediaType, selectedChannel == null ? void 0 : selectedChannel.stream_id, activeVodPlayer, handleOpenFullscreen, multiViewActive, multiViewPickingSlot]);
   reactExports.useEffect(() => {
     handleHighlightChannelRef.current = handleHighlightChannel;
   }, [handleHighlightChannel]);
@@ -119989,8 +120535,8 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   }, [toggleFullscreen]);
   reactExports.useEffect(() => {
     const handleKeyDown = (e2) => {
-      var _a3, _b2;
-      if (((_a3 = document.activeElement) == null ? void 0 : _a3.tagName) === "INPUT" || ((_b2 = document.activeElement) == null ? void 0 : _b2.tagName) === "TEXTAREA") return;
+      var _a3, _b3;
+      if (((_a3 = document.activeElement) == null ? void 0 : _a3.tagName) === "INPUT" || ((_b3 = document.activeElement) == null ? void 0 : _b3.tagName) === "TEXTAREA") return;
       if (isFullscreen) return;
       const key = e2.key.toLowerCase();
       if (key === "r" || e2.code === "F1") {
@@ -120265,68 +120811,70 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       }
     }
   }, [mediaType, activeVodPlayer, effectivePlaylistId]);
+  const pageScale = (mediaType === "live" || mediaType === "favorites" ? settings.livePageScale ?? 100 : settings.vodPageScale ?? 100) / 100;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
+      "data-live-root": "true",
       className: `flex flex-col h-full bg-transparent text-white overflow-hidden select-none ${isRtl ? "font-cairo" : ""}`,
       dir: isRtl ? "rtl" : "ltr",
+      onScroll: (e2) => {
+        if (e2.currentTarget.scrollTop !== 0) e2.currentTarget.scrollTop = 0;
+        if (e2.currentTarget.scrollLeft !== 0) e2.currentTarget.scrollLeft = 0;
+      },
+      style: pageScale !== 1 ? { zoom: pageScale, width: `${100 / pageScale}%`, height: `${100 / pageScale}%` } : void 0,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("header", { className: `${isViewingFullscreen ? "hidden" : "flex"} relative z-30 h-16 items-center justify-between px-6 bg-transparent shrink-0`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 items-center w-full gap-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-start min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full max-w-xs group", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { size: 14, className: `absolute ${isRtl ? "right-1.5" : "left-1.5"} top-1/2 -translate-y-1/2 text-gold/70 group-focus-within:text-gold transition-colors pointer-events-none` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "input",
-              {
-                id: "channel-search-input",
-                "data-tv-focusable": "true",
-                "data-tv-focus-inset": "true",
-                "data-tv-pane": "header",
-                "data-header-index": "0",
-                tabIndex: 0,
-                type: "text",
-                placeholder: isRtl ? "البحث" : "Search",
-                value: search,
-                onChange: (e2) => setSearch(e2.target.value),
-                onKeyDown: (e2) => {
-                  var _a3;
-                  if (e2.key === "ArrowDown" || e2.keyCode === 40) {
-                    e2.preventDefault();
-                    if ((((_a3 = filteredChannelsRef.current) == null ? void 0 : _a3.length) || 0) > 0) {
-                      tvFocusedPane.current = "channels";
-                      focusChannelAtIdx(0);
-                    }
-                  }
-                },
-                className: `w-full bg-transparent border-0 shadow-none py-1.5 ${isRtl ? "pr-7 pl-4" : "pl-7 pr-4"} text-xs sm:text-sm text-white placeholder-zinc-400 outline-none transition-colors`
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `absolute ${isRtl ? "left-2" : "right-2"} top-1/2 -translate-y-1/2 flex items-center gap-1`, children: search && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex items-center justify-start min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-base font-black text-gold tracking-tighter uppercase italic leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center min-w-0 gap-3", children: (mediaType === "live" || mediaType === "favorites") && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-xs sm:text-sm font-bold text-zinc-200", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "select-none text-zinc-300 font-bold", children: "Multi View" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: [1, 2, 4].map((modeNum, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               "button",
               {
-                onClick: () => setSearch(""),
-                className: "text-zinc-400 hover:text-white p-1",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 14 })
-              }
-            ) })
-          ] }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { dir: "ltr", className: "flex items-center justify-center gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-6 h-6 sm:w-8 sm:h-8 rounded-lg overflow-hidden relative flex items-center justify-center bg-transparent shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "img",
-              {
-                src: "/logo.jpg",
-                onError: (e2) => {
-                  e2.currentTarget.src = logoImg;
+                "data-tv-focusable": "true",
+                "data-tv-pane": "header",
+                "data-header-index": idx,
+                tabIndex: 0,
+                onClick: () => {
+                  if (multiViewActive && multiViewMode === modeNum) {
+                    setMultiViewActive(false);
+                    setMultiViewSlots([null, null, null, null]);
+                    setMultiViewPickingSlot(null);
+                    setMultiViewFullscreenSlot(null);
+                    if (preMultiViewChannelRef.current) {
+                      setSelectedChannel(preMultiViewChannelRef.current);
+                      setActivePlayingMovie(preMultiViewChannelRef.current);
+                    }
+                    tvFocusedPane.current = "channels";
+                    setTimeout(() => focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0), 40);
+                    return;
+                  }
+                  preMultiViewChannelRef.current = selectedChannel;
+                  setSelectedChannel(null);
+                  setActivePlayingMovie(null);
+                  setMultiViewSlots([null, null, null, null]);
+                  setMultiViewMode(modeNum);
+                  setSelectedSlotIndex(0);
+                  setAudioSlotIndex(0);
+                  setMultiViewPickingSlot(null);
+                  setMultiViewFullscreenSlot(null);
+                  setMultiViewActive(true);
+                  tvFocusedPane.current = "multiview";
+                  setTimeout(() => {
+                    const el = document.getElementById("multiview-slot-0");
+                    if (el) setTVFocus(el, { scroll: false });
+                  }, 50);
                 },
-                alt: "Achour Player",
-                className: "w-full h-full object-contain"
-              }
-            ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-base font-black text-gold tracking-tighter uppercase italic leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" })
-          ] }),
+                className: `px-2.5 py-1 rounded-md bg-transparent flex items-center justify-center font-mono font-black text-sm sm:text-base transition-colors cursor-pointer outline-none ${multiViewActive && multiViewMode === modeNum ? "text-gold" : "text-white/80 hover:text-gold"}`,
+                children: modeNum
+              },
+              modeNum
+            )) })
+          ] }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-end gap-4 min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LiveHeaderClock, { language: settings.language, timeFormat: settings.timeFormat }) })
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${isViewingFullscreen ? "hidden" : "flex"} flex-1 min-h-0 overflow-hidden relative z-10`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("aside", { className: "w-44 sm:w-56 md:w-64 lg:w-72 bg-transparent flex flex-col h-full min-h-0 shrink-0 overflow-hidden pb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("aside", { className: "w-44 sm:w-56 md:w-64 lg:w-72 bg-transparent flex flex-col h-full min-h-0 shrink-0 overflow-hidden pb-0", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 flex items-center justify-between shrink-0", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-gold text-xs sm:text-sm font-black uppercase", children: [
                 mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 16 }) : mediaType === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 16 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 16 }),
@@ -120349,11 +120897,12 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                 selectedCategory,
                 onSelect: setSelectedCategory,
                 onFocusIdx: handleFocusCatIdx,
-                onReorder: mediaType === "live" ? handleReorderCategory : void 0
+                onReorder: mediaType === "live" ? handleReorderCategory : void 0,
+                showNumber: mediaType === "live"
               }
             )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `${mediaType === "movie" || mediaType === "series" ? "flex-1 bg-transparent" : "w-64 sm:w-72 md:w-80 lg:w-96 bg-transparent"} flex flex-col min-h-0 shrink-0 pb-1`, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `${mediaType === "movie" || mediaType === "series" ? "flex-1 bg-transparent" : "w-64 sm:w-72 md:w-80 lg:w-96 bg-transparent"} flex flex-col h-full min-h-0 shrink-0 pb-0`, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-2.5 py-1.5 flex items-center justify-between shrink-0", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 text-gold text-[11px] font-black uppercase", children: [
                 mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 14 }) : mediaType === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 14 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 14 }),
@@ -120361,7 +120910,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-mono text-zinc-500 font-bold", children: loading && filteredChannels.length === 0 ? "..." : recentChannelItems ? recentChannelItems.length : `${filteredChannels.length}${categoryHasMore ? "+" : ""}` })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-hidden px-1.5 sm:px-2 pt-0 pb-1 outline-none ring-0 border-0", children: loading && filteredChannels.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full flex flex-col items-center justify-center gap-3 text-gold p-4 text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 min-h-0 overflow-hidden px-1.5 sm:px-2 pt-0 pb-0 outline-none ring-0 border-0", children: loading && filteredChannels.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full flex flex-col items-center justify-center gap-3 text-gold p-4 text-center", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 border-2 border-gold border-t-transparent rounded-full animate-spin shadow-lg shadow-gold/20" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-300" })
             ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -120391,7 +120940,65 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
               }
             ) })
           ] }),
-          (mediaType === "live" || mediaType === "favorites") && /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "flex-1 flex flex-col gap-3 bg-transparent relative min-w-0 h-full overflow-hidden p-2 sm:p-3", children: [
+          (mediaType === "live" || mediaType === "favorites") && /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "flex-1 flex flex-col gap-3 bg-transparent relative min-w-0 h-full overflow-hidden p-2 sm:p-3", children: multiViewActive ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-multiview-container": "true", className: `${multiViewFullscreenSlot !== null ? `fixed inset-0 z-[90] ${isNativeApp() && ((_a2 = window.AchourNative) == null ? void 0 : _a2.showMultiSlot) ? "bg-transparent" : "bg-black"} p-1 grid-cols-1 grid-rows-1` : "flex-1 min-h-0"} grid gap-2 ${multiViewFullscreenSlot === null ? multiViewMode === 1 ? "grid-cols-1 grid-rows-1" : multiViewMode === 2 ? "grid-cols-2 grid-rows-1" : "grid-cols-2 grid-rows-2" : ""}`, children: Array.from({ length: multiViewFullscreenSlot !== null ? 1 : multiViewMode }, (_2, visibleIndex) => {
+            const slotIndex = multiViewFullscreenSlot !== null ? multiViewFullscreenSlot : visibleIndex;
+            const slotChannel = multiViewSlots[slotIndex];
+            return slotChannel ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              MultiViewSlotPlayer,
+              {
+                channel: slotChannel,
+                slotIndex,
+                isActive: selectedSlotIndex === slotIndex,
+                isMuted: audioSlotIndex !== slotIndex,
+                isFullscreenSlot: multiViewFullscreenSlot === slotIndex,
+                settings,
+                isRtl,
+                onSelectSlot: () => {
+                  setSelectedSlotIndex(slotIndex);
+                  setAudioSlotIndex(slotIndex);
+                  tvFocusedPane.current = "multiview";
+                },
+                onToggleMute: (e2) => {
+                  e2.stopPropagation();
+                  setAudioSlotIndex((current) => current === slotIndex ? -1 : slotIndex);
+                },
+                onOpenFullscreen: () => {
+                  setSelectedSlotIndex(slotIndex);
+                  setMultiViewFullscreenSlot(slotIndex);
+                },
+                onRemove: (e2) => {
+                  e2.stopPropagation();
+                  setMultiViewSlots((prev) => {
+                    const next = [...prev];
+                    next[slotIndex] = null;
+                    return next;
+                  });
+                }
+              },
+              `multiview-${slotIndex}-${slotChannel.stream_id}`
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                id: `multiview-slot-${slotIndex}`,
+                "data-tv-focusable": "true",
+                "data-multiview-slot": "true",
+                "data-slot-index": slotIndex,
+                tabIndex: 0,
+                onClick: () => {
+                  setSelectedSlotIndex(slotIndex);
+                  setMultiViewPickingSlot(slotIndex);
+                  tvFocusedPane.current = "channels";
+                  focusChannelAtIdx(0);
+                },
+                className: "w-full h-full min-h-0 rounded-2xl border-2 border-dashed border-white/20 bg-black/35 flex flex-col items-center justify-center gap-2 text-zinc-300 hover:border-gold/70 hover:text-gold transition-colors",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 28 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold", children: isRtl ? `اختر قناة للخانة ${slotIndex + 1}` : `Select channel for slot ${slotIndex + 1}` })
+                ]
+              },
+              `multiview-empty-${slotIndex}`
+            );
+          }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
@@ -120417,7 +121024,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                 isRtl
               }
             ) })
-          ] })
+          ] }) })
         ] }),
         (mediaType === "live" || mediaType === "favorites") && selectedChannel && /* @__PURE__ */ jsxRuntimeExports.jsx(
           VodPlayerModal,
@@ -120439,298 +121046,258 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
           },
           "live-player"
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: movieDetailsModal && (() => {
-          var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n3, _o2, _p2, _q2, _r2, _s, _t2, _u, _v;
-          const infoObj = (mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) || {};
-          const resolvedPlot = infoObj.plot || infoObj.description || infoObj.overview || infoObj.storyline || infoObj.notes || infoObj.plot_ar || ((_a3 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _a3.plot) || (movieDetailsModal == null ? void 0 : movieDetailsModal.plot) || "";
-          const resolvedCast = infoObj.cast || infoObj.actors || (movieDetailsModal == null ? void 0 : movieDetailsModal.cast) || "";
-          const resolvedDirector = infoObj.director || (movieDetailsModal == null ? void 0 : movieDetailsModal.director) || "";
-          const resolvedGenre = infoObj.genre || (movieDetailsModal == null ? void 0 : movieDetailsModal.genre) || "";
-          const resolvedRating = infoObj.rating || infoObj.rating_5based || (movieDetailsModal == null ? void 0 : movieDetailsModal.rating) || "";
-          const resolvedRelease = infoObj.releaseDate || infoObj.releasedate || infoObj.year || (movieDetailsModal == null ? void 0 : movieDetailsModal.releaseDate) || "";
-          const resolvedDuration = infoObj.duration || infoObj.episode_run_time || (movieDetailsModal == null ? void 0 : movieDetailsModal.duration) || "";
-          const hasSeasonsSection = mediaType === "series" || seriesSeasonsData.length > 0;
-          const activeEpisodes = ((_b2 = seriesSeasonsData.find((s) => s.seasonNumber === selectedSeasonNum)) == null ? void 0 : _b2.episodes) || ((_c2 = seriesSeasonsData[0]) == null ? void 0 : _c2.episodes) || [];
-          const movieCleanId = cleanVodEntityId(movieDetailsModal.stream_id, effectivePlaylistId);
-          const movieProgress = mediaType === "movie" && progressRevision >= 0 ? getVodProgress({
-            mediaType: "movie",
-            playlistId: effectivePlaylistId,
-            streamId: movieCleanId
-          }) : null;
-          const hasMovieResume = Boolean(
-            movieProgress && !movieProgress.completed && movieProgress.positionSec >= MIN_RESUME_POSITION_SEC
-          );
-          const seriesKeyId = cleanVodEntityId(
-            (movieDetailsModal == null ? void 0 : movieDetailsModal.series_id) || movieDetailsModal.stream_id,
-            effectivePlaylistId
-          );
-          const epProgressMap = hasSeasonsSection && progressRevision >= 0 ? getSeriesEpisodesProgressMap(effectivePlaylistId, seriesKeyId) : {};
-          const lastUnfinishedEp = hasSeasonsSection && progressRevision >= 0 ? getSeriesLastUnfinishedEpisode(effectivePlaylistId, seriesKeyId) : null;
-          const unfinishedEpisodeObj = lastUnfinishedEp ? seriesSeasonsData.flatMap((s) => s.episodes).find(
-            (ep) => cleanVodEntityId(ep.xtream_id || ep.stream_id, effectivePlaylistId, seriesKeyId) === lastUnfinishedEp.episodeId
-          ) || null : null;
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
-            {
-              initial: { opacity: 0 },
-              animate: { opacity: 1 },
-              exit: { opacity: 0 },
-              transition: { duration: 0.04 },
-              className: "fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 achour-modal-backdrop select-none",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                motion.div,
-                {
-                  role: "dialog",
-                  "aria-modal": "true",
-                  "data-tv-modal": "true",
-                  "data-tv-details-dialog": "true",
-                  initial: { scale: 0.98, opacity: 0 },
-                  animate: { scale: 1, opacity: 1 },
-                  exit: { scale: 0.98, opacity: 0 },
-                  transition: { duration: 0.04 },
-                  className: `w-[82%] max-w-3xl ${hasSeasonsSection ? "h-[82%] max-h-[82%]" : "max-h-[80%]"} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? "font-cairo text-right" : "text-left"}`,
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between pb-2.5 border-b border-white/10 shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-2.5 min-w-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0", children: mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 16 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 16 }) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm sm:text-base font-black text-white uppercase tracking-wider truncate", children: movieDetailsModal.name }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5", children: (movieDetailsModal == null ? void 0 : movieDetailsModal.category_name) || (mediaType === "movie" ? isRtl ? "فيلم سينمائي" : "Movie" : isRtl ? "مسلسل تلفزيوني" : "TV Series") })
-                        ] })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          "data-tv-focusable": "true",
-                          "data-tv-modal": "details",
-                          "data-modal-role": "close",
-                          tabIndex: 0,
-                          onClick: () => setMovieDetailsModal(null),
-                          className: "p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0",
-                          title: isRtl ? "إغلاق (Esc)" : "Close (Esc)",
-                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `py-2 flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${hasSeasonsSection ? "w-16 sm:w-20 md:w-22" : "w-20 sm:w-24 md:w-28"} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "img",
-                        {
-                          src: ((_d2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _d2.cover_big) || ((_e2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _e2.movie_image) || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo,
-                          referrerPolicy: "no-referrer",
-                          loading: "lazy",
-                          decoding: "async",
-                          className: "w-full h-full object-cover",
-                          onError: (e2) => {
-                            e2.currentTarget.style.display = "none";
-                          },
-                          alt: ""
-                        }
-                      ) }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col gap-1.5 sm:gap-2 min-w-0", children: [
-                        (resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center flex-wrap gap-1.5 text-[11px] sm:text-xs font-bold", children: [
-                          resolvedRating && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30", children: [
-                            "★ ",
-                            resolvedRating
-                          ] }),
-                          resolvedRelease && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedRelease }),
-                          resolvedDuration && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedDuration }),
-                          resolvedGenre && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[260px]", children: resolvedGenre })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5", children: isRtl ? "قصة العمل" : "Synopsis & Plot" }),
-                          detailLoading && !resolvedPlot ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 py-1.5 text-gold text-xs font-bold", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "جاري تحميل التفاصيل..." : "Loading details..." })
-                          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `text-xs sm:text-sm text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? "line-clamp-2" : "max-h-36 overflow-y-auto no-scrollbar"}`, children: resolvedPlot || (isRtl ? "لا تتوفر قصة لهذا العمل في بيانات الاشتراك." : "No synopsis provided by the playlist.") })
-                        ] }),
-                        (resolvedCast || resolvedDirector) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-xs", children: [
-                          resolvedCast && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: hasSeasonsSection ? "truncate text-zinc-300" : "line-clamp-2 text-zinc-300", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-black uppercase text-gold tracking-wider", children: isRtl ? "طاقم التمثيل: " : "Cast: " }),
-                            resolvedCast
-                          ] }),
-                          resolvedDirector && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "truncate text-zinc-300", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-black uppercase text-gold tracking-wider", children: isRtl ? "الإخراج: " : "Director: " }),
-                            resolvedDirector
+        typeof document !== "undefined" && reactDomExports.createPortal(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: movieDetailsModal && (() => {
+            var _a3, _b3, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2, _m2, _n3, _o2, _p2, _q2, _r2, _s, _t2, _u, _v;
+            const infoObj = (mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) || {};
+            const resolvedPlot = infoObj.plot || infoObj.description || infoObj.overview || infoObj.storyline || infoObj.notes || infoObj.plot_ar || ((_a3 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _a3.plot) || (movieDetailsModal == null ? void 0 : movieDetailsModal.plot) || "";
+            const resolvedCast = infoObj.cast || infoObj.actors || (movieDetailsModal == null ? void 0 : movieDetailsModal.cast) || "";
+            const resolvedDirector = infoObj.director || (movieDetailsModal == null ? void 0 : movieDetailsModal.director) || "";
+            const resolvedGenre = infoObj.genre || (movieDetailsModal == null ? void 0 : movieDetailsModal.genre) || "";
+            const resolvedRating = infoObj.rating || infoObj.rating_5based || (movieDetailsModal == null ? void 0 : movieDetailsModal.rating) || "";
+            const resolvedRelease = infoObj.releaseDate || infoObj.releasedate || infoObj.year || (movieDetailsModal == null ? void 0 : movieDetailsModal.releaseDate) || "";
+            const resolvedDuration = infoObj.duration || infoObj.episode_run_time || (movieDetailsModal == null ? void 0 : movieDetailsModal.duration) || "";
+            const hasSeasonsSection = mediaType === "series" || seriesSeasonsData.length > 0;
+            const activeEpisodes = ((_b3 = seriesSeasonsData.find((s) => s.seasonNumber === selectedSeasonNum)) == null ? void 0 : _b3.episodes) || ((_c2 = seriesSeasonsData[0]) == null ? void 0 : _c2.episodes) || [];
+            const movieCleanId = cleanVodEntityId(movieDetailsModal.stream_id, effectivePlaylistId);
+            const movieProgress = mediaType === "movie" && progressRevision >= 0 ? getVodProgress({
+              mediaType: "movie",
+              playlistId: effectivePlaylistId,
+              streamId: movieCleanId
+            }) : null;
+            const hasMovieResume = Boolean(
+              movieProgress && !movieProgress.completed && movieProgress.positionSec >= MIN_RESUME_POSITION_SEC
+            );
+            const seriesKeyId = cleanVodEntityId(
+              (movieDetailsModal == null ? void 0 : movieDetailsModal.series_id) || movieDetailsModal.stream_id,
+              effectivePlaylistId
+            );
+            const epProgressMap = hasSeasonsSection && progressRevision >= 0 ? getSeriesEpisodesProgressMap(effectivePlaylistId, seriesKeyId) : {};
+            const lastUnfinishedEp = hasSeasonsSection && progressRevision >= 0 ? getSeriesLastUnfinishedEpisode(effectivePlaylistId, seriesKeyId) : null;
+            lastUnfinishedEp ? seriesSeasonsData.flatMap((s) => s.episodes).find(
+              (ep) => cleanVodEntityId(ep.xtream_id || ep.stream_id, effectivePlaylistId, seriesKeyId) === lastUnfinishedEp.episodeId
+            ) || null : null;
+            return /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                initial: { opacity: 0 },
+                animate: { opacity: 1 },
+                exit: { opacity: 0 },
+                transition: { duration: 0.04 },
+                dir: isRtl ? "rtl" : "ltr",
+                className: "fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-5 achour-modal-backdrop select-none overflow-hidden",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  motion.div,
+                  {
+                    role: "dialog",
+                    "aria-modal": "true",
+                    "data-tv-modal": "true",
+                    "data-tv-details-dialog": "true",
+                    "data-has-seasons": hasSeasonsSection ? "true" : "false",
+                    initial: { scale: 0.98, opacity: 0 },
+                    animate: { scale: 1, opacity: 1 },
+                    exit: { scale: 0.98, opacity: 0 },
+                    transition: { duration: 0.04 },
+                    className: `achour-tv-details-popup w-[86%] sm:w-[82%] max-w-4xl ${hasSeasonsSection ? "h-[86%] max-h-[88%]" : "max-h-[82%]"} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? "font-cairo text-right" : "text-left"}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between pb-2 border-b border-white/10 shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-2.5 min-w-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0", children: mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 16 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 16 }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm sm:text-base font-black text-white uppercase tracking-wider truncate", children: movieDetailsModal.name }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5", children: (movieDetailsModal == null ? void 0 : movieDetailsModal.category_name) || (mediaType === "movie" ? isRtl ? "فيلم سينمائي" : "Movie" : isRtl ? "مسلسل تلفزيوني" : "TV Series") })
                           ] })
                         ] }),
-                        Boolean(
-                          ((_f2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _f2.subtitles) && (mediaDetailInfo.info.subtitles.length > 0 || Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_g2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _g2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0 || ((_h2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _h2.audio) || ((_i2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _i2.audio_streams)
-                        ) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2 rounded-xl bg-white/[0.05] border border-white/10 flex flex-col gap-1.5", children: [
-                          Boolean(((_j2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _j2.subtitles) && (Array.isArray(mediaDetailInfo.info.subtitles) ? mediaDetailInfo.info.subtitles.length > 0 : Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_k2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _k2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 flex-wrap", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] sm:text-xs text-emerald-400 font-bold flex items-center gap-1 shrink-0", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { size: 13 }),
-                              isRtl ? "الترجمة المتوفرة:" : "Subtitles:"
-                            ] }),
-                            (Array.isArray((_l2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _l2.subtitles) ? mediaDetailInfo.info.subtitles : Object.values(((_m2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _m2.subtitles) || ((_n3 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _n3.subtitles) || {})).slice(0, 6).map((sub, sIdx) => {
-                              const code = typeof sub === "string" ? sub : sub.language || sub.lang || sub.container || "ar";
-                              return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold", children: formatLanguageLabel(code, sIdx, "subtitle") }, sIdx);
-                            })
-                          ] }),
-                          Boolean(((_o2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _o2.audio) || ((_p2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _p2.audio_streams)) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 flex-wrap", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] sm:text-xs text-red-400 font-bold flex items-center gap-1 shrink-0", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { size: 13 }),
-                              isRtl ? "لغات الصوت:" : "Audio:"
-                            ] }),
-                            (Array.isArray(((_q2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _q2.audio) || ((_r2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _r2.audio_streams)) ? ((_s = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _s.audio) || ((_t2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _t2.audio_streams) : [((_u = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _u.audio) || ((_v = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _v.audio_streams)]).slice(0, 6).map((aud, aIdx) => {
-                              const code = typeof aud === "string" ? aud : aud.language || aud.lang || "Stereo";
-                              return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-bold", children: formatLanguageLabel(code, aIdx, "audio") }, aIdx);
-                            })
-                          ] })
-                        ] })
-                      ] })
-                    ] }),
-                    hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-h-0 flex flex-col border-t border-white/10 pt-2 overflow-hidden", children: [
-                      lastUnfinishedEp && unfinishedEpisodeObj && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "shrink-0 mb-2 flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-gold/15 border border-gold/40", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] sm:text-xs font-black text-gold truncate", children: isRtl ? `متابعة المشاهدة: الموسم ${lastUnfinishedEp.seasonNum} • الحلقة ${lastUnfinishedEp.episodeNum}` : `Continue Watching: S${String(lastUnfinishedEp.seasonNum).padStart(2, "0")} E${String(lastUnfinishedEp.episodeNum).padStart(2, "0")}` }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] sm:text-xs text-zinc-200 font-semibold truncate", children: [
-                            isRtl ? `توقفت عند ${formatPlaybackClock(lastUnfinishedEp.positionSec)}` : `Paused at ${formatPlaybackClock(lastUnfinishedEp.positionSec)}`,
-                            lastUnfinishedEp.durationSec > 0 ? ` / ${formatPlaybackClock(lastUnfinishedEp.durationSec)}` : ""
-                          ] })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "button",
                           {
                             "data-tv-focusable": "true",
                             "data-tv-modal": "details",
-                            "data-tv-play-now": "true",
+                            "data-modal-role": "close",
                             tabIndex: 0,
-                            onClick: () => {
-                              if (!activeSeriesParentRef.current && movieDetailsModal) {
-                                activeSeriesParentRef.current = movieDetailsModal;
-                              }
-                              setSelectedSeasonNum(lastUnfinishedEp.seasonNum);
-                              setSelectedChannel(unfinishedEpisodeObj);
-                              setActivePlayingMovie(unfinishedEpisodeObj);
-                              if (settings.useExternalPlayer) {
-                                launchExternalPlayer(unfinishedEpisodeObj.url, unfinishedEpisodeObj, "series");
-                                setMovieDetailsModal(null);
-                              } else {
-                                setVodResumeOverride({
-                                  mode: "resume",
-                                  positionSec: lastUnfinishedEp.positionSec
-                                });
-                                setActiveVodPlayer(unfinishedEpisodeObj);
-                                setMovieDetailsModal(null);
-                              }
-                            },
-                            className: "px-3.5 py-1.5 rounded-lg bg-gold hover:bg-gold-light text-black font-black text-xs flex items-center gap-1.5 shrink-0",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 13, className: "fill-black" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "متابعة الحلقة" : "Resume Episode" })
-                            ]
+                            onClick: () => setMovieDetailsModal(null),
+                            className: "p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0",
+                            title: isRtl ? "إغلاق (Esc)" : "Close (Esc)",
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
                           }
                         )
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "shrink-0 space-y-1 pb-1.5", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-black uppercase text-gold tracking-widest", children: isRtl ? "المواسم والحلقات" : "Seasons & Episodes" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] sm:text-xs text-zinc-400 font-bold", children: [
-                            seriesSeasonsData.length,
-                            " ",
-                            isRtl ? "مواسم" : "Seasons"
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${hasSeasonsSection ? "py-1.5" : "py-2"} flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${hasSeasonsSection ? "w-14 sm:w-16 md:w-20" : "w-20 sm:w-24 md:w-28"} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "img",
+                          {
+                            src: ((_d2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _d2.cover_big) || ((_e2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _e2.movie_image) || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo,
+                            referrerPolicy: "no-referrer",
+                            loading: "lazy",
+                            decoding: "async",
+                            className: "w-full h-full object-cover",
+                            onError: (e2) => {
+                              e2.currentTarget.style.display = "none";
+                            },
+                            alt: ""
+                          }
+                        ) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col gap-1.5 sm:gap-2 min-w-0", children: [
+                          (resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center flex-wrap gap-1.5 text-[11px] sm:text-xs font-bold", children: [
+                            resolvedRating && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30", children: [
+                              "★ ",
+                              resolvedRating
+                            ] }),
+                            resolvedRelease && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedRelease }),
+                            resolvedDuration && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedDuration }),
+                            resolvedGenre && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[260px]", children: resolvedGenre })
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5", children: isRtl ? "قصة العمل" : "Synopsis & Plot" }),
+                            detailLoading && !resolvedPlot ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 py-1.5 text-gold text-xs font-bold", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "جاري تحميل التفاصيل..." : "Loading details..." })
+                            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `text-xs sm:text-sm text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? "line-clamp-2" : "max-h-36 overflow-y-auto no-scrollbar"}`, children: resolvedPlot || (isRtl ? "لا تتوفر قصة لهذا العمل في بيانات الاشتراك." : "No synopsis provided by the playlist.") })
+                          ] }),
+                          (resolvedCast || resolvedDirector) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-xs", children: [
+                            resolvedCast && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: hasSeasonsSection ? "truncate text-zinc-300" : "line-clamp-2 text-zinc-300", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-black uppercase text-gold tracking-wider", children: isRtl ? "طاقم التمثيل: " : "Cast: " }),
+                              resolvedCast
+                            ] }),
+                            resolvedDirector && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "truncate text-zinc-300", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-black uppercase text-gold tracking-wider", children: isRtl ? "الإخراج: " : "Director: " }),
+                              resolvedDirector
+                            ] })
+                          ] }),
+                          Boolean(
+                            ((_f2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _f2.subtitles) && (mediaDetailInfo.info.subtitles.length > 0 || Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_g2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _g2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0 || ((_h2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _h2.audio) || ((_i2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _i2.audio_streams)
+                          ) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2 rounded-xl bg-white/[0.05] border border-white/10 flex flex-col gap-1.5", children: [
+                            Boolean(((_j2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _j2.subtitles) && (Array.isArray(mediaDetailInfo.info.subtitles) ? mediaDetailInfo.info.subtitles.length > 0 : Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_k2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _k2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 flex-wrap", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] sm:text-xs text-emerald-400 font-bold flex items-center gap-1 shrink-0", children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { size: 13 }),
+                                isRtl ? "الترجمة المتوفرة:" : "Subtitles:"
+                              ] }),
+                              (Array.isArray((_l2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _l2.subtitles) ? mediaDetailInfo.info.subtitles : Object.values(((_m2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _m2.subtitles) || ((_n3 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _n3.subtitles) || {})).slice(0, 6).map((sub, sIdx) => {
+                                const code = typeof sub === "string" ? sub : sub.language || sub.lang || sub.container || "ar";
+                                return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold", children: formatLanguageLabel(code, sIdx, "subtitle") }, sIdx);
+                              })
+                            ] }),
+                            Boolean(((_o2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _o2.audio) || ((_p2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _p2.audio_streams)) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 flex-wrap", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] sm:text-xs text-red-400 font-bold flex items-center gap-1 shrink-0", children: [
+                                /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { size: 13 }),
+                                isRtl ? "لغات الصوت:" : "Audio:"
+                              ] }),
+                              (Array.isArray(((_q2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _q2.audio) || ((_r2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _r2.audio_streams)) ? ((_s = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _s.audio) || ((_t2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _t2.audio_streams) : [((_u = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _u.audio) || ((_v = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _v.audio_streams)]).slice(0, 6).map((aud, aIdx) => {
+                                const code = typeof aud === "string" ? aud : aud.language || aud.lang || "Stereo";
+                                return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-bold", children: formatLanguageLabel(code, aIdx, "audio") }, aIdx);
+                              })
+                            ] })
                           ] })
+                        ] })
+                      ] }),
+                      hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-h-0 flex flex-col border-t border-white/10 pt-2 overflow-hidden", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "shrink-0 space-y-1 pb-1.5", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-black uppercase text-gold tracking-widest", children: isRtl ? "المواسم والحلقات" : "Seasons & Episodes" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] sm:text-xs text-zinc-400 font-bold", children: [
+                              seriesSeasonsData.length,
+                              " ",
+                              isRtl ? "مواسم" : "Seasons"
+                            ] })
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              ref: detailsSeasonsScrollRef,
+                              className: "relative flex items-center gap-2.5 overflow-x-auto no-scrollbar px-1.5 py-1.5",
+                              children: seriesSeasonsData.map((s, sIdx) => {
+                                const isSelected = selectedSeasonNum === s.seasonNumber;
+                                return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                  "button",
+                                  {
+                                    "data-tv-focusable": "true",
+                                    "data-tv-modal": "details",
+                                    "data-season-tab": "true",
+                                    "data-season-active": isSelected ? "true" : "false",
+                                    tabIndex: 0,
+                                    onClick: () => setSelectedSeasonNum(s.seasonNumber),
+                                    className: `px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${isSelected ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:text-white hover:border-gold/50"}`,
+                                    children: s.title
+                                  },
+                                  `${s.seasonNumber}-${sIdx}`
+                                );
+                              })
+                            }
+                          )
                         ] }),
                         /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "div",
                           {
-                            ref: detailsSeasonsScrollRef,
-                            className: "relative flex items-center gap-2.5 overflow-x-auto no-scrollbar px-1.5 py-1.5",
-                            children: seriesSeasonsData.map((s, sIdx) => {
-                              const isSelected = selectedSeasonNum === s.seasonNumber;
-                              return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                "button",
+                            ref: detailsEpisodesScrollRef,
+                            className: "relative flex-1 min-h-[180px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5",
+                            children: activeEpisodes.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-6 text-center text-xs sm:text-sm text-zinc-400 font-medium", children: detailLoading ? isRtl ? "جاري تحميل الحلقات..." : "Loading episodes..." : isRtl ? "لا توجد حلقات متاحة لهذا الموسم." : "No episodes available for this season." }) : activeEpisodes.map((ep, epIdx) => {
+                              const epCleanId = cleanVodEntityId(
+                                ep.xtream_id || ep.stream_id,
+                                effectivePlaylistId,
+                                seriesKeyId
+                              );
+                              const epProg = epProgressMap[epCleanId] || getVodProgress({
+                                mediaType: "series",
+                                playlistId: effectivePlaylistId,
+                                seriesId: seriesKeyId,
+                                streamId: epCleanId,
+                                episodeId: epCleanId,
+                                legacyEpisodeIndex: epIdx
+                              });
+                              const isEpCompleted = Boolean(epProg == null ? void 0 : epProg.completed);
+                              const hasEpResume = Boolean(
+                                epProg && !epProg.completed && epProg.positionSec >= MIN_RESUME_POSITION_SEC
+                              );
+                              const epPct = hasEpResume && epProg && epProg.durationSec > 0 ? Math.min(100, Math.max(3, Math.round(epProg.positionSec / epProg.durationSec * 100))) : 0;
+                              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                                "div",
                                 {
                                   "data-tv-focusable": "true",
                                   "data-tv-modal": "details",
-                                  "data-season-tab": "true",
-                                  "data-season-active": isSelected ? "true" : "false",
+                                  "data-episode-item": "true",
+                                  "data-episode-id": epCleanId,
+                                  "data-episode-resume": hasEpResume ? "true" : "false",
                                   tabIndex: 0,
-                                  onClick: () => setSelectedSeasonNum(s.seasonNumber),
-                                  className: `px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${isSelected ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:text-white hover:border-gold/50"}`,
-                                  children: s.title
+                                  onClick: () => {
+                                    if (!activeSeriesParentRef.current && movieDetailsModal) {
+                                      activeSeriesParentRef.current = movieDetailsModal;
+                                    }
+                                    setSelectedChannel(ep);
+                                    setActivePlayingMovie(ep);
+                                    if (settings.useExternalPlayer) {
+                                      launchExternalPlayer(ep.url, ep, "series");
+                                      setMovieDetailsModal(null);
+                                    } else {
+                                      setVodResumeOverride({ mode: "prompt" });
+                                      setActiveVodPlayer(ep);
+                                      setMovieDetailsModal(null);
+                                    }
+                                  },
+                                  className: `flex items-center justify-between p-2.5 rounded-xl border transition-colors group cursor-pointer outline-none ${hasEpResume ? "bg-gold/[0.08] border-gold/45 hover:border-gold hover:bg-gold/15" : "bg-white/[0.05] border-white/15 hover:border-gold/60 hover:bg-gold/15"}`,
+                                  children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs sm:text-sm shrink-0", children: ep.episode || epIdx + 1 }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 flex-1 ${isRtl ? "mr-3" : "ml-3"}`, children: [
+                                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 min-w-0", children: [
+                                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors whitespace-normal break-words leading-snug flex-1", children: ep.name }),
+                                        isEpCompleted && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1", children: [
+                                          /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 10 }),
+                                          isRtl ? "تمت المشاهدة" : "Watched"
+                                        ] }),
+                                        hasEpResume && epProg && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0", children: isRtl ? `توقفت عند ${formatPlaybackClock(epProg.positionSec)}` : `Paused ${formatPlaybackClock(epProg.positionSec)}` })
+                                      ] }),
+                                      epPct > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-gold rounded-full", style: { width: `${epPct}%` } }) })
+                                    ] }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" })
+                                  ]
                                 },
-                                `${s.seasonNumber}-${sIdx}`
+                                `${ep.stream_id}-${epIdx}`
                               );
                             })
                           }
                         )
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "div",
-                        {
-                          ref: detailsEpisodesScrollRef,
-                          className: "relative flex-1 min-h-[100px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5",
-                          children: activeEpisodes.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-6 text-center text-xs sm:text-sm text-zinc-400 font-medium", children: detailLoading ? isRtl ? "جاري تحميل الحلقات..." : "Loading episodes..." : isRtl ? "لا توجد حلقات متاحة لهذا الموسم." : "No episodes available for this season." }) : activeEpisodes.map((ep, epIdx) => {
-                            const epCleanId = cleanVodEntityId(
-                              ep.xtream_id || ep.stream_id,
-                              effectivePlaylistId,
-                              seriesKeyId
-                            );
-                            const epProg = epProgressMap[epCleanId] || getVodProgress({
-                              mediaType: "series",
-                              playlistId: effectivePlaylistId,
-                              seriesId: seriesKeyId,
-                              streamId: epCleanId,
-                              episodeId: epCleanId,
-                              legacyEpisodeIndex: epIdx
-                            });
-                            const isEpCompleted = Boolean(epProg == null ? void 0 : epProg.completed);
-                            const hasEpResume = Boolean(
-                              epProg && !epProg.completed && epProg.positionSec >= MIN_RESUME_POSITION_SEC
-                            );
-                            const epPct = hasEpResume && epProg && epProg.durationSec > 0 ? Math.min(100, Math.max(3, Math.round(epProg.positionSec / epProg.durationSec * 100))) : 0;
-                            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                              "div",
-                              {
-                                "data-tv-focusable": "true",
-                                "data-tv-modal": "details",
-                                "data-episode-item": "true",
-                                "data-episode-id": epCleanId,
-                                "data-episode-resume": hasEpResume ? "true" : "false",
-                                tabIndex: 0,
-                                onClick: () => {
-                                  if (!activeSeriesParentRef.current && movieDetailsModal) {
-                                    activeSeriesParentRef.current = movieDetailsModal;
-                                  }
-                                  setSelectedChannel(ep);
-                                  setActivePlayingMovie(ep);
-                                  if (settings.useExternalPlayer) {
-                                    launchExternalPlayer(ep.url, ep, "series");
-                                    setMovieDetailsModal(null);
-                                  } else {
-                                    setVodResumeOverride({ mode: "prompt" });
-                                    setActiveVodPlayer(ep);
-                                    setMovieDetailsModal(null);
-                                  }
-                                },
-                                className: `flex items-center justify-between p-2.5 rounded-xl border transition-colors group cursor-pointer outline-none ${hasEpResume ? "bg-gold/[0.08] border-gold/45 hover:border-gold hover:bg-gold/15" : "bg-white/[0.05] border-white/15 hover:border-gold/60 hover:bg-gold/15"}`,
-                                children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs sm:text-sm shrink-0", children: ep.episode || epIdx + 1 }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 flex-1 ${isRtl ? "mr-3" : "ml-3"}`, children: [
-                                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 min-w-0", children: [
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors truncate flex-1", children: ep.name }),
-                                      isEpCompleted && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1", children: [
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 10 }),
-                                        isRtl ? "تمت المشاهدة" : "Watched"
-                                      ] }),
-                                      hasEpResume && epProg && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0", children: isRtl ? `توقفت عند ${formatPlaybackClock(epProg.positionSec)}` : `Paused ${formatPlaybackClock(epProg.positionSec)}` })
-                                    ] }),
-                                    epPct > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-gold rounded-full", style: { width: `${epPct}%` } }) })
-                                  ] }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" })
-                                ]
-                              },
-                              `${ep.stream_id}-${epIdx}`
-                            );
-                          })
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-2.5 mt-1 border-t border-white/10 flex flex-wrap items-center justify-between gap-2.5 shrink-0", children: [
-                      mediaType === "movie" && hasMovieResume && movieProgress ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2 flex-1", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      mediaType !== "series" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-2.5 mt-1 border-t border-white/10 flex flex-wrap items-center justify-between gap-2.5 shrink-0", children: [
+                        mediaType === "movie" && hasMovieResume && movieProgress ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
                           "button",
                           {
                             "data-tv-focusable": "true",
@@ -120745,10 +121312,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                                 launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, "movie");
                                 setMovieDetailsModal(null);
                               } else {
-                                setVodResumeOverride({
-                                  mode: "resume",
-                                  positionSec: movieProgress.positionSec
-                                });
+                                setVodResumeOverride({ mode: "prompt" });
                                 setActiveVodPlayer(movieDetailsModal);
                                 setMovieDetailsModal(null);
                               }
@@ -120756,90 +121320,61 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                             className: "px-4 py-1.5 bg-gold hover:bg-gold/90 text-black rounded-lg text-xs sm:text-sm font-black flex items-center justify-center gap-1.5 focus:outline-none transition-colors",
                             children: [
                               /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "fill-black" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? `متابعة المشاهدة من حيث توقفت (${formatPlaybackClock(movieProgress.positionSec)})` : `Resume from ${formatPlaybackClock(movieProgress.positionSec)}` })
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "تشغيل" : "Play" })
                             ]
                           }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        ) : mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
                           "button",
                           {
                             "data-tv-focusable": "true",
                             "data-tv-modal": "details",
+                            "data-tv-play-now": "true",
+                            "data-modal-role": "play",
                             tabIndex: 0,
                             onClick: () => {
-                              clearVodProgress({
-                                mediaType: "movie",
-                                playlistId: effectivePlaylistId,
-                                streamId: movieCleanId
-                              });
                               setSelectedChannel(movieDetailsModal);
                               setActivePlayingMovie(movieDetailsModal);
                               if (settings.useExternalPlayer) {
                                 launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, "movie");
                                 setMovieDetailsModal(null);
                               } else {
-                                setVodResumeOverride({ mode: "restart", positionSec: 0 });
+                                setVodResumeOverride({ mode: "prompt" });
                                 setActiveVodPlayer(movieDetailsModal);
                                 setMovieDetailsModal(null);
                               }
                             },
-                            className: "px-3.5 py-1.5 bg-white/[0.08] hover:bg-white/15 border border-white/15 text-zinc-100 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 focus:outline-none transition-colors",
+                            className: "px-4 py-1.5 bg-gold hover:bg-gold/90 text-black rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 focus:outline-none transition-colors",
                             children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(RotateCcw, { size: 13 }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "البدء من البداية" : "Start from Beginning" })
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "fill-black" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "تشغيل" : "Play" })
+                            ]
+                          }
+                        ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", {}),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "button",
+                          {
+                            "data-tv-focusable": "true",
+                            "data-tv-modal": "details",
+                            "data-modal-role": "favorite",
+                            tabIndex: 0,
+                            onClick: () => toggleFavorite$1(movieDetailsModal.stream_id),
+                            className: `px-3 py-1.5 rounded-lg border transition-colors outline-none focus:outline-none flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold ${vodFavorites.includes(movieDetailsModal.stream_id) ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:border-gold"}`,
+                            title: t("favorites"),
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { size: 14, className: vodFavorites.includes(movieDetailsModal.stream_id) ? "fill-black" : "" }),
+                              hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: vodFavorites.includes(movieDetailsModal.stream_id) ? isRtl ? "في المفضلة" : "Favorited" : isRtl ? "المفضلة" : "Favorite" })
                             ]
                           }
                         )
-                      ] }) : mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        "button",
-                        {
-                          "data-tv-focusable": "true",
-                          "data-tv-modal": "details",
-                          "data-tv-play-now": "true",
-                          "data-modal-role": "play",
-                          tabIndex: 0,
-                          onClick: () => {
-                            setSelectedChannel(movieDetailsModal);
-                            setActivePlayingMovie(movieDetailsModal);
-                            if (settings.useExternalPlayer) {
-                              launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, "movie");
-                              setMovieDetailsModal(null);
-                            } else {
-                              setVodResumeOverride({ mode: "prompt" });
-                              setActiveVodPlayer(movieDetailsModal);
-                              setMovieDetailsModal(null);
-                            }
-                          },
-                          className: "px-4 py-1.5 bg-gold hover:bg-gold/90 text-black rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 focus:outline-none transition-colors",
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "fill-black" }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "تشغيل" : "Play" })
-                          ]
-                        }
-                      ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", {}),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        "button",
-                        {
-                          "data-tv-focusable": "true",
-                          "data-tv-modal": "details",
-                          "data-modal-role": "favorite",
-                          tabIndex: 0,
-                          onClick: () => toggleFavorite$1(movieDetailsModal.stream_id),
-                          className: `px-3 py-1.5 rounded-lg border transition-colors outline-none focus:outline-none flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold ${vodFavorites.includes(movieDetailsModal.stream_id) ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:border-gold"}`,
-                          title: t("favorites"),
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(Star, { size: 14, className: vodFavorites.includes(movieDetailsModal.stream_id) ? "fill-black" : "" }),
-                            hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: vodFavorites.includes(movieDetailsModal.stream_id) ? isRtl ? "في المفضلة" : "Favorited" : isRtl ? "المفضلة" : "Favorite" })
-                          ]
-                        }
-                      )
-                    ] })
-                  ]
-                }
-              )
-            }
-          );
-        })() }),
+                      ] })
+                    ]
+                  }
+                )
+              }
+            );
+          })() }),
+          document.body
+        ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: reorderTarget && /* @__PURE__ */ jsxRuntimeExports.jsx(
           PositionEditModal,
           {
@@ -120847,7 +121382,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
             id: reorderTarget.id,
             name: reorderTarget.name,
             currentIndex: reorderTarget.index,
-            maxPosition: reorderTarget.type === "category" ? visibleCategories.filter((c) => c.category_id !== "favorites" && c.category_id !== WATCH_HISTORY_CAT_ID && c.category_id !== CONTINUE_WATCHING_CAT_ID).length : ((_a2 = filteredChannelsRef.current) == null ? void 0 : _a2.length) || filteredChannels.length,
+            maxPosition: reorderTarget.type === "category" ? visibleCategories.filter((c) => c.category_id !== "favorites" && c.category_id !== WATCH_HISTORY_CAT_ID && c.category_id !== CONTINUE_WATCHING_CAT_ID).length : ((_b2 = filteredChannelsRef.current) == null ? void 0 : _b2.length) || filteredChannels.length,
             language: settings.language,
             onClose: () => setReorderTarget(null),
             onSave: (newPos) => moveItemToPosition(reorderTarget.type, reorderTarget.id, newPos, true),
@@ -120856,10 +121391,10 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
           }
         ) }),
         activeVodPlayer && (mediaType === "movie" || mediaType === "series") && (() => {
-          var _a3, _b2, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2;
+          var _a3, _b3, _c2, _d2, _e2, _f2, _g2, _h2, _i2, _j2, _k2, _l2;
           const seriesEpisodes = mediaType === "series" ? ((_a3 = seriesSeasonsData.find((s) => s.seasonNumber === selectedSeasonNum)) == null ? void 0 : _a3.episodes) || seriesSeasonsData.flatMap((s) => s.episodes) : void 0;
           const seriesIdClean = mediaType === "series" ? cleanVodEntityId(
-            ((_b2 = activeSeriesParentRef.current) == null ? void 0 : _b2.series_id) || ((_c2 = activeSeriesParentRef.current) == null ? void 0 : _c2.stream_id) || (activeVodPlayer == null ? void 0 : activeVodPlayer.series_id),
+            ((_b3 = activeSeriesParentRef.current) == null ? void 0 : _b3.series_id) || ((_c2 = activeSeriesParentRef.current) == null ? void 0 : _c2.stream_id) || (activeVodPlayer == null ? void 0 : activeVodPlayer.series_id),
             effectivePlaylistId
           ) : void 0;
           const matchedEpIdx = seriesEpisodes ? Math.max(0, seriesEpisodes.findIndex((e2) => String(e2.stream_id) === String(activeVodPlayer.stream_id))) : 0;
@@ -121394,246 +121929,394 @@ const ROYAL_THEMES = [
 ];
 const ICON_3D_STYLES = [
   {
-    id: "style-gold-3d",
-    nameAr: "مجسم ملكي (Royal 3D)",
+    id: "style-borderless-pure",
+    nameAr: "بدون إطار نقي (Borderless Pure)",
+    nameEn: "Pure Borderless Icon",
+    cardClass: "bg-transparent border-0 shadow-none rounded-none",
+    iconClass: "text-[var(--theme-primary)] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]",
+    previewBg: "from-zinc-900 to-black",
+    descriptionAr: "أيقونة نقية بدون إطار أو حدود تظهر مباشرة فوق الخلفية بلون السمة",
+    iconProps: { strokeWidth: 2 }
+  },
+  {
+    id: "style-borderless-neon",
+    nameAr: "بدون إطار توهج نيون (Borderless Neon)",
+    nameEn: "Borderless Neon Glow",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-[var(--theme-primary)] drop-shadow-[0_0_12px_var(--theme-glow)]",
+    previewBg: "from-zinc-900 to-black",
+    descriptionAr: "أيقونة بدون إطار مع توهج نيون مضيء يتبع لون التطبيق",
+    iconProps: { strokeWidth: 2.2 }
+  },
+  {
+    id: "style-borderless-soft",
+    nameAr: "بدون إطار شفاف ناعم (Borderless Soft)",
+    nameEn: "Soft Borderless",
+    cardClass: "bg-white/[0.04] border-0 shadow-sm rounded-2xl",
+    iconClass: "text-[var(--theme-primary)]",
+    previewBg: "from-zinc-800 to-zinc-900",
+    descriptionAr: "خلفية شفافة ناعمة بدون حدود خارجية ظاهرة للأيقونة",
+    iconProps: { strokeWidth: 1.8 }
+  },
+  {
+    id: "style-borderless-shadow",
+    nameAr: "بدون إطار مع ظل بارز (Borderless Shadow)",
+    nameEn: "Borderless Drop Shadow",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-[var(--theme-primary)] drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)]",
+    previewBg: "from-zinc-900 to-black",
+    descriptionAr: "أيقونة بارزة بدون إطار مع ظل عميق يمنحها بروزاً ثلاثي الأبعاد",
+    iconProps: { strokeWidth: 2.5 }
+  },
+  {
+    id: "style-borderless-gradient",
+    nameAr: "بدون إطار تدرج لوني (Borderless Gradient)",
+    nameEn: "Borderless Color Gradient",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]",
+    previewBg: "from-fuchsia-600 to-indigo-600",
+    descriptionAr: "أيقونة ملونة بتدرج لوني ساحر دون أي حدود أو إطارات",
+    iconProps: { strokeWidth: 2, fill: "rgba(255,255,255,0.25)" }
+  },
+  {
+    id: "style-borderless-minimal",
+    nameAr: "بدون إطار مبسط (Borderless Minimal)",
+    nameEn: "Minimalist Borderless",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-white hover:text-[var(--theme-primary)] transition-colors",
+    previewBg: "from-zinc-900 to-black",
+    descriptionAr: "تصميم فائق البساطة بدون إطارات أو خلفيات ثقيلة",
+    iconProps: { strokeWidth: 1.5 }
+  },
+  {
+    id: "style-borderless-vibrant",
+    nameAr: "بدون إطار حيوي (Borderless Vibrant)",
+    nameEn: "Vibrant Borderless",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-[var(--theme-primary)] drop-shadow-[0_0_8px_var(--theme-primary)]",
+    previewBg: "from-zinc-900 to-black",
+    descriptionAr: "أيقونة حيوية مشعة بدون إطار خارجي مقيد",
+    iconProps: { strokeWidth: 2.2 }
+  },
+  {
+    id: "style-borderless-crystal",
+    nameAr: "بدون إطار كريستالي (Borderless Crystal)",
+    nameEn: "Crystal Borderless",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-[var(--theme-primary)] drop-shadow-[0_4px_12px_rgba(255,255,255,0.3)]",
+    previewBg: "from-emerald-950 to-black",
+    descriptionAr: "بريق كريستالي حر بدون حدود هندسية خارجية",
+    iconProps: { strokeWidth: 1.8 }
+  },
+  {
+    id: "style-borderless-pearl",
+    nameAr: "بدون إطار لؤلؤي (Borderless Pearl)",
+    nameEn: "Pearl Borderless",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-slate-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]",
+    previewBg: "from-slate-800 to-slate-950",
+    descriptionAr: "أيقونة لؤلؤية ناصعة بلا حدود أو قيود",
+    iconProps: { strokeWidth: 2 }
+  },
+  {
+    id: "style-borderless-sunset",
+    nameAr: "بدون إطار شفق الغروب (Borderless Sunset)",
+    nameEn: "Sunset Borderless",
+    cardClass: "bg-transparent border-0 shadow-none",
+    iconClass: "text-amber-400 drop-shadow-[0_4px_10px_rgba(251,146,60,0.5)]",
+    previewBg: "from-amber-950 to-black",
+    descriptionAr: "أيقونة بوهيمية متوهجة بدون إطار تظهر بانسيابية",
+    iconProps: { strokeWidth: 2 }
+  },
+  {
+    id: "style-royal-3d",
+    nameAr: "مجسم ملكي فاخر (Royal 3D)",
     nameEn: "Royal 3D Luxury",
     cardClass: "bg-gradient-to-br from-[var(--theme-primary)] via-[var(--theme-secondary)] to-black shadow-[0_10px_20px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.3)] border border-[var(--theme-primary)]/50 rounded-2xl",
     iconClass: "drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] text-white",
     previewBg: "from-gold to-zinc-900",
     descriptionAr: "تصميم ملكي مجسم ببريق عالي وانعكاسات غنية تتبع اللون المختار",
-    recommendedThemeId: "pure-metallic-gold",
-    recommendedBackgroundId: "bg-raouche-rocks-beirut",
     iconProps: { strokeWidth: 2.5, fill: "rgba(255,255,255,0.2)" }
   },
   {
-    id: "style-silver-3d",
-    nameAr: "كروم مصقول (Chrome 3D)",
+    id: "style-chrome-3d",
+    nameAr: "كروم فضي مصقول (Chrome 3D)",
     nameEn: "Silver 3D Chrome",
     cardClass: "bg-gradient-to-br from-slate-200 via-slate-400 to-slate-700 shadow-[0_10px_20px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.8)] border border-slate-200/50 rounded-2xl",
     iconClass: "drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)] text-slate-900",
     previewBg: "from-slate-200 to-slate-600",
     descriptionAr: "كروم فضي مصقول بلمعان مرآتي وتأثير معدني بارز",
-    recommendedThemeId: "diamond-platinum",
-    recommendedBackgroundId: "bg-winter-pine-forest",
     iconProps: { strokeWidth: 2, fill: "rgba(0,0,0,0.1)" }
   },
   {
     id: "style-flat-minimalist",
-    nameAr: "بسيط مسطح (Flat Minimal)",
-    nameEn: "Flat Minimalist",
+    nameAr: "بسيط مسطح أنيق (Flat Minimal)",
+    nameEn: "Flat Minimalist Box",
     cardClass: "bg-zinc-900 border border-zinc-800 rounded-xl",
     iconClass: "text-[var(--theme-primary)] transition-colors",
     previewBg: "from-zinc-800 to-zinc-900",
     descriptionAr: "تصميم عصري بسيط يبرز اللون المختار في الأيقونة",
-    recommendedThemeId: "pearl-lumina",
-    recommendedBackgroundId: "bg-norway-fjord-mist",
     iconProps: { strokeWidth: 1.5 }
   },
   {
-    id: "style-neon-glow",
-    nameAr: "توهج نيون (Neon Glow)",
-    nameEn: "Neon Glow",
+    id: "style-neon-box",
+    nameAr: "توهج نيون محيط (Neon Glow Box)",
+    nameEn: "Neon Glow Box",
     cardClass: "bg-black border-2 border-[var(--theme-primary)] shadow-[0_0_20px_var(--theme-glow)] rounded-full",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[0_0_8px_var(--theme-glow)]",
     previewBg: "from-zinc-900 to-black",
-    descriptionAr: "توهج ضوئي نيون مكثف يتبع اللون الذي تختاره",
-    recommendedThemeId: "midnight-cyan",
-    recommendedBackgroundId: "bg-aurora-lake-reflection",
+    descriptionAr: "توهج ضوئي نيون مكثف داخل إطار دائري يتبع اللون الذي تختاره",
     iconProps: { strokeWidth: 2 }
   },
   {
     id: "style-glassmorphism",
-    nameAr: "زجاجي شفاف (Glassmorphism)",
-    nameEn: "Glassmorphism",
+    nameAr: "زجاجي شفاف فاخر (Glassmorphism)",
+    nameEn: "Glassmorphism Card",
     cardClass: "bg-white/10 border border-white/20 shadow-sm rounded-3xl",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-indigo-500/20 to-purple-500/20",
     descriptionAr: "تأثير الزجاج الشفاف مع خلفية ضبابية ولمسات من اللون المختار",
-    recommendedThemeId: "royal-indigo",
-    recommendedBackgroundId: "bg-maldives-lagoon-dusk",
     iconProps: { strokeWidth: 1.2, fill: "rgba(255,255,255,0.1)" }
   },
   {
-    id: "style-cartoon-3d",
-    nameAr: "كرتون ثلاثي الأبعاد (Cartoon 3D)",
+    id: "style-cartoon-clay",
+    nameAr: "كرتون ثلاثي الأبعاد بارز (Cartoon Clay)",
     nameEn: "Cartoon 3D Clay",
     cardClass: "bg-[var(--theme-primary)] shadow-[0_8px_0_var(--theme-secondary)] border-4 border-white rounded-[2rem]",
     iconClass: "text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]",
     previewBg: "from-orange-400 to-orange-600",
-    descriptionAr: "نمط كرتوني مرح بألوان زاهية تتبع اختيارك",
-    recommendedThemeId: "topaz-flame",
-    recommendedBackgroundId: "bg-coastal-sunset-horizon",
+    descriptionAr: "نمط كرتوني مرح بألوان زاهية بارزة تتبع اختيارك",
     iconProps: { strokeWidth: 3, size: 32 }
   },
   {
-    id: "style-metallic",
-    nameAr: "معدن مصقول (Metallic)",
+    id: "style-brushed-metal",
+    nameAr: "معدن خشن مصقول (Brushed Metal)",
     nameEn: "Brushed Metallic",
     cardClass: "bg-zinc-800 border-2 border-zinc-600 shadow-inner rounded-lg",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[1px_1px_1px_rgba(255,255,255,0.5)]",
     previewBg: "from-zinc-700 to-zinc-900",
     descriptionAr: "نسيج معدني خشن بلمسة من اللون المختار",
-    recommendedThemeId: "royal-bronze",
-    recommendedBackgroundId: "bg-ny-manhattan-twilight",
     iconProps: { strokeWidth: 2.5 }
   },
   {
-    id: "style-gradient-colorful",
-    nameAr: "تدرج لوني (Colorful Gradient)",
-    nameEn: "Colorful Gradient",
+    id: "style-colorful-gradient",
+    nameAr: "تدرج لوني ديناميكي (Colorful Gradient)",
+    nameEn: "Colorful Gradient Box",
     cardClass: "bg-gradient-to-tr from-[var(--theme-primary)] via-[var(--theme-secondary)] to-black shadow-lg rounded-2xl rotate-3 hover:rotate-0 transition-transform",
     iconClass: "text-white",
     previewBg: "from-fuchsia-500 to-indigo-500",
     descriptionAr: "انفجار من الألوان المتدرجة والحيوية بتصميم ديناميكي",
-    recommendedThemeId: "electric-violet",
-    recommendedBackgroundId: "bg-lavender-hills-dusk",
     iconProps: { strokeWidth: 2, fill: "rgba(255,255,255,0.3)" }
   },
   {
-    id: "style-outline-icons",
-    nameAr: "خطوط خارجية (Outline Only)",
-    nameEn: "Outline Minimal",
+    id: "style-dashed-outline",
+    nameAr: "إطار منقط فني (Dashed Outline)",
+    nameEn: "Dashed Outline Minimal",
     cardClass: "bg-transparent border-2 border-dashed border-[var(--theme-primary)]/40 rounded-xl",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-transparent to-transparent",
-    descriptionAr: "تركيز كامل على الخطوط الخارجية بأسلوب فني يتبع اللون المختار",
-    recommendedThemeId: "titanium-azure",
-    recommendedBackgroundId: "bg-mediterranean-cove",
+    descriptionAr: "تركيز كامل على الخطوط المقطعة بأسلوب فني يتبع اللون المختار",
     iconProps: { strokeWidth: 1 }
   },
   {
-    id: "style-rounded-modern",
-    nameAr: "عصري دائري (Rounded Modern)",
-    nameEn: "Rounded Modern",
+    id: "style-rounded-pill",
+    nameAr: "كبسولة دائرية عصرية (Rounded Pill)",
+    nameEn: "Rounded Pill Modern",
     cardClass: "bg-white shadow-[0_10px_25px_rgba(0,0,0,0.1)] rounded-[3rem]",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-slate-100 to-slate-200",
     descriptionAr: "حواف دائرية للغاية مع تصميم نظيف وأيقونة ملونة",
-    recommendedThemeId: "pearl-lumina",
-    recommendedBackgroundId: "bg-mount-fuji-bluehour",
     iconProps: { strokeWidth: 2, size: 28 }
   },
   {
-    id: "style-cyberpunk",
-    nameAr: "سايبربانك (Cyberpunk)",
+    id: "style-cyberpunk-glitch",
+    nameAr: "سايبربانك متمرد (Cyberpunk Glitch)",
     nameEn: "Cyberpunk Glitch",
     cardClass: "bg-black border-l-4 border-[var(--theme-primary)] shadow-[5px_5px_0_var(--theme-secondary),-5px_-5px_0_var(--theme-glow)] rounded-none skew-x-[-10deg]",
     iconClass: "text-white drop-shadow-[2px_2px_0_var(--theme-primary)]",
     previewBg: "from-zinc-900 to-black",
     descriptionAr: "روح السايبربانك المتمردة مع ألوان تتبع اختيارك",
-    recommendedThemeId: "cosmic-nebula",
-    recommendedBackgroundId: "bg-tokyo-night-skyline",
     iconProps: { strokeWidth: 2 }
   },
   {
-    id: "style-crystal",
-    nameAr: "كريستال (Crystal Style)",
-    nameEn: "Jewel Crystal",
+    id: "style-jewel-crystal",
+    nameAr: "جوهرة كريستالية هندسية (Jewel Crystal)",
+    nameEn: "Jewel Crystal Polygon",
     cardClass: "bg-[var(--theme-primary)]/20 border-2 border-[var(--theme-primary)]/50 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-emerald-900 to-black",
     descriptionAr: "أشكال هندسية كريستالية ببريق اللون المختار",
-    recommendedThemeId: "emerald-palace",
-    recommendedBackgroundId: "bg-emerald-forest-waterfall",
     iconProps: { strokeWidth: 1.5, fill: "rgba(255,255,255,0.1)" }
   },
   {
-    id: "style-luxury-black-gold",
-    nameAr: "فخامة ملكية (Luxury)",
+    id: "style-luxury-matte",
+    nameAr: "فخامة مطفأة (Luxury Matte)",
     nameEn: "Luxury Matte Theme",
     cardClass: "bg-white/[0.06] border border-[var(--theme-primary)]/45 shadow-lg rounded-tr-[3rem] rounded-bl-[3rem]",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[0_2px_4px_var(--theme-glow)]",
     previewBg: "from-zinc-900 to-black",
     descriptionAr: "مزيج النخبة بين الأسود المطفي واللون المختار بتصميم أرستقراطي",
-    recommendedThemeId: "royal-gold",
-    recommendedBackgroundId: "bg-ny-brooklyn-bridge",
     iconProps: { strokeWidth: 2, fill: "currentColor" }
   },
   {
-    id: "style-futuristic",
-    nameAr: "مستقبلي تقني (Futuristic)",
-    nameEn: "Futuristic Tech",
+    id: "style-futuristic-tech",
+    nameAr: "تقني مستقبلي (Futuristic Tech)",
+    nameEn: "Futuristic Tech HUD",
     cardClass: "bg-[var(--theme-primary)]/10 border border-[var(--theme-primary)]/40 shadow-[inset_0_0_15px_var(--theme-glow)] rounded-lg relative overflow-hidden",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-sky-950 to-black",
     descriptionAr: "واجهة تقنية مستقبلية تتبع اختيارك اللوني بدقة",
-    recommendedThemeId: "neon-turquoise",
-    recommendedBackgroundId: "bg-dubai-marina-night",
     iconProps: { strokeWidth: 1.5 }
   },
   {
-    id: "style-leather-stitched",
-    nameAr: "جلد طبيعي مطرز (Leather)",
+    id: "style-stitched-leather",
+    nameAr: "جلد طبيعي مطرز (Stitched Leather)",
     nameEn: "Stitched Luxury Leather",
     cardClass: "bg-[#3d2b1f] shadow-inner border-2 border-[#2a1d15] rounded-xl",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[0_1px_1px_rgba(255,255,255,0.1)]",
     previewBg: "from-[#3d2b1f] to-[#1a120c]",
     descriptionAr: "لمسة الجلد الطبيعي الفاخر مع اللون المختار",
-    recommendedThemeId: "royal-bronze",
-    recommendedBackgroundId: "bg-stone-fireplace-hearth",
     iconProps: { strokeWidth: 2, fill: "rgba(255,255,255,0.1)" }
   },
   {
     id: "style-polished-wood",
-    nameAr: "خشب مصقول (Polished Wood)",
+    nameAr: "خشب عتيق مصقول (Polished Wood)",
     nameEn: "Noble Polished Wood",
     cardClass: "bg-gradient-to-br from-[#5d4037] to-[#2b1d19] shadow-xl border border-[#795548]/30 rounded-lg",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]",
     previewBg: "from-[#5d4037] to-[#2b1d19]",
     descriptionAr: "دفء الخشب الكلاسيكي المصقول بلمسة لونية مختارة",
-    recommendedThemeId: "sahara-gold",
-    recommendedBackgroundId: "bg-alpine-cabin-snow",
     iconProps: { strokeWidth: 1.5, fill: "rgba(255,255,255,0.1)" }
   },
   {
-    id: "style-holographic-shine",
-    nameAr: "هولوجرام مشع (Holographic)",
+    id: "style-iridescent-hologram",
+    nameAr: "هولوجرام مشع (Iridescent Hologram)",
     nameEn: "Iridescent Hologram",
     cardClass: "bg-gradient-to-br from-[var(--theme-primary)] via-fuchsia-400 to-[var(--theme-secondary)] opacity-90 shadow-lg rounded-full",
     iconClass: "text-white mix-blend-overlay",
     previewBg: "from-cyan-200 to-fuchsia-200",
     descriptionAr: "ألوان قوس قزح المتغيرة تتبع اللون المختار",
-    recommendedThemeId: "cosmic-nebula",
-    recommendedBackgroundId: "bg-sakura-garden-twilight",
     iconProps: { strokeWidth: 2, fill: "rgba(255,255,255,0.4)" }
   },
   {
-    id: "style-pixel-retro",
-    nameAr: "بكسل آرت (8-Bit Retro)",
+    id: "style-pixel-retro-8bit",
+    nameAr: "بكسل آرت كلاسيكي (8-Bit Retro)",
     nameEn: "8-Bit Pixel Retro",
     cardClass: "bg-[var(--theme-primary)]/80 border-4 border-[#ffffff] shadow-[8px_8px_0_#000000] rounded-none",
     iconClass: "text-white [image-rendering:pixelated]",
     previewBg: "from-blue-900 to-black",
     descriptionAr: "حنين الألعاب الكلاسيكية باللون المختار",
-    recommendedThemeId: "electric-blue",
-    recommendedBackgroundId: "bg-ny-midtown-avenue",
     iconProps: { strokeWidth: 3 }
   },
   {
-    id: "style-sci-fi-hud",
-    nameAr: "واجهة خيال علمي (Sci-Fi HUD)",
+    id: "style-scifi-hud-display",
+    nameAr: "شاشة خيال علمي (Sci-Fi HUD)",
     nameEn: "Futuristic HUD Interface",
     cardClass: "bg-black/60 border-t-2 border-b-2 border-[var(--theme-primary)] shadow-[0_0_16px_var(--theme-glow)] rounded-none",
     iconClass: "text-[var(--theme-primary)]",
     previewBg: "from-black to-sky-950",
     descriptionAr: "شاشات العرض المستقبلية بلونك المختار",
-    recommendedThemeId: "titanium-azure",
-    recommendedBackgroundId: "bg-istanbul-bosphorus-night",
     iconProps: { strokeWidth: 1, size: 24 }
   },
   {
-    id: "style-high-tech-carbon",
-    nameAr: "ألياف الكربون (Carbon Fiber)",
+    id: "style-carbon-fiber-tech",
+    nameAr: "ألياف الكربون التقنية (Carbon Fiber)",
     nameEn: "High-Tech Carbon Fiber",
     cardClass: "bg-zinc-900/75 border-2 border-[var(--theme-primary)]/40 shadow-lg rounded-lg [background-image:linear-gradient(45deg,#1a1a1a_25%,transparent_25%),linear-gradient(-45deg,#1a1a1a_25%,transparent_25%)] [background-size:4px_4px]",
     iconClass: "text-[var(--theme-primary)] drop-shadow-[0_0_10px_var(--theme-glow)]",
     previewBg: "from-zinc-800 to-black",
     descriptionAr: "نسيج ألياف الكربون التقني مطعّم باللون المختار",
-    recommendedThemeId: "onyx-gold",
-    recommendedBackgroundId: "bg-paris-eiffel-night",
     iconProps: { strokeWidth: 2 }
+  },
+  {
+    id: "style-icon-cinema",
+    nameAr: "سينمائي كلاسيكي",
+    nameEn: "Cinema Signature",
+    cardClass: "bg-gradient-to-br from-amber-500/25 via-zinc-900 to-black border border-amber-300/50 rounded-2xl shadow-lg",
+    iconClass: "text-amber-200 drop-shadow-[0_0_8px_rgba(245,158,11,.55)]",
+    previewBg: "from-amber-700 to-zinc-950",
+    descriptionAr: "أيقونات سينمائية بتفاصيل شريط الفيلم وشاشة العرض",
+    glyphVariant: "cinema",
+    iconProps: { strokeWidth: 2.1 }
+  },
+  {
+    id: "style-icon-broadcast",
+    nameAr: "بث مباشر احترافي",
+    nameEn: "Broadcast Pro",
+    cardClass: "bg-gradient-to-br from-cyan-500/25 to-slate-950 border border-cyan-300/45 rounded-xl shadow-[0_0_16px_rgba(6,182,212,.2)]",
+    iconClass: "text-cyan-200 drop-shadow-[0_0_8px_rgba(34,211,238,.55)]",
+    previewBg: "from-cyan-700 to-slate-950",
+    descriptionAr: "أيقونات بث وهوائيات بإحساس تقني واضح",
+    glyphVariant: "broadcast",
+    iconProps: { strokeWidth: 2 }
+  },
+  {
+    id: "style-icon-crystal",
+    nameAr: "كريستال هندسي",
+    nameEn: "Crystal Geometry",
+    cardClass: "bg-gradient-to-br from-violet-300/25 via-indigo-950 to-black border border-violet-200/45 rounded-2xl shadow-lg",
+    iconClass: "text-violet-100 drop-shadow-[0_0_10px_rgba(196,181,253,.5)]",
+    previewBg: "from-violet-700 to-indigo-950",
+    descriptionAr: "أيقونات هندسية متعددة الأوجه بلمعة كريستالية",
+    glyphVariant: "crystal",
+    iconProps: { strokeWidth: 1.8, fill: "rgba(196,181,253,.16)" }
+  },
+  {
+    id: "style-icon-neon",
+    nameAr: "نيون مستقبلي",
+    nameEn: "Neon Future",
+    cardClass: "bg-black border-2 border-fuchsia-400/70 rounded-full shadow-[0_0_18px_rgba(217,70,239,.3)]",
+    iconClass: "text-fuchsia-200 drop-shadow-[0_0_10px_rgba(232,121,249,.85)]",
+    previewBg: "from-fuchsia-700 to-black",
+    descriptionAr: "أيقونات بخطوط مضيئة ولمسات مستقبلية",
+    glyphVariant: "neon",
+    iconProps: { strokeWidth: 2.3 }
+  },
+  {
+    id: "style-icon-retro",
+    nameAr: "ريترو بيكسل",
+    nameEn: "Retro Pixel",
+    cardClass: "bg-gradient-to-br from-emerald-900 to-zinc-950 border-2 border-emerald-400/50 rounded-lg shadow-[4px_4px_0_rgba(16,185,129,.25)]",
+    iconClass: "text-emerald-200",
+    previewBg: "from-emerald-700 to-zinc-950",
+    descriptionAr: "أيقونات مستوحاة من أجهزة الألعاب والشاشات الكلاسيكية",
+    glyphVariant: "retro",
+    iconProps: { strokeWidth: 2.5 }
   }
 ];
+const ICON_STYLE_GLYPH_MAP = {
+  "style-borderless-pure": "cinema",
+  "style-borderless-neon": "neon",
+  "style-borderless-soft": "crystal",
+  "style-borderless-shadow": "broadcast",
+  "style-borderless-gradient": "retro",
+  "style-borderless-minimal": "cinema",
+  "style-borderless-vibrant": "neon",
+  "style-borderless-crystal": "crystal",
+  "style-borderless-pearl": "crystal",
+  "style-borderless-sunset": "cinema",
+  "style-royal-3d": "crystal",
+  "style-chrome-3d": "broadcast",
+  "style-flat-minimalist": "retro",
+  "style-neon-box": "neon",
+  "style-glassmorphism": "crystal",
+  "style-cartoon-clay": "retro",
+  "style-brushed-metal": "broadcast",
+  "style-colorful-gradient": "cinema",
+  "style-dashed-outline": "broadcast",
+  "style-rounded-pill": "crystal",
+  "style-cyberpunk-glitch": "neon",
+  "style-jewel-crystal": "crystal",
+  "style-luxury-matte": "cinema",
+  "style-futuristic-tech": "broadcast",
+  "style-stitched-leather": "retro",
+  "style-polished-wood": "cinema",
+  "style-iridescent-hologram": "crystal",
+  "style-pixel-retro-8bit": "retro",
+  "style-scifi-hud-display": "broadcast",
+  "style-carbon-fiber-tech": "neon"
+};
+const getIconGlyphVariant = (style2) => style2.glyphVariant || ICON_STYLE_GLYPH_MAP[style2.id] || "cinema";
 const APP_BACKGROUNDS = [
   {
     id: "bg-raouche-rocks-beirut",
@@ -122118,244 +122801,252 @@ const APP_BACKGROUNDS = [
 ];
 const DASHBOARD_LAYOUTS = [
   {
+    id: "layout-frameless-icons",
+    nameAr: "1. أيقونات فقط دون إطارات",
+    nameEn: "1. Icons Only (No Frames)",
+    descriptionAr: "عرض أيقونات التطبيق فقط مباشرة فوق خلفية الشاشة دون أي إطارات أو بطاقات",
+    descriptionEn: "Clean icons directly over your background with no frames or cards",
+    previewBg: "from-transparent via-transparent to-black/35"
+  },
+  {
     id: "layout-pure-icons",
-    nameAr: "1. واجهة الأيقونات الخالصة (تغيير الأيقونات)",
-    nameEn: "Pure App Icons Showcase",
-    descriptionAr: "أيقونات التطبيق فقط بشكل زجاجي حر تتغير مباشرة مع قائمة أشكال الأيقونات ولون الثيم",
-    descriptionEn: "Clean floating app icons directly driven by your Icon Style and Theme Color",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "2. واجهة الأيقونات الزجاجية الحرة",
+    nameEn: "2. Pure App Icons Showcase",
+    descriptionAr: "أيقونات التطبيق بإطار خفيف شفاف يتفاعل مباشرة مع شكل الأيقونة ولون الثيم",
+    descriptionEn: "Clean translucent app icons driven by your Icon Style and Theme Color",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-glass-hero-dock",
-    nameAr: "2. المنصة الزجاجية والشريط السفلي",
-    nameEn: "Glass Hero & Bottom Dock",
-    descriptionAr: "واجهة زجاجية ببانر علوي للبث المباشر وشريط سفلي سريع للأقسام الخمسة",
-    descriptionEn: "Translucent broadcast stage above a 5-tile quick glass dock",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "3. المنصة الزجاجية والشريط السفلي",
+    nameEn: "3. Glass Hero & Bottom Dock",
+    descriptionAr: "إطار رئيسي شفاف في الأعلى وشريط سفلي سريع للأقسام الأخرى",
+    descriptionEn: "Translucent focal frame above a 4-tile quick glass dock",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-vertical-rail",
-    nameAr: "3. القائمة الجانبية الزجاجية (اليسار)",
-    nameEn: "Left Glass Navigation Rail",
+    nameAr: "4. القائمة الجانبية الزجاجية (اليسار)",
+    nameEn: "4. Left Glass Navigation Rail",
     descriptionAr: "عمود تنقل زجاجي جانبي مع ثلاث منصات عرض رئيسية شفافة",
     descriptionEn: "Vertical glass navigation rail paired with main media showcase cards",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-cinema-marquee",
-    nameAr: "4. أعمدة البوسترات الطولية",
-    nameEn: "Vertical Cinema Marquee",
+    nameAr: "5. أعمدة البوسترات الطولية",
+    nameEn: "5. Vertical Cinema Marquee",
     descriptionAr: "خمس بطاقات زجاجية طولية بمقاس بوستر سينمائي متناسق",
-    descriptionEn: "Five tall glass poster columns side by side",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    descriptionEn: "Five tall transparent glass poster columns side by side",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-asymmetric-bento",
-    nameAr: "5. شبكة البنتو الزجاجية المتداخلة",
-    nameEn: "Asymmetric Glass Bento",
-    descriptionAr: "توزيع بنتو غير متماثل يبرز البث المباشر والأفلام والمسلسلات بزوايا زجاجية ناعمة",
-    descriptionEn: "Multi-span asymmetric glass bento grid with balanced visual hierarchy",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "6. شبكة البنتو الزجاجية المتداخلة",
+    nameEn: "6. Asymmetric Glass Bento",
+    descriptionAr: "توزيع بنتو غير متماثل بإطارات شفافة تبرز الأقسام بزوايا ناعمة",
+    descriptionEn: "Multi-span asymmetric transparent bento grid with clear hierarchy",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-dual-cinema-split",
-    nameAr: "6. الشاشة المقسومة الزجاجية",
-    nameEn: "Dual Glass Cinema Split",
-    descriptionAr: "نصف عريض للبث المباشر يقابله مربع رباعي للأفلام والمسلسلات والقوائم والضبط",
-    descriptionEn: "Left widescreen live broadcast paired with a right 2x2 glass quad",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "7. الشاشة المقسومة الزجاجية",
+    nameEn: "7. Dual Glass Cinema Split",
+    descriptionAr: "نصف عريض شفاف يقابله مربع رباعي للأقسام الأخرى",
+    descriptionEn: "Widescreen primary frame paired with a 2x2 transparent quad",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-floating-console-bar",
-    nameAr: "7. شريط الكونسول الزجاجي المعلق",
-    nameEn: "Floating Glass Console Bar",
-    descriptionAr: "شريط زجاجي أفقي معلق يتوسطه البث المباشر بارتفاع بارز مع بقية الأقسام",
-    descriptionEn: "Elevated center-focused horizontal glass console bar",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "8. شريط الكونسول الزجاجي المعلق",
+    nameEn: "8. Floating Glass Console Bar",
+    descriptionAr: "شريط زجاجي أفقي معلق يتوسطه إطار بارز شفاف مع بقية الأقسام",
+    descriptionEn: "Elevated center-focused horizontal transparent glass console bar",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-pyramid-tier",
-    nameAr: "8. الهرم الزجاجي المزدوج",
-    nameEn: "Tiered Glass Pyramid",
-    descriptionAr: "صف علوي مزدوج للبث والأفلام يرتكز على صف سفلي رباعي للأقسام والإعدادات",
-    descriptionEn: "Two wide top glass hero cards over a four-card bottom utility tier",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "9. الهرم الزجاجي المزدوج",
+    nameEn: "9. Tiered Glass Pyramid",
+    descriptionAr: "صف علوي مزدوج بإطارات شفافة يرتكز على صف سفلي ثلاثي",
+    descriptionEn: "Two wide top glass hero frames over a three-frame bottom tier",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-right-command-panel",
-    nameAr: "9. الأشرطة الأفقية وبرج الأدوات",
-    nameEn: "Horizontal Strips & Right Tower",
-    descriptionAr: "ثلاثة أشرطة سينمائية عريضة بجانب عمود أدوات زجاجي مدمج",
-    descriptionEn: "Stacked wide media banners flanked by a compact utility tower",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "10. الأشرطة الأفقية وبرج الأدوات",
+    nameEn: "10. Horizontal Strips & Utility Tower",
+    descriptionAr: "ثلاثة أشرطة سينمائية عريضة شفافة بجانب عمود أدوات زجاجي مدمج",
+    descriptionEn: "Stacked wide translucent banners flanked by a compact utility tower",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-chamfer-prism-grid",
-    nameAr: "10. الألواح الزجاجية المقطوعة الحواف",
-    nameEn: "Chamfered Glass Prism Grid",
-    descriptionAr: "بطاقات هندسية مقصوصة الزوايا بتصميم زجاجي مستقبلي متدرج",
-    descriptionEn: "Architectural bevel-cut translucent prism tiles in staggered rows",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "11. الألواح الزجاجية المقطوعة الحواف",
+    nameEn: "11. Chamfered Glass Prism Grid",
+    descriptionAr: "بطاقات هندسية مقصوصة الزوايا بإطار زجاجي شفاف مستقبلي",
+    descriptionEn: "Architectural bevel-cut translucent prism frames in staggered rows",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-editorial-showcase",
-    nameAr: "11. الواجهة التحريرية الأنيقة",
-    nameEn: "Editorial Glass Stage",
+    nameAr: "12. الواجهة التحريرية الأنيقة",
+    nameEn: "12. Editorial Glass Stage",
     descriptionAr: "أشرطة طباعية زجاجية نظيفة بخطوط فاصلة دقيقة ومساحات مفتوحة للخلفية",
     descriptionEn: "Minimal editorial rows separated by crisp hairline glass dividers",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/60"
+    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
   },
   {
     id: "layout-orbital-medallions",
-    nameAr: "12. المدار الزجاجي الدائري",
-    nameEn: "Orbital Glass Medallions",
-    descriptionAr: "أقراص زجاجية دائرية عائمة بتدرج ناعم ولون متغير حسب الثيم",
-    descriptionEn: "Floating circular glass medallions centered around Live TV",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "13. المدار الزجاجي الدائري",
+    nameEn: "13. Orbital Glass Medallions",
+    descriptionAr: "أقراص زجاجية دائرية عائمة شفافة بتدرج ناعم ولون متغير حسب الثيم",
+    descriptionEn: "Floating circular transparent glass medallions",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-leanback-lanes",
-    nameAr: "13. مسارات التلفاز الذكي",
-    nameEn: "Smart TV Leanback Lanes",
-    descriptionAr: "مساران أفقيان منفصلان للترفيه وإدارة النظام بتجربة تحكم ريموت سلسة",
-    descriptionEn: "Two distinct horizontal TV rows for entertainment and system actions",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "14. مسارات التلفاز الذكي",
+    nameEn: "14. Smart TV Leanback Lanes",
+    descriptionAr: "مساران أفقيان منفصلان بإطارات شفافة بتجربة تحكم ريموت سلسة",
+    descriptionEn: "Two distinct horizontal transparent TV rows",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-quadrant-hub",
-    nameAr: "14. الأرباع المحيطة بالمركز",
-    nameEn: "Four Quadrants & Center Hub",
-    descriptionAr: "أربعة أجنحة زجاجية تحيط بزر البث المباشر المركزي البارز",
-    descriptionEn: "Four balanced corner cards surrounding a central Live TV focal hub",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "15. الأرباع المحيطة بالمركز",
+    nameEn: "15. Four Quadrants & Center Hub",
+    descriptionAr: "أربعة أجنحة زجاجية شفافة تحيط بزر مركزي بارز",
+    descriptionEn: "Four balanced corner transparent frames surrounding a central hub",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-arch-gallery",
-    nameAr: "15. معرض الأقواس الزجاجية",
-    nameEn: "Arched Glass Gallery",
-    descriptionAr: "بطاقات زجاجية مقوسة الأعلى تمنح مظهراً معمارياً فاخراً فوق الخلفية الطبيعية",
-    descriptionEn: "Five sculptural arch-topped glass cards showcasing app sections",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "16. معرض الأقواس الزجاجية",
+    nameEn: "16. Arched Glass Gallery",
+    descriptionAr: "بطاقات زجاجية شفافة مقوسة الأعلى تمنح مظهراً معمارياً فوق الخلفية",
+    descriptionEn: "Five sculptural arch-topped transparent glass frames",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-compact-glass-stack",
-    nameAr: "16. القائمة الزجاجية العمودية",
-    nameEn: "Compact Vertical Glass Stack",
-    descriptionAr: "عمود زجاجي مدمج في الوسط لتنقل سريع جداً بأزرار الأعلى والأسفل",
-    descriptionEn: "Slim centered glass menu stack built for rapid vertical D-pad scrolling",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/60"
+    nameAr: "17. القائمة الزجاجية العمودية",
+    nameEn: "17. Compact Vertical Glass Stack",
+    descriptionAr: "عمود زجاجي شفاف مدمج في الوسط لتنقل سريع بأزرار الأعلى والأسفل",
+    descriptionEn: "Slim centered transparent glass menu stack for rapid D-pad navigation",
+    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
   },
   {
     id: "layout-widescreen-ribbon",
-    nameAr: "17. الشريط البانورامي العريض",
-    nameEn: "Anamorphic Widescreen Ribbon",
-    descriptionAr: "صف علوي بثلاث بطاقات عريضة فوق شريط أدوات زجاجي نحيف موحد",
-    descriptionEn: "Three 16:9 widescreen glass cards atop a unified slim bottom bar",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "18. الشريط البانورامي العريض",
+    nameEn: "18. Anamorphic Widescreen Ribbon",
+    descriptionAr: "صف علوي بثلاث بطاقات عريضة شفافة فوق شريط أدوات نحيف",
+    descriptionEn: "Three 16:9 widescreen transparent frames atop a slim bottom strip",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-stepped-skyline",
-    nameAr: "18. الأعمدة الزجاجية المتدرجة",
-    nameEn: "Stepped Glass Skyline",
-    descriptionAr: "خمس ركائز زجاجية بارتفاعات متدرجة تتصاعد نحو المنتصف",
-    descriptionEn: "Five stepped vertical glass pillars rising toward the center card",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/60"
+    nameAr: "19. الأعمدة الزجاجية المتدرجة",
+    nameEn: "19. Stepped Glass Skyline",
+    descriptionAr: "خمس ركائز زجاجية شفافة بارتفاعات متدرجة تتصاعد نحو المنتصف",
+    descriptionEn: "Five stepped vertical transparent glass pillars rising toward center",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-split-header-deck",
-    nameAr: "19. بطاقات السطح المقسوم",
-    nameEn: "Split-Header Glass Deck",
-    descriptionAr: "بطاقات زجاجية برأس لوني علوي شفاف وشريط تحكم سفلي أنيق",
-    descriptionEn: "Three glass media cards with tinted header bands plus utility strip",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/60"
+    nameAr: "20. بطاقات السطح المقسوم",
+    nameEn: "20. Split-Header Glass Deck",
+    descriptionAr: "بطاقات زجاجية شفافة برأس لوني علوي شفاف وشريط تحكم سفلي",
+    descriptionEn: "Transparent glass media frames with tinted header bands",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-zen-horizon",
-    nameAr: "20. الأفق الزجاجي المفتوح",
-    nameEn: "Zen Open Glass Horizon",
+    nameAr: "21. الأفق الزجاجي المفتوح",
+    nameEn: "21. Zen Open Glass Horizon",
     descriptionAr: "شريط أفقي شفاف مفتوح الحواف يترك أكبر مساحة ممكنة للخلفية الطبيعية",
-    descriptionEn: "Ultra-clean translucent horizontal ribbon leaving maximum wallpaper visible",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/60"
+    descriptionEn: "Ultra-clean translucent horizontal ribbon leaving wallpaper visible",
+    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
   },
   {
     id: "layout-obsidian-hex-hive",
-    nameAr: "21. خلية السداسيات الداكنة (أيقونات جديدة)",
-    nameEn: "Obsidian Hex Hive Studio",
-    descriptionAr: "بطاقات داكنة صلبة متدرجة كخلية النحل بأيقونات سداسية جديدة تتلون بالكامل مع ثيم التطبيق",
-    descriptionEn: "Solid matte honeycomb bento pods with custom hexagonal vector emblems",
-    previewBg: "from-[var(--theme-primary)]/45 via-[#0f131d] to-[#080a10]"
+    nameAr: "22. خلية السداسيات الشفافة",
+    nameEn: "22. Transparent Hex Hive Frames",
+    descriptionAr: "إطارات سداسية شفافة كخلية النحل تظهر الخلفية من خلالها بوضوح",
+    descriptionEn: "Transparent honeycomb frames with custom geometric emblems",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-solid-theater-marquee",
-    nameAr: "22. مسرح العرض السينمائي الصلب",
-    nameEn: "Solid Theater Marquee",
-    descriptionAr: "منصة مسرحية غير شفافة بتبويبات جانبية ملونة وأيقونات عرض سينمائية حديثة",
-    descriptionEn: "Opaque slate cinema stage paired with a 3-drawer studio console",
-    previewBg: "from-[var(--theme-primary)]/40 via-[#121520] to-[#090b10]"
+    nameAr: "23. إطارات المسرح السينمائي الشفاف",
+    nameEn: "23. Glass Theater Marquee",
+    descriptionAr: "منصة مسرحية شفافة بإطارات رفيعة وأدراج جانبية متصلة بالخلفية",
+    descriptionEn: "Transparent cinema stage frames paired with a 3-drawer glass console",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-carbon-brushed-chassis",
-    nameAr: "23. هيكل الكربون والمعدن الصلب",
-    nameEn: "Brushed Carbon Chassis",
-    descriptionAr: "نسيج كربوني صلب بحواف معدنية مصقولة وأيقونات مثمنة متوهجة بلونك المختار",
-    descriptionEn: "Matte woven carbon-fiber deck with bevelled octagon emblem icons",
-    previewBg: "from-[var(--theme-secondary)]/50 via-[#141720] to-[#090b10]"
+    nameAr: "24. الإطار المعدني المفرغ الشفاف",
+    nameEn: "24. Brushed Metallic Glass Chassis",
+    descriptionAr: "هيكل زجاجي شفاف بحواف معدنية مصقولة تظهر الخلفية عبره بالكامل",
+    descriptionEn: "Transparent glass deck with bevelled metallic edge frames",
+    previewBg: "from-[var(--theme-secondary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-duotone-color-blocks",
-    nameAr: "24. الكتل اللونية المزدوجة الجريئة",
-    nameEn: "Bold Duotone Color Blocks",
-    descriptionAr: "لوحات صلبة غنية بلون الثيم المختار مباشرة مع تباين داكن أنيق وأيقونات معكوسة",
-    descriptionEn: "High-contrast solid duotone color-blocked tiles driven by your theme palette",
-    previewBg: "from-[var(--theme-primary)]/60 via-[var(--theme-secondary)]/40 to-[#11141c]"
+    nameAr: "25. الإطارات اللونية المزدوجة الشفافة",
+    nameEn: "25. Duotone Tinted Glass Frames",
+    descriptionAr: "إطارات زجاجية شفافة بحواف مزدوجة اللون تتبع ثيم التطبيق المختار",
+    descriptionEn: "Transparent duotone-bordered glass frames reactive to theme palette",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-isometric-diamond-deck",
-    nameAr: "25. منصة المعين الماسي",
-    nameEn: "Isometric Diamond Crest",
-    descriptionAr: "بطاقات داكنة تتوجها أيقونات ماسية معينية بارزة تتفاعل ألوانها فوراً مع لون الثيم",
-    descriptionEn: "Matte charcoal wing cards crowned with 45-degree rotated diamond badges",
-    previewBg: "from-[var(--theme-primary)]/40 via-[#121622] to-[#090b10]"
+    nameAr: "26. إطارات المعين الماسي الشفافة",
+    nameEn: "26. Isometric Diamond Glass Crest",
+    descriptionAr: "إطارات زجاجية شفافة متدرجة الارتفاع تتوجها شارات ماسية مضيئة",
+    descriptionEn: "Transparent stepped glass frames crowned with diamond badges",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-matte-card-fan",
-    nameAr: "26. بطاقات الاستوديو المعتمة",
-    nameEn: "Matte Collector Studio Deck",
-    descriptionAr: "بطاقات صلبة مطفية بشريط لوني علوي وترقيم استوديو أنيق مع أيقونات درعية جديدة",
-    descriptionEn: "Solid ceramic-matte collector cards with color-foil headers and shield emblems",
-    previewBg: "from-[var(--theme-primary)]/35 via-[#151824] to-[#0a0c12]"
+    nameAr: "27. إطارات الاستوديو الدرعية الشفافة",
+    nameEn: "27. Studio Collector Glass Deck",
+    descriptionAr: "إطارات زجاجية شفافة بحواف استوديو رفيعة وشارات درعية",
+    descriptionEn: "Transparent collector glass frames with delicate foil borders",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-royal-monolith-dock",
-    nameAr: "27. الأجنحة والركيزة المركزية",
-    nameEn: "Royal Monolith Center Wing",
-    descriptionAr: "ركائز عمودية داكنة تحيط بمنصة البث المباشر الوسطى مع عمود لوني جانبي بارز",
-    descriptionEn: "Solid vertical wing pillars framing a dominant central Live TV monolith",
-    previewBg: "from-[var(--theme-primary)]/45 via-[#111520] to-[#07090e]"
+    nameAr: "28. الأجنحة والركيزة المركزية الشفافة",
+    nameEn: "28. Transparent Monolith Wing Frames",
+    descriptionAr: "ركائز عمودية شفافة تحيط بالمنصة الوسطى دون حجب الخلفية",
+    descriptionEn: "Transparent vertical wing pillars framing a dominant central monolith",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-split-panel-arcade",
-    nameAr: "28. وحدة التحكم العلوية والألواح",
-    nameEn: "Top Utility Console & Pads",
-    descriptionAr: "شريط مفاتيح علوي مدمج يعلو ثلاث منصات ترفيه صلبة بأزرار أيقونات بارزة",
-    descriptionEn: "Top hardware utility bar above three solid backlit media pads",
-    previewBg: "from-[var(--theme-primary)]/35 via-[#131722] to-[#0a0c13]"
+    nameAr: "29. وحدة التحكم العلوية والألواح الشفافة",
+    nameEn: "29. Top Console & Transparent Pads",
+    descriptionAr: "شريط علوي شفاف يعلو ثلاث منصات ترفيه زجاجية شفافة بالكامل",
+    descriptionEn: "Transparent top utility strip above three translucent glass pads",
+    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
   },
   {
     id: "layout-horizon-panorama-cards",
-    nameAr: "29. الأجنحة الثلاثية المتوازنة",
-    nameEn: "Balanced Triple-Column Panorama",
-    descriptionAr: "توزيع متناظر بثلاثة أعمدة صلبة مع شرائط لونية مائلة وأيقونات كبسولية حديثة",
-    descriptionEn: "Three-column symmetrical opaque cards with diagonal theme sashes",
-    previewBg: "from-[var(--theme-primary)]/45 via-[#121622] to-[#080a10]"
+    nameAr: "30. الأجنحة الثلاثية البانورامية الشفافة",
+    nameEn: "30. Triple-Column Transparent Panorama",
+    descriptionAr: "توزيع متناظر بثلاثة أعمدة شفافة تظهر خلفية التطبيق بوضوح",
+    descriptionEn: "Three-column symmetrical transparent frames letting wallpaper shine",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   },
   {
     id: "layout-luxury-satin-frame",
-    nameAr: "30. إطارات الساتان الفاخرة",
-    nameEn: "Luxury Satin Double-Bezel",
-    descriptionAr: "سطح ساتان داكن فاخر بإطار معدني مزدوج وبروش أيقونة ملكي يتلون بلون الثيم",
-    descriptionEn: "Deep satin matte cards with double metallic filigree borders and sculpted crests",
-    previewBg: "from-[var(--theme-primary)]/40 via-[#10131c] to-[#06080d]"
+    nameAr: "31. إطارات الساتان المزدوجة الشفافة",
+    nameEn: "31. Satin Double-Bezel Transparent Frames",
+    descriptionAr: "إطارات زجاجية شفافة بحدود معدنية مزدوجة فاخرة دون خلفية معتمة",
+    descriptionEn: "Transparent glass frames with double metallic filigree borders",
+    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
   }
 ];
 function applyRoyalTheme(themeId) {
@@ -122579,6 +123270,1874 @@ function applyRoyalTheme(themeId) {
     }
   `;
 }
+const VALID_DASHBOARD_LAYOUTS = [
+  "layout-frameless-icons",
+  "layout-pure-icons",
+  "layout-glass-hero-dock",
+  "layout-vertical-rail",
+  "layout-cinema-marquee",
+  "layout-asymmetric-bento",
+  "layout-dual-cinema-split",
+  "layout-floating-console-bar",
+  "layout-pyramid-tier",
+  "layout-right-command-panel",
+  "layout-chamfer-prism-grid",
+  "layout-editorial-showcase",
+  "layout-orbital-medallions",
+  "layout-leanback-lanes",
+  "layout-quadrant-hub",
+  "layout-arch-gallery",
+  "layout-compact-glass-stack",
+  "layout-widescreen-ribbon",
+  "layout-stepped-skyline",
+  "layout-split-header-deck",
+  "layout-zen-horizon",
+  "layout-obsidian-hex-hive",
+  "layout-solid-theater-marquee",
+  "layout-carbon-brushed-chassis",
+  "layout-duotone-color-blocks",
+  "layout-isometric-diamond-deck",
+  "layout-matte-card-fan",
+  "layout-royal-monolith-dock",
+  "layout-split-panel-arcade",
+  "layout-horizon-panorama-cards",
+  "layout-luxury-satin-frame"
+];
+function AchourIconGlyph({
+  kind,
+  className = "w-full h-full",
+  strokeWidth = 1.7,
+  fill = "none",
+  style: style2
+}) {
+  const props = {
+    viewBox: "0 0 24 24",
+    fill,
+    stroke: "currentColor",
+    strokeWidth,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className,
+    style: style2
+  };
+  switch (kind) {
+    case "live":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7.5 4.2a6.5 6.5 0 0 1 9 0", opacity: "0.55" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9.6 6.2a3.6 3.6 0 0 1 4.8 0", opacity: "0.85" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3.5 9.5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v7.2a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "8.2", cy: "13.1", r: "1.4", fill: "currentColor", stroke: "none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12.2 11.4l4.2 1.7-4.2 1.7z", fill: "currentColor", stroke: "none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.5 21h7" })
+      ] });
+    case "movies":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "7.5", cy: "7", r: "2.7" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "15.5", cy: "7", r: "2.7" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3.5 11.2a1.8 1.8 0 0 1 1.8-1.8h12.2a1.8 1.8 0 0 1 1.8 1.8v7.6a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M19.3 13.3l2.2-1.4v6.2l-2.2-1.4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9.6 12.8l4.4 2.2-4.4 2.2z", fill: "currentColor", stroke: "none" })
+      ] });
+    case "series":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.5 3.5h10a2 2 0 0 1 2 2v10", opacity: "0.45" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6.2h10.2a2 2 0 0 1 2 2v10.2", opacity: "0.72" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3.5", y: "9", width: "12", height: "11.5", rx: "2.2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6.8 12.5h5.4M6.8 15.5h3.2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12.2", cy: "16.2", r: "1.1", fill: "currentColor", stroke: "none" })
+      ] });
+    case "add":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 6.5h9.5M4 11.5h7.5M4 16.5h6.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "16.8", cy: "15.2", r: "4.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M16.8 13.1v4.2M14.7 15.2h4.2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "17.5", cy: "6.5", r: "1.6", fill: "currentColor", stroke: "none" })
+      ] });
+    case "settings":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "8.6,3 15.4,3 21,8.6 21,15.4 15.4,21 8.6,21 3,15.4 3,8.6" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7.5", y1: "9.5", x2: "16.5", y2: "9.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.2", cy: "9.5", r: "1.5", fill: "currentColor", stroke: "none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7.5", y1: "14.5", x2: "16.5", y2: "14.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14.2", cy: "14.5", r: "1.5", fill: "currentColor", stroke: "none" })
+      ] });
+  }
+}
+const ICON_SIZE_CLASSES = {
+  sm: {
+    xs: "w-6 h-6 p-1",
+    sm: "w-7 h-7 p-1",
+    md: "w-8 h-8 p-1.5",
+    lg: "w-9 h-9 sm:w-10 sm:h-10 p-2",
+    xl: "w-10 h-10 sm:w-11 sm:h-11 p-2",
+    "2xl": "w-11 h-11 sm:w-12 sm:h-12 p-2.5",
+    "3xl": "w-12 h-12 sm:w-14 sm:h-14 p-2.5"
+  },
+  md: {
+    xs: "w-8 h-8 p-1.5",
+    sm: "w-9 h-9 sm:w-10 sm:h-10 p-2",
+    md: "w-10 h-10 sm:w-11 sm:h-11 p-2",
+    lg: "w-11 h-11 sm:w-13 sm:h-13 p-2.5",
+    xl: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
+    "2xl": "w-13 h-13 sm:w-15 sm:h-15 p-3",
+    "3xl": "w-15 h-15 sm:w-18 sm:h-18 p-3"
+  },
+  lg: {
+    xs: "w-10 h-10 sm:w-11 sm:h-11 p-2",
+    sm: "w-11 h-11 sm:w-13 sm:h-13 p-2.5",
+    md: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
+    lg: "w-14 h-14 sm:w-16 sm:h-16 p-3",
+    xl: "w-15 h-15 sm:w-18 sm:h-18 p-3",
+    "2xl": "w-16 h-16 sm:w-20 sm:h-20 p-3.5",
+    "3xl": "w-18 h-18 sm:w-22 sm:h-22 p-4"
+  },
+  hero: {
+    xs: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
+    sm: "w-14 h-14 sm:w-16 sm:h-16 p-3",
+    md: "w-14 h-14 sm:w-16 sm:h-16 p-3",
+    lg: "w-16 h-16 sm:w-20 sm:h-20 p-3.5",
+    xl: "w-18 h-18 sm:w-22 sm:h-22 p-4",
+    "2xl": "w-20 h-20 sm:w-24 sm:h-24 p-4",
+    "3xl": "w-24 h-24 sm:w-28 sm:h-28 p-5"
+  }
+};
+function renderIconGlyph({
+  kind,
+  active3DStyle,
+  glyphClass,
+  strokeWidth = 1.7,
+  fill = "none",
+  style: style2
+}) {
+  if (active3DStyle == null ? void 0 : active3DStyle.iconImage) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: active3DStyle.iconImage, alt: "", style: style2, className: `w-full h-full object-contain ${active3DStyle.iconClass}` });
+  }
+  const variant = active3DStyle ? getIconGlyphVariant(active3DStyle) : void 0;
+  if (variant) {
+    const common = {
+      className: glyphClass,
+      style: style2,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth,
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    };
+    if (variant === "cinema") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "7", width: "18", height: "12", rx: "2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 3l4 4 4-4M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 7h18v13H3zM3 7l3-4h15l-3 4M8 3l3 4M15 3l3 4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "5", width: "15", height: "13", rx: "2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 2h12a2 2 0 0 1 2 2v12M10 10l5 2-5 2z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 5h16v14H4zM8 9h8M8 13h5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 16v5m-2.5-2.5h5" })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "8.5,3 15.5,3 21,8.5 21,15.5 15.5,21 8.5,21 3,15.5 3,8.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 10h8M8 14h8" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.5", cy: "10", r: "1.4", fill: "currentColor", stroke: "none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14", cy: "14", r: "1.4", fill: "currentColor", stroke: "none" })
+      ] }) });
+    }
+    if (variant === "broadcast") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 13v8M8 21h8M12 13l-4-4m4 4 4-4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14M8 8a6 6 0 0 0 0 8M16 8a6 6 0 0 1 0 8" })
+      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14", rx: "2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 9l6 3-6 3z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "7", width: "15", height: "12", rx: "2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 4h14v12M9 11h5M9 15h3" })
+      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 5h14M5 10h9M5 15h9M5 20h14" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18 11v8m-4-4h8" })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "8" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 9l6 6M15 9l-6 6" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "2.2", fill: "currentColor", stroke: "none" })
+      ] }) });
+    }
+    if (variant === "crystal") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...common, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2 21 8 18 20 6 20 3 8Z", fill: "currentColor", fillOpacity: ".08" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 8h18M12 2l-3 6 3 12 3-12-3-6", opacity: ".7" }),
+        kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 10l6 2-6 2z", fill: "currentColor", stroke: "none" }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "13", r: "4" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 9V5M8 13H5M16 13h3" })
+        ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "8", width: "10", height: "8", rx: "1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 10l4 2-4 2z", fill: "currentColor", stroke: "none" })
+        ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 9h8M8 13h8M8 17h5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 4v5m-2.5-2.5h5" })
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 5v2m0 10v2M5 12h2m10 0h2" })
+        ] })
+      ] });
+    }
+    if (variant === "neon") {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14", rx: "4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 2l4 3 4-3M10 10l5 2-5 2z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 5h16v14H4zM4 5l4 4m3-4 4 4m3-4 2 2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
+      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16", rx: "3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 8h8M8 12h8M8 16h4" })
+      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "9" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 6v12M6 12h12" })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16", rx: "4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "8", y1: "9.5", x2: "16", y2: "9.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "8", y1: "14.5", x2: "16", y2: "14.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.5", cy: "9.5", r: "1.4", fill: "currentColor", stroke: "none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14", cy: "14.5", r: "1.4", fill: "currentColor", stroke: "none" })
+      ] }) });
+    }
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, shapeRendering: "crispEdges", children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "13" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 18v3m6-3v3M8 21h8M10 9h4v5h-4z", fill: "currentColor", stroke: "none" })
+    ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 5v4m4-4v4m4-4v4m4-4v4M10 11h4v4h-4z", fill: "currentColor", stroke: "none" })
+    ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "4", width: "18", height: "16" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 8h3v3H7zM14 8h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z", fill: "currentColor", stroke: "none" })
+    ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z", fill: "currentColor", stroke: "none" })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 9h10M7 15h10" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "9", y: "7.5", width: "3", height: "3", fill: "currentColor", stroke: "none" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "13", y: "13.5", width: "3", height: "3", fill: "currentColor", stroke: "none" })
+    ] }) });
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(AchourIconGlyph, { kind, className: glyphClass, strokeWidth, fill, style: style2 });
+}
+function StyledAppIcon({
+  kind,
+  active3DStyle,
+  scale: scale2 = "md",
+  iconSize = "md"
+}) {
+  var _a2, _b2;
+  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize || "md"] || ICON_SIZE_CLASSES[scale2].md;
+  const sizeFactor = { xs: 0.78, sm: 0.9, md: 1, lg: 1.15, xl: 1.3, "2xl": 1.45, "3xl": 1.6 };
+  const baseSize = { sm: 32, md: 40, lg: 48, hero: 56 };
+  const actualIconSize = Math.round((baseSize[scale2] || 40) * (sizeFactor[iconSize || "md"] || 1));
+  const strokeWidth = ((_a2 = active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.6;
+  const fill = ((_b2 = active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none";
+  const glyphClass = `w-full h-full ${active3DStyle.iconClass}`;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: actualIconSize, height: actualIconSize, padding: Math.max(3, Math.round(actualIconSize * 0.14)) }, className: `flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls} ${active3DStyle.cardClass}`, children: renderIconGlyph({ kind, active3DStyle, glyphClass, strokeWidth, fill }) });
+}
+function StudioLayoutIcon({
+  kind,
+  shape,
+  active3DStyle,
+  scale: scale2 = "md",
+  iconSize = "md",
+  highlight = false,
+  inverted = false
+}) {
+  var _a2, _b2;
+  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize || "md"] || ICON_SIZE_CLASSES[scale2].md;
+  const sizeFactor = { xs: 0.78, sm: 0.9, md: 1, lg: 1.15, xl: 1.3, "2xl": 1.45, "3xl": 1.6 };
+  const baseSize = { sm: 32, md: 40, lg: 48, hero: 56 };
+  const actualIconSize = Math.round((baseSize[scale2] || 40) * (sizeFactor[iconSize || "md"] || 1));
+  const glyph = renderIconGlyph({
+    kind,
+    active3DStyle,
+    glyphClass: `w-full h-full relative z-10 ${(active3DStyle == null ? void 0 : active3DStyle.iconClass) || ""}`,
+    strokeWidth: ((_a2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.85,
+    fill: ((_b2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none"
+  });
+  if (shape === "hex") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          clipPath: "polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
+          background: highlight ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.04)",
+          boxShadow: "inset 0 0 0 1.5px var(--theme-primary)",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "diamond") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`, style: { width: actualIconSize, height: actualIconSize }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "w-full h-full rotate-45 rounded-xl flex items-center justify-center border-2",
+        style: {
+          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
+          borderColor: "var(--theme-primary)"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "-rotate-45 w-[68%] h-[68%] flex items-center justify-center", style: { color: "var(--theme-primary)" }, children: glyph })
+      }
+    ) });
+  }
+  if (shape === "octagon") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          clipPath: "polygon(28% 0%, 72% 0%, 100% 28%, 100% 72%, 72% 100%, 28% 100%, 0% 72%, 0% 28%)",
+          background: highlight ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.04)",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "shield") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 rounded-t-xl rounded-b-[1.35rem] border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
+          borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "duotone") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          backgroundColor: inverted ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.10)",
+          borderColor: inverted ? "rgba(255,255,255,0.28)" : "var(--theme-primary)",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "keycap") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 rounded-xl border transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          background: highlight ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.03)",
+          borderColor: highlight ? "var(--theme-primary)" : "rgba(255,255,255,0.24)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.16)",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "capsule") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
+          borderColor: "var(--theme-primary)",
+          boxShadow: highlight ? "0 0 18px var(--theme-glow)" : "none",
+          color: "var(--theme-primary)"
+        },
+        children: glyph
+      }
+    );
+  }
+  if (shape === "satin") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 p-1 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        style: {
+          width: actualIconSize,
+          height: actualIconSize,
+          backgroundColor: "transparent",
+          borderColor: "var(--theme-primary)",
+          boxShadow: "inset 0 0 0 2px rgba(255,255,255,0.22)",
+          color: highlight ? "var(--theme-accent)" : "var(--theme-primary)"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[78%] h-[78%] flex items-center justify-center", children: glyph })
+      }
+    );
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: `relative flex items-center justify-center shrink-0 rounded-tr-2xl rounded-bl-2xl rounded-tl-md rounded-br-md border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+      style: {
+        width: actualIconSize,
+        height: actualIconSize,
+        background: highlight ? "rgba(255,255,255,0.09)" : "transparent",
+        borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)",
+        color: "var(--theme-primary)"
+      },
+      children: glyph
+    }
+  );
+}
+function FramelessGlyph({
+  kind,
+  active3DStyle,
+  iconSize = "md"
+}) {
+  var _a2, _b2;
+  const pixelSizes = { xs: 32, sm: 40, md: 48, lg: 56, xl: 64, "2xl": 80, "3xl": 96 };
+  const iconPx = pixelSizes[iconSize || "md"] || 48;
+  const cls = `${(active3DStyle == null ? void 0 : active3DStyle.iconClass) || "text-[var(--theme-primary)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"} transition-transform duration-150 group-hover:scale-110`;
+  const iconStyle = { width: iconPx, height: iconPx };
+  return renderIconGlyph({
+    kind,
+    active3DStyle,
+    glyphClass: cls,
+    strokeWidth: ((_a2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.95,
+    fill: ((_b2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none",
+    style: iconStyle
+  });
+}
+const GLASS_CARD = "bg-transparent hover:bg-white/[0.04] border border-white/20 hover:border-[var(--theme-primary)]/70 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-200 cursor-pointer group focus:outline-none relative";
+const GLASS_HERO = "bg-white/[0.02] hover:bg-white/[0.06] border border-[var(--theme-primary)]/50 hover:border-[var(--theme-primary)] shadow-[0_12px_32px_rgba(0,0,0,0.16)] transition-all duration-200 cursor-pointer group focus:outline-none relative";
+const CRYSTAL_FRAME = "bg-transparent hover:bg-white/[0.04] border border-white/25 hover:border-[var(--theme-primary)]/75 shadow-[0_10px_28px_rgba(0,0,0,0.14)] backdrop-blur-[2px] transition-all duration-200 cursor-pointer group focus:outline-none relative";
+const CRYSTAL_HERO_FRAME = "bg-white/[0.03] hover:bg-white/[0.06] border border-[var(--theme-primary)]/55 hover:border-[var(--theme-primary)] shadow-[0_14px_36px_rgba(0,0,0,0.18)] backdrop-blur-[2px] transition-all duration-200 cursor-pointer group focus:outline-none relative";
+function DashboardLayouts({
+  layoutId,
+  dashboardOrder,
+  active3DStyle,
+  iconSize = "md",
+  frameScale = "md",
+  tileSpacing = "md",
+  reorderingKind = null,
+  language,
+  isRtl,
+  t,
+  onNavigate
+}) {
+  const effectiveLayout = VALID_DASHBOARD_LAYOUTS.includes(layoutId || "") ? layoutId : "layout-frameless-icons";
+  const isPhone = isMobileDevice();
+  const spacingPxMap = { xs: 6, sm: 10, md: 14, lg: 22, xl: 32 };
+  const frameScaleFactorMap = { xs: 0.78, sm: 0.88, md: 1, lg: 1.12, xl: 1.24, "2xl": 1.36, "3xl": 1.5 };
+  const activeGap = !isPhone ? spacingPxMap[tileSpacing || "md"] ?? 14 : void 0;
+  const activeFrameFactor = !isPhone ? frameScaleFactorMap[frameScale || "md"] ?? 1 : 1;
+  const gapStyle = (extra) => activeGap !== void 0 ? { gap: `${activeGap}px`, ...extra } : extra;
+  const frameBoxStyle = (basePadPx, baseMinHPx, extra) => {
+    if (isPhone) return extra;
+    const scaledPad = Math.max(4, Math.round(basePadPx * activeFrameFactor));
+    const s = {
+      padding: `${scaledPad}px`,
+      ...baseMinHPx ? { minHeight: `${Math.round(baseMinHPx * activeFrameFactor)}px` } : {},
+      ...extra
+    };
+    return s;
+  };
+  const reorderCls = (kind) => reorderingKind === kind ? "ring-4 ring-[var(--theme-primary)] bg-white/[0.08] scale-[1.04] z-30 shadow-[0_0_28px_var(--theme-glow)]" : "";
+  const ReorderBadge = ({ kind }) => reorderingKind === kind ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[var(--theme-primary)] text-black text-[10px] font-black flex items-center gap-1 shadow-lg z-30 pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 10 }) }) : null;
+  const labels = React$2.useMemo(() => {
+    const subs = {
+      ar: {
+        live: "البث والقنوات",
+        movies: "مكتبة السينما",
+        series: "المواسم والحلقات",
+        add: "الاشتراكات والروابط",
+        settings: "المظهر والنظام"
+      },
+      en: {
+        live: "Channels & TV",
+        movies: "Cinema Library",
+        series: "Seasons & Shows",
+        add: "IPTV Sources",
+        settings: "Look & System"
+      },
+      de: {
+        live: "TV & Kanäle",
+        movies: "Kino-Bibliothek",
+        series: "Staffeln & Serien",
+        add: "IPTV-Listen",
+        settings: "Design & System"
+      },
+      fr: {
+        live: "Chaînes & Direct",
+        movies: "Cinéma VOD",
+        series: "Saisons & Épisodes",
+        add: "Sources IPTV",
+        settings: "Style & Système"
+      }
+    };
+    const s = subs[language] || subs.en;
+    return {
+      live: { kind: "live", title: t("live"), sub: s.live, action: () => onNavigate("live") },
+      movies: { kind: "movies", title: t("movies"), sub: s.movies, action: () => onNavigate("movies") },
+      series: { kind: "series", title: t("series"), sub: s.series, action: () => onNavigate("series") },
+      add: { kind: "add", title: t("playlist"), sub: s.add, action: () => onNavigate("add") },
+      settings: { kind: "settings", title: t("settings"), sub: s.settings, action: () => onNavigate("settings") }
+    };
+  }, [language, t, onNavigate]);
+  const defaultOrder = ["live", "movies", "series", "add", "settings"];
+  const normalizedOrder = [...dashboardOrder || [], ...defaultOrder].filter((kind, index2, list) => defaultOrder.includes(kind) && list.indexOf(kind) === index2);
+  const allItems = normalizedOrder.map((kind) => labels[kind]);
+  const [slot0, slot1, slot2, slot3, slot4] = allItems;
+  const heroItem = slot0;
+  const dockItems = [slot1, slot2, slot3, slot4];
+  const ArrowIcon = isRtl ? ChevronLeft : ChevronRight;
+  if (effectiveLayout === "layout-frameless-icons") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-6 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-10 w-full items-center justify-items-center",
+        style: gapStyle(),
+        children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            className: `relative flex flex-col items-center justify-center gap-3 p-3 rounded-2xl bg-transparent border-0 shadow-none transition-transform duration-150 hover:scale-110 cursor-pointer group focus:outline-none w-full max-w-[160px] ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center bg-transparent border-0 shadow-none transition-transform duration-150 group-hover:scale-105", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FramelessGlyph, { kind: item.kind, active3DStyle, iconSize }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-bold tracking-wide truncate max-w-full text-white group-hover:text-gold transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]", children: item.title })
+            ]
+          },
+          item.kind
+        ))
+      }
+    ) });
+  }
+  if (effectiveLayout === "layout-pure-icons") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-6 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-5 sm:gap-7 w-full items-center justify-items-center", style: gapStyle(), children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(12),
+        className: `relative flex flex-col items-center justify-center gap-3 p-3 rounded-3xl bg-transparent border border-white/15 hover:border-[var(--theme-primary)]/60 transition-colors cursor-pointer group focus:outline-none w-full ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "hero", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium tracking-wide truncate max-w-full text-gold group-hover:brightness-125", children: item.title })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-glass-hero-dock") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": heroItem.kind,
+          tabIndex: 0,
+          onClick: heroItem.action,
+          style: frameBoxStyle(22),
+          className: `w-full rounded-3xl p-5 sm:p-7 flex items-center justify-between gap-4 ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"} ${reorderCls(heroItem.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: heroItem.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 sm:gap-6 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: heroItem.kind, active3DStyle, scale: "hero", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-gold font-mono uppercase tracking-widest mb-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14, className: "text-gold" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: heroItem.sub })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors truncate", children: heroItem.title })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-gold shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 22 }) })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 w-full", style: gapStyle(), children: dockItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl p-3.5 sm:p-4 flex flex-col items-center justify-center gap-2.5 text-center ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] sm:text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-vertical-rail") {
+    const mediaCards = [slot0, slot1, slot2];
+    const railItems = [slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-1 flex flex-col justify-center gap-2.5", style: gapStyle(), children: railItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `flex-1 rounded-2xl px-3.5 py-3 flex items-center gap-3 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate", children: item.sub })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-zinc-500 group-hover:text-gold shrink-0" })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-3 gap-3.5", style: gapStyle(), children: mediaCards.map((item, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(18, 210),
+          className: `rounded-3xl p-4 sm:p-5 flex flex-col items-center justify-between text-center min-h-[190px] sm:min-h-[240px] ${i2 === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gold/75 tracking-widest", children: [
+              "0",
+              i2 + 1
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-cinema-marquee") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(16, 220),
+        className: `rounded-3xl p-4 flex flex-col items-center justify-between text-center h-44 sm:h-64 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-gold truncate", children: item.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
+          ] })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-asymmetric-bento") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-12 gap-3 w-full", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": slot0.kind,
+          tabIndex: 0,
+          onClick: slot0.action,
+          style: frameBoxStyle(20, 220),
+          className: `col-span-2 sm:col-span-5 rounded-3xl p-5 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[240px] ${GLASS_HERO} ${isRtl ? "text-right items-end" : "text-left"} ${reorderCls(slot0.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-mono text-gold uppercase tracking-wider mb-1", children: slot0.sub }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold", children: slot0.title })
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-4 grid grid-rows-2 gap-3", style: gapStyle(), children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot1.kind,
+            tabIndex: 0,
+            onClick: slot1.action,
+            style: frameBoxStyle(16),
+            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot1.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot1.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot1.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: slot1.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: slot1.sub })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot3.kind,
+            tabIndex: 0,
+            onClick: slot3.action,
+            style: frameBoxStyle(16),
+            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot3.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot3.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot3.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-medium text-gold truncate", children: slot3.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: slot3.sub })
+              ] })
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-3 flex flex-col gap-3", style: gapStyle(), children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot2.kind,
+            tabIndex: 0,
+            onClick: slot2.action,
+            style: frameBoxStyle(16),
+            className: `flex-1 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 ${GLASS_CARD} ${reorderCls(slot2.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot2.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot2.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold", children: slot2.title })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot4.kind,
+            tabIndex: 0,
+            onClick: slot4.action,
+            style: frameBoxStyle(12),
+            className: `rounded-2xl p-3 flex flex-col items-center justify-center gap-1.5 ${GLASS_CARD} ${reorderCls(slot4.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot4.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot4.kind, active3DStyle, scale: "sm", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gold truncate max-w-full", children: slot4.title })
+            ]
+          }
+        )
+      ] })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-dual-cinema-split") {
+    const quad = [slot1, slot2, slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": slot0.kind,
+          tabIndex: 0,
+          onClick: slot0.action,
+          style: frameBoxStyle(24, 225),
+          className: `rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[245px] ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors", children: slot0.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-gold/85 mt-1", children: slot0.sub })
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", style: gapStyle(), children: quad.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `rounded-2xl p-4 flex flex-col items-center justify-center text-center gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-white group-hover:text-gold truncate w-full", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-floating-console-bar") {
+    const ordered = [
+      { item: slot1, h: "h-36 sm:h-44", center: false, minH: 170 },
+      { item: slot2, h: "h-42 sm:h-52", center: false, minH: 200 },
+      { item: slot0, h: "h-52 sm:h-64", center: true, minH: 240 },
+      { item: slot3, h: "h-42 sm:h-52", center: false, minH: 200 },
+      { item: slot4, h: "h-36 sm:h-44", center: false, minH: 170 }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap sm:flex-nowrap items-center justify-center gap-2.5 sm:gap-3.5 w-full", style: gapStyle(), children: ordered.map(({ item, h, center: center2, minH }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(14, minH),
+        className: `flex-1 min-w-[100px] ${h} rounded-3xl p-3.5 flex flex-col items-center justify-center text-center gap-3 ${center2 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-semibold truncate ${center2 ? "text-base sm:text-xl text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
+            center2 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: item.sub })
+          ] })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-pyramid-tier") {
+    const topTwo = [slot0, slot1];
+    const bottomThree = [slot2, slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: topTwo.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(20, 136),
+          className: `rounded-3xl p-5 flex items-center gap-4 min-h-[120px] sm:min-h-[142px] ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-gold/80 truncate mt-1", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", style: gapStyle(), children: bottomThree.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `rounded-2xl p-4 flex flex-col items-center justify-center gap-2 text-center ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-white group-hover:text-gold", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-right-command-panel") {
+    const leftStrips = [slot0, slot1, slot2];
+    const rightTower = [slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 flex flex-col gap-3", style: gapStyle(), children: leftStrips.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `rounded-2xl px-5 py-3.5 flex items-center justify-between gap-4 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: item.sub })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-1 grid grid-cols-2 md:grid-cols-1 gap-2.5", style: gapStyle(), children: rightTower.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl p-3 flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-chamfer-prism-grid") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(18),
+          className: `rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg p-5 flex items-center gap-3.5 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/80 truncate", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full sm:w-2/3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-tl-2xl rounded-br-2xl rounded-tr-md rounded-bl-md p-4 flex items-center justify-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium truncate text-gold", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-editorial-showcase") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-4xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-2", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(12),
+        className: `w-full rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-gold/75 w-6 shrink-0", children: [
+              "0",
+              idx + 1
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base sm:text-xl font-medium truncate text-white group-hover:text-gold", children: item.title })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:inline text-xs text-zinc-400", children: item.sub }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold/70 group-hover:text-gold" })
+          ] })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-orbital-medallions") {
+    const discs = [
+      { item: slot4, baseDim: 112, iconScale: "sm", hero: false },
+      { item: slot1, baseDim: 142, iconScale: "md", hero: false },
+      { item: slot0, baseDim: 184, iconScale: "hero", hero: true },
+      { item: slot2, baseDim: 142, iconScale: "md", hero: false },
+      { item: slot3, baseDim: 112, iconScale: "sm", hero: false }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-3 sm:gap-5", style: gapStyle(), children: discs.map(({ item, baseDim, iconScale, hero }) => {
+      const dim = Math.round(baseDim * activeFrameFactor);
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: !isPhone ? { width: `${dim}px`, height: `${dim}px`, padding: "8px" } : void 0,
+          className: `${isPhone ? hero ? "w-32 h-32" : "w-24 h-24" : ""} rounded-full flex flex-col items-center justify-center text-center p-2 gap-1.5 ${hero ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: iconScale, iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-medium truncate max-w-[90%] ${hero ? "text-sm sm:text-base text-gold" : "text-[11px] sm:text-xs text-white group-hover:text-gold"}`, children: item.title })
+          ]
+        },
+        item.kind
+      );
+    }) }) });
+  }
+  if (effectiveLayout === "layout-leanback-lanes") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-4 gap-3 w-full", style: gapStyle(), children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot0.kind,
+            tabIndex: 0,
+            onClick: slot0.action,
+            style: frameBoxStyle(20, 120),
+            className: `sm:col-span-2 rounded-3xl p-5 flex items-center gap-4 min-h-[120px] ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot0.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: slot0.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 truncate mt-1", children: slot0.sub })
+              ] })
+            ]
+          }
+        ),
+        [slot1, slot2].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(16, 120),
+            className: `rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 min-h-[120px] ${GLASS_CARD} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-semibold text-white group-hover:text-gold truncate w-full", children: item.title })
+            ]
+          },
+          item.kind
+        ))
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl mx-auto", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl px-4 py-3.5 flex items-center justify-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-quadrant-hub") {
+    const corners = [slot1, slot2, slot3, slot4];
+    const centerDim = Math.round(128 * activeFrameFactor);
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-5xl mx-auto overflow-hidden", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full grid grid-cols-2 gap-4 sm:gap-6", style: gapStyle(), children: [
+        corners.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(20, 118),
+            className: `rounded-3xl p-4 sm:p-6 min-h-[104px] sm:min-h-[124px] flex items-center gap-3 ${idx % 2 === 1 ? "justify-end text-end" : "justify-start text-start"} ${GLASS_CARD} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden sm:block text-xs text-zinc-400 truncate", children: item.sub })
+              ] })
+            ]
+          },
+          item.kind
+        )),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot0.kind,
+            tabIndex: 0,
+            onClick: slot0.action,
+            style: !isPhone ? { width: `${centerDim}px`, height: `${centerDim}px` } : void 0,
+            className: `hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full flex-col items-center justify-center gap-1.5 z-20 ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-gold", children: slot0.title })
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "sm:hidden flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": slot0.kind,
+          tabIndex: 0,
+          onClick: slot0.action,
+          className: `px-5 py-2 rounded-2xl flex items-center gap-2 text-xs font-semibold text-gold ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: slot0.title })
+          ]
+        }
+      ) })
+    ] });
+  }
+  if (effectiveLayout === "layout-arch-gallery") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(14, 215),
+        className: `rounded-t-full rounded-b-2xl pt-8 pb-4 px-3 flex flex-col items-center justify-between gap-3 h-48 sm:h-60 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/75 truncate mt-0.5", children: item.sub })
+          ] })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-compact-glass-stack") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 pb-5 w-full max-w-md mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-2", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(12),
+        className: `w-full rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-medium truncate text-white group-hover:text-gold", children: item.title })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-widescreen-ribbon") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(20, 175),
+          className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[155px] sm:min-h-[185px] ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full max-w-xl grid grid-cols-2 gap-2", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(12),
+          className: `rounded-2xl py-2.5 px-3 flex items-center justify-center gap-2 ${GLASS_CARD} text-gold ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-stepped-skyline") {
+    const pillars = [
+      { item: slot4, minH: 165, center: false },
+      { item: slot1, minH: 200, center: false },
+      { item: slot0, minH: 245, center: true },
+      { item: slot2, minH: 200, center: false },
+      { item: slot3, minH: 165, center: false }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", style: gapStyle(), children: pillars.map(({ item, minH, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(14, minH),
+        className: `rounded-3xl p-3.5 flex flex-col items-center justify-center gap-3 text-center ${center2 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-xs sm:text-sm font-semibold truncate w-full ${center2 ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-split-header-deck") {
+    const decks = [
+      { item: slot0, icon: Radio },
+      { item: slot1, icon: Film },
+      { item: slot2, icon: Clapperboard }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: decks.map(({ item, icon: HeaderIcon }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `rounded-3xl overflow-hidden flex flex-col ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full px-3 py-1.5 bg-transparent flex items-center justify-between text-xs font-mono text-gold border-b border-white/10", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: item.sub }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderIcon, { size: 15 })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 flex items-center gap-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(12),
+          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-zen-horizon") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-transparent grid grid-cols-2 sm:grid-cols-5 gap-2", style: gapStyle(), children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(18),
+        className: `rounded-2xl px-3 py-5 sm:py-7 flex flex-col items-center justify-center text-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-gold", children: item.title })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-obsidian-hex-hive") {
+    const topHexRow = [slot1, slot0, slot2];
+    const bottomHexRow = [slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: topHexRow.map((item, idx) => {
+        const isHero = idx === 1;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(18, 180),
+            className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[168px] sm:min-h-[196px] ${isHero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "hex", scale: isHero ? "hero" : "lg", iconSize, highlight: isHero }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] sm:text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
+              ] })
+            ]
+          },
+          item.kind
+        );
+      }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-3xl", style: gapStyle(), children: bottomHexRow.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl px-5 py-3.5 flex items-center justify-center gap-3.5 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "hex", scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-solid-theater-marquee") {
+    const rightDrawers = [slot2, slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5", style: gapStyle(), children: [slot0, slot1].map((item, idx) => {
+        const isPrimary = idx === 0;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(20, 225),
+            className: `rounded-3xl overflow-hidden p-5 flex flex-col justify-between min-h-[190px] sm:min-h-[250px] ${isPrimary ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex items-center justify-between gap-2 pb-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-gold text-[10px] font-mono font-bold uppercase tracking-wider", children: [
+                  "0",
+                  idx + 1
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold shrink-0" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-auto py-3 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "ticket", scale: "hero", iconSize, highlight: isPrimary }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-bold text-white group-hover:text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
+              ] })
+            ]
+          },
+          item.kind
+        );
+      }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-5 flex flex-col gap-3 justify-between", style: gapStyle(), children: rightDrawers.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `flex-1 rounded-2xl px-4 py-3 flex items-center justify-between gap-3 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3.5 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "ticket", scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate", children: item.sub })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-carbon-brushed-chassis") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full bg-transparent border border-white/20 rounded-3xl p-3 sm:p-4 flex flex-col gap-3", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => {
+        const isMain = idx === 0;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(18, 170),
+            className: `rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between text-center gap-3 min-h-[152px] sm:min-h-[184px] ${isMain ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "octagon", scale: "lg", iconSize, highlight: isMain }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-lg font-bold truncate ${isMain ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: item.sub })
+              ] })
+            ]
+          },
+          item.kind
+        );
+      }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-xl px-4 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "octagon", scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-duotone-color-blocks") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot1.kind,
+            tabIndex: 0,
+            onClick: slot1.action,
+            style: frameBoxStyle(16, 195),
+            className: `sm:col-span-3 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] ${CRYSTAL_FRAME} ${reorderCls(slot1.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot1.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot1.kind, shape: "duotone", scale: "lg", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: slot1.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: slot1.sub })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot0.kind,
+            tabIndex: 0,
+            onClick: slot0.action,
+            style: frameBoxStyle(22, 195),
+            className: `sm:col-span-6 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 min-h-[170px] sm:min-h-[210px] ${CRYSTAL_HERO_FRAME} ${reorderCls(slot0.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex flex-col items-center ${isRtl ? "sm:items-start sm:text-right" : "sm:items-start sm:text-left"} text-center min-w-0`, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold text-[11px] font-bold uppercase tracking-wider mb-1", children: slot0.sub }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl sm:text-3xl font-black text-white group-hover:text-gold drop-shadow-sm truncate max-w-full", children: slot0.title })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "duotone", scale: "hero", iconSize })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": slot2.kind,
+            tabIndex: 0,
+            onClick: slot2.action,
+            style: frameBoxStyle(16, 195),
+            className: `sm:col-span-3 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] ${CRYSTAL_FRAME} ${reorderCls(slot2.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot2.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot2.kind, shape: "duotone", scale: "lg", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: slot2.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: slot2.sub })
+              ] })
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-4xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl px-5 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "duotone", scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-isometric-diamond-deck") {
+    const arcCards = [
+      { item: slot1, lift: "sm:translate-y-2", hero: false },
+      { item: slot0, lift: "sm:-translate-y-2", hero: true },
+      { item: slot2, lift: "sm:translate-y-2", hero: false }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4 w-full items-center pt-3", style: gapStyle(), children: arcCards.map(({ item, lift, hero }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(20, 195),
+          className: `${lift} rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[205px] ${hero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "diamond", scale: hero ? "hero" : "lg", iconSize, highlight: hero }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${hero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-4 w-full max-w-2xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-4 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "diamond", scale: "sm", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
+          ]
+        },
+        item.kind
+      )) })
+    ] });
+  }
+  if (effectiveLayout === "layout-matte-card-fan") {
+    const shelfCards = [slot1, slot2, slot3, slot4];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": slot0.kind,
+          tabIndex: 0,
+          onClick: slot0.action,
+          style: frameBoxStyle(20, 240),
+          className: `md:col-span-4 rounded-3xl overflow-hidden flex flex-col justify-center min-h-[210px] sm:min-h-[260px] ${CRYSTAL_HERO_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot0.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 p-5 flex flex-col items-center justify-center text-center gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "shield", scale: "hero", iconSize, highlight: true }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-white group-hover:text-gold", children: slot0.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 mt-1", children: slot0.sub })
+              ] })
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3", style: gapStyle(), children: shelfCards.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14, 220),
+          className: `rounded-3xl overflow-hidden flex flex-col justify-center min-h-[170px] sm:min-h-[260px] ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 px-3 py-4 flex flex-col items-center justify-center text-center gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "shield", scale: "md", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate mt-0.5", children: item.sub })
+              ] })
+            ] })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  if (effectiveLayout === "layout-royal-monolith-dock") {
+    const pillars = [
+      { item: slot1, minH: 215, center: false },
+      { item: slot3, minH: 185, center: false },
+      { item: slot0, minH: 260, center: true },
+      { item: slot4, minH: 185, center: false },
+      { item: slot2, minH: 215, center: false }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-center", style: gapStyle(), children: pillars.map(({ item, minH, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(14, minH),
+        className: `${center2 ? "col-span-2 sm:col-span-1" : ""} rounded-2xl p-3.5 flex flex-col items-center justify-center gap-3 text-center ${center2 ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "monolith", scale: center2 ? "hero" : "md", iconSize, highlight: center2 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pb-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-bold truncate ${center2 ? "text-base sm:text-lg text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate mt-0.5", children: item.sub })
+          ] })
+        ]
+      },
+      item.kind
+    )) }) });
+  }
+  if (effectiveLayout === "layout-split-panel-arcade") {
+    const mediaPads = [slot0, slot1, slot2];
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-3xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(14),
+          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "keycap", scale: "sm", iconSize }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate", children: item.sub })
+              ] })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: mediaPads.map((item, idx) => {
+        const isHero = idx === 0;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            "data-dashboard-kind": item.kind,
+            tabIndex: 0,
+            onClick: item.action,
+            style: frameBoxStyle(20, 195),
+            className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[210px] ${isHero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "keycap", scale: "hero", iconSize, highlight: isHero }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
+              ] })
+            ]
+          },
+          item.kind
+        );
+      }) })
+    ] });
+  }
+  if (effectiveLayout === "layout-horizon-panorama-cards") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", style: gapStyle(), children: [slot1, slot2].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `flex-1 rounded-3xl p-4 flex items-center gap-3.5 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "capsule", scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": slot0.kind,
+          tabIndex: 0,
+          onClick: slot0.action,
+          style: frameBoxStyle(20, 235),
+          className: `md:col-span-4 rounded-3xl overflow-hidden p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[250px] ${CRYSTAL_HERO_FRAME} ${reorderCls(slot0.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "capsule", scale: "hero", iconSize, highlight: true }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-gold truncate", children: slot0.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-zinc-200 truncate mt-1", children: slot0.sub })
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(16),
+          className: `flex-1 rounded-3xl p-4 flex items-center gap-3.5 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "capsule", scale: "md", iconSize }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
+            ] })
+          ]
+        },
+        item.kind
+      )) })
+    ] }) });
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1].map((item, idx) => {
+      const isPrimary = idx === 0;
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          "data-dashboard-kind": item.kind,
+          tabIndex: 0,
+          onClick: item.action,
+          style: frameBoxStyle(20),
+          className: `rounded-3xl px-5 py-4 sm:py-5 flex items-center justify-between gap-4 border-2 ${isPrimary ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "satin", scale: "hero", iconSize, highlight: isPrimary }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-2xl font-bold truncate ${isPrimary ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
+          ]
+        },
+        item.kind
+      );
+    }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", style: gapStyle(), children: [slot2, slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        "data-tv-focusable": "true",
+        "data-dashboard-kind": item.kind,
+        tabIndex: 0,
+        onClick: item.action,
+        style: frameBoxStyle(14),
+        className: `rounded-2xl px-3 py-3.5 flex flex-col sm:flex-row items-center justify-center gap-2.5 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "satin", scale: "sm", iconSize }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate max-w-full", children: item.title })
+        ]
+      },
+      item.kind
+    )) })
+  ] });
+}
 const DEFAULT_PLAYERS = [
   "Achour Player (مدمج - Native)",
   "VLC Media Player",
@@ -122646,7 +125205,7 @@ const SettingsTimePreview = React$2.memo(({
   }) });
 });
 function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSplash }) {
-  var _a2, _b2, _c2, _d2, _e2;
+  var _a2;
   const [subView, setSubView] = reactExports.useState("main");
   const [newPlayerName, setNewPlayerName] = reactExports.useState("");
   const [newPlayerPackage, setNewPlayerPackage] = reactExports.useState("");
@@ -122663,10 +125222,14 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
   const [syncInProgress, setSyncInProgress] = reactExports.useState(false);
   const [syncNotification, setSyncNotification] = reactExports.useState(null);
   const [showUploadPasteModal, setShowUploadPasteModal] = reactExports.useState(false);
+  const [pendingLayoutId, setPendingLayoutId] = reactExports.useState(null);
+  const [pendingIconStyleId, setPendingIconStyleId] = reactExports.useState(null);
   const channelFileInputRef = reactExports.useRef(null);
   const { t, isRtl } = useI18n(settings.language);
   reactExports.useEffect(() => {
     setError("");
+    if (subView !== "dashboard-layouts") setPendingLayoutId(null);
+    if (subView !== "icons-3d") setPendingIconStyleId(null);
   }, [subView, catFilterTab, catSearch, playersTab, splashTab]);
   reactExports.useEffect(() => {
     const priority = confirmClearType || showUploadPasteModal ? BackPriority.MODAL : subView !== "main" ? BackPriority.SUBVIEW : BackPriority.VIEW;
@@ -122689,14 +125252,12 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     return unregister;
   }, [subView, confirmClearType, showUploadPasteModal, onBack]);
   reactExports.useEffect(() => {
-    if (subView === "playlist") return;
     const tmr = setTimeout(() => {
       ensureInitialFocus();
     }, 60);
     return () => clearTimeout(tmr);
   }, [subView, playersTab, splashTab, confirmClearType]);
   reactExports.useEffect(() => {
-    if (subView === "playlist") return;
     const handleKeyDown = (e2) => {
       const action = parseTVKeyEvent(e2);
       const activeEl = document.activeElement;
@@ -122823,7 +125384,7 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     });
     return list;
   }, [settings.externalPlayers]);
-  const currentTheme = reactExports.useMemo(() => {
+  reactExports.useMemo(() => {
     return ROYAL_THEMES.find((t2) => t2.id === (settings.royalThemeColor || "royal-gold")) || ROYAL_THEMES[0];
   }, [settings.royalThemeColor]);
   const fetchCategories = async (type) => {
@@ -123009,15 +125570,9 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
   const handleSelect3DIconStyle = (iconStyleId) => {
     updateSetting("icon3DStyle", iconStyleId);
     const selectedStyle = ICON_3D_STYLES.find((s) => s.id === iconStyleId);
-    if (selectedStyle) {
-      if (selectedStyle.recommendedThemeId) {
-        updateSetting("royalThemeColor", selectedStyle.recommendedThemeId);
-        applyRoyalTheme(selectedStyle.recommendedThemeId);
-      }
-      if (selectedStyle.recommendedBackgroundId) {
-        updateSetting("backgroundStyle", selectedStyle.recommendedBackgroundId);
-        updateSetting("customBackground", null);
-      }
+    if (selectedStyle && selectedStyle.recommendedThemeId) {
+      updateSetting("royalThemeColor", selectedStyle.recommendedThemeId);
+      applyRoyalTheme(selectedStyle.recommendedThemeId);
     }
   };
   const handleSelectBackground = (bgId) => {
@@ -123087,54 +125642,59 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     const q = catSearch.toLowerCase();
     return list.filter((c) => c.category_name.toLowerCase().includes(q));
   }, [categories, catSearch, catFilterTab, subView, settings.hiddenLiveCategories, settings.hiddenMovieCategories, settings.hiddenSeriesCategories]);
-  const historyCounts = reactExports.useMemo(() => ({
+  reactExports.useMemo(() => ({
     movie: getWatchHistoryTotalCount("movie"),
     series: getWatchHistoryTotalCount("series"),
     live: getWatchHistoryTotalCount("live")
   }), [historyTick, subView]);
-  const settingsItems = [
-    { icon: Globe, label: t("language"), value: settings.language === "ar" ? "العربية" : settings.language === "fr" ? "Français" : settings.language === "de" ? "Deutsch" : "English", action: () => setSubView("language") },
-    { icon: Clock, label: t("time_format"), value: settings.timeFormat, action: () => setSubView("time") },
-    { icon: LayoutGrid, label: t("view_mode"), value: t(settings.viewMode || "grid"), action: () => setSubView("view") },
-    { icon: Tv, label: t("auto_open_last_channel"), value: settings.autoPlayLastChannel ? t("enabled") : t("disabled"), action: () => setSubView("last-channel") },
-    { icon: ArrowUpDown, label: t("sort_by"), value: t(`sort_${settings.vodSortBy || "newest"}`), action: () => setSubView("vod-sort") },
-    { icon: Film, label: t("poster_size"), value: t(settings.posterSize || "medium"), action: () => setSubView("poster-size") },
-    { icon: Type, label: t("poster_titles"), value: settings.showPosterTitles ? t("show") : t("hide"), action: () => setSubView("poster-titles") },
+  const settingsGroups = [
     {
-      icon: LayoutDashboard,
-      label: t("dashboard_layouts"),
-      value: (() => {
-        const activeId = DASHBOARD_LAYOUTS.some((l2) => l2.id === settings.dashboardLayout) ? settings.dashboardLayout : "layout-glass-hero-dock";
-        const match = DASHBOARD_LAYOUTS.find((l2) => l2.id === activeId) || DASHBOARD_LAYOUTS[1];
-        return settings.language === "ar" ? match.nameAr : match.nameEn;
-      })(),
-      action: () => setSubView("dashboard-layouts")
+      title: isRtl ? "المظهر والتصميم" : "Appearance & Design",
+      items: [
+        { icon: LayoutDashboard, label: t("dashboard_layouts"), action: () => setSubView("dashboard-layouts") },
+        { icon: Palette, label: t("royal_themes"), action: () => setSubView("royal-colors") },
+        { icon: Sparkles, label: t("icons_3d"), action: () => setSubView("icons-3d") },
+        { icon: Image$1, label: t("app_backgrounds"), action: () => setSubView("backgrounds") },
+        { icon: Volume2, label: t("splash_intro"), action: () => setSubView("splash-intro") },
+        { icon: Shield, label: t("anti_block_vpn"), action: () => setSubView("vpn") }
+      ]
     },
-    { icon: Sparkles, label: t("icon_size"), value: settings.iconScale || "medium", action: () => setSubView("icon-size") },
-    { icon: Maximize2, label: t("screen_zoom"), value: `${settings.zoomScale || 100}%`, action: () => setSubView("screen-zoom") },
-    { icon: MonitorPlay, label: t("players_title"), value: settings.selectedPlayer, action: () => setSubView("players") },
-    { icon: Palette, label: t("royal_themes"), value: settings.language === "ar" ? currentTheme.nameAr : currentTheme.nameEn, action: () => setSubView("royal-colors") },
-    { icon: Sparkles, label: t("icons_3d"), value: settings.language === "ar" ? ((_a2 = ICON_3D_STYLES.find((s) => s.id === settings.icon3DStyle)) == null ? void 0 : _a2.nameAr) || "3D" : ((_b2 = ICON_3D_STYLES.find((s) => s.id === settings.icon3DStyle)) == null ? void 0 : _b2.nameEn) || "3D", action: () => setSubView("icons-3d") },
-    { icon: Image$1, label: t("app_backgrounds"), value: settings.customBackground ? t("custom") : settings.language === "ar" ? ((_c2 = APP_BACKGROUNDS.find((b2) => b2.id === (settings.backgroundStyle || "bg-raouche-rocks-beirut"))) == null ? void 0 : _c2.nameAr) || "صخرة الروشة - بيروت" : ((_d2 = APP_BACKGROUNDS.find((b2) => b2.id === (settings.backgroundStyle || "bg-raouche-rocks-beirut"))) == null ? void 0 : _d2.nameEn) || "Raouche Rocks, Beirut", action: () => setSubView("backgrounds") },
-    { icon: Volume2, label: t("splash_intro"), value: (settings.splashSoundTrack || "epic_royal_fanfare").replace(/_/g, " "), action: () => setSubView("splash-intro") },
-    { icon: Clock, label: t("seek_step"), value: `${settings.seekStep || 10}s`, action: () => setSubView("seek-step") },
-    { icon: Database, label: t("playlist"), value: isRtl ? "القوائم" : "Sources", action: () => setSubView("playlist") },
-    { icon: Shield, label: t("anti_block_vpn"), value: settings.vpnEnabled ? t("enabled") : t("disabled"), action: () => setSubView("vpn") },
-    { icon: Trash2, label: t("clear_movie_history"), value: String(historyCounts.movie), action: () => setConfirmClearType("movie") },
-    { icon: Trash2, label: t("clear_series_history"), value: String(historyCounts.series), action: () => setConfirmClearType("series") },
-    { icon: Trash2, label: t("clear_channel_history"), value: String(historyCounts.live), action: () => setConfirmClearType("live") }
+    {
+      title: isRtl ? "الأحجام" : "Sizes & Scaling",
+      items: [
+        { icon: Sparkles, label: t("icon_size"), action: () => setSubView("icon-size") },
+        ...!isMobileDevice() ? [
+          { icon: LayoutDashboard, label: isRtl ? "حجم الإطارات" : "Frame Size", action: () => setSubView("frame-size") },
+          { icon: ArrowUpDown, label: isRtl ? "المسافة بين العناصر" : "Element Spacing", action: () => setSubView("tile-spacing") }
+        ] : [],
+        { icon: Maximize2, label: t("screen_zoom"), action: () => setSubView("screen-zoom") },
+        { icon: Maximize2, label: isRtl ? "تكبير صفحة الإعدادات" : "Settings Page Size", action: () => setSubView("settings-scale") },
+        { icon: Tv, label: isRtl ? "تكبير صفحة المباشر" : "Live Page Size", action: () => setSubView("live-scale") },
+        { icon: Film, label: isRtl ? "تكبير الأفلام والمسلسلات" : "Movies & Series Page Size", action: () => setSubView("vod-scale") },
+        { icon: Clock, label: t("seek_step"), action: () => setSubView("seek-step") }
+      ]
+    },
+    {
+      title: isRtl ? "نسب العرض إلى الارتفاع والتشغيل" : "Aspect Ratios & View",
+      items: [
+        { icon: LayoutGrid, label: t("view_mode"), action: () => setSubView("view") },
+        { icon: ArrowUpDown, label: t("sort_by"), action: () => setSubView("vod-sort") },
+        { icon: Film, label: t("poster_size"), action: () => setSubView("poster-size") },
+        { icon: Type, label: t("poster_titles"), action: () => setSubView("poster-titles") }
+      ]
+    },
+    {
+      title: isRtl ? "اللغة والاتجاه والنظام" : "Language & System",
+      items: [
+        { icon: Globe, label: t("language"), action: () => setSubView("language") },
+        { icon: Clock, label: t("time_format"), action: () => setSubView("time") },
+        { icon: Tv, label: t("auto_open_last_channel"), action: () => setSubView("last-channel") },
+        { icon: Trash2, label: t("clear_movie_history"), action: () => setConfirmClearType("movie") },
+        { icon: Trash2, label: t("clear_series_history"), action: () => setConfirmClearType("series") },
+        { icon: Trash2, label: t("clear_channel_history"), action: () => setConfirmClearType("live") }
+      ]
+    }
   ];
-  if (subView === "playlist") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      PlaylistManager,
-      {
-        onBack: () => setSubView("main"),
-        userId,
-        settings,
-        onUpdateSettings
-      }
-    );
-  }
   if (subView === "language") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("language"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3.5", children: [
       { code: "en", label: "English", name: "English (Default)", flag: "🇬🇧" },
@@ -123202,7 +125762,7 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
   }
   if (subView === "last-channel") {
     const savedLast = getLastWatchedChannel(settings.activePlaylistId);
-    const savedChannelName = (_e2 = savedLast == null ? void 0 : savedLast.channel) == null ? void 0 : _e2.name;
+    const savedChannelName = (_a2 = savedLast == null ? void 0 : savedLast.channel) == null ? void 0 : _a2.name;
     const enabled = Boolean(settings.autoPlayLastChannel);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("auto_open_last_channel"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-zinc-300 flex items-center justify-between gap-2", children: [
@@ -123315,12 +125875,16 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
   }
   if (subView === "icon-size") {
     const scaleOptions = [
-      { id: "small", label: isRtl ? "صغير (85%)" : "Compact (85%)", desc: isRtl ? "مساحة أكبر للهواتف" : "Compact cards" },
-      { id: "medium", label: isRtl ? "متوازن (100%)" : "Balanced (100%)", desc: isRtl ? "المقاس القياسي الافتراضي" : "Default size" },
-      { id: "large", label: isRtl ? "كبير (115%)" : "Prominent (115%)", desc: isRtl ? "مثالي لشاشات التلفزيون" : "Large TV size" }
+      { id: "xs", label: isRtl ? "صغير جداً (70%)" : "Extra Small (70%)", desc: isRtl ? "مقاس مصغر جداً" : "Very compact" },
+      { id: "sm", label: isRtl ? "صغير (85%)" : "Small (85%)", desc: isRtl ? "مساحة أكبر للهواتف" : "Compact cards" },
+      { id: "md", label: isRtl ? "متوازن (100%)" : "Balanced (100%)", desc: isRtl ? "المقاس القياسي الافتراضي" : "Default size" },
+      { id: "lg", label: isRtl ? "كبير (115%)" : "Large (115%)", desc: isRtl ? "مثالي لشاشات التلفزيون" : "Large TV size" },
+      { id: "xl", label: isRtl ? "كبير جداً (130%)" : "Extra Large (130%)", desc: isRtl ? "أيقونات بارزة كبرى" : "Extra prominent" },
+      { id: "2xl", label: isRtl ? "ضخم (145%)" : "Huge (145%)", desc: isRtl ? "حجم واسع وواضح" : "Very large" },
+      { id: "3xl", label: isRtl ? "عملاق (160%)" : "Giant (160%)", desc: isRtl ? "أقصى حجم متاح" : "Maximum size" }
     ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("icon_size"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5", children: scaleOptions.map((opt) => {
-      const isActive = (settings.iconScale || "medium") === opt.id;
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("icon_size"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5", children: scaleOptions.map((opt) => {
+      const isActive = (settings.iconScale || "md") === opt.id;
       return /* @__PURE__ */ jsxRuntimeExports.jsx(
         TileOptionButton,
         {
@@ -123336,6 +125900,102 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
         opt.id
       );
     }) }) });
+  }
+  if (subView === "frame-size") {
+    const frameOptions = [
+      { id: "xs", label: isRtl ? "إطار صغير جداً" : "Extra Compact Frame", desc: isRtl ? "يصغّر الإطار دون تغيير الأيقونة" : "Shrinks frame only, icon unchanged" },
+      { id: "sm", label: isRtl ? "إطار صغير" : "Compact Frame", desc: isRtl ? "حواف أضيق للإطارات" : "Tighter frame border" },
+      { id: "md", label: isRtl ? "متوازن (الافتراضي)" : "Balanced (Default)", desc: isRtl ? "الحجم القياسي للإطارات" : "Standard frame scale" },
+      { id: "lg", label: isRtl ? "إطار كبير" : "Large Frame", desc: isRtl ? "تكبير مساحة الإطار فقط" : "Larger frame area only" },
+      { id: "xl", label: isRtl ? "إطار كبير جداً" : "Extra Large Frame", desc: isRtl ? "مساحة واسعة حول الأيقونات" : "Generous frame area" },
+      { id: "2xl", label: isRtl ? "إطار ضخم" : "Huge Frame", desc: isRtl ? "بطاقات عريضة للتلفزيون" : "Wide TV frame cards" },
+      { id: "3xl", label: isRtl ? "إطار عملاق" : "Giant Frame", desc: isRtl ? "أقصى حجم متاح للإطار" : "Maximum frame scale" }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: isRtl ? "حجم الإطارات (مستقل عن الأيقونات)" : "Frame Size (Independent)", onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5", children: frameOptions.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      TileOptionButton,
+      {
+        title: opt.label,
+        subtitle: opt.desc,
+        active: (settings.frameScale || "md") === opt.id,
+        onClick: () => {
+          updateSetting("frameScale", opt.id);
+          setSubView("main");
+        },
+        isRtl
+      },
+      opt.id
+    )) }) });
+  }
+  if (subView === "tile-spacing") {
+    const spacingOptions = [
+      { id: "xs", label: isRtl ? "متقارب جداً" : "Very Tight", desc: isRtl ? "مسافة دنيا بين العناصر" : "Minimal gap between tiles" },
+      { id: "sm", label: isRtl ? "متقارب" : "Compact", desc: isRtl ? "مسافة صغيرة بين العناصر" : "Close element spacing" },
+      { id: "md", label: isRtl ? "متوازن (الافتراضي)" : "Balanced (Default)", desc: isRtl ? "تباعد قياسي" : "Standard spacing" },
+      { id: "lg", label: isRtl ? "واسع" : "Spacious", desc: isRtl ? "مسافة أوسع بين الإطارات" : "Generous gap between tiles" },
+      { id: "xl", label: isRtl ? "واسع جداً" : "Extra Spacious", desc: isRtl ? "أقصى تباعد بين العناصر" : "Maximum separation" }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: isRtl ? "المسافة بين العناصر (مستقلة)" : "Element Spacing (Independent)", onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5", children: spacingOptions.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      TileOptionButton,
+      {
+        title: opt.label,
+        subtitle: opt.desc,
+        active: (settings.tileSpacing || "md") === opt.id,
+        onClick: () => {
+          updateSetting("tileSpacing", opt.id);
+          setSubView("main");
+        },
+        isRtl
+      },
+      opt.id
+    )) }) });
+  }
+  if (subView === "dashboard-align") {
+    const alignOptions = [
+      { id: "top", label: isRtl ? "أعلى الشاشة" : "Top of Screen", desc: isRtl ? "رفع الأيقونات نحو الجزء العلوي من الشاشة" : "Align icons toward the top" },
+      { id: "center", label: isRtl ? "منتصف الشاشة (الافتراضي)" : "Center of Screen (Default)", desc: isRtl ? "توسيط الأيقونات في منتصف الشاشة" : "Center icons vertically" },
+      { id: "bottom", label: isRtl ? "أسفل الشاشة" : "Bottom of Screen", desc: isRtl ? "تنزيل الأيقونات نحو الجزء السفلي من الشاشة" : "Align icons toward the bottom" }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("dashboard_alignment"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5", children: alignOptions.map((opt) => {
+      const isActive = (settings.dashboardAlignment || "center") === opt.id;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        TileOptionButton,
+        {
+          title: opt.label,
+          subtitle: opt.desc,
+          active: isActive,
+          onClick: () => {
+            updateSetting("dashboardAlignment", opt.id);
+            setSubView("main");
+          },
+          isRtl
+        },
+        opt.id
+      );
+    }) }) });
+  }
+  if (subView === "settings-scale" || subView === "live-scale" || subView === "vod-scale") {
+    const scaleConfig = subView === "settings-scale" ? { key: "settingsScale", current: settings.settingsScale ?? 90, title: isRtl ? "حجم صفحة الإعدادات" : "Settings Page Size", hint: isRtl ? "يؤثر على الإعدادات فقط" : "Affects Settings only" } : subView === "live-scale" ? { key: "livePageScale", current: settings.livePageScale ?? 100, title: isRtl ? "حجم صفحة البث المباشر" : "Live Page Size", hint: isRtl ? "يؤثر على صفحة المباشر فقط" : "Affects Live only" } : { key: "vodPageScale", current: settings.vodPageScale ?? 100, title: isRtl ? "حجم صفحات الأفلام والمسلسلات" : "Movies & Series Page Size", hint: isRtl ? "يؤثر على الأفلام والمسلسلات فقط" : "Affects Movies & Series only" };
+    const scaleValues = [70, 80, 90, 100, 110, 120];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: scaleConfig.title, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-zinc-300", children: scaleConfig.hint }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-3", children: scaleValues.map((value) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          "data-tv-focusable": "true",
+          tabIndex: 0,
+          onClick: () => updateSetting(scaleConfig.key, value),
+          className: `min-h-[72px] rounded-2xl border flex flex-col items-center justify-center gap-1 transition-colors ${scaleConfig.current === value ? "border-gold bg-gold/15" : "border-white/10 bg-white/[0.04] hover:border-gold/40"}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-lg font-mono font-bold text-gold", children: [
+              value,
+              "%"
+            ] }),
+            scaleConfig.current === value && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 14, className: "text-gold" })
+          ]
+        },
+        value
+      )) })
+    ] }) });
   }
   if (subView === "screen-zoom") {
     const currentZoom = settings.zoomScale || 100;
@@ -123583,34 +126243,103 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     }) }) });
   }
   if (subView === "icons-3d") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("icons_3d")} (${ICON_3D_STYLES.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 pb-4", children: ICON_3D_STYLES.map((style2, idx) => {
-      const isActive = (settings.icon3DStyle || "style-gold-3d") === style2.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onFocus: (e2) => e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" }),
-          onClick: () => handleSelect3DIconStyle(style2.id),
-          className: `p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[82px] cursor-pointer ${isActive ? "border-gold bg-gold/15" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-8 h-8 rounded-xl p-1.5 flex items-center justify-center ${style2.cardClass}`, children: style2.iconImage ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: style2.iconImage, alt: "", className: style2.iconClass }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Tv, { size: 16, className: style2.iconClass, ...style2.iconProps }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-zinc-400", children: [
-                "#",
-                idx + 1
-              ] })
+    const savedId = settings.icon3DStyle || "style-gold-3d";
+    const previewId = pendingIconStyleId || savedId;
+    const previewStyle = ICON_3D_STYLES.find((s) => s.id === previewId) || ICON_3D_STYLES[0];
+    const previewIdx = ICON_3D_STYLES.findIndex((s) => s.id === previewStyle.id);
+    const hasPendingChange = Boolean(pendingIconStyleId && pendingIconStyleId !== savedId);
+    const iconKinds = [
+      { kind: "live", label: t("live") },
+      { kind: "movies", label: t("movies") },
+      { kind: "series", label: t("series") },
+      { kind: "add", label: t("playlist") },
+      { kind: "settings", label: t("settings") }
+    ];
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("icons_3d")} (${ICON_3D_STYLES.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 pb-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 min-w-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black", children: [
+              "#",
+              previewIdx + 1
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-medium text-white truncate mt-1.5", children: settings.language === "ar" ? style2.nameAr : style2.nameEn }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full mt-1.5 pt-1 border-t border-white/10 text-[11px]", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400 truncate max-w-[90px]", children: style2.nameEn }),
-              isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
-            ] })
-          ]
-        },
-        style2.id
-      );
-    }) }) });
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-bold text-white truncate", children: settings.language === "ar" ? previewStyle.nameAr : previewStyle.nameEn }),
+            hasPendingChange && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-gold text-[10px] font-bold", children: isRtl ? "معاينة قبل الحفظ" : "Preview" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3 pt-1", children: iconKinds.map((ic) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: ic.kind, active3DStyle: previewStyle, scale: "sm", iconSize: "md" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-300 truncate max-w-[54px]", children: ic.label })
+          ] }, ic.kind)) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              "data-tv-focusable": "true",
+              tabIndex: 0,
+              onClick: () => {
+                handleSelect3DIconStyle(previewStyle.id);
+                setPendingIconStyleId(null);
+              },
+              className: "px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 15 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "اعتماد التصميم" : "Confirm Design" })
+              ]
+            }
+          ),
+          hasPendingChange && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              "data-tv-focusable": "true",
+              tabIndex: 0,
+              onClick: () => setPendingIconStyleId(null),
+              className: "px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer",
+              children: isRtl ? "إلغاء" : "Cancel"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: ICON_3D_STYLES.map((style2, idx) => {
+        const isSelected = previewId === style2.id;
+        const isSaved = savedId === style2.id;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            tabIndex: 0,
+            onFocus: (e2) => {
+              e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              setPendingIconStyleId(style2.id);
+            },
+            onClick: () => {
+              handleSelect3DIconStyle(style2.id);
+              setPendingIconStyleId(null);
+            },
+            className: `p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[86px] cursor-pointer ${isSelected ? "border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full gap-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle: style2, scale: "sm", iconSize: "xs" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "movies", active3DStyle: style2, scale: "sm", iconSize: "xs" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "settings", active3DStyle: style2, scale: "sm", iconSize: "xs" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gold font-bold", children: [
+                  "#",
+                  idx + 1
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-medium text-white truncate mt-1.5", children: settings.language === "ar" ? style2.nameAr : style2.nameEn }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full mt-1 pt-1 border-t border-white/10 text-[10px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400 truncate max-w-[90px]", children: isSaved ? isRtl ? "المُعتمد حالياً" : "Active" : style2.nameEn }),
+                (isSelected || isSaved) && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
+              ] })
+            ]
+          },
+          style2.id
+        );
+      }) })
+    ] }) });
   }
   if (subView === "backgrounds") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("app_backgrounds")} (${APP_BACKGROUNDS.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-3 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: APP_BACKGROUNDS.map((bg) => {
@@ -123783,141 +126512,200 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
         case "layout-obsidian-hex-hive":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col items-center justify-center gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 w-full h-4.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-[#10141f] border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-[#161c2c] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-[#10141f] border border-gold/45" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-transparent border border-gold/55" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-white/[0.06] border border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-transparent border border-gold/55" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-2/3 h-3.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#0e111a] border border-gold/40" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#0e111a] border border-gold/40" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
             ] })
           ] });
         case "layout-solid-theater-marquee":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-7 grid grid-cols-2 gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#141824] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-gold/45" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.05] border border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/50" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-5 flex flex-col gap-0.5 justify-between", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-[#111520] border border-gold/35" }, i2)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-5 flex flex-col gap-0.5 justify-between", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-transparent border border-gold/45" }, i2)) })
           ] });
         case "layout-carbon-brushed-chassis":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 rounded-lg bg-[#0a0c12] border border-gold/60 p-0.5 flex flex-col gap-0.5", children: [
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 rounded-lg bg-transparent border border-gold/60 p-0.5 flex flex-col gap-0.5", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-0.5 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#171b28] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#131620] border border-white/20" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#131620] border border-white/20" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.06] border border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-0.5 h-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#131620] border border-gold/40" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#131620] border border-gold/40" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
             ] })
           ] });
         case "layout-duotone-color-blocks":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-12 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-[#131722] border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-6 rounded bg-gold border border-white/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-[#131722] border border-gold/50" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-transparent border border-gold/55" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-6 rounded bg-gold/20 border border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-transparent border border-gold/55" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-3/4 mx-auto h-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#171c29] border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-white/25" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/30" })
             ] })
           ] });
         case "layout-isometric-diamond-deck":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col items-center justify-center gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 w-full h-5 items-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-[#10131c] border border-gold/40 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 bg-gold/60 block" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-[#171c2b] border border-gold flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2.5 h-2.5 rotate-45 bg-gold block" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-[#10131c] border border-gold/40 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 bg-gold/60 block" }) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 border border-gold/80 block" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-white/[0.05] border border-gold flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2.5 h-2.5 rotate-45 bg-gold/40 border border-gold block" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 border border-gold/80 block" }) })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-1/2 h-2.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-gold/40" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-gold/40" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
             ] })
           ] });
         case "layout-matte-card-fan":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 rounded bg-[#121622] border border-gold overflow-hidden flex flex-col", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2 bg-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 rounded bg-white/[0.05] border border-gold overflow-hidden flex flex-col", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 bg-gold/60" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-8 grid grid-cols-4 gap-0.5", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded bg-[#10131c] border border-gold/40 overflow-hidden flex flex-col", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-gold/60" }) }, i2)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-8 grid grid-cols-4 gap-0.5", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded bg-transparent border border-gold/45 overflow-hidden flex flex-col", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-gold/45" }) }, i2)) })
           ] });
         case "layout-royal-monolith-dock":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-5 gap-1 items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-[#0e111a] border border-gold/45" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-[#0e111a] border border-gold/35" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-9 rounded bg-[#161b2a] border-2 border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-[#0e111a] border border-gold/35" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-[#0e111a] border border-gold/45" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-transparent border border-gold/45" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-transparent border border-gold/35" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-9 rounded bg-white/[0.06] border-2 border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-transparent border border-gold/35" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-transparent border border-gold/45" })
           ] });
         case "layout-split-panel-arcade":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-3/4 mx-auto h-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#141824] border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#141824] border border-gold/50" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/55" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/55" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#171c2b] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-white/20" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#10131c] border border-white/20" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.05] border border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" })
             ] })
           ] });
         case "layout-horizon-panorama-cards":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-0.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-[#10141f] border border-gold/40" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-[#10141f] border border-gold/40" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-[#161c2c] border-2 border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-white/[0.05] border-2 border-gold" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-0.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-[#10141f] border border-gold/40" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-[#10141f] border border-gold/40" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" })
             ] })
           ] });
         case "layout-luxury-satin-frame":
           return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#0b0e15] border-2 border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#0b0e15] border-2 border-gold/50" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border-2 border-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border-2 border-gold/55" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-[#0b0e15] border border-gold/45" }, i2)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }, i2)) })
           ] });
+        case "layout-frameless-icons":
+          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center justify-around px-2", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-3 h-3 rounded-full ${i2 === 0 ? "bg-gold shadow-[0_0_6px_var(--theme-glow)]" : "bg-white/70"}` }, i2)) });
         case "layout-zen-horizon":
         default:
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-5 border-y border-gold/45 bg-white/[0.04] grid grid-cols-5 divide-x divide-white/10", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: i2 === 0 ? "bg-gold/20" : "" }, i2)) }) });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-5 border-y border-gold/45 bg-transparent grid grid-cols-5 divide-x divide-white/15", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: i2 === 0 ? "bg-gold/15" : "" }, i2)) }) });
       }
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("dashboard_layouts")} (${DASHBOARD_LAYOUTS.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 pb-4", children: DASHBOARD_LAYOUTS.map((layoutOption, idx) => {
-      const effectiveLayout = DASHBOARD_LAYOUTS.some((l2) => l2.id === settings.dashboardLayout) ? settings.dashboardLayout : "layout-glass-hero-dock";
-      const isActive = effectiveLayout === layoutOption.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onFocus: (e2) => e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" }),
-          onClick: () => {
-            updateSetting("dashboardLayout", layoutOption.id);
-            setSubView("main");
-          },
-          className: `p-2.5 rounded-2xl border transition-colors flex flex-col justify-between gap-1.5 min-h-[108px] cursor-pointer ${isActive ? "border-gold bg-gold/15" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono text-gold font-bold", children: [
+    const savedLayoutId = DASHBOARD_LAYOUTS.some((l2) => l2.id === settings.dashboardLayout) ? settings.dashboardLayout : "layout-frameless-icons";
+    const previewLayoutId = pendingLayoutId || savedLayoutId;
+    const previewLayoutObj = DASHBOARD_LAYOUTS.find((l2) => l2.id === previewLayoutId) || DASHBOARD_LAYOUTS[0];
+    const previewLayoutIdx = DASHBOARD_LAYOUTS.findIndex((l2) => l2.id === previewLayoutObj.id);
+    const hasPendingLayout = Boolean(pendingLayoutId && pendingLayoutId !== savedLayoutId);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("dashboard_layouts")} (${DASHBOARD_LAYOUTS.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 pb-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 w-full sm:w-auto min-w-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-36 shrink-0 p-1.5 rounded-xl border border-white/15 bg-transparent", children: renderLayoutThumbnail(previewLayoutObj.id) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black", children: [
                 "#",
-                idx + 1
+                previewLayoutIdx + 1
               ] }),
-              isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold text-white truncate", children: settings.language === "ar" ? previewLayoutObj.nameAr : previewLayoutObj.nameEn })
             ] }),
-            renderLayoutThumbnail(layoutOption.id),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-medium text-white truncate w-full", children: settings.language === "ar" ? layoutOption.nameAr : layoutOption.nameEn })
-          ]
-        },
-        layoutOption.id
-      );
-    }) }) });
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: settings.language === "ar" ? previewLayoutObj.descriptionAr : previewLayoutObj.descriptionEn })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              "data-tv-focusable": "true",
+              tabIndex: 0,
+              onClick: () => {
+                updateSetting("dashboardLayout", previewLayoutObj.id);
+                setPendingLayoutId(null);
+                setSubView("main");
+              },
+              className: "px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 15 }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "اعتماد التصميم" : "Confirm Layout" })
+              ]
+            }
+          ),
+          hasPendingLayout && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              "data-tv-focusable": "true",
+              tabIndex: 0,
+              onClick: () => setPendingLayoutId(null),
+              className: "px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer",
+              children: isRtl ? "إلغاء" : "Cancel"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: DASHBOARD_LAYOUTS.map((layoutOption, idx) => {
+        const isSelected = previewLayoutObj.id === layoutOption.id;
+        const isSaved = savedLayoutId === layoutOption.id;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            tabIndex: 0,
+            onFocus: (e2) => {
+              e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              setPendingLayoutId(layoutOption.id);
+            },
+            onClick: () => {
+              updateSetting("dashboardLayout", layoutOption.id);
+              setPendingLayoutId(null);
+            },
+            className: `p-2.5 rounded-2xl border transition-colors flex flex-col justify-between gap-1.5 min-h-[110px] cursor-pointer ${isSelected ? "border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono text-gold font-bold", children: [
+                  "#",
+                  idx + 1
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
+                  isSaved && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] font-bold text-gold/90", children: isRtl ? "مُعتمد" : "Active" }),
+                  (isSelected || isSaved) && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
+                ] })
+              ] }),
+              renderLayoutThumbnail(layoutOption.id),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-medium text-white truncate w-full", children: settings.language === "ar" ? layoutOption.nameAr : layoutOption.nameEn })
+            ]
+          },
+          layoutOption.id
+        );
+      }) })
+    ] }) });
   }
   if (subView.startsWith("categories-")) {
     const type = subView.split("-")[1];
@@ -124262,25 +127050,27 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
             catCard.view
           );
         }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 pb-2", children: settingsItems.map((item, idx) => {
-          const Icon2 = item.icon;
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onFocus: (e2) => e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" }),
-              onClick: item.action,
-              className: "flex flex-col justify-between p-2.5 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 transition-colors group h-[88px] sm:h-[94px] text-center cursor-pointer items-center",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-black transition-colors shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 17 }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate w-full leading-snug", children: item.label }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-normal text-gold/85 truncate w-full leading-none", children: item.value || "—" })
-              ]
-            },
-            idx
-          );
-        }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4 pb-3", children: settingsGroups.map((group, gIdx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-black text-gold uppercase tracking-wider px-1", children: group.title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2", children: group.items.map((item, idx) => {
+            const Icon2 = item.icon;
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onFocus: (e2) => e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+                onClick: item.action,
+                className: "flex flex-col items-center justify-center p-3 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 transition-colors group h-[84px] sm:h-[90px] text-center cursor-pointer gap-2",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-black transition-colors shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 17 }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate w-full leading-snug", children: item.label })
+                ]
+              },
+              idx
+            );
+          }) })
+        ] }, gIdx)) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("footer", { className: "pt-1.5 pb-1 flex items-center justify-center gap-6 text-xs font-mono text-zinc-400 shrink-0", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
@@ -124566,1502 +127356,6 @@ function ExitConfirmModal({
     }
   ) });
 }
-const VALID_DASHBOARD_LAYOUTS = [
-  "layout-pure-icons",
-  "layout-glass-hero-dock",
-  "layout-vertical-rail",
-  "layout-cinema-marquee",
-  "layout-asymmetric-bento",
-  "layout-dual-cinema-split",
-  "layout-floating-console-bar",
-  "layout-pyramid-tier",
-  "layout-right-command-panel",
-  "layout-chamfer-prism-grid",
-  "layout-editorial-showcase",
-  "layout-orbital-medallions",
-  "layout-leanback-lanes",
-  "layout-quadrant-hub",
-  "layout-arch-gallery",
-  "layout-compact-glass-stack",
-  "layout-widescreen-ribbon",
-  "layout-stepped-skyline",
-  "layout-split-header-deck",
-  "layout-zen-horizon",
-  "layout-obsidian-hex-hive",
-  "layout-solid-theater-marquee",
-  "layout-carbon-brushed-chassis",
-  "layout-duotone-color-blocks",
-  "layout-isometric-diamond-deck",
-  "layout-matte-card-fan",
-  "layout-royal-monolith-dock",
-  "layout-split-panel-arcade",
-  "layout-horizon-panorama-cards",
-  "layout-luxury-satin-frame"
-];
-const Icons = {
-  Live: ({ className, strokeWidth = 1.4, fill = "none" }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill, stroke: "currentColor", strokeWidth, className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 6h12v10H4z" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 16v2h8v-2M10 18v2M8 20h4" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "17", y: "8", width: "3", height: "6", rx: "1" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "18.5", cy: "10", r: "0.5", fill: "currentColor" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "18.5", cy: "12", r: "0.5", fill: "currentColor" })
-  ] }),
-  Filme: ({ className, strokeWidth = 1.3, fill = "none" }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill, stroke: "currentColor", strokeWidth, className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "9" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "2.5" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "7", r: "1.5" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "17", r: "1.5" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "7", cy: "12", r: "1.5" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "17", cy: "12", r: "1.5" })
-  ] }),
-  Serie: ({ className, strokeWidth = 1.3, fill = "none" }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill, stroke: "currentColor", strokeWidth, className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14", rx: "1" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 5v14M17 5v14M3 9h4M3 15h4M17 9h4M17 15h4" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 10l5 2-5 2z", fill: "currentColor" })
-  ] }),
-  Playlist: ({ className, strokeWidth = 1.4, fill = "none" }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill, stroke: "currentColor", strokeWidth, className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7", y1: "8", x2: "17", y2: "8" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7", y1: "12", x2: "17", y2: "12" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7", y1: "16", x2: "13", y2: "16" })
-  ] })
-};
-const StudioIcons = {
-  Live: ({ className }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 12.5a7 7 0 0 1 14 0", opacity: "0.45" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.5 14a3.5 3.5 0 0 1 7 0", opacity: "0.75" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "6", width: "18", height: "12", rx: "3" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "10.5,9.5 15.5,12 10.5,14.5", fill: "currentColor", stroke: "none" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 21h6" })
-  ] }),
-  Movies: ({ className }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7z" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "12,8.2 13.2,10.8 16,11.1 13.9,13 14.5,15.8 12,14.3 9.5,15.8 10.1,13 8,11.1 10.8,10.8", fill: "currentColor", stroke: "none" })
-  ] }),
-  Series: ({ className }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "9", width: "15", height: "11", rx: "2.5" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6h12a2 2 0 0 1 2 2v9", opacity: "0.65" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 3h10a2 2 0 0 1 2 2v8", opacity: "0.35" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "9,12.2 13.5,14.5 9,16.8", fill: "currentColor", stroke: "none" })
-  ] }),
-  Playlist: ({ className }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "12,3 20,7.5 12,12 4,7.5", fill: "currentColor", fillOpacity: "0.2" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "4,12 12,16.5 20,12" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "4,16.5 12,21 20,16.5" })
-  ] }),
-  Settings: ({ className }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", className, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "12,2.5 20,7 20,17 12,21.5 4,17 4,7", fill: "currentColor", fillOpacity: "0.14" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3", fill: "currentColor", stroke: "none" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 6.5V8.5M12 15.5V17.5M7.2 9.2L8.9 10.2M15.1 13.8L16.8 14.8M16.8 9.2L15.1 10.2M8.9 13.8L7.2 14.8" })
-  ] })
-};
-const ICON_SIZE_CLASSES = {
-  sm: {
-    small: "w-8 h-8 p-1.5",
-    medium: "w-9 h-9 sm:w-10 sm:h-10 p-2",
-    large: "w-11 h-11 sm:w-12 sm:h-12 p-2.5"
-  },
-  md: {
-    small: "w-10 h-10 sm:w-11 sm:h-11 p-2",
-    medium: "w-11 h-11 sm:w-13 sm:h-13 p-2.5",
-    large: "w-13 h-13 sm:w-15 sm:h-15 p-3"
-  },
-  lg: {
-    small: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
-    medium: "w-14 h-14 sm:w-16 sm:h-16 p-3",
-    large: "w-16 h-16 sm:w-20 sm:h-20 p-3.5"
-  },
-  hero: {
-    small: "w-14 h-14 sm:w-16 sm:h-16 p-3",
-    medium: "w-16 h-16 sm:w-20 sm:h-20 p-3.5",
-    large: "w-20 h-20 sm:w-24 sm:h-24 p-4"
-  }
-};
-function StyledAppIcon({
-  kind,
-  active3DStyle,
-  scale: scale2 = "md",
-  iconSize = "medium"
-}) {
-  var _a2, _b2;
-  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize] || ICON_SIZE_CLASSES[scale2].medium;
-  const strokeWidth = ((_a2 = active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.6;
-  const fill = ((_b2 = active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none";
-  const renderGlyph = () => {
-    if (active3DStyle.iconImage) {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: active3DStyle.iconImage, alt: "", className: `w-full h-full object-contain ${active3DStyle.iconClass}` });
-    }
-    const glyphClass = `w-full h-full ${active3DStyle.iconClass}`;
-    switch (kind) {
-      case "live":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Icons.Live, { className: glyphClass, strokeWidth, fill });
-      case "movies":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Icons.Filme, { className: glyphClass, strokeWidth, fill });
-      case "series":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Icons.Serie, { className: glyphClass, strokeWidth, fill });
-      case "add":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Icons.Playlist, { className: glyphClass, strokeWidth, fill });
-      case "settings":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Settings$1, { className: glyphClass, strokeWidth });
-    }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls} ${active3DStyle.cardClass}`, children: renderGlyph() });
-}
-function StudioLayoutIcon({
-  kind,
-  shape,
-  scale: scale2 = "md",
-  iconSize = "medium",
-  highlight = false,
-  inverted = false
-}) {
-  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize] || ICON_SIZE_CLASSES[scale2].medium;
-  const renderStudioGlyph = () => {
-    const cls = "w-full h-full relative z-10";
-    switch (kind) {
-      case "live":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(StudioIcons.Live, { className: cls });
-      case "movies":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(StudioIcons.Movies, { className: cls });
-      case "series":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(StudioIcons.Series, { className: cls });
-      case "add":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(StudioIcons.Playlist, { className: cls });
-      case "settings":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(StudioIcons.Settings, { className: cls });
-    }
-  };
-  const onPrimaryColor = "var(--theme-on-primary, #090b10)";
-  if (shape === "hex") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          clipPath: "polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
-          background: highlight ? "linear-gradient(145deg, var(--theme-primary), var(--theme-secondary))" : "linear-gradient(145deg, #252b3b, #12151f)"
-        },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "w-full h-full flex items-center justify-center",
-            style: { color: highlight ? onPrimaryColor : "var(--theme-primary)" },
-            children: renderStudioGlyph()
-          }
-        )
-      }
-    );
-  }
-  if (shape === "diamond") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: "w-full h-full rotate-45 rounded-xl flex items-center justify-center border-2 shadow-lg",
-        style: {
-          background: highlight ? "linear-gradient(135deg, var(--theme-primary), var(--theme-secondary))" : "#191d2b",
-          borderColor: "var(--theme-primary)"
-        },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "-rotate-45 w-[68%] h-[68%] flex items-center justify-center",
-            style: { color: highlight ? onPrimaryColor : "var(--theme-primary)" },
-            children: renderStudioGlyph()
-          }
-        )
-      }
-    ) });
-  }
-  if (shape === "octagon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          clipPath: "polygon(28% 0%, 72% 0%, 100% 28%, 100% 72%, 72% 100%, 28% 100%, 0% 72%, 0% 28%)",
-          background: highlight ? "linear-gradient(160deg, var(--theme-primary), var(--theme-secondary))" : "#1c202e"
-        },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "w-full h-full flex items-center justify-center",
-            style: { color: highlight ? onPrimaryColor : "var(--theme-primary)" },
-            children: renderStudioGlyph()
-          }
-        )
-      }
-    );
-  }
-  if (shape === "shield") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 rounded-t-xl rounded-b-[1.35rem] border-2 shadow-md transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          background: highlight ? "linear-gradient(180deg, var(--theme-primary), var(--theme-secondary))" : "linear-gradient(180deg, #202536, #11141e)",
-          borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)"
-        },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: "w-full h-full flex items-center justify-center",
-            style: { color: highlight ? onPrimaryColor : "var(--theme-primary)" },
-            children: renderStudioGlyph()
-          }
-        )
-      }
-    );
-  }
-  if (shape === "duotone") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          backgroundColor: inverted ? "#0c0f17" : "var(--theme-primary)",
-          borderColor: inverted ? "rgba(255,255,255,0.22)" : "var(--theme-accent)",
-          color: inverted ? "var(--theme-primary)" : onPrimaryColor
-        },
-        children: renderStudioGlyph()
-      }
-    );
-  }
-  if (shape === "keycap") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 rounded-xl border transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          background: highlight ? "linear-gradient(180deg, var(--theme-primary), var(--theme-secondary))" : "linear-gradient(180deg, #212636, #141722)",
-          borderColor: highlight ? "var(--theme-accent)" : "rgba(255,255,255,0.16)",
-          boxShadow: "inset 0 2px 0 rgba(255,255,255,0.18), 0 5px 0 #07090e",
-          color: highlight ? onPrimaryColor : "var(--theme-primary)"
-        },
-        children: renderStudioGlyph()
-      }
-    );
-  }
-  if (shape === "capsule") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          background: highlight ? "linear-gradient(135deg, var(--theme-primary), var(--theme-secondary))" : "#141824",
-          borderColor: "var(--theme-primary)",
-          boxShadow: highlight ? "0 0 18px var(--theme-glow)" : "none",
-          color: highlight ? onPrimaryColor : "var(--theme-primary)"
-        },
-        children: renderStudioGlyph()
-      }
-    );
-  }
-  if (shape === "satin") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 p-1 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          backgroundColor: "#0e111a",
-          borderColor: "var(--theme-primary)",
-          boxShadow: "inset 0 0 0 2px var(--theme-secondary)",
-          color: highlight ? "var(--theme-accent)" : "var(--theme-primary)"
-        },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[78%] h-[78%] flex items-center justify-center", children: renderStudioGlyph() })
-      }
-    );
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "div",
-    {
-      className: `relative flex items-center justify-center shrink-0 rounded-tr-2xl rounded-bl-2xl rounded-tl-md rounded-br-md border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-      style: {
-        background: highlight ? "linear-gradient(135deg, var(--theme-primary), var(--theme-secondary))" : "#181c28",
-        borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)",
-        color: highlight ? onPrimaryColor : "var(--theme-primary)"
-      },
-      children: renderStudioGlyph()
-    }
-  );
-}
-const GLASS_CARD = "bg-transparent border-0 transition-colors duration-150 cursor-pointer group focus:outline-none";
-const GLASS_HERO = "bg-transparent border-0 transition-colors duration-150 cursor-pointer group focus:outline-none";
-function DashboardLayouts({
-  layoutId,
-  active3DStyle,
-  iconSize = "medium",
-  language,
-  isRtl,
-  t,
-  onNavigate
-}) {
-  const effectiveLayout = VALID_DASHBOARD_LAYOUTS.includes(layoutId || "") ? layoutId : "layout-glass-hero-dock";
-  const labels = React$2.useMemo(() => {
-    const subs = {
-      ar: {
-        live: "البث والقنوات",
-        movies: "مكتبة السينما",
-        series: "المواسم والحلقات",
-        add: "الاشتراكات والروابط",
-        settings: "المظهر والنظام"
-      },
-      en: {
-        live: "Channels & TV",
-        movies: "Cinema Library",
-        series: "Seasons & Shows",
-        add: "IPTV Sources",
-        settings: "Look & System"
-      },
-      de: {
-        live: "TV & Kanäle",
-        movies: "Kino-Bibliothek",
-        series: "Staffeln & Serien",
-        add: "IPTV-Listen",
-        settings: "Design & System"
-      },
-      fr: {
-        live: "Chaînes & Direct",
-        movies: "Cinéma VOD",
-        series: "Saisons & Épisodes",
-        add: "Sources IPTV",
-        settings: "Style & Système"
-      }
-    };
-    const s = subs[language] || subs.en;
-    return {
-      live: { kind: "live", title: t("live"), sub: s.live, action: () => onNavigate("live") },
-      movies: { kind: "movies", title: t("movies"), sub: s.movies, action: () => onNavigate("movies") },
-      series: { kind: "series", title: t("series"), sub: s.series, action: () => onNavigate("series") },
-      add: { kind: "add", title: t("playlist"), sub: s.add, action: () => onNavigate("add") },
-      settings: { kind: "settings", title: t("settings"), sub: s.settings, action: () => onNavigate("settings") }
-    };
-  }, [language, t, onNavigate]);
-  const allItems = [labels.live, labels.movies, labels.series, labels.add, labels.settings];
-  const ArrowIcon = isRtl ? ChevronLeft : ChevronRight;
-  if (effectiveLayout === "layout-pure-icons") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-6 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-5 sm:gap-7 w-full items-center justify-items-center", children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: "flex flex-col items-center justify-center gap-3 p-3 rounded-3xl bg-transparent transition-colors cursor-pointer group focus:outline-none w-full max-w-[148px]",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "hero", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium tracking-wide truncate max-w-full text-gold group-hover:brightness-125", children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-glass-hero-dock") {
-    const dockItems = [labels.movies, labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: `w-full rounded-3xl p-5 sm:p-7 flex items-center justify-between gap-4 ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 sm:gap-6 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle, scale: "hero", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-gold font-mono uppercase tracking-widest mb-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14, className: "text-gold" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: labels.live.sub })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors truncate", children: labels.live.title })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-gold shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 22 }) })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 w-full", children: dockItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl p-3.5 sm:p-4 flex flex-col items-center justify-center gap-2.5 text-center ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] sm:text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-vertical-rail") {
-    const mediaCards = [labels.live, labels.movies, labels.series];
-    const railItems = [labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-3 flex flex-col justify-center gap-2.5", children: railItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `flex-1 rounded-2xl px-3.5 py-3 flex items-center gap-3 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate", children: item.sub })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-zinc-500 group-hover:text-gold shrink-0" })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-3 gap-3.5", children: mediaCards.map((item, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-3xl p-4 sm:p-5 flex flex-col items-center justify-between text-center min-h-[190px] sm:min-h-[240px] ${i2 === 0 ? GLASS_HERO : GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gold/75 tracking-widest", children: [
-              "0",
-              i2 + 1
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-cinema-marquee") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full", children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `rounded-3xl p-4 flex flex-col items-center justify-between text-center h-44 sm:h-64 ${idx === 0 ? GLASS_HERO : GLASS_CARD}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-gold truncate", children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-asymmetric-bento") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-12 gap-3 w-full", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: `col-span-2 sm:col-span-5 rounded-3xl p-5 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[240px] ${GLASS_HERO} ${isRtl ? "text-right items-end" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle, scale: "hero", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-mono text-gold uppercase tracking-wider mb-1", children: labels.live.sub }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold", children: labels.live.title })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-4 grid grid-rows-2 gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.movies.action,
-            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "movies", active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: labels.movies.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: labels.movies.sub })
-              ] })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.add.action,
-            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "add", active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-medium text-gold truncate", children: labels.add.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: labels.add.sub })
-              ] })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-3 flex flex-col gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.series.action,
-            className: `flex-1 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 ${GLASS_CARD}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "series", active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold", children: labels.series.title })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.settings.action,
-            className: `rounded-2xl p-3 flex flex-col items-center justify-center gap-1.5 ${GLASS_CARD}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "settings", active3DStyle, scale: "sm", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gold truncate max-w-full", children: labels.settings.title })
-            ]
-          }
-        )
-      ] })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-dual-cinema-split") {
-    const quad = [labels.movies, labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3.5 w-full", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: `rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[245px] ${GLASS_HERO}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle, scale: "hero", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors", children: labels.live.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-gold/85 mt-1", children: labels.live.sub })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", children: quad.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl p-4 flex flex-col items-center justify-center text-center gap-2.5 ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-white group-hover:text-gold truncate w-full", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-floating-console-bar") {
-    const ordered = [
-      { item: labels.movies, h: "h-36 sm:h-44", center: false },
-      { item: labels.series, h: "h-42 sm:h-52", center: false },
-      { item: labels.live, h: "h-52 sm:h-64", center: true },
-      { item: labels.add, h: "h-42 sm:h-52", center: false },
-      { item: labels.settings, h: "h-36 sm:h-44", center: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap sm:flex-nowrap items-center justify-center gap-2.5 sm:gap-3.5 w-full", children: ordered.map(({ item, h, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `flex-1 min-w-[100px] ${h} rounded-3xl p-3.5 flex flex-col items-center justify-center text-center gap-3 ${center2 ? GLASS_HERO : GLASS_CARD}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-semibold truncate ${center2 ? "text-base sm:text-xl text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
-            center2 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-pyramid-tier") {
-    const topTwo = [labels.live, labels.movies];
-    const bottomThree = [labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", children: topTwo.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-3xl p-5 flex items-center gap-4 min-h-[120px] sm:min-h-[142px] ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-gold/80 truncate mt-1", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", children: bottomThree.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl p-4 flex flex-col items-center justify-center gap-2 text-center ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-white group-hover:text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-right-command-panel") {
-    const leftStrips = [labels.live, labels.movies, labels.series];
-    const rightTower = [labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 flex flex-col gap-3", children: leftStrips.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl px-5 py-3.5 flex items-center justify-between gap-4 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: item.sub })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-3 grid grid-cols-2 md:grid-cols-1 gap-2.5", children: rightTower.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl p-3 flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-chamfer-prism-grid") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", children: [labels.live, labels.movies, labels.series].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl p-5 flex items-center gap-3.5 bg-transparent transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full sm:w-2/3", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-2xl p-4 flex items-center justify-center gap-3 bg-transparent transition-colors cursor-pointer group focus:outline-none",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-editorial-showcase") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-4xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-transparent", children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `w-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 hover:bg-gold/10 transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-gold/75 w-6 shrink-0", children: [
-              "0",
-              idx + 1
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base sm:text-xl font-medium truncate text-white group-hover:text-gold", children: item.title })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:inline text-xs text-zinc-400", children: item.sub }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold/70 group-hover:text-gold" })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-orbital-medallions") {
-    const discs = [
-      { item: labels.settings, size: "w-24 h-24 sm:w-28 sm:h-28", iconScale: "sm", hero: false },
-      { item: labels.movies, size: "w-28 h-28 sm:w-36 sm:h-36", iconScale: "md", hero: false },
-      { item: labels.live, size: "w-36 h-36 sm:w-48 sm:h-48", iconScale: "hero", hero: true },
-      { item: labels.series, size: "w-28 h-28 sm:w-36 sm:h-36", iconScale: "md", hero: false },
-      { item: labels.add, size: "w-24 h-24 sm:w-28 sm:h-28", iconScale: "sm", hero: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-3 sm:gap-5", children: discs.map(({ item, size, iconScale, hero }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `${size} rounded-full flex flex-col items-center justify-center text-center p-2 gap-1.5 ${hero ? GLASS_HERO : GLASS_CARD}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: iconScale, iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-medium truncate max-w-[90%] ${hero ? "text-sm sm:text-base text-gold" : "text-[11px] sm:text-xs text-white group-hover:text-gold"}`, children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-leanback-lanes") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-4 gap-3 w-full", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.live.action,
-            className: `sm:col-span-2 rounded-3xl p-5 flex items-center gap-4 min-h-[120px] ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle, scale: "hero", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: labels.live.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 truncate mt-1", children: labels.live.sub })
-              ] })
-            ]
-          }
-        ),
-        [labels.movies, labels.series].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: `rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 min-h-[120px] ${GLASS_CARD}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-semibold text-white group-hover:text-gold truncate w-full", children: item.title })
-            ]
-          },
-          item.kind
-        ))
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl mx-auto", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl px-4 py-3.5 flex items-center justify-center gap-3 ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-quadrant-hub") {
-    const corners = [labels.movies, labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-5xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full grid grid-cols-2 gap-4 sm:gap-6", children: [
-        corners.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: `rounded-3xl p-4 sm:p-6 min-h-[104px] sm:min-h-[124px] flex items-center gap-3 ${idx % 2 === 1 ? "justify-end text-end" : "justify-start text-start"} ${GLASS_CARD}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden sm:block text-xs text-zinc-400 truncate", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        )),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.live.action,
-            className: `hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full flex-col items-center justify-center gap-1.5 z-20 ${GLASS_HERO}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-gold", children: labels.live.title })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "sm:hidden flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: `px-5 py-2 rounded-2xl flex items-center gap-2 text-xs font-semibold text-gold ${GLASS_HERO}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: labels.live.title })
-          ]
-        }
-      ) })
-    ] });
-  }
-  if (effectiveLayout === "layout-arch-gallery") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `rounded-t-full rounded-b-2xl pt-8 pb-4 px-3 flex flex-col items-center justify-between gap-3 h-48 sm:h-60 ${idx === 0 ? GLASS_HERO : GLASS_CARD}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full text-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/75 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-compact-glass-stack") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 pb-5 w-full max-w-md mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-2", children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `w-full rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-medium truncate text-white group-hover:text-gold", children: item.title })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-widescreen-ribbon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", children: [labels.live, labels.movies, labels.series].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[155px] sm:min-h-[185px] ${idx === 0 ? GLASS_HERO : GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full max-w-xl p-1.5 grid grid-cols-2 gap-1.5", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-xl py-2.5 px-3 flex items-center justify-center gap-2 transition-colors cursor-pointer group focus:outline-none bg-transparent text-gold",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-stepped-skyline") {
-    const pillars = [
-      { item: labels.settings, h: "h-36 sm:h-44", center: false },
-      { item: labels.movies, h: "h-44 sm:h-52", center: false },
-      { item: labels.live, h: "h-52 sm:h-64", center: true },
-      { item: labels.series, h: "h-44 sm:h-52", center: false },
-      { item: labels.add, h: "h-36 sm:h-44", center: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", children: pillars.map(({ item, h, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `${h} rounded-3xl p-3.5 flex flex-col items-center justify-center gap-3 text-center ${center2 ? GLASS_HERO : GLASS_CARD}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-xs sm:text-sm font-semibold truncate w-full ${center2 ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-split-header-deck") {
-    const decks = [
-      { item: labels.live, icon: Radio },
-      { item: labels.movies, icon: Film },
-      { item: labels.series, icon: Clapperboard }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", children: decks.map(({ item, icon: HeaderIcon }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-3xl overflow-hidden flex flex-col ${idx === 0 ? GLASS_HERO : GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full px-4 py-2 bg-transparent flex items-center justify-between text-xs font-mono text-gold", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: item.sub }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderIcon, { size: 15 })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 flex items-center gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-2.5 ${GLASS_CARD}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-zen-horizon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-transparent grid grid-cols-2 sm:grid-cols-5 overflow-hidden", children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: "px-3 py-5 sm:py-7 flex flex-col items-center justify-center text-center gap-3 transition-colors cursor-pointer group focus:outline-none bg-transparent",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-gold", children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-obsidian-hex-hive") {
-    const topHexRow = [labels.movies, labels.live, labels.series];
-    const bottomHexRow = [labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", children: topHexRow.map((item, idx) => {
-        const isHero = idx === 1;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: "relative rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[168px] sm:min-h-[196px] bg-transparent border-0 transition-transform duration-150 hover:-translate-y-0.5 cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "hex", scale: isHero ? "hero" : "lg", iconSize, highlight: isHero }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] sm:text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-3xl", children: bottomHexRow.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-2xl bg-transparent border-0 px-5 py-3.5 flex items-center justify-center gap-3.5 transition-colors cursor-pointer group focus:outline-none",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "hex", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-solid-theater-marquee") {
-    const rightDrawers = [labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5", children: [labels.live, labels.movies].map((item, idx) => {
-        const isPrimary = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: `relative rounded-3xl overflow-hidden bg-transparent border-0 p-5 flex flex-col justify-between min-h-[190px] sm:min-h-[250px] transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex items-center justify-between gap-2 pb-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-gold text-[10px] font-mono font-bold uppercase tracking-wider", children: [
-                  "0",
-                  idx + 1
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold shrink-0" })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-auto py-3 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "ticket", scale: "hero", iconSize, highlight: isPrimary }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-bold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-5 flex flex-col gap-3 justify-between", children: rightDrawers.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `flex-1 rounded-2xl bg-transparent border-0 px-4 py-3 flex items-center justify-between gap-3 transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3.5 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "ticket", scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate", children: item.sub })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-carbon-brushed-chassis") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full bg-transparent p-3 sm:p-4 flex flex-col gap-3", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [labels.live, labels.movies, labels.series].map((item, idx) => {
-        const isMain = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: "rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between text-center gap-3 min-h-[152px] sm:min-h-[184px] bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "octagon", scale: "lg", iconSize, highlight: isMain }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-lg font-bold truncate ${isMain ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-xl px-4 py-3 flex items-center justify-center gap-3 bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "octagon", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-duotone-color-blocks") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-12 gap-3.5 w-full items-stretch", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.movies.action,
-            className: "sm:col-span-3 rounded-3xl bg-transparent border-0 p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] transition-colors cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: "movies", shape: "duotone", scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: labels.movies.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: labels.movies.sub })
-              ] })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.live.action,
-            className: "sm:col-span-6 rounded-3xl bg-transparent border-0 p-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 min-h-[170px] sm:min-h-[210px] transition-transform duration-150 hover:scale-[1.01] cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex flex-col items-center ${isRtl ? "sm:items-start sm:text-right" : "sm:items-start sm:text-left"} text-center min-w-0`, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold text-[11px] font-bold uppercase tracking-wider mb-1", children: labels.live.sub }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl sm:text-3xl font-black text-white group-hover:text-gold drop-shadow-sm truncate max-w-full", children: labels.live.title })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: "live", shape: "duotone", scale: "hero", iconSize })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: labels.series.action,
-            className: "sm:col-span-3 rounded-3xl bg-transparent border-0 p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] transition-colors cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: "series", shape: "duotone", scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: labels.series.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: labels.series.sub })
-              ] })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-4xl", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-2xl px-5 py-3 flex items-center justify-center gap-3 bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "duotone", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-isometric-diamond-deck") {
-    const arcCards = [
-      { item: labels.movies, lift: "sm:translate-y-2", hero: false },
-      { item: labels.live, lift: "sm:-translate-y-2", hero: true },
-      { item: labels.series, lift: "sm:translate-y-2", hero: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4 w-full items-center pt-3", children: arcCards.map(({ item, lift, hero }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `${lift} rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[205px] bg-transparent border-0 transition-transform duration-150 hover:scale-[1.02] cursor-pointer group focus:outline-none`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "diamond", scale: hero ? "hero" : "lg", iconSize, highlight: hero }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${hero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-4 w-full max-w-2xl", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-2xl bg-transparent border-0 px-4 py-3 flex items-center justify-center gap-4 transition-colors cursor-pointer group focus:outline-none",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "diamond", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-matte-card-fan") {
-    const shelfCards = [labels.movies, labels.series, labels.add, labels.settings];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: `md:col-span-4 rounded-3xl overflow-hidden bg-transparent border-0 flex flex-col justify-center min-h-[210px] sm:min-h-[260px] transition-transform duration-150 hover:scale-[1.01] cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 p-5 flex flex-col items-center justify-center text-center gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: "live", shape: "shield", scale: "hero", iconSize, highlight: true }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-white group-hover:text-gold", children: labels.live.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 mt-1", children: labels.live.sub })
-            ] })
-          ] })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3", children: shelfCards.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-3xl overflow-hidden bg-transparent border-0 flex flex-col justify-center min-h-[170px] sm:min-h-[260px] transition-colors cursor-pointer group focus:outline-none",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 px-3 py-4 flex flex-col items-center justify-center text-center gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "shield", scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ] })
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-royal-monolith-dock") {
-    const pillars = [
-      { item: labels.movies, h: "h-48 sm:h-64", center: false },
-      { item: labels.add, h: "h-40 sm:h-52", center: false },
-      { item: labels.live, h: "h-56 sm:h-72", center: true },
-      { item: labels.settings, h: "h-40 sm:h-52", center: false },
-      { item: labels.series, h: "h-48 sm:h-64", center: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-center", children: pillars.map(({ item, h, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: `${h} ${center2 ? "col-span-2 sm:col-span-1" : ""} rounded-2xl bg-transparent border-0 p-3.5 flex flex-col items-center justify-center gap-3 text-center transition-transform duration-150 hover:scale-[1.02] cursor-pointer group focus:outline-none`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "monolith", scale: center2 ? "hero" : "md", iconSize, highlight: center2 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pb-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-bold truncate ${center2 ? "text-base sm:text-lg text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-400 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-split-panel-arcade") {
-    const mediaPads = [labels.live, labels.movies, labels.series];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-3xl", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: "rounded-2xl bg-transparent border-0 px-4 py-3 flex items-center justify-center gap-3 transition-colors cursor-pointer group focus:outline-none",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "keycap", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-400 truncate", children: item.sub })
-            ] })
-          ] })
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", children: mediaPads.map((item, idx) => {
-        const isHero = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onClick: item.action,
-            className: "rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[210px] bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "keycap", scale: "hero", iconSize, highlight: isHero }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) })
-    ] });
-  }
-  if (effectiveLayout === "layout-horizon-panorama-cards") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", children: [labels.movies, labels.series].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `flex-1 rounded-3xl bg-transparent border-0 p-4 flex items-center gap-3.5 transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "capsule", scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: labels.live.action,
-          className: "md:col-span-4 rounded-3xl overflow-hidden bg-transparent border-0 p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[250px] transition-transform duration-150 hover:scale-[1.01] cursor-pointer group focus:outline-none relative",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: "live", shape: "capsule", scale: "hero", iconSize, highlight: true }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-gold truncate", children: labels.live.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-zinc-300 truncate mt-1", children: labels.live.sub })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", children: [labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `flex-1 rounded-3xl bg-transparent border-0 p-4 flex items-center gap-3.5 transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "capsule", scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", children: [labels.live, labels.movies].map((item, idx) => {
-      const isPrimary = idx === 0;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onClick: item.action,
-          className: `rounded-3xl px-5 py-4 sm:py-5 flex items-center justify-between gap-4 bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "satin", scale: "hero", iconSize, highlight: isPrimary }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-2xl font-bold truncate ${isPrimary ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
-          ]
-        },
-        item.kind
-      );
-    }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", children: [labels.series, labels.add, labels.settings].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        tabIndex: 0,
-        onClick: item.action,
-        className: "rounded-2xl px-3 py-3.5 flex flex-col sm:flex-row items-center justify-center gap-2.5 bg-transparent border-0 transition-colors cursor-pointer group focus:outline-none",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { kind: item.kind, shape: "satin", scale: "sm", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate max-w-full", children: item.title })
-        ]
-      },
-      item.kind
-    )) })
-  ] });
-}
 const ClockDisplay = React$2.memo(({ settings, isRtl }) => {
   const [currentTime, setCurrentTime] = reactExports.useState(/* @__PURE__ */ new Date());
   reactExports.useEffect(() => {
@@ -126094,6 +127388,12 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
   const [currentView, setCurrentView] = reactExports.useState("home");
   const [showAddModal, setShowAddModal] = reactExports.useState(false);
   const [showExitModal, setShowExitModal] = reactExports.useState(false);
+  const [showRepositionModal, setShowRepositionModal] = reactExports.useState(false);
+  const [reorderingKind, setReorderingKind] = reactExports.useState(null);
+  const reorderBackupRef = reactExports.useRef(null);
+  const selectHoldTimerRef = reactExports.useRef(null);
+  const selectHoldTriggeredRef = reactExports.useRef(false);
+  const longPressTimerRef = reactExports.useRef(null);
   const [activePlaylistData, setActivePlaylistData] = reactExports.useState(null);
   const [copiedLink, setCopiedLink] = reactExports.useState(false);
   const [isRefreshing, setIsRefreshing] = reactExports.useState(false);
@@ -126161,6 +127461,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
     };
   }, [activePlaylistData == null ? void 0 : activePlaylistData.id]);
   reactExports.useEffect(() => {
+    if (!startupSplashComplete) return;
     if (activePlaylistData) {
       dismissedExtractionRef.current.delete(activePlaylistData.id);
       const checkAndExtract = async () => {
@@ -126204,7 +127505,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       setPausedExtraction(null);
       setExtractionProgress(null);
     }
-  }, [activePlaylistData == null ? void 0 : activePlaylistData.id]);
+  }, [activePlaylistData == null ? void 0 : activePlaylistData.id, startupSplashComplete]);
   const fetchActivePlaylist = async () => {
     try {
       const localSaved = localStorage.getItem("achour_local_playlists");
@@ -126288,7 +127589,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
     }
   }, [activePlaylistData == null ? void 0 : activePlaylistData.id, activePlaylistData == null ? void 0 : activePlaylistData.url]);
   reactExports.useEffect(() => {
-    if (currentView === "home" && !showExtractionModal && !showExitModal && !showAddModal) {
+    if (startupSplashComplete && currentView === "home" && !showExtractionModal && !showExitModal && !showAddModal) {
       const timer = setTimeout(() => {
         if (!getCurrentTVFocus()) {
           ensureInitialFocus();
@@ -126296,7 +127597,30 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [currentView, showExtractionModal, showExitModal, showAddModal]);
+  }, [startupSplashComplete, currentView, showExtractionModal, showExitModal, showAddModal]);
+  reactExports.useEffect(() => {
+    if (!reorderingKind) return;
+    const unregister = pushBackHandler(() => {
+      const backup = reorderBackupRef.current;
+      if (backup) {
+        onUpdateSettings((prev) => ({
+          ...prev,
+          dashboardOrder: backup.dashboardOrder,
+          dashboardAlignment: backup.dashboardAlignment,
+          dashboardHorizontalAlignment: backup.dashboardHorizontalAlignment
+        }));
+      }
+      reorderBackupRef.current = null;
+      const targetKind = reorderingKind;
+      setReorderingKind(null);
+      setTimeout(() => {
+        const el = document.querySelector(`[data-dashboard-kind="${targetKind}"]`);
+        if (el) setTVFocus(el, { scroll: false });
+      }, 30);
+      return true;
+    }, BackPriority.MODAL);
+    return unregister;
+  }, [reorderingKind, onUpdateSettings]);
   reactExports.useEffect(() => {
     const unregister = pushBackHandler(() => {
       if (showExtractionModal) {
@@ -126308,6 +127632,10 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       }
       if (showAddModal) {
         setShowAddModal(false);
+        return true;
+      }
+      if (showRepositionModal) {
+        setShowRepositionModal(false);
         return true;
       }
       if (showExitModal) {
@@ -126322,48 +127650,194 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       return true;
     }, BackPriority.DASHBOARD);
     return unregister;
-  }, [showExtractionModal, showAddModal, showExitModal, currentView, activePlaylistData == null ? void 0 : activePlaylistData.id]);
+  }, [showExtractionModal, showAddModal, showExitModal, showRepositionModal, currentView, activePlaylistData == null ? void 0 : activePlaylistData.id]);
+  const handleTVReorderStep = React$2.useCallback((kind, direction) => {
+    const tiles = Array.from(document.querySelectorAll("[data-dashboard-kind]"));
+    const curEl = tiles.find((el) => el.getAttribute("data-dashboard-kind") === kind);
+    let neighborKind = null;
+    if (curEl) {
+      const curRect = curEl.getBoundingClientRect();
+      const cx = curRect.left + curRect.width / 2;
+      const cy = curRect.top + curRect.height / 2;
+      let bestScore = Infinity;
+      for (const cand of tiles) {
+        const candKind = cand.getAttribute("data-dashboard-kind");
+        if (!candKind || candKind === kind) continue;
+        const r = cand.getBoundingClientRect();
+        if (r.width === 0 || r.height === 0) continue;
+        const tx = r.left + r.width / 2;
+        const ty = r.top + r.height / 2;
+        const dx = tx - cx;
+        const dy = ty - cy;
+        if (direction === "up" && dy >= -10) continue;
+        if (direction === "down" && dy <= 10) continue;
+        if (direction === "left" && dx >= -10) continue;
+        if (direction === "right" && dx <= 10) continue;
+        const score = direction === "up" || direction === "down" ? Math.abs(dy) + Math.abs(dx) * 1.4 : Math.abs(dx) + Math.abs(dy) * 1.4;
+        if (score < bestScore) {
+          bestScore = score;
+          neighborKind = candKind;
+        }
+      }
+    }
+    if (neighborKind) {
+      onUpdateSettings((prev) => {
+        const base = ["live", "movies", "series", "add", "settings"];
+        const order = [...prev.dashboardOrder || [], ...base].filter(
+          (value, index2, list) => base.includes(value) && list.indexOf(value) === index2
+        );
+        const fromIdx = order.indexOf(kind);
+        const toIdx = order.indexOf(neighborKind);
+        if (fromIdx === -1 || toIdx === -1 || fromIdx === toIdx) return prev;
+        const nextOrder = [...order];
+        [nextOrder[fromIdx], nextOrder[toIdx]] = [nextOrder[toIdx], nextOrder[fromIdx]];
+        return { ...prev, dashboardOrder: nextOrder };
+      });
+    } else if (direction === "up" || direction === "down") {
+      onUpdateSettings((prev) => {
+        const curAlign = prev.dashboardAlignment || "center";
+        const nextAlign = direction === "up" ? curAlign === "bottom" ? "center" : "top" : curAlign === "top" ? "center" : "bottom";
+        return curAlign === nextAlign ? prev : { ...prev, dashboardAlignment: nextAlign };
+      });
+    } else {
+      onUpdateSettings((prev) => {
+        const curH = prev.dashboardHorizontalAlignment || "center";
+        const nextH = direction === "left" ? curH === "right" ? "center" : "left" : curH === "left" ? "center" : "right";
+        return curH === nextH ? prev : { ...prev, dashboardHorizontalAlignment: nextH };
+      });
+    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const updatedEl = document.querySelector(`[data-dashboard-kind="${kind}"]`);
+        if (updatedEl) setTVFocus(updatedEl, { scroll: false });
+      });
+    });
+  }, [onUpdateSettings]);
   reactExports.useEffect(() => {
     if (currentView !== "home") return;
+    const isPhone = isMobileDevice();
+    const enterReorderMode = (kind) => {
+      reorderBackupRef.current = {
+        dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : void 0,
+        dashboardAlignment: settings.dashboardAlignment,
+        dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment
+      };
+      setReorderingKind(kind);
+    };
+    const commitReorderMode = () => {
+      reorderBackupRef.current = null;
+      const targetKind = reorderingKind;
+      setReorderingKind(null);
+      try {
+        localStorage.setItem("achour_settings", JSON.stringify(settings));
+      } catch (err) {
+      }
+      if (targetKind) {
+        setTimeout(() => {
+          const el = document.querySelector(`[data-dashboard-kind="${targetKind}"]`);
+          if (el) setTVFocus(el, { scroll: false });
+        }, 25);
+      }
+    };
     const handleKeyDown = (e2) => {
+      if (showAddModal || showExitModal || showExtractionModal || showRepositionModal) return;
       const action = parseTVKeyEvent(e2);
-      if (action === "UP") {
+      if (action === "UP" || action === "DOWN" || action === "LEFT" || action === "RIGHT") {
         e2.preventDefault();
         e2.stopPropagation();
-        navigateSpatial("up", document.body, null);
-        return;
-      }
-      if (action === "DOWN") {
-        e2.preventDefault();
-        e2.stopPropagation();
-        navigateSpatial("down", document.body, null);
-        return;
-      }
-      if (action === "LEFT") {
-        e2.preventDefault();
-        e2.stopPropagation();
-        navigateSpatial("left", document.body, null);
-        return;
-      }
-      if (action === "RIGHT") {
-        e2.preventDefault();
-        e2.stopPropagation();
-        navigateSpatial("right", document.body, null);
+        const dir = action.toLowerCase();
+        if (reorderingKind) {
+          handleTVReorderStep(reorderingKind, dir);
+        } else {
+          navigateSpatial(dir, document.body, null);
+        }
         return;
       }
       if (action === "SELECT") {
+        e2.preventDefault();
+        e2.stopPropagation();
+        if (reorderingKind) {
+          if (!e2.repeat) {
+            commitReorderMode();
+          }
+          return;
+        }
         const active = getCurrentTVFocus();
-        if (active && typeof active.click === "function") {
+        const focusedKind = active == null ? void 0 : active.getAttribute("data-dashboard-kind");
+        if (!isPhone && focusedKind) {
+          if (e2.repeat) {
+            if (selectHoldTimerRef.current) {
+              clearTimeout(selectHoldTimerRef.current);
+              selectHoldTimerRef.current = null;
+            }
+            if (!selectHoldTriggeredRef.current) {
+              selectHoldTriggeredRef.current = true;
+              enterReorderMode(focusedKind);
+            }
+            return;
+          }
+          if (!selectHoldTimerRef.current) {
+            selectHoldTriggeredRef.current = false;
+            selectHoldTimerRef.current = setTimeout(() => {
+              selectHoldTimerRef.current = null;
+              selectHoldTriggeredRef.current = true;
+              enterReorderMode(focusedKind);
+            }, 460);
+          }
+          return;
+        }
+        if (!e2.repeat && active && typeof active.click === "function") {
+          active.click();
+        }
+      }
+    };
+    const handleKeyUp = (e2) => {
+      if (currentView !== "home" || showAddModal || showExitModal || showExtractionModal || showRepositionModal) return;
+      const action = parseTVKeyEvent(e2);
+      if (action !== "SELECT") return;
+      if (selectHoldTimerRef.current) {
+        clearTimeout(selectHoldTimerRef.current);
+        selectHoldTimerRef.current = null;
+      }
+      if (selectHoldTriggeredRef.current) {
+        e2.preventDefault();
+        e2.stopPropagation();
+        selectHoldTriggeredRef.current = false;
+        return;
+      }
+      if (!isPhone && !reorderingKind) {
+        const active = getCurrentTVFocus();
+        if ((active == null ? void 0 : active.hasAttribute("data-dashboard-kind")) && typeof active.click === "function") {
           e2.preventDefault();
           e2.stopPropagation();
           active.click();
-          return;
         }
       }
     };
     window.addEventListener("keydown", handleKeyDown, { capture: true });
-    return () => window.removeEventListener("keydown", handleKeyDown, { capture: true });
-  }, [currentView, isRtl, showAddModal, showExitModal, showExtractionModal]);
+    window.addEventListener("keyup", handleKeyUp, { capture: true });
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown, { capture: true });
+      window.removeEventListener("keyup", handleKeyUp, { capture: true });
+      if (selectHoldTimerRef.current) {
+        clearTimeout(selectHoldTimerRef.current);
+        selectHoldTimerRef.current = null;
+      }
+    };
+  }, [currentView, isRtl, showAddModal, showExitModal, showExtractionModal, showRepositionModal, reorderingKind, settings, handleTVReorderStep]);
+  const moveDashboardTile = (kind, direction) => {
+    const base = ["live", "movies", "series", "add", "settings"];
+    const order = [...settings.dashboardOrder || [], ...base].filter((value, index2, list) => base.includes(value) && list.indexOf(value) === index2);
+    const from = order.indexOf(kind);
+    if (from < 0) return;
+    const delta = direction === "left" ? -1 : direction === "right" ? 1 : direction === "up" ? -2 : 2;
+    const to = Math.max(0, Math.min(order.length - 1, from + delta));
+    if (to === from) return;
+    const next = [...order];
+    const [item] = next.splice(from, 1);
+    next.splice(to, 0, item);
+    onUpdateSettings((prev) => ({ ...prev, dashboardOrder: next }));
+  };
   const handleExitApp = () => {
     var _a2, _b2, _c2, _d2, _e2, _f2, _g2;
     setShowExitModal(false);
@@ -126426,10 +127900,10 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
     {
       className: "h-full w-full overflow-hidden",
       style: {
-        transform: "scale(0.8842105263)",
+        transform: `scale(${(settings.settingsScale ?? 90) / 100})`,
         transformOrigin: isRtl ? "top right" : "top left",
-        width: "113.095238%",
-        height: "113.095238%"
+        width: `${1e4 / (settings.settingsScale ?? 90)}%`,
+        height: `${1e4 / (settings.settingsScale ?? 90)}%`
       },
       children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         SettingsView,
@@ -126526,20 +128000,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
               ]
             }
           ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { dir: "ltr", className: "flex items-center justify-center gap-2 sm:gap-2.5 min-w-0 pt-0.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-xl overflow-hidden relative flex items-center justify-center bg-transparent shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "img",
-              {
-                src: "/logo.jpg",
-                onError: (e2) => {
-                  e2.currentTarget.src = logoImg$1;
-                },
-                alt: "Achour Player",
-                className: "w-full h-full object-cover"
-              }
-            ) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-xl md:text-2xl font-semibold text-gold tracking-tight uppercase leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" })
-          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex items-center justify-center min-w-0 pt-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-xl md:text-2xl font-semibold text-gold tracking-tight uppercase leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-end min-w-0", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(ClockDisplay, { settings, isRtl }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "opacity-0 w-0 h-0 pointer-events-none", "data-tv-header-end": "true" })
@@ -126629,6 +128090,16 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
         }
       ) })
     ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: reorderingKind && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        initial: { opacity: 0, y: -12 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -12 },
+        className: "relative z-30 mx-auto mb-1 px-4 py-1.5 rounded-xl bg-black/80 border border-[var(--theme-primary)] text-gold text-xs font-bold flex items-center gap-3 shadow-lg shrink-0",
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "وضع الترتيب: استخدم الأسهم لتحريك العنصر • OK للتثبيت والحفظ • Back للإلغاء" : "Reorder Mode: Use Arrows to move • OK to lock & save • Back to cancel" })
+      }
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.div,
       {
@@ -126636,22 +128107,53 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
         animate: { opacity: 1, scale: 1 },
         exit: { opacity: 0, scale: 0.985 },
         transition: { duration: 0.18 },
-        className: "flex-1 min-h-0 flex flex-col justify-center items-center w-full my-auto overflow-y-auto no-scrollbar px-2 sm:px-4",
+        onContextMenu: (e2) => {
+          if (isMobileDevice()) {
+            e2.preventDefault();
+            setShowRepositionModal(true);
+          }
+        },
+        onPointerDown: () => {
+          if (!isMobileDevice()) return;
+          if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+          longPressTimerRef.current = setTimeout(() => {
+            setShowRepositionModal(true);
+          }, 650);
+        },
+        onPointerUp: () => {
+          if (longPressTimerRef.current) {
+            clearTimeout(longPressTimerRef.current);
+            longPressTimerRef.current = null;
+          }
+        },
+        onPointerCancel: () => {
+          if (longPressTimerRef.current) {
+            clearTimeout(longPressTimerRef.current);
+            longPressTimerRef.current = null;
+          }
+        },
+        className: `flex-1 min-h-0 flex flex-col ${settings.dashboardAlignment === "top" ? "justify-start pt-6 sm:pt-10" : settings.dashboardAlignment === "bottom" ? "justify-end pb-8 sm:pb-12" : "justify-center my-auto"} ${settings.dashboardHorizontalAlignment === "left" ? "items-start" : settings.dashboardHorizontalAlignment === "right" ? "items-end" : "items-center"} w-full overflow-y-auto no-scrollbar px-2 sm:px-4`,
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           DashboardLayouts,
           {
             layoutId: settings.dashboardLayout,
+            dashboardOrder: settings.dashboardOrder,
             active3DStyle,
-            iconSize: settings.iconScale || "medium",
+            iconSize: settings.iconScale || "md",
+            frameScale: settings.frameScale || "md",
+            tileSpacing: settings.tileSpacing || "md",
+            reorderingKind,
             language: settings.language,
             isRtl,
             t,
-            onNavigate: (view2) => setCurrentView(view2),
+            onNavigate: (view2) => {
+              if (!reorderingKind) setCurrentView(view2);
+            },
             onExit: () => setShowExitModal(true)
           }
         )
       },
-      `hub-layout-${settings.dashboardLayout || "layout-glass-hero-dock"}`
+      `hub-layout-${settings.dashboardLayout || "layout-frameless-icons"}`
     ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showExtractionModal && extractionProgress && /* @__PURE__ */ jsxRuntimeExports.jsx(
       ExtractionProgressModal,
@@ -126729,6 +128231,100 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
         language: settings.language
       }
     ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showRepositionModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, scale: 0.95 },
+        animate: { opacity: 1, scale: 1 },
+        exit: { opacity: 0, scale: 0.95 },
+        className: "w-full max-w-lg rounded-3xl p-6 bg-[#0e121d] border border-gold/40 shadow-2xl flex flex-col gap-5 text-white",
+        dir: isRtl ? "rtl" : "ltr",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-white/10 pb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpDown, { className: "w-5 h-5 text-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-gold", children: isRtl ? "موضع الأيقونات على الشاشة" : "Dashboard Icons Screen Position" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: () => setShowRepositionModal(false),
+                className: "p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-300", children: isRtl ? "اختر الموضع المناسب لعرض أيقونات التطبيق الرئيسية على شاشتك:" : "Choose where you want the main app icons positioned on your screen:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
+            { id: "top", label: isRtl ? "أعلى الشاشة" : "Top", desc: isRtl ? "رفع نحو الأعلى" : "Upper area" },
+            { id: "center", label: isRtl ? "منتصف الشاشة" : "Center", desc: isRtl ? "الوضع الافتراضي" : "Balanced center" },
+            { id: "bottom", label: isRtl ? "أسفل الشاشة" : "Bottom", desc: isRtl ? "تنزيل نحو الأسفل" : "Lower dock" }
+          ].map((opt) => {
+            const active = (settings.dashboardAlignment || "center") === opt.id;
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: () => {
+                  const updated = { ...settings, dashboardAlignment: opt.id };
+                  onUpdateSettings(updated);
+                  localStorage.setItem("achour_settings", JSON.stringify(updated));
+                  setShowRepositionModal(false);
+                },
+                className: `flex flex-col items-center justify-center p-4 rounded-2xl border text-center transition-all cursor-pointer ${active ? "bg-gold/20 border-gold shadow-[0_0_15px_var(--theme-glow)] scale-[1.02]" : "bg-white/[0.04] border-white/10 hover:border-gold/50 hover:bg-white/[0.08]"}`,
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-white mb-1", children: opt.label }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400", children: opt.desc }),
+                  active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-2 text-gold", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 16 }) })
+                ]
+              },
+              opt.id
+            );
+          }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-3 space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-bold text-gold", children: isRtl ? "ترتيب إطارات لوحة التحكم" : "Reorder Dashboard Tiles" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-400", children: isRtl ? "استخدم الأسهم لتحريك الإطار. يتم حفظ الترتيب تلقائياً." : "Use the arrows to move a tile. The order is saved automatically." }),
+            (() => {
+              const base = ["live", "movies", "series", "add", "settings"];
+              const order = [...settings.dashboardOrder || [], ...base].filter((value, index2, list) => base.includes(value) && list.indexOf(value) === index2);
+              const names = { live: isRtl ? "المباشر" : "Live", movies: isRtl ? "الأفلام" : "Movies", series: isRtl ? "المسلسلات" : "Series", add: isRtl ? "إضافة قائمة" : "Add Playlist", settings: isRtl ? "الإعدادات" : "Settings" };
+              return order.map((kind, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-semibold text-white", children: [
+                  index2 + 1,
+                  ". ",
+                  names[kind]
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1", children: ["left", "up", "down", "right"].map((direction) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    "data-tv-focusable": "true",
+                    tabIndex: 0,
+                    onClick: () => moveDashboardTile(kind, direction),
+                    title: direction,
+                    className: "w-7 h-7 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-sm font-black transition-colors",
+                    children: direction === "left" ? "←" : direction === "right" ? "→" : direction === "up" ? "↑" : "↓"
+                  },
+                  direction
+                )) })
+              ] }, kind));
+            })()
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end pt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              "data-tv-focusable": "true",
+              tabIndex: 0,
+              onClick: () => setShowRepositionModal(false),
+              className: "px-5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-medium text-white transition-colors cursor-pointer",
+              children: isRtl ? "إغلاق" : "Close"
+            }
+          ) })
+        ]
+      }
+    ) }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: refreshToast && /* @__PURE__ */ jsxRuntimeExports.jsxs(
       motion.div,
       {
@@ -126744,457 +128340,557 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
     ) })
   ] }) });
 }
+const SPLASH_DURATION_MS = 1e4;
+const EXIT_FADE_MS = 180;
+const RING_CIRCUMFERENCE = 251.2;
+const NUMBER_COLORS = [
+  "#ff4b4b",
+  "#ff8c00",
+  "#ffd700",
+  "#00e676",
+  "#00b0ff",
+  "#7c4dff",
+  "#ff4081",
+  "#00e5ff",
+  "#69f0ae",
+  "#ffd740",
+  "#ff6e40"
+];
+const BRAND_LETTERS = [
+  { char: "A", color: "#ff4b4b" },
+  { char: "c", color: "#ff8c00" },
+  { char: "h", color: "#ffd700" },
+  { char: "o", color: "#00e676" },
+  { char: "u", color: "#00b0ff" },
+  { char: "r", color: "#7c4dff" },
+  { char: " ", color: "transparent" },
+  { char: "P", color: "#ff4081" },
+  { char: "l", color: "#00e5ff" },
+  { char: "a", color: "#69f0ae" },
+  { char: "y", color: "#ffd740" },
+  { char: "e", color: "#ff6e40" },
+  { char: "r", color: "#e040fb" }
+];
+const PARTICLE_COLORS = ["#ff4b4b", "#ffd700", "#00e676", "#00b0ff", "#7c4dff", "#ff4081", "#00e5ff"];
+function getSoundNotes(soundTrack) {
+  switch (soundTrack) {
+    case "imax_bass_rise":
+      return [
+        { freq: 65.41, start: 0, duration: 3.6, type: "sawtooth", gain: 0.24 },
+        { freq: 98, start: 0.4, duration: 3.2, type: "triangle", gain: 0.22 },
+        { freq: 130.81, start: 1.1, duration: 3, type: "sine", gain: 0.26 },
+        { freq: 196, start: 2, duration: 2.6, type: "triangle", gain: 0.2 }
+      ];
+    case "synthwave_arpeggio":
+      return [
+        { freq: 220, start: 0, duration: 0.9, type: "sawtooth", gain: 0.14 },
+        { freq: 277.18, start: 0.35, duration: 0.9, type: "sawtooth", gain: 0.14 },
+        { freq: 329.63, start: 0.7, duration: 0.9, type: "sawtooth", gain: 0.15 },
+        { freq: 440, start: 1.05, duration: 1.6, type: "triangle", gain: 0.18 },
+        { freq: 554.37, start: 1.6, duration: 2.2, type: "sine", gain: 0.18 }
+      ];
+    case "crystal_magic_chimes":
+      return [
+        { freq: 523.25, start: 0, duration: 1.4, type: "sine", gain: 0.16 },
+        { freq: 659.25, start: 0.3, duration: 1.4, type: "sine", gain: 0.16 },
+        { freq: 783.99, start: 0.65, duration: 1.6, type: "sine", gain: 0.18 },
+        { freq: 1046.5, start: 1.05, duration: 2.2, type: "triangle", gain: 0.15 }
+      ];
+    case "cinematic_netflix":
+      return [
+        { freq: 98, start: 0, duration: 1.5, type: "triangle", gain: 0.24 },
+        { freq: 146.83, start: 0.25, duration: 2.4, type: "sawtooth", gain: 0.16 },
+        { freq: 293.66, start: 0.65, duration: 2.8, type: "sine", gain: 0.22 }
+      ];
+    case "epic_royal_fanfare":
+    default:
+      return [
+        { freq: 130.81, start: 0, duration: 2.3, type: "sawtooth", gain: 0.14 },
+        { freq: 196, start: 0.28, duration: 2.1, type: "sawtooth", gain: 0.14 },
+        { freq: 261.63, start: 0.56, duration: 2, type: "triangle", gain: 0.19 },
+        { freq: 392, start: 1.25, duration: 3.1, type: "sawtooth", gain: 0.22 }
+      ];
+  }
+}
 function SplashScreen({
   onComplete,
-  royalThemeId = "royal-gold",
+  onFirstPainted,
   soundTrack = "epic_royal_fanfare",
-  splashStyle = "royal_gold_particles"
+  splashStyle = "royal_gold_particles",
+  backgroundImageUrl = null,
+  isPreview = false
 }) {
   const [timeLeft, setTimeLeft] = reactExports.useState(10);
-  const [progress2, setProgress] = reactExports.useState(0);
+  const [isExiting, setIsExiting] = reactExports.useState(false);
+  const [logoSrc, setLogoSrc] = reactExports.useState("./logo-splash.jpg");
+  const [logoDecoded, setLogoDecoded] = reactExports.useState(false);
+  const isLowEnd = reactExports.useMemo(() => isTVOrLowEndDevice(), []);
+  const activeStyle = splashStyle || "royal_gold_particles";
+  const onCompleteRef = reactExports.useRef(onComplete);
+  onCompleteRef.current = onComplete;
+  const onFirstPaintedRef = reactExports.useRef(onFirstPainted);
+  onFirstPaintedRef.current = onFirstPainted;
+  const progressCircleRef = reactExports.useRef(null);
+  const progressBarRef = reactExports.useRef(null);
   const audioCtxRef = reactExports.useRef(null);
   const masterGainRef = reactExports.useRef(null);
-  const lastTickSecondRef = reactExports.useRef(null);
-  const numberColors = [
-    "#ff4b4b",
-    "#ff8c00",
-    "#ffd700",
-    "#00e676",
-    "#00b0ff",
-    "#7c4dff",
-    "#ff4081",
-    "#00e5ff",
-    "#69f0ae",
-    "#ffd740",
-    "#ff6e40"
-  ];
-  const playStyleAudio = (style2) => {
-    if (soundTrack === "mute") return;
-    try {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return;
-      if (!audioCtxRef.current || audioCtxRef.current.state === "closed") {
-        audioCtxRef.current = new AudioContextClass();
+  const activeOscsRef = reactExports.useRef(/* @__PURE__ */ new Set());
+  const audioStartedRef = reactExports.useRef(false);
+  const isAliveRef = reactExports.useRef(true);
+  const isFinishingRef = reactExports.useRef(false);
+  const exitTimeoutRef = reactExports.useRef(null);
+  const stopAllAudio = reactExports.useCallback(() => {
+    const ctx = audioCtxRef.current;
+    const masterGain = masterGainRef.current;
+    audioCtxRef.current = null;
+    masterGainRef.current = null;
+    if (masterGain && ctx && ctx.state !== "closed") {
+      try {
+        const now2 = ctx.currentTime;
+        masterGain.gain.cancelScheduledValues(now2);
+        masterGain.gain.setValueAtTime(masterGain.gain.value, now2);
+        masterGain.gain.linearRampToValueAtTime(0, now2 + 0.02);
+      } catch {
       }
-      const ctx = audioCtxRef.current;
-      if (!ctx || ctx.state === "closed") return;
-      if (ctx.state === "suspended") {
-        ctx.resume().catch(() => {
+    }
+    activeOscsRef.current.forEach((osc) => {
+      try {
+        osc.stop();
+      } catch {
+      }
+      try {
+        osc.disconnect();
+      } catch {
+      }
+    });
+    activeOscsRef.current.clear();
+    if (ctx && ctx.state !== "closed") {
+      try {
+        ctx.close().catch(() => {
         });
+      } catch {
       }
+    }
+  }, []);
+  const triggerExitToHome = reactExports.useCallback(() => {
+    if (isFinishingRef.current || !isAliveRef.current) return;
+    isFinishingRef.current = true;
+    stopAllAudio();
+    if (progressCircleRef.current) {
+      progressCircleRef.current.style.strokeDashoffset = "0";
+    }
+    if (progressBarRef.current) {
+      progressBarRef.current.style.transform = "scaleX(1)";
+    }
+    setIsExiting(true);
+    exitTimeoutRef.current = setTimeout(() => {
+      if (isAliveRef.current) {
+        onCompleteRef.current();
+      }
+    }, EXIT_FADE_MS);
+  }, [stopAllAudio]);
+  const particles = reactExports.useMemo(() => {
+    const count = isLowEnd ? 8 : 14;
+    return Array.from({ length: count }, (_2, i2) => {
+      const leftPct = 6 + i2 * 73 % 88;
+      const topPct = 6 + i2 * 41 % 88;
+      const dx = (i2 % 3 === 0 ? 1 : -1) * (18 + i2 % 4 * 14);
+      const dy = (i2 % 2 === 0 ? 1 : -1) * (24 + i2 % 5 * 14);
+      const dur = 3.2 + i2 % 4 * 0.7;
+      const delay2 = -(i2 * 0.45);
+      const color2 = PARTICLE_COLORS[i2 % PARTICLE_COLORS.length];
+      return { leftPct, topPct, dx, dy, dur, delay: delay2, color: color2 };
+    });
+  }, [isLowEnd]);
+  reactExports.useEffect(() => {
+    const unregister = pushBackHandler(() => {
+      if (isPreview) {
+        triggerExitToHome();
+      }
+      return true;
+    }, BackPriority.PLAYER + 50);
+    return unregister;
+  }, [isPreview, triggerExitToHome]);
+  reactExports.useEffect(() => {
+    if (!backgroundImageUrl) return;
+    const bgImg = new Image();
+    bgImg.decoding = "async";
+    bgImg.src = backgroundImageUrl;
+    if (typeof bgImg.decode === "function") {
+      bgImg.decode().catch(() => {
+      });
+    }
+    return () => {
+      bgImg.onload = null;
+      bgImg.onerror = null;
+    };
+  }, [backgroundImageUrl]);
+  reactExports.useEffect(() => {
+    isAliveRef.current = true;
+    isFinishingRef.current = false;
+    audioStartedRef.current = false;
+    setIsExiting(false);
+    setTimeLeft(10);
+    let rafId = 0;
+    let watchdogId = null;
+    let startPerfMs = 0;
+    let lastSecondShown = 10;
+    let unlockListenerAttached = false;
+    const ensureAudioContext = () => {
+      if (soundTrack === "mute" || !isAliveRef.current || isFinishingRef.current) return null;
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return null;
+        if (!audioCtxRef.current || audioCtxRef.current.state === "closed") {
+          audioCtxRef.current = new AudioContextClass();
+        }
+        const ctx = audioCtxRef.current;
+        if (!ctx || ctx.state === "closed") return null;
+        if (!masterGainRef.current) {
+          const master = ctx.createGain();
+          master.gain.setValueAtTime(0.24, ctx.currentTime);
+          master.connect(ctx.destination);
+          masterGainRef.current = master;
+        }
+        return ctx;
+      } catch {
+        return null;
+      }
+    };
+    const scheduleIntroNotes = () => {
+      if (audioStartedRef.current || soundTrack === "mute") return;
+      if (!isAliveRef.current || isFinishingRef.current || document.hidden) return;
+      const ctx = ensureAudioContext();
+      const masterGain = masterGainRef.current;
+      if (!ctx || !masterGain || ctx.state === "closed") return;
+      audioStartedRef.current = true;
       const now2 = ctx.currentTime;
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.25, now2);
-      masterGain.connect(ctx.destination);
-      masterGainRef.current = masterGain;
-      let notes = [
-        { freq: 130.81, start: 0, duration: 2.5, type: "sawtooth", gain: 0.15 },
-        { freq: 196, start: 0.3, duration: 2.2, type: "sawtooth", gain: 0.15 },
-        { freq: 261.63, start: 0.6, duration: 2, type: "triangle", gain: 0.2 },
-        { freq: 392, start: 1.4, duration: 3.5, type: "sawtooth", gain: 0.25 }
-      ];
-      if (style2 === "fireworks_party") {
-        notes = [
-          { freq: 330, start: 0, duration: 1, type: "sine", gain: 0.2 },
-          { freq: 440, start: 0.3, duration: 1.2, type: "triangle", gain: 0.2 },
-          { freq: 660, start: 0.7, duration: 2, type: "sine", gain: 0.25 }
-        ];
-      } else if (style2 === "matrix_neon_rain") {
-        notes = [
-          { freq: 220, start: 0, duration: 3, type: "sawtooth", gain: 0.12 },
-          { freq: 440, start: 0.5, duration: 2.5, type: "sawtooth", gain: 0.15 }
-        ];
-      } else if (style2 === "laser_pulse_grid") {
-        notes = [
-          { freq: 150, start: 0, duration: 2, type: "square", gain: 0.15 },
-          { freq: 300, start: 0.4, duration: 2, type: "square", gain: 0.18 }
-        ];
-      } else if (style2 === "supernova_explosion") {
-        notes = [
-          { freq: 100, start: 0, duration: 4, type: "sawtooth", gain: 0.3 },
-          { freq: 523.25, start: 0.8, duration: 3.2, type: "triangle", gain: 0.25 }
-        ];
-      } else if (style2 === "golden_fire_phoenix") {
-        notes = [
-          { freq: 261.63, start: 0, duration: 3, type: "triangle", gain: 0.2 },
-          { freq: 392, start: 0.5, duration: 2.5, type: "sine", gain: 0.25 },
-          { freq: 523.25, start: 1, duration: 3, type: "triangle", gain: 0.3 }
-        ];
-      }
+      const notes = getSoundNotes(soundTrack);
       notes.forEach((n) => {
         try {
-          if (!ctx || ctx.state === "closed") return;
+          if (!ctx || ctx.state === "closed" || isFinishingRef.current) return;
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           const filter3 = ctx.createBiquadFilter();
           osc.type = n.type;
           osc.frequency.setValueAtTime(n.freq, now2 + n.start);
           filter3.type = "lowpass";
-          filter3.frequency.setValueAtTime(1500, now2 + n.start);
-          filter3.frequency.exponentialRampToValueAtTime(4e3, now2 + n.start + 0.5);
+          filter3.frequency.setValueAtTime(1400, now2 + n.start);
+          filter3.frequency.exponentialRampToValueAtTime(3600, now2 + n.start + Math.min(0.5, n.duration * 0.5));
           gain.gain.setValueAtTime(1e-4, now2 + n.start);
-          gain.gain.linearRampToValueAtTime(n.gain, now2 + n.start + 0.2);
+          gain.gain.linearRampToValueAtTime(n.gain, now2 + n.start + 0.18);
           gain.gain.exponentialRampToValueAtTime(1e-4, now2 + n.start + n.duration);
           osc.connect(filter3);
           filter3.connect(gain);
           gain.connect(masterGain);
+          activeOscsRef.current.add(osc);
+          osc.onended = () => {
+            activeOscsRef.current.delete(osc);
+            try {
+              osc.disconnect();
+              gain.disconnect();
+              filter3.disconnect();
+            } catch {
+            }
+          };
           osc.start(now2 + n.start);
           osc.stop(now2 + n.start + n.duration);
-        } catch (e2) {
+        } catch {
         }
       });
-    } catch (e2) {
-    }
-  };
-  const playClockTick = () => {
-    if (soundTrack === "mute") return;
-    try {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return;
-      if (!audioCtxRef.current || audioCtxRef.current.state === "closed") {
-        audioCtxRef.current = new AudioContextClass();
-      }
+    };
+    const playClockTick = () => {
+      if (soundTrack === "mute" || !isAliveRef.current || isFinishingRef.current || document.hidden) return;
       const ctx = audioCtxRef.current;
-      if (!ctx || ctx.state === "closed") return;
-      if (ctx.state === "suspended") {
-        ctx.resume().catch(() => {
-        });
-      }
-      const now2 = ctx.currentTime;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(1400, now2);
-      osc.frequency.exponentialRampToValueAtTime(500, now2 + 0.03);
-      gain.gain.setValueAtTime(0.12, now2);
-      gain.gain.exponentialRampToValueAtTime(1e-4, now2 + 0.04);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start(now2);
-      osc.stop(now2 + 0.05);
-    } catch (e2) {
-    }
-  };
-  reactExports.useEffect(() => {
-    playStyleAudio(splashStyle || "royal_gold_particles");
-    const preloadPlaylistData = async () => {
+      const masterGain = masterGainRef.current;
+      if (!ctx || !masterGain || ctx.state !== "running") return;
       try {
-        const savedSettings = localStorage.getItem("achour_settings_v2");
-        if (!savedSettings) return;
-        const settings = JSON.parse(savedSettings);
-        if (!settings.activePlaylistId) return;
-        const localSaved = localStorage.getItem("achour_local_playlists");
-        const localList = localSaved ? JSON.parse(localSaved) : [];
-        let activeP = localList.find((p2) => p2.id === settings.activePlaylistId);
-        if (!activeP) {
-          const snap = await getDoc(doc(db, "playlists", settings.activePlaylistId));
-          if (snap.exists()) {
-            activeP = { id: snap.id, ...snap.data() };
+        const now2 = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(1320, now2);
+        osc.frequency.exponentialRampToValueAtTime(520, now2 + 0.028);
+        gain.gain.setValueAtTime(0.16, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-4, now2 + 0.038);
+        osc.connect(gain);
+        gain.connect(masterGain);
+        activeOscsRef.current.add(osc);
+        osc.onended = () => {
+          activeOscsRef.current.delete(osc);
+          try {
+            osc.disconnect();
+            gain.disconnect();
+          } catch {
           }
-        }
-        if (activeP) {
-          const status2 = await getPlaylistExtractionStatus(activeP.id);
-          if (!status2 || status2.stage !== "completed" && status2.stage !== "paused") {
-            ExtractionService.extract(activeP, (progress22) => {
-              try {
-                window.__ACHOUR_EXTRACTION_PROGRESS__ = progress22;
-                window.dispatchEvent(new CustomEvent("achour_extraction_progress", { detail: progress22 }));
-              } catch (e2) {
-              }
-            });
-          }
-        }
-      } catch (e2) {
+        };
+        osc.start(now2);
+        osc.stop(now2 + 0.045);
+      } catch {
       }
     };
-    const warmTimer = setTimeout(preloadPlaylistData, 2e3);
-    const duration = 1e4;
-    const intervalTime = 100;
-    setTimeLeft(10);
-    lastTickSecondRef.current = 10;
-    let timer = null;
-    let completeTimer = null;
-    let raf1 = 0;
-    let raf2 = 0;
-    let cancelled = false;
-    const startCountdown = () => {
-      if (cancelled) return;
-      const startTime = Date.now();
-      timer = setInterval(() => {
-        const elapsed = Date.now() - startTime;
-        const newProgress = Math.min(elapsed / duration * 100, 100);
-        const remainingMs = Math.max(0, duration - elapsed);
-        const remainingSeconds = Math.max(1, Math.ceil(remainingMs / 1e3));
-        setProgress(newProgress);
-        if (remainingSeconds !== lastTickSecondRef.current) {
-          lastTickSecondRef.current = remainingSeconds;
-          setTimeLeft(remainingSeconds);
+    const removeUnlockListeners = () => {
+      if (!unlockListenerAttached) return;
+      unlockListenerAttached = false;
+      window.removeEventListener("pointerdown", handleAudioUnlock, true);
+      window.removeEventListener("keydown", handleAudioUnlock, true);
+    };
+    const handleAudioUnlock = () => {
+      if (!isAliveRef.current || isFinishingRef.current) {
+        removeUnlockListeners();
+        return;
+      }
+      const ctx = audioCtxRef.current;
+      if (ctx && ctx.state === "suspended") {
+        ctx.resume().then(() => {
+          if (!isAliveRef.current || isFinishingRef.current) {
+            stopAllAudio();
+            return;
+          }
+          scheduleIntroNotes();
+          removeUnlockListeners();
+        }).catch(() => {
+        });
+      } else {
+        removeUnlockListeners();
+      }
+    };
+    const startSynchronizedAudioAfterPaint = () => {
+      if (soundTrack === "mute" || !isAliveRef.current || isFinishingRef.current || document.hidden) return;
+      const ctx = ensureAudioContext();
+      if (!ctx) return;
+      if (ctx.state === "running") {
+        scheduleIntroNotes();
+      } else if (ctx.state === "suspended") {
+        ctx.resume().then(() => {
+          if (!isAliveRef.current || isFinishingRef.current || document.hidden) {
+            stopAllAudio();
+            return;
+          }
+          scheduleIntroNotes();
+          removeUnlockListeners();
+        }).catch(() => {
+        });
+        if (!unlockListenerAttached) {
+          unlockListenerAttached = true;
+          window.addEventListener("pointerdown", handleAudioUnlock, { capture: true, passive: true });
+          window.addEventListener("keydown", handleAudioUnlock, { capture: true, passive: true });
+        }
+      }
+    };
+    const updateFrame = () => {
+      if (!isAliveRef.current || isFinishingRef.current) return;
+      const elapsed = Math.max(0, performance.now() - startPerfMs);
+      const ratio = Math.min(1, elapsed / SPLASH_DURATION_MS);
+      const remainingMs = Math.max(0, SPLASH_DURATION_MS - elapsed);
+      if (progressCircleRef.current) {
+        progressCircleRef.current.style.strokeDashoffset = String(RING_CIRCUMFERENCE * (1 - ratio));
+      }
+      if (progressBarRef.current) {
+        progressBarRef.current.style.transform = `scaleX(${ratio.toFixed(4)})`;
+      }
+      if (masterGainRef.current && audioCtxRef.current && audioCtxRef.current.state === "running") {
+        const remainingRatio = Math.max(0, remainingMs / SPLASH_DURATION_MS);
+        const vol = remainingRatio < 0.2 ? remainingRatio / 0.2 * 0.24 : 0.24;
+        try {
+          masterGainRef.current.gain.setValueAtTime(vol, audioCtxRef.current.currentTime);
+        } catch {
+        }
+      }
+      const nextSecond = Math.max(0, Math.ceil(remainingMs / 1e3));
+      if (nextSecond !== lastSecondShown) {
+        lastSecondShown = nextSecond;
+        setTimeLeft(nextSecond);
+        if (nextSecond > 0) {
           playClockTick();
         }
-        if (masterGainRef.current && audioCtxRef.current && audioCtxRef.current.state !== "closed") {
-          const volumeFactor = Math.max(0, remainingMs / duration) * 0.25;
-          try {
-            masterGainRef.current.gain.setValueAtTime(volumeFactor, audioCtxRef.current.currentTime);
-          } catch (e2) {
-          }
-        }
-        if (elapsed >= duration || remainingMs <= 0) {
-          if (timer) clearInterval(timer);
-          timer = null;
-          setProgress(100);
-          setTimeLeft(1);
-          completeTimer = setTimeout(onComplete, 200);
-        }
-      }, intervalTime);
+      }
+      if (elapsed >= SPLASH_DURATION_MS || remainingMs <= 0) {
+        removeUnlockListeners();
+        triggerExitToHome();
+        return;
+      }
+      rafId = requestAnimationFrame(updateFrame);
     };
-    raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(startCountdown);
-    });
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-      if (timer) clearInterval(timer);
-      if (completeTimer) clearTimeout(completeTimer);
-      clearTimeout(warmTimer);
-      const ctx = audioCtxRef.current;
-      audioCtxRef.current = null;
-      masterGainRef.current = null;
-      if (ctx && ctx.state !== "closed") {
-        try {
-          ctx.close().catch(() => {
-          });
-        } catch (e2) {
-        }
+    const handleVisibilityOrHide = () => {
+      if (document.hidden) {
+        stopAllAudio();
       }
     };
-  }, [splashStyle]);
-  const letters = [
-    { char: "A", color: "#ff4b4b" },
-    { char: "c", color: "#ff8c00" },
-    { char: "h", color: "#ffd700" },
-    { char: "o", color: "#00e676" },
-    { char: "u", color: "#00b0ff" },
-    { char: "r", color: "#7c4dff" },
-    { char: " ", color: "transparent" },
-    { char: "P", color: "#ff4081" },
-    { char: "l", color: "#00e5ff" },
-    { char: "a", color: "#69f0ae" },
-    { char: "y", color: "#ffd740" },
-    { char: "e", color: "#ff6e40" },
-    { char: "r", color: "#e040fb" }
-  ];
-  const activeStyle = splashStyle || "royal_gold_particles";
+    window.addEventListener("pagehide", stopAllAudio);
+    document.addEventListener("visibilitychange", handleVisibilityOrHide);
+    rafId = requestAnimationFrame(() => {
+      var _a2;
+      if (!isAliveRef.current || isFinishingRef.current) return;
+      startPerfMs = performance.now();
+      (_a2 = onFirstPaintedRef.current) == null ? void 0 : _a2.call(onFirstPaintedRef);
+      startSynchronizedAudioAfterPaint();
+      rafId = requestAnimationFrame(updateFrame);
+      watchdogId = setInterval(() => {
+        if (!isAliveRef.current || isFinishingRef.current) return;
+        const elapsed = performance.now() - startPerfMs;
+        if (elapsed >= SPLASH_DURATION_MS) {
+          removeUnlockListeners();
+          triggerExitToHome();
+          return;
+        }
+        const sec = Math.max(0, Math.ceil((SPLASH_DURATION_MS - elapsed) / 1e3));
+        if (sec !== lastSecondShown) {
+          lastSecondShown = sec;
+          setTimeLeft(sec);
+        }
+      }, 250);
+    });
+    return () => {
+      isAliveRef.current = false;
+      cancelAnimationFrame(rafId);
+      if (watchdogId) clearInterval(watchdogId);
+      if (exitTimeoutRef.current) clearTimeout(exitTimeoutRef.current);
+      removeUnlockListeners();
+      window.removeEventListener("pagehide", stopAllAudio);
+      document.removeEventListener("visibilitychange", handleVisibilityOrHide);
+      stopAllAudio();
+    };
+  }, [splashStyle, soundTrack, stopAllAudio, triggerExitToHome]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
+    "div",
     {
-      initial: { opacity: 1 },
-      exit: { opacity: 0, filter: "blur(16px)", scale: 1.06 },
-      transition: { duration: 0.9, ease: "easeInOut" },
       className: "fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#020205] select-none overflow-hidden font-sans",
+      style: {
+        opacity: isExiting ? 0 : 1,
+        transition: `opacity ${EXIT_FADE_MS}ms ease-out`,
+        pointerEvents: isExiting ? "none" : "auto",
+        contain: "layout style paint"
+      },
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center", children: [
           activeStyle === "royal_gold_particles" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [0.95, 1.18, 0.95], opacity: [0.45, 0.72, 0.45], rotate: [0, 360] },
-              transition: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute w-[760px] h-[760px] rounded-full",
+              className: "absolute w-[760px] h-[760px] rounded-full achour-splash-pulse",
               style: { background: "radial-gradient(circle at center, rgba(255,215,0,0.34) 0%, rgba(124,77,255,0.22) 38%, rgba(255,75,75,0.12) 58%, transparent 74%)" }
             }
           ),
           activeStyle === "holographic_crown" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { rotate: 360, scale: [1, 1.08, 1] },
-              transition: { duration: 15, repeat: Infinity, ease: "linear" },
-              className: "absolute w-[620px] h-[620px] rounded-full border border-cyan-400/30 opacity-65 shadow-[0_0_60px_rgba(0,229,255,0.35)]",
+              className: "absolute w-[620px] h-[620px] rounded-full border border-cyan-400/35 opacity-65 achour-splash-spin",
               style: { background: "radial-gradient(circle at center, rgba(0,229,255,0.28) 0%, rgba(124,77,255,0.2) 55%, transparent 80%)" }
             }
           ),
           activeStyle === "diamond_beam_pulse" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { rotate: -360, opacity: [0.35, 0.65, 0.35] },
-              transition: { duration: 12, repeat: Infinity, ease: "linear" },
-              className: "absolute w-[680px] h-[680px] rounded-full",
+              className: "absolute w-[680px] h-[680px] rounded-full opacity-60 achour-splash-spin-rev",
               style: { background: "radial-gradient(circle at center, rgba(255,215,0,0.32) 0%, rgba(0,176,255,0.24) 40%, rgba(124,77,255,0.16) 60%, transparent 76%)" }
             }
           ),
           activeStyle === "cyber_pulsar" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [0.9, 1.12, 0.9], opacity: [0.35, 0.65, 0.35] },
-              transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute w-[560px] h-[560px] rounded-3xl rotate-45 border-2 border-emerald-400/40 shadow-[0_0_65px_rgba(0,230,118,0.35)]",
+              className: "absolute w-[560px] h-[560px] rounded-3xl rotate-45 border-2 border-emerald-400/40 achour-splash-pulse",
               style: { background: "radial-gradient(circle at center, rgba(0,230,118,0.25) 0%, rgba(0,176,255,0.2) 60%, transparent 82%)" }
             }
           ),
           activeStyle === "cinematic_epic_zoom" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [1, 1.2, 1], opacity: [0.35, 0.65, 0.35] },
-              transition: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-600/35 via-pink-600/20 to-transparent"
+              className: "absolute inset-0 achour-splash-pulse",
+              style: { background: "radial-gradient(ellipse at center, rgba(147,51,234,0.35) 0%, rgba(219,39,119,0.2) 48%, transparent 78%)" }
             }
           ),
           activeStyle === "fireworks_party" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [0.88, 1.15, 0.88], opacity: [0.4, 0.75, 0.4] },
-              transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute w-[720px] h-[720px] rounded-full",
+              className: "absolute w-[720px] h-[720px] rounded-full achour-splash-pulse",
               style: { background: "radial-gradient(circle at center, rgba(255,64,129,0.35) 0%, rgba(255,213,79,0.28) 45%, transparent 74%)" }
             }
           ),
           activeStyle === "matrix_neon_rain" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { opacity: [0.3, 0.7, 0.3] },
-              transition: { duration: 3, repeat: Infinity },
-              className: "absolute inset-0 bg-[radial-gradient(#00e5ff_1px,transparent_1px)] [background-size:24px_24px] opacity-20"
+              className: "absolute inset-0 bg-[radial-gradient(#00e5ff_1px,transparent_1px)] [background-size:24px_24px] opacity-25 achour-splash-pulse"
             }
           ),
           activeStyle === "laser_pulse_grid" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { rotate: 180, scale: [0.92, 1.15, 0.92] },
-              transition: { duration: 10, repeat: Infinity, ease: "linear" },
-              className: "absolute w-[760px] h-[760px] rounded-full border border-red-500/30 shadow-[0_0_70px_rgba(255,75,75,0.3)]"
+              className: "absolute w-[760px] h-[760px] rounded-full border border-red-500/35 achour-splash-spin",
+              style: { background: "radial-gradient(circle at center, rgba(255,75,75,0.24) 0%, rgba(255,140,0,0.12) 48%, transparent 74%)" }
             }
           ),
           activeStyle === "supernova_explosion" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [0.75, 1.25, 0.75], opacity: [0.35, 0.7, 0.35] },
-              transition: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute w-[750px] h-[750px] rounded-full",
+              className: "absolute w-[750px] h-[750px] rounded-full achour-splash-pulse",
               style: { background: "radial-gradient(circle at center, rgba(255,140,0,0.4) 0%, rgba(124,77,255,0.28) 52%, transparent 76%)" }
             }
           ),
           activeStyle === "golden_fire_phoenix" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            "div",
             {
-              animate: { scale: [0.92, 1.16, 0.92], opacity: [0.4, 0.72, 0.4] },
-              transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-              className: "absolute w-[720px] h-[720px] rounded-full",
+              className: "absolute w-[720px] h-[720px] rounded-full achour-splash-pulse",
               style: { background: "radial-gradient(circle at center, rgba(255,215,0,0.38) 0%, rgba(255,110,64,0.3) 45%, transparent 75%)" }
             }
           ),
-          [...Array(18)].map((_2, i2) => {
-            const colors = ["#ff4b4b", "#ffd700", "#00e676", "#00b0ff", "#7c4dff", "#ff4081", "#00e5ff"];
-            const dotColor = colors[i2 % colors.length];
-            const w = typeof window !== "undefined" ? window.innerWidth : 1280;
-            const h = typeof window !== "undefined" ? window.innerHeight : 720;
-            const startX = (i2 * 73 % 100 / 100 - 0.5) * w * 0.9;
-            const startY = (i2 * 41 % 100 / 100 - 0.5) * h * 0.9;
-            const driftY = (i2 % 2 === 0 ? 1 : -1) * (80 + i2 % 5 * 35);
-            const driftX = (i2 % 3 === 0 ? 1 : -1) * (50 + i2 % 4 * 25);
-            return /* @__PURE__ */ jsxRuntimeExports.jsx(
-              motion.div,
-              {
-                initial: {
-                  x: startX,
-                  y: startY,
-                  scale: 0.7 + i2 % 3 * 0.25,
-                  opacity: 0.55
-                },
-                animate: {
-                  y: [startY, startY + driftY, startY],
-                  x: [startX, startX + driftX, startX],
-                  opacity: [0.25, 0.95, 0.25],
-                  scale: [0.5, 1.35, 0.5]
-                },
-                transition: {
-                  duration: 3 + i2 % 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                className: "absolute w-2 h-2 rounded-full",
-                style: { backgroundColor: dotColor, boxShadow: `0 0 12px ${dotColor}` }
-              },
-              i2
-            );
-          })
+          particles.map((p2, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute w-2 h-2 rounded-full achour-splash-particle",
+              style: {
+                left: `${p2.leftPct}%`,
+                top: `${p2.topPct}%`,
+                backgroundColor: p2.color,
+                ["--dx"]: `${p2.dx}px`,
+                ["--dy"]: `${p2.dy}px`,
+                ["--dur"]: `${p2.dur}s`,
+                animationDelay: `${p2.delay}s`
+              }
+            },
+            i2
+          ))
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex flex-col items-center justify-center z-10 max-w-[90vw] px-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
-            {
-              initial: { scale: 1, opacity: 1, y: 0 },
-              animate: {
-                scale: activeStyle === "fireworks_party" ? [1, 1.05, 1] : activeStyle === "supernova_explosion" ? [0.97, 1.04, 0.97] : [1, 1.02, 1],
-                opacity: 1,
-                y: 0,
-                rotate: activeStyle === "laser_pulse_grid" ? [0, 1.5, -1.5, 0] : 0
-              },
-              transition: {
-                scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
-              },
-              className: "relative mb-3 sm:mb-4 shadow-[0_15px_40px_rgba(0,0,0,0.85)] rounded-[20px] sm:rounded-[24px] p-0.5 sm:p-1 bg-gradient-to-br from-amber-400/50 via-purple-600/40 to-blue-500/50",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-[18px] sm:rounded-[22px] overflow-hidden bg-black flex items-center justify-center relative", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "img",
-                  {
-                    src: "./logo-splash.jpg",
-                    onError: (e2) => {
-                      const img = e2.currentTarget;
-                      if (!img.dataset.fallback) {
-                        img.dataset.fallback = "1";
-                        img.src = "./logo.jpg";
-                      }
-                    },
-                    alt: "Achour Player",
-                    decoding: "sync",
-                    loading: "eager",
-                    className: "w-full h-full object-cover"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  motion.div,
-                  {
-                    animate: { x: ["-250%", "250%"] },
-                    transition: { duration: 2.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 },
-                    className: "absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12 pointer-events-none"
-                  }
-                )
-              ] })
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex flex-wrap justify-center mb-4 sm:mb-5 overflow-hidden", children: letters.map((item, index2) => {
-            const isDancing = activeStyle === "fireworks_party" || activeStyle === "golden_fire_phoenix";
-            const isBouncing = activeStyle === "supernova_explosion";
-            return /* @__PURE__ */ jsxRuntimeExports.jsx(
-              motion.span,
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative mb-3 sm:mb-4 shadow-[0_15px_40px_rgba(0,0,0,0.85)] rounded-[20px] sm:rounded-[24px] p-0.5 sm:p-1 bg-gradient-to-br from-amber-400/55 via-purple-600/40 to-blue-500/55 achour-splash-logo-float", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-[18px] sm:rounded-[22px] overflow-hidden bg-[#0b0d14] flex items-center justify-center relative", children: [
+            !logoDecoded && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-0 flex items-center justify-center text-3xl sm:text-4xl font-black tracking-tight text-amber-400 bg-gradient-to-br from-amber-500/20 via-[#0d101b] to-purple-600/20", children: "AP" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
               {
-                initial: { y: 0, opacity: 1, scale: 1 },
-                animate: {
-                  y: isDancing ? [0, -8, 0] : isBouncing ? [0, -10, 0] : [0, -4, 0],
-                  opacity: 1,
-                  scale: 1,
-                  rotateZ: isDancing ? [0, index2 % 2 === 0 ? 5 : -5, 0] : [0, 0]
+                src: logoSrc,
+                onLoad: () => setLogoDecoded(true),
+                onError: () => {
+                  if (logoSrc === "./logo-splash.jpg") {
+                    setLogoSrc("./icon-192.png");
+                  } else if (logoSrc === "./icon-192.png") {
+                    setLogoSrc("./logo.jpg");
+                  }
                 },
-                transition: {
-                  y: { duration: isDancing ? 1.8 : 2.5, repeat: Infinity, ease: "easeInOut", delay: index2 * 0.08 },
-                  rotateZ: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: index2 * 0.08 }
-                },
-                className: `text-lg sm:text-2xl md:text-3xl font-black tracking-wide sm:tracking-wider mx-[1px] sm:mx-1 inline-block ${item.char === " " ? "w-2 sm:w-3" : ""}`,
-                style: {
-                  color: item.color,
-                  textShadow: `0 0 18px ${item.color}, 0 0 35px ${item.color}88`
-                },
-                children: item.char
+                alt: "Achour Player",
+                decoding: "async",
+                fetchPriority: "high",
+                className: "relative z-10 w-full h-full object-cover"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none z-20 achour-splash-sweep" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex flex-wrap justify-center mb-4 sm:mb-5", children: BRAND_LETTERS.map((item, index2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: `text-lg sm:text-2xl md:text-3xl font-black tracking-wide sm:tracking-wider mx-[1px] sm:mx-1 inline-block achour-splash-letter ${item.char === " " ? "w-2 sm:w-3" : ""}`,
+              style: {
+                color: item.color,
+                textShadow: isLowEnd ? `0 0 10px ${item.color}99` : `0 0 16px ${item.color}, 0 0 28px ${item.color}66`,
+                animationDelay: `${index2 * 70}ms`
               },
-              index2
-            );
-          }) }),
+              children: item.char
+            },
+            index2
+          )) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              motion.svg,
+              "svg",
               {
-                animate: { rotate: activeStyle === "laser_pulse_grid" ? -360 : 360 },
-                transition: { duration: activeStyle === "laser_pulse_grid" ? 8 : 15, repeat: Infinity, ease: "linear" },
-                className: "absolute inset-0 w-full h-full",
+                className: `absolute inset-0 w-full h-full ${activeStyle === "laser_pulse_grid" ? "achour-splash-spin-fast" : "achour-splash-spin"}`,
                 viewBox: "0 0 100 100",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: "rainbowDottedGrad", x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
@@ -127212,57 +128908,53 @@ function SplashScreen({
                       cy: "50",
                       r: "40",
                       fill: "none",
-                      stroke: "rgba(255, 255, 255, 0.12)",
+                      stroke: "rgba(255, 255, 255, 0.14)",
                       strokeWidth: "5",
                       strokeDasharray: "4 8",
                       strokeLinecap: "round"
                     }
                   ),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    motion.circle,
+                    "circle",
                     {
+                      ref: progressCircleRef,
                       cx: "50",
                       cy: "50",
                       r: "40",
                       fill: "none",
                       stroke: "url(#rainbowDottedGrad)",
                       strokeWidth: "7",
-                      strokeDasharray: "251",
-                      animate: { strokeDashoffset: 251 - 251 * progress2 / 100 },
-                      transition: { duration: 0.1, ease: "linear" },
-                      strokeLinecap: "round",
-                      style: { filter: "drop-shadow(0 0 10px rgba(255,215,0,0.9))" }
+                      strokeDasharray: String(RING_CIRCUMFERENCE),
+                      strokeDashoffset: String(RING_CIRCUMFERENCE),
+                      strokeLinecap: "round"
                     }
                   )
                 ]
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "wait", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              motion.div,
-              {
-                initial: { scale: 0.4, opacity: 0, rotate: -25 },
-                animate: { scale: 1, opacity: 1, rotate: 0 },
-                exit: { scale: 1.5, opacity: 0, rotate: 25 },
-                transition: { duration: 0.25 },
-                className: "flex flex-col items-center justify-center z-10",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "span",
-                    {
-                      className: "text-xl sm:text-2xl font-black font-mono drop-shadow-[0_0_15px]",
-                      style: {
-                        color: numberColors[timeLeft % numberColors.length],
-                        textShadow: `0 0 15px ${numberColors[timeLeft % numberColors.length]}`
-                      },
-                      children: timeLeft
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[7px] sm:text-[8px] uppercase tracking-widest text-white/60 font-bold", children: "SEC" })
-                ]
-              },
-              timeLeft
-            ) })
-          ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center justify-center z-10", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: "text-xl sm:text-2xl font-black font-mono leading-none",
+                  style: {
+                    color: NUMBER_COLORS[timeLeft % NUMBER_COLORS.length],
+                    textShadow: `0 0 12px ${NUMBER_COLORS[timeLeft % NUMBER_COLORS.length]}`
+                  },
+                  children: timeLeft
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[7px] sm:text-[8px] uppercase tracking-widest text-white/60 font-bold mt-0.5", children: "SEC" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-4 w-36 sm:w-44 h-1 rounded-full bg-white/10 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              ref: progressBarRef,
+              className: "h-full w-full origin-left rounded-full bg-gradient-to-r from-[#ff4b4b] via-[#ffd700] to-[#00e5ff]",
+              style: { transform: "scaleX(0)", willChange: "transform" }
+            }
+          ) })
         ] })
       ]
     }
@@ -128333,7 +130025,7 @@ registerPlugin("CapacitorHttp", {
   web: () => new CapacitorHttpPluginWeb()
 });
 const App$1 = registerPlugin("App", {
-  web: () => __vitePreload(() => import("./web-CIiqEtjT.js"), true ? [] : void 0, import.meta.url).then((m) => new m.AppWeb())
+  web: () => __vitePreload(() => import("./web-BrMGmshE.js"), true ? [] : void 0, import.meta.url).then((m) => new m.AppWeb())
 });
 var Style;
 (function(Style2) {
@@ -128445,13 +130137,19 @@ const DEFAULT_SETTINGS = {
   dashboardLayout: "layout-glass-hero-dock",
   splashSoundTrack: "epic_royal_fanfare",
   splashStyle: "royal_gold_particles",
-  iconScale: "medium",
+  iconScale: "md",
+  frameScale: "md",
+  tileSpacing: "md",
+  dashboardAlignment: "center",
+  dashboardHorizontalAlignment: "center",
   zoomScale: 85,
   seekStep: 10
 };
 function App() {
   const [userId, setUserId] = reactExports.useState(() => getPublicId());
   const [showSplash, setShowSplash] = reactExports.useState(true);
+  const [splashIsPreview, setSplashIsPreview] = reactExports.useState(false);
+  const [splashFirstPainted, setSplashFirstPainted] = reactExports.useState(false);
   const [isRestricted, setIsRestricted] = reactExports.useState(false);
   const [tvPreviewMode, setTvPreviewMode] = reactExports.useState(() => {
     if (typeof window === "undefined" || isNativeCapacitorApp()) return false;
@@ -128465,6 +130163,9 @@ function App() {
     const stopFocusSync = initGlobalFocusSync();
     if (isTVOrLowEndDevice()) {
       document.documentElement.classList.add("achour-tv-perf");
+    }
+    if (isTVDevice()) {
+      document.documentElement.classList.add("achour-tv-ui");
     }
     try {
       StatusBar.hide().catch(() => {
@@ -128513,17 +130214,44 @@ function App() {
     try {
       const id2 = getPublicId();
       if (id2) setUserId(id2);
-      runStorageCleanup();
     } catch (err) {
-      console.warn("App initialization storage notice:", err);
+      console.warn("App initialization notice:", err);
     }
+    const runDeferredCleanup = () => {
+      try {
+        runStorageCleanup();
+      } catch (err) {
+        console.warn("App initialization storage notice:", err);
+      }
+    };
+    const w = window;
+    let idleId = null;
+    let fallbackTimer = null;
+    if (typeof w.requestIdleCallback === "function") {
+      idleId = w.requestIdleCallback(runDeferredCleanup, { timeout: 1200 });
+    } else {
+      fallbackTimer = setTimeout(runDeferredCleanup, 450);
+    }
+    return () => {
+      if (idleId !== null && typeof w.cancelIdleCallback === "function") {
+        w.cancelIdleCallback(idleId);
+      }
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
   }, []);
   reactExports.useEffect(() => {
     if (!showSplash) return;
+    const mountFallbackTimer = setTimeout(() => {
+      setSplashFirstPainted(true);
+    }, 350);
     const splashTimer = setTimeout(() => {
       setShowSplash(false);
-    }, 16e3);
-    return () => clearTimeout(splashTimer);
+      setSplashIsPreview(false);
+    }, 13500);
+    return () => {
+      clearTimeout(mountFallbackTimer);
+      clearTimeout(splashTimer);
+    };
   }, [showSplash]);
   const prevPlaylistIdRef = reactExports.useRef(settings.activePlaylistId);
   reactExports.useEffect(() => {
@@ -128596,23 +130324,43 @@ function App() {
   }, []);
   const effectiveScale = Math.max(0.6, Math.min(1.5, (settings.zoomScale || 100) * 0.95 / 100));
   const isRtl = settings.language === "ar";
+  const activeBgImageUrl = React$2.useMemo(() => {
+    const customBg = settings.customBackground;
+    if (typeof customBg === "string" && customBg.trim()) return customBg.trim();
+    if (customBg && typeof customBg === "object" && customBg.type === "image" && customBg.url) {
+      return String(customBg.url);
+    }
+    const found = APP_BACKGROUNDS.find((b2) => b2.id === (settings.backgroundStyle || "bg-raouche-rocks-beirut")) || APP_BACKGROUNDS[0];
+    return (found == null ? void 0 : found.imageUrl) || null;
+  }, [settings.backgroundStyle, settings.customBackground]);
+  const homeStageReady = !showSplash || splashFirstPainted;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
       className: `achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-[#D4AF37]/30 ${isRtl ? "font-cairo" : "font-sans"} relative overflow-hidden`,
       style: { "--achour-zoom-scale": effectiveScale },
+      onScroll: (e2) => {
+        if (e2.currentTarget.scrollTop !== 0) e2.currentTarget.scrollTop = 0;
+        if (e2.currentTarget.scrollLeft !== 0) e2.currentTarget.scrollLeft = 0;
+      },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "achour-animated-bg fixed inset-0 pointer-events-none z-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatedBackground, { settings }) }),
+        homeStageReady && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "achour-animated-bg fixed inset-0 pointer-events-none z-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatedBackground, { settings }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(XtreamDebugOverlay, {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showSplash && /* @__PURE__ */ jsxRuntimeExports.jsx(
+        showSplash && /* @__PURE__ */ jsxRuntimeExports.jsx(
           SplashScreen,
           {
-            onComplete: () => setShowSplash(false),
+            onFirstPainted: () => setSplashFirstPainted(true),
+            onComplete: () => {
+              setShowSplash(false);
+              setSplashIsPreview(false);
+            },
             royalThemeId: settings.royalThemeColor || "royal-gold",
             soundTrack: settings.splashSoundTrack || "epic_royal_fanfare",
-            splashStyle: settings.splashStyle || "royal_gold_particles"
+            splashStyle: settings.splashStyle || "royal_gold_particles",
+            backgroundImageUrl: activeBgImageUrl,
+            isPreview: splashIsPreview
           }
-        ) }),
+        ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: isRestricted && /* @__PURE__ */ jsxRuntimeExports.jsxs(
           motion.div,
           {
@@ -128633,28 +130381,41 @@ function App() {
             ]
           }
         ) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-10 overflow-hidden bg-transparent", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: `bg-transparent transition-transform duration-200 ${isRestricted ? "opacity-25 pointer-events-none" : ""}`,
-            style: {
-              transform: `scale(${effectiveScale})`,
-              transformOrigin: isRtl ? "top right" : "top left",
-              width: `${100 / effectiveScale}%`,
-              height: `${100 / effectiveScale}%`
+            className: "fixed inset-0 z-10 overflow-hidden bg-transparent",
+            onScroll: (e2) => {
+              if (e2.currentTarget.scrollTop !== 0) e2.currentTarget.scrollTop = 0;
+              if (e2.currentTarget.scrollLeft !== 0) e2.currentTarget.scrollLeft = 0;
             },
-            children: userId && /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Dashboard,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
               {
-                userId,
-                settings,
-                onUpdateSettings: setSettings,
-                onTriggerSplash: () => setShowSplash(true),
-                startupSplashComplete: !showSplash
+                className: `bg-transparent transition-transform duration-200 ${isRestricted ? "opacity-25 pointer-events-none" : ""}`,
+                style: {
+                  transform: `scale(${effectiveScale})`,
+                  transformOrigin: isRtl ? "top right" : "top left",
+                  width: `${100 / effectiveScale}%`,
+                  height: `${100 / effectiveScale}%`
+                },
+                children: userId && homeStageReady && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Dashboard,
+                  {
+                    userId,
+                    settings,
+                    onUpdateSettings: setSettings,
+                    onTriggerSplash: () => {
+                      setSplashIsPreview(true);
+                      setShowSplash(true);
+                    },
+                    startupSplashComplete: !showSplash
+                  }
+                )
               }
             )
           }
-        ) }),
+        ),
         !isNativeCapacitorApp() && tvPreviewMode && /* @__PURE__ */ jsxRuntimeExports.jsx(
           TvPreviewModal,
           {

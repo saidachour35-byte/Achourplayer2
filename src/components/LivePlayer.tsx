@@ -1,5 +1,6 @@
 // Original path: src/components/LivePlayer.tsx
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import Hls from 'hls.js';
 import { PLAYER_PACKAGES, getPlayerPackage } from '../utils/players';
 import { 
@@ -1823,6 +1824,14 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       autoFocusedSeriesIdRef.current = null;
       return;
     }
+    try {
+      window.scrollTo(0, 0);
+      document.querySelectorAll<HTMLElement>('.achour-app-shell, [data-live-root="true"]').forEach((el) => {
+        if (el.scrollTop !== 0) el.scrollTop = 0;
+        if (el.scrollLeft !== 0) el.scrollLeft = 0;
+      });
+    } catch {}
+
     const timer = setTimeout(() => {
       const dialog = document.querySelector<HTMLElement>('[data-tv-details-dialog="true"]');
       if (!dialog) return;
@@ -1843,11 +1852,18 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
           dialog.querySelector<HTMLElement>('[data-tv-modal="details"]');
       }
       if (initialTarget) {
-        setTVFocus(initialTarget, { scroll: true });
+        setTVFocus(initialTarget, { scroll: false });
+        requestAnimationFrame(() => {
+          if (initialTarget?.hasAttribute('data-episode-item')) {
+            scrollModalItemIntoContainer(detailsEpisodesScrollRef.current, initialTarget, 'y');
+          } else if (initialTarget?.hasAttribute('data-season-tab')) {
+            scrollModalItemIntoContainer(detailsSeasonsScrollRef.current, initialTarget, 'x');
+          }
+        });
       }
     }, 35);
     return () => clearTimeout(timer);
-  }, [movieDetailsModal]);
+  }, [movieDetailsModal, scrollModalItemIntoContainer]);
 
 
 
@@ -4709,8 +4725,13 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 
   return (
     <div 
+      data-live-root="true"
       className={`flex flex-col h-full bg-transparent text-white overflow-hidden select-none ${isRtl ? 'font-cairo' : ''}`}
       dir={isRtl ? 'rtl' : 'ltr'}
+      onScroll={(e) => {
+        if (e.currentTarget.scrollTop !== 0) e.currentTarget.scrollTop = 0;
+        if (e.currentTarget.scrollLeft !== 0) e.currentTarget.scrollLeft = 0;
+      }}
       style={
         pageScale !== 1
           ? ({ zoom: pageScale, width: `${100 / pageScale}%`, height: `${100 / pageScale}%` } as React.CSSProperties)
@@ -4969,115 +4990,118 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         />
       )}
 
-      {/* Rich Movie / Series Details Modal */}
-      <AnimatePresence>
-        {movieDetailsModal && (() => {
-          const infoObj = mediaDetailInfo?.info || {};
-          const resolvedPlot =
-            infoObj.plot ||
-            infoObj.description ||
-            infoObj.overview ||
-            infoObj.storyline ||
-            infoObj.notes ||
-            infoObj.plot_ar ||
-            mediaDetailInfo?.movie_data?.plot ||
-            (movieDetailsModal as any)?.plot ||
-            '';
-          const resolvedCast = infoObj.cast || infoObj.actors || (movieDetailsModal as any)?.cast || '';
-          const resolvedDirector = infoObj.director || (movieDetailsModal as any)?.director || '';
-          const resolvedGenre = infoObj.genre || (movieDetailsModal as any)?.genre || '';
-          const resolvedRating = infoObj.rating || infoObj.rating_5based || (movieDetailsModal as any)?.rating || '';
-          const resolvedRelease = infoObj.releaseDate || infoObj.releasedate || infoObj.year || (movieDetailsModal as any)?.releaseDate || '';
-          const resolvedDuration = infoObj.duration || infoObj.episode_run_time || (movieDetailsModal as any)?.duration || '';
-          const hasSeasonsSection = mediaType === 'series' || seriesSeasonsData.length > 0;
-          const activeEpisodes =
-            seriesSeasonsData.find(s => s.seasonNumber === selectedSeasonNum)?.episodes ||
-            seriesSeasonsData[0]?.episodes ||
-            [];
+      {/* Rich Movie / Series Details Modal (Portaled to body so viewport centering & height ignore parent scale/scroll) */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {movieDetailsModal && (() => {
+            const infoObj = mediaDetailInfo?.info || {};
+            const resolvedPlot =
+              infoObj.plot ||
+              infoObj.description ||
+              infoObj.overview ||
+              infoObj.storyline ||
+              infoObj.notes ||
+              infoObj.plot_ar ||
+              mediaDetailInfo?.movie_data?.plot ||
+              (movieDetailsModal as any)?.plot ||
+              '';
+            const resolvedCast = infoObj.cast || infoObj.actors || (movieDetailsModal as any)?.cast || '';
+            const resolvedDirector = infoObj.director || (movieDetailsModal as any)?.director || '';
+            const resolvedGenre = infoObj.genre || (movieDetailsModal as any)?.genre || '';
+            const resolvedRating = infoObj.rating || infoObj.rating_5based || (movieDetailsModal as any)?.rating || '';
+            const resolvedRelease = infoObj.releaseDate || infoObj.releasedate || infoObj.year || (movieDetailsModal as any)?.releaseDate || '';
+            const resolvedDuration = infoObj.duration || infoObj.episode_run_time || (movieDetailsModal as any)?.duration || '';
+            const hasSeasonsSection = mediaType === 'series' || seriesSeasonsData.length > 0;
+            const activeEpisodes =
+              seriesSeasonsData.find(s => s.seasonNumber === selectedSeasonNum)?.episodes ||
+              seriesSeasonsData[0]?.episodes ||
+              [];
 
-          const movieCleanId = cleanVodEntityId(movieDetailsModal.stream_id, effectivePlaylistId);
-          const movieProgress = (mediaType === 'movie' && progressRevision >= 0)
-            ? getVodProgress({
-                mediaType: 'movie',
-                playlistId: effectivePlaylistId,
-                streamId: movieCleanId
-              })
-            : null;
-          const hasMovieResume = Boolean(
-            movieProgress &&
-            !movieProgress.completed &&
-            movieProgress.positionSec >= MIN_RESUME_POSITION_SEC
-          );
+            const movieCleanId = cleanVodEntityId(movieDetailsModal.stream_id, effectivePlaylistId);
+            const movieProgress = (mediaType === 'movie' && progressRevision >= 0)
+              ? getVodProgress({
+                  mediaType: 'movie',
+                  playlistId: effectivePlaylistId,
+                  streamId: movieCleanId
+                })
+              : null;
+            const hasMovieResume = Boolean(
+              movieProgress &&
+              !movieProgress.completed &&
+              movieProgress.positionSec >= MIN_RESUME_POSITION_SEC
+            );
 
-          const seriesKeyId = cleanVodEntityId(
-            (movieDetailsModal as any)?.series_id || movieDetailsModal.stream_id,
-            effectivePlaylistId
-          );
-          const epProgressMap = (hasSeasonsSection && progressRevision >= 0)
-            ? getSeriesEpisodesProgressMap(effectivePlaylistId, seriesKeyId)
-            : {};
-          const lastUnfinishedEp = (hasSeasonsSection && progressRevision >= 0)
-            ? getSeriesLastUnfinishedEpisode(effectivePlaylistId, seriesKeyId)
-            : null;
-          const unfinishedEpisodeObj = lastUnfinishedEp
-            ? seriesSeasonsData
-                .flatMap(s => s.episodes)
-                .find((ep: any) =>
-                  cleanVodEntityId(ep.xtream_id || ep.stream_id, effectivePlaylistId, seriesKeyId) === lastUnfinishedEp.episodeId
-                ) || null
-            : null;
+            const seriesKeyId = cleanVodEntityId(
+              (movieDetailsModal as any)?.series_id || movieDetailsModal.stream_id,
+              effectivePlaylistId
+            );
+            const epProgressMap = (hasSeasonsSection && progressRevision >= 0)
+              ? getSeriesEpisodesProgressMap(effectivePlaylistId, seriesKeyId)
+              : {};
+            const lastUnfinishedEp = (hasSeasonsSection && progressRevision >= 0)
+              ? getSeriesLastUnfinishedEpisode(effectivePlaylistId, seriesKeyId)
+              : null;
+            const unfinishedEpisodeObj = lastUnfinishedEp
+              ? seriesSeasonsData
+                  .flatMap(s => s.episodes)
+                  .find((ep: any) =>
+                    cleanVodEntityId(ep.xtream_id || ep.stream_id, effectivePlaylistId, seriesKeyId) === lastUnfinishedEp.episodeId
+                  ) || null
+              : null;
 
-          return (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.04 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 achour-modal-backdrop select-none"
-            >
-              <motion.div
-                role="dialog"
-                aria-modal="true"
-                data-tv-modal="true"
-                data-tv-details-dialog="true"
-                initial={{ scale: 0.98, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.98, opacity: 0 }}
+            return (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.04 }}
-                className={`achour-tv-details-popup w-[82%] max-w-3xl ${hasSeasonsSection ? 'h-[82%] max-h-[82%]' : 'max-h-[80%]'} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
+                dir={isRtl ? 'rtl' : 'ltr'}
+                className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-5 achour-modal-backdrop select-none overflow-hidden"
               >
-                {/* 1. Sticky Modal Title Bar */}
-                <div className={`flex items-center justify-between pb-2.5 border-b border-white/10 shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                  <div className={`flex items-center gap-2.5 min-w-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                    <div className="p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0">
-                      {mediaType === 'movie' ? <Film size={16} /> : <Clapperboard size={16} />}
+                <motion.div
+                  role="dialog"
+                  aria-modal="true"
+                  data-tv-modal="true"
+                  data-tv-details-dialog="true"
+                  data-has-seasons={hasSeasonsSection ? 'true' : 'false'}
+                  initial={{ scale: 0.98, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.98, opacity: 0 }}
+                  transition={{ duration: 0.04 }}
+                  className={`achour-tv-details-popup w-[86%] sm:w-[82%] max-w-4xl ${hasSeasonsSection ? 'h-[86%] max-h-[88%]' : 'max-h-[82%]'} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
+                >
+                  {/* 1. Sticky Modal Title Bar */}
+                  <div className={`flex items-center justify-between pb-2 border-b border-white/10 shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className={`flex items-center gap-2.5 min-w-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                      <div className="p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0">
+                        {mediaType === 'movie' ? <Film size={16} /> : <Clapperboard size={16} />}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-wider truncate">
+                          {movieDetailsModal.name}
+                        </h2>
+                        <p className="text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5">
+                          {movieDetailsModal?.category_name || (mediaType === 'movie' ? (isRtl ? 'فيلم سينمائي' : 'Movie') : (isRtl ? 'مسلسل تلفزيوني' : 'TV Series'))}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-wider truncate">
-                        {movieDetailsModal.name}
-                      </h2>
-                      <p className="text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5">
-                        {movieDetailsModal?.category_name || (mediaType === 'movie' ? (isRtl ? 'فيلم سينمائي' : 'Movie') : (isRtl ? 'مسلسل تلفزيوني' : 'TV Series'))}
-                      </p>
-                    </div>
+                    <button
+                      data-tv-focusable="true"
+                      data-tv-modal="details"
+                      data-modal-role="close"
+                      tabIndex={0}
+                      onClick={() => setMovieDetailsModal(null)}
+                      className="p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0"
+                      title={isRtl ? 'إغلاق (Esc)' : 'Close (Esc)'}
+                    >
+                      <X size={18} />
+                    </button>
                   </div>
-                  <button
-                    data-tv-focusable="true"
-                    data-tv-modal="details"
-                    data-modal-role="close"
-                    tabIndex={0}
-                    onClick={() => setMovieDetailsModal(null)}
-                    className="p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0"
-                    title={isRtl ? 'إغلاق (Esc)' : 'Close (Esc)'}
-                  >
-                    <X size={18} />
-                  </button>
-                </div>
 
-                {/* 2. Fixed Sticky Poster + Movie/Series Info & Synopsis (NEVER scrolls when browsing episodes) */}
-                <div className={`py-2 flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                  {/* Fixed Poster */}
-                  <div className={`${hasSeasonsSection ? 'w-16 sm:w-20 md:w-22' : 'w-20 sm:w-24 md:w-28'} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`}>
+                  {/* 2. Fixed Sticky Poster + Movie/Series Info & Synopsis (NEVER scrolls when browsing episodes) */}
+                  <div className={`${hasSeasonsSection ? 'py-1.5' : 'py-2'} flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    {/* Fixed Poster */}
+                    <div className={`${hasSeasonsSection ? 'w-14 sm:w-16 md:w-20' : 'w-20 sm:w-24 md:w-28'} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`}>
                     <img 
                       src={mediaDetailInfo?.info?.cover_big || mediaDetailInfo?.info?.movie_image || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo} 
                       referrerPolicy="no-referrer"
@@ -5247,10 +5271,10 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                       </div>
                     </div>
 
-                    {/* ONLY Scrollable Episodes List (generous padding ensures focus rings never clip) */}
+                    {/* ONLY Scrollable Episodes List (generous height & padding ensure focus rings never clip and all episodes are easy to view) */}
                     <div
                       ref={detailsEpisodesScrollRef}
-                      className="relative flex-1 min-h-[100px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5"
+                      className="relative flex-1 min-h-[180px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5"
                     >
                       {activeEpisodes.length === 0 ? (
                         <div className="py-6 text-center text-xs sm:text-sm text-zinc-400 font-medium">
@@ -5429,7 +5453,9 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
             </motion.div>
           );
         })()}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+      )}
 
       {/* Position Reorder & Channel Actions Strip Modal */}
       <AnimatePresence>

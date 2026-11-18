@@ -357,14 +357,23 @@ html.achour-tv-perf [data-tv-vod-poster="true"][data-tv-active-focus="true"] {
 }
 
 
-/* TV-only compact dialogs: reduce oversized detail windows without changing phone layouts or D-pad logic. */
+/* TV-only dialogs: keep Movies compact while giving Series generous viewport height for Seasons & Episodes */
 html.achour-tv-ui [data-tv-details-dialog="true"] {
-  width: 68vw !important;
-  max-width: 900px !important;
-  max-height: 74vh !important;
+  width: 78vw !important;
+  max-width: 960px !important;
+  max-height: 86vh !important;
 }
-html.achour-tv-ui [data-tv-details-dialog="true"].achour-tv-details-popup {
+html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="true"].achour-tv-details-popup {
+  width: 82vw !important;
+  max-width: 1000px !important;
+  height: 84vh !important;
+  max-height: 86vh !important;
+}
+html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="false"].achour-tv-details-popup {
+  width: 68vw !important;
+  max-width: 880px !important;
   height: auto !important;
+  max-height: 82vh !important;
 }
 html.achour-tv-ui .achour-modal-backdrop > div:not([data-tv-details-dialog="true"]) {
   zoom: 0.86 !important;
