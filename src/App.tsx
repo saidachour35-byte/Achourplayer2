@@ -60,6 +60,9 @@ const DEFAULT_SETTINGS: AppSettings = {
   windowPosition: 'center',
   zoomScale: 85,
   seekStep: 10,
+  dashboardFocusMode: 'frame',
+  dashboardLabelColorMode: 'theme',
+  dashboardLabelCustomColor: null,
 };
 
 import { App as CapacitorApp } from '@capacitor/app';

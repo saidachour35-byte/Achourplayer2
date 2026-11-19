@@ -6,7 +6,7 @@ import {
   MonitorPlay, Clock, Check, X, Eye, Search, Trash2,
   Tv, Film, Clapperboard, Palette, Sparkles, Image,
   Upload, RefreshCw, Volume2, VolumeX, Shield, Maximize2,
-  ArrowUpDown, Type, AppWindow
+  ArrowUpDown, Type, AppWindow, Target
 } from 'lucide-react';
 import { saveCustomPlayerPackage } from '../utils/players';
 import { AppSettings, Language, TimeFormat, ViewMode, VodSortBy, PosterSize, Playlist, ScreenPosition } from '../types';
@@ -635,6 +635,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       title: isRtl ? 'المظهر وتصميم الواجهة' : 'Appearance & UI Design',
       items: [
         { icon: Palette, label: isRtl ? 'استوديو التصميم الموحّد — Achour Player' : 'Unified Design Studio — Achour Player', action: () => openDesignStudio('display') },
+        { icon: Target, label: isRtl ? 'نمط الفوكس ولون النصوص (40 إطاراً)' : 'TV Focus Mode & Label Colors', action: () => openDesignStudio('focus_text') },
         { icon: AppWindow, label: t('window_position'), action: () => setSubView('window-position') },
         { icon: Image, label: t('app_backgrounds'), action: () => setSubView('backgrounds') },
         { icon: Volume2, label: t('splash_intro'), action: () => setSubView('splash-intro') },

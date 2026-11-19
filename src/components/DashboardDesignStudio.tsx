@@ -12,6 +12,8 @@ import {
   RotateCcw,
   Sliders,
   Sparkles,
+  Target,
+  Type,
   X,
 } from 'lucide-react';
 import {
@@ -43,6 +45,7 @@ export type StudioTabId =
   | 'layouts'
   | 'sizing'
   | 'colors'
+  | 'focus_text'
   | 'glass';
 
 interface DashboardDesignStudioProps {
@@ -82,6 +85,9 @@ export default function DashboardDesignStudio({
       customThemeColor: src.customThemeColor ?? null,
       glassOpacity: typeof src.glassOpacity === 'number' ? src.glassOpacity : 16,
       glassBlur: typeof src.glassBlur === 'number' ? src.glassBlur : 10,
+      dashboardFocusMode: src.dashboardFocusMode || 'frame',
+      dashboardLabelColorMode: src.dashboardLabelColorMode || 'theme',
+      dashboardLabelCustomColor: src.dashboardLabelCustomColor ?? null,
     };
   };
 
@@ -138,7 +144,10 @@ export default function DashboardDesignStudio({
       draft.royalThemeColor !== base.royalThemeColor ||
       (draft.customThemeColor || null) !== (base.customThemeColor || null) ||
       (draft.glassOpacity ?? 16) !== (base.glassOpacity ?? 16) ||
-      (draft.glassBlur ?? 10) !== (base.glassBlur ?? 10)
+      (draft.glassBlur ?? 10) !== (base.glassBlur ?? 10) ||
+      draft.dashboardFocusMode !== base.dashboardFocusMode ||
+      draft.dashboardLabelColorMode !== base.dashboardLabelColorMode ||
+      (draft.dashboardLabelCustomColor || null) !== (base.dashboardLabelCustomColor || null)
     );
   }, [draft, settings]);
 
@@ -163,6 +172,9 @@ export default function DashboardDesignStudio({
       customThemeColor: draft.customThemeColor ?? null,
       glassOpacity: draft.glassOpacity,
       glassBlur: draft.glassBlur,
+      dashboardFocusMode: draft.dashboardFocusMode,
+      dashboardLabelColorMode: draft.dashboardLabelColorMode,
+      dashboardLabelCustomColor: draft.dashboardLabelCustomColor ?? null,
     });
     setJustApplied(true);
     setTimeout(() => setJustApplied(false), 2400);
@@ -197,6 +209,9 @@ export default function DashboardDesignStudio({
       customThemeColor: '#D4AF37',
       glassOpacity: 16,
       glassBlur: 10,
+      dashboardFocusMode: 'frame',
+      dashboardLabelColorMode: 'theme',
+      dashboardLabelCustomColor: null,
     }));
     setHexInput('#D4AF37');
   };
@@ -227,6 +242,7 @@ export default function DashboardDesignStudio({
     { id: 'layouts', icon: Grid, labelAr: 'الواجهة', labelEn: 'Layouts' },
     { id: 'sizing', icon: Maximize2, labelAr: 'الأحجام', labelEn: 'Sizing' },
     { id: 'colors', icon: Palette, labelAr: 'الألوان', labelEn: 'Colors' },
+    { id: 'focus_text', icon: Target, labelAr: 'الفوكس والنصوص', labelEn: 'Focus & Text' },
     { id: 'glass', icon: Layers, labelAr: 'الشفافية', labelEn: 'Glass' },
   ];
 
@@ -882,6 +898,9 @@ export default function DashboardDesignStudio({
                   tileSpacing={draft.tileSpacing}
                   glassOpacity={draft.glassOpacity}
                   glassBlur={draft.glassBlur}
+                  dashboardFocusMode={draft.dashboardFocusMode}
+                  dashboardLabelColorMode={draft.dashboardLabelColorMode}
+                  dashboardLabelCustomColor={draft.dashboardLabelCustomColor}
                   language={settings.language}
                   isRtl={isRtl}
                   t={t}
@@ -1628,6 +1647,230 @@ export default function DashboardDesignStudio({
                       </button>
                     );
                   })}
+                </div>
+              </div>
+            )}
+
+            {/* =============================================================== */}
+            {/* TAB: FOCUS TARGET & LABEL TYPOGRAPHY COLOR                      */}
+            {/* =============================================================== */}
+            {activeTab === 'focus_text' && (
+              <div className="space-y-6">
+                {/* 1. FOCUS TARGET / CONTOUR MODE */}
+                <div>
+                  <h3 className="text-sm font-black text-white flex items-center gap-2">
+                    <Target size={16} className="text-gold" />
+                    <span>{isRtl ? 'نمط الفوكس على الشاشة الرئيسية (40 شكلاً)' : 'Dashboard TV Focus Target'}</span>
+                  </h3>
+                  <p className="text-xs text-zinc-400 mt-1">
+                    {isRtl
+                      ? 'حدد أين يظهر مؤشر الفوكس عند التنقل بالريموت: يتبع انحناءات الإطار الهندسي تماماً بدون أي مربع، أو على الأسماء، أو الأيقونة.'
+                      : 'Choose how TV remote focus is highlighted: exact frame shape contour without squares, on section names, or on icons.'}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
+                    {/* Option 1: Frame Contour */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardFocusMode', 'frame')}
+                      className={`p-3 rounded-2xl border text-right transition-all cursor-pointer flex flex-col gap-1.5 ${
+                        (draft.dashboardFocusMode || 'frame') === 'frame'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_18px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-bold text-xs text-white">
+                          {isRtl ? '🔷 على الإطار بشكله الدقيق (توهج انسيابي)' : '🔷 Exact Frame Shape Contour'}
+                        </span>
+                        {(draft.dashboardFocusMode || 'frame') === 'frame' && (
+                          <span className="w-5 h-5 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xs">✓</span>
+                        )}
+                      </div>
+                      <span className="text-[11px] text-zinc-400">
+                        {isRtl
+                          ? 'يتتبع تفاصيل الـ 40 إطاراً (دائري، سداسي، درع، معين، نجمة) بهالة مضيئة متناسقة بدون أي مربع خارجي.'
+                          : 'Hugs the exact contour of all 40 frames without any square outline.'}
+                      </span>
+                    </button>
+
+                    {/* Option 2: Label Focus */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardFocusMode', 'label')}
+                      className={`p-3 rounded-2xl border text-right transition-all cursor-pointer flex flex-col gap-1.5 ${
+                        draft.dashboardFocusMode === 'label'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_18px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-bold text-xs text-white">
+                          {isRtl ? '🏷️ على الأسماء في الأسفل (شارة فوكس مضيئة)' : '🏷️ Section Name Badge Pill'}
+                        </span>
+                        {draft.dashboardFocusMode === 'label' && (
+                          <span className="w-5 h-5 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xs">✓</span>
+                        )}
+                      </div>
+                      <span className="text-[11px] text-zinc-400">
+                        {isRtl
+                          ? 'يضيء شارة كبسولية بلون الثيم حول اسم القسم (بث مباشر، أفلام...)، مثالي للوضع بدون إطار وللتلفزيونات.'
+                          : 'Lights up an illuminated capsule around the section title text.'}
+                      </span>
+                    </button>
+
+                    {/* Option 3: Both (Frame + Label) */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardFocusMode', 'both')}
+                      className={`p-3 rounded-2xl border text-right transition-all cursor-pointer flex flex-col gap-1.5 ${
+                        draft.dashboardFocusMode === 'both'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_18px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-bold text-xs text-white">
+                          {isRtl ? '✨ على الإطار والاسم معاً (أعلى وضوح)' : '✨ Both (Frame Contour + Name Badge)'}
+                        </span>
+                        {draft.dashboardFocusMode === 'both' && (
+                          <span className="w-5 h-5 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xs">✓</span>
+                        )}
+                      </div>
+                      <span className="text-[11px] text-zinc-400">
+                        {isRtl
+                          ? 'يجمع بين توهج محيط الإطار وإضاءة شارة الاسم معاً لرؤية فائقة الوضوح من مسافات بعيدة.'
+                          : 'Highlights both the frame contour and the name badge for maximum visibility.'}
+                      </span>
+                    </button>
+
+                    {/* Option 4: Icon Only */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardFocusMode', 'icon')}
+                      className={`p-3 rounded-2xl border text-right transition-all cursor-pointer flex flex-col gap-1.5 ${
+                        draft.dashboardFocusMode === 'icon'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_18px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-bold text-xs text-white">
+                          {isRtl ? '🎯 على الأيقونة مباشرة (توهج الرمز)' : '🎯 Direct Icon Glyph Glow'}
+                        </span>
+                        {draft.dashboardFocusMode === 'icon' && (
+                          <span className="w-5 h-5 rounded-full bg-gold text-black flex items-center justify-center font-bold text-xs">✓</span>
+                        )}
+                      </div>
+                      <span className="text-[11px] text-zinc-400">
+                        {isRtl
+                          ? 'تكبير الأيقونة وإضفاء إشعاع ملكي مباشر حول الرمز فقط دون أي إطارات خارجية.'
+                          : 'Gently scales the icon glyph with royal radiant glow, no external boxes.'}
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. DASHBOARD LABELS COLOR */}
+                <div className="pt-4 border-t border-white/10">
+                  <h3 className="text-sm font-black text-white flex items-center gap-2">
+                    <Type size={16} className="text-gold" />
+                    <span>{isRtl ? 'لون نصوص الشاشة الرئيسية (الكلام أسفل الأيقونات)' : 'Dashboard Section Labels Color'}</span>
+                  </h3>
+                  <p className="text-xs text-zinc-400 mt-1">
+                    {isRtl
+                      ? 'يمكنك جعل الكلام باللون الأبيض الناصع كما كان سابقاً، أو متوافقاً مع لون التطبيق (الثيم المختار)، أو ذهبياً خالصاً، أو لوناً مخصصاً.'
+                      : 'Choose section label text color: classic white, matching active theme, pure 24K gold, or custom HEX.'}
+                  </p>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
+                    {/* Mode: Theme */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardLabelColorMode', 'theme')}
+                      className={`p-3 rounded-2xl border transition-all cursor-pointer flex flex-col items-center justify-center gap-1.5 text-center ${
+                        (draft.dashboardLabelColorMode || 'theme') === 'theme'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <span className="w-5 h-5 rounded-full border border-white/30" style={{ backgroundColor: 'var(--theme-primary, #D4AF37)' }} />
+                      <span className="text-xs font-bold text-white mt-1">{isRtl ? 'حسب الثيم المختار' : 'Match Theme'}</span>
+                      <span className="text-[10px] text-zinc-400">{isRtl ? 'يتغير مع لون التطبيق' : 'Dynamic theme'}</span>
+                    </button>
+
+                    {/* Mode: White */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardLabelColorMode', 'white')}
+                      className={`p-3 rounded-2xl border transition-all cursor-pointer flex flex-col items-center justify-center gap-1.5 text-center ${
+                        draft.dashboardLabelColorMode === 'white'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <span className="w-5 h-5 rounded-full border border-white/30 bg-white" />
+                      <span className="text-xs font-bold text-white mt-1">{isRtl ? 'أبيض ناصع' : 'Classic White'}</span>
+                      <span className="text-[10px] text-zinc-400">{isRtl ? 'كما كان سابقاً (#FFF)' : 'Classic text'}</span>
+                    </button>
+
+                    {/* Mode: Gold */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardLabelColorMode', 'gold')}
+                      className={`p-3 rounded-2xl border transition-all cursor-pointer flex flex-col items-center justify-center gap-1.5 text-center ${
+                        draft.dashboardLabelColorMode === 'gold'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <span className="w-5 h-5 rounded-full border border-white/30 bg-[#D4AF37]" />
+                      <span className="text-xs font-bold text-white mt-1">{isRtl ? 'ذهب ملكي دائم' : 'Permanent 24K'}</span>
+                      <span className="text-[10px] text-zinc-400">#D4AF37</span>
+                    </button>
+
+                    {/* Mode: Custom */}
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      onClick={() => updateDraft('dashboardLabelColorMode', 'custom')}
+                      className={`p-3 rounded-2xl border transition-all cursor-pointer flex flex-col items-center justify-center gap-1.5 text-center ${
+                        draft.dashboardLabelColorMode === 'custom'
+                          ? 'border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow,rgba(212,175,55,0.4))]'
+                          : 'border-white/10 bg-white/[0.03] hover:border-white/30'
+                      }`}
+                    >
+                      <span className="w-5 h-5 rounded-full border border-white/30" style={{ backgroundColor: draft.dashboardLabelCustomColor || '#FFD700' }} />
+                      <span className="text-xs font-bold text-white mt-1">{isRtl ? 'لون مخصص' : 'Custom HEX'}</span>
+                      <span className="text-[10px] text-zinc-400">{draft.dashboardLabelCustomColor || '#HEX'}</span>
+                    </button>
+                  </div>
+
+                  {draft.dashboardLabelColorMode === 'custom' && (
+                    <div className="mt-3 p-3 rounded-xl bg-white/[0.04] border border-white/10 flex items-center gap-3">
+                      <input
+                        type="color"
+                        value={draft.dashboardLabelCustomColor || '#FFD700'}
+                        onChange={(e) => updateDraft('dashboardLabelCustomColor', e.target.value)}
+                        className="w-10 h-10 rounded-lg cursor-pointer bg-transparent border-0"
+                      />
+                      <input
+                        type="text"
+                        value={draft.dashboardLabelCustomColor || '#FFD700'}
+                        onChange={(e) => updateDraft('dashboardLabelCustomColor', e.target.value)}
+                        placeholder="#RRGGBB"
+                        className="px-3 py-1.5 rounded-lg bg-black/40 border border-white/15 text-white font-mono text-xs uppercase w-32"
+                      />
+                      <span className="text-xs text-zinc-400">{isRtl ? 'اختر اللون المفضل لنصوص الواجهة' : 'Pick label color'}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

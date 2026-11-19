@@ -808,7 +808,7 @@ export function DashboardSectionIcon({
   // OPTION 1: ICONS ONLY — Zero frames, zero borders, zero background containers
   if (displayMode === 'icons-only') {
     return (
-      <div className="flex items-center justify-center bg-transparent border-0 shadow-none transition-transform duration-150 group-hover:scale-110">
+      <div className="dashboard-icon-wrap flex items-center justify-center bg-transparent border-0 shadow-none transition-transform duration-150 group-hover:scale-110">
         <PackIconSvg kind={kind} pack={resolvedPack} sizePx={iconPx} />
       </div>
     );
@@ -833,10 +833,10 @@ export function DashboardSectionIcon({
     scaleInner = 0.6
   ) => (
     <div
-      className="relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
+      className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
       style={{ width: framePx, height: framePx }}
     >
-      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
+      <svg viewBox="0 0 100 100" className="dashboard-frame-svg absolute inset-0 w-full h-full pointer-events-none overflow-visible">
         <defs>
           <linearGradient id="achourFrameMetal" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="var(--theme-secondary, #8C6A1D)" />
@@ -1045,10 +1045,10 @@ export function DashboardSectionIcon({
     case 'frame-27': // Frosted Glass Hexagon
       return (
         <div
-          className="relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
+          className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
           style={{ width: framePx, height: framePx }}
         >
-          <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full pointer-events-none">
+          <svg viewBox="0 0 100 100" className="dashboard-frame-svg absolute inset-0 w-full h-full pointer-events-none overflow-visible">
             <polygon
               points="50,3 93,26 93,74 50,97 7,74 7,26"
               fill={`rgba(255,255,255,${Math.min(0.32, alpha + 0.08)})`}
@@ -1144,7 +1144,7 @@ export function DashboardSectionIcon({
   if (resolvedShape === 'metallic') {
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-2xl p-[2.5px] transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-2xl p-[2.5px] transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
         style={{
           width: framePx,
           height: framePx,
@@ -1167,7 +1167,7 @@ export function DashboardSectionIcon({
     const isSphere = resolvedShape === 'frame-28';
     return (
       <div
-        className={`relative flex items-center justify-center shrink-0 border border-white/30 transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_28px_rgba(0,0,0,0.28),inset_0_1px_1px_rgba(255,255,255,0.45)] overflow-hidden ${
+        className={`dashboard-frame-wrap relative flex items-center justify-center shrink-0 border border-white/30 transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_28px_rgba(0,0,0,0.28),inset_0_1px_1px_rgba(255,255,255,0.45)] overflow-hidden ${
           isSphere ? 'rounded-full' : 'rounded-[26%]'
         }`}
         style={{
@@ -1189,7 +1189,7 @@ export function DashboardSectionIcon({
   if (resolvedShape === 'circle') {
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
         style={{
           width: framePx,
           height: framePx,
@@ -1207,7 +1207,7 @@ export function DashboardSectionIcon({
     // Stadium Pill Capsule
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105"
         style={{
           width: Math.round(framePx * 1.18),
           height: Math.round(framePx * 0.88),
@@ -1224,7 +1224,7 @@ export function DashboardSectionIcon({
     // Diagonal Leaf Left / Blade Right
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
         style={{
           width: framePx,
           height: framePx,
@@ -1242,7 +1242,7 @@ export function DashboardSectionIcon({
     // Top-Bottom Rail Brackets
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 border-y-[3px] border-x-0 rounded-xl transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 border-y-[3px] border-x-0 rounded-xl transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1260,7 +1260,7 @@ export function DashboardSectionIcon({
     const isCircle = resolvedShape === 'frame-22';
     return (
       <div
-        className={`relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 ${
+        className={`dashboard-frame-wrap relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 ${
           isCircle ? 'rounded-full' : 'rounded-[28%]'
         }`}
         style={{
@@ -1280,7 +1280,7 @@ export function DashboardSectionIcon({
     // Cyberpunk Skew Parallelogram
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-xl border-2 -skew-x-12 transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-xl border-2 -skew-x-12 transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1300,7 +1300,7 @@ export function DashboardSectionIcon({
     // Tactile 3D Keycap Cushion
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-[26%] border-2 border-b-[6px] transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-[26%] border-2 border-b-[6px] transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1318,7 +1318,7 @@ export function DashboardSectionIcon({
     // Carbon Tech Weave Grid
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1338,7 +1338,7 @@ export function DashboardSectionIcon({
     // Obsidian Deep Inset Well
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-2xl border transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-2xl border transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1356,7 +1356,7 @@ export function DashboardSectionIcon({
     // Stacked Triple Deck Cards
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105"
         style={{ width: framePx, height: framePx }}
       >
         <div
@@ -1379,7 +1379,7 @@ export function DashboardSectionIcon({
     // Radiant Aura Halo
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-full p-[3px] transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-full p-[3px] transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1401,7 +1401,7 @@ export function DashboardSectionIcon({
     // Pearl Satin Dual Bevel
     return (
       <div
-        className="relative flex items-center justify-center shrink-0 rounded-[26%] border-2 transition-transform duration-150 group-hover:scale-105"
+        className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-[26%] border-2 transition-transform duration-150 group-hover:scale-105"
         style={{
           width: framePx,
           height: framePx,
@@ -1418,7 +1418,7 @@ export function DashboardSectionIcon({
   // Default: rounded-square
   return (
     <div
-      className="relative flex items-center justify-center shrink-0 rounded-[24%] border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
+      className="dashboard-frame-wrap relative flex items-center justify-center shrink-0 rounded-[24%] border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]"
       style={{
         width: framePx,
         height: framePx,

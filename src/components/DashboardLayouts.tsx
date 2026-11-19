@@ -39,6 +39,9 @@ export interface DashboardLayoutsProps {
   glassBlur?: number;
   dashboardAlignment?: AppSettings['dashboardAlignment'];
   dashboardHorizontalAlignment?: AppSettings['dashboardHorizontalAlignment'];
+  dashboardFocusMode?: AppSettings['dashboardFocusMode'];
+  dashboardLabelColorMode?: AppSettings['dashboardLabelColorMode'];
+  dashboardLabelCustomColor?: AppSettings['dashboardLabelCustomColor'];
   reorderingKind?: IconKind | null;
   previewMode?: boolean;
   language: Language;
@@ -126,6 +129,11 @@ export default function DashboardLayouts({
   tileSpacing = 'md',
   glassOpacity = 16,
   glassBlur = 10,
+  dashboardAlignment,
+  dashboardHorizontalAlignment,
+  dashboardFocusMode = 'frame',
+  dashboardLabelColorMode = 'theme',
+  dashboardLabelCustomColor = null,
   reorderingKind = null,
   previewMode = false,
   language,
@@ -215,6 +223,14 @@ export default function DashboardLayouts({
 
   type TileMode = 'open' | 'card' | 'wide' | 'row' | 'pill';
 
+  const getLabelColor = (): string => {
+    const mode = dashboardLabelColorMode || 'theme';
+    if (mode === 'white') return '#FFFFFF';
+    if (mode === 'gold') return '#D4AF37';
+    if (mode === 'custom' && dashboardLabelCustomColor) return dashboardLabelCustomColor;
+    return 'var(--theme-primary, #D4AF37)';
+  };
+
   const renderSectionTile = (
     item: SectionItem,
     {
@@ -229,6 +245,10 @@ export default function DashboardLayouts({
   ) => {
     const isReorderingThis = !previewMode && reorderingKind === item.kind;
     const isIconsOnly = resolved.iconDisplayMode === 'icons-only';
+    const effectiveFocusMode =
+      isIconsOnly && (!dashboardFocusMode || dashboardFocusMode === 'frame')
+        ? 'label'
+        : dashboardFocusMode || 'frame';
     const iconMultiplier = isHero ? 1.15 : mode === 'row' || mode === 'pill' ? 0.82 : 1;
     const computedIconPx = Math.max(15, Math.round(baseIconPx * previewScale * iconMultiplier));
     const computedFramePx = Math.max(
@@ -240,12 +260,18 @@ export default function DashboardLayouts({
       ? {
           type: 'button' as const,
           tabIndex: -1,
+          'data-dashboard-kind': item.kind,
+          'data-dashboard-icons-only': isIconsOnly ? 'true' : 'false',
+          'data-dashboard-focus-mode': effectiveFocusMode,
+          'data-preview-focused': item.kind === slot0?.kind ? 'true' : undefined,
           onClick: () => onNavigate(item.kind),
         }
       : {
           type: 'button' as const,
           'data-tv-focusable': 'true',
           'data-dashboard-kind': item.kind,
+          'data-dashboard-icons-only': isIconsOnly ? 'true' : 'false',
+          'data-dashboard-focus-mode': effectiveFocusMode,
           tabIndex: 0,
           onClick: () => onNavigate(item.kind),
         };
@@ -284,9 +310,10 @@ export default function DashboardLayouts({
         >
           {iconNode}
           <span
-            className={`font-bold text-white group-hover:text-gold transition-colors truncate ${
+            className={`dashboard-tile-label font-bold transition-all truncate ${
               previewMode ? 'text-[10px]' : 'text-xs sm:text-sm'
             }`}
+            style={{ color: getLabelColor() }}
           >
             {item.label}
           </span>
@@ -322,13 +349,14 @@ export default function DashboardLayouts({
             {iconNode}
             <div className={`min-w-0 ${isRtl ? 'text-right' : 'text-left'}`}>
               <span
-                className={`block font-bold tracking-wide text-white group-hover:text-gold transition-colors truncate ${
+                className={`dashboard-tile-label block font-bold tracking-wide transition-all truncate ${
                   previewMode
                     ? 'text-[11px]'
                     : isHero
                     ? 'text-base sm:text-xl'
                     : 'text-sm sm:text-base'
                 }`}
+                style={{ color: getLabelColor() }}
               >
                 {item.label}
               </span>
@@ -375,13 +403,14 @@ export default function DashboardLayouts({
         {iconNode}
         <div className="flex flex-col items-center text-center min-w-0 max-w-full">
           <span
-            className={`font-bold tracking-wide text-white group-hover:text-gold transition-colors truncate max-w-full drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] ${
+            className={`dashboard-tile-label font-bold tracking-wide transition-all truncate max-w-full drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] ${
               previewMode
                 ? 'text-[10px] leading-tight'
                 : isHero
                 ? 'text-sm sm:text-base'
                 : 'text-xs sm:text-sm'
             }`}
+            style={{ color: getLabelColor() }}
           >
             {item.label}
           </span>

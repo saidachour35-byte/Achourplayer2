@@ -122,6 +122,9 @@ export interface AppSettings {
   vodSortBy?: VodSortBy;
   posterSize?: PosterSize;
   showPosterTitles?: boolean;
+  dashboardFocusMode?: 'frame' | 'label' | 'both' | 'icon';
+  dashboardLabelColorMode?: 'theme' | 'white' | 'gold' | 'custom';
+  dashboardLabelCustomColor?: string | null;
 }
 
 export interface VodItem extends Channel {

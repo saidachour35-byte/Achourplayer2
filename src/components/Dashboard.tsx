@@ -1042,6 +1042,9 @@ if (currentView === 'settings') return (
               glassBlur={settings.glassBlur ?? 10}
               dashboardAlignment={settings.dashboardAlignment}
               dashboardHorizontalAlignment={settings.dashboardHorizontalAlignment}
+              dashboardFocusMode={settings.dashboardFocusMode}
+              dashboardLabelColorMode={settings.dashboardLabelColorMode}
+              dashboardLabelCustomColor={settings.dashboardLabelCustomColor}
               reorderingKind={reorderingKind}
               language={settings.language}
               isRtl={isRtl}
