@@ -1,19 +1,19 @@
 // Original path: src/components/SettingsView.tsx
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { motion } from 'framer-motion';
 import {
   ChevronLeft, ChevronRight, Globe,
-  LayoutGrid, EyeOff, History,
+  LayoutGrid, EyeOff,
   MonitorPlay, Clock, Check, X, Eye, Search, Trash2,
   Tv, Film, Clapperboard, Palette, Sparkles, Image,
-  Upload, RefreshCw, Volume2, VolumeX, Shield, LayoutDashboard, Maximize2,
-  ArrowUpDown, Type
+  Upload, RefreshCw, Volume2, VolumeX, Shield, Maximize2,
+  ArrowUpDown, Type, AppWindow
 } from 'lucide-react';
 import { saveCustomPlayerPackage } from '../utils/players';
-import { AppSettings, Language, TimeFormat, ViewMode, VodSortBy, PosterSize, Playlist } from '../types';
+import { AppSettings, Language, TimeFormat, ViewMode, VodSortBy, PosterSize, Playlist, ScreenPosition } from '../types';
+import { SCREEN_POSITION_CELLS, WindowPositionButton } from './WindowPositionBar';
 import { useI18n } from '../utils/i18n';
-import { getPlatformUrl, isMobileDevice } from '../utils/platform';
-import { StyledAppIcon, IconKind } from './DashboardLayouts';
+import { getPlatformUrl } from '../utils/platform';
+import DashboardDesignStudio, { StudioTabId } from './DashboardDesignStudio';
 import { xtreamFetch } from '../utils/iptv';
 import axios from 'axios';
 import { collection, query, where, getDocs, doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
@@ -22,13 +22,9 @@ import { ExtractionService } from '../utils/extractionService';
 import {
   clearWatchHistoryByType,
   getLastWatchedChannel,
-  getWatchHistoryTotalCount,
   WatchHistoryType
 } from '../utils/watchHistoryService';
-import {
-  ROYAL_THEMES, ICON_3D_STYLES, APP_BACKGROUNDS, DASHBOARD_LAYOUTS,
-  applyRoyalTheme, getIconGlyphVariant
-} from '../utils/themeManager';
+import { APP_BACKGROUNDS } from '../utils/themeManager';
 import {
   pushBackHandler,
   navigateSpatial,
@@ -49,6 +45,7 @@ interface SettingsViewProps {
 
 type SettingsSubView =
   | 'main'
+  | 'design-studio'
   | 'language'
   | 'time'
   | 'view'
@@ -56,15 +53,9 @@ type SettingsSubView =
   | 'vod-sort'
   | 'poster-size'
   | 'poster-titles'
-  | 'icon-size'
-  | 'frame-size'
-  | 'tile-spacing'
-  | 'dashboard-align'
+  | 'window-position'
   | 'players'
-  | 'royal-colors'
-  | 'icons-3d'
   | 'backgrounds'
-  | 'dashboard-layouts'
   | 'categories-live'
   | 'categories-movie'
   | 'categories-series'
@@ -180,20 +171,22 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
   const [historyClearSuccess, setHistoryClearSuccess] = useState<string | null>(null);
   const [confirmClearType, setConfirmClearType] = useState<WatchHistoryType | null>(null);
   const [historyTick, setHistoryTick] = useState(0);
-  const [syncInProgress, setSyncInProgress] = useState(false);
+  const [syncInProgress] = useState(false);
   const [syncNotification, setSyncNotification] = useState<string | null>(null);
   const [showUploadPasteModal, setShowUploadPasteModal] = useState(false);
-  const [pendingLayoutId, setPendingLayoutId] = useState<string | null>(null);
-  const [pendingIconStyleId, setPendingIconStyleId] = useState<string | null>(null);
+  const [studioTab, setStudioTab] = useState<StudioTabId>('display');
 
   const channelFileInputRef = useRef<HTMLInputElement | null>(null);
   const { t, isRtl } = useI18n(settings.language);
 
-  // Reset error & pending previews cleanly whenever switching subviews or inner filter tabs
+  const openDesignStudio = (tab: StudioTabId) => {
+    setStudioTab(tab);
+    setSubView('design-studio');
+  };
+
+  // Reset error cleanly whenever switching subviews or inner filter tabs
   useEffect(() => {
     setError('');
-    if (subView !== 'dashboard-layouts') setPendingLayoutId(null);
-    if (subView !== 'icons-3d') setPendingIconStyleId(null);
   }, [subView, catFilterTab, catSearch, playersTab, splashTab]);
 
   // Register pushBackHandler for SettingsView
@@ -365,10 +358,6 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     });
     return list;
   }, [settings.externalPlayers]);
-
-  const currentTheme = useMemo(() => {
-    return ROYAL_THEMES.find(t => t.id === (settings.royalThemeColor || 'royal-gold')) || ROYAL_THEMES[0];
-  }, [settings.royalThemeColor]);
 
   const fetchCategories = async (type: 'live' | 'movie' | 'series') => {
     setCatLoading(true);
@@ -559,20 +548,6 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     }
   };
 
-  const handleSelectRoyalTheme = (themeId: string) => {
-    updateSetting('royalThemeColor', themeId);
-    applyRoyalTheme(themeId);
-  };
-
-  const handleSelect3DIconStyle = (iconStyleId: string) => {
-    updateSetting('icon3DStyle', iconStyleId);
-    const selectedStyle = ICON_3D_STYLES.find(s => s.id === iconStyleId);
-    if (selectedStyle && selectedStyle.recommendedThemeId) {
-      updateSetting('royalThemeColor', selectedStyle.recommendedThemeId);
-      applyRoyalTheme(selectedStyle.recommendedThemeId);
-    }
-  };
-
   const handleSelectBackground = (bgId: string) => {
     updateSetting('backgroundStyle', bgId);
     updateSetting('customBackground', null);
@@ -654,20 +629,13 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     return list.filter(c => c.category_name.toLowerCase().includes(q));
   }, [categories, catSearch, catFilterTab, subView, settings.hiddenLiveCategories, settings.hiddenMovieCategories, settings.hiddenSeriesCategories]);
 
-  const historyCounts = useMemo(() => ({
-    movie: getWatchHistoryTotalCount('movie'),
-    series: getWatchHistoryTotalCount('series'),
-    live: getWatchHistoryTotalCount('live'),
-  }), [historyTick, subView]);
-
-  // Grouped settings for structured display
+  // Grouped settings for structured display (1 single Unified Design Studio tile + zero duplicate entries)
   const settingsGroups = [
     {
-      title: isRtl ? 'المظهر والتصميم' : 'Appearance & Design',
+      title: isRtl ? 'المظهر وتصميم الواجهة' : 'Appearance & UI Design',
       items: [
-        { icon: LayoutDashboard, label: t('dashboard_layouts'), action: () => setSubView('dashboard-layouts') },
-        { icon: Palette, label: t('royal_themes'), action: () => setSubView('royal-colors') },
-        { icon: Sparkles, label: t('icons_3d'), action: () => setSubView('icons-3d') },
+        { icon: Palette, label: isRtl ? 'استوديو التصميم الموحّد — Achour Player' : 'Unified Design Studio — Achour Player', action: () => openDesignStudio('display') },
+        { icon: AppWindow, label: t('window_position'), action: () => setSubView('window-position') },
         { icon: Image, label: t('app_backgrounds'), action: () => setSubView('backgrounds') },
         { icon: Volume2, label: t('splash_intro'), action: () => setSubView('splash-intro') },
         { icon: Shield, label: t('anti_block_vpn'), action: () => setSubView('vpn') },
@@ -676,13 +644,6 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     {
       title: isRtl ? 'الأحجام' : 'Sizes & Scaling',
       items: [
-        { icon: Sparkles, label: t('icon_size'), action: () => setSubView('icon-size') },
-        ...(!isMobileDevice()
-          ? [
-              { icon: LayoutDashboard, label: isRtl ? 'حجم الإطارات' : 'Frame Size', action: () => setSubView('frame-size') },
-              { icon: ArrowUpDown, label: isRtl ? 'المسافة بين العناصر' : 'Element Spacing', action: () => setSubView('tile-spacing') },
-            ]
-          : []),
         { icon: Maximize2, label: t('screen_zoom'), action: () => setSubView('screen-zoom') },
         { icon: Maximize2, label: isRtl ? 'تكبير صفحة الإعدادات' : 'Settings Page Size', action: () => setSubView('settings-scale') },
         { icon: Tv, label: isRtl ? 'تكبير صفحة المباشر' : 'Live Page Size', action: () => setSubView('live-scale') },
@@ -691,9 +652,10 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       ]
     },
     {
-      title: isRtl ? 'نسب العرض إلى الارتفاع والتشغيل' : 'Aspect Ratios & View',
+      title: isRtl ? 'نسب العرض إلى الارتفاع والتشغيل' : 'Aspect Ratios & Playback',
       items: [
         { icon: LayoutGrid, label: t('view_mode'), action: () => setSubView('view') },
+        { icon: MonitorPlay, label: t('players_title'), action: () => setSubView('players') },
         { icon: ArrowUpDown, label: t('sort_by'), action: () => setSubView('vod-sort') },
         { icon: Film, label: t('poster_size'), action: () => setSubView('poster-size') },
         { icon: Type, label: t('poster_titles'), action: () => setSubView('poster-titles') },
@@ -932,131 +894,66 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     );
   }
 
-  // SUBVIEW: ICON SIZE
-  if (subView === 'icon-size') {
-    const scaleOptions = [
-      { id: 'xs' as const, label: isRtl ? 'صغير جداً (70%)' : 'Extra Small (70%)', desc: isRtl ? 'مقاس مصغر جداً' : 'Very compact' },
-      { id: 'sm' as const, label: isRtl ? 'صغير (85%)' : 'Small (85%)', desc: isRtl ? 'مساحة أكبر للهواتف' : 'Compact cards' },
-      { id: 'md' as const, label: isRtl ? 'متوازن (100%)' : 'Balanced (100%)', desc: isRtl ? 'المقاس القياسي الافتراضي' : 'Default size' },
-      { id: 'lg' as const, label: isRtl ? 'كبير (115%)' : 'Large (115%)', desc: isRtl ? 'مثالي لشاشات التلفزيون' : 'Large TV size' },
-      { id: 'xl' as const, label: isRtl ? 'كبير جداً (130%)' : 'Extra Large (130%)', desc: isRtl ? 'أيقونات بارزة كبرى' : 'Extra prominent' },
-      { id: '2xl' as const, label: isRtl ? 'ضخم (145%)' : 'Huge (145%)', desc: isRtl ? 'حجم واسع وواضح' : 'Very large' },
-      { id: '3xl' as const, label: isRtl ? 'عملاق (160%)' : 'Giant (160%)', desc: isRtl ? 'أقصى حجم متاح' : 'Maximum size' }
-    ];
-
+  // SUBVIEW: UNIFIED LIVE UI DESIGN STUDIO
+  if (subView === 'design-studio') {
     return (
-      <SubViewContainer title={t('icon_size')} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-          {scaleOptions.map((opt) => {
-            const isActive = (settings.iconScale || 'md') === opt.id;
-            return (
-              <TileOptionButton
-                key={opt.id}
-                title={opt.label}
-                subtitle={opt.desc}
-                active={isActive}
-                onClick={() => {
-                  updateSetting('iconScale', opt.id);
-                  setSubView('main');
-                }}
-                isRtl={isRtl}
-              />
-            );
-          })}
-        </div>
-      </SubViewContainer>
+      <DashboardDesignStudio
+        settings={settings}
+        initialTab={studioTab}
+        isRtl={isRtl}
+        t={t}
+        onCommit={(nextDesign) => {
+          onUpdateSettings((prev) => ({ ...prev, ...nextDesign }));
+        }}
+        onBack={() => setSubView('main')}
+      />
     );
   }
 
-  // SUBVIEW: INDEPENDENT FRAME SIZE (TV & Desktop only — does not affect icon size)
-  if (subView === 'frame-size') {
-    const frameOptions = [
-      { id: 'xs' as const, label: isRtl ? 'إطار صغير جداً' : 'Extra Compact Frame', desc: isRtl ? 'يصغّر الإطار دون تغيير الأيقونة' : 'Shrinks frame only, icon unchanged' },
-      { id: 'sm' as const, label: isRtl ? 'إطار صغير' : 'Compact Frame', desc: isRtl ? 'حواف أضيق للإطارات' : 'Tighter frame border' },
-      { id: 'md' as const, label: isRtl ? 'متوازن (الافتراضي)' : 'Balanced (Default)', desc: isRtl ? 'الحجم القياسي للإطارات' : 'Standard frame scale' },
-      { id: 'lg' as const, label: isRtl ? 'إطار كبير' : 'Large Frame', desc: isRtl ? 'تكبير مساحة الإطار فقط' : 'Larger frame area only' },
-      { id: 'xl' as const, label: isRtl ? 'إطار كبير جداً' : 'Extra Large Frame', desc: isRtl ? 'مساحة واسعة حول الأيقونات' : 'Generous frame area' },
-      { id: '2xl' as const, label: isRtl ? 'إطار ضخم' : 'Huge Frame', desc: isRtl ? 'بطاقات عريضة للتلفزيون' : 'Wide TV frame cards' },
-      { id: '3xl' as const, label: isRtl ? 'إطار عملاق' : 'Giant Frame', desc: isRtl ? 'أقصى حجم متاح للإطار' : 'Maximum frame scale' },
-    ];
-    return (
-      <SubViewContainer title={isRtl ? 'حجم الإطارات (مستقل عن الأيقونات)' : 'Frame Size (Independent)'} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-          {frameOptions.map((opt) => (
-            <TileOptionButton
-              key={opt.id}
-              title={opt.label}
-              subtitle={opt.desc}
-              active={(settings.frameScale || 'md') === opt.id}
-              onClick={() => {
-                updateSetting('frameScale', opt.id);
-                setSubView('main');
-              }}
-              isRtl={isRtl}
-            />
-          ))}
-        </div>
-      </SubViewContainer>
-    );
-  }
+  // SUBVIEW: APP WINDOWS / DIALOGS SCREEN POSITION
+  if (subView === 'window-position') {
+    const curPos: ScreenPosition = settings.windowPosition || 'center';
 
-  // SUBVIEW: INDEPENDENT ELEMENT SPACING (TV & Desktop only — affects gaps only)
-  if (subView === 'tile-spacing') {
-    const spacingOptions = [
-      { id: 'xs' as const, label: isRtl ? 'متقارب جداً' : 'Very Tight', desc: isRtl ? 'مسافة دنيا بين العناصر' : 'Minimal gap between tiles' },
-      { id: 'sm' as const, label: isRtl ? 'متقارب' : 'Compact', desc: isRtl ? 'مسافة صغيرة بين العناصر' : 'Close element spacing' },
-      { id: 'md' as const, label: isRtl ? 'متوازن (الافتراضي)' : 'Balanced (Default)', desc: isRtl ? 'تباعد قياسي' : 'Standard spacing' },
-      { id: 'lg' as const, label: isRtl ? 'واسع' : 'Spacious', desc: isRtl ? 'مسافة أوسع بين الإطارات' : 'Generous gap between tiles' },
-      { id: 'xl' as const, label: isRtl ? 'واسع جداً' : 'Extra Spacious', desc: isRtl ? 'أقصى تباعد بين العناصر' : 'Maximum separation' },
-    ];
-    return (
-      <SubViewContainer title={isRtl ? 'المسافة بين العناصر (مستقلة)' : 'Element Spacing (Independent)'} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-          {spacingOptions.map((opt) => (
-            <TileOptionButton
-              key={opt.id}
-              title={opt.label}
-              subtitle={opt.desc}
-              active={(settings.tileSpacing || 'md') === opt.id}
-              onClick={() => {
-                updateSetting('tileSpacing', opt.id);
-                setSubView('main');
-              }}
-              isRtl={isRtl}
-            />
-          ))}
-        </div>
-      </SubViewContainer>
-    );
-  }
-
-  // SUBVIEW: DASHBOARD ICONS SCREEN POSITION
-  if (subView === 'dashboard-align') {
-    const alignOptions = [
-      { id: 'top' as const, label: isRtl ? 'أعلى الشاشة' : 'Top of Screen', desc: isRtl ? 'رفع الأيقونات نحو الجزء العلوي من الشاشة' : 'Align icons toward the top' },
-      { id: 'center' as const, label: isRtl ? 'منتصف الشاشة (الافتراضي)' : 'Center of Screen (Default)', desc: isRtl ? 'توسيط الأيقونات في منتصف الشاشة' : 'Center icons vertically' },
-      { id: 'bottom' as const, label: isRtl ? 'أسفل الشاشة' : 'Bottom of Screen', desc: isRtl ? 'تنزيل الأيقونات نحو الجزء السفلي من الشاشة' : 'Align icons toward the bottom' }
-    ];
+    const alignFlexFor = (id: ScreenPosition) => {
+      const v = id.startsWith('top') ? 'items-start' : id.startsWith('bottom') ? 'items-end' : 'items-center';
+      const h = id.endsWith('left') ? 'justify-start' : id.endsWith('right') ? 'justify-end' : 'justify-center';
+      return `${v} ${h}`;
+    };
 
     return (
-      <SubViewContainer title={t('dashboard_alignment')} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-          {alignOptions.map((opt) => {
-            const isActive = (settings.dashboardAlignment || 'center') === opt.id;
-            return (
-              <TileOptionButton
-                key={opt.id}
-                title={opt.label}
-                subtitle={opt.desc}
-                active={isActive}
-                onClick={() => {
-                  updateSetting('dashboardAlignment', opt.id);
-                  setSubView('main');
-                }}
-                isRtl={isRtl}
-              />
-            );
-          })}
+      <SubViewContainer title={t('window_position')} onBack={() => setSubView('main')} isRtl={isRtl}>
+        <div className="space-y-4">
+          <p className="text-xs sm:text-sm text-zinc-300">
+            {isRtl
+              ? 'اختر مكان ظهور النوافذ المنبثقة وتفاصيل الأفلام والمسلسلات على الشاشة (أو انقل أي نافذة مباشرة عبر زر التحريك داخلها):'
+              : 'Choose where app windows and details dialogs appear on screen (or move any window directly from its header):'}
+          </p>
+
+          <div dir="ltr" className="grid grid-cols-3 gap-2.5 sm:gap-3.5 max-w-2xl mx-auto">
+            {SCREEN_POSITION_CELLS.map((cell) => {
+              const isActive = curPos === cell.id;
+              return (
+                <button
+                  key={cell.id}
+                  data-tv-focusable="true"
+                  tabIndex={0}
+                  onClick={() => updateSetting('windowPosition', cell.id)}
+                  className={`p-3 sm:p-4 rounded-2xl border flex flex-col items-center justify-center gap-2 transition-colors cursor-pointer ${
+                    isActive
+                      ? 'border-gold bg-gold/20 shadow-[0_0_16px_var(--theme-glow)]'
+                      : 'border-white/10 bg-white/[0.04] hover:border-gold/50 hover:bg-white/[0.08]'
+                  }`}
+                >
+                  <div className={`w-14 h-9 rounded-lg border border-white/15 bg-black/50 p-1 flex ${alignFlexFor(cell.id)}`}>
+                    <div className={`w-5 h-3 rounded-sm border ${isActive ? 'bg-gold border-gold' : 'bg-gold/60 border-gold/60'}`} />
+                  </div>
+                  <span className={`text-xs sm:text-sm font-semibold ${isActive ? 'text-gold' : 'text-white'}`}>
+                    {isRtl ? cell.ar : cell.en}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </SubViewContainer>
     );
@@ -1321,162 +1218,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     );
   }
 
-  // SUBVIEW: ROYAL THEME COLORS (Continuous long scrollable list)
-  if (subView === 'royal-colors') {
-    return (
-      <SubViewContainer title={`${t('royal_themes')} (${ROYAL_THEMES.length})`} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 pb-4">
-          {ROYAL_THEMES.map((theme, idx) => {
-            const isActive = (settings.royalThemeColor || 'royal-gold') === theme.id;
-            return (
-              <button
-                key={theme.id}
-                data-tv-focusable="true"
-                tabIndex={0}
-                onFocus={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
-                onClick={() => handleSelectRoyalTheme(theme.id)}
-                className={`p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[82px] cursor-pointer ${
-                  isActive
-                    ? 'border-gold bg-white/15'
-                    : 'border-white/10 bg-white/[0.04] hover:border-white/30 hover:bg-white/[0.09]'
-                } ${isRtl ? 'text-right' : 'text-left'}`}
-              >
-                <div className="flex items-center justify-between w-full">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-4 h-4 rounded-full border border-white/25" style={{ backgroundColor: theme.primary }} />
-                    <span className="w-3 h-3 rounded-full opacity-80" style={{ backgroundColor: theme.secondary }} />
-                  </div>
-                  <span className="text-[11px] font-mono text-zinc-400">#{idx + 1}</span>
-                </div>
-                <h3 className="text-xs sm:text-sm font-medium text-white truncate mt-1.5">
-                  {settings.language === 'ar' ? theme.nameAr : theme.nameEn}
-                </h3>
-                <div className="flex items-center justify-between w-full mt-1.5 pt-1 border-t border-white/10 text-[11px] font-mono">
-                  <span style={{ color: theme.primary }}>{theme.primary}</span>
-                  {isActive && <Check className="text-emerald-400" size={14} />}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </SubViewContainer>
-    );
-  }
 
-  // SUBVIEW: 3D ICON STYLES (Numbered Grid + Live 5-Icon Preview Before Confirming)
-  if (subView === 'icons-3d') {
-    const savedId = settings.icon3DStyle || 'style-gold-3d';
-    const previewId = pendingIconStyleId || savedId;
-    const previewStyle = ICON_3D_STYLES.find(s => s.id === previewId) || ICON_3D_STYLES[0];
-    const previewIdx = ICON_3D_STYLES.findIndex(s => s.id === previewStyle.id);
-    const hasPendingChange = Boolean(pendingIconStyleId && pendingIconStyleId !== savedId);
-    const iconKinds: Array<{ kind: IconKind; label: string }> = [
-      { kind: 'live', label: t('live') },
-      { kind: 'movies', label: t('movies') },
-      { kind: 'series', label: t('series') },
-      { kind: 'add', label: t('playlist') },
-      { kind: 'settings', label: t('settings') },
-    ];
-
-    return (
-      <SubViewContainer title={`${t('icons_3d')} (${ICON_3D_STYLES.length})`} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="flex flex-col gap-3 pb-4">
-          {/* Live Preview & Confirmation Header */}
-          <div className="p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-3">
-            <div className="flex flex-col gap-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black">#{previewIdx + 1}</span>
-                <span className="text-sm sm:text-base font-bold text-white truncate">
-                  {settings.language === 'ar' ? previewStyle.nameAr : previewStyle.nameEn}
-                </span>
-                {hasPendingChange && (
-                  <span className="px-2 py-0.5 rounded-md bg-white/10 text-gold text-[10px] font-bold">
-                    {isRtl ? 'معاينة قبل الحفظ' : 'Preview'}
-                  </span>
-                )}
-              </div>
-              <div className="flex items-center gap-3 pt-1">
-                {iconKinds.map((ic) => (
-                  <div key={ic.kind} className="flex flex-col items-center gap-1">
-                    <StyledAppIcon kind={ic.kind} active3DStyle={previewStyle} scale="sm" iconSize="md" />
-                    <span className="text-[10px] text-zinc-300 truncate max-w-[54px]">{ic.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                data-tv-focusable="true"
-                tabIndex={0}
-                onClick={() => {
-                  handleSelect3DIconStyle(previewStyle.id);
-                  setPendingIconStyleId(null);
-                }}
-                className="px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer"
-              >
-                <Check size={15} />
-                <span>{isRtl ? 'اعتماد التصميم' : 'Confirm Design'}</span>
-              </button>
-              {hasPendingChange && (
-                <button
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onClick={() => setPendingIconStyleId(null)}
-                  className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer"
-                >
-                  {isRtl ? 'إلغاء' : 'Cancel'}
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5">
-            {ICON_3D_STYLES.map((style, idx) => {
-              const isSelected = previewId === style.id;
-              const isSaved = savedId === style.id;
-              return (
-                <button
-                  key={style.id}
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onFocus={(e) => {
-                    e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    setPendingIconStyleId(style.id);
-                  }}
-                  onClick={() => {
-                    handleSelect3DIconStyle(style.id);
-                    setPendingIconStyleId(null);
-                  }}
-                  className={`p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[86px] cursor-pointer ${
-                    isSelected
-                      ? 'border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]'
-                      : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
-                  } ${isRtl ? 'text-right' : 'text-left'}`}
-                >
-                  <div className="flex items-center justify-between w-full gap-1">
-                    <div className="flex items-center gap-1">
-                      <StyledAppIcon kind="live" active3DStyle={style} scale="sm" iconSize="xs" />
-                      <StyledAppIcon kind="movies" active3DStyle={style} scale="sm" iconSize="xs" />
-                      <StyledAppIcon kind="settings" active3DStyle={style} scale="sm" iconSize="xs" />
-                    </div>
-                    <span className="text-[11px] font-mono text-gold font-bold">#{idx + 1}</span>
-                  </div>
-                  <h3 className="text-xs sm:text-sm font-medium text-white truncate mt-1.5">
-                    {settings.language === 'ar' ? style.nameAr : style.nameEn}
-                  </h3>
-                  <div className="flex items-center justify-between w-full mt-1 pt-1 border-t border-white/10 text-[10px]">
-                    <span className="text-zinc-400 truncate max-w-[90px]">{isSaved ? (isRtl ? 'المُعتمد حالياً' : 'Active') : style.nameEn}</span>
-                    {(isSelected || isSaved) && <Check className="text-gold shrink-0" size={14} />}
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </SubViewContainer>
-    );
-  }
 
   // SUBVIEW: APP BACKGROUNDS (40 Static Natural Wallpapers)
   if (subView === 'backgrounds') {
@@ -1518,9 +1260,6 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                   <h3 className="text-xs sm:text-sm font-medium text-white truncate mt-2">
                     {settings.language === 'ar' ? bg.nameAr : bg.nameEn}
                   </h3>
-                  <p className="text-[11px] text-zinc-400 font-normal truncate mt-0.5">
-                    {settings.language === 'ar' ? bg.descriptionAr : (bg.descriptionEn || bg.nameEn)}
-                  </p>
                 </button>
               );
             })}
@@ -1530,469 +1269,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     );
   }
 
-  // SUBVIEW: DASHBOARD LAYOUTS (30 Distinct Glassmorphic & Opaque Studio Theme-Reactive Layouts)
-  if (subView === 'dashboard-layouts') {
-    const renderLayoutThumbnail = (id: string) => {
-      switch (id) {
-        case 'layout-pure-icons':
-          return (
-            <div className="w-full h-9 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-around px-2">
-              {[0, 1, 2, 3, 4].map(i => (
-                <span key={i} className={`w-3.5 h-3.5 rounded-lg border ${i === 0 ? 'bg-gold/35 border-gold' : 'bg-white/15 border-gold/40'}`} />
-              ))}
-            </div>
-          );
-        case 'layout-glass-hero-dock':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="h-4.5 rounded bg-gold/25 border border-gold/50" />
-              <div className="grid grid-cols-5 gap-1 h-3.5">
-                {[0, 1, 2, 3, 4].map(i => <span key={i} className="rounded bg-white/10 border border-white/15" />)}
-              </div>
-            </div>
-          );
-        case 'layout-vertical-rail':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <div className="col-span-4 rounded bg-gold/20 border border-gold/40 flex flex-col justify-around p-0.5">
-                <span className="h-1 bg-gold/60 rounded" />
-                <span className="h-1 bg-white/25 rounded" />
-                <span className="h-1 bg-white/25 rounded" />
-              </div>
-              <div className="col-span-8 grid grid-cols-3 gap-1">
-                <span className="rounded bg-gold/25 border border-gold/50" />
-                <span className="rounded bg-white/10 border border-white/15" />
-                <span className="rounded bg-white/10 border border-white/15" />
-              </div>
-            </div>
-          );
-        case 'layout-cinema-marquee':
-          return (
-            <div className="w-full h-9 grid grid-cols-5 gap-1">
-              {[0, 1, 2, 3, 4].map(i => (
-                <span key={i} className={`rounded-md border ${i === 0 ? 'bg-gold/25 border-gold/60' : 'bg-white/10 border-white/15'}`} />
-              ))}
-            </div>
-          );
-        case 'layout-asymmetric-bento':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <span className="col-span-4 rounded bg-gold/25 border border-gold/50" />
-              <div className="col-span-4 grid grid-rows-2 gap-1">
-                <span className="rounded bg-white/15 border border-white/15" />
-                <span className="rounded bg-white/10 border border-white/15" />
-              </div>
-              <div className="col-span-4 grid grid-rows-2 gap-1">
-                <span className="rounded bg-white/10 border border-white/15" />
-                <span className="rounded bg-gold/15 border border-gold/35" />
-              </div>
-            </div>
-          );
-        case 'layout-dual-cinema-split':
-          return (
-            <div className="w-full h-9 grid grid-cols-2 gap-1">
-              <span className="rounded bg-gold/25 border border-gold/50" />
-              <div className="grid grid-cols-2 gap-1">
-                {[0, 1, 2, 3].map(i => <span key={i} className="rounded bg-white/10 border border-white/15" />)}
-              </div>
-            </div>
-          );
-        case 'layout-floating-console-bar':
-          return (
-            <div className="w-full h-9 flex items-center justify-center gap-1 px-1">
-              <span className="w-4 h-5 rounded bg-white/10 border border-white/15" />
-              <span className="w-4 h-6 rounded bg-white/15 border border-gold/30" />
-              <span className="w-6 h-8 rounded-lg bg-gold/30 border border-gold" />
-              <span className="w-4 h-6 rounded bg-white/15 border border-gold/30" />
-              <span className="w-4 h-5 rounded bg-white/10 border border-white/15" />
-            </div>
-          );
-        case 'layout-pyramid-tier':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-2 gap-1 h-4.5">
-                <span className="rounded bg-gold/25 border border-gold/50" />
-                <span className="rounded bg-gold/15 border border-gold/35" />
-              </div>
-              <div className="grid grid-cols-4 gap-1 h-3.5">
-                {[0, 1, 2, 3].map(i => <span key={i} className="rounded bg-white/10 border border-white/15" />)}
-              </div>
-            </div>
-          );
-        case 'layout-right-command-panel':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <div className="col-span-8 flex flex-col gap-0.5 justify-between">
-                <span className="h-2.5 rounded bg-gold/25 border border-gold/50" />
-                <span className="h-2.5 rounded bg-white/10 border border-white/15" />
-                <span className="h-2.5 rounded bg-white/10 border border-white/15" />
-              </div>
-              <div className="col-span-4 rounded bg-white/10 border border-gold/35" />
-            </div>
-          );
-        case 'layout-chamfer-prism-grid':
-          return (
-            <div className="w-full h-9 flex flex-col items-center justify-center gap-1">
-              <div className="flex gap-1">
-                {[0, 1, 2].map(i => <span key={i} className="w-6 h-3.5 bg-gold/25 border border-gold/45 [clip-path:polygon(4px_0,100%_0,100%_calc(100%-4px),calc(100%-4px)_100%,0_100%,0_4px)]" />)}
-              </div>
-              <div className="flex gap-1">
-                {[0, 1].map(i => <span key={i} className="w-7 h-3.5 bg-white/15 border border-white/20 [clip-path:polygon(4px_0,100%_0,100%_calc(100%-4px),calc(100%-4px)_100%,0_100%,0_4px)]" />)}
-              </div>
-            </div>
-          );
-        case 'layout-editorial-showcase':
-          return (
-            <div className="w-full h-9 flex flex-col justify-between divide-y divide-white/15 border-y border-gold/35 px-1">
-              <span className="h-2 bg-gold/30 w-2/3 rounded-sm my-auto" />
-              <span className="h-1.5 bg-white/20 w-1/2 rounded-sm my-auto" />
-              <span className="h-1.5 bg-white/15 w-3/4 rounded-sm my-auto" />
-            </div>
-          );
-        case 'layout-orbital-medallions':
-          return (
-            <div className="w-full h-9 flex items-center justify-center gap-1.5">
-              <span className="w-4 h-4 rounded-full bg-white/10 border border-white/20" />
-              <span className="w-5 h-5 rounded-full bg-white/15 border border-gold/40" />
-              <span className="w-7 h-7 rounded-full bg-gold/30 border border-gold" />
-              <span className="w-5 h-5 rounded-full bg-white/15 border border-gold/40" />
-              <span className="w-4 h-4 rounded-full bg-white/10 border border-white/20" />
-            </div>
-          );
-        case 'layout-leanback-lanes':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-4 gap-1 h-4.5">
-                <span className="col-span-2 rounded bg-gold/25 border border-gold/50" />
-                <span className="rounded bg-white/15 border border-white/15" />
-                <span className="rounded bg-white/15 border border-white/15" />
-              </div>
-              <div className="grid grid-cols-3 gap-1 h-3.5">
-                <span className="rounded bg-white/10 border border-white/15" />
-                <span className="rounded bg-white/10 border border-white/15" />
-                <span className="rounded bg-red-500/20 border border-red-400/40" />
-              </div>
-            </div>
-          );
-        case 'layout-quadrant-hub':
-          return (
-            <div className="w-full h-9 relative grid grid-cols-2 grid-rows-2 gap-1">
-              {[0, 1, 2, 3].map(i => <span key={i} className="rounded bg-white/10 border border-white/15" />)}
-              <span className="absolute inset-0 m-auto w-5 h-5 rounded-full bg-gold/35 border border-gold" />
-            </div>
-          );
-        case 'layout-arch-gallery':
-          return (
-            <div className="w-full h-9 grid grid-cols-5 gap-1 items-end">
-              {[0, 1, 2, 3, 4].map(i => (
-                <span key={i} className={`h-8 rounded-t-full rounded-b-sm border ${i === 0 ? 'bg-gold/25 border-gold/60' : 'bg-white/10 border-white/20'}`} />
-              ))}
-            </div>
-          );
-        case 'layout-compact-glass-stack':
-          return (
-            <div className="w-full h-9 flex items-center justify-center">
-              <div className="w-2/3 h-full flex flex-col gap-0.5 justify-between">
-                {[0, 1, 2, 3].map(i => (
-                  <span key={i} className={`h-1.5 rounded-sm border ${i === 0 ? 'bg-gold/30 border-gold/60' : 'bg-white/10 border-white/15'}`} />
-                ))}
-              </div>
-            </div>
-          );
-        case 'layout-widescreen-ribbon':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-3 gap-1 h-5.5">
-                <span className="rounded bg-gold/25 border border-gold/50" />
-                <span className="rounded bg-white/15 border border-white/20" />
-                <span className="rounded bg-white/15 border border-white/20" />
-              </div>
-              <div className="h-2.5 rounded-full bg-white/10 border border-gold/30" />
-            </div>
-          );
-        case 'layout-stepped-skyline':
-          return (
-            <div className="w-full h-9 grid grid-cols-5 gap-1 items-end">
-              <span className="h-4 rounded bg-white/10 border border-white/15" />
-              <span className="h-6 rounded bg-white/15 border border-gold/30" />
-              <span className="h-8.5 rounded bg-gold/30 border border-gold" />
-              <span className="h-6 rounded bg-white/15 border border-gold/30" />
-              <span className="h-4 rounded bg-white/10 border border-white/15" />
-            </div>
-          );
-        case 'layout-split-header-deck':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-3 gap-1 h-5.5">
-                {[0, 1, 2].map(i => (
-                  <div key={i} className="rounded border border-gold/40 overflow-hidden flex flex-col">
-                    <span className="h-2 bg-gold/30" />
-                    <span className="flex-1 bg-white/5" />
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-3 gap-1 h-2.5">
-                {[0, 1, 2].map(i => <span key={i} className="rounded bg-white/10" />)}
-              </div>
-            </div>
-          );
-        case 'layout-obsidian-hex-hive':
-          return (
-            <div className="w-full h-9 flex flex-col items-center justify-center gap-1">
-              <div className="grid grid-cols-3 gap-1 w-full h-4.5">
-                <span className="rounded-lg bg-transparent border border-gold/55" />
-                <span className="rounded-lg bg-white/[0.06] border border-gold" />
-                <span className="rounded-lg bg-transparent border border-gold/55" />
-              </div>
-              <div className="grid grid-cols-2 gap-1 w-2/3 h-3.5">
-                <span className="rounded bg-transparent border border-gold/45" />
-                <span className="rounded bg-transparent border border-gold/45" />
-              </div>
-            </div>
-          );
-        case 'layout-solid-theater-marquee':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <div className="col-span-7 grid grid-cols-2 gap-1">
-                <span className="rounded bg-white/[0.05] border border-gold" />
-                <span className="rounded bg-transparent border border-gold/50" />
-              </div>
-              <div className="col-span-5 flex flex-col gap-0.5 justify-between">
-                {[0, 1, 2].map(i => <span key={i} className="h-2.5 rounded bg-transparent border border-gold/45" />)}
-              </div>
-            </div>
-          );
-        case 'layout-carbon-brushed-chassis':
-          return (
-            <div className="w-full h-9 rounded-lg bg-transparent border border-gold/60 p-0.5 flex flex-col gap-0.5">
-              <div className="grid grid-cols-3 gap-0.5 flex-1">
-                <span className="rounded bg-white/[0.06] border border-gold" />
-                <span className="rounded bg-transparent border border-white/25" />
-                <span className="rounded bg-transparent border border-white/25" />
-              </div>
-              <div className="grid grid-cols-2 gap-0.5 h-2">
-                <span className="rounded bg-transparent border border-gold/45" />
-                <span className="rounded bg-transparent border border-gold/45" />
-              </div>
-            </div>
-          );
-        case 'layout-duotone-color-blocks':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-12 gap-1 h-5">
-                <span className="col-span-3 rounded bg-transparent border border-gold/55" />
-                <span className="col-span-6 rounded bg-gold/20 border border-gold" />
-                <span className="col-span-3 rounded bg-transparent border border-gold/55" />
-              </div>
-              <div className="grid grid-cols-2 gap-1 w-3/4 mx-auto h-3">
-                <span className="rounded bg-transparent border border-gold/45" />
-                <span className="rounded bg-transparent border border-white/30" />
-              </div>
-            </div>
-          );
-        case 'layout-isometric-diamond-deck':
-          return (
-            <div className="w-full h-9 flex flex-col items-center justify-center gap-1">
-              <div className="grid grid-cols-3 gap-1 w-full h-5 items-center">
-                <span className="h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center"><i className="w-2 h-2 rotate-45 border border-gold/80 block" /></span>
-                <span className="h-5 rounded bg-white/[0.05] border border-gold flex items-center justify-center"><i className="w-2.5 h-2.5 rotate-45 bg-gold/40 border border-gold block" /></span>
-                <span className="h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center"><i className="w-2 h-2 rotate-45 border border-gold/80 block" /></span>
-              </div>
-              <div className="grid grid-cols-2 gap-1 w-1/2 h-2.5">
-                <span className="rounded bg-transparent border border-gold/45" />
-                <span className="rounded bg-transparent border border-gold/45" />
-              </div>
-            </div>
-          );
-        case 'layout-matte-card-fan':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <div className="col-span-4 rounded bg-white/[0.05] border border-gold overflow-hidden flex flex-col">
-                <span className="h-1.5 bg-gold/60" />
-                <span className="flex-1" />
-              </div>
-              <div className="col-span-8 grid grid-cols-4 gap-0.5">
-                {[0, 1, 2, 3].map(i => (
-                  <div key={i} className="rounded bg-transparent border border-gold/45 overflow-hidden flex flex-col">
-                    <span className="h-1 bg-gold/45" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
-        case 'layout-royal-monolith-dock':
-          return (
-            <div className="w-full h-9 grid grid-cols-5 gap-1 items-center">
-              <span className="h-7 rounded bg-transparent border border-gold/45" />
-              <span className="h-5 rounded bg-transparent border border-gold/35" />
-              <span className="h-9 rounded bg-white/[0.06] border-2 border-gold" />
-              <span className="h-5 rounded bg-transparent border border-gold/35" />
-              <span className="h-7 rounded bg-transparent border border-gold/45" />
-            </div>
-          );
-        case 'layout-split-panel-arcade':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-2 gap-1 w-3/4 mx-auto h-3">
-                <span className="rounded bg-transparent border border-gold/55" />
-                <span className="rounded bg-transparent border border-gold/55" />
-              </div>
-              <div className="grid grid-cols-3 gap-1 h-5">
-                <span className="rounded bg-white/[0.05] border border-gold" />
-                <span className="rounded bg-transparent border border-white/25" />
-                <span className="rounded bg-transparent border border-white/25" />
-              </div>
-            </div>
-          );
-        case 'layout-horizon-panorama-cards':
-          return (
-            <div className="w-full h-9 grid grid-cols-12 gap-1">
-              <div className="col-span-4 flex flex-col gap-0.5">
-                <span className="flex-1 rounded bg-transparent border border-gold/45" />
-                <span className="flex-1 rounded bg-transparent border border-gold/45" />
-              </div>
-              <span className="col-span-4 rounded bg-white/[0.05] border-2 border-gold" />
-              <div className="col-span-4 flex flex-col gap-0.5">
-                <span className="flex-1 rounded bg-transparent border border-gold/45" />
-                <span className="flex-1 rounded bg-transparent border border-gold/45" />
-              </div>
-            </div>
-          );
-        case 'layout-luxury-satin-frame':
-          return (
-            <div className="w-full h-9 flex flex-col gap-1">
-              <div className="grid grid-cols-2 gap-1 h-5">
-                <span className="rounded bg-transparent border-2 border-gold" />
-                <span className="rounded bg-transparent border-2 border-gold/55" />
-              </div>
-              <div className="grid grid-cols-3 gap-1 h-3">
-                {[0, 1, 2].map(i => <span key={i} className="rounded bg-transparent border border-gold/45" />)}
-              </div>
-            </div>
-          );
-        case 'layout-frameless-icons':
-          return (
-            <div className="w-full h-9 flex items-center justify-around px-2">
-              {[0, 1, 2, 3, 4].map(i => (
-                <span key={i} className={`w-3 h-3 rounded-full ${i === 0 ? 'bg-gold shadow-[0_0_6px_var(--theme-glow)]' : 'bg-white/70'}`} />
-              ))}
-            </div>
-          );
-        case 'layout-zen-horizon':
-        default:
-          return (
-            <div className="w-full h-9 flex items-center">
-              <div className="w-full h-5 border-y border-gold/45 bg-transparent grid grid-cols-5 divide-x divide-white/15">
-                {[0, 1, 2, 3, 4].map(i => <span key={i} className={i === 0 ? 'bg-gold/15' : ''} />)}
-              </div>
-            </div>
-          );
-      }
-    };
 
-    const savedLayoutId = DASHBOARD_LAYOUTS.some(l => l.id === settings.dashboardLayout)
-      ? settings.dashboardLayout
-      : 'layout-frameless-icons';
-    const previewLayoutId = pendingLayoutId || savedLayoutId;
-    const previewLayoutObj = DASHBOARD_LAYOUTS.find(l => l.id === previewLayoutId) || DASHBOARD_LAYOUTS[0];
-    const previewLayoutIdx = DASHBOARD_LAYOUTS.findIndex(l => l.id === previewLayoutObj.id);
-    const hasPendingLayout = Boolean(pendingLayoutId && pendingLayoutId !== savedLayoutId);
-
-    return (
-      <SubViewContainer title={`${t('dashboard_layouts')} (${DASHBOARD_LAYOUTS.length})`} onBack={() => setSubView('main')} isRtl={isRtl}>
-        <div className="flex flex-col gap-3 pb-4">
-          {/* Preview Banner Before Confirming */}
-          <div className="p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3 w-full sm:w-auto min-w-0">
-              <div className="w-36 shrink-0 p-1.5 rounded-xl border border-white/15 bg-transparent">
-                {renderLayoutThumbnail(previewLayoutObj.id)}
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black">#{previewLayoutIdx + 1}</span>
-                  <h3 className="text-sm sm:text-base font-bold text-white truncate">
-                    {settings.language === 'ar' ? previewLayoutObj.nameAr : previewLayoutObj.nameEn}
-                  </h3>
-                </div>
-                <p className="text-[11px] text-zinc-300 truncate mt-0.5">
-                  {settings.language === 'ar' ? previewLayoutObj.descriptionAr : previewLayoutObj.descriptionEn}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                data-tv-focusable="true"
-                tabIndex={0}
-                onClick={() => {
-                  updateSetting('dashboardLayout', previewLayoutObj.id);
-                  setPendingLayoutId(null);
-                  setSubView('main');
-                }}
-                className="px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer"
-              >
-                <Check size={15} />
-                <span>{isRtl ? 'اعتماد التصميم' : 'Confirm Layout'}</span>
-              </button>
-              {hasPendingLayout && (
-                <button
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onClick={() => setPendingLayoutId(null)}
-                  className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer"
-                >
-                  {isRtl ? 'إلغاء' : 'Cancel'}
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5">
-            {DASHBOARD_LAYOUTS.map((layoutOption, idx) => {
-              const isSelected = previewLayoutObj.id === layoutOption.id;
-              const isSaved = savedLayoutId === layoutOption.id;
-              return (
-                <button
-                  key={layoutOption.id}
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onFocus={(e) => {
-                    e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    setPendingLayoutId(layoutOption.id);
-                  }}
-                  onClick={() => {
-                    updateSetting('dashboardLayout', layoutOption.id);
-                    setPendingLayoutId(null);
-                  }}
-                  className={`p-2.5 rounded-2xl border transition-colors flex flex-col justify-between gap-1.5 min-h-[110px] cursor-pointer ${
-                    isSelected
-                      ? 'border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]'
-                      : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
-                  } ${isRtl ? 'text-right' : 'text-left'}`}
-                >
-                  <div className="flex items-center justify-between w-full">
-                    <span className="text-[10px] font-mono text-gold font-bold">#{idx + 1}</span>
-                    <div className="flex items-center gap-1">
-                      {isSaved && (
-                        <span className="text-[9px] font-bold text-gold/90">
-                          {isRtl ? 'مُعتمد' : 'Active'}
-                        </span>
-                      )}
-                      {(isSelected || isSaved) && <Check className="text-gold shrink-0" size={14} />}
-                    </div>
-                  </div>
-                  {renderLayoutThumbnail(layoutOption.id)}
-                  <h3 className="text-xs font-medium text-white truncate w-full">
-                    {settings.language === 'ar' ? layoutOption.nameAr : layoutOption.nameEn}
-                  </h3>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </SubViewContainer>
-    );
-  }
 
   // SUBVIEWS: CATEGORY MANAGEMENT (Continuous long scrollable list)
   if (subView.startsWith('categories-')) {
@@ -2365,7 +1642,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
             </div>
           )}
 
-          {/* Top Category Management Strip */}
+          {/* Top Category Management Strip ONLY (Series, Movies, Live) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
             {[
               { view: 'categories-series' as const, icon: Clapperboard, title: t('hide_series_categories') },
@@ -2454,15 +1731,18 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                   {t('clear_history_confirm_title')}
                 </h3>
               </div>
-              <button
-                data-tv-focusable="true"
-                data-tv-modal="confirm-clear"
-                tabIndex={0}
-                onClick={() => setConfirmClearType(null)}
-                className="p-1.5 text-zinc-300 hover:text-white rounded-full cursor-pointer"
-              >
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-1 shrink-0">
+                <WindowPositionButton isRtl={isRtl} tvModalTag="confirm-clear" />
+                <button
+                  data-tv-focusable="true"
+                  data-tv-modal="confirm-clear"
+                  tabIndex={0}
+                  onClick={() => setConfirmClearType(null)}
+                  className="p-1.5 text-zinc-300 hover:text-white rounded-full cursor-pointer"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             <p className="text-sm text-zinc-200 leading-relaxed">
@@ -2507,9 +1787,12 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
               <h3 className="text-base font-medium text-white">
                 {isRtl ? 'رفع أو لصق محتوى M3U' : 'Upload or Paste M3U'}
               </h3>
-              <button data-tv-focusable="true" tabIndex={0} onClick={() => setShowUploadPasteModal(false)} className="p-2 text-zinc-300 hover:text-white rounded-full">
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-1 shrink-0">
+                <WindowPositionButton isRtl={isRtl} />
+                <button data-tv-focusable="true" tabIndex={0} onClick={() => setShowUploadPasteModal(false)} className="p-2 text-zinc-300 hover:text-white rounded-full">
+                  <X size={18} />
+                </button>
+              </div>
             </div>
             <input
               type="text"

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { X, ChevronUp, ChevronDown, Star, Check, Trash2 } from 'lucide-react';
 import { useI18n } from '../utils/i18n';
 import { Language } from '../types';
+import { WindowPositionButton } from './WindowPositionBar';
 
 interface PositionEditModalProps {
   type: 'category' | 'channel';
@@ -124,15 +125,18 @@ export default function PositionEditModal({
           <h3 className="text-xs font-black text-white uppercase tracking-wider truncate max-w-[200px]">
             {type === 'category' ? (isRtl ? 'ترتيب المجموعات' : 'Category Order') : (isRtl ? 'ترتيب القنوات' : 'Channel Order')}: {name}
           </h3>
-          <button 
-            onClick={onClose} 
-            data-tv-modal="reorder"
-            data-tv-focusable="true"
-            tabIndex={0}
-            className="p-1 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 outline-none"
-          >
-            <X size={16} />
-          </button>
+          <div className="flex items-center gap-1 shrink-0">
+            <WindowPositionButton isRtl={isRtl} tvModalTag="reorder" />
+            <button 
+              onClick={onClose} 
+              data-tv-modal="reorder"
+              data-tv-focusable="true"
+              tabIndex={0}
+              className="p-1 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 outline-none"
+            >
+              <X size={16} />
+            </button>
+          </div>
         </div>
 
         {/* Current Position Tag */}

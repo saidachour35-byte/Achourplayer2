@@ -12,6 +12,7 @@ import { sanitizeM3uUrl } from '../utils/iptv';
 import { fetchLiveSubscriptionExpiry } from '../utils/subscription';
 import { ExtractionService } from '../utils/extractionService';
 import { pushBackHandler, BackPriority } from '../utils/tvNavigation';
+import { WindowPositionButton } from './WindowPositionBar';
 
 interface AddPlaylistModalProps {
   isOpen: boolean;
@@ -379,7 +380,7 @@ export default function AddPlaylistModal({
             </div>
             <div>
               <h2 className="text-lg sm:text-xl font-black text-white uppercase tracking-wider">{t('add_playlist')}</h2>
-              <span className="text-[10px] sm:text-xs text-gold font-bold">Achour TV System</span>
+              <span className="text-[10px] sm:text-xs text-gold font-bold">Achour Player System</span>
             </div>
           </div>
           <div className={`flex items-center gap-2 ${isRtl ? 'flex-row-reverse' : ''}`}>
@@ -404,6 +405,7 @@ export default function AddPlaylistModal({
               )}
               <span>{isRtl ? 'مسح بالذكاء الاصطناعي' : 'AI Scan'}</span>
             </button>
+            <WindowPositionButton isRtl={isRtl} />
             <button
               onClick={onClose}
               className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/10 transition-all"

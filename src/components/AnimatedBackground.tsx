@@ -83,10 +83,10 @@ export default function AnimatedBackground({ settings }: AnimatedBackgroundProps
       )}
 
       {/* Balanced Dark Contrast Overlay (preserves natural scenery while ensuring crisp text readability) */}
-      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/62 pointer-events-none" />
 
       {/* Top and Bottom Ambient Gradient Scrim (protects header, clock, channel lists & settings) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/75 pointer-events-none" />
     </div>
   );
 }

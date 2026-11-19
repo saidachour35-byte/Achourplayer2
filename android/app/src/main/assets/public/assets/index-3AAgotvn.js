@@ -63617,11 +63617,50 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Y = [
+const __iconNode$$ = [
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }],
+  ["path", { d: "M10 4v4", key: "pp8u80" }],
+  ["path", { d: "M2 8h20", key: "d11cs7" }],
+  ["path", { d: "M6 4v4", key: "1svtjw" }]
+];
+const AppWindow = createLucideIcon("app-window", __iconNode$$);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$_ = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$Y);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$_);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Z = [
+  ["path", { d: "m21 16-4 4-4-4", key: "f6ql7i" }],
+  ["path", { d: "M17 20V4", key: "1ejh1v" }],
+  ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
+  ["path", { d: "M7 4v16", key: "1glfcx" }]
+];
+const ArrowUpDown = createLucideIcon("arrow-up-down", __iconNode$Z);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Y = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }]
+];
+const Calendar = createLucideIcon("calendar", __iconNode$Y);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63629,76 +63668,73 @@ const ArrowLeft = createLucideIcon("arrow-left", __iconNode$Y);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$X = [
-  ["path", { d: "m21 16-4 4-4-4", key: "f6ql7i" }],
-  ["path", { d: "M17 20V4", key: "1ejh1v" }],
-  ["path", { d: "m3 8 4-4 4 4", key: "11wl7u" }],
-  ["path", { d: "M7 4v16", key: "1glfcx" }]
-];
-const ArrowUpDown = createLucideIcon("arrow-up-down", __iconNode$X);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$W = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }]
-];
-const Calendar = createLucideIcon("calendar", __iconNode$W);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$V = [
   ["rect", { width: "18", height: "14", x: "3", y: "5", rx: "2", ry: "2", key: "12ruh7" }],
   ["path", { d: "M7 15h4M15 15h2M7 11h2M13 11h4", key: "1ueiar" }]
 ];
-const Captions = createLucideIcon("captions", __iconNode$V);
+const Captions = createLucideIcon("captions", __iconNode$X);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$U = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$U);
+const __iconNode$W = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$W);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$T = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$T);
+const __iconNode$V = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$V);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$S = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$S);
+const __iconNode$U = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$U);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$R = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$R);
+const __iconNode$T = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$T);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Q = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$Q);
+const __iconNode$S = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$S);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$R = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$R);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Q = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$Q);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63706,29 +63742,6 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$Q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$P = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$P);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$O = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$O);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$N = [
   [
     "path",
     {
@@ -63738,14 +63751,14 @@ const __iconNode$N = [
   ],
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
 ];
-const CirclePlay = createLucideIcon("circle-play", __iconNode$N);
+const CirclePlay = createLucideIcon("circle-play", __iconNode$P);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$M = [
+const __iconNode$O = [
   [
     "path",
     { d: "M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z", key: "1tn4o7" }
@@ -63754,7 +63767,29 @@ const __iconNode$M = [
   ["path", { d: "m12.4 3.4 3.1 4", key: "6hsd6n" }],
   ["path", { d: "M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z", key: "ltgou9" }]
 ];
-const Clapperboard = createLucideIcon("clapperboard", __iconNode$M);
+const Clapperboard = createLucideIcon("clapperboard", __iconNode$O);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$N = [
+  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
+];
+const Clock = createLucideIcon("clock", __iconNode$N);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$M = [
+  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
+  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
+];
+const Copy = createLucideIcon("copy", __iconNode$M);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63762,28 +63797,6 @@ const Clapperboard = createLucideIcon("clapperboard", __iconNode$M);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$L = [
-  ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }],
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }]
-];
-const Clock = createLucideIcon("clock", __iconNode$L);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$K = [
-  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
-  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
-];
-const Copy = createLucideIcon("copy", __iconNode$K);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$J = [
   [
     "path",
     {
@@ -63801,14 +63814,14 @@ const __iconNode$J = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$J);
+const EyeOff = createLucideIcon("eye-off", __iconNode$L);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$I = [
+const __iconNode$K = [
   [
     "path",
     {
@@ -63818,28 +63831,28 @@ const __iconNode$I = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$I);
+const Eye = createLucideIcon("eye", __iconNode$K);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$H = [
+const __iconNode$J = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M10 9H8", key: "b1mrlr" }],
   ["path", { d: "M16 13H8", key: "t4e002" }],
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ];
-const FileText = createLucideIcon("file-text", __iconNode$H);
+const FileText = createLucideIcon("file-text", __iconNode$J);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$G = [
+const __iconNode$I = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M7 3v18", key: "bbkbws" }],
   ["path", { d: "M3 7.5h4", key: "zfgn84" }],
@@ -63849,7 +63862,32 @@ const __iconNode$G = [
   ["path", { d: "M17 7.5h4", key: "myr1c1" }],
   ["path", { d: "M17 16.5h4", key: "go4c1d" }]
 ];
-const Film = createLucideIcon("film", __iconNode$G);
+const Film = createLucideIcon("film", __iconNode$I);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$H = [
+  ["line", { x1: "22", x2: "2", y1: "6", y2: "6", key: "15w7dq" }],
+  ["line", { x1: "22", x2: "2", y1: "18", y2: "18", key: "1ip48p" }],
+  ["line", { x1: "6", x2: "6", y1: "2", y2: "22", key: "a2lnyx" }],
+  ["line", { x1: "18", x2: "18", y1: "2", y2: "22", key: "8vb6jd" }]
+];
+const Frame = createLucideIcon("frame", __iconNode$H);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$G = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$G);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63857,11 +63895,13 @@ const Film = createLucideIcon("film", __iconNode$G);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$F = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }],
+  ["path", { d: "M9 3v18", key: "fh3hqa" }],
+  ["path", { d: "M15 3v18", key: "14nvp0" }]
 ];
-const Globe = createLucideIcon("globe", __iconNode$F);
+const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$F);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63926,12 +63966,12 @@ const Layers = createLucideIcon("layers", __iconNode$C);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$B = [
-  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
-  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
-  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
-  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
 ];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$B);
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$B);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63939,19 +63979,6 @@ const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$B);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$A = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$A);
-/**
- * @license lucide-react v0.546.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$z = [
   ["path", { d: "M21 5H3", key: "1fi0y6" }],
   ["path", { d: "M10 12H3", key: "1ulcyk" }],
   ["path", { d: "M10 19H3", key: "108z41" }],
@@ -63963,15 +63990,26 @@ const __iconNode$z = [
     }
   ]
 ];
-const ListVideo = createLucideIcon("list-video", __iconNode$z);
+const ListVideo = createLucideIcon("list-video", __iconNode$A);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$y = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$y);
+const __iconNode$z = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$z);
+/**
+ * @license lucide-react v0.546.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$y = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+];
+const Lock = createLucideIcon("lock", __iconNode$y);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63979,10 +64017,11 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$y);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$x = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
 ];
-const Lock = createLucideIcon("lock", __iconNode$x);
+const LogOut = createLucideIcon("log-out", __iconNode$x);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -63990,11 +64029,12 @@ const Lock = createLucideIcon("lock", __iconNode$x);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$w = [
-  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
-  ["path", { d: "M21 12H9", key: "dn1m92" }],
-  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "m21 3-7 7", key: "1l2asr" }],
+  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
+  ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
 ];
-const LogOut = createLucideIcon("log-out", __iconNode$w);
+const Maximize2 = createLucideIcon("maximize-2", __iconNode$w);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64002,12 +64042,12 @@ const LogOut = createLucideIcon("log-out", __iconNode$w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$v = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "m21 3-7 7", key: "1l2asr" }],
-  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
-  ["path", { d: "M9 21H3v-6", key: "wtvkvv" }]
+  ["path", { d: "M8 3H5a2 2 0 0 0-2 2v3", key: "1dcmit" }],
+  ["path", { d: "M21 8V5a2 2 0 0 0-2-2h-3", key: "1e4gt3" }],
+  ["path", { d: "M3 16v3a2 2 0 0 0 2 2h3", key: "wsl5sc" }],
+  ["path", { d: "M16 21h3a2 2 0 0 0 2-2v-3", key: "18trek" }]
 ];
-const Maximize2 = createLucideIcon("maximize-2", __iconNode$v);
+const Maximize = createLucideIcon("maximize", __iconNode$v);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64015,12 +64055,12 @@ const Maximize2 = createLucideIcon("maximize-2", __iconNode$v);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$u = [
-  ["path", { d: "M8 3H5a2 2 0 0 0-2 2v3", key: "1dcmit" }],
-  ["path", { d: "M21 8V5a2 2 0 0 0-2-2h-3", key: "1e4gt3" }],
-  ["path", { d: "M3 16v3a2 2 0 0 0 2 2h3", key: "wsl5sc" }],
-  ["path", { d: "M16 21h3a2 2 0 0 0 2-2v-3", key: "18trek" }]
+  ["path", { d: "m14 10 7-7", key: "oa77jy" }],
+  ["path", { d: "M20 10h-6V4", key: "mjg0md" }],
+  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
+  ["path", { d: "M4 14h6v6", key: "rmj7iw" }]
 ];
-const Maximize = createLucideIcon("maximize", __iconNode$u);
+const Minimize2 = createLucideIcon("minimize-2", __iconNode$u);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64028,12 +64068,18 @@ const Maximize = createLucideIcon("maximize", __iconNode$u);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$t = [
-  ["path", { d: "m14 10 7-7", key: "oa77jy" }],
-  ["path", { d: "M20 10h-6V4", key: "mjg0md" }],
-  ["path", { d: "m3 21 7-7", key: "tjx5ai" }],
-  ["path", { d: "M4 14h6v6", key: "rmj7iw" }]
+  [
+    "path",
+    {
+      d: "M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z",
+      key: "vbtd3f"
+    }
+  ],
+  ["path", { d: "M12 17v4", key: "1riwvh" }],
+  ["path", { d: "M8 21h8", key: "1ev6f3" }],
+  ["rect", { x: "2", y: "3", width: "20", height: "14", rx: "2", key: "x3v2xh" }]
 ];
-const Minimize2 = createLucideIcon("minimize-2", __iconNode$t);
+const MonitorPlay = createLucideIcon("monitor-play", __iconNode$t);
 /**
  * @license lucide-react v0.546.0 - ISC
  *
@@ -64449,6 +64495,116 @@ const __iconNode = [
   ]
 ];
 const Zap = createLucideIcon("zap", __iconNode);
+const SCREEN_POSITION_CELLS = [
+  { id: "top-left", ar: "أعلى يسار", en: "Top Left" },
+  { id: "top", ar: "أعلى وسط", en: "Top" },
+  { id: "top-right", ar: "أعلى يمين", en: "Top Right" },
+  { id: "left", ar: "يسار", en: "Left" },
+  { id: "center", ar: "المنتصف", en: "Center" },
+  { id: "right", ar: "يمين", en: "Right" },
+  { id: "bottom-left", ar: "أسفل يسار", en: "Bottom Left" },
+  { id: "bottom", ar: "أسفل وسط", en: "Bottom" },
+  { id: "bottom-right", ar: "أسفل يمين", en: "Bottom Right" }
+];
+function setGlobalWindowPosition(pos) {
+  try {
+    document.documentElement.setAttribute("data-achour-window-pos", pos);
+    window.dispatchEvent(new CustomEvent("achour-window-pos-change", { detail: pos }));
+  } catch {
+  }
+}
+function getGlobalWindowPosition() {
+  if (typeof document === "undefined") return "center";
+  const attr = document.documentElement.getAttribute("data-achour-window-pos");
+  return attr || "center";
+}
+const WindowPositionButton = ({ isRtl = false, tvModalTag }) => {
+  const [open, setOpen] = reactExports.useState(false);
+  const [pos, setPos] = reactExports.useState(() => getGlobalWindowPosition());
+  const [anchor, setAnchor] = reactExports.useState(null);
+  const btnRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const sync = () => setPos(getGlobalWindowPosition());
+    window.addEventListener("achour-window-pos-change", sync);
+    return () => window.removeEventListener("achour-window-pos-change", sync);
+  }, []);
+  reactExports.useEffect(() => {
+    if (!open) return;
+    const closeOnOutside = () => setOpen(false);
+    const id2 = setTimeout(() => {
+      window.addEventListener("click", closeOnOutside);
+    }, 0);
+    return () => {
+      clearTimeout(id2);
+      window.removeEventListener("click", closeOnOutside);
+    };
+  }, [open]);
+  const modalAttr = tvModalTag ? { "data-tv-modal": tvModalTag } : {};
+  const toggleOpen = (e2) => {
+    e2.stopPropagation();
+    if (!open && btnRef.current) {
+      const rect = btnRef.current.getBoundingClientRect();
+      const popW = 196;
+      const popH = 156;
+      const left = Math.max(8, Math.min(window.innerWidth - popW - 8, rect.right - popW));
+      const top = rect.bottom + popH + 12 <= window.innerHeight ? rect.bottom + 8 : Math.max(8, rect.top - popH - 8);
+      setAnchor({ top, left });
+    }
+    setOpen((v2) => !v2);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "button",
+      {
+        ref: btnRef,
+        type: "button",
+        "data-tv-focusable": "true",
+        tabIndex: 0,
+        ...modalAttr,
+        onClick: toggleOpen,
+        title: isRtl ? "نقل موضع النافذة" : "Move Window Position",
+        className: `p-1.5 rounded-full transition-colors cursor-pointer outline-none shrink-0 ${open ? "bg-gold/25 text-gold" : "text-zinc-400 hover:text-gold hover:bg-white/10"}`,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 16 })
+      }
+    ),
+    open && anchor && typeof document !== "undefined" && reactDomExports.createPortal(
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          onClick: (e2) => e2.stopPropagation(),
+          dir: "ltr",
+          style: { position: "fixed", top: anchor.top, left: anchor.left, width: 196 },
+          className: "z-[99999] p-2.5 rounded-2xl bg-[#0b0e17] border border-gold/60 shadow-2xl",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-bold text-gold text-center mb-2", children: isRtl ? "نقل النافذة إلى:" : "Move Window To:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1.5", children: SCREEN_POSITION_CELLS.map((cell) => {
+              const active = pos === cell.id;
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  "data-tv-focusable": "true",
+                  tabIndex: 0,
+                  ...modalAttr,
+                  onClick: () => {
+                    setGlobalWindowPosition(cell.id);
+                    setPos(cell.id);
+                    setOpen(false);
+                  },
+                  title: isRtl ? cell.ar : cell.en,
+                  className: `h-8 rounded-lg border flex items-center justify-center transition-colors cursor-pointer ${active ? "bg-gold text-black border-gold" : "bg-white/[0.06] text-zinc-200 border-white/10 hover:border-gold/60 hover:text-gold"}`,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-2.5 h-2.5 rounded-sm ${active ? "bg-black" : "bg-gold/80"}` })
+                },
+                cell.id
+              );
+            }) })
+          ]
+        }
+      ),
+      document.body
+    )
+  ] });
+};
 function bind(fn2, thisArg) {
   return function wrap2() {
     return fn2.apply(thisArg, arguments);
@@ -68649,6 +68805,7 @@ const translations = {
     exit_app: "خروج من التطبيق",
     dashboard_layouts: "شكل واجهة التطبيق",
     dashboard_alignment: "موضع الأيقونات على الشاشة",
+    window_position: "موضع النوافذ على الشاشة",
     icon_size: "حجم الأيقونات العام",
     screen_zoom: "تكبير وتصغير الشاشة",
     players_title: "مشغلات الفيديو",
@@ -68824,6 +68981,7 @@ const translations = {
     exit_app: "Exit Application",
     dashboard_layouts: "App UI Layout Style",
     dashboard_alignment: "Icons Screen Position",
+    window_position: "Windows Screen Position",
     icon_size: "Global Icon Size",
     screen_zoom: "Screen Zoom & TV Scale",
     players_title: "Media Players",
@@ -68999,6 +69157,7 @@ const translations = {
     exit_app: "Anwendung beenden",
     dashboard_layouts: "App-Oberflächenlayout",
     dashboard_alignment: "Symbolposition auf dem Bildschirm",
+    window_position: "Fensterposition auf dem Bildschirm",
     icon_size: "Globale Symbolgröße",
     screen_zoom: "Bildschirmzoom & TV-Skalierung",
     players_title: "Mediaplayer",
@@ -69174,6 +69333,7 @@ const translations = {
     exit_app: "Quitter l'application",
     dashboard_layouts: "Style et disposition de l'interface",
     dashboard_alignment: "Position des icônes à l'écran",
+    window_position: "Position des fenêtres à l'écran",
     icon_size: "Taille globale des icônes",
     screen_zoom: "Zoom écran & TV",
     players_title: "Lecteurs multimédias",
@@ -69933,9 +70093,48 @@ function setTVFocus(target, options = { scroll: true }) {
       target.focus();
     }
   }
+  try {
+    if (document.documentElement.scrollTop !== 0) document.documentElement.scrollTop = 0;
+    if (document.body.scrollTop !== 0) document.body.scrollTop = 0;
+    if (window.scrollY !== 0 || window.scrollX !== 0) window.scrollTo(0, 0);
+  } catch {
+  }
   if (options.scroll !== false) {
     try {
-      target.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "auto" });
+      let p2 = target.parentElement;
+      while (p2 && p2 !== document.body && p2 !== document.documentElement) {
+        if (!p2.classList.contains("achour-app-shell") && !p2.hasAttribute("data-live-root")) {
+          const cs = window.getComputedStyle(p2);
+          const canScrollY = (cs.overflowY === "auto" || cs.overflowY === "scroll") && p2.scrollHeight > p2.clientHeight + 2;
+          const canScrollX = (cs.overflowX === "auto" || cs.overflowX === "scroll") && p2.scrollWidth > p2.clientWidth + 2;
+          if (canScrollY || canScrollX) {
+            const pRect = p2.getBoundingClientRect();
+            const tRect = target.getBoundingClientRect();
+            if (canScrollY && pRect.height > 0) {
+              const scaleY2 = p2.clientHeight / pRect.height;
+              const topRel = (tRect.top - pRect.top) * scaleY2;
+              const botRel = (tRect.bottom - pRect.top) * scaleY2;
+              if (topRel < 8) {
+                p2.scrollTop = Math.max(0, p2.scrollTop + topRel - 8);
+              } else if (botRel + 8 > p2.clientHeight) {
+                p2.scrollTop = Math.max(0, p2.scrollTop + botRel + 8 - p2.clientHeight);
+              }
+            }
+            if (canScrollX && pRect.width > 0) {
+              const scaleX2 = p2.clientWidth / pRect.width;
+              const leftRel = (tRect.left - pRect.left) * scaleX2;
+              const rightRel = (tRect.right - pRect.left) * scaleX2;
+              if (leftRel < 8) {
+                p2.scrollLeft = Math.max(0, p2.scrollLeft + leftRel - 8);
+              } else if (rightRel + 8 > p2.clientWidth) {
+                p2.scrollLeft = Math.max(0, p2.scrollLeft + rightRel + 8 - p2.clientWidth);
+              }
+            }
+            break;
+          }
+        }
+        p2 = p2.parentElement;
+      }
     } catch {
     }
   }
@@ -73701,12 +73900,13 @@ function PlaylistManager({ userId, settings, onUpdateSettings, onBack }) {
     }
   };
   const deleteTrialPlaylists = async () => {
-    const trialName = "Achour TV Trial (قنوات وأفلام تجريبية)";
+    const trialName = "Achour Player Trial (قنوات وأفلام تجريبية)";
+    const legacyTrialName = "Achour TV Trial (قنوات وأفلام تجريبية)";
     try {
       const rawLocal = localStorage.getItem("achour_local_playlists");
       if (rawLocal) {
         const list = JSON.parse(rawLocal);
-        const filtered = list.filter((p2) => p2.name !== trialName);
+        const filtered = list.filter((p2) => p2.name !== trialName && p2.name !== legacyTrialName);
         if (filtered.length !== list.length) {
           localStorage.setItem("achour_local_playlists", JSON.stringify(filtered));
         }
@@ -74274,16 +74474,19 @@ function PlaylistManager({ userId, settings, onUpdateSettings, onBack }) {
                     ] })
                   ] })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "button",
-                  {
-                    "data-tv-focusable": "true",
-                    tabIndex: 0,
-                    onClick: () => setInspectPlaylist(null),
-                    className: "p-1.5 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer",
-                    children: "✕"
-                  }
-                )
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => setInspectPlaylist(null),
+                      className: "p-1.5 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer",
+                      children: "✕"
+                    }
+                  )
+                ] })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2.5 py-1 text-xs", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
@@ -113277,35 +113480,16 @@ const VodPlayerModal = ({
     activeWebVideoRef.current = video;
     video.muted = isMuted;
     video.volume = volume;
+    if (isLive) {
+      video.defaultPlaybackRate = 1;
+      video.playbackRate = 1;
+    }
     const rawSourceNoQuery = String(playUrl || rawActiveStreamUrl || "").split("?")[0].toLowerCase();
     const isDirectVideoContainer = /\.(mp4|mkv|avi|mov|webm|m4v|flv|wmv|ts)$/i.test(rawSourceNoQuery);
     const isExplicitHls = rawSourceNoQuery.includes(".m3u8") || rawSourceNoQuery.includes("smil:") || String(activeStreamUrl || "").toLowerCase().includes(".m3u8");
     const isHls = isLive ? isExplicitHls || !/\.(mp4|mkv|avi|mov|webm|m4v|flv)$/i.test(rawSourceNoQuery) : isExplicitHls || !isDirectVideoContainer;
     if (Hls.isSupported() && isHls) {
       let hls = hlsRef.current;
-      if (hls && isLive && hls.media === video) {
-        try {
-          hls.stopLoad();
-          hls.loadSource(activeStreamUrl);
-          if (video.paused && isPlaying) {
-            video.play().catch(() => {
-            });
-          }
-          return () => {
-            try {
-              hls == null ? void 0 : hls.stopLoad();
-            } catch (e2) {
-            }
-          };
-        } catch {
-          try {
-            hls.destroy();
-          } catch (e2) {
-          }
-          hlsRef.current = null;
-          hls = null;
-        }
-      }
       if (hls) {
         const oldMedia = hls.media;
         try {
@@ -113333,13 +113517,16 @@ const VodPlayerModal = ({
         maxBufferLength: isLive ? 10 : lowMem ? 20 : 60,
         maxMaxBufferLength: isLive ? lowMem ? 16 : 24 : lowMem ? 45 : 120,
         maxBufferSize: isLive ? lowMem ? 16 * 1024 * 1024 : 32 * 1024 * 1024 : lowMem ? 48 * 1024 * 1024 : 128 * 1024 * 1024,
-        liveSyncDurationCount: isLive ? 3 : 2,
-        liveMaxLatencyDurationCount: isLive ? 8 : Infinity,
+        liveSyncDurationCount: isLive ? 4 : 2,
+        liveMaxLatencyDurationCount: isLive ? 10 : Infinity,
+        liveDurationInfinity: isLive,
+        maxLiveSyncPlaybackRate: 1,
+        maxAudioFramesDrift: 1,
         maxBufferHole: 0.5,
-        highBufferWatchdogPeriod: isLive ? 1 : 0,
+        highBufferWatchdogPeriod: isLive ? 2 : 0,
         maxStarvationDelay: isLive ? 3 : 4,
         nudgeOffset: 0.1,
-        nudgeMaxRetry: 5,
+        nudgeMaxRetry: 3,
         manifestLoadingMaxRetry: 3,
         manifestLoadingRetryDelay: isLive ? 200 : 350,
         levelLoadingMaxRetry: 3,
@@ -113480,28 +113667,21 @@ const VodPlayerModal = ({
         }
       });
       return () => {
-        if (isLive && hlsRef.current) {
+        if (hlsRef.current) {
           try {
             hlsRef.current.stopLoad();
+            hlsRef.current.detachMedia();
+            hlsRef.current.destroy();
           } catch (e2) {
           }
-        } else {
-          if (hlsRef.current) {
-            try {
-              hlsRef.current.stopLoad();
-              hlsRef.current.detachMedia();
-              hlsRef.current.destroy();
-            } catch (e2) {
-            }
-            hlsRef.current = null;
-          }
-          if (video) {
-            try {
-              video.pause();
-              video.removeAttribute("src");
-              video.load();
-            } catch (e2) {
-            }
+          hlsRef.current = null;
+        }
+        if (video) {
+          try {
+            video.pause();
+            video.removeAttribute("src");
+            video.load();
+          } catch (e2) {
           }
         }
       };
@@ -114671,8 +114851,8 @@ const VodPlayerModal = ({
                             ) })
                           ] }),
                           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end shrink-0 px-2 text-right", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base sm:text-xl font-mono font-black text-white leading-tight whitespace-nowrap", children: formattedClockTime }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] sm:text-sm font-bold text-zinc-300 leading-tight whitespace-nowrap", children: formattedClockDate })
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base sm:text-xl font-mono font-black text-gold leading-tight whitespace-nowrap", style: { color: "var(--theme-primary)" }, children: formattedClockTime }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] sm:text-sm font-bold text-gold opacity-85 leading-tight whitespace-nowrap", style: { color: "var(--theme-primary)" }, children: formattedClockDate })
                           ] }),
                           onToggleFavorite && /* @__PURE__ */ jsxRuntimeExports.jsx(
                             "button",
@@ -114731,8 +114911,8 @@ const VodPlayerModal = ({
                                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 min-w-0", children: [
                                   /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xs sm:text-sm font-black text-white truncate leading-tight", children: displayTitle }),
                                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end shrink-0 text-right", children: [
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono font-black text-white leading-tight whitespace-nowrap", children: formattedClockTime }),
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] font-bold text-zinc-300 leading-tight whitespace-nowrap", children: formattedClockDate })
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono font-black text-gold leading-tight whitespace-nowrap", style: { color: "var(--theme-primary)" }, children: formattedClockTime }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] font-bold text-gold opacity-85 leading-tight whitespace-nowrap", style: { color: "var(--theme-primary)" }, children: formattedClockDate })
                                   ] })
                                 ] }),
                                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 mt-0.5 min-w-0", children: [
@@ -115403,6 +115583,7 @@ function EPGGrid({ isOpen, onClose, channels, epgData, onSelectChannel, settings
       initial: { opacity: 0, scale: 0.95 },
       animate: { opacity: 1, scale: 1 },
       exit: { opacity: 0, scale: 0.95 },
+      "data-modal-fullscreen": "true",
       className: "fixed inset-0 z-[100] flex flex-col achour-modal-backdrop p-4 sm:p-8",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-6", children: [
@@ -116645,17 +116826,20 @@ function PositionEditModal({
                 ": ",
                 name2
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  onClick: onClose,
-                  "data-tv-modal": "reorder",
-                  "data-tv-focusable": "true",
-                  tabIndex: 0,
-                  className: "p-1 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 outline-none",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
-                }
-              )
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl, tvModalTag: "reorder" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    onClick: onClose,
+                    "data-tv-modal": "reorder",
+                    "data-tv-focusable": "true",
+                    tabIndex: 0,
+                    className: "p-1 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 outline-none",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
+                  }
+                )
+              ] })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center py-1 bg-white/[0.05] rounded-xl border border-white/10", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-bold text-gold uppercase tracking-widest block", children: isRtl ? "الترتيب الحالي" : "Current Position" }),
@@ -116882,15 +117066,6 @@ const getWatchHistory = (type, playlistId) => {
     return list;
   }
   return Array.isArray(list) ? list : [];
-};
-const getWatchHistoryTotalCount = (type, playlistId) => {
-  const map = readMap(type);
-  let total = 0;
-  for (const key of Object.keys(map.byPlaylist)) {
-    const arr = map.byPlaylist[key];
-    if (Array.isArray(arr)) total += arr.length;
-  }
-  return total;
 };
 const addToWatchHistory = (type, item, playlistId) => {
   const compact = compactHistoryEntry(item, type);
@@ -117311,7 +117486,7 @@ const LiveHeaderClock = React$2.memo(({ language, timeFormat }) => {
       minute: "2-digit",
       hour12: timeFormat === "12h"
     }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-medium text-zinc-400 font-sans mt-0.5 whitespace-nowrap", children: now2.toLocaleDateString(loc, {
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-medium text-gold opacity-85 font-sans mt-0.5 whitespace-nowrap", style: { color: "var(--theme-primary)" }, children: now2.toLocaleDateString(loc, {
       weekday: "short",
       day: "numeric",
       month: "short"
@@ -117617,7 +117792,7 @@ const MultiViewSlotPlayer = ({
           slotIndex,
           activeStreamUrl,
           JSON.stringify({
-            title: channel2.name || "Achour TV",
+            title: channel2.name || "Achour Player",
             isLive: true,
             autoPlay: true,
             muted: isMutedRef.current,
@@ -117669,10 +117844,20 @@ const MultiViewSlotPlayer = ({
     }
     const video = videoRef.current;
     if (!video) return;
+    video.defaultPlaybackRate = 1;
+    video.playbackRate = 1;
     if (Hls.isSupported()) {
       const hls = new Hls({
-        maxBufferLength: 8,
-        maxMaxBufferLength: 15,
+        lowLatencyMode: false,
+        maxBufferLength: 10,
+        maxMaxBufferLength: 18,
+        liveSyncDurationCount: 4,
+        liveMaxLatencyDurationCount: 10,
+        liveDurationInfinity: true,
+        maxLiveSyncPlaybackRate: 1,
+        maxAudioFramesDrift: 1,
+        highBufferWatchdogPeriod: 2,
+        nudgeMaxRetry: 3,
         enableWorker: true,
         capLevelToPlayerSize: true
       });
@@ -117867,7 +118052,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       try {
         const isFav = favorites.includes((targetItem == null ? void 0 : targetItem.stream_id) || "");
         native.playMedia(finalUrl, JSON.stringify({
-          title: (targetItem == null ? void 0 : targetItem.name) || "Achour TV",
+          title: (targetItem == null ? void 0 : targetItem.name) || "Achour Player",
           logo: (targetItem == null ? void 0 : targetItem.stream_icon) || "",
           stream_id: (targetItem == null ? void 0 : targetItem.stream_id) || "",
           type: mediaType,
@@ -118347,40 +118532,31 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
   const scrollModalItemIntoContainer = reactExports.useCallback(
     (container, child, axis) => {
       if (!container || !child) return;
-      let offsetY = 0;
-      let offsetX = 0;
-      let node = child;
-      while (node && node !== container) {
-        offsetY += node.offsetTop;
-        offsetX += node.offsetLeft;
-        node = node.offsetParent;
-      }
-      if (node !== container) {
-        offsetY = child.offsetTop;
-        offsetX = child.offsetLeft;
-      }
-      if (axis === "y") {
-        const pad = 10;
-        const itemTop = offsetY;
-        const itemBottom = offsetY + child.offsetHeight;
-        const viewTop = container.scrollTop;
-        const viewBottom = viewTop + container.clientHeight;
-        if (itemTop - pad < viewTop) {
-          container.scrollTop = Math.max(0, itemTop - pad);
-        } else if (itemBottom + pad > viewBottom) {
-          container.scrollTop = Math.max(0, itemBottom + pad - container.clientHeight);
+      try {
+        const contRect = container.getBoundingClientRect();
+        const childRect = child.getBoundingClientRect();
+        if (axis === "y" && contRect.height > 0) {
+          const pad = 8;
+          const scaleY2 = container.clientHeight / contRect.height;
+          const relTop = (childRect.top - contRect.top) * scaleY2;
+          const relBottom = (childRect.bottom - contRect.top) * scaleY2;
+          if (relTop < pad) {
+            container.scrollTop = Math.max(0, container.scrollTop + relTop - pad);
+          } else if (relBottom + pad > container.clientHeight) {
+            container.scrollTop = Math.max(0, container.scrollTop + relBottom + pad - container.clientHeight);
+          }
+        } else if (axis === "x" && contRect.width > 0) {
+          const pad = 10;
+          const scaleX2 = container.clientWidth / contRect.width;
+          const relLeft = (childRect.left - contRect.left) * scaleX2;
+          const relRight = (childRect.right - contRect.left) * scaleX2;
+          if (relLeft < pad) {
+            container.scrollLeft = Math.max(0, container.scrollLeft + relLeft - pad);
+          } else if (relRight + pad > container.clientWidth) {
+            container.scrollLeft = Math.max(0, container.scrollLeft + relRight + pad - container.clientWidth);
+          }
         }
-      } else {
-        const pad = 12;
-        const itemLeft = offsetX;
-        const itemRight = offsetX + child.offsetWidth;
-        const viewLeft = container.scrollLeft;
-        const viewRight = viewLeft + container.clientWidth;
-        if (itemLeft - pad < viewLeft) {
-          container.scrollLeft = Math.max(0, itemLeft - pad);
-        } else if (itemRight + pad > viewRight) {
-          container.scrollLeft = Math.max(0, itemRight + pad - container.clientWidth);
-        }
+      } catch {
       }
     },
     []
@@ -120826,8 +121002,8 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("header", { className: `${isViewingFullscreen ? "hidden" : "flex"} relative z-30 h-16 items-center justify-between px-6 bg-transparent shrink-0`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 items-center w-full gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex items-center justify-start min-w-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-base font-black text-gold tracking-tighter uppercase italic leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center min-w-0 gap-3", children: (mediaType === "live" || mediaType === "favorites") && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-xs sm:text-sm font-bold text-zinc-200", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "select-none text-zinc-300 font-bold", children: "Multi View" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center min-w-0 gap-3", children: (mediaType === "live" || mediaType === "favorites") && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-xs sm:text-sm font-bold text-gold", style: { color: "var(--theme-primary)" }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "select-none text-gold font-bold", style: { color: "var(--theme-primary)" }, children: "Multi View" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: [1, 2, 4].map((modeNum, idx) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               "button",
               {
@@ -120865,7 +121041,8 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                     if (el) setTVFocus(el, { scroll: false });
                   }, 50);
                 },
-                className: `px-2.5 py-1 rounded-md bg-transparent flex items-center justify-center font-mono font-black text-sm sm:text-base transition-colors cursor-pointer outline-none ${multiViewActive && multiViewMode === modeNum ? "text-gold" : "text-white/80 hover:text-gold"}`,
+                style: { color: "var(--theme-primary)" },
+                className: `px-2.5 py-1 rounded-md flex items-center justify-center font-mono font-black text-sm sm:text-base transition-all cursor-pointer outline-none ${multiViewActive && multiViewMode === modeNum ? "text-gold bg-gold/20 border border-gold/60 shadow-[0_0_12px_var(--theme-glow)] scale-105 opacity-100" : "bg-transparent text-gold opacity-85 hover:opacity-100"}`,
                 children: modeNum
               },
               modeNum
@@ -121098,32 +121275,35 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                     animate: { scale: 1, opacity: 1 },
                     exit: { scale: 0.98, opacity: 0 },
                     transition: { duration: 0.04 },
-                    className: `achour-tv-details-popup w-[86%] sm:w-[82%] max-w-4xl ${hasSeasonsSection ? "h-[86%] max-h-[88%]" : "max-h-[82%]"} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? "font-cairo text-right" : "text-left"}`,
+                    className: `achour-tv-details-popup w-[88%] sm:w-[70%] max-w-xl ${hasSeasonsSection ? "h-[70vh] sm:h-[72vh] max-h-[74vh]" : "max-h-[70vh]"} achour-glass-modal rounded-2xl p-2.5 sm:p-3.5 flex flex-col overflow-hidden ${isRtl ? "font-cairo text-right" : "text-left"}`,
                     children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between pb-2 border-b border-white/10 shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-2.5 min-w-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0", children: mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 16 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 16 }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between pb-1.5 border-b border-white/10 shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center gap-2 min-w-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 rounded-xl bg-gold/20 text-gold shrink-0", children: mediaType === "movie" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Film, { size: 15 }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Clapperboard, { size: 15 }) }),
                           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm sm:text-base font-black text-white uppercase tracking-wider truncate", children: movieDetailsModal.name }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5", children: (movieDetailsModal == null ? void 0 : movieDetailsModal.category_name) || (mediaType === "movie" ? isRtl ? "فيلم سينمائي" : "Movie" : isRtl ? "مسلسل تلفزيوني" : "TV Series") })
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xs sm:text-sm font-black text-white uppercase tracking-wider truncate", children: movieDetailsModal.name }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-gold/85 font-bold uppercase truncate", children: (movieDetailsModal == null ? void 0 : movieDetailsModal.category_name) || (mediaType === "movie" ? isRtl ? "فيلم سينمائي" : "Movie" : isRtl ? "مسلسل تلفزيوني" : "TV Series") })
                           ] })
                         ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "button",
-                          {
-                            "data-tv-focusable": "true",
-                            "data-tv-modal": "details",
-                            "data-modal-role": "close",
-                            tabIndex: 0,
-                            onClick: () => setMovieDetailsModal(null),
-                            className: "p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0",
-                            title: isRtl ? "إغلاق (Esc)" : "Close (Esc)",
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
-                          }
-                        )
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl, tvModalTag: "details" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "button",
+                            {
+                              "data-tv-focusable": "true",
+                              "data-tv-modal": "details",
+                              "data-modal-role": "close",
+                              tabIndex: 0,
+                              onClick: () => setMovieDetailsModal(null),
+                              className: "p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0",
+                              title: isRtl ? "إغلاق (Esc)" : "Close (Esc)",
+                              children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 17 })
+                            }
+                          )
+                        ] })
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${hasSeasonsSection ? "py-1.5" : "py-2"} flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${hasSeasonsSection ? "w-14 sm:w-16 md:w-20" : "w-20 sm:w-24 md:w-28"} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${hasSeasonsSection ? "py-1.5 gap-2.5" : "py-2 gap-3 sm:gap-4"} flex flex-row items-start shrink-0 ${isRtl ? "flex-row-reverse" : ""}`, children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${hasSeasonsSection ? "w-11 sm:w-14" : "w-16 sm:w-22 md:w-24"} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "img",
                           {
                             src: ((_d2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _d2.cover_big) || ((_e2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _e2.movie_image) || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo,
@@ -121137,25 +121317,25 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                             alt: ""
                           }
                         ) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col gap-1.5 sm:gap-2 min-w-0", children: [
-                          (resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center flex-wrap gap-1.5 text-[11px] sm:text-xs font-bold", children: [
-                            resolvedRating && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 flex flex-col gap-1 min-w-0", children: [
+                          (resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center flex-wrap gap-1 text-[10px] sm:text-[11px] font-bold", children: [
+                            resolvedRating && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-1.5 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30", children: [
                               "★ ",
                               resolvedRating
                             ] }),
-                            resolvedRelease && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedRelease }),
-                            resolvedDuration && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedDuration }),
-                            resolvedGenre && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[260px]", children: resolvedGenre })
+                            resolvedRelease && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedRelease }),
+                            !hasSeasonsSection && resolvedDuration && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10", children: resolvedDuration }),
+                            resolvedGenre && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[200px]", children: resolvedGenre })
                           ] }),
                           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5", children: isRtl ? "قصة العمل" : "Synopsis & Plot" }),
-                            detailLoading && !resolvedPlot ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 py-1.5 text-gold text-xs font-bold", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" }),
+                            !hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5", children: isRtl ? "قصة العمل" : "Synopsis & Plot" }),
+                            detailLoading && !resolvedPlot ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 py-1 text-gold text-xs font-bold", children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-3.5 h-3.5 border-2 border-gold border-t-transparent rounded-full animate-spin" }),
                               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "جاري تحميل التفاصيل..." : "Loading details..." })
-                            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `text-xs sm:text-sm text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? "line-clamp-2" : "max-h-36 overflow-y-auto no-scrollbar"}`, children: resolvedPlot || (isRtl ? "لا تتوفر قصة لهذا العمل في بيانات الاشتراك." : "No synopsis provided by the playlist.") })
+                            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: `text-[11px] sm:text-xs text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? "line-clamp-1 sm:line-clamp-2" : "max-h-32 overflow-y-auto no-scrollbar"}`, children: resolvedPlot || (isRtl ? "لا تتوفر قصة لهذا العمل في بيانات الاشتراك." : "No synopsis provided by the playlist.") })
                           ] }),
-                          (resolvedCast || resolvedDirector) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-xs", children: [
-                            resolvedCast && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: hasSeasonsSection ? "truncate text-zinc-300" : "line-clamp-2 text-zinc-300", children: [
+                          !hasSeasonsSection && (resolvedCast || resolvedDirector) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-0.5 text-xs", children: [
+                            resolvedCast && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "line-clamp-2 text-zinc-300", children: [
                               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-black uppercase text-gold tracking-wider", children: isRtl ? "طاقم التمثيل: " : "Cast: " }),
                               resolvedCast
                             ] }),
@@ -121164,7 +121344,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                               resolvedDirector
                             ] })
                           ] }),
-                          Boolean(
+                          !hasSeasonsSection && Boolean(
                             ((_f2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _f2.subtitles) && (mediaDetailInfo.info.subtitles.length > 0 || Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_g2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _g2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0 || ((_h2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _h2.audio) || ((_i2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _i2.audio_streams)
                           ) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2 rounded-xl bg-white/[0.05] border border-white/10 flex flex-col gap-1.5", children: [
                             Boolean(((_j2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.info) == null ? void 0 : _j2.subtitles) && (Array.isArray(mediaDetailInfo.info.subtitles) ? mediaDetailInfo.info.subtitles.length > 0 : Object.keys(mediaDetailInfo.info.subtitles).length > 0) || ((_k2 = mediaDetailInfo == null ? void 0 : mediaDetailInfo.movie_data) == null ? void 0 : _k2.subtitles) && mediaDetailInfo.movie_data.subtitles.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 flex-wrap", children: [
@@ -121190,21 +121370,19 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                           ] })
                         ] })
                       ] }),
-                      hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-h-0 flex flex-col border-t border-white/10 pt-2 overflow-hidden", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "shrink-0 space-y-1 pb-1.5", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-black uppercase text-gold tracking-widest", children: isRtl ? "المواسم والحلقات" : "Seasons & Episodes" }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] sm:text-xs text-zinc-400 font-bold", children: [
-                              seriesSeasonsData.length,
-                              " ",
-                              isRtl ? "مواسم" : "Seasons"
-                            ] })
+                      hasSeasonsSection && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-h-0 flex flex-col border-t border-white/10 pt-1.5 overflow-hidden", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "shrink-0 flex items-center gap-2.5 pb-1.5", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-[11px] sm:text-xs font-black uppercase text-gold tracking-wider shrink-0", children: [
+                            isRtl ? "المواسم" : "Seasons",
+                            " (",
+                            seriesSeasonsData.length,
+                            ")"
                           ] }),
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
                             "div",
                             {
                               ref: detailsSeasonsScrollRef,
-                              className: "relative flex items-center gap-2.5 overflow-x-auto no-scrollbar px-1.5 py-1.5",
+                              className: "relative flex-1 flex items-center gap-2 overflow-x-auto no-scrollbar px-1 py-0.5",
                               children: seriesSeasonsData.map((s, sIdx) => {
                                 const isSelected = selectedSeasonNum === s.seasonNumber;
                                 return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -121216,7 +121394,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                                     "data-season-active": isSelected ? "true" : "false",
                                     tabIndex: 0,
                                     onClick: () => setSelectedSeasonNum(s.seasonNumber),
-                                    className: `px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${isSelected ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:text-white hover:border-gold/50"}`,
+                                    className: `px-3 py-1 rounded-lg text-[11px] sm:text-xs font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${isSelected ? "bg-gold text-black border-gold" : "bg-white/[0.06] border-white/15 text-zinc-200 hover:text-white hover:border-gold/50"}`,
                                     children: s.title
                                   },
                                   `${s.seasonNumber}-${sIdx}`
@@ -121229,7 +121407,8 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                           "div",
                           {
                             ref: detailsEpisodesScrollRef,
-                            className: "relative flex-1 min-h-[180px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5",
+                            style: { scrollPaddingTop: 8, scrollPaddingBottom: 8 },
+                            className: "relative flex-1 min-h-0 overflow-y-auto no-scrollbar flex flex-col gap-2 py-2 px-1",
                             children: activeEpisodes.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-6 text-center text-xs sm:text-sm text-zinc-400 font-medium", children: detailLoading ? isRtl ? "جاري تحميل الحلقات..." : "Loading episodes..." : isRtl ? "لا توجد حلقات متاحة لهذا الموسم." : "No episodes available for this season." }) : activeEpisodes.map((ep, epIdx) => {
                               const epCleanId = cleanVodEntityId(
                                 ep.xtream_id || ep.stream_id,
@@ -121254,6 +121433,7 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                                 {
                                   "data-tv-focusable": "true",
                                   "data-tv-modal": "details",
+                                  "data-tv-focus-inset": "true",
                                   "data-episode-item": "true",
                                   "data-episode-id": epCleanId,
                                   "data-episode-resume": hasEpResume ? "true" : "false",
@@ -121273,21 +121453,21 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
                                       setMovieDetailsModal(null);
                                     }
                                   },
-                                  className: `flex items-center justify-between p-2.5 rounded-xl border transition-colors group cursor-pointer outline-none ${hasEpResume ? "bg-gold/[0.08] border-gold/45 hover:border-gold hover:bg-gold/15" : "bg-white/[0.05] border-white/15 hover:border-gold/60 hover:bg-gold/15"}`,
+                                  className: `shrink-0 min-h-[42px] flex items-center justify-between px-3 py-2 rounded-xl border transition-colors group cursor-pointer outline-none ${hasEpResume ? "bg-gold/[0.08] border-gold/45 hover:border-gold hover:bg-gold/15" : "bg-white/[0.05] border-white/15 hover:border-gold/60 hover:bg-gold/15"}`,
                                   children: [
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs sm:text-sm shrink-0", children: ep.episode || epIdx + 1 }),
-                                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 flex-1 ${isRtl ? "mr-3" : "ml-3"}`, children: [
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs shrink-0", children: ep.episode || epIdx + 1 }),
+                                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 flex-1 ${isRtl ? "mr-2.5" : "ml-2.5"}`, children: [
                                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 min-w-0", children: [
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors whitespace-normal break-words leading-snug flex-1", children: ep.name }),
-                                        isEpCompleted && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1", children: [
+                                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors truncate flex-1 leading-tight", children: ep.name }),
+                                        isEpCompleted && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-1.5 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1", children: [
                                           /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 10 }),
                                           isRtl ? "تمت المشاهدة" : "Watched"
                                         ] }),
-                                        hasEpResume && epProg && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0", children: isRtl ? `توقفت عند ${formatPlaybackClock(epProg.positionSec)}` : `Paused ${formatPlaybackClock(epProg.positionSec)}` })
+                                        hasEpResume && epProg && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0", children: isRtl ? `توقفت عند ${formatPlaybackClock(epProg.positionSec)}` : `Paused ${formatPlaybackClock(epProg.positionSec)}` })
                                       ] }),
-                                      epPct > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-gold rounded-full", style: { width: `${epPct}%` } }) })
+                                      epPct > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-gold rounded-full", style: { width: `${epPct}%` } }) })
                                     ] }),
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 14, className: "text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" })
+                                    /* @__PURE__ */ jsxRuntimeExports.jsx(Play, { size: 13, className: "text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" })
                                   ]
                                 },
                                 `${ep.stream_id}-${epIdx}`
@@ -121508,13 +121688,13 @@ function LivePlayer({ onBack, settings, onUpdateSettings, userId, initialType = 
 const ROYAL_THEMES = [
   {
     id: "pure-metallic-gold",
-    nameAr: "✨ الذهب الخالص المسبوك عيار 24 (مميز)",
-    nameEn: "24K Pure Cast Metallic Gold",
-    primary: "#E5C158",
-    secondary: "#B38B21",
-    accent: "#FFF6D1",
-    glow: "rgba(229, 193, 88, 0.6)",
-    gradient: "from-[#F3D068] via-[#C5A059] to-[#8C6D27]"
+    nameAr: "✨ الذهب المعدني الحقيقي (#D4AF37)",
+    nameEn: "True 24K Metallic Gold (#D4AF37)",
+    primary: "#D4AF37",
+    secondary: "#8C6A1D",
+    accent: "#F5E6A8",
+    glow: "rgba(212, 175, 55, 0.58)",
+    gradient: "from-[#F5E6A8] via-[#D4AF37] to-[#8C6A1D]"
   },
   {
     id: "royal-bronze",
@@ -121568,13 +121748,13 @@ const ROYAL_THEMES = [
   },
   {
     id: "royal-gold",
-    nameAr: "الذهب الملكي الإمبراطوري",
-    nameEn: "Imperial Royal Gold",
+    nameAr: "الذهب الملكي المسبوك",
+    nameEn: "Imperial Metallic Gold",
     primary: "#D4AF37",
-    secondary: "#996515",
-    accent: "#FFF2A3",
-    glow: "rgba(212, 175, 55, 0.45)",
-    gradient: "from-[#D4AF37] via-[#AA771C] to-[#85580C]"
+    secondary: "#8C6A1D",
+    accent: "#F5E6A8",
+    glow: "rgba(212, 175, 55, 0.52)",
+    gradient: "from-[#F5E6A8] via-[#D4AF37] to-[#B8860B]"
   },
   {
     id: "emerald-palace",
@@ -122284,39 +122464,6 @@ const ICON_3D_STYLES = [
     iconProps: { strokeWidth: 2.5 }
   }
 ];
-const ICON_STYLE_GLYPH_MAP = {
-  "style-borderless-pure": "cinema",
-  "style-borderless-neon": "neon",
-  "style-borderless-soft": "crystal",
-  "style-borderless-shadow": "broadcast",
-  "style-borderless-gradient": "retro",
-  "style-borderless-minimal": "cinema",
-  "style-borderless-vibrant": "neon",
-  "style-borderless-crystal": "crystal",
-  "style-borderless-pearl": "crystal",
-  "style-borderless-sunset": "cinema",
-  "style-royal-3d": "crystal",
-  "style-chrome-3d": "broadcast",
-  "style-flat-minimalist": "retro",
-  "style-neon-box": "neon",
-  "style-glassmorphism": "crystal",
-  "style-cartoon-clay": "retro",
-  "style-brushed-metal": "broadcast",
-  "style-colorful-gradient": "cinema",
-  "style-dashed-outline": "broadcast",
-  "style-rounded-pill": "crystal",
-  "style-cyberpunk-glitch": "neon",
-  "style-jewel-crystal": "crystal",
-  "style-luxury-matte": "cinema",
-  "style-futuristic-tech": "broadcast",
-  "style-stitched-leather": "retro",
-  "style-polished-wood": "cinema",
-  "style-iridescent-hologram": "crystal",
-  "style-pixel-retro-8bit": "retro",
-  "style-scifi-hud-display": "broadcast",
-  "style-carbon-fiber-tech": "neon"
-};
-const getIconGlyphVariant = (style2) => style2.glyphVariant || ICON_STYLE_GLYPH_MAP[style2.id] || "cinema";
 const APP_BACKGROUNDS = [
   {
     id: "bg-raouche-rocks-beirut",
@@ -122799,272 +122946,327 @@ const APP_BACKGROUNDS = [
     renderClass: "bg-raindrops-night-window"
   }
 ];
-const DASHBOARD_LAYOUTS = [
-  {
-    id: "layout-frameless-icons",
-    nameAr: "1. أيقونات فقط دون إطارات",
-    nameEn: "1. Icons Only (No Frames)",
-    descriptionAr: "عرض أيقونات التطبيق فقط مباشرة فوق خلفية الشاشة دون أي إطارات أو بطاقات",
-    descriptionEn: "Clean icons directly over your background with no frames or cards",
-    previewBg: "from-transparent via-transparent to-black/35"
-  },
-  {
-    id: "layout-pure-icons",
-    nameAr: "2. واجهة الأيقونات الزجاجية الحرة",
-    nameEn: "2. Pure App Icons Showcase",
-    descriptionAr: "أيقونات التطبيق بإطار خفيف شفاف يتفاعل مباشرة مع شكل الأيقونة ولون الثيم",
-    descriptionEn: "Clean translucent app icons driven by your Icon Style and Theme Color",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-glass-hero-dock",
-    nameAr: "3. المنصة الزجاجية والشريط السفلي",
-    nameEn: "3. Glass Hero & Bottom Dock",
-    descriptionAr: "إطار رئيسي شفاف في الأعلى وشريط سفلي سريع للأقسام الأخرى",
-    descriptionEn: "Translucent focal frame above a 4-tile quick glass dock",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-vertical-rail",
-    nameAr: "4. القائمة الجانبية الزجاجية (اليسار)",
-    nameEn: "4. Left Glass Navigation Rail",
-    descriptionAr: "عمود تنقل زجاجي جانبي مع ثلاث منصات عرض رئيسية شفافة",
-    descriptionEn: "Vertical glass navigation rail paired with main media showcase cards",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-cinema-marquee",
-    nameAr: "5. أعمدة البوسترات الطولية",
-    nameEn: "5. Vertical Cinema Marquee",
-    descriptionAr: "خمس بطاقات زجاجية طولية بمقاس بوستر سينمائي متناسق",
-    descriptionEn: "Five tall transparent glass poster columns side by side",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-asymmetric-bento",
-    nameAr: "6. شبكة البنتو الزجاجية المتداخلة",
-    nameEn: "6. Asymmetric Glass Bento",
-    descriptionAr: "توزيع بنتو غير متماثل بإطارات شفافة تبرز الأقسام بزوايا ناعمة",
-    descriptionEn: "Multi-span asymmetric transparent bento grid with clear hierarchy",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-dual-cinema-split",
-    nameAr: "7. الشاشة المقسومة الزجاجية",
-    nameEn: "7. Dual Glass Cinema Split",
-    descriptionAr: "نصف عريض شفاف يقابله مربع رباعي للأقسام الأخرى",
-    descriptionEn: "Widescreen primary frame paired with a 2x2 transparent quad",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-floating-console-bar",
-    nameAr: "8. شريط الكونسول الزجاجي المعلق",
-    nameEn: "8. Floating Glass Console Bar",
-    descriptionAr: "شريط زجاجي أفقي معلق يتوسطه إطار بارز شفاف مع بقية الأقسام",
-    descriptionEn: "Elevated center-focused horizontal transparent glass console bar",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-pyramid-tier",
-    nameAr: "9. الهرم الزجاجي المزدوج",
-    nameEn: "9. Tiered Glass Pyramid",
-    descriptionAr: "صف علوي مزدوج بإطارات شفافة يرتكز على صف سفلي ثلاثي",
-    descriptionEn: "Two wide top glass hero frames over a three-frame bottom tier",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-right-command-panel",
-    nameAr: "10. الأشرطة الأفقية وبرج الأدوات",
-    nameEn: "10. Horizontal Strips & Utility Tower",
-    descriptionAr: "ثلاثة أشرطة سينمائية عريضة شفافة بجانب عمود أدوات زجاجي مدمج",
-    descriptionEn: "Stacked wide translucent banners flanked by a compact utility tower",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-chamfer-prism-grid",
-    nameAr: "11. الألواح الزجاجية المقطوعة الحواف",
-    nameEn: "11. Chamfered Glass Prism Grid",
-    descriptionAr: "بطاقات هندسية مقصوصة الزوايا بإطار زجاجي شفاف مستقبلي",
-    descriptionEn: "Architectural bevel-cut translucent prism frames in staggered rows",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-editorial-showcase",
-    nameAr: "12. الواجهة التحريرية الأنيقة",
-    nameEn: "12. Editorial Glass Stage",
-    descriptionAr: "أشرطة طباعية زجاجية نظيفة بخطوط فاصلة دقيقة ومساحات مفتوحة للخلفية",
-    descriptionEn: "Minimal editorial rows separated by crisp hairline glass dividers",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
-  },
-  {
-    id: "layout-orbital-medallions",
-    nameAr: "13. المدار الزجاجي الدائري",
-    nameEn: "13. Orbital Glass Medallions",
-    descriptionAr: "أقراص زجاجية دائرية عائمة شفافة بتدرج ناعم ولون متغير حسب الثيم",
-    descriptionEn: "Floating circular transparent glass medallions",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-leanback-lanes",
-    nameAr: "14. مسارات التلفاز الذكي",
-    nameEn: "14. Smart TV Leanback Lanes",
-    descriptionAr: "مساران أفقيان منفصلان بإطارات شفافة بتجربة تحكم ريموت سلسة",
-    descriptionEn: "Two distinct horizontal transparent TV rows",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-quadrant-hub",
-    nameAr: "15. الأرباع المحيطة بالمركز",
-    nameEn: "15. Four Quadrants & Center Hub",
-    descriptionAr: "أربعة أجنحة زجاجية شفافة تحيط بزر مركزي بارز",
-    descriptionEn: "Four balanced corner transparent frames surrounding a central hub",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-arch-gallery",
-    nameAr: "16. معرض الأقواس الزجاجية",
-    nameEn: "16. Arched Glass Gallery",
-    descriptionAr: "بطاقات زجاجية شفافة مقوسة الأعلى تمنح مظهراً معمارياً فوق الخلفية",
-    descriptionEn: "Five sculptural arch-topped transparent glass frames",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-compact-glass-stack",
-    nameAr: "17. القائمة الزجاجية العمودية",
-    nameEn: "17. Compact Vertical Glass Stack",
-    descriptionAr: "عمود زجاجي شفاف مدمج في الوسط لتنقل سريع بأزرار الأعلى والأسفل",
-    descriptionEn: "Slim centered transparent glass menu stack for rapid D-pad navigation",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
-  },
-  {
-    id: "layout-widescreen-ribbon",
-    nameAr: "18. الشريط البانورامي العريض",
-    nameEn: "18. Anamorphic Widescreen Ribbon",
-    descriptionAr: "صف علوي بثلاث بطاقات عريضة شفافة فوق شريط أدوات نحيف",
-    descriptionEn: "Three 16:9 widescreen transparent frames atop a slim bottom strip",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-stepped-skyline",
-    nameAr: "19. الأعمدة الزجاجية المتدرجة",
-    nameEn: "19. Stepped Glass Skyline",
-    descriptionAr: "خمس ركائز زجاجية شفافة بارتفاعات متدرجة تتصاعد نحو المنتصف",
-    descriptionEn: "Five stepped vertical transparent glass pillars rising toward center",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-split-header-deck",
-    nameAr: "20. بطاقات السطح المقسوم",
-    nameEn: "20. Split-Header Glass Deck",
-    descriptionAr: "بطاقات زجاجية شفافة برأس لوني علوي شفاف وشريط تحكم سفلي",
-    descriptionEn: "Transparent glass media frames with tinted header bands",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-zen-horizon",
-    nameAr: "21. الأفق الزجاجي المفتوح",
-    nameEn: "21. Zen Open Glass Horizon",
-    descriptionAr: "شريط أفقي شفاف مفتوح الحواف يترك أكبر مساحة ممكنة للخلفية الطبيعية",
-    descriptionEn: "Ultra-clean translucent horizontal ribbon leaving wallpaper visible",
-    previewBg: "from-[var(--theme-primary)]/15 via-transparent to-black/50"
-  },
-  {
-    id: "layout-obsidian-hex-hive",
-    nameAr: "22. خلية السداسيات الشفافة",
-    nameEn: "22. Transparent Hex Hive Frames",
-    descriptionAr: "إطارات سداسية شفافة كخلية النحل تظهر الخلفية من خلالها بوضوح",
-    descriptionEn: "Transparent honeycomb frames with custom geometric emblems",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-solid-theater-marquee",
-    nameAr: "23. إطارات المسرح السينمائي الشفاف",
-    nameEn: "23. Glass Theater Marquee",
-    descriptionAr: "منصة مسرحية شفافة بإطارات رفيعة وأدراج جانبية متصلة بالخلفية",
-    descriptionEn: "Transparent cinema stage frames paired with a 3-drawer glass console",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-carbon-brushed-chassis",
-    nameAr: "24. الإطار المعدني المفرغ الشفاف",
-    nameEn: "24. Brushed Metallic Glass Chassis",
-    descriptionAr: "هيكل زجاجي شفاف بحواف معدنية مصقولة تظهر الخلفية عبره بالكامل",
-    descriptionEn: "Transparent glass deck with bevelled metallic edge frames",
-    previewBg: "from-[var(--theme-secondary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-duotone-color-blocks",
-    nameAr: "25. الإطارات اللونية المزدوجة الشفافة",
-    nameEn: "25. Duotone Tinted Glass Frames",
-    descriptionAr: "إطارات زجاجية شفافة بحواف مزدوجة اللون تتبع ثيم التطبيق المختار",
-    descriptionEn: "Transparent duotone-bordered glass frames reactive to theme palette",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-isometric-diamond-deck",
-    nameAr: "26. إطارات المعين الماسي الشفافة",
-    nameEn: "26. Isometric Diamond Glass Crest",
-    descriptionAr: "إطارات زجاجية شفافة متدرجة الارتفاع تتوجها شارات ماسية مضيئة",
-    descriptionEn: "Transparent stepped glass frames crowned with diamond badges",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-matte-card-fan",
-    nameAr: "27. إطارات الاستوديو الدرعية الشفافة",
-    nameEn: "27. Studio Collector Glass Deck",
-    descriptionAr: "إطارات زجاجية شفافة بحواف استوديو رفيعة وشارات درعية",
-    descriptionEn: "Transparent collector glass frames with delicate foil borders",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-royal-monolith-dock",
-    nameAr: "28. الأجنحة والركيزة المركزية الشفافة",
-    nameEn: "28. Transparent Monolith Wing Frames",
-    descriptionAr: "ركائز عمودية شفافة تحيط بالمنصة الوسطى دون حجب الخلفية",
-    descriptionEn: "Transparent vertical wing pillars framing a dominant central monolith",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-split-panel-arcade",
-    nameAr: "29. وحدة التحكم العلوية والألواح الشفافة",
-    nameEn: "29. Top Console & Transparent Pads",
-    descriptionAr: "شريط علوي شفاف يعلو ثلاث منصات ترفيه زجاجية شفافة بالكامل",
-    descriptionEn: "Transparent top utility strip above three translucent glass pads",
-    previewBg: "from-[var(--theme-primary)]/20 via-transparent to-black/50"
-  },
-  {
-    id: "layout-horizon-panorama-cards",
-    nameAr: "30. الأجنحة الثلاثية البانورامية الشفافة",
-    nameEn: "30. Triple-Column Transparent Panorama",
-    descriptionAr: "توزيع متناظر بثلاثة أعمدة شفافة تظهر خلفية التطبيق بوضوح",
-    descriptionEn: "Three-column symmetrical transparent frames letting wallpaper shine",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  },
-  {
-    id: "layout-luxury-satin-frame",
-    nameAr: "31. إطارات الساتان المزدوجة الشفافة",
-    nameEn: "31. Satin Double-Bezel Transparent Frames",
-    descriptionAr: "إطارات زجاجية شفافة بحدود معدنية مزدوجة فاخرة دون خلفية معتمة",
-    descriptionEn: "Transparent glass frames with double metallic filigree borders",
-    previewBg: "from-[var(--theme-primary)]/25 via-transparent to-black/50"
-  }
+const ICON_PACKS = [
+  { id: "pack-3d", nameAr: "1. مجسّم 3D الكلاسيكي", nameEn: "1. Classic 3D Volumetric", descriptionAr: "أيقونات مجسمة بثلاثية الأبعاد وظلال عمق بارزة", descriptionEn: "Volumetric sculpted shapes with beveled depth" },
+  { id: "pack-glass", nameAr: "2. زجاجي بلوري Glass", nameEn: "2. Frosted Crystal Glass", descriptionAr: "ألواح زجاجية شفافة بلمعان مائل ناعم", descriptionEn: "Translucent glass panes with specular edge sheen" },
+  { id: "pack-metallic", nameAr: "3. معدني ملكي فاخر", nameEn: "3. Royal Brushed Metallic", descriptionAr: "سبائك معدنية مصقولة بتدرج الذهب الحقيقي", descriptionEn: "Engraved metallic bullion with deep sheen gradients" },
+  { id: "pack-neon", nameAr: "4. نيون مضيء كهربائي", nameEn: "4. Electric Dual Neon", descriptionAr: "أنابيب ضوئية متوهجة بنواة بيضاء ساطعة", descriptionEn: "Dual-pass luminous neon tubes with bright core" },
+  { id: "pack-geometric", nameAr: "5. هندسي حاد عصري", nameEn: "5. Modern Bauhaus Geometric", descriptionAr: "تشكيلات مضلّعة حادة الزوايا بقطع معمارية", descriptionEn: "Sharp architectural polygons and bold geometric cuts" },
+  { id: "pack-06", nameAr: "6. ستالايت رادار 3D", nameEn: "6. Satellite Dish 3D", descriptionAr: "أطباق بث فضائية وسينما 3D مجسمة بتفاصيل عميقة", descriptionEn: "3D satellite telemetry dishes and cinema projectors" },
+  { id: "pack-07", nameAr: "7. هوائي تلفاز كريستالي", nameEn: "7. Crystal TV & Slate", descriptionAr: "شاشات كلاسيكية ولوحات كلاكيت زجاجية شفافة", descriptionEn: "Frosted glass CRT silhouettes and translucent slates" },
+  { id: "pack-08", nameAr: "8. سبائك البلاتين والذهب", nameEn: "8. Bullion Ticket & Horn", descriptionAr: "تذاكر سينما وأبواق إخراج محفورة بالذهب المصقول", descriptionEn: "Metallic megaphone, ticket stubs & bullion gears" },
+  { id: "pack-09", nameAr: "9. نيون ليلي عريض", nameEn: "9. Heavy Arcade Neon", descriptionAr: "خطوط نيون عريضة مستوحاة من صالات العرض الليلية", descriptionEn: "Heavy glowing theater neon contours with halo glow" },
+  { id: "pack-10", nameAr: "10. مخطط هندسي مزدوج", nameEn: "10. Dual-Line Blueprint", descriptionAr: "خطوط هندسية مزدوجة دقيقة كالتصاميم المعمارية", descriptionEn: "Fine precision architectural blueprint double strokes" },
+  { id: "pack-11", nameAr: "11. مكعب إيزومتريك 3D", nameEn: "11. Isometric Cube 3D", descriptionAr: "منظور إيزومتريك ثلاثي الأبعاد بزوايا هندسية حادة", descriptionEn: "Three-face isometric extruded perspective cubes" },
+  { id: "pack-12", nameAr: "12. زجاج موشوري مشقوق", nameEn: "12. Split Prism Glass", descriptionAr: "طبقات زجاجية منشورية بتقسيم لوني مائل", descriptionEn: "Diagonal faceted crystal glass layers with depth" },
+  { id: "pack-13", nameAr: "13. نقش كروم داكن", nameEn: "13. Obsidian Chrome Cut", descriptionAr: "قلب داكن محاط بحافة معدنية لامعة مقصوصة", descriptionEn: "Dark obsidian core framed by gleaming metallic bevel" },
+  { id: "pack-14", nameAr: "14. ليزر سيان/نيون دقيق", nameEn: "14. Precision Laser Neon", descriptionAr: "أشعة ليزر رفيعة بتوهج نقي فائق الدقة", descriptionEn: "Crisp hairline laser filaments with luminous bloom" },
+  { id: "pack-15", nameAr: "15. كتل سويسرية ممتلئة", nameEn: "15. Solid Swiss Blocks", descriptionAr: "تصميم جريء بكتل صلبة وثقوب سلبية واضحة", descriptionEn: "Bold high-contrast solid silhouettes with sharp cutouts" },
+  { id: "pack-16", nameAr: "16. أوريغامي مطوي 3D", nameEn: "16. Origami Faceted 3D", descriptionAr: "طيات ورقية هندسية متدرجة الإضاءة والظل", descriptionEn: "Folded origami facets with shaded polygonal planes" },
+  { id: "pack-17", nameAr: "17. عدسات زجاجية دائرية", nameEn: "17. Frosted Lens Glass", descriptionAr: "عدسات وحلقات بلورية ناعمة الحواف", descriptionEn: "Smooth spherical glass lenses with frosted rim reflection" },
+  { id: "pack-18", nameAr: "18. تروس معدنية مسننة", nameEn: "18. Forged Steel Metallic", descriptionAr: "تصميم صناعي متين من المعدن المطروق المصقول", descriptionEn: "Heavy forged industrial steel silhouettes with sheen" },
+  { id: "pack-19", nameAr: "19. غليتش سايبربانك نيون", nameEn: "19. Cyberpunk Glitch Neon", descriptionAr: "إزاحة رقمية متوهجة بأسلوب السايبربانك المستقبلي", descriptionEn: "Offset futuristic neon silhouettes with cyber accents" },
+  { id: "pack-20", nameAr: "20. استنسل مقصوص حديث", nameEn: "20. Stencil Cutout Modern", descriptionAr: "رموز مقطعة بأسلوب الاستنسل المعماري النظيف", descriptionEn: "Segmented stencil arcs and crisp broken vector strokes" },
+  { id: "pack-21", nameAr: "21. طين 3D ناعم Cartoon", nameEn: "21. Soft Clay 3D Extrude", descriptionAr: "أشكال دائرية منتفخة ناعمة بلمعة علوية 3D", descriptionEn: "Puffy tactile clay 3D shapes with soft top gleam" },
+  { id: "pack-22", nameAr: "22. ماسي زجاجي متعدد الأوجه", nameEn: "22. Diamond Cut Glass", descriptionAr: "أيقونات منشورية كالألماس الشفاف متعددة الأضلاع", descriptionEn: "Multi-facet diamond glass polygons with crisp edges" },
+  { id: "pack-23", nameAr: "23. برونز وذهب معتق", nameEn: "23. Antiqued Gold Relief", descriptionAr: "تدرجات معدنية عتيقة بنقوش بارزة ومزدوجة", descriptionEn: "Engraved antique bullion finish with fine inner trim" },
+  { id: "pack-24", nameAr: "24. نيون منقّط متقطع", nameEn: "24. Telemetry Dotted Neon", descriptionAr: "حلقات رادار متقطعة متوهجة بأسلوب البث الحي", descriptionEn: "Dashed pulse neon arcs and radar ring traces" },
+  { id: "pack-25", nameAr: "25. خطوط رفيعة Monoline", nameEn: "25. Ultra Thin Monoline", descriptionAr: "رسومات أحادية الخط رفيعة فائقة الأناقة والبساطة", descriptionEn: "Featherlight monoline minimalist stroke vectors" },
+  { id: "pack-26", nameAr: "26. واجهات عرض مكدّسة 3D", nameEn: "26. Cascading Ribbon 3D", descriptionAr: "طبقات متتالية ثلاثية الأبعاد بظلال متدرجة", descriptionEn: "Three-tier stacked shadow plates with front hero" },
+  { id: "pack-27", nameAr: "27. زجاج نيوني مزدوج", nameEn: "27. Frosted Neon Hybrid", descriptionAr: "مزيج بين شفافية الزجاج وتوهج الحواف المضيئة", descriptionEn: "Translucent frosted body edged with bright neon outline" },
+  { id: "pack-28", nameAr: "28. شارة درع معدنية", nameEn: "28. Emblem Crest Metallic", descriptionAr: "رموز محمية داخل درع معدني ذهبي منقوش", descriptionEn: "Metallic crest medallions framing precision glyphs" },
+  { id: "pack-29", nameAr: "29. توهج بلازما مركز", nameEn: "29. Core Plasma Glow", descriptionAr: "بؤرة ضوئية مشعة تتركز في قلب الأيقونة", descriptionEn: "Radiant bright plasma core with deep aura glow" },
+  { id: "pack-30", nameAr: "30. موزاييك بكسل هندسي", nameEn: "30. Retro Pixel Geometry", descriptionAr: "هندسة مربعة كلاسيكية مستوحاة من البكسل والشاشات", descriptionEn: "Sharp stepped arcade pixel-cut geometric architecture" },
+  { id: "pack-31", nameAr: "31. حفر ليزري 3D عميق", nameEn: "31. Laser Etched 3D Slab", descriptionAr: "أحجار 3D داكنة محفورة بالليزر بلون التطبيق", descriptionEn: "Dark bevelled 3D slabs with laser-lit glyph etching" },
+  { id: "pack-32", nameAr: "32. زجاج مرايا عاكس", nameEn: "32. Mirror Specular Glass", descriptionAr: "زجاج عاكس بخطوط إضاءة حادة متقاطعة", descriptionEn: "High-sheen mirror glass with diagonal reflection cuts" },
+  { id: "pack-33", nameAr: "33. ميدالية ذهب خالص", nameEn: "33. Gold Medallion Seal", descriptionAr: "ختم معدني دائري لامع بحواف محززة متقنة", descriptionEn: "Coin-stamped metallic bullion with serrated trim ring" },
+  { id: "pack-34", nameAr: "34. نيون هولوجرام متموج", nameEn: "34. Holo Spectrum Neon", descriptionAr: "توهج هولوجرافي متدرج مع خطوط نيون مزدوجة", descriptionEn: "Dual-tone holographic outline glow with inner shimmer" },
+  { id: "pack-35", nameAr: "35. ثنائي اللون Duotone", nameEn: "35. Split Duotone Studio", descriptionAr: "تعبئة ثنائية التباين تدمج اللون الأساسي واللمعان", descriptionEn: "High-clarity split tone fills pairing primary & highlight" },
+  { id: "pack-36", nameAr: "36. ظلال مرتفعة Floating 3D", nameEn: "36. Floating Elevated 3D", descriptionAr: "عناصر طافية بارزة عن السطح بظل ساقط عميق", descriptionEn: "Lifted layered vectors with crisp floating drop shadows" },
+  { id: "pack-37", nameAr: "37. بلورة سداسية Glass", nameEn: "37. Hex Crystal Glass", descriptionAr: "بنية زجاجية سداسية الأوجه بحدود فضية رفيعة", descriptionEn: "Hexagonal faceted glass geometry with icy white rims" },
+  { id: "pack-38", nameAr: "38. تيتانيوم مسحوب", nameEn: "38. Brushed Titanium Slate", descriptionAr: "نسيج تيتانيوم خطي بتباين معدني أنيق", descriptionEn: "Precision horizontal brushed titanium sheen strokes" },
+  { id: "pack-39", nameAr: "39. دائرة نيون مستقبلية", nameEn: "39. Sci-Fi HUD Neon", descriptionAr: "رموز شاشات التحكم المستقبلية المضيئة بالنيون", descriptionEn: "Target telemetry rings & glowing sci-fi HUD vectors" },
+  { id: "pack-40", nameAr: "40. تحفة آرت ديكو", nameEn: "40. Art Deco Luxury Gold", descriptionAr: "تصميم هندسي كلاسيكي فاخر مستوحى من الأوسكار والسينما", descriptionEn: "Stepped Art Deco cinema luxury filigree geometry" }
 ];
-function applyRoyalTheme(themeId) {
-  const theme = ROYAL_THEMES.find((t) => t.id === themeId) || ROYAL_THEMES[0];
-  const hex2 = theme.primary.replace("#", "");
-  const r = parseInt(hex2.slice(0, 2), 16) || 212;
-  const g2 = parseInt(hex2.slice(2, 4), 16) || 175;
-  const b2 = parseInt(hex2.slice(4, 6), 16) || 55;
+const FRAME_SHAPES = [
+  { id: "circle", nameAr: "1. دائري كلاسيكي", nameEn: "1. Classic Circle", descriptionAr: "ميدالية دائرية متوازنة بحلقة تحديد", descriptionEn: "Precision circular medallion with inner rim" },
+  { id: "rounded-square", nameAr: "2. مربع بحواف ناعمة", nameEn: "2. Rounded Squircle", descriptionAr: "مربع عصري بزوايا ناعمة متناسقة", descriptionEn: "Balanced modern squircle frame" },
+  { id: "hexagon", nameAr: "3. سداسي عمودي", nameEn: "3. Vertical Hexagon", descriptionAr: "إطار سداسي الأضلاع بحدود مضاعفة", descriptionEn: "Six-sided architectural hexagon rim" },
+  { id: "geometric", nameAr: "4. مثمّن مقصوص الزوايا", nameEn: "4. Chamfered Octagon", descriptionAr: "مثمّن هندسي مع علامات زاوية دقيقة", descriptionEn: "Octagon silhouette with precision corner ticks" },
+  { id: "glass", nameAr: "5. زجاجي شفاف", nameEn: "5. Frosted Glass Pane", descriptionAr: "زجاج بلوري شفاف يتفاعل مع التغبيش والشفافية", descriptionEn: "Frosted crystal frame with glass blur & sheen" },
+  { id: "metallic", nameAr: "6. معدني ذهبي فاخر", nameEn: "6. Metallic Gold Bezel", descriptionAr: "حافة معدنية مزدوجة بتدرج الذهب المعدني", descriptionEn: "Double-bevel brushed metallic bullion rim" },
+  { id: "frame-07", nameAr: "7. حلقتان مزدوجتان", nameEn: "7. Double Orbital Ring", descriptionAr: "حلقة مزدوجة بمدار داخلي رفيع أنيق", descriptionEn: "Concentric dual rings around core frame" },
+  { id: "frame-08", nameAr: "8. سداسي أفقي عريض", nameEn: "8. Wide Flat Hexagon", descriptionAr: "خلية نحل سداسية أفقية بحافة حادة", descriptionEn: "Horizontal honeycomb hexagon silhouette" },
+  { id: "frame-09", nameAr: "9. ماسة / معيّن", nameEn: "9. Diamond Rhombus", descriptionAr: "إطار معيّن ماسي بزاوية 45 درجة", descriptionEn: "Crisp rotated 45-degree diamond geometry" },
+  { id: "frame-10", nameAr: "10. درع ملكي", nameEn: "10. Heraldic Shield", descriptionAr: "إطار درع كلاسيكي متوج بحافة علوية مستقيمة", descriptionEn: "Armor crest shield frame with tapered base" },
+  { id: "frame-11", nameAr: "11. قوس كاتدرائي", nameEn: "11. Cathedral Arch", descriptionAr: "قوس معماري دائري من الأعلى ومستوٍ من الأسفل", descriptionEn: "Rounded architectural arch with flat base plinth" },
+  { id: "frame-12", nameAr: "12. خماسي الأضلاع", nameEn: "12. Crown Pentagon", descriptionAr: "خماسي الأضلاع متوازن بقمة بارزة", descriptionEn: "Five-sided architectural pentagon crown" },
+  { id: "frame-13", nameAr: "13. كبسولة بيضاوية", nameEn: "13. Stadium Pill Capsule", descriptionAr: "كبسولة ناعمة فائقة الاستدارة الجانبية", descriptionEn: "Ultra-smooth wide stadium pill bezel" },
+  { id: "frame-14", nameAr: "14. ورقة قطرية يسرى", nameEn: "14. Diagonal Leaf Left", descriptionAr: "زاويتان متقابلتان مستديرتان والأخريان حادتان", descriptionEn: "Swept leaf curves on opposing top-left/bottom-right" },
+  { id: "frame-15", nameAr: "15. نصل قطري أيمن", nameEn: "15. Diagonal Blade Right", descriptionAr: "تدوير أنيق للزاويتين العكسيتين كالجوهرة", descriptionEn: "Swept architectural curves on top-right/bottom-left" },
+  { id: "frame-16", nameAr: "16. ختم نجمي 12 رأساً", nameEn: "16. Starburst Rosette", descriptionAr: "ختم احتفالي بـ 12 نتوءاً نجمياً متساوياً", descriptionEn: "12-point prestige award seal silhouette" },
+  { id: "frame-17", nameAr: "17. مربع متدرج الزوايا", nameEn: "17. Stepped Cross Corner", descriptionAr: "زوايا داخلة بأسلوب الآرت ديكو الفاخر", descriptionEn: "Inward stepped Art Deco corner rebates" },
+  { id: "frame-18", nameAr: "18. تذكرة سينما مقصوصة", nameEn: "18. Cinema Ticket Stub", descriptionAr: "أقواس جانبية مستديرة كبطاقات العرض السينمائي", descriptionEn: "Perforated theater ticket notches on both sides" },
+  { id: "frame-19", nameAr: "19. حلقة رادار متقطعة", nameEn: "19. Telemetry Radar Ring", descriptionAr: "مدار دائري متقطع مستوحى من إشارات البث", descriptionEn: "Segmented radar pulse arcs surrounding circle" },
+  { id: "frame-20", nameAr: "20. حواضن علوية وسفلية", nameEn: "20. Top-Bottom Brackets", descriptionAr: "إطار مفتوح الجانبين بقضبان علوية وسفلية", descriptionEn: "Open side channel with crisp top/bottom rails" },
+  { id: "frame-21", nameAr: "21. حواضن جانبية", nameEn: "21. Side Caliper Arcs", descriptionAr: "أقواس جانبية تحتضن الأيقونة بلا إغلاق رأسي", descriptionEn: "Precision left & right curved clamp brackets" },
+  { id: "frame-22", nameAr: "22. هالة نيون مضيئة", nameEn: "22. Electric Neon Ring", descriptionAr: "توهج نيون مزدوج السطوع حول دائرة داكنة", descriptionEn: "Double neon tube circle with vivid radial aura" },
+  { id: "frame-23", nameAr: "23. متوازي أضلاع مائل", nameEn: "23. Cyberpunk Skew Slab", descriptionAr: "إطار مائل ديناميكي بروح الألعاب والمستقبل", descriptionEn: "Dynamic slanted parallelogram HUD plate" },
+  { id: "frame-24", nameAr: "24. وسادة 3D بارزة", nameEn: "24. Tactile 3D Cushion", descriptionAr: "سمك سفلي مجسم ثلاثي الأبعاد بارز عن السطح", descriptionEn: "Physical raised 3D keycap edge with base lip" },
+  { id: "frame-25", nameAr: "25. إطار هندسي مزدوج", nameEn: "25. Blueprint Twin Line", descriptionAr: "خطان متوازيان رفيعان بدقة الرسوم الهندسية", descriptionEn: "Double concentric thin technical draft square" },
+  { id: "frame-26", nameAr: "26. عدسة كاميرا L-زوايا", nameEn: "26. Viewfinder L-Corners", descriptionAr: "أربع زوايا استهداف فقط كعدسات التصوير", descriptionEn: "Minimal camera reticle L-corners only" },
+  { id: "frame-27", nameAr: "27. سداسي زجاجي بلوري", nameEn: "27. Frosted Glass Hexagon", descriptionAr: "شكل سداسي شفاف بتأثير الضباب واللمعان", descriptionEn: "Translucent glass hexagon with icy specular edge" },
+  { id: "frame-28", nameAr: "28. عدسة زجاجية دائرية", nameEn: "28. Frosted Glass Sphere", descriptionAr: "كرة زجاجية شفافة بانعكاس إضاءة مائل", descriptionEn: "Spherical crystal lens reacting to glass sliders" },
+  { id: "frame-29", nameAr: "29. ميدالية معدنية دائرية", nameEn: "29. Metallic Coin Circle", descriptionAr: "إطار دائري سميك متدرج من المعدن المصقول", descriptionEn: "Heavy circular metallic coin ring with dark inset" },
+  { id: "frame-30", nameAr: "30. شعار سداسي معدني", nameEn: "30. Metallic Hex Crest", descriptionAr: "إطار سداسي بحدود معدنية متدرجة فاخرة", descriptionEn: "Polygonal hexagon edged in brushed metallic alloy" },
+  { id: "frame-31", nameAr: "31. درع معدني منقوش", nameEn: "31. Metallic Armor Shield", descriptionAr: "درع حامي بطبقة معدنية لامعة مزدوجة", descriptionEn: "Metallic crest bezel with deep armor inset" },
+  { id: "frame-32", nameAr: "32. ألياف الكربون HUD", nameEn: "32. Carbon Tech Grid", descriptionAr: "نسيج كربوني داكن بحدود لونية متوهجة", descriptionEn: "Micro-woven carbon backdrop with crisp border" },
+  { id: "frame-33", nameAr: "33. حوض أوبسيديان غائر", nameEn: "33. Obsidian Deep Inset", descriptionAr: "إطار أسود داكن غائر بظل داخلي عميق", descriptionEn: "Recessed dark obsidian well with inner rim glint" },
+  { id: "frame-34", nameAr: "34. تاج بنتهاوس مقصوص", nameEn: "34. Crown Notched Slate", descriptionAr: "قمة مقصوصة الزوايا مع قاعدة مستقيمة عريضة", descriptionEn: "Top-beveled architectural slate with solid base" },
+  { id: "frame-35", nameAr: "35. بطاقات متراكبة ثلاثية", nameEn: "35. Stacked Deck Cards", descriptionAr: "تدرج خلفي مائل يوحي بثلاث بطاقات خلف بعضها", descriptionEn: "Layered backing offset plates behind main card" },
+  { id: "frame-36", nameAr: "36. هالة لونية مشعة", nameEn: "36. Radiant Aura Halo", descriptionAr: "تدرج لوني محيطي مشع بإطار داخلي رفيع", descriptionEn: "Luminous radial gradient ring with clean center" },
+  { id: "frame-37", nameAr: "37. جوهرة عشارية الأضلاع", nameEn: "37. Decagon Jewel Cut", descriptionAr: "مضلع بعشرة وجوه متساوية كبريق الأحجار الكريمة", descriptionEn: "10-sided faceted gem polygon with double line" },
+  { id: "frame-38", nameAr: "38. مربع متوهج ناعم", nameEn: "38. Soft Neon Squircle", descriptionAr: "زوايا ناعمة محاطة بتوهج داخلي وخارجي متناسق", descriptionEn: "Smooth squircle rim emitting balanced soft glow" },
+  { id: "frame-39", nameAr: "39. شارة شبه منحرف", nameEn: "39. Trapezoid Cut Badge", descriptionAr: "تصميم شبه منحرف رياضي عريض القاعدة", descriptionEn: "Tapered top aerodynamic trapezoid badge" },
+  { id: "frame-40", nameAr: "40. لؤلؤي بحافة مزدوجة", nameEn: "40. Pearl Satin Bevel", descriptionAr: "حافة لؤلؤية فاتحة رقيقة داخل إطار داكن فاخر", descriptionEn: "Refined dual-bevel pearl trim with satin shine" }
+];
+const DASHBOARD_LAYOUTS = [
+  { id: "layout-dock-row", nameAr: "1. الصف الأفقي المتوازن", nameEn: "1. Balanced Dock Row", descriptionAr: "توزيع أفقي متساوٍ للأقسام الخمسة في صف واحد", descriptionEn: "Five equal sections in one crisp horizontal row", previewBg: "" },
+  { id: "layout-hero-dock", nameAr: "2. المنصة الكبرى والشريط", nameEn: "2. Hero Showcase & Dock", descriptionAr: "قسم رئيسي عريض في الأعلى وأربعة أقسام أسفله", descriptionEn: "Wide primary showcase banner above a 4-tile dock", previewBg: "" },
+  { id: "layout-side-rail", nameAr: "3. الشريط الأيسر والمنصات", nameEn: "3. Left Rail & Stage (2+3)", descriptionAr: "عمود تحكم يساراً مع 3 بطاقات عرض رئيسية يميناً", descriptionEn: "Left 2-row utility rail beside 3 main stage cards", previewBg: "" },
+  { id: "layout-bento-mosaic", nameAr: "4. شبكة البنتو المعمارية", nameEn: "4. Asymmetric Bento Mosaic", descriptionAr: "عمود رئيسي طويل مع مصفوفة جانبية 2×2", descriptionEn: "Tall left focal anchor beside a 2x2 asymmetric stack", previewBg: "" },
+  { id: "layout-twin-spotlight", nameAr: "5. الهرم المزدوج (٢ + ٣)", nameEn: "5. Twin Spotlight (2+3)", descriptionAr: "بطاقتان واسعتان في الأعلى فوق 3 بطاقات سفلية", descriptionEn: "Two prominent wide top panels over 3 base cards", previewBg: "" },
+  { id: "layout-center-spotlight", nameAr: "6. المنصة المركزية المتدرجة", nameEn: "6. Elevated Center Podium", descriptionAr: "أيقونة رئيسية بارزة في الوسط وجناحين متدرجين", descriptionEn: "Elevated focal center flanked by stepped side wings", previewBg: "" },
+  { id: "layout-split-stage", nameAr: "7. الشاشة المقسومة (١ + ٤)", nameEn: "7. Split Cinema Stage (1+4)", descriptionAr: "نصف شاشة للقسم الأول ونصف لشبكة 2×2", descriptionEn: "50% tall primary showcase paired with 2x2 companion grid", previewBg: "" },
+  { id: "layout-vertical-list", nameAr: "8. القائمة العمودية المكدسة", nameEn: "8. Centered Vertical List", descriptionAr: "صفوف أفقية أنيقة متراصة رأسياً في منتصف الشاشة", descriptionEn: "Sleek vertical stack of full-row navigation strips", previewBg: "" },
+  { id: "layout-orbital-hub", nameAr: "9. المحور المركزي والأجنحة", nameEn: "9. Orbital Hub & 4 Wings", descriptionAr: "4 زوايا خارجية تحيط بمحور مركزي في قلب الشاشة", descriptionEn: "Four corner wings surrounding a floating central hub", previewBg: "" },
+  { id: "layout-staircase-cascade", nameAr: "10. التدرج المتموج (٣ + ٢)", nameEn: "10. Staggered Wave (3+2)", descriptionAr: "ثلاث منصات علوية متموجة تتبعها بطاقتان سفليتان", descriptionEn: "Sculpted staggered trio above a centered dual utility deck", previewBg: "" },
+  { id: "layout-11", nameAr: "11. الشريط العلوي والعملاق السفلي", nameEn: "11. Reverse Dock + Bottom Hero", descriptionAr: "أربع بطاقات سريعة في الأعلى ومنصة ضخمة في الأسفل", descriptionEn: "Four compact top tiles crowned above one wide bottom banner", previewBg: "" },
+  { id: "layout-12", nameAr: "12. المنصات يساراً والشريط يميناً", nameEn: "12. Stage Left & Right Rail (3+2)", descriptionAr: "ثلاث منصات طويلة يساراً وعمود تحكم أيمن", descriptionEn: "Three main media stage cards paired with a right command rail", previewBg: "" },
+  { id: "layout-13", nameAr: "13. الثلاثي العلوي والصفين (٣ + ٢)", nameEn: "13. Trio Top & Twin Rows", descriptionAr: "3 بطاقات وسطى كبرى فوق صفين عريضين سفليين", descriptionEn: "Three equal media cards above two wide utility bars", previewBg: "" },
+  { id: "layout-14", nameAr: "14. ثنائي عمودي + ثلاثي صفوف", nameEn: "14. 2 Tall + 3 Compact Strip", descriptionAr: "بطاقتان كبيرتان بالأعلى وثلاثة أشرطة مضغوطة بالأسفل", descriptionEn: "Twin large showcase panels over a 3-column horizontal strip", previewBg: "" },
+  { id: "layout-15", nameAr: "15. ثلاثي مكدس + عمودين بارزين", nameEn: "15. 3 Stacked Rows + 2 Heroes", descriptionAr: "3 صفوف مرتبة على اليسار وبطاقتان عملاقتان على اليمين", descriptionEn: "Left 3-row menu stack beside 2 large vertical hero cards", previewBg: "" },
+  { id: "layout-16", nameAr: "16. الدرج الصاعد لليمين", nameEn: "16. Ascending Staircase", descriptionAr: "خمس خطوات صاعدة تدريجياً من اليسار لليمين", descriptionEn: "Five columns stepping upwards dynamically left-to-right", previewBg: "" },
+  { id: "layout-17", nameAr: "17. الدرج الهابط لليمين", nameEn: "17. Descending Staircase", descriptionAr: "خمس خطوات هابطة بانسيابية من اليسار لليمين", descriptionEn: "Five columns cascading downwards smoothly left-to-right", previewBg: "" },
+  { id: "layout-18", nameAr: "18. الوادي المقعّر (U-Shape)", nameEn: "18. Inverted U-Valley Podium", descriptionAr: "جناحان مرتفعان على الطرفين ووسط منخفض متوازن", descriptionEn: "High elevated outer wings framing a recessed center lane", previewBg: "" },
+  { id: "layout-19", nameAr: "19. موجة زجزاج متناوبة", nameEn: "19. Alternating Zigzag Wave", descriptionAr: "توزيع متناوب صعوداً وهبوطاً عبر الشاشة", descriptionEn: "Alternating high/low stepped positions across 5 columns", previewBg: "" },
+  { id: "layout-20", nameAr: "20. تشكيل الصليب الهندسي (+)", nameEn: "20. Architectural Plus Cross", descriptionAr: "قسم علوي و3 أفقية بالوسط وقسم سفلي متمركز", descriptionEn: "Balanced cross grid: 1 top crown, 3 center, 1 base anchor", previewBg: "" },
+  { id: "layout-21", nameAr: "21. تشكيل إكس الماسي (X)", nameEn: "21. Diamond X-Pentad", descriptionAr: "زاويتان علويتان وجسر وسطاني وزاويتان سفليتان", descriptionEn: "Symmetric 2-1-2 X-pattern spanning across the stage", previewBg: "" },
+  { id: "layout-22", nameAr: "22. شريط رأسي + ساحة ثلاثية", nameEn: "22. Top Strip + Rail + 3 Stage", descriptionAr: "شريط كامل بالأعلى، وجانب أيمن بـ3 بطاقات رئيسية", descriptionEn: "Full header strip with inner side tile beside 3 main tiles", previewBg: "" },
+  { id: "layout-23", nameAr: "23. القلعة المركزية (٢ + ١ + ٢)", nameEn: "23. Center Citadel (2 | 1 | 2)", descriptionAr: "برج مركزي طويل يتوسط عمودين ثنائيين عن اليمين واليسار", descriptionEn: "Tall central monolith framed by two dual vertical flanks", previewBg: "" },
+  { id: "layout-24", nameAr: "24. حرف L اليساري الممدود", nameEn: "24. L-Dock Left Anchor", descriptionAr: "عمود يساري كامل الارتفاع مع جناح أفقي متعدد بالأسفل", descriptionEn: "Full-height left showcase anchoring an L-shaped workspace", previewBg: "" },
+  { id: "layout-25", nameAr: "25. حرف L اليميني المعكوس", nameEn: "25. L-Dock Right Anchor", descriptionAr: "واجهة يمنى متكاملة مع صفوف متصلة من الجهة المقابلة", descriptionEn: "Full-height right showcase paired with an L-hook grid", previewBg: "" },
+  { id: "layout-26", nameAr: "26. شريط الكاروسيل المتدرج", nameEn: "26. Spotlight Carousel Strip", descriptionAr: "الأيقونة الأولى مضاعفة العرض وتتقلص البقية بتناسق", descriptionEn: "Double-width lead banner narrowing smoothly across 5 slots", previewBg: "" },
+  { id: "layout-27", nameAr: "27. عمودان ٧٠/٣٠ غير متماثل", nameEn: "27. 70/30 Editorial Columns", descriptionAr: "بطاقتان رئيسيتان 70% مقابل 3 صفوف أدوات 30%", descriptionEn: "Two dominant media tiles (7 cols) beside 3 compact rows (5 cols)", previewBg: "" },
+  { id: "layout-28", nameAr: "28. غلاف المجلة الفاخر", nameEn: "28. Magazine Cover Grid", descriptionAr: "غلاف عريض ثلثي الشاشة + بطاقة ركن + 3 بطاقات أسفله", descriptionEn: "Two-thirds top editorial headline + side square + 3 bottom", previewBg: "" },
+  { id: "layout-29", nameAr: "29. لافتات سينمائية عريضة", nameEn: "29. Cinema Wide Banners", descriptionAr: "خمس لافتات عريضة تمتد بعرض المساحة للتنقل المباشر", descriptionEn: "Five full-bleed horizontal cinema marquee strips", previewBg: "" },
+  { id: "layout-30", nameAr: "30. الشريحة الثلاثية (١ + ٢ + ٢)", nameEn: "30. Triple Tier (1 + 2 + 2)", descriptionAr: "لافتة كبرى ثم بطاقتان متوسطتان ثم صفان رشيقان", descriptionEn: "Lead banner over twin split feature cards over dual utility strips", previewBg: "" },
+  { id: "layout-31", nameAr: "31. مصفوفة 2×2 + شريط سفلي", nameEn: "31. Quad Grid + Footer Bar", descriptionAr: "شبكة 2×2 كبرى في الأعلى مع شريط عريض بالأسفل", descriptionEn: "Crisp 2x2 primary quadrant deck above a wide bottom footer dock", previewBg: "" },
+  { id: "layout-32", nameAr: "32. شريط علوي + شبكة 2×2", nameEn: "32. Slim Top Bar + 2x2 Quad", descriptionAr: "شريط أداة علوي مضغوط فوق شبكة رباعية متساوية", descriptionEn: "Compact top action bar presiding over a balanced 2x2 grid", previewBg: "" },
+  { id: "layout-33", nameAr: "33. جناحان جانبيان + قلب ثلاثي", nameEn: "33. Wing-Focus-Wing Sandwich", descriptionAr: "جناحان رفيعان يميناً ويساراً تحيط بـ 3 صفوف مركزية", descriptionEn: "Two slim outer vertical flanks framing 3 stacked center strips", previewBg: "" },
+  { id: "layout-34", nameAr: "34. القبة المعمارية المقوّسة", nameEn: "34. Rainbow Crown Arch", descriptionAr: "انحناء علوي نحو المركز يشكل قبة قوس قزح أنيقة", descriptionEn: "Smooth upward curve rising smoothly into a crowned zenith", previewBg: "" },
+  { id: "layout-35", nameAr: "35. المهد المنحني للأسفل", nameEn: "35. Deep Cradle Curve", descriptionAr: "تقوّس سفلي ناعم يضع الأيقونات الجانبية في الأعلى", descriptionEn: "Concave hammock arc cradling the center tiles gently below", previewBg: "" },
+  { id: "layout-36", nameAr: "36. الهرم المزدوج المتناظر", nameEn: "36. Centered Tiered Triad", descriptionAr: "صف أول مفرد متمركز، تحته صفان ثنائيان متماثلان", descriptionEn: "Centered single top showcase followed by twin 2-up decks", previewBg: "" },
+  { id: "layout-37", nameAr: "37. زاوية الارتكاز 2×2 + عمود", nameEn: "37. Corner Anchor 2x2 + Spine", descriptionAr: "مربع رباعي على جهة وعمود عمودي طويل في الجهة الأخرى", descriptionEn: "Compact 2x2 cluster paired against a tall vertical fifth spine", previewBg: "" },
+  { id: "layout-38", nameAr: "38. ميسونري غير متماثل", nameEn: "38. Asymmetric Twin Masonry", descriptionAr: "تداخل حر بين أحجام طويلة ومتوسطة بروح التصميم الحديث", descriptionEn: "Dynamic two-column masonry interleaving tall & short cards", previewBg: "" },
+  { id: "layout-39", nameAr: "39. الزوايا المثبّتة والجسر", nameEn: "39. Pinned Four Corners + Core", descriptionAr: "تباعد الأركان الأربعة مع جسر أفقي بارز في الوسط", descriptionEn: "Four widely separated corner anchors bridged by central capsule", previewBg: "" },
+  { id: "layout-40", nameAr: "40. شريط الكبسولات السريع", nameEn: "40. Compact Pill Capsules", descriptionAr: "كبسولات أنيقة متراصة في شريط عائم خفيف المساحة", descriptionEn: "Ultra-sleek minimal horizontal capsules in a compact dock", previewBg: "" }
+];
+const LEGACY_LAYOUT_MAP = {
+  "layout-frameless-icons": "layout-dock-row",
+  "layout-pure-icons": "layout-dock-row",
+  "layout-cinema-marquee": "layout-dock-row",
+  "layout-arch-gallery": "layout-34",
+  "layout-zen-horizon": "layout-dock-row",
+  "layout-glass-hero-dock": "layout-hero-dock",
+  "layout-vertical-rail": "layout-side-rail",
+  "layout-right-command-panel": "layout-12",
+  "layout-asymmetric-bento": "layout-bento-mosaic",
+  "layout-solid-theater-marquee": "layout-29",
+  "layout-dual-cinema-split": "layout-split-stage",
+  "layout-matte-card-fan": "layout-33",
+  "layout-floating-console-bar": "layout-40",
+  "layout-orbital-medallions": "layout-orbital-hub",
+  "layout-stepped-skyline": "layout-16",
+  "layout-royal-monolith-dock": "layout-23",
+  "layout-horizon-panorama-cards": "layout-26",
+  "layout-pyramid-tier": "layout-twin-spotlight",
+  "layout-luxury-satin-frame": "layout-28",
+  "layout-leanback-lanes": "layout-27",
+  "layout-editorial-showcase": "layout-vertical-list",
+  "layout-compact-glass-stack": "layout-vertical-list",
+  "layout-quadrant-hub": "layout-31",
+  "layout-chamfer-prism-grid": "layout-staircase-cascade",
+  "layout-widescreen-ribbon": "layout-11",
+  "layout-split-header-deck": "layout-22",
+  "layout-obsidian-hex-hive": "layout-20",
+  "layout-carbon-brushed-chassis": "layout-24",
+  "layout-duotone-color-blocks": "layout-30",
+  "layout-isometric-diamond-deck": "layout-21",
+  "layout-split-panel-arcade": "layout-15"
+};
+function normalizeDashboardLayoutId(layoutId) {
+  if (!layoutId) return "layout-dock-row";
+  if (DASHBOARD_LAYOUTS.some((l2) => l2.id === layoutId)) return layoutId;
+  return LEGACY_LAYOUT_MAP[layoutId] || "layout-dock-row";
+}
+function normalizeIconPackId(packId) {
+  if (packId && ICON_PACKS.some((p2) => p2.id === packId)) return packId;
+  return "pack-3d";
+}
+function normalizeFrameShapeId(shapeId) {
+  if (shapeId && FRAME_SHAPES.some((f2) => f2.id === shapeId)) return shapeId;
+  return "rounded-square";
+}
+function resolveDesignSettings(settings) {
+  const legacyStyleId = settings.icon3DStyle || "";
+  const legacyLayoutId = settings.dashboardLayout || "";
+  const iconDisplayMode = settings.iconDisplayMode || (legacyLayoutId === "layout-frameless-icons" || legacyStyleId.startsWith("style-borderless-") ? "icons-only" : "with-frames");
+  let iconPack = settings.iconPack || "";
+  if (!iconPack) {
+    if (legacyStyleId.includes("neon") || legacyStyleId.includes("cyber")) iconPack = "pack-neon";
+    else if (legacyStyleId.includes("glass") || legacyStyleId.includes("crystal")) iconPack = "pack-glass";
+    else if (legacyStyleId.includes("chrome") || legacyStyleId.includes("metal") || legacyStyleId.includes("gold")) iconPack = "pack-metallic";
+    else if (legacyStyleId.includes("minimal") || legacyStyleId.includes("pixel") || legacyStyleId.includes("hud")) iconPack = "pack-geometric";
+    else iconPack = "pack-3d";
+  }
+  iconPack = normalizeIconPackId(iconPack);
+  let frameShape = settings.frameShape || "";
+  if (!frameShape) {
+    if (legacyStyleId.includes("neon") || legacyStyleId.includes("pill") || legacyStyleId.includes("hologram")) frameShape = "circle";
+    else if (legacyStyleId.includes("jewel") || legacyLayoutId.includes("hex")) frameShape = "hexagon";
+    else if (legacyStyleId.includes("hud") || legacyStyleId.includes("cyber") || legacyLayoutId.includes("chamfer")) frameShape = "geometric";
+    else if (legacyStyleId.includes("glass")) frameShape = "glass";
+    else if (legacyStyleId.includes("metal") || legacyStyleId.includes("chrome")) frameShape = "metallic";
+    else frameShape = "rounded-square";
+  }
+  frameShape = normalizeFrameShapeId(frameShape);
+  return {
+    iconDisplayMode,
+    iconPack,
+    frameShape,
+    layoutId: normalizeDashboardLayoutId(settings.dashboardLayout),
+    glassOpacity: typeof settings.glassOpacity === "number" ? settings.glassOpacity : 16,
+    glassBlur: typeof settings.glassBlur === "number" ? settings.glassBlur : 10
+  };
+}
+function normalizeHexColor(input) {
+  if (!input) return null;
+  let hex2 = input.trim().toUpperCase();
+  if (!hex2.startsWith("#")) hex2 = "#" + hex2;
+  if (/^#[0-9A-F]{3}$/.test(hex2)) {
+    hex2 = "#" + hex2[1] + hex2[1] + hex2[2] + hex2[2] + hex2[3] + hex2[3];
+  }
+  return /^#[0-9A-F]{6}$/.test(hex2) ? hex2 : null;
+}
+function isValidHexColor(input) {
+  return normalizeHexColor(input) !== null;
+}
+function clampByte(n) {
+  return Math.max(0, Math.min(255, Math.round(n)));
+}
+function rgbToHex(r, g2, b2) {
+  return "#" + [clampByte(r), clampByte(g2), clampByte(b2)].map((v2) => v2.toString(16).padStart(2, "0")).join("").toUpperCase();
+}
+function computePaletteFromHex(hexColor) {
+  const normalized = normalizeHexColor(hexColor) || "#D4AF37";
+  if (normalized === "#D4AF37") {
+    return {
+      primary: "#D4AF37",
+      secondary: "#8C6A1D",
+      accent: "#F5E6A8",
+      mid: "#B8860B",
+      glow: "rgba(212, 175, 55, 0.56)",
+      r: 212,
+      g: 175,
+      b: 55
+    };
+  }
+  const clean = normalized.slice(1);
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g2 = parseInt(clean.slice(2, 4), 16);
+  const b2 = parseInt(clean.slice(4, 6), 16);
+  const secondary = rgbToHex(r * 0.58, g2 * 0.54, b2 * 0.45);
+  const mid = rgbToHex(r * 0.78, g2 * 0.75, b2 * 0.68);
+  const accent = rgbToHex(r + (255 - r) * 0.62, g2 + (255 - g2) * 0.62, b2 + (255 - b2) * 0.62);
+  return {
+    primary: normalized,
+    secondary,
+    accent,
+    mid,
+    glow: `rgba(${r}, ${g2}, ${b2}, 0.52)`,
+    r,
+    g: g2,
+    b: b2
+  };
+}
+function applyRoyalTheme(themeId, customHex, glassOpacity, glassBlur) {
+  const validCustom = normalizeHexColor(customHex);
+  const preset = ROYAL_THEMES.find((t) => t.id === themeId) || ROYAL_THEMES[0];
+  const palette = validCustom ? computePaletteFromHex(validCustom) : preset.primary.toUpperCase() === "#D4AF37" ? computePaletteFromHex("#D4AF37") : {
+    ...computePaletteFromHex(preset.primary),
+    secondary: preset.secondary,
+    accent: preset.accent,
+    glow: preset.glow
+  };
+  const { primary, secondary, accent, mid, glow, r, g: g2, b: b2 } = palette;
   const luminance = (0.299 * r + 0.587 * g2 + 0.114 * b2) / 255;
   const onPrimary = luminance > 0.52 ? "#090b10" : "#ffffff";
+  const metallicGrad = `linear-gradient(135deg, ${secondary} 0%, ${primary} 34%, ${accent} 58%, ${mid} 82%, ${secondary} 100%)`;
+  const alpha2 = Math.max(0, Math.min(0.85, (typeof glassOpacity === "number" ? glassOpacity : 16) / 100));
+  const blurPx = Math.max(0, Math.min(24, typeof glassBlur === "number" ? glassBlur : 10));
   const root2 = document.documentElement;
-  root2.style.setProperty("--color-gold", theme.primary);
-  root2.style.setProperty("--color-gold-dark", theme.secondary);
-  root2.style.setProperty("--theme-primary", theme.primary);
-  root2.style.setProperty("--theme-secondary", theme.secondary);
-  root2.style.setProperty("--theme-accent", theme.accent);
-  root2.style.setProperty("--theme-glow", theme.glow);
+  root2.style.setProperty("--color-gold", primary);
+  root2.style.setProperty("--color-gold-dark", secondary);
+  root2.style.setProperty("--theme-primary", primary);
+  root2.style.setProperty("--theme-secondary", secondary);
+  root2.style.setProperty("--theme-accent", accent);
+  root2.style.setProperty("--theme-mid", mid);
+  root2.style.setProperty("--theme-glow", glow);
   root2.style.setProperty("--theme-on-primary", onPrimary);
+  root2.style.setProperty("--theme-metallic-grad", metallicGrad);
+  root2.style.setProperty("--achour-glass-alpha", String(alpha2));
+  root2.style.setProperty("--achour-glass-blur", `${blurPx}px`);
+  const opacitySteps = [
+    5,
+    8,
+    10,
+    12,
+    15,
+    16,
+    18,
+    20,
+    22,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95
+  ];
+  const opacityRules = opacitySteps.map((pct) => {
+    const a = (pct / 100).toFixed(2);
+    return `
+        .text-gold\\/${pct}, .text-amber-400\\/${pct}, .text-amber-300\\/${pct}, .text-yellow-400\\/${pct} { color: rgba(${r},${g2},${b2},${a}) !important; }
+        .bg-gold\\/${pct}, .bg-amber-500\\/${pct}, .bg-yellow-500\\/${pct} { background-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .border-gold\\/${pct}, .border-amber-500\\/${pct}, .border-yellow-500\\/${pct} { border-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .hover\\:bg-gold\\/${pct}:hover { background-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .hover\\:border-gold\\/${pct}:hover, .hover\\:border-amber-500\\/${pct}:hover { border-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .hover\\:text-gold\\/${pct}:hover { color: rgba(${r},${g2},${b2},${a}) !important; }
+        .focus\\:border-gold\\/${pct}:focus, .focus\\:bg-gold\\/${pct}:focus { border-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .ring-gold\\/${pct}, .focus\\:ring-gold\\/${pct}:focus { --tw-ring-color: rgba(${r},${g2},${b2},${a}) !important; }
+        .shadow-gold\\/${pct}, .shadow-amber-500\\/${pct} { box-shadow: 0 0 22px rgba(${r},${g2},${b2},${Math.min(0.75, pct / 100 * 0.9).toFixed(2)}) !important; }
+      `;
+  }).join("\n");
   let styleEl = document.getElementById("royal-theme-runtime");
   if (!styleEl) {
     styleEl = document.createElement("style");
@@ -123073,2070 +123275,3197 @@ function applyRoyalTheme(themeId) {
   }
   styleEl.innerHTML = `
     :root, html, body, #root {
-      --color-gold: ${theme.primary} !important;
-      --color-gold-dark: ${theme.secondary} !important;
-      --theme-primary: ${theme.primary} !important;
-      --theme-secondary: ${theme.secondary} !important;
-      --theme-accent: ${theme.accent} !important;
-      --theme-glow: ${theme.glow} !important;
+      --color-gold: ${primary} !important;
+      --color-gold-dark: ${secondary} !important;
+      --theme-primary: ${primary} !important;
+      --theme-secondary: ${secondary} !important;
+      --theme-accent: ${accent} !important;
+      --theme-mid: ${mid} !important;
+      --theme-glow: ${glow} !important;
       --theme-on-primary: ${onPrimary} !important;
+      --theme-metallic-grad: ${metallicGrad} !important;
+      --achour-glass-alpha: ${alpha2} !important;
+      --achour-glass-blur: ${blurPx}px !important;
     }
-    .text-gold, .text-amber-400, .text-amber-300, .text-yellow-400, .text-yellow-300 {
-      color: ${theme.primary} !important;
-    }
-    .text-gold\\/90, .text-amber-400\\/90, .text-amber-300\\/90 {
-      color: rgba(${r},${g2},${b2},0.9) !important;
-    }
-    .text-gold\\/85, .text-amber-400\\/85, .text-amber-300\\/85 {
-      color: rgba(${r},${g2},${b2},0.85) !important;
-    }
-    .text-gold\\/80, .text-amber-400\\/80, .text-amber-300\\/80 {
-      color: rgba(${r},${g2},${b2},0.8) !important;
-    }
-    .text-gold\\/75, .text-gold\\/70, .text-amber-400\\/70 {
-      color: rgba(${r},${g2},${b2},0.72) !important;
-    }
-    .text-gold\\/60, .text-gold\\/50 {
-      color: rgba(${r},${g2},${b2},0.6) !important;
+    .text-gold, .text-amber-400, .text-amber-300, .text-amber-200, .text-yellow-400, .text-yellow-300 {
+      color: ${primary} !important;
     }
     .bg-gold, .bg-amber-500, .bg-amber-600, .bg-yellow-500 {
-      background-color: ${theme.primary} !important;
+      background-color: ${primary} !important;
+      color: ${onPrimary};
     }
-    .border-gold, .border-amber-500, .border-yellow-500 {
-      border-color: ${theme.primary} !important;
+    .border-gold, .border-amber-500, .border-amber-400, .border-amber-300, .border-yellow-500 {
+      border-color: ${primary} !important;
     }
-    .border-gold\\/85 {
-      border-color: ${theme.primary}D9 !important;
+    .fill-gold, .fill-amber-500, .fill-amber-400, .fill-yellow-500 {
+      fill: ${primary} !important;
     }
-    .border-gold\\/75 {
-      border-color: ${theme.primary}BF !important;
+    .stroke-gold {
+      stroke: ${primary} !important;
     }
-    .border-gold\\/60, .border-amber-500\\/60, .border-yellow-500\\/60 {
-      border-color: ${theme.primary}99 !important;
+    .accent-gold {
+      accent-color: ${primary} !important;
     }
-    .border-gold\\/50, .border-amber-500\\/50, .border-yellow-500\\/50 {
-      border-color: ${theme.primary}80 !important;
-    }
-    .border-gold\\/45 {
-      border-color: ${theme.primary}73 !important;
-    }
-    .border-gold\\/40, .border-amber-500\\/40, .border-yellow-500\\/40 {
-      border-color: ${theme.primary}66 !important;
-    }
-    .border-gold\\/35 {
-      border-color: ${theme.primary}59 !important;
-    }
-    .border-gold\\/30, .border-amber-500\\/30, .border-yellow-500\\/30 {
-      border-color: ${theme.primary}4D !important;
-    }
-    .border-gold\\/20, .border-amber-500\\/20, .border-yellow-500\\/20 {
-      border-color: ${theme.primary}33 !important;
-    }
-    .bg-gold\\/5, .bg-amber-500\\/5 {
-      background-color: ${theme.primary}0D !important;
-    }
-    .bg-gold\\/10, .bg-amber-500\\/10 {
-      background-color: ${theme.primary}1A !important;
-    }
-    .bg-gold\\/15, .bg-amber-500\\/15 {
-      background-color: ${theme.primary}26 !important;
-    }
-    .bg-gold\\/20, .bg-amber-500\\/20 {
-      background-color: ${theme.primary}33 !important;
-    }
-    .bg-gold\\/25, .bg-amber-500\\/25 {
-      background-color: ${theme.primary}40 !important;
-    }
-    .bg-gold\\/30, .bg-amber-500\\/30 {
-      background-color: ${theme.primary}4D !important;
-    }
-    .bg-gold\\/35 {
-      background-color: ${theme.primary}59 !important;
-    }
-    .bg-gold\\/40 {
-      background-color: ${theme.primary}66 !important;
-    }
-    .bg-gold\\/45 {
-      background-color: ${theme.primary}73 !important;
-    }
-    .bg-gold\\/55 {
-      background-color: ${theme.primary}8C !important;
-    }
-    .bg-gold\\/70 {
-      background-color: ${theme.primary}B3 !important;
-    }
-    .bg-gold\\/75 {
-      background-color: ${theme.primary}BF !important;
-    }
-    .bg-gold\\/85 {
-      background-color: ${theme.primary}D9 !important;
-    }
-    .hover\\:bg-gold\\/70:hover {
-      background-color: ${theme.primary}B3 !important;
-    }
-    .hover\\:bg-gold\\/75:hover {
-      background-color: ${theme.primary}BF !important;
-    }
-    .fill-gold, .fill-amber-500, .fill-yellow-500 {
-      fill: ${theme.primary} !important;
-    }
+    ${opacityRules}
     .from-gold {
-      --tw-gradient-from: ${theme.primary} !important;
-      --tw-gradient-to: ${theme.primary}00 !important;
+      --tw-gradient-from: ${primary} !important;
+      --tw-gradient-to: ${primary}00 !important;
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
     }
     .via-gold {
-      --tw-gradient-to: ${theme.primary}00 !important;
-      --tw-gradient-stops: var(--tw-gradient-from), ${theme.primary} !important, var(--tw-gradient-to) !important;
+      --tw-gradient-to: ${primary}00 !important;
+      --tw-gradient-stops: var(--tw-gradient-from), ${primary} !important, var(--tw-gradient-to) !important;
     }
     .to-gold {
-      --tw-gradient-to: ${theme.primary} !important;
+      --tw-gradient-to: ${primary} !important;
     }
     .from-gold-dark {
-      --tw-gradient-from: ${theme.secondary} !important;
-      --tw-gradient-to: ${theme.secondary}00 !important;
+      --tw-gradient-from: ${secondary} !important;
+      --tw-gradient-to: ${secondary}00 !important;
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
     }
     .via-gold-dark {
-      --tw-gradient-to: ${theme.secondary}00 !important;
-      --tw-gradient-stops: var(--tw-gradient-from), ${theme.secondary} !important, var(--tw-gradient-to) !important;
+      --tw-gradient-to: ${secondary}00 !important;
+      --tw-gradient-stops: var(--tw-gradient-from), ${secondary} !important, var(--tw-gradient-to) !important;
     }
     .to-gold-dark {
-      --tw-gradient-to: ${theme.secondary} !important;
-    }
-    .shadow-gold\\/10, .shadow-amber-500\\/10 {
-      box-shadow: 0 0 15px ${theme.primary}1A !important;
-    }
-    .shadow-gold\\/20, .shadow-amber-500\\/20 {
-      box-shadow: 0 0 20px ${theme.primary}33 !important;
-    }
-    .shadow-gold\\/40, .shadow-amber-500\\/40 {
-      box-shadow: 0 0 30px ${theme.primary}66 !important;
+      --tw-gradient-to: ${secondary} !important;
     }
     .ring-gold, .ring-amber-500, .focus\\:ring-gold:focus, .focus\\:ring-amber-500:focus {
-      --tw-ring-color: ${theme.primary} !important;
-    }
-    .ring-gold\\/70, .ring-amber-500\\/70, .focus\\:ring-gold\\/70:focus {
-      --tw-ring-color: ${theme.primary}B3 !important;
-    }
-    .ring-gold\\/50, .focus\\:ring-gold\\/50:focus {
-      --tw-ring-color: ${theme.primary}80 !important;
+      --tw-ring-color: ${primary} !important;
     }
     .focus\\:border-gold:focus, .focus\\:border-amber-500:focus {
-      border-color: ${theme.primary} !important;
-    }
-    .focus\\:bg-gold\\/10:focus, .focus\\:bg-amber-500\\/10:focus {
-      background-color: ${theme.primary}1A !important;
+      border-color: ${primary} !important;
     }
     .hover\\:bg-gold:hover, .hover\\:bg-amber-500:hover {
-      background-color: ${theme.primary} !important;
-    }
-    .hover\\:bg-gold\\/10:hover {
-      background-color: ${theme.primary}1A !important;
-    }
-    .hover\\:bg-gold\\/15:hover {
-      background-color: ${theme.primary}26 !important;
-    }
-    .hover\\:bg-gold\\/20:hover {
-      background-color: ${theme.primary}33 !important;
-    }
-    .hover\\:bg-gold\\/30:hover {
-      background-color: ${theme.primary}4D !important;
+      background-color: ${primary} !important;
     }
     .hover\\:text-gold:hover, .hover\\:text-amber-400:hover,
     .group:hover .group-hover\\:text-gold {
-      color: ${theme.primary} !important;
+      color: ${primary} !important;
     }
     .group:hover .group-hover\\:bg-gold {
-      background-color: ${theme.primary} !important;
+      background-color: ${primary} !important;
+      color: ${onPrimary} !important;
     }
     .hover\\:border-gold:hover, .hover\\:border-amber-500:hover {
-      border-color: ${theme.primary} !important;
+      border-color: ${primary} !important;
     }
-    .hover\\:border-gold\\/60:hover {
-      border-color: ${theme.primary}99 !important;
+    ::selection {
+      background-color: rgba(${r},${g2},${b2},0.32);
+      color: #ffffff;
     }
-    .hover\\:border-gold\\/50:hover, .hover\\:border-amber-500\\/50:hover {
-      border-color: ${theme.primary}80 !important;
-    }
-    .hover\\:border-gold\\/40:hover, .hover\\:border-amber-500\\/40:hover {
-      border-color: ${theme.primary}66 !important;
-    }
-    
-    /* Keep native outline color synced without injecting duplicate :focus-visible box-shadow rings */
     :focus {
       outline: none !important;
-      outline-color: ${theme.primary} !important;
+      outline-color: ${primary} !important;
     }
   `;
 }
-const VALID_DASHBOARD_LAYOUTS = [
-  "layout-frameless-icons",
-  "layout-pure-icons",
-  "layout-glass-hero-dock",
-  "layout-vertical-rail",
-  "layout-cinema-marquee",
-  "layout-asymmetric-bento",
-  "layout-dual-cinema-split",
-  "layout-floating-console-bar",
-  "layout-pyramid-tier",
-  "layout-right-command-panel",
-  "layout-chamfer-prism-grid",
-  "layout-editorial-showcase",
-  "layout-orbital-medallions",
-  "layout-leanback-lanes",
-  "layout-quadrant-hub",
-  "layout-arch-gallery",
-  "layout-compact-glass-stack",
-  "layout-widescreen-ribbon",
-  "layout-stepped-skyline",
-  "layout-split-header-deck",
-  "layout-zen-horizon",
-  "layout-obsidian-hex-hive",
-  "layout-solid-theater-marquee",
-  "layout-carbon-brushed-chassis",
-  "layout-duotone-color-blocks",
-  "layout-isometric-diamond-deck",
-  "layout-matte-card-fan",
-  "layout-royal-monolith-dock",
-  "layout-split-panel-arcade",
-  "layout-horizon-panorama-cards",
-  "layout-luxury-satin-frame"
-];
-function AchourIconGlyph({
-  kind,
-  className = "w-full h-full",
-  strokeWidth = 1.7,
-  fill = "none",
-  style: style2
-}) {
-  const props = {
-    viewBox: "0 0 24 24",
-    fill,
-    stroke: "currentColor",
-    strokeWidth,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    className,
-    style: style2
-  };
-  switch (kind) {
-    case "live":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7.5 4.2a6.5 6.5 0 0 1 9 0", opacity: "0.55" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9.6 6.2a3.6 3.6 0 0 1 4.8 0", opacity: "0.85" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3.5 9.5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v7.2a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "8.2", cy: "13.1", r: "1.4", fill: "currentColor", stroke: "none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12.2 11.4l4.2 1.7-4.2 1.7z", fill: "currentColor", stroke: "none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.5 21h7" })
-      ] });
-    case "movies":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "7.5", cy: "7", r: "2.7" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "15.5", cy: "7", r: "2.7" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3.5 11.2a1.8 1.8 0 0 1 1.8-1.8h12.2a1.8 1.8 0 0 1 1.8 1.8v7.6a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M19.3 13.3l2.2-1.4v6.2l-2.2-1.4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9.6 12.8l4.4 2.2-4.4 2.2z", fill: "currentColor", stroke: "none" })
-      ] });
-    case "series":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8.5 3.5h10a2 2 0 0 1 2 2v10", opacity: "0.45" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 6.2h10.2a2 2 0 0 1 2 2v10.2", opacity: "0.72" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3.5", y: "9", width: "12", height: "11.5", rx: "2.2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6.8 12.5h5.4M6.8 15.5h3.2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12.2", cy: "16.2", r: "1.1", fill: "currentColor", stroke: "none" })
-      ] });
-    case "add":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 6.5h9.5M4 11.5h7.5M4 16.5h6.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "16.8", cy: "15.2", r: "4.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M16.8 13.1v4.2M14.7 15.2h4.2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "17.5", cy: "6.5", r: "1.6", fill: "currentColor", stroke: "none" })
-      ] });
-    case "settings":
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...props, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "8.6,3 15.4,3 21,8.6 21,15.4 15.4,21 8.6,21 3,15.4 3,8.6" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7.5", y1: "9.5", x2: "16.5", y2: "9.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.2", cy: "9.5", r: "1.5", fill: "currentColor", stroke: "none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "7.5", y1: "14.5", x2: "16.5", y2: "14.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14.2", cy: "14.5", r: "1.5", fill: "currentColor", stroke: "none" })
-      ] });
-  }
-}
-const ICON_SIZE_CLASSES = {
-  sm: {
-    xs: "w-6 h-6 p-1",
-    sm: "w-7 h-7 p-1",
-    md: "w-8 h-8 p-1.5",
-    lg: "w-9 h-9 sm:w-10 sm:h-10 p-2",
-    xl: "w-10 h-10 sm:w-11 sm:h-11 p-2",
-    "2xl": "w-11 h-11 sm:w-12 sm:h-12 p-2.5",
-    "3xl": "w-12 h-12 sm:w-14 sm:h-14 p-2.5"
-  },
-  md: {
-    xs: "w-8 h-8 p-1.5",
-    sm: "w-9 h-9 sm:w-10 sm:h-10 p-2",
-    md: "w-10 h-10 sm:w-11 sm:h-11 p-2",
-    lg: "w-11 h-11 sm:w-13 sm:h-13 p-2.5",
-    xl: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
-    "2xl": "w-13 h-13 sm:w-15 sm:h-15 p-3",
-    "3xl": "w-15 h-15 sm:w-18 sm:h-18 p-3"
-  },
-  lg: {
-    xs: "w-10 h-10 sm:w-11 sm:h-11 p-2",
-    sm: "w-11 h-11 sm:w-13 sm:h-13 p-2.5",
-    md: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
-    lg: "w-14 h-14 sm:w-16 sm:h-16 p-3",
-    xl: "w-15 h-15 sm:w-18 sm:h-18 p-3",
-    "2xl": "w-16 h-16 sm:w-20 sm:h-20 p-3.5",
-    "3xl": "w-18 h-18 sm:w-22 sm:h-22 p-4"
-  },
-  hero: {
-    xs: "w-12 h-12 sm:w-14 sm:h-14 p-2.5",
-    sm: "w-14 h-14 sm:w-16 sm:h-16 p-3",
-    md: "w-14 h-14 sm:w-16 sm:h-16 p-3",
-    lg: "w-16 h-16 sm:w-20 sm:h-20 p-3.5",
-    xl: "w-18 h-18 sm:w-22 sm:h-22 p-4",
-    "2xl": "w-20 h-20 sm:w-24 sm:h-24 p-4",
-    "3xl": "w-24 h-24 sm:w-28 sm:h-28 p-5"
-  }
+const ICON_PX_MAP = {
+  xs: 26,
+  sm: 32,
+  md: 40,
+  lg: 48,
+  xl: 58,
+  "2xl": 68,
+  "3xl": 80
 };
-function renderIconGlyph({
-  kind,
-  active3DStyle,
-  glyphClass,
-  strokeWidth = 1.7,
-  fill = "none",
-  style: style2
-}) {
-  if (active3DStyle == null ? void 0 : active3DStyle.iconImage) {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: active3DStyle.iconImage, alt: "", style: style2, className: `w-full h-full object-contain ${active3DStyle.iconClass}` });
+const FRAME_PX_MAP = {
+  xs: 48,
+  sm: 58,
+  md: 72,
+  lg: 86,
+  xl: 102,
+  "2xl": 118,
+  "3xl": 136
+};
+const PACK_INDEX_MAP = Object.fromEntries(
+  ICON_PACKS.map((p2, i2) => [p2.id, i2])
+);
+function renderSectionSilhouette(kind, variant, t) {
+  const fillBody = t.isMonoline ? "none" : t.fillPrimary;
+  const fillSub = t.isMonoline ? "none" : t.fillSecondary;
+  const strokeDash = t.isStencil ? "6 3.5" : void 0;
+  const sw = t.strokeW;
+  if (kind === "live") {
+    switch (variant % 8) {
+      case 0:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M16 41L24 20L32 41H16Z", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "13", y: "40", width: "22", height: "3.2", rx: "1.6", fill: fillBody, stroke: t.strokeMain, strokeWidth: t.isMonoline ? sw : 0.8 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12.5 10.5C8 15 8 22 12.5 26.5M35.5 10.5C40 15 40 22 35.5 26.5", fill: "none", stroke: t.strokeMain, strokeWidth: sw + 0.6, strokeLinecap: "round", strokeDasharray: strokeDash }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M16.5 14C13.8 16.8 13.8 20.8 16.5 23.6M31.5 14C34.2 16.8 34.2 20.8 31.5 23.6", fill: "none", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "18", r: "5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: sw * 0.7 })
+        ] });
+      case 1:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 26C10 34.5 17 41 25.5 41H15L21 31", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M11 14C11 26 20 35 32 35L11 14Z", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "21", y1: "24", x2: "29", y2: "16", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "30", cy: "15", r: "2.8", fill: t.fillAccent, stroke: t.strokeMain, strokeWidth: 1.2 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M33 9C36.5 11.5 38 15 37 19M37 6C42 10 43.5 15.5 42 21.5", fill: "none", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round", strokeDasharray: strokeDash })
+        ] });
+      case 2:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 7L24 14L31 7", fill: "none", stroke: t.strokeAccent, strokeWidth: sw + 0.4, strokeLinecap: "round", strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "14", width: "36", height: "24", rx: "5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "10", y: "18", width: "21", height: "16", rx: "2.5", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.2 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "36", cy: "22", r: "2", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "36", cy: "29", r: "2", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 26H17.5L19.5 22L22.5 30L24.5 26H27", fill: "none", stroke: t.strokeAccent, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 41H33", stroke: t.strokeMain, strokeWidth: sw, strokeLinecap: "round" })
+        ] });
+      case 3:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "17.5", fill: "none", stroke: t.strokeMain, strokeWidth: sw, strokeDasharray: t.isStencil ? "8 5" : "16 6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "11.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.9 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "5.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.8 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "2.2", fill: "#FFFFFF" })
+        ] });
+      case 4:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "24,11 31,20 24,29 17,20", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "miter" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "15,41 24,29 33,41", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw, strokeLinejoin: "miter" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "12,10 6,21 12,32", fill: "none", stroke: t.strokeMain, strokeWidth: sw + 0.5, strokeLinecap: "square" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "36,10 42,21 36,32", fill: "none", stroke: t.strokeMain, strokeWidth: sw + 0.5, strokeLinecap: "square" })
+        ] });
+      case 5:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "25", r: "14.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("ellipse", { cx: "24", cy: "25", rx: "6.5", ry: "14.5", fill: "none", stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10.5 25H37.5M12.5 18H35.5M12.5 32H35.5", fill: "none", stroke: t.strokeAccent, strokeWidth: sw * 0.75 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "36", cy: "11", r: "4", fill: fillBody, stroke: "#FFFFFF", strokeWidth: "1.2" })
+        ] });
+      case 6:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8", y: "25", width: "5.5", height: "14", rx: "1.8", fill: fillSub, stroke: t.strokeMain, strokeWidth: 1.3 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "16.5", y: "18", width: "5.5", height: "21", rx: "1.8", fill: fillBody, stroke: t.strokeMain, strokeWidth: 1.3 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "25.5", y: "11", width: "5.5", height: "28", rx: "1.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: 1.5 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "34.5", y: "21", width: "5.5", height: "18", rx: "1.8", fill: fillSub, stroke: t.strokeMain, strokeWidth: 1.3 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 9H21", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "28.2", cy: "7.5", r: "2.2", fill: t.fillAccent })
+        ] });
+      case 7:
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18 11C18 7.7 20.7 5 24 5C27.3 5 30 7.7 30 11V24C30 27.3 27.3 30 24 30C20.7 30 18 27.3 18 24V11Z", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 22C12 28.6 17.4 34 24 34C30.6 34 36 28.6 36 22", fill: "none", stroke: t.strokeAccent, strokeWidth: sw + 0.3, strokeLinecap: "round", strokeDasharray: strokeDash }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M24 34V42M16 42H32", fill: "none", stroke: t.strokeMain, strokeWidth: sw, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M21 15H27M21 20H27", stroke: t.strokeAccent, strokeWidth: 1.5, strokeLinecap: "round" })
+        ] });
+    }
   }
-  const variant = active3DStyle ? getIconGlyphVariant(active3DStyle) : void 0;
-  if (variant) {
-    const common = {
-      className: glyphClass,
-      style: style2,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth,
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    };
-    if (variant === "cinema") {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "7", width: "18", height: "12", rx: "2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 3l4 4 4-4M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 7h18v13H3zM3 7l3-4h15l-3 4M8 3l3 4M15 3l3 4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "5", width: "15", height: "13", rx: "2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 2h12a2 2 0 0 1 2 2v12M10 10l5 2-5 2z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 5h16v14H4zM8 9h8M8 13h5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 16v5m-2.5-2.5h5" })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "8.5,3 15.5,3 21,8.5 21,15.5 15.5,21 8.5,21 3,15.5 3,8.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 10h8M8 14h8" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.5", cy: "10", r: "1.4", fill: "currentColor", stroke: "none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14", cy: "14", r: "1.4", fill: "currentColor", stroke: "none" })
-      ] }) });
+  if (kind === "movies") {
+    switch (variant % 8) {
+      case 0:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "17", width: "26", height: "20", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "13", cy: "11", r: "5.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.9 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "25.5", cy: "11", r: "5.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.9 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "13", cy: "11", r: "1.9", fill: t.fillDark }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "25.5", cy: "11", r: "1.9", fill: t.fillDark }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M32 22L42 17V34L32 29V22Z", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "16,22.5 23.5,27 16,31.5", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.3 })
+        ] });
+      case 1:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "17", width: "34", height: "23", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 17L38 9L40 14.5L9 22.5L7 17Z", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.9, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 15L18 20M25 12.5L28 17.5M34 10L37 15", stroke: "#FFFFFF", strokeWidth: "1.8", strokeLinecap: "round", opacity: "0.8" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "20,23 30,28.5 20,34", fill: t.isMonoline ? "none" : t.fillAccent, stroke: t.strokeAccent, strokeWidth: 1.5 })
+        ] });
+      case 2:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "10", width: "36", height: "28", rx: "4", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "12.5", y1: "10", x2: "12.5", y2: "38", stroke: t.strokeAccent, strokeWidth: "1.6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "35.5", y1: "10", x2: "35.5", y2: "38", stroke: t.strokeAccent, strokeWidth: "1.6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8", y: "13.5", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8", y: "22.4", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8", y: "31.3", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "37.2", y: "13.5", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "37.2", y: "22.4", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "37.2", y: "31.3", width: "2.8", height: "3.2", rx: "0.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "20,18.5 30,24 20,29.5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: 1.3 })
+        ] });
+      case 3:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 21L33 11V35L10 25V21Z", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 27L19 38H24L20 29", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("ellipse", { cx: "34.5", cy: "23", rx: "3", ry: "12", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M41 18L44 16M41.5 23H45M41 28L44 30", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" })
+        ] });
+      case 4:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "7,10 41,10 41,33 34,39 7,39", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "miter" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "7,10 41,10 41,16.5 7,16.5", fill: fillBody, opacity: "0.85" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 10L11 16.5M25 10L21 16.5M35 10L31 16.5", stroke: t.strokeAccent, strokeWidth: "2.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "20,21.5 31,27.5 20,33.5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: 1.4 })
+        ] });
+      case 5:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M7 14H41V20.5C39 20.5 37.5 22 37.5 24C37.5 26 39 27.5 41 27.5V34H7V27.5C9 27.5 10.5 26 10.5 24C10.5 22 9 20.5 7 20.5V14Z",
+              fill: fillBody,
+              stroke: t.strokeMain,
+              strokeWidth: sw,
+              strokeLinejoin: "round"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "16", y1: "15.5", x2: "16", y2: "32.5", stroke: t.strokeAccent, strokeWidth: "1.5", strokeDasharray: "2.5 2.5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "28,18.5 29.8,22.2 33.8,22.8 30.9,25.6 31.6,29.5 28,27.6 24.4,29.5 25.1,25.6 22.2,22.8 26.2,22.2", fill: t.isMonoline ? "none" : t.fillAccent, stroke: t.strokeAccent, strokeWidth: "1.2" })
+        ] });
+      case 6:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "23", r: "15.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "14", r: "3", fill: t.fillDark, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "32", r: "3", fill: t.fillDark, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "15", cy: "23", r: "3", fill: t.fillDark, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "33", cy: "23", r: "3", fill: t.fillDark, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "23", r: "2.8", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M24 38.5H41", stroke: t.strokeMain, strokeWidth: sw + 0.5, strokeLinecap: "round" })
+        ] });
+      case 7:
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "10", width: "36", height: "27", rx: "3.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 10C12 14 14 23 11 37H6V10Z", fill: fillBody, opacity: "0.9" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M42 10C36 14 34 23 37 37H42V10Z", fill: fillBody, opacity: "0.9" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "20.5,18 30,23.5 20.5,29", fill: t.isMonoline ? "none" : t.fillAccent, stroke: t.strokeAccent, strokeWidth: 1.5 })
+        ] });
     }
-    if (variant === "broadcast") {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 13v8M8 21h8M12 13l-4-4m4 4 4-4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14M8 8a6 6 0 0 0 0 8M16 8a6 6 0 0 1 0 8" })
-      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14", rx: "2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 9l6 3-6 3z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "7", width: "15", height: "12", rx: "2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 4h14v12M9 11h5M9 15h3" })
-      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 5h14M5 10h9M5 15h9M5 20h14" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18 11v8m-4-4h8" })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "8" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 9l6 6M15 9l-6 6" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "2.2", fill: "currentColor", stroke: "none" })
-      ] }) });
+  }
+  if (kind === "series") {
+    switch (variant % 8) {
+      case 0:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "14", y: "7", width: "27", height: "19", rx: "3.5", fill: fillSub, opacity: "0.65", stroke: t.strokeAccent, strokeWidth: 1.3 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "10", y: "11", width: "27", height: "19", rx: "3.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: 1.5 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "15.5", width: "28", height: "21", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "9", y: "18.5", width: "22", height: "14", rx: "2.2", fill: t.isMonoline ? "none" : t.fillDark }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "17.5,21.8 25,25.5 17.5,29.2", fill: t.isMonoline ? "none" : t.fillAccent, stroke: t.strokeAccent, strokeWidth: 1.3 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 40.5H25L26.5 36.5H13.5L15 40.5Z", fill: fillBody })
+        ] });
+      case 1:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "13", y: "9", width: "23", height: "29", rx: "3.5", transform: "rotate(9 24 24)", fill: fillSub, stroke: t.strokeAccent, strokeWidth: 1.5 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "11", y: "9", width: "23", height: "29", rx: "3.5", transform: "rotate(-7 24 24)", fill: fillSub, stroke: t.strokeAccent, strokeWidth: 1.5 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "12", y: "10", width: "24", height: "29", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "21,20 29,24.5 21,29", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.5 })
+        ] });
+      case 2:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 9H36", stroke: t.strokeAccent, strokeWidth: sw + 0.5, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 13.5H39", stroke: t.strokeMain, strokeWidth: sw + 0.5, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "18", width: "36", height: "21", rx: "3.8", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "9.5", y: "21.5", width: "29", height: "14", rx: "2", fill: fillBody, opacity: "0.28", stroke: t.strokeAccent, strokeWidth: "1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "21,24.5 29.5,28.5 21,32.5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: 1.3 })
+        ] });
+      case 3:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "15,7 41,7 37,25 11,25", fill: fillSub, opacity: "0.7", stroke: t.strokeAccent, strokeWidth: 1.4 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "11,13 37,13 33,32 7,32", fill: fillSub, stroke: t.strokeAccent, strokeWidth: 1.8 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "6,20 32,20 28,39 2,39", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "15,25.5 23,29.5 15,33.5", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.3 })
+        ] });
+      case 4:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "9", width: "15", height: "13", rx: "3", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "26", y: "9", width: "15", height: "13", rx: "3", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "26", width: "15", height: "13", rx: "3", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "26", y: "26", width: "15", height: "13", rx: "3", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "12.5,12.5 18,15.5 12.5,18.5", fill: t.fillDark })
+        ] });
+      case 5:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "13", width: "34", height: "26", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 13V8.5C12 7.7 12.7 7 13.5 7H22C22.8 7 23.5 7.7 23.5 8.5V13", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M25.5 13V9.5C25.5 8.7 26.2 8 27 8H34C34.8 8 35.5 8.7 35.5 9.5V13", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "13", y1: "21", x2: "35", y2: "21", stroke: t.strokeAccent, strokeWidth: "2.2", strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "21,25 29,29.5 21,34", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.3 })
+        ] });
+      case 6:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "11", y: "6", width: "26", height: "36", rx: "4.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "11", y1: "15", x2: "37", y2: "15", stroke: t.strokeAccent, strokeWidth: "1.6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "11", y1: "33", x2: "37", y2: "33", stroke: t.strokeAccent, strokeWidth: "1.6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "14.5", y: "18", width: "19", height: "12", rx: "2", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "22,21.5 28,24 22,26.5", fill: t.fillDark })
+        ] });
+      case 7:
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "11", width: "22", height: "26", rx: "4", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "31", y: "11", width: "11", height: "11", rx: "2.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "31", y: "26", width: "11", height: "11", rx: "2.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "14,19 22,24 14,29", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.4 })
+        ] });
     }
-    if (variant === "crystal") {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { ...common, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2 21 8 18 20 6 20 3 8Z", fill: "currentColor", fillOpacity: ".08" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M3 8h18M12 2l-3 6 3 12 3-12-3-6", opacity: ".7" }),
-        kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 10l6 2-6 2z", fill: "currentColor", stroke: "none" }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "13", r: "4" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 9V5M8 13H5M16 13h3" })
-        ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "8", width: "10", height: "8", rx: "1" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 10l4 2-4 2z", fill: "currentColor", stroke: "none" })
-        ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 9h8M8 13h8M8 17h5" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 4v5m-2.5-2.5h5" })
-        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "3" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 5v2m0 10v2M5 12h2m10 0h2" })
-        ] })
+  }
+  if (kind === "add") {
+    switch (variant % 8) {
+      case 0:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "10", width: "28", height: "6", rx: "2.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: t.isMonoline ? sw : 1 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "19.5", width: "23", height: "6", rx: "2.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: t.isMonoline ? sw : 1 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "29", width: "19", height: "6", rx: "2.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: t.isMonoline ? sw : 1 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "34.5", cy: "31", r: "8.2", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.9 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M34.5 27V35M30.5 31H38.5", stroke: t.isMonoline ? t.strokeAccent : "#0A0D14", strokeWidth: "2.6", strokeLinecap: "round" })
+        ] });
+      case 1:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "8", width: "27", height: "30", rx: "4.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 16H28M12 22.5H24M12 29H20", stroke: t.strokeAccent, strokeWidth: "2.4", strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "34.5", cy: "32", r: "8", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M34.5 28V36M30.5 32H38.5", stroke: t.isMonoline ? t.strokeAccent : "#0A0D14", strokeWidth: "2.3", strokeLinecap: "round" })
+        ] });
+      case 2:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 12C6 10.3 7.3 9 9 9H18L21.5 13H39C40.7 13 42 14.3 42 16V35C42 36.7 40.7 38 39 38H9C7.3 38 6 36.7 6 35V12Z", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M13 22H29M13 28H24", stroke: t.strokeAccent, strokeWidth: "2.4", strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "33.5", cy: "27", r: "4.5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M33.5 24.8V29.2M31.3 27H35.7", stroke: "#090B10", strokeWidth: "1.8", strokeLinecap: "round" })
+        ] });
+      case 3:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "6,10 34,10 31,15 6,15", fill: fillBody, stroke: t.strokeMain, strokeWidth: t.isMonoline ? sw : 0.8 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "6,20 29,20 26,25 6,25", fill: fillSub, stroke: t.strokeAccent, strokeWidth: t.isMonoline ? sw : 0.8 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "6,30 23,30 20,35 6,35", fill: fillBody, opacity: "0.7" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "34,21 43,30 34,39 25,30", fill: fillBody, stroke: t.strokeMain, strokeWidth: 1.4 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M34 26V34M30 30H38", stroke: "#090B10", strokeWidth: "2.3" })
+        ] });
+      case 4:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "8", width: "34", height: "9", rx: "2.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "19.5", width: "34", height: "9", rx: "2.5", fill: fillSub, stroke: t.strokeAccent, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "7", y: "31", width: "34", height: "9", rx: "2.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.85 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12.5", r: "1.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "24", r: "1.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "35.5", r: "1.6", fill: t.fillAccent }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M31 12.5H36M31 24H36M31 35.5H36", stroke: t.strokeAccent, strokeWidth: "1.8", strokeLinecap: "round" })
+        ] });
+      case 5:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "9", y: "11", width: "30", height: "29", rx: "4", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M16 7V13M24 7V13M32 7V13", stroke: t.strokeAccent, strokeWidth: sw + 0.5, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 21H33M15 27H29M15 33H24", stroke: t.strokeAccent, strokeWidth: "2.4", strokeLinecap: "round" })
+        ] });
+      case 6:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "9,7 31,7 39,15 39,40 9,40", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "31,7 31,15 39,15", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.5" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M15 21H33M15 27H27", stroke: t.strokeAccent, strokeWidth: "2.2", strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "29,29 36,33 29,37", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.2" })
+        ] });
+      case 7:
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10", cy: "13", r: "2.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10", cy: "24", r: "2.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10", cy: "35", r: "2.8", fill: fillSub, stroke: t.strokeMain, strokeWidth: "1.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17 13H40M17 24H37M17 35H28", stroke: t.strokeMain, strokeWidth: sw + 0.7, strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "35.5", cy: "34.5", r: "6", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.4" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M35.5 31.8V37.2M32.8 34.5H38.2", stroke: "#090B10", strokeWidth: "1.8", strokeLinecap: "round" })
+        ] });
+    }
+  }
+  switch (variant % 8) {
+    case 0:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M21 6H27L28.2 10.2C29.4 10.6 30.5 11.2 31.5 12L35.4 10L39.6 14.2L37.6 18.1C38.4 19.1 39 20.2 39.4 21.4L43.5 22.6V28.6L39.4 29.8C39 31 38.4 32.1 37.6 33.1L39.6 37L35.4 41.2L31.5 39.2C30.5 40 29.4 40.6 28.2 41L27 45H21L19.8 41C18.6 40.6 17.5 40 16.5 39.2L12.6 41.2L8.4 37L10.4 33.1C9.6 32.1 9 31 8.6 29.8L4.5 28.6V22.6L8.6 21.4C9 20.2 9.6 19.1 10.4 18.1L8.4 14.2L12.6 10L16.5 12C17.5 11.2 18.6 10.6 19.8 10.2L21 6Z",
+            fill: fillBody,
+            stroke: t.strokeMain,
+            strokeWidth: sw,
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "25.5", r: "7.2", fill: t.isMonoline ? "none" : t.fillDark, stroke: t.strokeAccent, strokeWidth: 1.6 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "25.5", r: "3", fill: t.fillAccent })
       ] });
-    }
-    if (variant === "neon") {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14", rx: "4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 2l4 3 4-3M10 10l5 2-5 2z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M4 5h16v14H4zM4 5l4 4m3-4 4 4m3-4 2 2" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M10 11l5 2-5 2z", fill: "currentColor", stroke: "none" })
-      ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16", rx: "3" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M8 8h8M8 12h8M8 16h4" })
-      ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "12", cy: "12", r: "9" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 6v12M6 12h12" })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16", rx: "4" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "8", y1: "9.5", x2: "16", y2: "9.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "8", y1: "14.5", x2: "16", y2: "14.5" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "10.5", cy: "9.5", r: "1.4", fill: "currentColor", stroke: "none" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14", cy: "14.5", r: "1.4", fill: "currentColor", stroke: "none" })
-      ] }) });
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { ...common, shapeRendering: "crispEdges", children: kind === "live" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "13" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M9 18v3m6-3v3M8 21h8M10 9h4v5h-4z", fill: "currentColor", stroke: "none" })
-    ] }) : kind === "movies" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "5", width: "18", height: "14" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M6 5v4m4-4v4m4-4v4m4-4v4M10 11h4v4h-4z", fill: "currentColor", stroke: "none" })
-    ] }) : kind === "series" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "3", y: "4", width: "18", height: "16" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 8h3v3H7zM14 8h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z", fill: "currentColor", stroke: "none" })
-    ] }) : kind === "add" ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z", fill: "currentColor", stroke: "none" })
-    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "4", y: "4", width: "16", height: "16" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M7 9h10M7 15h10" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "9", y: "7.5", width: "3", height: "3", fill: "currentColor", stroke: "none" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "13", y: "13.5", width: "3", height: "3", fill: "currentColor", stroke: "none" })
-    ] }) });
+    case 1:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "17.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "11.5", fill: "none", stroke: t.strokeAccent, strokeWidth: "1.2", strokeDasharray: "3.5 3.5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "14.5", y1: "19.5", x2: "33.5", y2: "19.5", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "20", cy: "19.5", r: "3", fill: fillBody, stroke: "#FFFFFF", strokeWidth: "1.3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "14.5", y1: "28.5", x2: "33.5", y2: "28.5", stroke: t.strokeAccent, strokeWidth: sw, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "28.5", cy: "28.5", r: "3", fill: fillBody, stroke: "#FFFFFF", strokeWidth: "1.3" })
+      ] });
+    case 2:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "14", fill: "none", stroke: t.strokeMain, strokeWidth: sw + 0.8 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "8", fill: fillSub, stroke: t.strokeAccent, strokeWidth: "1.6" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M24 5.5V10M24 38V42.5M5.5 24H10M38 24H42.5M10.9 10.9L14.2 14.2M33.8 33.8L37.1 37.1M37.1 10.9L33.8 14.2M14.2 33.8L10.9 37.1",
+            stroke: t.strokeMain,
+            strokeWidth: sw + 0.8,
+            strokeLinecap: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "3.4", fill: fillBody })
+      ] });
+    case 3:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "16,5 32,5 43,16 43,32 32,43 16,43 5,32 5,16", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "24,13 35,24 24,35 13,24", fill: "none", stroke: t.strokeAccent, strokeWidth: sw * 0.9 }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "20.5", y: "20.5", width: "7", height: "7", fill: fillBody, stroke: "#FFFFFF", strokeWidth: "1" })
+      ] });
+    case 4:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "12", y1: "8", x2: "12", y2: "40", stroke: t.strokeMain, strokeWidth: sw + 0.4, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "24", y1: "8", x2: "24", y2: "40", stroke: t.strokeMain, strokeWidth: sw + 0.4, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "36", y1: "8", x2: "36", y2: "40", stroke: t.strokeMain, strokeWidth: sw + 0.4, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8.5", y: "13", width: "7", height: "5.5", rx: "1.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "20.5", y: "28", width: "7", height: "5.5", rx: "1.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.4" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "32.5", y: "17", width: "7", height: "5.5", rx: "1.8", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.4" })
+      ] });
+    case 5:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M13 35L28 20L32 13L38 11L35 17L39 20L32 23L17 38C15.5 39.5 13 39.5 11.5 38C10 36.5 10 34 11.5 32.5", fill: fillBody, stroke: t.strokeMain, strokeWidth: sw * 0.9, strokeLinejoin: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 10L17 15M15 20L35 37", fill: "none", stroke: t.strokeAccent, strokeWidth: sw + 0.5, strokeLinecap: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "14", cy: "36", r: "1.5", fill: t.fillDark })
+      ] });
+    case 6:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "24,5 41,14.5 41,33.5 24,43 7,33.5 7,14.5", fill: fillSub, stroke: t.strokeMain, strokeWidth: sw, strokeLinejoin: "round" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "7.5", fill: fillBody, stroke: t.strokeAccent, strokeWidth: "1.6" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M24 10V16.5M24 31.5V38M12 17L17.5 20.5M30.5 27.5L36 31", stroke: t.strokeAccent, strokeWidth: "2", strokeLinecap: "round" })
+      ] });
+    case 7:
+    default:
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ellipse", { cx: "24", cy: "24", rx: "18", ry: "8", transform: "rotate(-35 24 24)", fill: "none", stroke: t.strokeMain, strokeWidth: sw }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ellipse", { cx: "24", cy: "24", rx: "18", ry: "8", transform: "rotate(35 24 24)", fill: "none", stroke: t.strokeAccent, strokeWidth: sw }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "5", fill: fillBody, stroke: "#FFFFFF", strokeWidth: "1.4" })
+      ] });
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(AchourIconGlyph, { kind, className: glyphClass, strokeWidth, fill, style: style2 });
 }
-function StyledAppIcon({
+function PackIconSvg({
   kind,
-  active3DStyle,
-  scale: scale2 = "md",
-  iconSize = "md"
+  pack,
+  sizePx = 42,
+  className = ""
 }) {
-  var _a2, _b2;
-  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize || "md"] || ICON_SIZE_CLASSES[scale2].md;
-  const sizeFactor = { xs: 0.78, sm: 0.9, md: 1, lg: 1.15, xl: 1.3, "2xl": 1.45, "3xl": 1.6 };
-  const baseSize = { sm: 32, md: 40, lg: 48, hero: 56 };
-  const actualIconSize = Math.round((baseSize[scale2] || 40) * (sizeFactor[iconSize || "md"] || 1));
-  const strokeWidth = ((_a2 = active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.6;
-  const fill = ((_b2 = active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none";
-  const glyphClass = `w-full h-full ${active3DStyle.iconClass}`;
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: actualIconSize, height: actualIconSize, padding: Math.max(3, Math.round(actualIconSize * 0.14)) }, className: `flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls} ${active3DStyle.cardClass}`, children: renderIconGlyph({ kind, active3DStyle, glyphClass, strokeWidth, fill }) });
+  const rawId = reactExports.useId().replace(/:/g, "");
+  const gMain = `gMain_${rawId}`;
+  const gSub = `gSub_${rawId}`;
+  const gGlass = `gGl_${rawId}`;
+  const gHolo = `gHo_${rawId}`;
+  const fNeon = `fNe_${rawId}`;
+  const normId = normalizeIconPackId(pack);
+  const idx = PACK_INDEX_MAP[normId] ?? 0;
+  const finishBucket = idx % 5;
+  const variant = Math.floor(idx / 5);
+  const badgeOverlay = idx === 27 ? "crest" : idx === 28 ? "plasma" : idx === 29 ? "pixel" : idx === 30 ? "slab" : idx === 32 ? "coin" : idx === 33 ? "holo" : idx === 38 ? "hud" : idx === 39 ? "deco" : "none";
+  const isMonoline = idx === 24;
+  const isStencil = idx === 19 || idx === 23;
+  const isDuotone = idx === 14 || idx === 34 || idx === 35;
+  const tokens = (() => {
+    if (finishBucket === 0) {
+      return {
+        fillPrimary: idx === 30 ? "#111622" : `url(#${gMain})`,
+        fillSecondary: `url(#${gSub})`,
+        fillAccent: "var(--theme-accent, #F5E6A8)",
+        fillGlass: `url(#${gGlass})`,
+        fillDark: "#0C0F18",
+        strokeMain: idx === 30 ? "var(--theme-primary, #D4AF37)" : "var(--theme-accent, #F5E6A8)",
+        strokeAccent: "#FFFFFF",
+        strokeW: idx === 20 ? 2.4 : 1.7,
+        badgeOverlay
+      };
+    }
+    if (finishBucket === 1) {
+      return {
+        fillPrimary: `url(#${gGlass})`,
+        fillSecondary: "rgba(255,255,255,0.14)",
+        fillAccent: "#FFFFFF",
+        fillGlass: `url(#${gGlass})`,
+        fillDark: "rgba(10,14,24,0.65)",
+        strokeMain: idx === 26 ? "var(--theme-primary, #D4AF37)" : "rgba(255,255,255,0.88)",
+        strokeAccent: "var(--theme-accent, #F5E6A8)",
+        strokeW: idx === 31 ? 2.2 : 1.8,
+        badgeOverlay
+      };
+    }
+    if (finishBucket === 2) {
+      return {
+        fillPrimary: idx === 12 ? "#12151E" : `url(#${gMain})`,
+        fillSecondary: idx === 12 ? `url(#${gSub})` : `url(#${gSub})`,
+        fillAccent: "var(--theme-accent, #F5E6A8)",
+        fillGlass: `url(#${gGlass})`,
+        fillDark: "#120E04",
+        strokeMain: idx === 37 ? "#CBD5E1" : "var(--theme-accent, #F5E6A8)",
+        strokeAccent: "#FFFFFF",
+        strokeW: idx === 17 ? 2.5 : 1.9,
+        badgeOverlay
+      };
+    }
+    if (finishBucket === 3) {
+      return {
+        fillPrimary: "rgba(255,255,255,0.06)",
+        fillSecondary: "rgba(0,0,0,0.45)",
+        fillAccent: "#FFFFFF",
+        fillGlass: `url(#${gGlass})`,
+        fillDark: "#05070B",
+        strokeMain: idx === 33 ? `url(#${gHolo})` : "var(--theme-primary, #D4AF37)",
+        strokeAccent: "#FFFFFF",
+        strokeW: idx === 8 ? 3 : idx === 13 ? 1.4 : 2.1,
+        isNeon: true,
+        isStencil,
+        badgeOverlay
+      };
+    }
+    return {
+      fillPrimary: isDuotone ? "var(--theme-primary, #D4AF37)" : "var(--theme-primary, #D4AF37)",
+      fillSecondary: isDuotone ? "var(--theme-accent, #F5E6A8)" : "var(--theme-secondary, #8C6A1D)",
+      fillAccent: "var(--theme-accent, #F5E6A8)",
+      fillGlass: `url(#${gGlass})`,
+      fillDark: "#090C14",
+      strokeMain: isMonoline ? "var(--theme-accent, #F5E6A8)" : "var(--theme-primary, #D4AF37)",
+      strokeAccent: "var(--theme-accent, #F5E6A8)",
+      strokeW: isMonoline ? 1.35 : idx === 9 ? 1.8 : 2.2,
+      isMonoline,
+      isStencil,
+      isDuotone,
+      badgeOverlay
+    };
+  })();
+  const filterCss = tokens.isNeon ? "drop-shadow(0 0 8px var(--theme-glow, rgba(212,175,55,0.65)))" : idx === 35 ? "drop-shadow(0 8px 12px rgba(0,0,0,0.72))" : "drop-shadow(0 4px 8px rgba(0,0,0,0.5))";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "svg",
+    {
+      viewBox: "0 0 48 48",
+      width: sizePx,
+      height: sizePx,
+      className: `shrink-0 select-none overflow-visible ${className}`,
+      style: { filter: filterCss },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("defs", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: gMain, x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "0%", stopColor: "var(--theme-accent, #F5E6A8)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "48%", stopColor: "var(--theme-primary, #D4AF37)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "100%", stopColor: "var(--theme-secondary, #8C6A1D)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: gSub, x1: "0%", y1: "100%", x2: "100%", y2: "0%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "0%", stopColor: "var(--theme-secondary, #8C6A1D)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "55%", stopColor: "var(--theme-primary, #D4AF37)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "100%", stopColor: "var(--theme-accent, #F5E6A8)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: gGlass, x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "0%", stopColor: "#FFFFFF", stopOpacity: "0.56" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "45%", stopColor: "var(--theme-primary, #D4AF37)", stopOpacity: "0.32" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "100%", stopColor: "var(--theme-secondary, #8C6A1D)", stopOpacity: "0.18" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: gHolo, x1: "0%", y1: "0%", x2: "100%", y2: "0%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "0%", stopColor: "var(--theme-accent, #F5E6A8)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "50%", stopColor: "#FFFFFF" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "100%", stopColor: "var(--theme-primary, #D4AF37)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("filter", { id: fNeon, x: "-30%", y: "-30%", width: "160%", height: "160%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("feGaussianBlur", { stdDeviation: "1.4", result: "blur" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("feMerge", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("feMergeNode", { in: "blur" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("feMergeNode", { in: "SourceGraphic" })
+            ] })
+          ] })
+        ] }),
+        badgeOverlay === "crest" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M8 5H40V25C40 36 31 43 24 46C17 43 8 36 8 25V5Z",
+            fill: "rgba(12,14,20,0.65)",
+            stroke: `url(#${gMain})`,
+            strokeWidth: "1.6"
+          }
+        ),
+        badgeOverlay === "coin" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "circle",
+          {
+            cx: "24",
+            cy: "24",
+            r: "21.5",
+            fill: "rgba(16,13,6,0.55)",
+            stroke: `url(#${gMain})`,
+            strokeWidth: "2",
+            strokeDasharray: "3 1.5"
+          }
+        ),
+        badgeOverlay === "slab" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "rect",
+          {
+            x: "3",
+            y: "3",
+            width: "42",
+            height: "42",
+            rx: "9",
+            fill: "#0D111A",
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "1.5"
+          }
+        ),
+        badgeOverlay === "plasma" && /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "24", cy: "24", r: "18", fill: "var(--theme-primary, #D4AF37)", fillOpacity: "0.18" }),
+        badgeOverlay === "pixel" && /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { opacity: "0.75", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "2", y: "2", width: "4", height: "4", fill: "var(--theme-accent, #F5E6A8)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "42", y: "2", width: "4", height: "4", fill: "var(--theme-accent, #F5E6A8)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "2", y: "42", width: "4", height: "4", fill: "var(--theme-accent, #F5E6A8)" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "42", y: "42", width: "4", height: "4", fill: "var(--theme-accent, #F5E6A8)" })
+        ] }),
+        badgeOverlay === "hud" && /* @__PURE__ */ jsxRuntimeExports.jsxs("g", { stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "1.4", fill: "none", opacity: "0.85", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "3,11 3,3 11,3" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "37,3 45,3 45,11" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "3,37 3,45 11,45" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "37,45 45,45 45,37" })
+        ] }),
+        badgeOverlay === "deco" && /* @__PURE__ */ jsxRuntimeExports.jsx("g", { stroke: `url(#${gMain})`, strokeWidth: "1.4", fill: "none", opacity: "0.9", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M5 13V5H13M35 5H43V13M5 35V43H13M35 43H43V35" }) }),
+        idx === 18 && /* @__PURE__ */ jsxRuntimeExports.jsx("g", { transform: "translate(1.8, -1.2)", opacity: "0.45", children: renderSectionSilhouette(kind, variant, {
+          ...tokens,
+          strokeMain: "#FFFFFF",
+          strokeAccent: "var(--theme-accent, #F5E6A8)",
+          fillPrimary: "none",
+          fillSecondary: "none"
+        }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("g", { filter: tokens.isNeon ? `url(#${fNeon})` : void 0, children: renderSectionSilhouette(kind, variant, tokens) }),
+        idx === 9 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "rect",
+          {
+            x: "2",
+            y: "2",
+            width: "44",
+            height: "44",
+            rx: "6",
+            fill: "none",
+            stroke: "var(--theme-accent, #F5E6A8)",
+            strokeOpacity: "0.35",
+            strokeWidth: "1",
+            strokeDasharray: "3 3"
+          }
+        )
+      ]
+    }
+  );
 }
-function StudioLayoutIcon({
+function DashboardSectionIcon({
   kind,
-  shape,
-  active3DStyle,
-  scale: scale2 = "md",
-  iconSize = "md",
-  highlight = false,
-  inverted = false
+  displayMode,
+  iconPack,
+  frameShape,
+  iconScale = "md",
+  frameScale = "md",
+  glassOpacity = 16,
+  glassBlur = 10,
+  sizeOverridePx,
+  frameSizeOverridePx,
+  isHero = false
 }) {
-  var _a2, _b2;
-  const boxCls = ICON_SIZE_CLASSES[scale2][iconSize || "md"] || ICON_SIZE_CLASSES[scale2].md;
-  const sizeFactor = { xs: 0.78, sm: 0.9, md: 1, lg: 1.15, xl: 1.3, "2xl": 1.45, "3xl": 1.6 };
-  const baseSize = { sm: 32, md: 40, lg: 48, hero: 56 };
-  const actualIconSize = Math.round((baseSize[scale2] || 40) * (sizeFactor[iconSize || "md"] || 1));
-  const glyph = renderIconGlyph({
-    kind,
-    active3DStyle,
-    glyphClass: `w-full h-full relative z-10 ${(active3DStyle == null ? void 0 : active3DStyle.iconClass) || ""}`,
-    strokeWidth: ((_a2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.85,
-    fill: ((_b2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none"
-  });
-  if (shape === "hex") {
+  const baseIconPx = sizeOverridePx ?? (ICON_PX_MAP[iconScale || "md"] || 40);
+  const iconPx = isHero ? Math.round(baseIconPx * 1.18) : baseIconPx;
+  const resolvedPack = normalizeIconPackId(iconPack);
+  if (displayMode === "icons-only") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center bg-transparent border-0 shadow-none transition-transform duration-150 group-hover:scale-110", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: iconPx }) });
+  }
+  const resolvedShape = normalizeFrameShapeId(frameShape);
+  const baseFramePx = frameSizeOverridePx ?? (FRAME_PX_MAP[frameScale || "md"] || 72);
+  const framePx = Math.max(iconPx + 14, isHero ? Math.round(baseFramePx * 1.14) : baseFramePx);
+  const alpha2 = Math.max(0.02, Math.min(0.85, (glassOpacity ?? 16) / 100));
+  const blurPx = Math.max(0, Math.min(24, glassBlur ?? 10));
+  const innerIconPx = Math.min(iconPx, Math.round(framePx * 0.6));
+  const interiorGlassStyle = {
+    backgroundColor: `rgba(14, 18, 28, ${Math.min(0.88, alpha2 + 0.08)})`,
+    backdropFilter: blurPx > 0 ? `blur(${blurPx}px)` : void 0,
+    WebkitBackdropFilter: blurPx > 0 ? `blur(${blurPx}px)` : void 0
+  };
+  const renderSvgFrame = (children, scaleInner = 0.6) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105",
+      style: { width: framePx, height: framePx },
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 100 100", className: "absolute inset-0 w-full h-full pointer-events-none overflow-visible", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: "achourFrameMetal", x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "0%", stopColor: "var(--theme-secondary, #8C6A1D)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "35%", stopColor: "var(--theme-primary, #D4AF37)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "60%", stopColor: "var(--theme-accent, #F5E6A8)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "100%", stopColor: "var(--theme-secondary, #8C6A1D)" })
+          ] }) }),
+          children
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PackIconSvg,
+          {
+            kind,
+            pack: resolvedPack,
+            sizePx: Math.min(iconPx, Math.round(framePx * scaleInner))
+          }
+        ) })
+      ]
+    }
+  );
+  switch (resolvedShape) {
+    case "hexagon":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "50,3 93,26 93,74 50,97 7,74 7,26",
+              fill: `rgba(14, 18, 28, ${alpha2})`,
+              stroke: "var(--theme-primary, #D4AF37)",
+              strokeWidth: "3.2"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "50,9 87,29 87,71 50,91 13,71 13,29",
+              fill: "none",
+              stroke: "var(--theme-accent, #F5E6A8)",
+              strokeOpacity: "0.35",
+              strokeWidth: "1.2"
+            }
+          )
+        ] })
+      );
+    case "geometric":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "24,4 76,4 96,24 96,76 76,96 24,96 4,76 4,24",
+              fill: `rgba(14, 18, 28, ${alpha2})`,
+              stroke: "var(--theme-primary, #D4AF37)",
+              strokeWidth: "3.2"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "14,32 14,14 32,14", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeWidth: "2.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "86,68 86,86 68,86", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeWidth: "2.2" })
+        ] })
+      );
+    case "frame-07":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "46", fill: `rgba(12,16,26,${alpha2})`, stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "2.8" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "39", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeOpacity: "0.65", strokeWidth: "1.4" })
+        ] }),
+        0.56
+      );
+    case "frame-08":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "polygon",
+          {
+            points: "26,7 74,7 96,50 74,93 26,93 4,50",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2"
+          }
+        )
+      );
+    case "frame-09":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "50,3 97,50 50,97 3,50", fill: `rgba(14,18,28,${alpha2})`, stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "3.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "50,11 89,50 50,89 11,50", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeOpacity: "0.4", strokeWidth: "1.2" })
+        ] }),
+        0.52
+      );
+    case "frame-10":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M12 8 H88 V47 C88 73 67 88 50 95 C33 88 12 73 12 47 Z",
+              fill: `rgba(14,18,28,${alpha2})`,
+              stroke: "var(--theme-primary, #D4AF37)",
+              strokeWidth: "3.2",
+              strokeLinejoin: "round"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "path",
+            {
+              d: "M18 14 H82 V47 C82 69 64 81 50 88 C36 81 18 69 18 47 Z",
+              fill: "none",
+              stroke: "var(--theme-accent, #F5E6A8)",
+              strokeOpacity: "0.32",
+              strokeWidth: "1.2"
+            }
+          )
+        ] }),
+        0.55
+      );
+    case "frame-11":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M12 93 V46 A38 38 0 0 1 88 46 V93 Z",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2",
+            strokeLinejoin: "round"
+          }
+        ),
+        0.56
+      );
+    case "frame-12":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "polygon",
+          {
+            points: "50,4 95,37 78,94 22,94 5,37",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2",
+            strokeLinejoin: "round"
+          }
+        ),
+        0.56
+      );
+    case "frame-16":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "50,3 61,13 76,9 80,24 94,30 89,45 97,57 86,69 87,84 72,87 63,97 50,91 37,97 28,87 13,84 14,69 3,57 11,45 6,30 20,24 24,9 39,13",
+              fill: `rgba(14,18,28,${alpha2})`,
+              stroke: "var(--theme-primary, #D4AF37)",
+              strokeWidth: "2.8",
+              strokeLinejoin: "round"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "34", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeOpacity: "0.35", strokeWidth: "1.2" })
+        ] }),
+        0.52
+      );
+    case "frame-17":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "polygon",
+          {
+            points: "16,4 84,4 84,16 96,16 96,84 84,84 84,96 16,96 16,84 4,84 4,16 16,16",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3"
+          }
+        ),
+        0.56
+      );
+    case "frame-18":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M8 10 H92 V38 A12 12 0 0 0 92 62 V90 H8 V62 A12 12 0 0 0 8 38 Z",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2",
+            strokeLinejoin: "round"
+          }
+        ),
+        0.56
+      );
+    case "frame-19":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "46", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "3.2", strokeDasharray: "18 8" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "38", fill: `rgba(14,18,28,${alpha2})`, stroke: "var(--theme-accent, #F5E6A8)", strokeOpacity: "0.55", strokeWidth: "1.5" })
+        ] }),
+        0.56
+      );
+    case "frame-21":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "14", y: "10", width: "72", height: "80", rx: "18", fill: `rgba(14,18,28,${alpha2})` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M24 10 C8 16 4 32 4 50 C4 68 8 84 24 90", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4", strokeLinecap: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M76 10 C92 16 96 32 96 50 C96 68 92 84 76 90", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4", strokeLinecap: "round" })
+        ] }),
+        0.58
+      );
+    case "frame-25":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "6", y: "6", width: "88", height: "88", rx: "10", fill: `rgba(14,18,28,${alpha2})`, stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "2.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "13", y: "13", width: "74", height: "74", rx: "6", fill: "none", stroke: "var(--theme-accent, #F5E6A8)", strokeWidth: "1.4", strokeDasharray: "6 4" })
+        ] }),
+        0.56
+      );
+    case "frame-26":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("rect", { x: "8", y: "8", width: "84", height: "84", rx: "12", fill: `rgba(14,18,28,${Math.max(0.04, alpha2 * 0.6)})` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "6,28 6,6 28,6", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4.2", strokeLinecap: "round", strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "72,6 94,6 94,28", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4.2", strokeLinecap: "round", strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "6,72 6,94 28,94", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4.2", strokeLinecap: "round", strokeLinejoin: "round" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polyline", { points: "72,94 94,94 94,72", fill: "none", stroke: "var(--theme-primary, #D4AF37)", strokeWidth: "4.2", strokeLinecap: "round", strokeLinejoin: "round" })
+        ] })
+      );
+    case "frame-27":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105",
+          style: { width: framePx, height: framePx },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 100 100", className: "absolute inset-0 w-full h-full pointer-events-none", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "polygon",
+                {
+                  points: "50,3 93,26 93,74 50,97 7,74 7,26",
+                  fill: `rgba(255,255,255,${Math.min(0.32, alpha2 + 0.08)})`,
+                  stroke: "rgba(255,255,255,0.55)",
+                  strokeWidth: "2.8"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("line", { x1: "18", y1: "30", x2: "48", y2: "12", stroke: "#FFFFFF", strokeOpacity: "0.6", strokeWidth: "2.2", strokeLinecap: "round" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx }) })
+          ]
+        }
+      );
+    case "frame-29":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "46", fill: `rgba(14,18,28,${Math.max(0.55, alpha2)})`, stroke: "url(#achourFrameMetal)", strokeWidth: "6" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("circle", { cx: "50", cy: "50", r: "39", fill: "none", stroke: "rgba(255,255,255,0.28)", strokeWidth: "1.2", strokeDasharray: "3 2" })
+        ] }),
+        0.58
+      );
+    case "frame-30":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "50,3 93,26 93,74 50,97 7,74 7,26", fill: `rgba(12,15,24,${Math.max(0.55, alpha2)})`, stroke: "url(#achourFrameMetal)", strokeWidth: "5.2" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("polygon", { points: "50,11 86,30 86,70 50,89 14,70 14,30", fill: "none", stroke: "rgba(255,255,255,0.22)", strokeWidth: "1.2" })
+        ] }),
+        0.58
+      );
+    case "frame-31":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "path",
+          {
+            d: "M11 8 H89 V47 C89 74 68 89 50 96 C32 89 11 74 11 47 Z",
+            fill: `rgba(12,14,22,${Math.max(0.55, alpha2)})`,
+            stroke: "url(#achourFrameMetal)",
+            strokeWidth: "5",
+            strokeLinejoin: "round"
+          }
+        ) }),
+        0.55
+      );
+    case "frame-34":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "polygon",
+          {
+            points: "20,5 80,5 95,22 95,93 5,93 5,22",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2",
+            strokeLinejoin: "round"
+          }
+        ),
+        0.58
+      );
+    case "frame-37":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "50,4 78,13 95,36 95,64 78,87 50,96 22,87 5,64 5,36 22,13",
+              fill: `rgba(14,18,28,${alpha2})`,
+              stroke: "var(--theme-primary, #D4AF37)",
+              strokeWidth: "3.2"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "polygon",
+            {
+              points: "50,12 74,20 87,39 87,61 74,80 50,88 26,80 13,61 13,39 26,20",
+              fill: "none",
+              stroke: "var(--theme-accent, #F5E6A8)",
+              strokeOpacity: "0.4",
+              strokeWidth: "1.2"
+            }
+          )
+        ] }),
+        0.56
+      );
+    case "frame-39":
+      return renderSvgFrame(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "polygon",
+          {
+            points: "18,8 82,8 96,90 4,90",
+            fill: `rgba(14,18,28,${alpha2})`,
+            stroke: "var(--theme-primary, #D4AF37)",
+            strokeWidth: "3.2",
+            strokeLinejoin: "round"
+          }
+        ),
+        0.54
+      );
+  }
+  if (resolvedShape === "metallic") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: "relative flex items-center justify-center shrink-0 rounded-2xl p-[2.5px] transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_24px_rgba(0,0,0,0.45)]",
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          clipPath: "polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
-          background: highlight ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.04)",
-          boxShadow: "inset 0 0 0 1.5px var(--theme-primary)",
-          color: "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          background: "var(--theme-metallic-grad, linear-gradient(135deg, #8C6A1D 0%, #D4AF37 35%, #F5E6A8 58%, #B8860B 84%, #8C6A1D 100%))"
         },
-        children: glyph
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "w-full h-full rounded-[13.5px] flex items-center justify-center border border-white/15",
+            style: {
+              background: `linear-gradient(160deg, rgba(24,26,34,${Math.max(0.45, alpha2)}) 0%, rgba(10,12,18,${Math.max(0.6, alpha2 + 0.12)}) 100%)`
+            },
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+          }
+        )
       }
     );
   }
-  if (shape === "diamond") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`, style: { width: actualIconSize, height: actualIconSize }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  if (resolvedShape === "glass" || resolvedShape === "frame-28") {
+    const isSphere = resolvedShape === "frame-28";
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        className: "w-full h-full rotate-45 rounded-xl flex items-center justify-center border-2",
+        className: `relative flex items-center justify-center shrink-0 border border-white/30 transition-transform duration-150 group-hover:scale-105 shadow-[0_10px_28px_rgba(0,0,0,0.28),inset_0_1px_1px_rgba(255,255,255,0.45)] overflow-hidden ${isSphere ? "rounded-full" : "rounded-[26%]"}`,
         style: {
-          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
-          borderColor: "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          background: `linear-gradient(145deg, rgba(255,255,255,${Math.min(0.32, alpha2 * 0.8 + 0.08)}) 0%, rgba(255,255,255,${Math.max(0.02, alpha2 * 0.3)}) 100%)`,
+          backdropFilter: blurPx > 0 ? `blur(${blurPx}px)` : void 0,
+          WebkitBackdropFilter: blurPx > 0 ? `blur(${blurPx}px)` : void 0
         },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "-rotate-45 w-[68%] h-[68%] flex items-center justify-center", style: { color: "var(--theme-primary)" }, children: glyph })
-      }
-    ) });
-  }
-  if (shape === "octagon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
-      {
-        className: `relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
-        style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          clipPath: "polygon(28% 0%, 72% 0%, 100% 28%, 100% 72%, 72% 100%, 28% 100%, 0% 72%, 0% 28%)",
-          background: highlight ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.04)",
-          color: "var(--theme-primary)"
-        },
-        children: glyph
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute -top-1/2 -left-1/2 w-[140%] h-[90%] rotate-[-25deg] bg-gradient-to-b from-white/25 to-transparent" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx }) })
+        ]
       }
     );
   }
-  if (shape === "shield") {
+  if (resolvedShape === "circle") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 rounded-t-xl rounded-b-[1.35rem] border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: "relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]",
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
-          borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)",
-          color: "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          boxShadow: "inset 0 0 0 2px rgba(255,255,255,0.12), 0 8px 22px rgba(0,0,0,0.35)",
+          ...interiorGlassStyle
         },
-        children: glyph
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
       }
     );
   }
-  if (shape === "duotone") {
+  if (resolvedShape === "frame-13") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: "relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105",
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          backgroundColor: inverted ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.10)",
-          borderColor: inverted ? "rgba(255,255,255,0.28)" : "var(--theme-primary)",
-          color: "var(--theme-primary)"
+          width: Math.round(framePx * 1.18),
+          height: Math.round(framePx * 0.88),
+          borderColor: "var(--theme-primary, #D4AF37)",
+          ...interiorGlassStyle
         },
-        children: glyph
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: Math.min(innerIconPx, Math.round(framePx * 0.56)) })
       }
     );
   }
-  if (shape === "keycap") {
+  if (resolvedShape === "frame-14" || resolvedShape === "frame-15") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 rounded-xl border transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: "relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]",
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          background: highlight ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.03)",
-          borderColor: highlight ? "var(--theme-primary)" : "rgba(255,255,255,0.24)",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.16)",
-          color: "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          borderRadius: resolvedShape === "frame-14" ? "44% 10% 44% 10%" : "10% 44% 10% 44%",
+          borderColor: "var(--theme-primary, #D4AF37)",
+          ...interiorGlassStyle
         },
-        children: glyph
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
       }
     );
   }
-  if (shape === "capsule") {
+  if (resolvedShape === "frame-20") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: "relative flex items-center justify-center shrink-0 border-y-[3px] border-x-0 rounded-xl transition-transform duration-150 group-hover:scale-105",
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          background: highlight ? "rgba(255,255,255,0.10)" : "transparent",
-          borderColor: "var(--theme-primary)",
-          boxShadow: highlight ? "0 0 18px var(--theme-glow)" : "none",
-          color: "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          ...interiorGlassStyle
         },
-        children: glyph
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
       }
     );
   }
-  if (shape === "satin") {
+  if (resolvedShape === "frame-22" || resolvedShape === "frame-38") {
+    const isCircle = resolvedShape === "frame-22";
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       "div",
       {
-        className: `relative flex items-center justify-center shrink-0 rounded-full border-2 p-1 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+        className: `relative flex items-center justify-center shrink-0 border-2 transition-transform duration-150 group-hover:scale-105 ${isCircle ? "rounded-full" : "rounded-[28%]"}`,
         style: {
-          width: actualIconSize,
-          height: actualIconSize,
-          backgroundColor: "transparent",
-          borderColor: "var(--theme-primary)",
-          boxShadow: "inset 0 0 0 2px rgba(255,255,255,0.22)",
-          color: highlight ? "var(--theme-accent)" : "var(--theme-primary)"
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          boxShadow: "0 0 20px var(--theme-glow, rgba(212,175,55,0.6)), inset 0 0 12px var(--theme-glow, rgba(212,175,55,0.35))",
+          backgroundColor: `rgba(8, 10, 16, ${Math.max(0.45, alpha2)})`
         },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[78%] h-[78%] flex items-center justify-center", children: glyph })
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+      }
+    );
+  }
+  if (resolvedShape === "frame-23") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-xl border-2 -skew-x-12 transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          boxShadow: "4px 4px 0 var(--theme-secondary, #8C6A1D)",
+          ...interiorGlassStyle
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "skew-x-12 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx }) })
+      }
+    );
+  }
+  if (resolvedShape === "frame-24") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-[26%] border-2 border-b-[6px] transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          borderBottomColor: "var(--theme-secondary, #8C6A1D)",
+          ...interiorGlassStyle
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+      }
+    );
+  }
+  if (resolvedShape === "frame-32") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-2xl border-2 transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-primary, #D4AF37)",
+          backgroundColor: "#12141C",
+          backgroundImage: "linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%), linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%)",
+          backgroundSize: "6px 6px"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+      }
+    );
+  }
+  if (resolvedShape === "frame-33") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-2xl border transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          backgroundColor: "rgba(6, 8, 12, 0.88)",
+          borderColor: "rgba(255,255,255,0.14)",
+          boxShadow: "inset 0 8px 18px rgba(0,0,0,0.85), inset 0 -1px 0 var(--theme-primary, #D4AF37)"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+      }
+    );
+  }
+  if (resolvedShape === "frame-35") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:scale-105",
+        style: { width: framePx, height: framePx },
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 rounded-[22%] border border-white/15 bg-black/50 translate-x-1.5 -translate-y-1.5 rotate-6"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 rounded-[22%] border border-white/20 bg-black/60 -translate-x-1 translate-y-1 -rotate-3"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "relative w-full h-full rounded-[22%] border-2 flex items-center justify-center",
+              style: { borderColor: "var(--theme-primary, #D4AF37)", ...interiorGlassStyle },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+            }
+          )
+        ]
+      }
+    );
+  }
+  if (resolvedShape === "frame-36") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-full p-[3px] transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          background: "conic-gradient(from 0deg, var(--theme-primary, #D4AF37), var(--theme-accent, #F5E6A8), var(--theme-secondary, #8C6A1D), var(--theme-primary, #D4AF37))",
+          boxShadow: "0 0 18px var(--theme-glow, rgba(212,175,55,0.5))"
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "w-full h-full rounded-full flex items-center justify-center",
+            style: interiorGlassStyle,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
+          }
+        )
+      }
+    );
+  }
+  if (resolvedShape === "frame-40") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: "relative flex items-center justify-center shrink-0 rounded-[26%] border-2 transition-transform duration-150 group-hover:scale-105",
+        style: {
+          width: framePx,
+          height: framePx,
+          borderColor: "var(--theme-accent, #F5E6A8)",
+          boxShadow: "inset 0 0 0 3px var(--theme-primary, #D4AF37), 0 8px 22px rgba(0,0,0,0.45)",
+          ...interiorGlassStyle
+        },
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
       }
     );
   }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: `relative flex items-center justify-center shrink-0 rounded-tr-2xl rounded-bl-2xl rounded-tl-md rounded-br-md border-2 transition-transform duration-150 group-hover:scale-105 ${boxCls}`,
+      className: "relative flex items-center justify-center shrink-0 rounded-[24%] border-2 transition-transform duration-150 group-hover:scale-105 shadow-[0_8px_22px_rgba(0,0,0,0.35)]",
       style: {
-        width: actualIconSize,
-        height: actualIconSize,
-        background: highlight ? "rgba(255,255,255,0.09)" : "transparent",
-        borderColor: highlight ? "var(--theme-accent)" : "var(--theme-primary)",
-        color: "var(--theme-primary)"
+        width: framePx,
+        height: framePx,
+        borderColor: "var(--theme-primary, #D4AF37)",
+        ...interiorGlassStyle
       },
-      children: glyph
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(PackIconSvg, { kind, pack: resolvedPack, sizePx: innerIconPx })
     }
   );
 }
-function FramelessGlyph({
-  kind,
-  active3DStyle,
-  iconSize = "md"
-}) {
-  var _a2, _b2;
-  const pixelSizes = { xs: 32, sm: 40, md: 48, lg: 56, xl: 64, "2xl": 80, "3xl": 96 };
-  const iconPx = pixelSizes[iconSize || "md"] || 48;
-  const cls = `${(active3DStyle == null ? void 0 : active3DStyle.iconClass) || "text-[var(--theme-primary)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"} transition-transform duration-150 group-hover:scale-110`;
-  const iconStyle = { width: iconPx, height: iconPx };
-  return renderIconGlyph({
-    kind,
-    active3DStyle,
-    glyphClass: cls,
-    strokeWidth: ((_a2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _a2.strokeWidth) || 1.95,
-    fill: ((_b2 = active3DStyle == null ? void 0 : active3DStyle.iconProps) == null ? void 0 : _b2.fill) || "none",
-    style: iconStyle
-  });
-}
-const GLASS_CARD = "bg-transparent hover:bg-white/[0.04] border border-white/20 hover:border-[var(--theme-primary)]/70 shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-200 cursor-pointer group focus:outline-none relative";
-const GLASS_HERO = "bg-white/[0.02] hover:bg-white/[0.06] border border-[var(--theme-primary)]/50 hover:border-[var(--theme-primary)] shadow-[0_12px_32px_rgba(0,0,0,0.16)] transition-all duration-200 cursor-pointer group focus:outline-none relative";
-const CRYSTAL_FRAME = "bg-transparent hover:bg-white/[0.04] border border-white/25 hover:border-[var(--theme-primary)]/75 shadow-[0_10px_28px_rgba(0,0,0,0.14)] backdrop-blur-[2px] transition-all duration-200 cursor-pointer group focus:outline-none relative";
-const CRYSTAL_HERO_FRAME = "bg-white/[0.03] hover:bg-white/[0.06] border border-[var(--theme-primary)]/55 hover:border-[var(--theme-primary)] shadow-[0_14px_36px_rgba(0,0,0,0.18)] backdrop-blur-[2px] transition-all duration-200 cursor-pointer group focus:outline-none relative";
+DASHBOARD_LAYOUTS.map((l2) => l2.id);
+const DEFAULT_ORDER$1 = ["live", "movies", "series", "add", "settings"];
+const SPACING_PX = {
+  xs: 6,
+  sm: 10,
+  md: 16,
+  lg: 24,
+  xl: 34
+};
 function DashboardLayouts({
-  layoutId,
+  layoutId = "layout-dock-row",
   dashboardOrder,
+  iconDisplayMode,
+  iconPack,
+  frameShape,
   active3DStyle,
   iconSize = "md",
   frameScale = "md",
   tileSpacing = "md",
+  glassOpacity = 16,
+  glassBlur = 10,
   reorderingKind = null,
+  previewMode = false,
   language,
   isRtl,
   t,
   onNavigate
 }) {
-  const effectiveLayout = VALID_DASHBOARD_LAYOUTS.includes(layoutId || "") ? layoutId : "layout-frameless-icons";
-  const isPhone = isMobileDevice();
-  const spacingPxMap = { xs: 6, sm: 10, md: 14, lg: 22, xl: 32 };
-  const frameScaleFactorMap = { xs: 0.78, sm: 0.88, md: 1, lg: 1.12, xl: 1.24, "2xl": 1.36, "3xl": 1.5 };
-  const activeGap = !isPhone ? spacingPxMap[tileSpacing || "md"] ?? 14 : void 0;
-  const activeFrameFactor = !isPhone ? frameScaleFactorMap[frameScale || "md"] ?? 1 : 1;
-  const gapStyle = (extra) => activeGap !== void 0 ? { gap: `${activeGap}px`, ...extra } : extra;
-  const frameBoxStyle = (basePadPx, baseMinHPx, extra) => {
-    if (isPhone) return extra;
-    const scaledPad = Math.max(4, Math.round(basePadPx * activeFrameFactor));
-    const s = {
-      padding: `${scaledPad}px`,
-      ...baseMinHPx ? { minHeight: `${Math.round(baseMinHPx * activeFrameFactor)}px` } : {},
-      ...extra
-    };
-    return s;
+  const activeLayoutId = normalizeDashboardLayoutId(layoutId);
+  const resolved = resolveDesignSettings({
+    iconDisplayMode,
+    iconPack,
+    frameShape,
+    dashboardLayout: activeLayoutId,
+    icon3DStyle: active3DStyle == null ? void 0 : active3DStyle.id,
+    glassOpacity,
+    glassBlur
+  });
+  const itemMap = {
+    live: {
+      kind: "live",
+      label: t("live"),
+      subtitle: language === "ar" ? "القنوات المباشرة" : "Live TV Channels"
+    },
+    movies: {
+      kind: "movies",
+      label: t("movies"),
+      subtitle: language === "ar" ? "أفلام سينمائية" : "Cinema & VOD"
+    },
+    series: {
+      kind: "series",
+      label: t("series"),
+      subtitle: language === "ar" ? "مسلسلات وحلقات" : "TV Series & Shows"
+    },
+    add: {
+      kind: "add",
+      label: t("playlist"),
+      subtitle: language === "ar" ? "قوائم التشغيل" : "Xtream & M3U Lists"
+    },
+    settings: {
+      kind: "settings",
+      label: t("settings"),
+      subtitle: language === "ar" ? "التخصيص والنظام" : "App Preferences"
+    }
   };
-  const reorderCls = (kind) => reorderingKind === kind ? "ring-4 ring-[var(--theme-primary)] bg-white/[0.08] scale-[1.04] z-30 shadow-[0_0_28px_var(--theme-glow)]" : "";
-  const ReorderBadge = ({ kind }) => reorderingKind === kind ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-[var(--theme-primary)] text-black text-[10px] font-black flex items-center gap-1 shadow-lg z-30 pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 10 }) }) : null;
-  const labels = React$2.useMemo(() => {
-    const subs = {
-      ar: {
-        live: "البث والقنوات",
-        movies: "مكتبة السينما",
-        series: "المواسم والحلقات",
-        add: "الاشتراكات والروابط",
-        settings: "المظهر والنظام"
-      },
-      en: {
-        live: "Channels & TV",
-        movies: "Cinema Library",
-        series: "Seasons & Shows",
-        add: "IPTV Sources",
-        settings: "Look & System"
-      },
-      de: {
-        live: "TV & Kanäle",
-        movies: "Kino-Bibliothek",
-        series: "Staffeln & Serien",
-        add: "IPTV-Listen",
-        settings: "Design & System"
-      },
-      fr: {
-        live: "Chaînes & Direct",
-        movies: "Cinéma VOD",
-        series: "Saisons & Épisodes",
-        add: "Sources IPTV",
-        settings: "Style & Système"
-      }
-    };
-    const s = subs[language] || subs.en;
+  const validOrder = [
+    ...dashboardOrder || [],
+    ...DEFAULT_ORDER$1
+  ].filter(
+    (value, index2, list) => DEFAULT_ORDER$1.includes(value) && list.indexOf(value) === index2
+  );
+  const slots = validOrder.map((k) => itemMap[k]);
+  const [slot0, slot1, slot2, slot3, slot4] = slots;
+  const rawGap = SPACING_PX[tileSpacing || "md"] ?? 16;
+  const gapPx = previewMode ? Math.max(4, Math.round(rawGap * 0.56)) : rawGap;
+  const baseIconPx = ICON_PX_MAP[iconSize || "md"] || 40;
+  const baseFramePx = FRAME_PX_MAP[frameScale || "md"] || 72;
+  const previewScale = previewMode ? 0.56 : 1;
+  const surfaceAlpha = Math.max(0.02, Math.min(0.85, (resolved.glassOpacity ?? 16) / 100));
+  const surfaceBlur = Math.max(0, Math.min(24, resolved.glassBlur ?? 10));
+  const getGlassCardStyle = (emphasized = false) => {
+    if (resolved.iconDisplayMode === "icons-only") {
+      return {
+        backgroundColor: "transparent",
+        borderColor: "transparent",
+        boxShadow: "none",
+        backdropFilter: "none",
+        WebkitBackdropFilter: "none"
+      };
+    }
     return {
-      live: { kind: "live", title: t("live"), sub: s.live, action: () => onNavigate("live") },
-      movies: { kind: "movies", title: t("movies"), sub: s.movies, action: () => onNavigate("movies") },
-      series: { kind: "series", title: t("series"), sub: s.series, action: () => onNavigate("series") },
-      add: { kind: "add", title: t("playlist"), sub: s.add, action: () => onNavigate("add") },
-      settings: { kind: "settings", title: t("settings"), sub: s.settings, action: () => onNavigate("settings") }
+      backgroundColor: emphasized ? `rgba(14, 18, 28, ${Math.min(0.88, surfaceAlpha + 0.08)})` : `rgba(12, 16, 26, ${surfaceAlpha})`,
+      backdropFilter: surfaceBlur > 0 ? `blur(${surfaceBlur}px)` : void 0,
+      WebkitBackdropFilter: surfaceBlur > 0 ? `blur(${surfaceBlur}px)` : void 0,
+      borderColor: emphasized ? "var(--theme-primary, #D4AF37)" : "rgba(255,255,255,0.16)"
     };
-  }, [language, t, onNavigate]);
-  const defaultOrder = ["live", "movies", "series", "add", "settings"];
-  const normalizedOrder = [...dashboardOrder || [], ...defaultOrder].filter((kind, index2, list) => defaultOrder.includes(kind) && list.indexOf(kind) === index2);
-  const allItems = normalizedOrder.map((kind) => labels[kind]);
-  const [slot0, slot1, slot2, slot3, slot4] = allItems;
-  const heroItem = slot0;
-  const dockItems = [slot1, slot2, slot3, slot4];
-  const ArrowIcon = isRtl ? ChevronLeft : ChevronRight;
-  if (effectiveLayout === "layout-frameless-icons") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-6 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "div",
+  };
+  const renderSectionTile = (item, {
+    mode = "open",
+    isHero = false,
+    extraClass = ""
+  } = {}) => {
+    const isReorderingThis = !previewMode && reorderingKind === item.kind;
+    const isIconsOnly = resolved.iconDisplayMode === "icons-only";
+    const iconMultiplier = isHero ? 1.15 : mode === "row" || mode === "pill" ? 0.82 : 1;
+    const computedIconPx = Math.max(15, Math.round(baseIconPx * previewScale * iconMultiplier));
+    const computedFramePx = Math.max(
+      computedIconPx + 10,
+      Math.round(baseFramePx * previewScale * (isHero ? 1.12 : mode === "row" || mode === "pill" ? 0.8 : 1))
+    );
+    const commonProps = previewMode ? {
+      type: "button",
+      tabIndex: -1,
+      onClick: () => onNavigate(item.kind)
+    } : {
+      type: "button",
+      "data-tv-focusable": "true",
+      "data-dashboard-kind": item.kind,
+      tabIndex: 0,
+      onClick: () => onNavigate(item.kind)
+    };
+    const reorderRing = isReorderingThis ? "ring-2 ring-emerald-400 bg-emerald-500/15 animate-pulse" : "";
+    const iconNode = /* @__PURE__ */ jsxRuntimeExports.jsx(
+      DashboardSectionIcon,
       {
-        className: "grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-10 w-full items-center justify-items-center",
-        style: gapStyle(),
-        children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            className: `relative flex flex-col items-center justify-center gap-3 p-3 rounded-2xl bg-transparent border-0 shadow-none transition-transform duration-150 hover:scale-110 cursor-pointer group focus:outline-none w-full max-w-[160px] ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center bg-transparent border-0 shadow-none transition-transform duration-150 group-hover:scale-105", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FramelessGlyph, { kind: item.kind, active3DStyle, iconSize }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-bold tracking-wide truncate max-w-full text-white group-hover:text-gold transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]", children: item.title })
-            ]
-          },
-          item.kind
-        ))
+        kind: item.kind,
+        displayMode: resolved.iconDisplayMode,
+        iconPack: resolved.iconPack,
+        frameShape: resolved.frameShape,
+        iconScale: iconSize,
+        frameScale,
+        glassOpacity: resolved.glassOpacity,
+        glassBlur: resolved.glassBlur,
+        sizeOverridePx: computedIconPx,
+        frameSizeOverridePx: computedFramePx,
+        isHero
       }
-    ) });
-  }
-  if (effectiveLayout === "layout-pure-icons") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 pb-6 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-5 sm:gap-7 w-full items-center justify-items-center", style: gapStyle(), children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(12),
-        className: `relative flex flex-col items-center justify-center gap-3 p-3 rounded-3xl bg-transparent border border-white/15 hover:border-[var(--theme-primary)]/60 transition-colors cursor-pointer group focus:outline-none w-full ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "hero", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium tracking-wide truncate max-w-full text-gold group-hover:brightness-125", children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-glass-hero-dock") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": heroItem.kind,
-          tabIndex: 0,
-          onClick: heroItem.action,
-          style: frameBoxStyle(22),
-          className: `w-full rounded-3xl p-5 sm:p-7 flex items-center justify-between gap-4 ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"} ${reorderCls(heroItem.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: heroItem.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 sm:gap-6 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: heroItem.kind, active3DStyle, scale: "hero", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs text-gold font-mono uppercase tracking-widest mb-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14, className: "text-gold" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: heroItem.sub })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors truncate", children: heroItem.title })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-gold shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 22 }) })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 w-full", style: gapStyle(), children: dockItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl p-3.5 sm:p-4 flex flex-col items-center justify-center gap-2.5 text-center ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] sm:text-xs text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-vertical-rail") {
-    const mediaCards = [slot0, slot1, slot2];
-    const railItems = [slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-1 flex flex-col justify-center gap-2.5", style: gapStyle(), children: railItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `flex-1 rounded-2xl px-3.5 py-3 flex items-center gap-3 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate", children: item.sub })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-zinc-500 group-hover:text-gold shrink-0" })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-3 gap-3.5", style: gapStyle(), children: mediaCards.map((item, i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(18, 210),
-          className: `rounded-3xl p-4 sm:p-5 flex flex-col items-center justify-between text-center min-h-[190px] sm:min-h-[240px] ${i2 === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gold/75 tracking-widest", children: [
-              "0",
-              i2 + 1
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-cinema-marquee") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(16, 220),
-        className: `rounded-3xl p-4 flex flex-col items-center justify-between text-center h-44 sm:h-64 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-gold truncate", children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-400 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-asymmetric-bento") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-12 gap-3 w-full", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": slot0.kind,
-          tabIndex: 0,
-          onClick: slot0.action,
-          style: frameBoxStyle(20, 220),
-          className: `col-span-2 sm:col-span-5 rounded-3xl p-5 flex flex-col items-start justify-between min-h-[160px] sm:min-h-[240px] ${GLASS_HERO} ${isRtl ? "text-right items-end" : "text-left"} ${reorderCls(slot0.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-mono text-gold uppercase tracking-wider mb-1", children: slot0.sub }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold", children: slot0.title })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-4 grid grid-rows-2 gap-3", style: gapStyle(), children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot1.kind,
-            tabIndex: 0,
-            onClick: slot1.action,
-            style: frameBoxStyle(16),
-            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot1.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot1.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot1.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: slot1.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: slot1.sub })
-              ] })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot3.kind,
-            tabIndex: 0,
-            onClick: slot3.action,
-            style: frameBoxStyle(16),
-            className: `rounded-3xl p-4 flex items-center gap-3.5 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot3.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot3.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot3.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-medium text-gold truncate", children: slot3.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: slot3.sub })
-              ] })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-2 sm:col-span-3 flex flex-col gap-3", style: gapStyle(), children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot2.kind,
-            tabIndex: 0,
-            onClick: slot2.action,
-            style: frameBoxStyle(16),
-            className: `flex-1 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 ${GLASS_CARD} ${reorderCls(slot2.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot2.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot2.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold", children: slot2.title })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot4.kind,
-            tabIndex: 0,
-            onClick: slot4.action,
-            style: frameBoxStyle(12),
-            className: `rounded-2xl p-3 flex flex-col items-center justify-center gap-1.5 ${GLASS_CARD} ${reorderCls(slot4.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot4.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot4.kind, active3DStyle, scale: "sm", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-gold truncate max-w-full", children: slot4.title })
-            ]
-          }
-        )
-      ] })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-dual-cinema-split") {
-    const quad = [slot1, slot2, slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": slot0.kind,
-          tabIndex: 0,
-          onClick: slot0.action,
-          style: frameBoxStyle(24, 225),
-          className: `rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[245px] ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-2xl sm:text-3xl font-semibold text-white group-hover:text-gold transition-colors", children: slot0.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-gold/85 mt-1", children: slot0.sub })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", style: gapStyle(), children: quad.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `rounded-2xl p-4 flex flex-col items-center justify-center text-center gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-white group-hover:text-gold truncate w-full", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-floating-console-bar") {
-    const ordered = [
-      { item: slot1, h: "h-36 sm:h-44", center: false, minH: 170 },
-      { item: slot2, h: "h-42 sm:h-52", center: false, minH: 200 },
-      { item: slot0, h: "h-52 sm:h-64", center: true, minH: 240 },
-      { item: slot3, h: "h-42 sm:h-52", center: false, minH: 200 },
-      { item: slot4, h: "h-36 sm:h-44", center: false, minH: 170 }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap sm:flex-nowrap items-center justify-center gap-2.5 sm:gap-3.5 w-full", style: gapStyle(), children: ordered.map(({ item, h, center: center2, minH }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(14, minH),
-        className: `flex-1 min-w-[100px] ${h} rounded-3xl p-3.5 flex flex-col items-center justify-center text-center gap-3 ${center2 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-semibold truncate ${center2 ? "text-base sm:text-xl text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
-            center2 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-pyramid-tier") {
-    const topTwo = [slot0, slot1];
-    const bottomThree = [slot2, slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: topTwo.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(20, 136),
-          className: `rounded-3xl p-5 flex items-center gap-4 min-h-[120px] sm:min-h-[142px] ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-gold/80 truncate mt-1", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", style: gapStyle(), children: bottomThree.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `rounded-2xl p-4 flex flex-col items-center justify-center gap-2 text-center ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-white group-hover:text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-right-command-panel") {
-    const leftStrips = [slot0, slot1, slot2];
-    const rightTower = [slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 flex flex-col gap-3", style: gapStyle(), children: leftStrips.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `rounded-2xl px-5 py-3.5 flex items-center justify-between gap-4 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-400 truncate", children: item.sub })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 p-1 grid grid-cols-2 md:grid-cols-1 gap-2.5", style: gapStyle(), children: rightTower.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl p-3 flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-chamfer-prism-grid") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-5xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(18),
-          className: `rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg p-5 flex items-center gap-3.5 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full sm:w-2/3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-tl-2xl rounded-br-2xl rounded-tr-md rounded-bl-md p-4 flex items-center justify-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-editorial-showcase") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-4xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-2", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(12),
-        className: `w-full rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 ${GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-gold/75 w-6 shrink-0", children: [
-              "0",
-              idx + 1
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base sm:text-xl font-medium truncate text-white group-hover:text-gold", children: item.title })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 shrink-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:inline text-xs text-zinc-400", children: item.sub }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold/70 group-hover:text-gold" })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-orbital-medallions") {
-    const discs = [
-      { item: slot4, baseDim: 112, iconScale: "sm", hero: false },
-      { item: slot1, baseDim: 142, iconScale: "md", hero: false },
-      { item: slot0, baseDim: 184, iconScale: "hero", hero: true },
-      { item: slot2, baseDim: 142, iconScale: "md", hero: false },
-      { item: slot3, baseDim: 112, iconScale: "sm", hero: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-3 sm:gap-5", style: gapStyle(), children: discs.map(({ item, baseDim, iconScale, hero }) => {
-      const dim = Math.round(baseDim * activeFrameFactor);
+    );
+    if (mode === "pill") {
       return /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "button",
         {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: !isPhone ? { width: `${dim}px`, height: `${dim}px`, padding: "8px" } : void 0,
-          className: `${isPhone ? hero ? "w-32 h-32" : "w-24 h-24" : ""} rounded-full flex flex-col items-center justify-center text-center p-2 gap-1.5 ${hero ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
+          ...commonProps,
+          style: getGlassCardStyle(isHero),
+          className: `group relative flex items-center justify-center gap-2 transition-all duration-150 cursor-pointer select-none ${isIconsOnly ? "bg-transparent border-0 shadow-none rounded-full hover:scale-105" : "rounded-full border shadow-[0_8px_22px_rgba(0,0,0,0.35)] hover:border-[var(--theme-primary)]"} ${previewMode ? "px-2.5 py-1.5" : "px-4 py-2 sm:px-5 sm:py-2.5"} ${reorderRing} ${extraClass}`,
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: iconScale, iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-medium truncate max-w-[90%] ${hero ? "text-sm sm:text-base text-gold" : "text-[11px] sm:text-xs text-white group-hover:text-gold"}`, children: item.title })
+            iconNode,
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `font-bold text-white group-hover:text-gold transition-colors truncate ${previewMode ? "text-[10px]" : "text-xs sm:text-sm"}`,
+                children: item.label
+              }
+            )
           ]
         },
         item.kind
       );
-    }) }) });
-  }
-  if (effectiveLayout === "layout-leanback-lanes") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-4 gap-3 w-full", style: gapStyle(), children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot0.kind,
-            tabIndex: 0,
-            onClick: slot0.action,
-            style: frameBoxStyle(20, 120),
-            className: `sm:col-span-2 rounded-3xl p-5 flex items-center gap-4 min-h-[120px] ${GLASS_HERO} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot0.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "hero", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-semibold text-white group-hover:text-gold truncate", children: slot0.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 truncate mt-1", children: slot0.sub })
-              ] })
-            ]
-          }
-        ),
-        [slot1, slot2].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(16, 120),
-            className: `rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-2 min-h-[120px] ${GLASS_CARD} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base font-semibold text-white group-hover:text-gold truncate w-full", children: item.title })
-            ]
-          },
-          item.kind
-        ))
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl mx-auto", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    }
+    if (mode === "row" || mode === "wide") {
+      const paddingClass = previewMode ? "px-2.5 py-1.5" : mode === "wide" ? "px-4 py-3.5 sm:px-6 sm:py-5" : "px-3.5 py-2.5 sm:px-5 sm:py-3.5";
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "button",
         {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl px-4 py-3.5 flex items-center justify-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
+          ...commonProps,
+          style: getGlassCardStyle(isHero),
+          className: `group relative flex items-center justify-between gap-3 w-full transition-all duration-150 cursor-pointer select-none ${isIconsOnly ? "bg-transparent border-0 shadow-none rounded-2xl hover:scale-[1.02]" : "rounded-2xl border shadow-[0_10px_28px_rgba(0,0,0,0.34)] hover:border-[var(--theme-primary)]"} ${paddingClass} ${reorderRing} ${extraClass}`,
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-quadrant-hub") {
-    const corners = [slot1, slot2, slot3, slot4];
-    const centerDim = Math.round(128 * activeFrameFactor);
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3 px-4 sm:px-8 pb-4 w-full max-w-5xl mx-auto overflow-hidden", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full grid grid-cols-2 gap-4 sm:gap-6", style: gapStyle(), children: [
-        corners.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(20, 118),
-            className: `rounded-3xl p-4 sm:p-6 min-h-[104px] sm:min-h-[124px] flex items-center gap-3 ${idx % 2 === 1 ? "justify-end text-end" : "justify-start text-start"} ${GLASS_CARD} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-lg font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden sm:block text-xs text-zinc-400 truncate", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        )),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot0.kind,
-            tabIndex: 0,
-            onClick: slot0.action,
-            style: !isPhone ? { width: `${centerDim}px`, height: `${centerDim}px` } : void 0,
-            className: `hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full flex-col items-center justify-center gap-1.5 z-20 ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: slot0.kind, active3DStyle, scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-gold", children: slot0.title })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "sm:hidden flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": slot0.kind,
-          tabIndex: 0,
-          onClick: slot0.action,
-          className: `px-5 py-2 rounded-2xl flex items-center gap-2 text-xs font-semibold text-gold ${GLASS_HERO} ${reorderCls(slot0.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { size: 14 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: slot0.title })
-          ]
-        }
-      ) })
-    ] });
-  }
-  if (effectiveLayout === "layout-arch-gallery") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(14, 215),
-        className: `rounded-t-full rounded-b-2xl pt-8 pb-4 px-3 flex flex-col items-center justify-between gap-3 h-48 sm:h-60 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full text-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-gold/75 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-compact-glass-stack") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 pb-5 w-full max-w-md mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-2", style: gapStyle(), children: allItems.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(12),
-        className: `w-full rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3 ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-medium truncate text-white group-hover:text-gold", children: item.title })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-widescreen-ribbon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-4 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(20, 175),
-          className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[155px] sm:min-h-[185px] ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full max-w-xl grid grid-cols-2 gap-2", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(12),
-          className: `rounded-2xl py-2.5 px-3 flex items-center justify-center gap-2 ${GLASS_CARD} text-gold ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-stepped-skyline") {
-    const pillars = [
-      { item: slot4, minH: 165, center: false },
-      { item: slot1, minH: 200, center: false },
-      { item: slot0, minH: 245, center: true },
-      { item: slot2, minH: 200, center: false },
-      { item: slot3, minH: 165, center: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-4 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-end", style: gapStyle(), children: pillars.map(({ item, minH, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(14, minH),
-        className: `rounded-3xl p-3.5 flex flex-col items-center justify-center gap-3 text-center ${center2 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: center2 ? "hero" : "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-xs sm:text-sm font-semibold truncate w-full ${center2 ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-split-header-deck") {
-    const decks = [
-      { item: slot0, icon: Radio },
-      { item: slot1, icon: Film },
-      { item: slot2, icon: Clapperboard }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: decks.map(({ item, icon: HeaderIcon }, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `rounded-3xl overflow-hidden flex flex-col ${idx === 0 ? GLASS_HERO : GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full px-3 py-1.5 bg-transparent flex items-center justify-between text-xs font-mono text-gold border-b border-white/10", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: item.sub }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(HeaderIcon, { size: 15 })
+            isReorderingThis && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "absolute -top-2.5 left-1/2 -translate-x-1/2 z-30 px-2 py-0.5 rounded-full bg-emerald-400 text-black text-[9px] font-black flex items-center gap-1 shadow whitespace-nowrap", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 10 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "حرّك بالأسهم" : "Move" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 flex items-center gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-semibold text-white group-hover:text-gold truncate", children: item.title })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-2xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(12),
-          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-2.5 ${GLASS_CARD} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate text-gold", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-zen-horizon") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full bg-transparent grid grid-cols-2 sm:grid-cols-5 gap-2", style: gapStyle(), children: allItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(18),
-        className: `rounded-2xl px-3 py-5 sm:py-7 flex flex-col items-center justify-center text-center gap-3 ${GLASS_CARD} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: item.kind, active3DStyle, scale: "md", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-medium truncate w-full text-gold", children: item.title })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-obsidian-hex-hive") {
-    const topHexRow = [slot1, slot0, slot2];
-    const bottomHexRow = [slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: topHexRow.map((item, idx) => {
-        const isHero = idx === 1;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(18, 180),
-            className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-3 min-h-[168px] sm:min-h-[196px] ${isHero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "hex", scale: isHero ? "hero" : "lg", iconSize, highlight: isHero }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] sm:text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-3xl", style: gapStyle(), children: bottomHexRow.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl px-5 py-3.5 flex items-center justify-center gap-3.5 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "hex", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-solid-theater-marquee") {
-    const rightDrawers = [slot2, slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5", style: gapStyle(), children: [slot0, slot1].map((item, idx) => {
-        const isPrimary = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(20, 225),
-            className: `rounded-3xl overflow-hidden p-5 flex flex-col justify-between min-h-[190px] sm:min-h-[250px] ${isPrimary ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex items-center justify-between gap-2 pb-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-gold text-[10px] font-mono font-bold uppercase tracking-wider", children: [
-                  "0",
-                  idx + 1
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 18, className: "text-gold shrink-0" })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-auto py-3 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "ticket", scale: "hero", iconSize, highlight: isPrimary }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-lg sm:text-xl font-bold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-5 flex flex-col gap-3 justify-between", style: gapStyle(), children: rightDrawers.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `flex-1 rounded-2xl px-4 py-3 flex items-center justify-between gap-3 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3.5 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "ticket", scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate", children: item.sub })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 16, className: "text-gold/80 shrink-0" })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-carbon-brushed-chassis") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full bg-transparent border border-white/20 rounded-3xl p-3 sm:p-4 flex flex-col gap-3", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", style: gapStyle(), children: [slot0, slot1, slot2].map((item, idx) => {
-        const isMain = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(18, 170),
-            className: `rounded-2xl p-4 sm:p-5 flex flex-col items-center justify-between text-center gap-3 min-h-[152px] sm:min-h-[184px] ${isMain ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "octagon", scale: "lg", iconSize, highlight: isMain }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-lg font-bold truncate ${isMain ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-xl px-4 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "octagon", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-duotone-color-blocks") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot1.kind,
-            tabIndex: 0,
-            onClick: slot1.action,
-            style: frameBoxStyle(16, 195),
-            className: `sm:col-span-3 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] ${CRYSTAL_FRAME} ${reorderCls(slot1.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot1.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot1.kind, shape: "duotone", scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: slot1.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: slot1.sub })
-              ] })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot0.kind,
-            tabIndex: 0,
-            onClick: slot0.action,
-            style: frameBoxStyle(22, 195),
-            className: `sm:col-span-6 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 min-h-[170px] sm:min-h-[210px] ${CRYSTAL_HERO_FRAME} ${reorderCls(slot0.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex flex-col items-center ${isRtl ? "sm:items-start sm:text-right" : "sm:items-start sm:text-left"} text-center min-w-0`, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold text-[11px] font-bold uppercase tracking-wider mb-1", children: slot0.sub }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl sm:text-3xl font-black text-white group-hover:text-gold drop-shadow-sm truncate max-w-full", children: slot0.title })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "duotone", scale: "hero", iconSize })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": slot2.kind,
-            tabIndex: 0,
-            onClick: slot2.action,
-            style: frameBoxStyle(16, 195),
-            className: `sm:col-span-3 rounded-3xl p-4 flex flex-col items-center justify-center text-center gap-3 min-h-[140px] sm:min-h-[210px] ${CRYSTAL_FRAME} ${reorderCls(slot2.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot2.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot2.kind, shape: "duotone", scale: "lg", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-gold truncate", children: slot2.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: slot2.sub })
-              ] })
-            ]
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3.5 w-full max-w-4xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl px-5 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "duotone", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-isometric-diamond-deck") {
-    const arcCards = [
-      { item: slot1, lift: "sm:translate-y-2", hero: false },
-      { item: slot0, lift: "sm:-translate-y-2", hero: true },
-      { item: slot2, lift: "sm:translate-y-2", hero: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4 w-full items-center pt-3", style: gapStyle(), children: arcCards.map(({ item, lift, hero }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(20, 195),
-          className: `${lift} rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[205px] ${hero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "diamond", scale: hero ? "hero" : "lg", iconSize, highlight: hero }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pt-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-base sm:text-xl font-bold truncate ${hero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-4 w-full max-w-2xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-4 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "diamond", scale: "sm", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title })
-          ]
-        },
-        item.kind
-      )) })
-    ] });
-  }
-  if (effectiveLayout === "layout-matte-card-fan") {
-    const shelfCards = [slot1, slot2, slot3, slot4];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": slot0.kind,
-          tabIndex: 0,
-          onClick: slot0.action,
-          style: frameBoxStyle(20, 240),
-          className: `md:col-span-4 rounded-3xl overflow-hidden flex flex-col justify-center min-h-[210px] sm:min-h-[260px] ${CRYSTAL_HERO_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(slot0.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 p-5 flex flex-col items-center justify-center text-center gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "shield", scale: "hero", iconSize, highlight: true }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-white group-hover:text-gold", children: slot0.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/85 mt-1", children: slot0.sub })
-              ] })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3", style: gapStyle(), children: shelfCards.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14, 220),
-          className: `rounded-3xl overflow-hidden flex flex-col justify-center min-h-[170px] sm:min-h-[260px] ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 px-3 py-4 flex flex-col items-center justify-center text-center gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "shield", scale: "md", iconSize }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm sm:text-base font-bold text-white group-hover:text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate mt-0.5", children: item.sub })
-              ] })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  if (effectiveLayout === "layout-royal-monolith-dock") {
-    const pillars = [
-      { item: slot1, minH: 215, center: false },
-      { item: slot3, minH: 185, center: false },
-      { item: slot0, minH: 260, center: true },
-      { item: slot4, minH: 185, center: false },
-      { item: slot2, minH: 215, center: false }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-5 gap-3 w-full items-center", style: gapStyle(), children: pillars.map(({ item, minH, center: center2 }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(14, minH),
-        className: `${center2 ? "col-span-2 sm:col-span-1" : ""} rounded-2xl p-3.5 flex flex-col items-center justify-center gap-3 text-center ${center2 ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "monolith", scale: center2 ? "hero" : "md", iconSize, highlight: center2 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full pb-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `font-bold truncate ${center2 ? "text-base sm:text-lg text-gold" : "text-xs sm:text-sm text-white group-hover:text-gold"}`, children: item.title }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate mt-0.5", children: item.sub })
-          ] })
-        ]
-      },
-      item.kind
-    )) }) });
-  }
-  if (effectiveLayout === "layout-split-panel-arcade") {
-    const mediaPads = [slot0, slot1, slot2];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 w-full max-w-3xl", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(14),
-          className: `rounded-2xl px-4 py-3 flex items-center justify-center gap-3 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "keycap", scale: "sm", iconSize }),
+              iconNode,
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-w-0 ${isRtl ? "text-right" : "text-left"}`, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-bold text-gold truncate", children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] text-zinc-300 truncate", children: item.sub })
-              ] })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full", style: gapStyle(), children: mediaPads.map((item, idx) => {
-        const isHero = idx === 0;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            "data-dashboard-kind": item.kind,
-            tabIndex: 0,
-            onClick: item.action,
-            style: frameBoxStyle(20, 195),
-            className: `rounded-3xl p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[175px] sm:min-h-[210px] ${isHero ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "keycap", scale: "hero", iconSize, highlight: isHero }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-xl font-bold truncate ${isHero ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
-              ] })
-            ]
-          },
-          item.kind
-        );
-      }) })
-    ] });
-  }
-  if (effectiveLayout === "layout-horizon-panorama-cards") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 flex items-center justify-center px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 gap-3.5 w-full items-stretch", style: gapStyle(), children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", style: gapStyle(), children: [slot1, slot2].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `flex-1 rounded-3xl p-4 flex items-center gap-3.5 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "capsule", scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": slot0.kind,
-          tabIndex: 0,
-          onClick: slot0.action,
-          style: frameBoxStyle(20, 235),
-          className: `md:col-span-4 rounded-3xl overflow-hidden p-5 flex flex-col items-center justify-center text-center gap-4 min-h-[190px] sm:min-h-[250px] ${CRYSTAL_HERO_FRAME} ${reorderCls(slot0.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: slot0.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: slot0.kind, shape: "capsule", scale: "hero", iconSize, highlight: true }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl sm:text-2xl font-black text-gold truncate", children: slot0.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm text-zinc-200 truncate mt-1", children: slot0.sub })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex flex-col gap-3", style: gapStyle(), children: [slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(16),
-          className: `flex-1 rounded-3xl p-4 flex items-center gap-3.5 ${CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "capsule", scale: "md", iconSize }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-base sm:text-lg font-bold text-white group-hover:text-gold truncate", children: item.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-gold/80 truncate", children: item.sub })
-            ] })
-          ]
-        },
-        item.kind
-      )) })
-    ] }) });
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex-1 flex flex-col items-center justify-center gap-3.5 px-4 sm:px-8 pb-5 w-full max-w-6xl mx-auto overflow-hidden", style: gapStyle(), children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full", style: gapStyle(), children: [slot0, slot1].map((item, idx) => {
-      const isPrimary = idx === 0;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          "data-dashboard-kind": item.kind,
-          tabIndex: 0,
-          onClick: item.action,
-          style: frameBoxStyle(20),
-          className: `rounded-3xl px-5 py-4 sm:py-5 flex items-center justify-between gap-4 border-2 ${isPrimary ? CRYSTAL_HERO_FRAME : CRYSTAL_FRAME} ${isRtl ? "text-right" : "text-left"} ${reorderCls(item.kind)}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "satin", scale: "hero", iconSize, highlight: isPrimary }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-lg sm:text-2xl font-bold truncate ${isPrimary ? "text-gold" : "text-white group-hover:text-gold"}`, children: item.title }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-zinc-300 truncate mt-0.5", children: item.sub })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: `block font-bold tracking-wide text-white group-hover:text-gold transition-colors truncate ${previewMode ? "text-[11px]" : isHero ? "text-base sm:text-xl" : "text-sm sm:text-base"}`,
+                    children: item.label
+                  }
+                ),
+                !previewMode && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[11px] sm:text-xs text-zinc-300/80 truncate mt-0.5", children: item.subtitle })
               ] })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowIcon, { size: 20, className: "text-gold shrink-0" })
+            !previewMode && (isRtl ? /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { size: 16, className: "text-gold/75 group-hover:text-gold shrink-0" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 16, className: "text-gold/75 group-hover:text-gold shrink-0" }))
           ]
         },
         item.kind
       );
-    }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-3 w-full", style: gapStyle(), children: [slot2, slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    }
+    const useCardChrome = mode === "card" && !isIconsOnly;
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "button",
       {
-        "data-tv-focusable": "true",
-        "data-dashboard-kind": item.kind,
-        tabIndex: 0,
-        onClick: item.action,
-        style: frameBoxStyle(14),
-        className: `rounded-2xl px-3 py-3.5 flex flex-col sm:flex-row items-center justify-center gap-2.5 ${CRYSTAL_FRAME} ${reorderCls(item.kind)}`,
+        ...commonProps,
+        style: useCardChrome ? getGlassCardStyle(isHero) : void 0,
+        className: `group relative flex flex-col items-center justify-center transition-all duration-150 cursor-pointer select-none ${useCardChrome ? `rounded-2xl border shadow-[0_10px_26px_rgba(0,0,0,0.34)] hover:border-[var(--theme-primary)] ${previewMode ? "p-2 gap-1.5" : "p-3 sm:p-4 gap-2 sm:gap-2.5"}` : `bg-transparent border-0 shadow-none rounded-2xl hover:scale-105 ${previewMode ? "p-1.5 gap-1" : "p-2 sm:p-3 gap-2"}`} ${reorderRing} ${extraClass}`,
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ReorderBadge, { kind: item.kind }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StudioLayoutIcon, { active3DStyle, kind: item.kind, shape: "satin", scale: "sm", iconSize }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white group-hover:text-gold truncate max-w-full", children: item.title })
+          isReorderingThis && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "absolute -top-2.5 left-1/2 -translate-x-1/2 z-30 px-2 py-0.5 rounded-full bg-emerald-400 text-black text-[9px] font-black flex items-center gap-1 shadow whitespace-nowrap", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 10 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "حرّك بالأسهم" : "Move" })
+          ] }),
+          iconNode,
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center text-center min-w-0 max-w-full", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `font-bold tracking-wide text-white group-hover:text-gold transition-colors truncate max-w-full drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)] ${previewMode ? "text-[10px] leading-tight" : isHero ? "text-sm sm:text-base" : "text-xs sm:text-sm"}`,
+                children: item.label
+              }
+            ),
+            mode === "card" && !previewMode && !isIconsOnly && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:block text-[10px] text-zinc-300/75 truncate max-w-[140px] mt-0.5", children: item.subtitle })
+          ] })
         ]
       },
       item.kind
-    )) })
-  ] });
+    );
+  };
+  const containerMax = previewMode ? "w-full" : "w-full max-w-6xl mx-auto py-1 sm:py-2";
+  switch (activeLayoutId) {
+    case "layout-dock-row":
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center`, style: { gap: `${gapPx}px` }, children: slots.map((item) => renderSectionTile(item, { mode: "open", extraClass: "w-full" })) });
+    case "layout-hero-dock":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        renderSectionTile(slot0, {
+          mode: "wide",
+          isHero: true,
+          extraClass: previewMode ? "min-h-[42px]" : "min-h-[82px] sm:min-h-[104px]"
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4", style: { gap: `${gapPx}px` }, children: [slot1, slot2, slot3, slot4].map(
+          (item) => renderSectionTile(item, {
+            mode: "card",
+            extraClass: previewMode ? "min-h-[50px]" : "min-h-[96px] sm:min-h-[116px]"
+          })
+        ) })
+      ] });
+    case "layout-side-rail":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 flex flex-col justify-center", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "row", extraClass: "flex-1" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "flex-1" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-3 items-stretch", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2].map(
+          (item, idx) => renderSectionTile(item, {
+            mode: "card",
+            isHero: idx === 0,
+            extraClass: previewMode ? "min-h-[74px]" : "min-h-[132px] sm:min-h-[168px]"
+          })
+        ) })
+      ] });
+    case "layout-bento-mosaic":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex", children: renderSectionTile(slot0, {
+          mode: "card",
+          isHero: true,
+          extraClass: `w-full ${previewMode ? "min-h-[88px]" : "min-h-[140px] sm:min-h-[210px]"}`
+        }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 grid grid-rows-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "card", extraClass: "w-full h-full" }),
+          renderSectionTile(slot3, { mode: "row", extraClass: "w-full h-full" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 grid grid-rows-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot2, { mode: "card", extraClass: "w-full h-full" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "w-full h-full" })
+        ] })
+      ] });
+    case "layout-twin-spotlight":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [slot0, slot1].map(
+          (item, idx) => renderSectionTile(item, {
+            mode: "wide",
+            isHero: idx === 0,
+            extraClass: previewMode ? "min-h-[44px]" : "min-h-[86px] sm:min-h-[112px]"
+          })
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map(
+          (item) => renderSectionTile(item, {
+            mode: "card",
+            extraClass: previewMode ? "min-h-[48px]" : "min-h-[88px] sm:min-h-[106px]"
+          })
+        ) })
+      ] });
+    case "layout-center-spotlight": {
+      const podium = [
+        { item: slot4, offset: "translate-y-2 sm:translate-y-4", isHero: false },
+        { item: slot1, offset: "translate-y-1 sm:translate-y-2", isHero: false },
+        { item: slot0, offset: "-translate-y-1 sm:-translate-y-2", isHero: true },
+        { item: slot2, offset: "translate-y-1 sm:translate-y-2", isHero: false },
+        { item: slot3, offset: "translate-y-2 sm:translate-y-4", isHero: false }
+      ];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center`, style: { gap: `${gapPx}px` }, children: podium.map(
+        (entry) => renderSectionTile(entry.item, {
+          mode: "open",
+          isHero: entry.isHero,
+          extraClass: `w-full ${entry.offset}`
+        })
+      ) });
+    }
+    case "layout-split-stage":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-2 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        renderSectionTile(slot0, {
+          mode: "card",
+          isHero: true,
+          extraClass: previewMode ? "min-h-[92px]" : "min-h-[150px] sm:min-h-[210px]"
+        }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 grid-rows-2", style: { gap: `${gapPx}px` }, children: [slot1, slot2, slot3, slot4].map(
+          (item) => renderSectionTile(item, {
+            mode: "card",
+            extraClass: previewMode ? "min-h-[42px]" : "min-h-[88px] sm:min-h-[100px]"
+          })
+        ) })
+      ] });
+    case "layout-vertical-list":
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          className: `${previewMode ? "w-full max-w-[340px]" : "w-full max-w-2xl"} mx-auto flex flex-col`,
+          style: { gap: `${Math.max(4, Math.round(gapPx * 0.65))}px` },
+          children: slots.map((item, idx) => renderSectionTile(item, { mode: "row", isHero: idx === 0 }))
+        }
+      );
+    case "layout-orbital-hub":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} relative flex flex-col items-center`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "w-full grid grid-cols-2 items-center",
+            style: {
+              gap: `${gapPx}px`,
+              rowGap: `${Math.max(gapPx, previewMode ? 10 : 24)}px`
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-start sm:pr-12", children: renderSectionTile(slot1, { mode: "open" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end sm:pl-12", children: renderSectionTile(slot2, { mode: "open" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-2 flex justify-center sm:hidden", children: renderSectionTile(slot0, { mode: "open", isHero: true }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-start sm:pr-12", children: renderSectionTile(slot3, { mode: "open" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end sm:pl-12", children: renderSectionTile(slot4, { mode: "open" }) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden sm:flex absolute inset-0 items-center justify-center pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-auto", children: renderSectionTile(slot0, { mode: "open", isHero: true }) }) })
+      ] });
+    case "layout-staircase-cascade":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col items-center`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full grid grid-cols-3 items-center justify-items-center", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "open", extraClass: "w-full translate-y-1 sm:translate-y-3" }),
+          renderSectionTile(slot0, { mode: "open", isHero: true, extraClass: "w-full -translate-y-1 sm:-translate-y-2" }),
+          renderSectionTile(slot2, { mode: "open", extraClass: "w-full translate-y-1 sm:translate-y-3" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl grid grid-cols-2 items-center justify-items-center", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "open", extraClass: "w-full" }),
+          renderSectionTile(slot4, { mode: "open", extraClass: "w-full" })
+        ] })
+      ] });
+    case "layout-11":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4", style: { gap: `${gapPx}px` }, children: [slot1, slot2, slot3, slot4].map(
+          (item) => renderSectionTile(item, { mode: "card", extraClass: previewMode ? "min-h-[48px]" : "min-h-[92px]" })
+        ) }),
+        renderSectionTile(slot0, { mode: "wide", isHero: true, extraClass: previewMode ? "min-h-[42px]" : "min-h-[94px]" })
+      ] });
+    case "layout-12":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-3 items-stretch", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2].map(
+          (item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0, extraClass: previewMode ? "min-h-[74px]" : "min-h-[150px]" })
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 flex flex-col justify-center", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "row", extraClass: "flex-1" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "flex-1" })
+        ] })
+      ] });
+    case "layout-13":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2].map(
+          (item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0, extraClass: previewMode ? "min-h-[54px]" : "min-h-[110px]" })
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "row" }),
+          renderSectionTile(slot4, { mode: "row" })
+        ] })
+      ] });
+    case "layout-14":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: previewMode ? "min-h-[60px]" : "min-h-[124px]" }),
+          renderSectionTile(slot1, { mode: "card", extraClass: previewMode ? "min-h-[60px]" : "min-h-[124px]" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "row" })) })
+      ] });
+    case "layout-15":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-5 flex flex-col justify-between", style: { gap: `${Math.max(4, gapPx * 0.7)}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "row", extraClass: "flex-1" })) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-7 grid grid-cols-2 items-stretch", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: previewMode ? "min-h-[82px]" : "min-h-[175px]" }),
+          renderSectionTile(slot1, { mode: "card", extraClass: previewMode ? "min-h-[82px]" : "min-h-[175px]" })
+        ] })
+      ] });
+    case "layout-16": {
+      const steps = ["translate-y-4 sm:translate-y-8", "translate-y-2 sm:translate-y-4", "translate-y-0", "-translate-y-2 sm:-translate-y-4", "-translate-y-4 sm:-translate-y-8"];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-4`, style: { gap: `${gapPx}px` }, children: slots.map((item, idx) => renderSectionTile(item, { mode: "open", isHero: idx === 4, extraClass: `w-full ${steps[idx]}` })) });
+    }
+    case "layout-17": {
+      const steps = ["-translate-y-4 sm:-translate-y-8", "-translate-y-2 sm:-translate-y-4", "translate-y-0", "translate-y-2 sm:translate-y-4", "translate-y-4 sm:translate-y-8"];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-4`, style: { gap: `${gapPx}px` }, children: slots.map((item, idx) => renderSectionTile(item, { mode: "open", isHero: idx === 0, extraClass: `w-full ${steps[idx]}` })) });
+    }
+    case "layout-18": {
+      const valley = ["-translate-y-3 sm:-translate-y-6", "translate-y-0", "translate-y-3 sm:translate-y-6", "translate-y-0", "-translate-y-3 sm:-translate-y-6"];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-3`, style: { gap: `${gapPx}px` }, children: slots.map((item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0 || idx === 4, extraClass: `w-full ${valley[idx]}` })) });
+    }
+    case "layout-19": {
+      const wave = ["-translate-y-2 sm:-translate-y-4", "translate-y-2 sm:translate-y-4", "-translate-y-2 sm:-translate-y-4", "translate-y-2 sm:translate-y-4", "-translate-y-2 sm:-translate-y-4"];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-3`, style: { gap: `${gapPx}px` }, children: slots.map((item, idx) => renderSectionTile(item, { mode: "open", isHero: idx === 0, extraClass: `w-full ${wave[idx]}` })) });
+    }
+    case "layout-20":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col items-center`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: previewMode ? "w-1/2" : "w-full max-w-sm", children: renderSectionTile(slot0, { mode: "row", isHero: true }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "card" }),
+          renderSectionTile(slot2, { mode: "card", isHero: true }),
+          renderSectionTile(slot3, { mode: "card" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: previewMode ? "w-1/2" : "w-full max-w-sm", children: renderSectionTile(slot4, { mode: "row" }) })
+      ] });
+    case "layout-21":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col items-center`, style: { gap: `${Math.max(4, gapPx * 0.7)}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex items-center justify-between gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[40%]", children: renderSectionTile(slot1, { mode: "row" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[40%]", children: renderSectionTile(slot2, { mode: "row" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: previewMode ? "w-1/2" : "w-full max-w-md", children: renderSectionTile(slot0, { mode: "wide", isHero: true }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex items-center justify-between gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[40%]", children: renderSectionTile(slot3, { mode: "row" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-[40%]", children: renderSectionTile(slot4, { mode: "row" }) })
+        ] })
+      ] });
+    case "layout-22":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        renderSectionTile(slot0, { mode: "wide", isHero: true }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-12 items-stretch", style: { gap: `${gapPx}px` }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-3 flex", children: renderSectionTile(slot4, { mode: "card", extraClass: "w-full" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-9 grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot1, slot2, slot3].map((item) => renderSectionTile(item, { mode: "card" })) })
+        ] })
+      ] });
+    case "layout-23":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 grid grid-rows-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "row", extraClass: "h-full" }),
+          renderSectionTile(slot3, { mode: "row", extraClass: "h-full" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex", children: renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: `w-full ${previewMode ? "min-h-[86px]" : "min-h-[190px]"}` }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-4 grid grid-rows-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot2, { mode: "row", extraClass: "h-full" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "h-full" })
+        ] })
+      ] });
+    case "layout-24":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex", children: renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: `w-full ${previewMode ? "min-h-[90px]" : "min-h-[195px]"}` }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-8 flex flex-col", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "wide", extraClass: "flex-1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "card" })) })
+        ] })
+      ] });
+    case "layout-25":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-8 flex flex-col", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "wide", extraClass: "flex-1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "card" })) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex", children: renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: `w-full ${previewMode ? "min-h-[90px]" : "min-h-[195px]"}` }) })
+      ] });
+    case "layout-26":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-4 flex", children: renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: `w-full ${previewMode ? "min-h-[78px]" : "min-h-[150px]"}` }) }),
+        [slot1, slot2, slot3, slot4].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-2 flex", children: renderSectionTile(item, { mode: "card", extraClass: "w-full" }) }, item.kind))
+      ] });
+    case "layout-27":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-7 flex flex-col", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot0, { mode: "wide", isHero: true, extraClass: "flex-1" }),
+          renderSectionTile(slot1, { mode: "wide", extraClass: "flex-1" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-5 flex flex-col", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "row", extraClass: "flex-1" })) })
+      ] });
+    case "layout-28":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-12 items-stretch", style: { gap: `${gapPx}px` }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-8 flex", children: renderSectionTile(slot0, { mode: "wide", isHero: true, extraClass: previewMode ? "min-h-[48px]" : "min-h-[112px]" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-4 flex", children: renderSectionTile(slot1, { mode: "card", extraClass: "w-full" }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3", style: { gap: `${gapPx}px` }, children: [slot2, slot3, slot4].map((item) => renderSectionTile(item, { mode: "card" })) })
+      ] });
+    case "layout-29":
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} flex flex-col`, style: { gap: `${Math.max(4, Math.round(gapPx * 0.6))}px` }, children: slots.map(
+        (item, idx) => renderSectionTile(item, {
+          mode: "wide",
+          isHero: idx === 0,
+          extraClass: previewMode ? "min-h-[28px]" : "min-h-[60px]"
+        })
+      ) });
+    case "layout-30":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        renderSectionTile(slot0, { mode: "wide", isHero: true }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "card" }),
+          renderSectionTile(slot2, { mode: "card" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "row" }),
+          renderSectionTile(slot4, { mode: "row" })
+        ] })
+      ] });
+    case "layout-31":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2, slot3].map(
+          (item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0 })
+        ) }),
+        renderSectionTile(slot4, { mode: "wide" })
+      ] });
+    case "layout-32":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${gapPx}px` }, children: [
+        renderSectionTile(slot4, { mode: "row" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2, slot3].map(
+          (item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0 })
+        ) })
+      ] });
+    case "layout-33":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-3 flex", children: renderSectionTile(slot1, { mode: "card", extraClass: "w-full" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-6 flex flex-col justify-between", style: { gap: `${Math.max(4, gapPx * 0.7)}px` }, children: [
+          renderSectionTile(slot0, { mode: "wide", isHero: true, extraClass: "flex-1" }),
+          renderSectionTile(slot3, { mode: "row", extraClass: "flex-1" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "flex-1" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-3 flex", children: renderSectionTile(slot2, { mode: "card", extraClass: "w-full" }) })
+      ] });
+    case "layout-34": {
+      const arch = ["translate-y-4 sm:translate-y-8", "translate-y-1 sm:translate-y-2", "-translate-y-3 sm:-translate-y-6", "translate-y-1 sm:translate-y-2", "translate-y-4 sm:translate-y-8"];
+      const order = [slot3, slot1, slot0, slot2, slot4];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-4`, style: { gap: `${gapPx}px` }, children: order.map(
+        (item, idx) => renderSectionTile(item, { mode: "open", isHero: idx === 2, extraClass: `w-full ${arch[idx]}` })
+      ) });
+    }
+    case "layout-35": {
+      const cradle = ["-translate-y-4 sm:-translate-y-7", "-translate-y-1 sm:-translate-y-2", "translate-y-3 sm:translate-y-6", "-translate-y-1 sm:-translate-y-2", "-translate-y-4 sm:-translate-y-7"];
+      const order = [slot3, slot1, slot0, slot2, slot4];
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} grid grid-cols-5 items-center justify-items-center py-4`, style: { gap: `${gapPx}px` }, children: order.map(
+        (item, idx) => renderSectionTile(item, { mode: "open", isHero: idx === 2, extraClass: `w-full ${cradle[idx]}` })
+      ) });
+    }
+    case "layout-36":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col items-center`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: previewMode ? "w-3/5" : "w-full max-w-md", children: renderSectionTile(slot0, { mode: "wide", isHero: true }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-3xl grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "card" }),
+          renderSectionTile(slot2, { mode: "card" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full grid grid-cols-2", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot3, { mode: "row" }),
+          renderSectionTile(slot4, { mode: "row" })
+        ] })
+      ] });
+    case "layout-37":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 md:grid-cols-12 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-8 grid grid-cols-2 grid-rows-2", style: { gap: `${gapPx}px` }, children: [slot0, slot1, slot2, slot3].map(
+          (item, idx) => renderSectionTile(item, { mode: "card", isHero: idx === 0 })
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-4 flex", children: renderSectionTile(slot4, { mode: "card", extraClass: `w-full ${previewMode ? "min-h-[86px]" : "min-h-[190px]"}` }) })
+      ] });
+    case "layout-38":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} grid grid-cols-1 sm:grid-cols-2 items-stretch`, style: { gap: `${gapPx}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot0, { mode: "card", isHero: true, extraClass: "flex-[1.4]" }),
+          renderSectionTile(slot3, { mode: "row", extraClass: "flex-1" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col", style: { gap: `${gapPx}px` }, children: [
+          renderSectionTile(slot1, { mode: "row", extraClass: "flex-1" }),
+          renderSectionTile(slot2, { mode: "card", extraClass: "flex-[1.3]" }),
+          renderSectionTile(slot4, { mode: "row", extraClass: "flex-1" })
+        ] })
+      ] });
+    case "layout-39":
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `${containerMax} flex flex-col`, style: { gap: `${Math.max(4, gapPx * 0.75)}px` }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2", style: { gap: `${previewMode ? 18 : 48}px` }, children: [
+          renderSectionTile(slot1, { mode: "card" }),
+          renderSectionTile(slot2, { mode: "card" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto w-full max-w-xl", children: renderSectionTile(slot0, { mode: "wide", isHero: true }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2", style: { gap: `${previewMode ? 18 : 48}px` }, children: [
+          renderSectionTile(slot3, { mode: "card" }),
+          renderSectionTile(slot4, { mode: "card" })
+        ] })
+      ] });
+    case "layout-40":
+    default:
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `${containerMax} flex flex-wrap items-center justify-center`, style: { gap: `${gapPx}px` }, children: slots.map((item, idx) => renderSectionTile(item, { mode: "pill", isHero: idx === 0 })) });
+  }
+}
+const DEFAULT_ORDER = ["live", "movies", "series", "add", "settings"];
+function DashboardDesignStudio({
+  settings,
+  initialTab = "display",
+  isRtl,
+  t,
+  onCommit,
+  onBack
+}) {
+  var _a2, _b2, _c2;
+  const makeDraftFromSettings = (src) => {
+    var _a3;
+    const r = resolveDesignSettings(src);
+    return {
+      ...src,
+      iconDisplayMode: r.iconDisplayMode,
+      iconPack: r.iconPack,
+      frameShape: r.frameShape,
+      dashboardLayout: r.layoutId,
+      iconScale: src.iconScale || "md",
+      frameScale: src.frameScale || "md",
+      tileSpacing: src.tileSpacing || "md",
+      dashboardAlignment: src.dashboardAlignment || "center",
+      dashboardHorizontalAlignment: src.dashboardHorizontalAlignment || "center",
+      dashboardOrder: ((_a3 = src.dashboardOrder) == null ? void 0 : _a3.length) ? [...src.dashboardOrder] : [...DEFAULT_ORDER],
+      royalThemeColor: src.royalThemeColor || "pure-metallic-gold",
+      customThemeColor: src.customThemeColor ?? null,
+      glassOpacity: typeof src.glassOpacity === "number" ? src.glassOpacity : 16,
+      glassBlur: typeof src.glassBlur === "number" ? src.glassBlur : 10
+    };
+  };
+  const [draft, setDraft] = reactExports.useState(() => makeDraftFromSettings(settings));
+  const [activeTab, setActiveTab] = reactExports.useState(initialTab);
+  const [hexInput, setHexInput] = reactExports.useState(() => {
+    const c = normalizeHexColor(settings.customThemeColor);
+    if (c) return c;
+    const preset = ROYAL_THEMES.find((th) => th.id === (settings.royalThemeColor || "pure-metallic-gold"));
+    return (preset == null ? void 0 : preset.primary) || "#D4AF37";
+  });
+  const [justApplied, setJustApplied] = reactExports.useState(false);
+  const committedSettingsRef = reactExports.useRef(settings);
+  committedSettingsRef.current = settings;
+  reactExports.useEffect(() => {
+    applyRoyalTheme(
+      draft.royalThemeColor || "pure-metallic-gold",
+      draft.customThemeColor,
+      draft.glassOpacity,
+      draft.glassBlur
+    );
+  }, [draft.royalThemeColor, draft.customThemeColor, draft.glassOpacity, draft.glassBlur]);
+  reactExports.useEffect(() => {
+    return () => {
+      const s = committedSettingsRef.current;
+      applyRoyalTheme(
+        s.royalThemeColor || "pure-metallic-gold",
+        s.customThemeColor,
+        s.glassOpacity,
+        s.glassBlur
+      );
+    };
+  }, []);
+  const hasUnsavedChanges = reactExports.useMemo(() => {
+    const base = makeDraftFromSettings(settings);
+    return draft.iconDisplayMode !== base.iconDisplayMode || draft.iconPack !== base.iconPack || draft.frameShape !== base.frameShape || draft.dashboardLayout !== base.dashboardLayout || draft.iconScale !== base.iconScale || draft.frameScale !== base.frameScale || draft.tileSpacing !== base.tileSpacing || draft.dashboardAlignment !== base.dashboardAlignment || draft.dashboardHorizontalAlignment !== base.dashboardHorizontalAlignment || JSON.stringify(draft.dashboardOrder) !== JSON.stringify(base.dashboardOrder) || draft.royalThemeColor !== base.royalThemeColor || (draft.customThemeColor || null) !== (base.customThemeColor || null) || (draft.glassOpacity ?? 16) !== (base.glassOpacity ?? 16) || (draft.glassBlur ?? 10) !== (base.glassBlur ?? 10);
+  }, [draft, settings]);
+  const updateDraft = (key, value) => {
+    setJustApplied(false);
+    setDraft((prev) => ({ ...prev, [key]: value }));
+  };
+  const handleApplyConfirm = () => {
+    onCommit({
+      iconDisplayMode: draft.iconDisplayMode,
+      iconPack: draft.iconPack,
+      frameShape: draft.frameShape,
+      dashboardLayout: draft.dashboardLayout,
+      iconScale: draft.iconScale,
+      frameScale: draft.frameScale,
+      tileSpacing: draft.tileSpacing,
+      dashboardAlignment: draft.dashboardAlignment,
+      dashboardHorizontalAlignment: draft.dashboardHorizontalAlignment,
+      dashboardOrder: draft.dashboardOrder,
+      royalThemeColor: draft.royalThemeColor,
+      customThemeColor: draft.customThemeColor ?? null,
+      glassOpacity: draft.glassOpacity,
+      glassBlur: draft.glassBlur
+    });
+    setJustApplied(true);
+    setTimeout(() => setJustApplied(false), 2400);
+  };
+  const handleCancelDiscard = () => {
+    const s = committedSettingsRef.current;
+    applyRoyalTheme(
+      s.royalThemeColor || "pure-metallic-gold",
+      s.customThemeColor,
+      s.glassOpacity,
+      s.glassBlur
+    );
+    onBack();
+  };
+  const handleResetDefaults = () => {
+    setJustApplied(false);
+    setDraft((prev) => ({
+      ...prev,
+      iconDisplayMode: "with-frames",
+      iconPack: "pack-3d",
+      frameShape: "rounded-square",
+      dashboardLayout: "layout-dock-row",
+      iconScale: "md",
+      frameScale: "md",
+      tileSpacing: "md",
+      dashboardAlignment: "center",
+      dashboardHorizontalAlignment: "center",
+      dashboardOrder: [...DEFAULT_ORDER],
+      royalThemeColor: "pure-metallic-gold",
+      customThemeColor: "#D4AF37",
+      glassOpacity: 16,
+      glassBlur: 10
+    }));
+    setHexInput("#D4AF37");
+  };
+  const bgConfig = reactExports.useMemo(() => {
+    const id2 = settings.backgroundStyle || "bg-raouche-rocks-beirut";
+    return APP_BACKGROUNDS.find((b2) => b2.id === id2) || APP_BACKGROUNDS[0];
+  }, [settings.backgroundStyle]);
+  const customBgUrl = typeof settings.customBackground === "string" && settings.customBackground.trim() ? settings.customBackground.trim() : typeof settings.customBackground === "object" && ((_a2 = settings.customBackground) == null ? void 0 : _a2.url) ? settings.customBackground.url : null;
+  const activePalette = reactExports.useMemo(() => {
+    const validCustom = normalizeHexColor(draft.customThemeColor);
+    if (validCustom) return computePaletteFromHex(validCustom);
+    const preset = ROYAL_THEMES.find((th) => th.id === draft.royalThemeColor) || ROYAL_THEMES[0];
+    return computePaletteFromHex(preset.primary);
+  }, [draft.customThemeColor, draft.royalThemeColor]);
+  const tabs = [
+    { id: "display", icon: Eye, labelAr: "العرض", labelEn: "Display" },
+    { id: "icons", icon: Sparkles, labelAr: "الأيقونات", labelEn: "Icons" },
+    { id: "frames", icon: Frame, labelAr: "الإطارات", labelEn: "Frames" },
+    { id: "layouts", icon: Grid3x3, labelAr: "الواجهة", labelEn: "Layouts" },
+    { id: "sizing", icon: Maximize2, labelAr: "الأحجام", labelEn: "Sizing" },
+    { id: "colors", icon: Palette, labelAr: "الألوان", labelEn: "Colors" },
+    { id: "glass", icon: Layers, labelAr: "الشفافية", labelEn: "Glass" }
+  ];
+  const moveOrderItem = (index2, delta) => {
+    const cur = [...draft.dashboardOrder || DEFAULT_ORDER];
+    const target = index2 + delta;
+    if (target < 0 || target >= cur.length) return;
+    [cur[index2], cur[target]] = [cur[target], cur[index2]];
+    updateDraft("dashboardOrder", cur);
+  };
+  const previewAlignV = draft.dashboardAlignment === "top" ? "justify-start pt-2" : draft.dashboardAlignment === "bottom" ? "justify-end pb-2" : "justify-center";
+  const previewAlignH = draft.dashboardHorizontalAlignment === "left" ? "items-start" : draft.dashboardHorizontalAlignment === "right" ? "items-end" : "items-center";
+  const renderLayoutDiagram = (layoutId) => {
+    switch (layoutId) {
+      case "layout-dock-row":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-center px-1", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: `h-5 rounded-md border ${i2 === 0 ? "bg-gold/30 border-gold" : "bg-white/10 border-white/20"}`
+          },
+          i2
+        )) });
+      case "layout-hero-dock":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4.5 rounded-md bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 gap-1 h-4", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-side-rail":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 grid grid-cols-3 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-bento-mosaic":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-twin-spotlight":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/15 border border-gold/50" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-4", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-center-spotlight":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-end", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-white/10 border border-white/20" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-6 rounded bg-white/15 border border-gold/45" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-9 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-6 rounded bg-white/15 border border-gold/45" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-white/10 border border-white/20" })
+        ] });
+      case "layout-split-stage":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-2 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 grid-rows-2 gap-1", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-vertical-list":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 flex flex-col justify-between items-center py-0.5", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: `w-3/4 h-1 rounded-full ${i2 === 0 ? "bg-gold" : "bg-white/25"}`
+          },
+          i2
+        )) });
+      case "layout-orbital-hub":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 relative grid grid-cols-2 grid-rows-2 gap-1", children: [
+          [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-0 m-auto w-5 h-5 rounded-full bg-gold/40 border border-gold" })
+        ] });
+      case "layout-staircase-cascade":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col items-center justify-center gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 w-full h-4.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20 translate-y-0.5" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold -translate-y-0.5" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20 translate-y-0.5" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-2/3 h-3.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-11":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 gap-1 h-4", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4.5 rounded-md bg-gold/30 border border-gold" })
+        ] });
+      case "layout-12":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 grid grid-cols-3 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-13":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 h-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-3.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-14":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-5.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-15":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-5 flex flex-col gap-0.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }, i2)) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-7 grid grid-cols-2 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
+          ] })
+        ] });
+      case "layout-16":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-end px-1", children: [3, 4, 5, 7, 9].map((h, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { height: `${h * 4}px` }, className: `rounded ${i2 === 4 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-17":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-end px-1", children: [9, 7, 5, 4, 3].map((h, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { height: `${h * 4}px` }, className: `rounded ${i2 === 0 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-18":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-end px-1", children: [9, 6, 4, 6, 9].map((h, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { height: `${h * 4}px` }, className: `rounded ${i2 === 0 || i2 === 4 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-19":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-center px-1", children: [-4, 4, -4, 4, -4].map((y2, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { transform: `translateY(${y2}px)` }, className: `h-4 rounded ${i2 === 0 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-20":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col items-center justify-between py-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1/3 h-2 rounded bg-gold/35 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full grid grid-cols-3 gap-1 h-3.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1/3 h-2 rounded bg-white/15 border border-white/20" })
+        ] });
+      case "layout-21":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col items-center justify-between py-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex justify-between px-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-2 rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-2 rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1/2 h-3 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full flex justify-between px-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-2 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-2 rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-22":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-3.5 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-12 gap-1 flex-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-9 grid grid-cols-3 gap-1", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+          ] })
+        ] });
+      case "layout-23":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-24":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 flex flex-col gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+          ] })
+        ] });
+      case "layout-25":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 flex flex-col gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/30 border border-gold" })
+        ] });
+      case "layout-26":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1 py-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/30 border border-gold" }),
+          [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-2 rounded bg-white/10 border border-white/20" }, i2))
+        ] });
+      case "layout-27":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-7 flex flex-col gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-5 flex flex-col gap-0.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-28":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-12 gap-1 h-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-8 rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }, i2)) })
+        ] });
+      case "layout-29":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 flex flex-col justify-between py-0.5", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-full h-1.5 rounded ${i2 === 0 ? "bg-gold/75" : "bg-white/20"}` }, i2)) });
+      case "layout-30":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-3 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-2.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-31":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 grid-rows-2 gap-0.5 flex-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-white/15 border border-white/20" })
+        ] });
+      case "layout-32":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-white/15 border border-white/20" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 grid-rows-2 gap-0.5 flex-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-33":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-white/15 border border-white/20" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-6 flex flex-col gap-0.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-white/15 border border-white/20" })
+        ] });
+      case "layout-34":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-center px-1", children: [4, 0, -4, 0, 4].map((y2, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { transform: `translateY(${y2}px)` }, className: `h-4 rounded ${i2 === 2 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-35":
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 grid grid-cols-5 gap-1 items-center px-1", children: [-4, 0, 4, 0, -4].map((y2, i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { transform: `translateY(${y2}px)` }, className: `h-4 rounded ${i2 === 2 ? "bg-gold/30 border border-gold" : "bg-white/10 border border-white/20"}` }, i2)) });
+      case "layout-36":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col items-center gap-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1/2 h-3 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-3/4 h-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-full h-2.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-37":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-12 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 grid grid-cols-2 grid-rows-2 gap-0.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-white/15 border border-white/20" })
+        ] });
+      case "layout-38":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 grid grid-cols-2 gap-1", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-[1.5] rounded bg-gold/30 border border-gold" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-[1.4] rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-39":
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-10 flex flex-col justify-between py-0.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-8 h-2.5 rounded bg-white/15 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-8 h-2.5 rounded bg-white/15 border border-white/20" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-3/5 mx-auto h-3 rounded bg-gold/30 border border-gold" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-8 h-2.5 rounded bg-white/10 border border-white/20" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-8 h-2.5 rounded bg-white/10 border border-white/20" })
+          ] })
+        ] });
+      case "layout-40":
+      default:
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-10 flex items-center justify-center gap-1 flex-wrap px-1", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: `h-3.5 px-2.5 rounded-full border ${i2 === 0 ? "bg-gold/30 border-gold" : "bg-white/10 border-white/20"}`
+          },
+          i2
+        )) });
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: `h-full w-full flex flex-col px-3 sm:px-5 py-2.5 overflow-hidden select-none ${isRtl ? "font-cairo text-right" : "font-sans text-left"}`,
+      dir: isRtl ? "rtl" : "ltr",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "w-full max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-2.5 border-b border-white/10 shrink-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5 min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: handleCancelDiscard,
+                className: "p-2 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-white transition-colors cursor-pointer shrink-0",
+                title: isRtl ? "رجوع" : "Back",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { size: 18, className: isRtl ? "rotate-180" : "" })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-sm sm:text-lg font-black text-gold truncate", children: isRtl ? "استوديو تصميم واجهة Achour Player" : "Achour Player UI Design Studio" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-300 truncate", children: isRtl ? "خصص الأيقونات والإطارات والتوزيع والألوان مع معاينة فورية قبل الاعتماد" : "Mix & match icons, frames, layouts, gold tones & glass with live preview" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: handleResetDefaults,
+                className: "px-3 py-2 rounded-xl bg-white/[0.06] hover:bg-white/15 border border-white/15 text-zinc-200 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(RotateCcw, { size: 14 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "افتراضي" : "Reset" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: handleCancelDiscard,
+                className: "px-3 py-2 rounded-xl bg-white/[0.06] hover:bg-red-500/20 border border-white/15 hover:border-red-400/50 text-zinc-200 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer whitespace-nowrap",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 14 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "إلغاء" : "Cancel" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: handleApplyConfirm,
+                style: {
+                  background: justApplied ? "#10B981" : "var(--theme-metallic-grad, linear-gradient(135deg, #8C6A1D 0%, #D4AF37 40%, #F5E6A8 65%, #B8860B 100%))"
+                },
+                className: "px-4 py-2 rounded-xl text-[#090b10] text-xs sm:text-sm font-black flex items-center gap-1.5 shadow-[0_6px_20px_var(--theme-glow)] hover:brightness-110 transition-all cursor-pointer whitespace-nowrap",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 16, strokeWidth: 3 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: justApplied ? isRtl ? "تم الحفظ والتطبيق!" : "Applied & Saved!" : isRtl ? "تطبيق وتأكيد" : "Apply / Confirm" })
+                ]
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-7xl mx-auto flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-3.5 overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "lg:col-span-5 flex flex-col gap-2 min-h-[210px] sm:min-h-[245px] lg:min-h-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between px-1 shrink-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-emerald-400 animate-pulse" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-white", children: isRtl ? "معاينة مباشرة فورية" : "Live Interactive Preview" })
+              ] }),
+              hasUnsavedChanges && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-lg bg-gold/20 border border-gold/50 text-gold text-[10px] font-bold", children: isRtl ? "تعديلات غير محفوظة" : "Draft Active" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 min-h-[180px] rounded-3xl border border-gold/40 overflow-hidden shadow-2xl bg-black flex flex-col", children: [
+              customBgUrl ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "absolute inset-0 bg-cover bg-center pointer-events-none",
+                  style: { backgroundImage: `url(${customBgUrl})` }
+                }
+              ) : (bgConfig == null ? void 0 : bgConfig.imageUrl) && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src: bgConfig.imageUrl,
+                  alt: bgConfig.nameEn,
+                  className: "absolute inset-0 w-full h-full object-cover pointer-events-none"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-black/50 pointer-events-none" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/65 pointer-events-none" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  dir: "ltr",
+                  className: "relative z-10 flex items-center justify-between px-4 pt-2.5 pb-1 shrink-0",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-mono text-gold/90 font-semibold", children: isRtl ? "اشتراك نشط" : "ACTIVE" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-black tracking-widest text-gold uppercase", children: "ACHOUR PLAYER" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-mono text-gold font-bold", children: "21:45" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: `relative z-10 flex-1 min-h-0 flex flex-col px-3.5 py-2 overflow-hidden ${previewAlignV} ${previewAlignH}`,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: draft.dashboardHorizontalAlignment === "left" || draft.dashboardHorizontalAlignment === "right" ? "w-[78%]" : "w-full",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        DashboardLayouts,
+                        {
+                          previewMode: true,
+                          layoutId: draft.dashboardLayout,
+                          dashboardOrder: draft.dashboardOrder,
+                          iconDisplayMode: draft.iconDisplayMode,
+                          iconPack: draft.iconPack,
+                          frameShape: draft.frameShape,
+                          iconSize: draft.iconScale,
+                          frameScale: draft.frameScale,
+                          tileSpacing: draft.tileSpacing,
+                          glassOpacity: draft.glassOpacity,
+                          glassBlur: draft.glassBlur,
+                          language: settings.language,
+                          isRtl,
+                          t,
+                          onNavigate: () => {
+                          }
+                        }
+                      )
+                    }
+                  )
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-2xl bg-white/[0.04] border border-white/10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-1.5 text-[11px] shrink-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "truncate", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400", children: isRtl ? "العرض: " : "Mode: " }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-gold", children: draft.iconDisplayMode === "icons-only" ? isRtl ? "أيقونات فقط" : "Icons Only" : isRtl ? "مع إطارات" : "With Frames" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "truncate", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400", children: isRtl ? "الأيقونات: " : "Pack: " }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-white", children: (_b2 = ICON_PACKS.find((p2) => p2.id === draft.iconPack)) == null ? void 0 : _b2[isRtl ? "nameAr" : "nameEn"] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "truncate", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400", children: isRtl ? "الإطار: " : "Frame: " }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-white", children: draft.iconDisplayMode === "icons-only" ? isRtl ? "موقوف" : "Off" : (_c2 = FRAME_SHAPES.find((f2) => f2.id === draft.frameShape)) == null ? void 0 : _c2[isRtl ? "nameAr" : "nameEn"] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 truncate", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "w-3 h-3 rounded-full border border-white/30 shrink-0",
+                    style: { backgroundColor: activePalette.primary }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "font-mono text-gold truncate", children: activePalette.primary })
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "lg:col-span-7 flex flex-col min-h-0 overflow-hidden", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-2 mb-2 border-b border-white/10 shrink-0", children: tabs.map((tab) => {
+              const Icon2 = tab.icon;
+              const isActive = activeTab === tab.id;
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-tv-focusable": "true",
+                  tabIndex: 0,
+                  onClick: () => setActiveTab(tab.id),
+                  className: `px-3 py-2 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 whitespace-nowrap ${isActive ? "bg-gold/20 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]" : "bg-white/[0.04] border-white/10 text-zinc-300 hover:border-gold/40 hover:text-white"}`,
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { size: 14 }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? tab.labelAr : tab.labelEn })
+                  ]
+                },
+                tab.id
+              );
+            }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-h-0 overflow-y-auto no-scrollbar pr-0.5 pb-3 space-y-4", children: [
+              activeTab === "display" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-black text-white", children: isRtl ? "الخيار الأول: طريقة عرض الأيقونات" : "Option 1: Icon Display Mode" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: isRtl ? "اختر عرض الأيقونات وحدها بحرية تامة دون أي إطار أو خلفية، أو عرضها داخل إطارات مستقلة." : "Show pure icons cleanly with zero borders/backgrounds, or enable customizable frames." })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: [
+                  {
+                    mode: "icons-only",
+                    titleAr: "أيقونات فقط (بدون إطار)",
+                    titleEn: "Icons Only (No Frame)",
+                    descAr: "عرض الأيقونات مباشرة فوق الخلفية بدون أي إطار أو صندوق أو حدود.",
+                    descEn: "Pure borderless SVG icons floating directly over your wallpaper."
+                  },
+                  {
+                    mode: "with-frames",
+                    titleAr: "أيقونات مع إطارات",
+                    titleEn: "Icons With Frames",
+                    descAr: "تشغيل الإطارات الهندسية والزجاجية والمعدنية حول كل قسم مع حرية التخصيص.",
+                    descEn: "Enable sculptural frames (circle, hex, glass, metallic, geometric)."
+                  }
+                ].map((opt) => {
+                  const active = draft.iconDisplayMode === opt.mode;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("iconDisplayMode", opt.mode),
+                      className: `p-4 rounded-2xl border transition-all flex flex-col gap-3 cursor-pointer ${active ? "border-gold bg-gold/15 shadow-[0_0_18px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/45"} ${isRtl ? "text-right" : "text-left"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-black text-white", children: isRtl ? opt.titleAr : opt.titleEn }),
+                          active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "p-1 rounded-lg bg-gold text-black shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 14 }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-4 py-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            DashboardSectionIcon,
+                            {
+                              kind: "live",
+                              displayMode: opt.mode,
+                              iconPack: draft.iconPack || "pack-3d",
+                              frameShape: draft.frameShape || "rounded-square",
+                              sizeOverridePx: 32,
+                              frameSizeOverridePx: 54
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            DashboardSectionIcon,
+                            {
+                              kind: "movies",
+                              displayMode: opt.mode,
+                              iconPack: draft.iconPack || "pack-3d",
+                              frameShape: draft.frameShape || "rounded-square",
+                              sizeOverridePx: 32,
+                              frameSizeOverridePx: 54
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            DashboardSectionIcon,
+                            {
+                              kind: "series",
+                              displayMode: opt.mode,
+                              iconPack: draft.iconPack || "pack-3d",
+                              frameShape: draft.frameShape || "rounded-square",
+                              sizeOverridePx: 32,
+                              frameSizeOverridePx: 54
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-300 leading-relaxed", children: isRtl ? opt.descAr : opt.descEn })
+                      ]
+                    },
+                    opt.mode
+                  );
+                }) })
+              ] }),
+              activeTab === "icons" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-black text-white", children: isRtl ? `الخيار الثاني: شكل الأيقونات (${ICON_PACKS.length} شكلاً مختلفاً)` : `Option 2: Icon Artwork (${ICON_PACKS.length} Distinct Styles)` }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: isRtl ? "40 حزمة أيقونات برسومات هندسية ومجسمة وزجاجية ومعدنية ونيون مختلفة كلياً لكل قسم." : "40 genuinely distinct vector icon styles across Live, Movies, Series, Playlist & Settings." })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-3", children: ICON_PACKS.map((pack) => {
+                  const active = draft.iconPack === pack.id;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("iconPack", pack.id),
+                      className: `p-3.5 rounded-2xl border transition-all flex flex-col gap-2.5 cursor-pointer ${active ? "border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/45"} ${isRtl ? "text-right" : "text-left"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full gap-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-white truncate", children: isRtl ? pack.nameAr : pack.nameEn }),
+                          active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "p-1 rounded-lg bg-gold text-black shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 13 }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-around py-1.5 rounded-xl bg-black/35 border border-white/10", children: ["live", "movies", "series", "add", "settings"].map(
+                          (k) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            PackIconSvg,
+                            {
+                              kind: k,
+                              pack: pack.id,
+                              sizePx: 28
+                            },
+                            k
+                          )
+                        ) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-300 leading-snug", children: isRtl ? pack.descriptionAr : pack.descriptionEn })
+                      ]
+                    },
+                    pack.id
+                  );
+                }) })
+              ] }),
+              activeTab === "frames" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-between gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-black text-white", children: isRtl ? `الخيار الثالث: شكل الإطارات (${FRAME_SHAPES.length} شكلاً مستقلاً)` : `Option 3: Independent Frame Shapes (${FRAME_SHAPES.length})` }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: isRtl ? "ادمج أي شكل إطار من الـ 40 شكلاً مع أي حزمة أيقونات بكل حرية." : "Combine any of the 40 distinct frame silhouettes freely with any icon pack." })
+                  ] }),
+                  draft.iconDisplayMode === "icons-only" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("iconDisplayMode", "with-frames"),
+                      className: "px-3 py-1.5 rounded-xl bg-gold text-black text-xs font-black cursor-pointer whitespace-nowrap",
+                      children: isRtl ? "تفعيل عرض الإطارات الآن" : "Enable Frames Now"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-3", children: FRAME_SHAPES.map((shape) => {
+                  const active = draft.frameShape === shape.id;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => {
+                        setJustApplied(false);
+                        setDraft((prev) => ({
+                          ...prev,
+                          frameShape: shape.id,
+                          iconDisplayMode: "with-frames"
+                        }));
+                      },
+                      className: `p-3 rounded-2xl border transition-all flex flex-col items-center gap-2 text-center cursor-pointer ${active ? "border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/45"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-white truncate", children: isRtl ? shape.nameAr : shape.nameEn }),
+                          active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "p-0.5 rounded bg-gold text-black shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 12 }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          DashboardSectionIcon,
+                          {
+                            kind: "live",
+                            displayMode: "with-frames",
+                            iconPack: draft.iconPack || "pack-3d",
+                            frameShape: shape.id,
+                            sizeOverridePx: 28,
+                            frameSizeOverridePx: 58,
+                            glassOpacity: draft.glassOpacity,
+                            glassBlur: draft.glassBlur
+                          }
+                        ) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-zinc-400 line-clamp-2 leading-tight", children: isRtl ? shape.descriptionAr : shape.descriptionEn })
+                      ]
+                    },
+                    shape.id
+                  );
+                }) })
+              ] }),
+              activeTab === "layouts" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-black text-white", children: isRtl ? `الخيار الرابع: تصميم وتوزيع الواجهة (${DASHBOARD_LAYOUTS.length} تصميماً)` : `Option 4: Interface Spatial Layout (${DASHBOARD_LAYOUTS.length})` }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: isRtl ? "40 تصميماً مختلفاً كلياً لتوزيع الأقسام الخمسة على الشاشة دون مشغل فيديو." : "40 distinct spatial arrangements of the 5 core sections (Live, Movies, Series, Playlist, Settings)." })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2.5", children: DASHBOARD_LAYOUTS.map((layout2) => {
+                  const active = normalizeDashboardLayoutId(draft.dashboardLayout) === layout2.id;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("dashboardLayout", layout2.id),
+                      className: `p-3 rounded-2xl border transition-all flex flex-col gap-2 cursor-pointer ${active ? "border-gold bg-gold/15 shadow-[0_0_16px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/45"} ${isRtl ? "text-right" : "text-left"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full gap-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs sm:text-sm font-bold text-white truncate", children: isRtl ? layout2.nameAr : layout2.nameEn }),
+                          active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "p-0.5 rounded bg-gold text-black shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 12 }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-1.5 rounded-xl bg-black/40 border border-white/10", children: renderLayoutDiagram(layout2.id) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-300 truncate", children: isRtl ? layout2.descriptionAr : layout2.descriptionEn })
+                      ]
+                    },
+                    layout2.id
+                  );
+                }) })
+              ] }),
+              activeTab === "sizing" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-gold", children: isRtl ? "حجم الأيقونات" : "Icon Size" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono text-zinc-300 uppercase", children: draft.iconScale || "md" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-7 gap-1.5", children: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"].map((sz) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("iconScale", sz),
+                      className: `py-2 rounded-xl border text-xs font-mono font-bold uppercase cursor-pointer transition-colors ${(draft.iconScale || "md") === sz ? "bg-gold text-black border-gold" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: sz
+                    },
+                    sz
+                  )) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-gold", children: isRtl ? "حجم الإطارات (مستقل)" : "Frame Size (Independent)" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono text-zinc-300 uppercase", children: draft.frameScale || "md" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-7 gap-1.5", children: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"].map((sz) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("frameScale", sz),
+                      className: `py-2 rounded-xl border text-xs font-mono font-bold uppercase cursor-pointer transition-colors ${(draft.frameScale || "md") === sz ? "bg-gold text-black border-gold" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: sz
+                    },
+                    sz
+                  )) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-gold", children: isRtl ? "المسافة بين الأقسام" : "Section Spacing" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono text-zinc-300 uppercase", children: draft.tileSpacing || "md" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-1.5", children: [
+                    { id: "xs", ar: "متلاصق", en: "Tight" },
+                    { id: "sm", ar: "قريب", en: "Compact" },
+                    { id: "md", ar: "متوازن", en: "Balanced" },
+                    { id: "lg", ar: "واسع", en: "Wide" },
+                    { id: "xl", ar: "أقصى", en: "Spacious" }
+                  ].map((sp) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("tileSpacing", sp.id),
+                      className: `py-2 px-1 rounded-xl border text-[11px] font-bold cursor-pointer transition-colors whitespace-nowrap ${(draft.tileSpacing || "md") === sp.id ? "bg-gold text-black border-gold" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: isRtl ? sp.ar : sp.en
+                    },
+                    sp.id
+                  )) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-gold block", children: isRtl ? "محاذاة الأقسام على الشاشة" : "Screen Alignment Position" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "grid grid-cols-3 gap-1.5", children: [
+                    { v: "top", h: "left", ar: "أعلى يسار", en: "Top Left" },
+                    { v: "top", h: "center", ar: "أعلى", en: "Top" },
+                    { v: "top", h: "right", ar: "أعلى يمين", en: "Top Right" },
+                    { v: "center", h: "left", ar: "يسار", en: "Left" },
+                    { v: "center", h: "center", ar: "المنتصف", en: "Center" },
+                    { v: "center", h: "right", ar: "يمين", en: "Right" },
+                    { v: "bottom", h: "left", ar: "أسفل يسار", en: "Bottom Left" },
+                    { v: "bottom", h: "center", ar: "أسفل", en: "Bottom" },
+                    { v: "bottom", h: "right", ar: "أسفل يمين", en: "Bottom Right" }
+                  ].map((cell) => {
+                    const active = (draft.dashboardAlignment || "center") === cell.v && (draft.dashboardHorizontalAlignment || "center") === cell.h;
+                    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => {
+                          setJustApplied(false);
+                          setDraft((prev) => ({
+                            ...prev,
+                            dashboardAlignment: cell.v,
+                            dashboardHorizontalAlignment: cell.h
+                          }));
+                        },
+                        className: `py-1.5 px-2 rounded-xl border text-[11px] font-bold cursor-pointer transition-colors ${active ? "bg-gold/25 border-gold text-gold" : "bg-white/[0.04] border-white/10 text-zinc-300 hover:border-gold/45"}`,
+                        children: isRtl ? cell.ar : cell.en
+                      },
+                      `${cell.v}-${cell.h}`
+                    );
+                  }) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-gold block", children: isRtl ? "ترتيب الأقسام الخمسة" : "Reorder 5 Sections" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: (draft.dashboardOrder || DEFAULT_ORDER).map((kind, idx) => {
+                    const nameMap = {
+                      live: t("live"),
+                      movies: t("movies"),
+                      series: t("series"),
+                      add: t("playlist"),
+                      settings: t("settings")
+                    };
+                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center justify-between px-3 py-1.5 rounded-xl bg-black/35 border border-white/10",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-white", children: [
+                            idx + 1,
+                            ". ",
+                            nameMap[kind] || kind
+                          ] }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "button",
+                              {
+                                type: "button",
+                                "data-tv-focusable": "true",
+                                tabIndex: 0,
+                                disabled: idx === 0,
+                                onClick: () => moveOrderItem(idx, -1),
+                                className: "px-2.5 py-1 rounded-lg bg-white/10 hover:bg-gold hover:text-black disabled:opacity-30 text-xs font-black cursor-pointer",
+                                children: "↑"
+                              }
+                            ),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "button",
+                              {
+                                type: "button",
+                                "data-tv-focusable": "true",
+                                tabIndex: 0,
+                                disabled: idx === (draft.dashboardOrder || DEFAULT_ORDER).length - 1,
+                                onClick: () => moveOrderItem(idx, 1),
+                                className: "px-2.5 py-1 rounded-lg bg-white/10 hover:bg-gold hover:text-black disabled:opacity-30 text-xs font-black cursor-pointer",
+                                children: "↓"
+                              }
+                            )
+                          ] })
+                        ]
+                      },
+                      kind
+                    );
+                  }) })
+                ] })
+              ] }),
+              activeTab === "colors" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    "data-tv-focusable": "true",
+                    tabIndex: 0,
+                    onClick: () => {
+                      setJustApplied(false);
+                      setHexInput("#D4AF37");
+                      setDraft((prev) => ({
+                        ...prev,
+                        royalThemeColor: "pure-metallic-gold",
+                        customThemeColor: "#D4AF37"
+                      }));
+                    },
+                    className: `w-full p-3.5 rounded-2xl border transition-all flex items-center justify-between gap-3 cursor-pointer ${activePalette.primary === "#D4AF37" ? "border-gold bg-gold/15 shadow-[0_0_20px_var(--theme-glow)]" : "border-white/15 bg-white/[0.04] hover:border-gold"}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "w-11 h-11 rounded-2xl border border-white/40 shrink-0 shadow-lg",
+                            style: {
+                              background: "linear-gradient(135deg, #8C6A1D 0%, #D4AF37 35%, #F5E6A8 58%, #B8860B 100%)"
+                            }
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-sm font-black text-gold truncate", children: isRtl ? "الذهب المعدني الحقيقي (#D4AF37) — لكامل التطبيق" : "True 24K Metallic Gold (#D4AF37) — Full App" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-[11px] font-mono text-zinc-300 truncate mt-0.5", children: "#8C6A1D · #D4AF37 · #F5E6A8 · #B8860B" })
+                        ] })
+                      ] }),
+                      activePalette.primary === "#D4AF37" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "p-1.5 rounded-lg bg-gold text-black shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 15 }) })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-2xl bg-white/[0.04] border border-white/15 space-y-2.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-white block", children: isRtl ? "اختيار اللون يدوياً أو إدخال كود HEX" : "Manual Color Picker & HEX Code" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { dir: "ltr", className: "flex flex-wrap items-center gap-2.5", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "relative flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/45 border border-white/15 cursor-pointer", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "input",
+                        {
+                          type: "color",
+                          value: isValidHexColor(hexInput) ? normalizeHexColor(hexInput) : activePalette.primary,
+                          onChange: (e2) => {
+                            const next = e2.target.value.toUpperCase();
+                            setHexInput(next);
+                            updateDraft("customThemeColor", next);
+                          },
+                          className: "w-8 h-8 rounded-lg border-0 bg-transparent cursor-pointer"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-200 whitespace-nowrap", children: isRtl ? "منتقي" : "Pick" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        type: "text",
+                        value: hexInput,
+                        maxLength: 7,
+                        placeholder: "#D4AF37",
+                        onChange: (e2) => {
+                          const raw = e2.target.value.toUpperCase();
+                          setHexInput(raw);
+                          const norm = normalizeHexColor(raw);
+                          if (norm) {
+                            updateDraft("customThemeColor", norm);
+                          }
+                        },
+                        className: "flex-1 min-w-[120px] px-3 py-2 rounded-xl bg-black/50 border border-white/20 text-sm font-mono font-bold text-gold uppercase"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        disabled: !isValidHexColor(hexInput),
+                        onClick: () => {
+                          const norm = normalizeHexColor(hexInput);
+                          if (norm) {
+                            setHexInput(norm);
+                            updateDraft("customThemeColor", norm);
+                          }
+                        },
+                        className: "px-3.5 py-2 rounded-xl bg-gold text-black font-black text-xs disabled:opacity-40 cursor-pointer whitespace-nowrap",
+                        children: isRtl ? "معاينة HEX" : "Use HEX"
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-2", children: ROYAL_THEMES.map((theme) => {
+                  const isSelected = !draft.customThemeColor && draft.royalThemeColor === theme.id;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => {
+                        setJustApplied(false);
+                        setHexInput(theme.primary);
+                        setDraft((prev) => ({
+                          ...prev,
+                          royalThemeColor: theme.id,
+                          customThemeColor: null
+                        }));
+                      },
+                      className: `p-2.5 rounded-xl border flex flex-col gap-1.5 cursor-pointer transition-colors ${isSelected ? "border-gold bg-white/15" : "border-white/10 bg-white/[0.04] hover:border-white/30"} ${isRtl ? "text-right" : "text-left"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "span",
+                            {
+                              className: "w-4 h-4 rounded-full border border-white/25",
+                              style: { backgroundColor: theme.primary }
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-mono text-zinc-400", children: theme.primary })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-white truncate w-full", children: isRtl ? theme.nameAr : theme.nameEn })
+                      ]
+                    },
+                    theme.id
+                  );
+                }) })
+              ] }),
+              activeTab === "glass" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-black text-white", children: isRtl ? "شفافية الخلفيات والتأثير الزجاجي" : "Background Opacity & Glass Effect" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: isRtl ? "يتحكم في شفافية البطاقات والإطارات الزجاجية والمعدنية ودرجة الضبابية." : "Controls card & frame translucency plus frosted glass blur intensity." })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-2xl bg-white/[0.04] border border-white/15 space-y-2.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-gold flex items-center gap-1.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(SlidersVertical, { size: 14 }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "شفافية الإطارات والخلفيات" : "Surface Opacity" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono font-black text-white", children: [
+                      draft.glassOpacity ?? 16,
+                      "%"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => updateDraft("glassOpacity", Math.max(0, (draft.glassOpacity ?? 16) - 6)),
+                        className: "px-3 py-1.5 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-sm font-black cursor-pointer",
+                        children: "−"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        type: "range",
+                        min: 0,
+                        max: 85,
+                        step: 2,
+                        value: draft.glassOpacity ?? 16,
+                        onChange: (e2) => updateDraft("glassOpacity", Number(e2.target.value)),
+                        className: "flex-1 accent-[var(--theme-primary)] cursor-pointer"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => updateDraft("glassOpacity", Math.min(85, (draft.glassOpacity ?? 16) + 6)),
+                        className: "px-3 py-1.5 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-sm font-black cursor-pointer",
+                        children: "+"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-1.5", children: [4, 16, 30, 50, 75].map((v2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("glassOpacity", v2),
+                      className: `py-1.5 rounded-xl border text-[11px] font-mono font-bold cursor-pointer ${(draft.glassOpacity ?? 16) === v2 ? "bg-gold text-black border-gold" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: [
+                        v2,
+                        "%"
+                      ]
+                    },
+                    v2
+                  )) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-2xl bg-white/[0.04] border border-white/15 space-y-2.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-gold flex items-center gap-1.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { size: 14 }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "التأثير الزجاجي الضبابي (Blur)" : "Frosted Glass Blur" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono font-black text-white", children: [
+                      draft.glassBlur ?? 10,
+                      "px"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => updateDraft("glassBlur", Math.max(0, (draft.glassBlur ?? 10) - 2)),
+                        className: "px-3 py-1.5 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-sm font-black cursor-pointer",
+                        children: "−"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        type: "range",
+                        min: 0,
+                        max: 24,
+                        step: 2,
+                        value: draft.glassBlur ?? 10,
+                        onChange: (e2) => updateDraft("glassBlur", Number(e2.target.value)),
+                        className: "flex-1 accent-[var(--theme-primary)] cursor-pointer"
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => updateDraft("glassBlur", Math.min(24, (draft.glassBlur ?? 10) + 2)),
+                        className: "px-3 py-1.5 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-sm font-black cursor-pointer",
+                        children: "+"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-1.5", children: [0, 6, 10, 16, 24].map((v2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      type: "button",
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => updateDraft("glassBlur", v2),
+                      className: `py-1.5 rounded-xl border text-[11px] font-mono font-bold cursor-pointer ${(draft.glassBlur ?? 10) === v2 ? "bg-gold text-black border-gold" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: [
+                        v2,
+                        "px"
+                      ]
+                    },
+                    v2
+                  )) })
+                ] })
+              ] })
+            ] })
+          ] })
+        ] })
+      ]
+    }
+  );
 }
 const DEFAULT_PLAYERS = [
   "Achour Player (مدمج - Native)",
@@ -125219,17 +126548,18 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
   const [historyClearSuccess, setHistoryClearSuccess] = reactExports.useState(null);
   const [confirmClearType, setConfirmClearType] = reactExports.useState(null);
   const [historyTick, setHistoryTick] = reactExports.useState(0);
-  const [syncInProgress, setSyncInProgress] = reactExports.useState(false);
+  const [syncInProgress] = reactExports.useState(false);
   const [syncNotification, setSyncNotification] = reactExports.useState(null);
   const [showUploadPasteModal, setShowUploadPasteModal] = reactExports.useState(false);
-  const [pendingLayoutId, setPendingLayoutId] = reactExports.useState(null);
-  const [pendingIconStyleId, setPendingIconStyleId] = reactExports.useState(null);
+  const [studioTab, setStudioTab] = reactExports.useState("display");
   const channelFileInputRef = reactExports.useRef(null);
   const { t, isRtl } = useI18n(settings.language);
+  const openDesignStudio = (tab) => {
+    setStudioTab(tab);
+    setSubView("design-studio");
+  };
   reactExports.useEffect(() => {
     setError("");
-    if (subView !== "dashboard-layouts") setPendingLayoutId(null);
-    if (subView !== "icons-3d") setPendingIconStyleId(null);
   }, [subView, catFilterTab, catSearch, playersTab, splashTab]);
   reactExports.useEffect(() => {
     const priority = confirmClearType || showUploadPasteModal ? BackPriority.MODAL : subView !== "main" ? BackPriority.SUBVIEW : BackPriority.VIEW;
@@ -125384,9 +126714,6 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     });
     return list;
   }, [settings.externalPlayers]);
-  reactExports.useMemo(() => {
-    return ROYAL_THEMES.find((t2) => t2.id === (settings.royalThemeColor || "royal-gold")) || ROYAL_THEMES[0];
-  }, [settings.royalThemeColor]);
   const fetchCategories = async (type) => {
     var _a3;
     setCatLoading(true);
@@ -125563,18 +126890,6 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
       updateSetting("useExternalPlayer", false);
     }
   };
-  const handleSelectRoyalTheme = (themeId) => {
-    updateSetting("royalThemeColor", themeId);
-    applyRoyalTheme(themeId);
-  };
-  const handleSelect3DIconStyle = (iconStyleId) => {
-    updateSetting("icon3DStyle", iconStyleId);
-    const selectedStyle = ICON_3D_STYLES.find((s) => s.id === iconStyleId);
-    if (selectedStyle && selectedStyle.recommendedThemeId) {
-      updateSetting("royalThemeColor", selectedStyle.recommendedThemeId);
-      applyRoyalTheme(selectedStyle.recommendedThemeId);
-    }
-  };
   const handleSelectBackground = (bgId) => {
     updateSetting("backgroundStyle", bgId);
     updateSetting("customBackground", null);
@@ -125642,18 +126957,12 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     const q = catSearch.toLowerCase();
     return list.filter((c) => c.category_name.toLowerCase().includes(q));
   }, [categories, catSearch, catFilterTab, subView, settings.hiddenLiveCategories, settings.hiddenMovieCategories, settings.hiddenSeriesCategories]);
-  reactExports.useMemo(() => ({
-    movie: getWatchHistoryTotalCount("movie"),
-    series: getWatchHistoryTotalCount("series"),
-    live: getWatchHistoryTotalCount("live")
-  }), [historyTick, subView]);
   const settingsGroups = [
     {
-      title: isRtl ? "المظهر والتصميم" : "Appearance & Design",
+      title: isRtl ? "المظهر وتصميم الواجهة" : "Appearance & UI Design",
       items: [
-        { icon: LayoutDashboard, label: t("dashboard_layouts"), action: () => setSubView("dashboard-layouts") },
-        { icon: Palette, label: t("royal_themes"), action: () => setSubView("royal-colors") },
-        { icon: Sparkles, label: t("icons_3d"), action: () => setSubView("icons-3d") },
+        { icon: Palette, label: isRtl ? "استوديو التصميم الموحّد — Achour Player" : "Unified Design Studio — Achour Player", action: () => openDesignStudio("display") },
+        { icon: AppWindow, label: t("window_position"), action: () => setSubView("window-position") },
         { icon: Image$1, label: t("app_backgrounds"), action: () => setSubView("backgrounds") },
         { icon: Volume2, label: t("splash_intro"), action: () => setSubView("splash-intro") },
         { icon: Shield, label: t("anti_block_vpn"), action: () => setSubView("vpn") }
@@ -125662,11 +126971,6 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
     {
       title: isRtl ? "الأحجام" : "Sizes & Scaling",
       items: [
-        { icon: Sparkles, label: t("icon_size"), action: () => setSubView("icon-size") },
-        ...!isMobileDevice() ? [
-          { icon: LayoutDashboard, label: isRtl ? "حجم الإطارات" : "Frame Size", action: () => setSubView("frame-size") },
-          { icon: ArrowUpDown, label: isRtl ? "المسافة بين العناصر" : "Element Spacing", action: () => setSubView("tile-spacing") }
-        ] : [],
         { icon: Maximize2, label: t("screen_zoom"), action: () => setSubView("screen-zoom") },
         { icon: Maximize2, label: isRtl ? "تكبير صفحة الإعدادات" : "Settings Page Size", action: () => setSubView("settings-scale") },
         { icon: Tv, label: isRtl ? "تكبير صفحة المباشر" : "Live Page Size", action: () => setSubView("live-scale") },
@@ -125675,9 +126979,10 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
       ]
     },
     {
-      title: isRtl ? "نسب العرض إلى الارتفاع والتشغيل" : "Aspect Ratios & View",
+      title: isRtl ? "نسب العرض إلى الارتفاع والتشغيل" : "Aspect Ratios & Playback",
       items: [
         { icon: LayoutGrid, label: t("view_mode"), action: () => setSubView("view") },
+        { icon: MonitorPlay, label: t("players_title"), action: () => setSubView("players") },
         { icon: ArrowUpDown, label: t("sort_by"), action: () => setSubView("vod-sort") },
         { icon: Film, label: t("poster_size"), action: () => setSubView("poster-size") },
         { icon: Type, label: t("poster_titles"), action: () => setSubView("poster-titles") }
@@ -125873,105 +127178,48 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
       )
     ] }) });
   }
-  if (subView === "icon-size") {
-    const scaleOptions = [
-      { id: "xs", label: isRtl ? "صغير جداً (70%)" : "Extra Small (70%)", desc: isRtl ? "مقاس مصغر جداً" : "Very compact" },
-      { id: "sm", label: isRtl ? "صغير (85%)" : "Small (85%)", desc: isRtl ? "مساحة أكبر للهواتف" : "Compact cards" },
-      { id: "md", label: isRtl ? "متوازن (100%)" : "Balanced (100%)", desc: isRtl ? "المقاس القياسي الافتراضي" : "Default size" },
-      { id: "lg", label: isRtl ? "كبير (115%)" : "Large (115%)", desc: isRtl ? "مثالي لشاشات التلفزيون" : "Large TV size" },
-      { id: "xl", label: isRtl ? "كبير جداً (130%)" : "Extra Large (130%)", desc: isRtl ? "أيقونات بارزة كبرى" : "Extra prominent" },
-      { id: "2xl", label: isRtl ? "ضخم (145%)" : "Huge (145%)", desc: isRtl ? "حجم واسع وواضح" : "Very large" },
-      { id: "3xl", label: isRtl ? "عملاق (160%)" : "Giant (160%)", desc: isRtl ? "أقصى حجم متاح" : "Maximum size" }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("icon_size"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5", children: scaleOptions.map((opt) => {
-      const isActive = (settings.iconScale || "md") === opt.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(
-        TileOptionButton,
-        {
-          title: opt.label,
-          subtitle: opt.desc,
-          active: isActive,
-          onClick: () => {
-            updateSetting("iconScale", opt.id);
-            setSubView("main");
-          },
-          isRtl
-        },
-        opt.id
-      );
-    }) }) });
-  }
-  if (subView === "frame-size") {
-    const frameOptions = [
-      { id: "xs", label: isRtl ? "إطار صغير جداً" : "Extra Compact Frame", desc: isRtl ? "يصغّر الإطار دون تغيير الأيقونة" : "Shrinks frame only, icon unchanged" },
-      { id: "sm", label: isRtl ? "إطار صغير" : "Compact Frame", desc: isRtl ? "حواف أضيق للإطارات" : "Tighter frame border" },
-      { id: "md", label: isRtl ? "متوازن (الافتراضي)" : "Balanced (Default)", desc: isRtl ? "الحجم القياسي للإطارات" : "Standard frame scale" },
-      { id: "lg", label: isRtl ? "إطار كبير" : "Large Frame", desc: isRtl ? "تكبير مساحة الإطار فقط" : "Larger frame area only" },
-      { id: "xl", label: isRtl ? "إطار كبير جداً" : "Extra Large Frame", desc: isRtl ? "مساحة واسعة حول الأيقونات" : "Generous frame area" },
-      { id: "2xl", label: isRtl ? "إطار ضخم" : "Huge Frame", desc: isRtl ? "بطاقات عريضة للتلفزيون" : "Wide TV frame cards" },
-      { id: "3xl", label: isRtl ? "إطار عملاق" : "Giant Frame", desc: isRtl ? "أقصى حجم متاح للإطار" : "Maximum frame scale" }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: isRtl ? "حجم الإطارات (مستقل عن الأيقونات)" : "Frame Size (Independent)", onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5", children: frameOptions.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      TileOptionButton,
+  if (subView === "design-studio") {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      DashboardDesignStudio,
       {
-        title: opt.label,
-        subtitle: opt.desc,
-        active: (settings.frameScale || "md") === opt.id,
-        onClick: () => {
-          updateSetting("frameScale", opt.id);
-          setSubView("main");
+        settings,
+        initialTab: studioTab,
+        isRtl,
+        t,
+        onCommit: (nextDesign) => {
+          onUpdateSettings((prev) => ({ ...prev, ...nextDesign }));
         },
-        isRtl
-      },
-      opt.id
-    )) }) });
+        onBack: () => setSubView("main")
+      }
+    );
   }
-  if (subView === "tile-spacing") {
-    const spacingOptions = [
-      { id: "xs", label: isRtl ? "متقارب جداً" : "Very Tight", desc: isRtl ? "مسافة دنيا بين العناصر" : "Minimal gap between tiles" },
-      { id: "sm", label: isRtl ? "متقارب" : "Compact", desc: isRtl ? "مسافة صغيرة بين العناصر" : "Close element spacing" },
-      { id: "md", label: isRtl ? "متوازن (الافتراضي)" : "Balanced (Default)", desc: isRtl ? "تباعد قياسي" : "Standard spacing" },
-      { id: "lg", label: isRtl ? "واسع" : "Spacious", desc: isRtl ? "مسافة أوسع بين الإطارات" : "Generous gap between tiles" },
-      { id: "xl", label: isRtl ? "واسع جداً" : "Extra Spacious", desc: isRtl ? "أقصى تباعد بين العناصر" : "Maximum separation" }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: isRtl ? "المسافة بين العناصر (مستقلة)" : "Element Spacing (Independent)", onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5", children: spacingOptions.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      TileOptionButton,
-      {
-        title: opt.label,
-        subtitle: opt.desc,
-        active: (settings.tileSpacing || "md") === opt.id,
-        onClick: () => {
-          updateSetting("tileSpacing", opt.id);
-          setSubView("main");
-        },
-        isRtl
-      },
-      opt.id
-    )) }) });
-  }
-  if (subView === "dashboard-align") {
-    const alignOptions = [
-      { id: "top", label: isRtl ? "أعلى الشاشة" : "Top of Screen", desc: isRtl ? "رفع الأيقونات نحو الجزء العلوي من الشاشة" : "Align icons toward the top" },
-      { id: "center", label: isRtl ? "منتصف الشاشة (الافتراضي)" : "Center of Screen (Default)", desc: isRtl ? "توسيط الأيقونات في منتصف الشاشة" : "Center icons vertically" },
-      { id: "bottom", label: isRtl ? "أسفل الشاشة" : "Bottom of Screen", desc: isRtl ? "تنزيل الأيقونات نحو الجزء السفلي من الشاشة" : "Align icons toward the bottom" }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("dashboard_alignment"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3.5", children: alignOptions.map((opt) => {
-      const isActive = (settings.dashboardAlignment || "center") === opt.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(
-        TileOptionButton,
-        {
-          title: opt.label,
-          subtitle: opt.desc,
-          active: isActive,
-          onClick: () => {
-            updateSetting("dashboardAlignment", opt.id);
-            setSubView("main");
+  if (subView === "window-position") {
+    const curPos = settings.windowPosition || "center";
+    const alignFlexFor = (id2) => {
+      const v2 = id2.startsWith("top") ? "items-start" : id2.startsWith("bottom") ? "items-end" : "items-center";
+      const h = id2.endsWith("left") ? "justify-start" : id2.endsWith("right") ? "justify-end" : "justify-center";
+      return `${v2} ${h}`;
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: t("window_position"), onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-zinc-300", children: isRtl ? "اختر مكان ظهور النوافذ المنبثقة وتفاصيل الأفلام والمسلسلات على الشاشة (أو انقل أي نافذة مباشرة عبر زر التحريك داخلها):" : "Choose where app windows and details dialogs appear on screen (or move any window directly from its header):" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "grid grid-cols-3 gap-2.5 sm:gap-3.5 max-w-2xl mx-auto", children: SCREEN_POSITION_CELLS.map((cell) => {
+        const isActive = curPos === cell.id;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            "data-tv-focusable": "true",
+            tabIndex: 0,
+            onClick: () => updateSetting("windowPosition", cell.id),
+            className: `p-3 sm:p-4 rounded-2xl border flex flex-col items-center justify-center gap-2 transition-colors cursor-pointer ${isActive ? "border-gold bg-gold/20 shadow-[0_0_16px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/50 hover:bg-white/[0.08]"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-14 h-9 rounded-lg border border-white/15 bg-black/50 p-1 flex ${alignFlexFor(cell.id)}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-5 h-3 rounded-sm border ${isActive ? "bg-gold border-gold" : "bg-gold/60 border-gold/60"}` }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-xs sm:text-sm font-semibold ${isActive ? "text-gold" : "text-white"}`, children: isRtl ? cell.ar : cell.en })
+            ]
           },
-          isRtl
-        },
-        opt.id
-      );
-    }) }) });
+          cell.id
+        );
+      }) })
+    ] }) });
   }
   if (subView === "settings-scale" || subView === "live-scale" || subView === "vod-scale") {
     const scaleConfig = subView === "settings-scale" ? { key: "settingsScale", current: settings.settingsScale ?? 90, title: isRtl ? "حجم صفحة الإعدادات" : "Settings Page Size", hint: isRtl ? "يؤثر على الإعدادات فقط" : "Affects Settings only" } : subView === "live-scale" ? { key: "livePageScale", current: settings.livePageScale ?? 100, title: isRtl ? "حجم صفحة البث المباشر" : "Live Page Size", hint: isRtl ? "يؤثر على صفحة المباشر فقط" : "Affects Live only" } : { key: "vodPageScale", current: settings.vodPageScale ?? 100, title: isRtl ? "حجم صفحات الأفلام والمسلسلات" : "Movies & Series Page Size", hint: isRtl ? "يؤثر على الأفلام والمسلسلات فقط" : "Affects Movies & Series only" };
@@ -126209,138 +127457,6 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
       ] })
     ] }) });
   }
-  if (subView === "royal-colors") {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("royal_themes")} (${ROYAL_THEMES.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 pb-4", children: ROYAL_THEMES.map((theme, idx) => {
-      const isActive = (settings.royalThemeColor || "royal-gold") === theme.id;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "button",
-        {
-          "data-tv-focusable": "true",
-          tabIndex: 0,
-          onFocus: (e2) => e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" }),
-          onClick: () => handleSelectRoyalTheme(theme.id),
-          className: `p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[82px] cursor-pointer ${isActive ? "border-gold bg-white/15" : "border-white/10 bg-white/[0.04] hover:border-white/30 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-4 rounded-full border border-white/25", style: { backgroundColor: theme.primary } }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-3 h-3 rounded-full opacity-80", style: { backgroundColor: theme.secondary } })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-zinc-400", children: [
-                "#",
-                idx + 1
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-medium text-white truncate mt-1.5", children: settings.language === "ar" ? theme.nameAr : theme.nameEn }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full mt-1.5 pt-1 border-t border-white/10 text-[11px] font-mono", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: theme.primary }, children: theme.primary }),
-              isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-emerald-400", size: 14 })
-            ] })
-          ]
-        },
-        theme.id
-      );
-    }) }) });
-  }
-  if (subView === "icons-3d") {
-    const savedId = settings.icon3DStyle || "style-gold-3d";
-    const previewId = pendingIconStyleId || savedId;
-    const previewStyle = ICON_3D_STYLES.find((s) => s.id === previewId) || ICON_3D_STYLES[0];
-    const previewIdx = ICON_3D_STYLES.findIndex((s) => s.id === previewStyle.id);
-    const hasPendingChange = Boolean(pendingIconStyleId && pendingIconStyleId !== savedId);
-    const iconKinds = [
-      { kind: "live", label: t("live") },
-      { kind: "movies", label: t("movies") },
-      { kind: "series", label: t("series") },
-      { kind: "add", label: t("playlist") },
-      { kind: "settings", label: t("settings") }
-    ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("icons_3d")} (${ICON_3D_STYLES.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 pb-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 min-w-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black", children: [
-              "#",
-              previewIdx + 1
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm sm:text-base font-bold text-white truncate", children: settings.language === "ar" ? previewStyle.nameAr : previewStyle.nameEn }),
-            hasPendingChange && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded-md bg-white/10 text-gold text-[10px] font-bold", children: isRtl ? "معاينة قبل الحفظ" : "Preview" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3 pt-1", children: iconKinds.map((ic) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: ic.kind, active3DStyle: previewStyle, scale: "sm", iconSize: "md" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-300 truncate max-w-[54px]", children: ic.label })
-          ] }, ic.kind)) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onClick: () => {
-                handleSelect3DIconStyle(previewStyle.id);
-                setPendingIconStyleId(null);
-              },
-              className: "px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 15 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "اعتماد التصميم" : "Confirm Design" })
-              ]
-            }
-          ),
-          hasPendingChange && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onClick: () => setPendingIconStyleId(null),
-              className: "px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer",
-              children: isRtl ? "إلغاء" : "Cancel"
-            }
-          )
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: ICON_3D_STYLES.map((style2, idx) => {
-        const isSelected = previewId === style2.id;
-        const isSaved = savedId === style2.id;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onFocus: (e2) => {
-              e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" });
-              setPendingIconStyleId(style2.id);
-            },
-            onClick: () => {
-              handleSelect3DIconStyle(style2.id);
-              setPendingIconStyleId(null);
-            },
-            className: `p-3 rounded-2xl border transition-colors flex flex-col justify-between min-h-[86px] cursor-pointer ${isSelected ? "border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full gap-1", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "live", active3DStyle: style2, scale: "sm", iconSize: "xs" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "movies", active3DStyle: style2, scale: "sm", iconSize: "xs" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(StyledAppIcon, { kind: "settings", active3DStyle: style2, scale: "sm", iconSize: "xs" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-gold font-bold", children: [
-                  "#",
-                  idx + 1
-                ] })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-medium text-white truncate mt-1.5", children: settings.language === "ar" ? style2.nameAr : style2.nameEn }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full mt-1 pt-1 border-t border-white/10 text-[10px]", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400 truncate max-w-[90px]", children: isSaved ? isRtl ? "المُعتمد حالياً" : "Active" : style2.nameEn }),
-                (isSelected || isSaved) && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
-              ] })
-            ]
-          },
-          style2.id
-        );
-      }) })
-    ] }) });
-  }
   if (subView === "backgrounds") {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("app_backgrounds")} (${APP_BACKGROUNDS.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-3 pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: APP_BACKGROUNDS.map((bg) => {
       const isActive = !settings.customBackground && (settings.backgroundStyle || "bg-raouche-rocks-beirut") === bg.id;
@@ -126375,337 +127491,6 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
         bg.id
       );
     }) }) }) });
-  }
-  if (subView === "dashboard-layouts") {
-    const renderLayoutThumbnail = (id2) => {
-      switch (id2) {
-        case "layout-pure-icons":
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-around px-2", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-3.5 h-3.5 rounded-lg border ${i2 === 0 ? "bg-gold/35 border-gold" : "bg-white/15 border-gold/40"}` }, i2)) });
-        case "layout-glass-hero-dock":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4.5 rounded bg-gold/25 border border-gold/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-1 h-3.5", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }, i2)) })
-          ] });
-        case "layout-vertical-rail":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 rounded bg-gold/20 border border-gold/40 flex flex-col justify-around p-0.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-gold/60 rounded" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-white/25 rounded" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-white/25 rounded" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 grid grid-cols-3 gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/25 border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" })
-            ] })
-          ] });
-        case "layout-cinema-marquee":
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 grid grid-cols-5 gap-1", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `rounded-md border ${i2 === 0 ? "bg-gold/25 border-gold/60" : "bg-white/10 border-white/15"}` }, i2)) });
-        case "layout-asymmetric-bento":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-gold/25 border border-gold/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 grid grid-rows-2 gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/15 border border-gold/35" })
-            ] })
-          ] });
-        case "layout-dual-cinema-split":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-2 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/25 border border-gold/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-1", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }, i2)) })
-          ] });
-        case "layout-floating-console-bar":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex items-center justify-center gap-1 px-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-5 rounded bg-white/10 border border-white/15" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-6 rounded bg-white/15 border border-gold/30" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-8 rounded-lg bg-gold/30 border border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-6 rounded bg-white/15 border border-gold/30" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-5 rounded bg-white/10 border border-white/15" })
-          ] });
-        case "layout-pyramid-tier":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-4.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/25 border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/15 border border-gold/35" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 gap-1 h-3.5", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }, i2)) })
-          ] });
-        case "layout-right-command-panel":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-8 flex flex-col gap-0.5 justify-between", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-gold/25 border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-white/10 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-white/10 border border-white/15" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-4 rounded bg-white/10 border border-gold/35" })
-          ] });
-        case "layout-chamfer-prism-grid":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col items-center justify-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-3.5 bg-gold/25 border border-gold/45 [clip-path:polygon(4px_0,100%_0,100%_calc(100%-4px),calc(100%-4px)_100%,0_100%,0_4px)]" }, i2)) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1", children: [0, 1].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-3.5 bg-white/15 border border-white/20 [clip-path:polygon(4px_0,100%_0,100%_calc(100%-4px),calc(100%-4px)_100%,0_100%,0_4px)]" }, i2)) })
-          ] });
-        case "layout-editorial-showcase":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col justify-between divide-y divide-white/15 border-y border-gold/35 px-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2 bg-gold/30 w-2/3 rounded-sm my-auto" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 bg-white/20 w-1/2 rounded-sm my-auto" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 bg-white/15 w-3/4 rounded-sm my-auto" })
-          ] });
-        case "layout-orbital-medallions":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex items-center justify-center gap-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-4 rounded-full bg-white/10 border border-white/20" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-5 h-5 rounded-full bg-white/15 border border-gold/40" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-7 rounded-full bg-gold/30 border border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-5 h-5 rounded-full bg-white/15 border border-gold/40" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-4 rounded-full bg-white/10 border border-white/20" })
-          ] });
-        case "layout-leanback-lanes":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-4 gap-1 h-4.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-2 rounded bg-gold/25 border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/15" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 h-3.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-red-500/20 border border-red-400/40" })
-            ] })
-          ] });
-        case "layout-quadrant-hub":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 relative grid grid-cols-2 grid-rows-2 gap-1", children: [
-            [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10 border border-white/15" }, i2)),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-0 m-auto w-5 h-5 rounded-full bg-gold/35 border border-gold" })
-          ] });
-        case "layout-arch-gallery":
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 grid grid-cols-5 gap-1 items-end", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `h-8 rounded-t-full rounded-b-sm border ${i2 === 0 ? "bg-gold/25 border-gold/60" : "bg-white/10 border-white/20"}` }, i2)) });
-        case "layout-compact-glass-stack":
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-2/3 h-full flex flex-col gap-0.5 justify-between", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `h-1.5 rounded-sm border ${i2 === 0 ? "bg-gold/30 border-gold/60" : "bg-white/10 border-white/15"}` }, i2)) }) });
-        case "layout-widescreen-ribbon":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 h-5.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-gold/25 border border-gold/50" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/15 border border-white/20" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-2.5 rounded-full bg-white/10 border border-gold/30" })
-          ] });
-        case "layout-stepped-skyline":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-5 gap-1 items-end", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-white/10 border border-white/15" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-6 rounded bg-white/15 border border-gold/30" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-8.5 rounded bg-gold/30 border border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-6 rounded bg-white/15 border border-gold/30" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-white/10 border border-white/15" })
-          ] });
-        case "layout-split-header-deck":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-5.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded border border-gold/40 overflow-hidden flex flex-col", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2 bg-gold/30" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 bg-white/5" })
-            ] }, i2)) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-2.5", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/10" }, i2)) })
-          ] });
-        case "layout-obsidian-hex-hive":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col items-center justify-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 w-full h-4.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-transparent border border-gold/55" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-white/[0.06] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-lg bg-transparent border border-gold/55" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-2/3 h-3.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
-            ] })
-          ] });
-        case "layout-solid-theater-marquee":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-7 grid grid-cols-2 gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.05] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/50" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-5 flex flex-col gap-0.5 justify-between", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-2.5 rounded bg-transparent border border-gold/45" }, i2)) })
-          ] });
-        case "layout-carbon-brushed-chassis":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 rounded-lg bg-transparent border border-gold/60 p-0.5 flex flex-col gap-0.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-0.5 flex-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.06] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-0.5 h-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
-            ] })
-          ] });
-        case "layout-duotone-color-blocks":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-12 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-transparent border border-gold/55" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-6 rounded bg-gold/20 border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-3 rounded bg-transparent border border-gold/55" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-3/4 mx-auto h-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/30" })
-            ] })
-          ] });
-        case "layout-isometric-diamond-deck":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col items-center justify-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 w-full h-5 items-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 border border-gold/80 block" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-white/[0.05] border border-gold flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2.5 h-2.5 rotate-45 bg-gold/40 border border-gold block" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-4 rounded bg-transparent border border-gold/45 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "w-2 h-2 rotate-45 border border-gold/80 block" }) })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-1/2 h-2.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" })
-            ] })
-          ] });
-        case "layout-matte-card-fan":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 rounded bg-white/[0.05] border border-gold overflow-hidden flex flex-col", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 bg-gold/60" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-8 grid grid-cols-4 gap-0.5", children: [0, 1, 2, 3].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded bg-transparent border border-gold/45 overflow-hidden flex flex-col", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1 bg-gold/45" }) }, i2)) })
-          ] });
-        case "layout-royal-monolith-dock":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-5 gap-1 items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-transparent border border-gold/45" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-transparent border border-gold/35" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-9 rounded bg-white/[0.06] border-2 border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-5 rounded bg-transparent border border-gold/35" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-7 rounded bg-transparent border border-gold/45" })
-          ] });
-        case "layout-split-panel-arcade":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 w-3/4 mx-auto h-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/55" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/55" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-white/[0.05] border border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-white/25" })
-            ] })
-          ] });
-        case "layout-horizon-panorama-cards":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 grid grid-cols-12 gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-0.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "col-span-4 rounded bg-white/[0.05] border-2 border-gold" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "col-span-4 flex flex-col gap-0.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 rounded bg-transparent border border-gold/45" })
-            ] })
-          ] });
-        case "layout-luxury-satin-frame":
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full h-9 flex flex-col gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-1 h-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border-2 border-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border-2 border-gold/55" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-3 gap-1 h-3", children: [0, 1, 2].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded bg-transparent border border-gold/45" }, i2)) })
-          ] });
-        case "layout-frameless-icons":
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center justify-around px-2", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-3 h-3 rounded-full ${i2 === 0 ? "bg-gold shadow-[0_0_6px_var(--theme-glow)]" : "bg-white/70"}` }, i2)) });
-        case "layout-zen-horizon":
-        default:
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-9 flex items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-5 border-y border-gold/45 bg-transparent grid grid-cols-5 divide-x divide-white/15", children: [0, 1, 2, 3, 4].map((i2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: i2 === 0 ? "bg-gold/15" : "" }, i2)) }) });
-      }
-    };
-    const savedLayoutId = DASHBOARD_LAYOUTS.some((l2) => l2.id === settings.dashboardLayout) ? settings.dashboardLayout : "layout-frameless-icons";
-    const previewLayoutId = pendingLayoutId || savedLayoutId;
-    const previewLayoutObj = DASHBOARD_LAYOUTS.find((l2) => l2.id === previewLayoutId) || DASHBOARD_LAYOUTS[0];
-    const previewLayoutIdx = DASHBOARD_LAYOUTS.findIndex((l2) => l2.id === previewLayoutObj.id);
-    const hasPendingLayout = Boolean(pendingLayoutId && pendingLayoutId !== savedLayoutId);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SubViewContainer, { title: `${t("dashboard_layouts")} (${DASHBOARD_LAYOUTS.length})`, onBack: () => setSubView("main"), isRtl, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 pb-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 sm:p-4 rounded-2xl border border-gold/40 bg-black/40 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 w-full sm:w-auto min-w-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-36 shrink-0 p-1.5 rounded-xl border border-white/15 bg-transparent", children: renderLayoutThumbnail(previewLayoutObj.id) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-gold text-black text-xs font-mono font-black", children: [
-                "#",
-                previewLayoutIdx + 1
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold text-white truncate", children: settings.language === "ar" ? previewLayoutObj.nameAr : previewLayoutObj.nameEn })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-300 truncate mt-0.5", children: settings.language === "ar" ? previewLayoutObj.descriptionAr : previewLayoutObj.descriptionEn })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onClick: () => {
-                updateSetting("dashboardLayout", previewLayoutObj.id);
-                setPendingLayoutId(null);
-                setSubView("main");
-              },
-              className: "px-4 py-2 rounded-xl bg-gold hover:brightness-110 text-black text-xs sm:text-sm font-black flex items-center gap-1.5 cursor-pointer",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 15 }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "اعتماد التصميم" : "Confirm Layout" })
-              ]
-            }
-          ),
-          hasPendingLayout && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onClick: () => setPendingLayoutId(null),
-              className: "px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-zinc-200 text-xs sm:text-sm font-bold cursor-pointer",
-              children: isRtl ? "إلغاء" : "Cancel"
-            }
-          )
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5", children: DASHBOARD_LAYOUTS.map((layoutOption, idx) => {
-        const isSelected = previewLayoutObj.id === layoutOption.id;
-        const isSaved = savedLayoutId === layoutOption.id;
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "button",
-          {
-            "data-tv-focusable": "true",
-            tabIndex: 0,
-            onFocus: (e2) => {
-              e2.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest" });
-              setPendingLayoutId(layoutOption.id);
-            },
-            onClick: () => {
-              updateSetting("dashboardLayout", layoutOption.id);
-              setPendingLayoutId(null);
-            },
-            className: `p-2.5 rounded-2xl border transition-colors flex flex-col justify-between gap-1.5 min-h-[110px] cursor-pointer ${isSelected ? "border-gold bg-gold/15 shadow-[0_0_14px_var(--theme-glow)]" : "border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]"} ${isRtl ? "text-right" : "text-left"}`,
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between w-full", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono text-gold font-bold", children: [
-                  "#",
-                  idx + 1
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1", children: [
-                  isSaved && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] font-bold text-gold/90", children: isRtl ? "مُعتمد" : "Active" }),
-                  (isSelected || isSaved) && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "text-gold shrink-0", size: 14 })
-                ] })
-              ] }),
-              renderLayoutThumbnail(layoutOption.id),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs font-medium text-white truncate w-full", children: settings.language === "ar" ? layoutOption.nameAr : layoutOption.nameEn })
-            ]
-          },
-          layoutOption.id
-        );
-      }) })
-    ] }) });
   }
   if (subView.startsWith("categories-")) {
     const type = subView.split("-")[1];
@@ -127097,17 +127882,20 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-xl bg-red-500/20 text-red-400", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { size: 18 }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-semibold text-white", children: t("clear_history_confirm_title") })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                "data-tv-focusable": "true",
-                "data-tv-modal": "confirm-clear",
-                tabIndex: 0,
-                onClick: () => setConfirmClearType(null),
-                className: "p-1.5 text-zinc-300 hover:text-white rounded-full cursor-pointer",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
-              }
-            )
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl, tvModalTag: "confirm-clear" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  "data-tv-focusable": "true",
+                  "data-tv-modal": "confirm-clear",
+                  tabIndex: 0,
+                  onClick: () => setConfirmClearType(null),
+                  className: "p-1.5 text-zinc-300 hover:text-white rounded-full cursor-pointer",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
+                }
+              )
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-zinc-200 leading-relaxed", children: confirmClearType === "movie" ? t("clear_movie_history_confirm") : confirmClearType === "series" ? t("clear_series_history_confirm") : t("clear_channel_history_confirm") }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-end gap-2.5 pt-2 ${isRtl ? "flex-row-reverse" : ""}`, children: [
@@ -127145,7 +127933,10 @@ function SettingsView({ onBack, settings, onUpdateSettings, userId, onTriggerSpl
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex items-center justify-between pb-3 border-b border-white/10 ${isRtl ? "flex-row-reverse" : ""}`, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-medium text-white", children: isRtl ? "رفع أو لصق محتوى M3U" : "Upload or Paste M3U" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { "data-tv-focusable": "true", tabIndex: 0, onClick: () => setShowUploadPasteModal(false), className: "p-2 text-zinc-300 hover:text-white rounded-full", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { "data-tv-focusable": "true", tabIndex: 0, onClick: () => setShowUploadPasteModal(false), className: "p-2 text-zinc-300 hover:text-white rounded-full", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 }) })
+            ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "input",
@@ -127389,11 +128180,14 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
   const [showAddModal, setShowAddModal] = reactExports.useState(false);
   const [showExitModal, setShowExitModal] = reactExports.useState(false);
   const [showRepositionModal, setShowRepositionModal] = reactExports.useState(false);
+  const [repositionFocusKind, setRepositionFocusKind] = reactExports.useState(null);
   const [reorderingKind, setReorderingKind] = reactExports.useState(null);
   const reorderBackupRef = reactExports.useRef(null);
   const selectHoldTimerRef = reactExports.useRef(null);
   const selectHoldTriggeredRef = reactExports.useRef(false);
   const longPressTimerRef = reactExports.useRef(null);
+  const touchLongPressHandledRef = reactExports.useRef(false);
+  const touchStartPosRef = reactExports.useRef(null);
   const [activePlaylistData, setActivePlaylistData] = reactExports.useState(null);
   const [copiedLink, setCopiedLink] = reactExports.useState(false);
   const [isRefreshing, setIsRefreshing] = reactExports.useState(false);
@@ -127589,7 +128383,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
     }
   }, [activePlaylistData == null ? void 0 : activePlaylistData.id, activePlaylistData == null ? void 0 : activePlaylistData.url]);
   reactExports.useEffect(() => {
-    if (startupSplashComplete && currentView === "home" && !showExtractionModal && !showExitModal && !showAddModal) {
+    if (startupSplashComplete && currentView === "home" && !showExtractionModal && !showExitModal && !showAddModal && !showRepositionModal) {
       const timer = setTimeout(() => {
         if (!getCurrentTVFocus()) {
           ensureInitialFocus();
@@ -127597,7 +128391,27 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [startupSplashComplete, currentView, showExtractionModal, showExitModal, showAddModal]);
+  }, [startupSplashComplete, currentView, showExtractionModal, showExitModal, showAddModal, showRepositionModal]);
+  const prevRepositionOpenRef = reactExports.useRef(false);
+  reactExports.useEffect(() => {
+    if (showRepositionModal) {
+      prevRepositionOpenRef.current = true;
+      const tId = setTimeout(() => {
+        const modal = document.querySelector('[data-tv-reposition-modal="true"]');
+        const firstBtn = modal == null ? void 0 : modal.querySelector('button[data-tv-focusable="true"]');
+        if (firstBtn) setTVFocus(firstBtn, { scroll: false });
+      }, 40);
+      return () => clearTimeout(tId);
+    } else if (prevRepositionOpenRef.current) {
+      prevRepositionOpenRef.current = false;
+      const targetKind = repositionFocusKind || "live";
+      const tId = setTimeout(() => {
+        const el = document.querySelector(`[data-dashboard-kind="${targetKind}"]`);
+        if (el) setTVFocus(el, { scroll: false });
+      }, 40);
+      return () => clearTimeout(tId);
+    }
+  }, [showRepositionModal, repositionFocusKind]);
   reactExports.useEffect(() => {
     if (!reorderingKind) return;
     const unregister = pushBackHandler(() => {
@@ -127716,22 +128530,10 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
   reactExports.useEffect(() => {
     if (currentView !== "home") return;
     const isPhone = isMobileDevice();
-    const enterReorderMode = (kind) => {
-      reorderBackupRef.current = {
-        dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : void 0,
-        dashboardAlignment: settings.dashboardAlignment,
-        dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment
-      };
-      setReorderingKind(kind);
-    };
     const commitReorderMode = () => {
       reorderBackupRef.current = null;
       const targetKind = reorderingKind;
       setReorderingKind(null);
-      try {
-        localStorage.setItem("achour_settings", JSON.stringify(settings));
-      } catch (err) {
-      }
       if (targetKind) {
         setTimeout(() => {
           const el = document.querySelector(`[data-dashboard-kind="${targetKind}"]`);
@@ -127740,13 +128542,24 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       }
     };
     const handleKeyDown = (e2) => {
-      if (showAddModal || showExitModal || showExtractionModal || showRepositionModal) return;
+      if (showAddModal || showExitModal || showExtractionModal) return;
+      if (!showRepositionModal && !reorderingKind && (e2.key === "ContextMenu" || e2.keyCode === 82 || e2.keyCode === 457)) {
+        e2.preventDefault();
+        e2.stopPropagation();
+        const active = getCurrentTVFocus();
+        const focusedKind = (active == null ? void 0 : active.getAttribute("data-dashboard-kind")) || "live";
+        setRepositionFocusKind(focusedKind);
+        setShowRepositionModal(true);
+        return;
+      }
       const action = parseTVKeyEvent(e2);
       if (action === "UP" || action === "DOWN" || action === "LEFT" || action === "RIGHT") {
         e2.preventDefault();
         e2.stopPropagation();
         const dir = action.toLowerCase();
-        if (reorderingKind) {
+        if (showRepositionModal) {
+          navigateSpatial(dir, document.body, null);
+        } else if (reorderingKind) {
           handleTVReorderStep(reorderingKind, dir);
         } else {
           navigateSpatial(dir, document.body, null);
@@ -127756,6 +128569,15 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
       if (action === "SELECT") {
         e2.preventDefault();
         e2.stopPropagation();
+        if (showRepositionModal) {
+          if (!e2.repeat) {
+            const active2 = getCurrentTVFocus();
+            if (active2 && typeof active2.click === "function") {
+              active2.click();
+            }
+          }
+          return;
+        }
         if (reorderingKind) {
           if (!e2.repeat) {
             commitReorderMode();
@@ -127772,7 +128594,8 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
             }
             if (!selectHoldTriggeredRef.current) {
               selectHoldTriggeredRef.current = true;
-              enterReorderMode(focusedKind);
+              setRepositionFocusKind(focusedKind);
+              setShowRepositionModal(true);
             }
             return;
           }
@@ -127781,7 +128604,8 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
             selectHoldTimerRef.current = setTimeout(() => {
               selectHoldTimerRef.current = null;
               selectHoldTriggeredRef.current = true;
-              enterReorderMode(focusedKind);
+              setRepositionFocusKind(focusedKind);
+              setShowRepositionModal(true);
             }, 460);
           }
           return;
@@ -128000,8 +128824,19 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
               ]
             }
           ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex items-center justify-center min-w-0 pt-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-xl md:text-2xl font-semibold text-gold tracking-tight uppercase leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-end min-w-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "flex items-center justify-center min-w-0 pt-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-sm sm:text-xl md:text-2xl font-bold text-gold tracking-wider uppercase leading-none drop-shadow-md whitespace-nowrap", children: "ACHOUR PLAYER" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-end gap-2 sm:gap-3 min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                "data-tv-focusable": "true",
+                tabIndex: 0,
+                onClick: () => setShowRepositionModal(true),
+                title: isRtl ? "موضع الأيقونات والنوافذ" : "Icons & Windows Position",
+                className: "p-2 rounded-xl bg-white/[0.06] hover:bg-gold/20 border border-white/10 hover:border-gold/50 text-gold/85 hover:text-gold transition-colors cursor-pointer shrink-0 mt-0.5",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 16 })
+              }
+            ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(ClockDisplay, { settings, isRtl }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "opacity-0 w-0 h-0 pointer-events-none", "data-tv-header-end": "true" })
           ] })
@@ -128108,40 +128943,79 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
         exit: { opacity: 0, scale: 0.985 },
         transition: { duration: 0.18 },
         onContextMenu: (e2) => {
-          if (isMobileDevice()) {
-            e2.preventDefault();
+          var _a2, _b2;
+          e2.preventDefault();
+          const tileEl = (_b2 = (_a2 = e2.target) == null ? void 0 : _a2.closest) == null ? void 0 : _b2.call(_a2, "[data-dashboard-kind]");
+          const k = (tileEl == null ? void 0 : tileEl.getAttribute("data-dashboard-kind")) || "live";
+          setRepositionFocusKind(k);
+          setShowRepositionModal(true);
+        },
+        onPointerDown: (e2) => {
+          var _a2, _b2;
+          if (e2.pointerType !== "touch" && !isMobileDevice()) return;
+          if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+          touchLongPressHandledRef.current = false;
+          touchStartPosRef.current = { x: e2.clientX, y: e2.clientY };
+          const tileEl = (_b2 = (_a2 = e2.target) == null ? void 0 : _a2.closest) == null ? void 0 : _b2.call(_a2, "[data-dashboard-kind]");
+          const k = (tileEl == null ? void 0 : tileEl.getAttribute("data-dashboard-kind")) || "live";
+          longPressTimerRef.current = setTimeout(() => {
+            longPressTimerRef.current = null;
+            touchLongPressHandledRef.current = true;
+            setRepositionFocusKind(k);
             setShowRepositionModal(true);
+          }, 550);
+        },
+        onPointerMove: (e2) => {
+          if (!longPressTimerRef.current || !touchStartPosRef.current) return;
+          const dx = Math.abs(e2.clientX - touchStartPosRef.current.x);
+          const dy = Math.abs(e2.clientY - touchStartPosRef.current.y);
+          if (dx > 12 || dy > 12) {
+            clearTimeout(longPressTimerRef.current);
+            longPressTimerRef.current = null;
           }
         },
-        onPointerDown: () => {
-          if (!isMobileDevice()) return;
-          if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
-          longPressTimerRef.current = setTimeout(() => {
-            setShowRepositionModal(true);
-          }, 650);
-        },
         onPointerUp: () => {
+          touchStartPosRef.current = null;
           if (longPressTimerRef.current) {
             clearTimeout(longPressTimerRef.current);
             longPressTimerRef.current = null;
           }
         },
         onPointerCancel: () => {
+          touchStartPosRef.current = null;
+          touchLongPressHandledRef.current = false;
           if (longPressTimerRef.current) {
             clearTimeout(longPressTimerRef.current);
             longPressTimerRef.current = null;
           }
         },
-        className: `flex-1 min-h-0 flex flex-col ${settings.dashboardAlignment === "top" ? "justify-start pt-6 sm:pt-10" : settings.dashboardAlignment === "bottom" ? "justify-end pb-8 sm:pb-12" : "justify-center my-auto"} ${settings.dashboardHorizontalAlignment === "left" ? "items-start" : settings.dashboardHorizontalAlignment === "right" ? "items-end" : "items-center"} w-full overflow-y-auto no-scrollbar px-2 sm:px-4`,
+        onClickCapture: (e2) => {
+          if (touchLongPressHandledRef.current) {
+            e2.preventDefault();
+            e2.stopPropagation();
+            touchLongPressHandledRef.current = false;
+          }
+        },
+        "data-dashboard-layout-stage": "true",
+        "data-dashboard-v": settings.dashboardAlignment || "center",
+        "data-dashboard-h": settings.dashboardHorizontalAlignment || "center",
+        className: `flex-1 min-h-0 flex flex-col ${settings.dashboardAlignment === "top" ? "justify-start pt-2 sm:pt-4" : settings.dashboardAlignment === "bottom" ? "justify-end pb-3 sm:pb-6" : "justify-center"} w-full overflow-y-auto no-scrollbar px-3 sm:px-6`,
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           DashboardLayouts,
           {
             layoutId: settings.dashboardLayout,
             dashboardOrder: settings.dashboardOrder,
+            iconDisplayMode: settings.iconDisplayMode,
+            iconPack: settings.iconPack,
+            frameShape: settings.frameShape,
             active3DStyle,
             iconSize: settings.iconScale || "md",
             frameScale: settings.frameScale || "md",
             tileSpacing: settings.tileSpacing || "md",
+            glassOpacity: settings.glassOpacity ?? 16,
+            glassBlur: settings.glassBlur ?? 10,
+            dashboardAlignment: settings.dashboardAlignment,
+            dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment,
             reorderingKind,
             language: settings.language,
             isRtl,
@@ -128153,7 +129027,7 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
           }
         )
       },
-      `hub-layout-${settings.dashboardLayout || "layout-frameless-icons"}`
+      `hub-layout-${settings.dashboardLayout || "layout-dock-row"}`
     ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showExtractionModal && extractionProgress && /* @__PURE__ */ jsxRuntimeExports.jsx(
       ExtractionProgressModal,
@@ -128231,100 +129105,187 @@ function Dashboard({ userId, settings, onUpdateSettings, onTriggerSplash, startu
         language: settings.language
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showRepositionModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showRepositionModal && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
       {
-        initial: { opacity: 0, scale: 0.95 },
-        animate: { opacity: 1, scale: 1 },
-        exit: { opacity: 0, scale: 0.95 },
-        className: "w-full max-w-lg rounded-3xl p-6 bg-[#0e121d] border border-gold/40 shadow-2xl flex flex-col gap-5 text-white",
-        dir: isRtl ? "rtl" : "ltr",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-white/10 pb-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpDown, { className: "w-5 h-5 text-gold" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-gold", children: isRtl ? "موضع الأيقونات على الشاشة" : "Dashboard Icons Screen Position" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "button",
-              {
-                "data-tv-focusable": "true",
-                tabIndex: 0,
-                onClick: () => setShowRepositionModal(false),
-                className: "p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer",
-                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-300", children: isRtl ? "اختر الموضع المناسب لعرض أيقونات التطبيق الرئيسية على شاشتك:" : "Choose where you want the main app icons positioned on your screen:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
-            { id: "top", label: isRtl ? "أعلى الشاشة" : "Top", desc: isRtl ? "رفع نحو الأعلى" : "Upper area" },
-            { id: "center", label: isRtl ? "منتصف الشاشة" : "Center", desc: isRtl ? "الوضع الافتراضي" : "Balanced center" },
-            { id: "bottom", label: isRtl ? "أسفل الشاشة" : "Bottom", desc: isRtl ? "تنزيل نحو الأسفل" : "Lower dock" }
-          ].map((opt) => {
-            const active = (settings.dashboardAlignment || "center") === opt.id;
-            return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "button",
-              {
-                "data-tv-focusable": "true",
-                tabIndex: 0,
-                onClick: () => {
-                  const updated = { ...settings, dashboardAlignment: opt.id };
-                  onUpdateSettings(updated);
-                  localStorage.setItem("achour_settings", JSON.stringify(updated));
-                  setShowRepositionModal(false);
-                },
-                className: `flex flex-col items-center justify-center p-4 rounded-2xl border text-center transition-all cursor-pointer ${active ? "bg-gold/20 border-gold shadow-[0_0_15px_var(--theme-glow)] scale-[1.02]" : "bg-white/[0.04] border-white/10 hover:border-gold/50 hover:bg-white/[0.08]"}`,
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-white mb-1", children: opt.label }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400", children: opt.desc }),
-                  active && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-2 text-gold", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { size: 16 }) })
-                ]
-              },
-              opt.id
-            );
-          }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-3 space-y-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-bold text-gold", children: isRtl ? "ترتيب إطارات لوحة التحكم" : "Reorder Dashboard Tiles" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-400", children: isRtl ? "استخدم الأسهم لتحريك الإطار. يتم حفظ الترتيب تلقائياً." : "Use the arrows to move a tile. The order is saved automatically." }),
-            (() => {
-              const base = ["live", "movies", "series", "add", "settings"];
-              const order = [...settings.dashboardOrder || [], ...base].filter((value, index2, list) => base.includes(value) && list.indexOf(value) === index2);
-              const names = { live: isRtl ? "المباشر" : "Live", movies: isRtl ? "الأفلام" : "Movies", series: isRtl ? "المسلسلات" : "Series", add: isRtl ? "إضافة قائمة" : "Add Playlist", settings: isRtl ? "الإعدادات" : "Settings" };
-              return order.map((kind, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-semibold text-white", children: [
-                  index2 + 1,
-                  ". ",
-                  names[kind]
+        className: "fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 achour-modal-backdrop",
+        style: { backgroundColor: "rgba(0, 0, 0, 0.22)" },
+        onClick: () => setShowRepositionModal(false),
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            role: "dialog",
+            "aria-modal": "true",
+            "data-tv-modal": "true",
+            "data-tv-reposition-modal": "true",
+            initial: { opacity: 0, scale: 0.95 },
+            animate: { opacity: 1, scale: 1 },
+            exit: { opacity: 0, scale: 0.95 },
+            onClick: (e2) => e2.stopPropagation(),
+            className: "w-[min(86vw,440px)] max-h-[70vh] overflow-y-auto no-scrollbar rounded-3xl p-4 sm:p-5 bg-[#0e121d]/95 border border-gold/45 shadow-2xl flex flex-col gap-3.5 text-white",
+            dir: isRtl ? "rtl" : "ltr",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-white/10 pb-2.5 shrink-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpDown, { className: "w-4 h-4 text-gold shrink-0" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold text-gold truncate", children: isRtl ? "موضع الأيقونات والنوافذ" : "Icons & Windows Position" })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1", children: ["left", "up", "down", "right"].map((direction) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "button",
-                  {
-                    "data-tv-focusable": "true",
-                    tabIndex: 0,
-                    onClick: () => moveDashboardTile(kind, direction),
-                    title: direction,
-                    className: "w-7 h-7 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-sm font-black transition-colors",
-                    children: direction === "left" ? "←" : direction === "right" ? "→" : direction === "up" ? "↑" : "↓"
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 shrink-0", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(WindowPositionButton, { isRtl }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => setShowRepositionModal(false),
+                      className: "p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 17 })
+                    }
+                  )
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  "data-tv-focusable": "true",
+                  tabIndex: 0,
+                  onClick: () => {
+                    const target = repositionFocusKind || "live";
+                    reorderBackupRef.current = {
+                      dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : void 0,
+                      dashboardAlignment: settings.dashboardAlignment,
+                      dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment
+                    };
+                    setShowRepositionModal(false);
+                    setReorderingKind(target);
+                    setTimeout(() => {
+                      const el = document.querySelector(`[data-dashboard-kind="${target}"]`);
+                      if (el) setTVFocus(el, { scroll: false });
+                    }, 35);
                   },
-                  direction
-                )) })
-              ] }, kind));
-            })()
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end pt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              "data-tv-focusable": "true",
-              tabIndex: 0,
-              onClick: () => setShowRepositionModal(false),
-              className: "px-5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-medium text-white transition-colors cursor-pointer",
-              children: isRtl ? "إغلاق" : "Close"
-            }
-          ) })
-        ]
+                  className: "w-full py-2 px-3 rounded-xl bg-gold/15 hover:bg-gold/25 border border-gold/50 text-gold text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 14 }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "تحريك الأيقونات بالأسهم على الشاشة (يسار / يمين / أعلى / أسفل)" : "Move Icons with Arrows on Screen" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs font-bold text-gold", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Move, { size: 13 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "موضع شريط أيقونات الرئيسية على الشاشة" : "Dashboard Icons Position" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "grid grid-cols-3 gap-1.5", children: [
+                  { v: "top", h: "left", ar: "أعلى يسار", en: "Top Left" },
+                  { v: "top", h: "center", ar: "أعلى الشاشة", en: "Top" },
+                  { v: "top", h: "right", ar: "أعلى يمين", en: "Top Right" },
+                  { v: "center", h: "left", ar: "الجانب الأيسر", en: "Left Side" },
+                  { v: "center", h: "center", ar: "المنتصف", en: "Center" },
+                  { v: "center", h: "right", ar: "الجانب الأيمن", en: "Right Side" },
+                  { v: "bottom", h: "left", ar: "أسفل يسار", en: "Bottom Left" },
+                  { v: "bottom", h: "center", ar: "أسفل الشاشة", en: "Bottom" },
+                  { v: "bottom", h: "right", ar: "أسفل يمين", en: "Bottom Right" }
+                ].map((cell) => {
+                  const active = (settings.dashboardAlignment || "center") === cell.v && (settings.dashboardHorizontalAlignment || "center") === cell.h;
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => {
+                        onUpdateSettings((prev) => ({
+                          ...prev,
+                          dashboardAlignment: cell.v,
+                          dashboardHorizontalAlignment: cell.h
+                        }));
+                      },
+                      className: `py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${active ? "bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: `w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${cell.v === "top" ? "items-start" : cell.v === "bottom" ? "items-end" : "items-center"} ${cell.h === "left" ? "justify-start" : cell.h === "right" ? "justify-end" : "justify-center"}`,
+                            children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-3.5 h-1.5 rounded-sm ${active ? "bg-gold" : "bg-gold/70"}` })
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-bold leading-tight", children: isRtl ? cell.ar : cell.en })
+                      ]
+                    },
+                    `${cell.v}-${cell.h}`
+                  );
+                }) })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-2.5 space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-xs font-bold text-gold", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(AppWindow, { size: 13 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isRtl ? "موضع النوافذ المنبثقة على الشاشة" : "Popups & Windows Position" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { dir: "ltr", className: "grid grid-cols-3 gap-1.5", children: SCREEN_POSITION_CELLS.map((cell) => {
+                  const active = (settings.windowPosition || "center") === cell.id;
+                  const alignV = cell.id.startsWith("top") ? "items-start" : cell.id.startsWith("bottom") ? "items-end" : "items-center";
+                  const alignH = cell.id.endsWith("left") ? "justify-start" : cell.id.endsWith("right") ? "justify-end" : "justify-center";
+                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      "data-tv-focusable": "true",
+                      tabIndex: 0,
+                      onClick: () => {
+                        setGlobalWindowPosition(cell.id);
+                        onUpdateSettings((prev) => ({ ...prev, windowPosition: cell.id }));
+                      },
+                      className: `py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${active ? "bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]" : "bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${alignV} ${alignH}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `w-3.5 h-2 rounded-sm ${active ? "bg-gold" : "bg-gold/65"}` }) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-bold leading-tight", children: isRtl ? cell.ar : cell.en })
+                      ]
+                    },
+                    cell.id
+                  );
+                }) })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-2.5 space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-bold text-gold", children: isRtl ? "ترتيب إطارات لوحة التحكم" : "Reorder Dashboard Tiles" }),
+                (() => {
+                  const base = ["live", "movies", "series", "add", "settings"];
+                  const order = [...settings.dashboardOrder || [], ...base].filter((value, index2, list) => base.includes(value) && list.indexOf(value) === index2);
+                  const names = { live: isRtl ? "المباشر" : "Live", movies: isRtl ? "الأفلام" : "Movies", series: isRtl ? "المسلسلات" : "Series", add: isRtl ? "إضافة قائمة" : "Add Playlist", settings: isRtl ? "الإعدادات" : "Settings" };
+                  return order.map((kind, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 px-2.5 py-1 rounded-xl bg-white/[0.04] border border-white/10", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-semibold text-white truncate", children: [
+                      index2 + 1,
+                      ". ",
+                      names[kind]
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1 shrink-0", children: ["left", "up", "down", "right"].map((direction) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        "data-tv-focusable": "true",
+                        tabIndex: 0,
+                        onClick: () => moveDashboardTile(kind, direction),
+                        title: direction,
+                        className: "w-6 h-6 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-xs font-black transition-colors cursor-pointer",
+                        children: direction === "left" ? "←" : direction === "right" ? "→" : direction === "up" ? "↑" : "↓"
+                      },
+                      direction
+                    )) })
+                  ] }, kind));
+                })()
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end pt-1 shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  "data-tv-focusable": "true",
+                  tabIndex: 0,
+                  onClick: () => setShowRepositionModal(false),
+                  className: "px-5 py-2 rounded-xl bg-gold text-black hover:brightness-110 text-xs sm:text-sm font-bold transition-colors cursor-pointer",
+                  children: isRtl ? "تم" : "Done"
+                }
+              ) })
+            ]
+          }
+        )
       }
-    ) }) }),
+    ) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: refreshToast && /* @__PURE__ */ jsxRuntimeExports.jsxs(
       motion.div,
       {
@@ -130025,7 +130986,7 @@ registerPlugin("CapacitorHttp", {
   web: () => new CapacitorHttpPluginWeb()
 });
 const App$1 = registerPlugin("App", {
-  web: () => __vitePreload(() => import("./web-BrMGmshE.js"), true ? [] : void 0, import.meta.url).then((m) => new m.AppWeb())
+  web: () => __vitePreload(() => import("./web-CtDn5q3f.js"), true ? [] : void 0, import.meta.url).then((m) => new m.AppWeb())
 });
 var Style;
 (function(Style2) {
@@ -130127,14 +131088,20 @@ const DEFAULT_SETTINGS = {
     movies: [],
     series: []
   },
-  royalThemeColor: "royal-gold",
+  royalThemeColor: "pure-metallic-gold",
+  customThemeColor: null,
   icon3DStyle: "style-gold-3d",
+  iconDisplayMode: "with-frames",
+  iconPack: "pack-3d",
+  frameShape: "rounded-square",
+  glassOpacity: 16,
+  glassBlur: 10,
   backgroundStyle: "bg-raouche-rocks-beirut",
   customBackground: null,
   vpnEnabled: true,
   vpnRegion: "auto",
   vpnMode: "auto-relay",
-  dashboardLayout: "layout-glass-hero-dock",
+  dashboardLayout: "layout-dock-row",
   splashSoundTrack: "epic_royal_fanfare",
   splashStyle: "royal_gold_particles",
   iconScale: "md",
@@ -130142,6 +131109,7 @@ const DEFAULT_SETTINGS = {
   tileSpacing: "md",
   dashboardAlignment: "center",
   dashboardHorizontalAlignment: "center",
+  windowPosition: "center",
   zoomScale: 85,
   seekStep: 10
 };
@@ -130195,9 +131163,16 @@ function App() {
       }
       const bgValid = parsed.backgroundStyle && APP_BACKGROUNDS.some((b2) => b2.id === parsed.backgroundStyle);
       const resolvedViewMode = !userSetViewMode && parsed.viewMode === "list" ? "grid" : parsed.viewMode || DEFAULT_SETTINGS.viewMode;
+      const resolvedDesign = resolveDesignSettings(parsed);
       return {
         ...DEFAULT_SETTINGS,
         ...parsed,
+        iconDisplayMode: resolvedDesign.iconDisplayMode,
+        iconPack: resolvedDesign.iconPack,
+        frameShape: resolvedDesign.frameShape,
+        dashboardLayout: resolvedDesign.layoutId,
+        glassOpacity: resolvedDesign.glassOpacity,
+        glassBlur: resolvedDesign.glassBlur,
         viewMode: resolvedViewMode,
         language: lang || "en",
         backgroundStyle: bgValid ? parsed.backgroundStyle : DEFAULT_SETTINGS.backgroundStyle,
@@ -130271,10 +131246,25 @@ function App() {
     }
     document.documentElement.dir = settings.language === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = settings.language;
+    document.documentElement.setAttribute("data-achour-window-pos", settings.windowPosition || "center");
     const scaleVal = Math.max(0.6, Math.min(1.5, (settings.zoomScale || 100) * 0.95 / 100));
     document.documentElement.style.setProperty("--achour-zoom-scale", String(scaleVal));
-    applyRoyalTheme(settings.royalThemeColor || "royal-gold");
+    applyRoyalTheme(
+      settings.royalThemeColor || "pure-metallic-gold",
+      settings.customThemeColor,
+      settings.glassOpacity,
+      settings.glassBlur
+    );
   }, [settings]);
+  reactExports.useEffect(() => {
+    const handleWindowPosChange = (e2) => {
+      const nextPos = e2.detail;
+      if (!nextPos) return;
+      setSettings((prev) => prev.windowPosition === nextPos ? prev : { ...prev, windowPosition: nextPos });
+    };
+    window.addEventListener("achour-window-pos-change", handleWindowPosChange);
+    return () => window.removeEventListener("achour-window-pos-change", handleWindowPosChange);
+  }, []);
   reactExports.useEffect(() => {
     for (let i2 = 0; i2 < 10; i2++) {
       window.history.pushState({ page: "achour_app" }, "", window.location.href);
@@ -130337,7 +131327,7 @@ function App() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
-      className: `achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-[#D4AF37]/30 ${isRtl ? "font-cairo" : "font-sans"} relative overflow-hidden`,
+      className: `achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-gold/30 ${isRtl ? "font-cairo" : "font-sans"} relative overflow-hidden`,
       style: { "--achour-zoom-scale": effectiveScale },
       onScroll: (e2) => {
         if (e2.currentTarget.scrollTop !== 0) e2.currentTarget.scrollTop = 0;
@@ -130354,7 +131344,7 @@ function App() {
               setShowSplash(false);
               setSplashIsPreview(false);
             },
-            royalThemeId: settings.royalThemeColor || "royal-gold",
+            royalThemeId: settings.royalThemeColor || "pure-metallic-gold",
             soundTrack: settings.splashSoundTrack || "epic_royal_fanfare",
             splashStyle: settings.splashStyle || "royal_gold_particles",
             backgroundImageUrl: activeBgImageUrl,

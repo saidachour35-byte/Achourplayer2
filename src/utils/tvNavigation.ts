@@ -293,11 +293,57 @@ export function setTVFocus(
     }
   }
 
+  // Never let browser focus shift the outer viewport or app shell upward
+  try {
+    if (document.documentElement.scrollTop !== 0) document.documentElement.scrollTop = 0;
+    if (document.body.scrollTop !== 0) document.body.scrollTop = 0;
+    if (window.scrollY !== 0 || window.scrollX !== 0) window.scrollTo(0, 0);
+  } catch {
+    // ignore
+  }
+
   if (options.scroll !== false) {
     try {
-      target.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'auto' });
+      // Scroll ONLY genuine inner overflow containers (never root document / shell / live-root)
+      let p = target.parentElement;
+      while (p && p !== document.body && p !== document.documentElement) {
+        if (
+          !p.classList.contains('achour-app-shell') &&
+          !p.hasAttribute('data-live-root')
+        ) {
+          const cs = window.getComputedStyle(p);
+          const canScrollY = (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && p.scrollHeight > p.clientHeight + 2;
+          const canScrollX = (cs.overflowX === 'auto' || cs.overflowX === 'scroll') && p.scrollWidth > p.clientWidth + 2;
+          if (canScrollY || canScrollX) {
+            const pRect = p.getBoundingClientRect();
+            const tRect = target.getBoundingClientRect();
+            if (canScrollY && pRect.height > 0) {
+              const scaleY = p.clientHeight / pRect.height;
+              const topRel = (tRect.top - pRect.top) * scaleY;
+              const botRel = (tRect.bottom - pRect.top) * scaleY;
+              if (topRel < 8) {
+                p.scrollTop = Math.max(0, p.scrollTop + topRel - 8);
+              } else if (botRel + 8 > p.clientHeight) {
+                p.scrollTop = Math.max(0, p.scrollTop + botRel + 8 - p.clientHeight);
+              }
+            }
+            if (canScrollX && pRect.width > 0) {
+              const scaleX = p.clientWidth / pRect.width;
+              const leftRel = (tRect.left - pRect.left) * scaleX;
+              const rightRel = (tRect.right - pRect.left) * scaleX;
+              if (leftRel < 8) {
+                p.scrollLeft = Math.max(0, p.scrollLeft + leftRel - 8);
+              } else if (rightRel + 8 > p.clientWidth) {
+                p.scrollLeft = Math.max(0, p.scrollLeft + rightRel + 8 - p.clientWidth);
+              }
+            }
+            break;
+          }
+        }
+        p = p.parentElement;
+      }
     } catch {
-      // ignore older WebView scroll options
+      // ignore older WebView scroll errors
     }
   }
 

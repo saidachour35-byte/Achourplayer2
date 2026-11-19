@@ -83,10 +83,11 @@ export default function EPGGrid({ isOpen, onClose, channels, epgData, onSelectCh
   if (!isOpen) return null;
 
   return (
-    <motion.div
+      <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
+        data-modal-fullscreen="true"
         className="fixed inset-0 z-[100] flex flex-col achour-modal-backdrop p-4 sm:p-8"
       >
         {/* Header */}

@@ -1007,6 +1007,10 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
     activeWebVideoRef.current = video;
     video.muted = isMuted;
     video.volume = volume;
+    if (isLive) {
+      video.defaultPlaybackRate = 1;
+      video.playbackRate = 1;
+    }
 
     // Inspect original raw URL (without proxy wrapper) so .mp4/.mkv/.avi streams don't trigger a 4-5s Hls.js retry stall
     const rawSourceNoQuery = String(playUrl || rawActiveStreamUrl || '').split('?')[0].toLowerCase();
@@ -1021,28 +1025,6 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
 
     if (Hls.isSupported() && isHls) {
       let hls = hlsRef.current;
-
-      // Reuse persistent Hls instance ONLY when attached to the same mounted <video> element
-      if (hls && isLive && hls.media === video) {
-        try {
-          hls.stopLoad();
-          hls.loadSource(activeStreamUrl);
-          if (video.paused && isPlaying) {
-            video.play().catch(() => {});
-          }
-          return () => {
-            try {
-              hls?.stopLoad();
-            } catch (e) {}
-          };
-        } catch {
-          try {
-            hls.destroy();
-          } catch (e) {}
-          hlsRef.current = null;
-          hls = null;
-        }
-      }
 
       if (hls) {
         const oldMedia = hls.media;
@@ -1072,13 +1054,16 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         maxBufferSize: isLive
           ? (lowMem ? 16 * 1024 * 1024 : 32 * 1024 * 1024)
           : (lowMem ? 48 * 1024 * 1024 : 128 * 1024 * 1024),
-        liveSyncDurationCount: isLive ? 3 : 2,
-        liveMaxLatencyDurationCount: isLive ? 8 : Infinity,
+        liveSyncDurationCount: isLive ? 4 : 2,
+        liveMaxLatencyDurationCount: isLive ? 10 : Infinity,
+        liveDurationInfinity: isLive,
+        maxLiveSyncPlaybackRate: 1,
+        maxAudioFramesDrift: 1,
         maxBufferHole: 0.5,
-        highBufferWatchdogPeriod: isLive ? 1 : 0,
+        highBufferWatchdogPeriod: isLive ? 2 : 0,
         maxStarvationDelay: isLive ? 3 : 4,
         nudgeOffset: 0.1,
-        nudgeMaxRetry: 5,
+        nudgeMaxRetry: 3,
         manifestLoadingMaxRetry: 3,
         manifestLoadingRetryDelay: isLive ? 200 : 350,
         levelLoadingMaxRetry: 3,
@@ -1227,26 +1212,20 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
       });
 
       return () => {
-        if (isLive && hlsRef.current) {
+        if (hlsRef.current) {
           try {
             hlsRef.current.stopLoad();
+            hlsRef.current.detachMedia();
+            hlsRef.current.destroy();
           } catch (e) {}
-        } else {
-          if (hlsRef.current) {
-            try {
-              hlsRef.current.stopLoad();
-              hlsRef.current.detachMedia();
-              hlsRef.current.destroy();
-            } catch (e) {}
-            hlsRef.current = null;
-          }
-          if (video) {
-            try {
-              video.pause();
-              video.removeAttribute('src');
-              video.load();
-            } catch (e) {}
-          }
+          hlsRef.current = null;
+        }
+        if (video) {
+          try {
+            video.pause();
+            video.removeAttribute('src');
+            video.load();
+          } catch (e) {}
         }
       };
     } else {
@@ -2610,10 +2589,10 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
 
                 {/* 5. Clock Time & Date inside the bar */}
                 <div className="flex flex-col items-end shrink-0 px-2 text-right">
-                  <span className="text-base sm:text-xl font-mono font-black text-white leading-tight whitespace-nowrap">
+                  <span className="text-base sm:text-xl font-mono font-black text-gold leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
                     {formattedClockTime}
                   </span>
-                  <span className="text-[11px] sm:text-sm font-bold text-zinc-300 leading-tight whitespace-nowrap">
+                  <span className="text-[11px] sm:text-sm font-bold text-gold opacity-85 leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
                     {formattedClockDate}
                   </span>
                 </div>
@@ -2684,10 +2663,10 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
                         {displayTitle}
                       </h2>
                       <div className="flex flex-col items-end shrink-0 text-right">
-                        <span className="text-[11px] font-mono font-black text-white leading-tight whitespace-nowrap">
+                        <span className="text-[11px] font-mono font-black text-gold leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
                           {formattedClockTime}
                         </span>
-                        <span className="text-[9px] font-bold text-zinc-300 leading-tight whitespace-nowrap">
+                        <span className="text-[9px] font-bold text-gold opacity-85 leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
                           {formattedClockDate}
                         </span>
                       </div>

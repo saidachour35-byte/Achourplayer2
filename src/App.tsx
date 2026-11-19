@@ -6,7 +6,7 @@ import SplashScreen from './components/SplashScreen';
 import AnimatedBackground from './components/AnimatedBackground';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppSettings, Language } from './types';
-import { applyRoyalTheme, APP_BACKGROUNDS } from './utils/themeManager';
+import { applyRoyalTheme, APP_BACKGROUNDS, resolveDesignSettings } from './utils/themeManager';
 import { DEFAULT_PLAYERS } from './components/SettingsView';
 import { runStorageCleanup } from './utils/storageCleanup';
 import { parseTVKeyEvent, executeBackHandler, isTextInput, initGlobalFocusSync, isNativeCapacitorApp, isTVOrLowEndDevice } from './utils/tvNavigation';
@@ -36,14 +36,20 @@ const DEFAULT_SETTINGS: AppSettings = {
     movies: [],
     series: [],
   },
-  royalThemeColor: 'royal-gold',
+  royalThemeColor: 'pure-metallic-gold',
+  customThemeColor: null,
   icon3DStyle: 'style-gold-3d',
+  iconDisplayMode: 'with-frames',
+  iconPack: 'pack-3d',
+  frameShape: 'rounded-square',
+  glassOpacity: 16,
+  glassBlur: 10,
   backgroundStyle: 'bg-raouche-rocks-beirut',
   customBackground: null,
   vpnEnabled: true,
   vpnRegion: 'auto',
   vpnMode: 'auto-relay',
-  dashboardLayout: 'layout-glass-hero-dock',
+  dashboardLayout: 'layout-dock-row',
   splashSoundTrack: 'epic_royal_fanfare',
   splashStyle: 'royal_gold_particles',
   iconScale: 'md',
@@ -51,6 +57,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   tileSpacing: 'md',
   dashboardAlignment: 'center',
   dashboardHorizontalAlignment: 'center',
+  windowPosition: 'center',
   zoomScale: 85,
   seekStep: 10,
 };
@@ -119,9 +126,16 @@ export default function App() {
       const resolvedViewMode = (!userSetViewMode && parsed.viewMode === 'list')
         ? 'grid'
         : (parsed.viewMode || DEFAULT_SETTINGS.viewMode);
+      const resolvedDesign = resolveDesignSettings(parsed);
       return {
         ...DEFAULT_SETTINGS,
         ...parsed,
+        iconDisplayMode: resolvedDesign.iconDisplayMode,
+        iconPack: resolvedDesign.iconPack,
+        frameShape: resolvedDesign.frameShape,
+        dashboardLayout: resolvedDesign.layoutId,
+        glassOpacity: resolvedDesign.glassOpacity,
+        glassBlur: resolvedDesign.glassBlur,
         viewMode: resolvedViewMode,
         language: lang || 'en',
         backgroundStyle: bgValid ? parsed.backgroundStyle : DEFAULT_SETTINGS.backgroundStyle,
@@ -203,10 +217,26 @@ export default function App() {
 
     document.documentElement.dir = settings.language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = settings.language;
+    document.documentElement.setAttribute('data-achour-window-pos', settings.windowPosition || 'center');
     const scaleVal = Math.max(0.6, Math.min(1.5, ((settings.zoomScale || 100) * 0.95) / 100));
     document.documentElement.style.setProperty('--achour-zoom-scale', String(scaleVal));
-    applyRoyalTheme(settings.royalThemeColor || 'royal-gold');
+    applyRoyalTheme(
+      settings.royalThemeColor || 'pure-metallic-gold',
+      settings.customThemeColor,
+      settings.glassOpacity,
+      settings.glassBlur
+    );
   }, [settings]);
+
+  useEffect(() => {
+    const handleWindowPosChange = (e: Event) => {
+      const nextPos = (e as CustomEvent).detail;
+      if (!nextPos) return;
+      setSettings((prev) => (prev.windowPosition === nextPos ? prev : { ...prev, windowPosition: nextPos }));
+    };
+    window.addEventListener('achour-window-pos-change', handleWindowPosChange);
+    return () => window.removeEventListener('achour-window-pos-change', handleWindowPosChange);
+  }, []);
 
   // Global Hardware Back Key Interceptor for Android TV, Fire TV & Android Phones
   useEffect(() => {
@@ -285,7 +315,7 @@ export default function App() {
 
   return (
     <div
-      className={`achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-[#D4AF37]/30 ${isRtl ? 'font-cairo' : 'font-sans'} relative overflow-hidden`}
+      className={`achour-app-shell h-screen w-screen bg-transparent text-white selection:bg-gold/30 ${isRtl ? 'font-cairo' : 'font-sans'} relative overflow-hidden`}
       style={{ '--achour-zoom-scale': effectiveScale } as React.CSSProperties}
       onScroll={(e) => {
         if (e.currentTarget.scrollTop !== 0) e.currentTarget.scrollTop = 0;
@@ -310,7 +340,7 @@ export default function App() {
             setShowSplash(false);
             setSplashIsPreview(false);
           }}
-          royalThemeId={settings.royalThemeColor || 'royal-gold'}
+          royalThemeId={settings.royalThemeColor || 'pure-metallic-gold'}
           soundTrack={settings.splashSoundTrack || 'epic_royal_fanfare'}
           splashStyle={settings.splashStyle || 'royal_gold_particles'}
           backgroundImageUrl={activeBgImageUrl}

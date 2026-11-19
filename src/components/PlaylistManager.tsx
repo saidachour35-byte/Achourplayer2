@@ -18,6 +18,7 @@ import { testXtreamConnection, iptvGlobalCache } from '../utils/iptv';
 import { initDB, clearPlaylistData, getPlaylistExtractionStatus } from '../lib/db';
 import { ExtractionService, ExtractionProgress } from '../utils/extractionService';
 import ExtractionProgressModal from './ExtractionProgressModal';
+import { WindowPositionButton } from './WindowPositionBar';
 
 interface PlaylistManagerProps {
   userId: string;
@@ -277,12 +278,13 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
     }
   };
   const deleteTrialPlaylists = async () => {
-    const trialName = 'Achour TV Trial (قنوات وأفلام تجريبية)';
+    const trialName = 'Achour Player Trial (قنوات وأفلام تجريبية)';
+    const legacyTrialName = 'Achour TV Trial (قنوات وأفلام تجريبية)';
     try {
       const rawLocal = localStorage.getItem('achour_local_playlists');
       if (rawLocal) {
         const list: Playlist[] = JSON.parse(rawLocal);
-        const filtered = list.filter(p => p.name !== trialName);
+        const filtered = list.filter(p => p.name !== trialName && p.name !== legacyTrialName);
         if (filtered.length !== list.length) {
           localStorage.setItem('achour_local_playlists', JSON.stringify(filtered));
         }
@@ -969,14 +971,17 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
                     </span>
                   </div>
                 </div>
-                <button 
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onClick={() => setInspectPlaylist(null)}
-                  className="p-1.5 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer"
-                >
-                  ✕
-                </button>
+                <div className="flex items-center gap-1 shrink-0">
+                  <WindowPositionButton isRtl={isRtl} />
+                  <button 
+                    data-tv-focusable="true"
+                    tabIndex={0}
+                    onClick={() => setInspectPlaylist(null)}
+                    className="p-1.5 text-zinc-400 hover:text-white rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                </div>
               </div>
 
               {/* Details List */}

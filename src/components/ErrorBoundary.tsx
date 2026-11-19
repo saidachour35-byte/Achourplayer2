@@ -44,8 +44,8 @@ export class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen w-full bg-[#080808] text-white flex flex-col items-center justify-center p-6 select-none font-cairo">
-          <div className="max-w-md w-full achour-glass-modal border-[#D4AF37]/40 rounded-3xl p-8 text-center space-y-6">
-            <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30 flex items-center justify-center mx-auto shadow-lg">
+          <div className="max-w-md w-full achour-glass-modal border-gold/40 rounded-3xl p-8 text-center space-y-6">
+            <div className="w-16 h-16 rounded-2xl bg-gold/15 text-gold border border-gold/30 flex items-center justify-center mx-auto shadow-lg">
               <AlertTriangle size={32} />
             </div>
 
@@ -67,7 +67,7 @@ export class ErrorBoundary extends Component<Props, State> {
             <div className="flex flex-col gap-3 pt-2">
               <button
                 onClick={this.handleReload}
-                className="w-full py-3.5 bg-[#D4AF37] hover:bg-[#D4AF37]/90 text-black font-black uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-[#D4AF37]/20 text-xs"
+                className="w-full py-3.5 bg-gold hover:bg-gold/90 text-black font-black uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-gold/20 text-xs"
               >
                 <RefreshCw size={16} />
                 <span>إعادة تحميل المشغل</span>

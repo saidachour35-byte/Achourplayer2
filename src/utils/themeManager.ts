@@ -46,13 +46,13 @@ export interface AppBackground {
 export const ROYAL_THEMES: RoyalTheme[] = [
   {
     id: 'pure-metallic-gold',
-    nameAr: '✨ الذهب الخالص المسبوك عيار 24 (مميز)',
-    nameEn: '24K Pure Cast Metallic Gold',
-    primary: '#E5C158',
-    secondary: '#B38B21',
-    accent: '#FFF6D1',
-    glow: 'rgba(229, 193, 88, 0.6)',
-    gradient: 'from-[#F3D068] via-[#C5A059] to-[#8C6D27]'
+    nameAr: '✨ الذهب المعدني الحقيقي (#D4AF37)',
+    nameEn: 'True 24K Metallic Gold (#D4AF37)',
+    primary: '#D4AF37',
+    secondary: '#8C6A1D',
+    accent: '#F5E6A8',
+    glow: 'rgba(212, 175, 55, 0.58)',
+    gradient: 'from-[#F5E6A8] via-[#D4AF37] to-[#8C6A1D]'
   },
   {
     id: 'royal-bronze',
@@ -106,13 +106,13 @@ export const ROYAL_THEMES: RoyalTheme[] = [
   },
   {
     id: 'royal-gold',
-    nameAr: 'الذهب الملكي الإمبراطوري',
-    nameEn: 'Imperial Royal Gold',
+    nameAr: 'الذهب الملكي المسبوك',
+    nameEn: 'Imperial Metallic Gold',
     primary: '#D4AF37',
-    secondary: '#996515',
-    accent: '#FFF2A3',
-    glow: 'rgba(212, 175, 55, 0.45)',
-    gradient: 'from-[#D4AF37] via-[#AA771C] to-[#85580C]'
+    secondary: '#8C6A1D',
+    accent: '#F5E6A8',
+    glow: 'rgba(212, 175, 55, 0.52)',
+    gradient: 'from-[#F5E6A8] via-[#D4AF37] to-[#B8860B]'
   },
   {
     id: 'emerald-palace',
@@ -842,8 +842,8 @@ export const getIconGlyphVariant = (style: Icon3DStyle): NonNullable<Icon3DStyle
 export const APP_BACKGROUNDS: AppBackground[] = [
   {
     id: 'bg-raouche-rocks-beirut',
-    nameAr: 'صخرة الروشة في بيروت، لبنان',
-    nameEn: 'Raouche Rocks, Beirut, Lebanon',
+    nameAr: 'صخرة الروشة الكلاسيكية في بيروت، لبنان',
+    nameEn: 'Classic Raouche Rocks, Beirut, Lebanon',
     type: 'static',
     descriptionAr: 'المشهد الساحلي الشهير لصخرة الروشة في بيروت عند الغروب على البحر المتوسط',
     descriptionEn: 'Iconic Raouche sea arches in Beirut, Lebanon at golden twilight',
@@ -851,6 +851,126 @@ export const APP_BACKGROUNDS: AppBackground[] = [
     previewGradient: 'linear-gradient(135deg, #f59e0b 0%, #0c4a6e 100%)',
     imageUrl: '/backgrounds/nature/bg_01_raouche_rocks_beirut.jpg',
     renderClass: 'bg-raouche-rocks-beirut'
+  },
+  {
+    id: 'bg-raouche-sunset-golden',
+    nameAr: 'صخرة الروشة - شفق الغروب الساحر، بيروت',
+    nameEn: 'Raouche Rocks Golden Sunset, Beirut',
+    type: 'static',
+    descriptionAr: 'صخرة الروشة الشهيرة مع ألوان الغروب الذهبية على شواطئ بيروت',
+    descriptionEn: 'Raouche sea arches glowing under breathtaking golden sunset sky in Beirut',
+    previewColor: '#f59e0b',
+    previewGradient: 'linear-gradient(135deg, #f97316 0%, #7c2d12 100%)',
+    imageUrl: '/backgrounds/lebanon/raouche_sunset.jpg',
+    renderClass: 'bg-raouche-sunset-golden'
+  },
+  {
+    id: 'bg-raouche-aerial-view',
+    nameAr: 'صخرة الروشة - لقطة جوية وبحرية، بيروت',
+    nameEn: 'Raouche Rocks Aerial Coast View, Beirut',
+    type: 'static',
+    descriptionAr: 'منظر جوي ساحر لصخرة الروشة ومياه البحر المتوسط العميقة وأبراج بيروت',
+    descriptionEn: 'Aerial coastal perspective of Raouche sea arches and deep blue Mediterranean',
+    previewColor: '#0284c7',
+    previewGradient: 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
+    imageUrl: '/backgrounds/lebanon/raouche_aerial.jpg',
+    renderClass: 'bg-raouche-aerial-view'
+  },
+  {
+    id: 'bg-raouche-night-lights',
+    nameAr: 'صخرة الروشة - كورنيش بيروت ليلاً',
+    nameEn: 'Raouche Rocks Beirut Night Promenade',
+    type: 'static',
+    descriptionAr: 'صخرة الروشة المتألقة وأضواء كورنيش بيروت الساحر ليلاً',
+    descriptionEn: 'Illuminated Raouche sea arches and glowing Beirut corniche promenade at night',
+    previewColor: '#1e1b4b',
+    previewGradient: 'linear-gradient(135deg, #312e81 0%, #09090b 100%)',
+    imageUrl: '/backgrounds/lebanon/raouche_night.jpg',
+    renderClass: 'bg-raouche-night-lights'
+  },
+  {
+    id: 'bg-baalbek-temples',
+    nameAr: 'قلعة وهياكل بعلبك الرومانية، لبنان',
+    nameEn: 'Baalbek Roman Temple Ruins, Lebanon',
+    type: 'static',
+    descriptionAr: 'أعمدة بعلبك العظيمة وهياكل جوبيتر وباخ التاريخية في سهل البقاع',
+    descriptionEn: 'Majestic ancient Roman temple columns and ruins in Baalbek, Lebanon',
+    previewColor: '#78350f',
+    previewGradient: 'linear-gradient(135deg, #b45309 0%, #292524 100%)',
+    imageUrl: '/backgrounds/lebanon/baalbek_temple.jpg',
+    renderClass: 'bg-baalbek-temples'
+  },
+  {
+    id: 'bg-cedars-god-lebanon',
+    nameAr: 'شجرة وأرز الرب في بشري، لبنان',
+    nameEn: 'Cedars of God Ancient Forest, Lebanon',
+    type: 'static',
+    descriptionAr: 'أشجار الأرز اللبناني المعمرة والتاريخية في جبال بشري الشامخة',
+    descriptionEn: 'Ancient majestic cedar trees in Lebanon mountain forest reserve',
+    previewColor: '#166534',
+    previewGradient: 'linear-gradient(135deg, #22c55e 0%, #052e16 100%)',
+    imageUrl: '/backgrounds/lebanon/cedars_lebanon.jpg',
+    renderClass: 'bg-cedars-god-lebanon'
+  },
+  {
+    id: 'bg-lebanon-mountains-sannine',
+    nameAr: 'جبال لبنان وقمم صنين الشامخة',
+    nameEn: 'Mount Sannine & Lebanon Mountains',
+    type: 'static',
+    descriptionAr: 'قمم جبال لبنان والوديان الخضراء وقرى الجبل الخلابة',
+    descriptionEn: 'Majestic snow-touched peaks and lush valleys of the Lebanese mountain range',
+    previewColor: '#0f766e',
+    previewGradient: 'linear-gradient(135deg, #14b8a6 0%, #064e3b 100%)',
+    imageUrl: '/backgrounds/lebanon/lebanon_mountains.jpg',
+    renderClass: 'bg-lebanon-mountains-sannine'
+  },
+  {
+    id: 'bg-tyre-sour-coast',
+    nameAr: 'شاطئ وآثار مدينة صور الفينيقية، لبنان',
+    nameEn: 'Tyre (Sour) Coast & Ancient Ruins, Lebanon',
+    type: 'static',
+    descriptionAr: 'شواطئ مدينة صور التاريخية الجنوبية وأعمدتها الرومانية الساحلية وميناؤها العريق',
+    descriptionEn: 'Ancient Phoenician and Roman seaside colonnades along Tyre coast in Lebanon',
+    previewColor: '#ea580c',
+    previewGradient: 'linear-gradient(135deg, #f97316 0%, #7c2d12 100%)',
+    imageUrl: '/backgrounds/lebanon/tyre_sour.jpg',
+    renderClass: 'bg-tyre-sour-coast'
+  },
+  {
+    id: 'bg-harissa-our-lady',
+    nameAr: 'تمثال سيدة لبنان حريصا وخليج جونية',
+    nameEn: 'Our Lady of Harissa & Jounieh Bay, Lebanon',
+    type: 'static',
+    descriptionAr: 'تمثال سيدة لبنان في حريصا المطل بإطلالة بانورامية خلابة على خليج جونية',
+    descriptionEn: 'Panoramic view of Jounieh Bay and shrine of Our Lady of Lebanon in Harissa',
+    previewColor: '#0369a1',
+    previewGradient: 'linear-gradient(135deg, #38bdf8 0%, #082f49 100%)',
+    imageUrl: '/backgrounds/lebanon/harissa_shrine.jpg',
+    renderClass: 'bg-harissa-our-lady'
+  },
+  {
+    id: 'bg-jeita-grotto-lebanon',
+    nameAr: 'مغارة جعيتا العجيبة الطبيعية، لبنان',
+    nameEn: 'Jeita Grotto Natural Cavern, Lebanon',
+    type: 'static',
+    descriptionAr: 'التكوينات الكهفية المذهلة والمياه الصافية في مغارة جعيتا العالمية',
+    descriptionEn: 'Stunning stalactite and stalagmite formations inside Jeita Grotto wonder',
+    previewColor: '#0d9488',
+    previewGradient: 'linear-gradient(135deg, #14b8a6 0%, #042f2e 100%)',
+    imageUrl: '/backgrounds/lebanon/jeita_grotto.jpg',
+    renderClass: 'bg-jeita-grotto-lebanon'
+  },
+  {
+    id: 'bg-byblos-ancient-port',
+    nameAr: 'ميناء وقلعة جبيل الأثرية العريقة، لبنان',
+    nameEn: 'Byblos Historic Port & Castle, Lebanon',
+    type: 'static',
+    descriptionAr: 'الميناء التاريخي والقلعة الصليبية في مدينة جبيل أقدم مدن العالم',
+    descriptionEn: 'Historic harbor and medieval castle in ancient Byblos city, Lebanon',
+    previewColor: '#b45309',
+    previewGradient: 'linear-gradient(135deg, #d97706 0%, #451a03 100%)',
+    imageUrl: '/backgrounds/lebanon/byblos_harbor.jpg',
+    renderClass: 'bg-byblos-ancient-port'
   },
   {
     id: 'bg-ny-manhattan-twilight',
@@ -1331,277 +1451,378 @@ export interface DashboardLayoutOption {
   previewBg: string;
 }
 
-export const DASHBOARD_LAYOUTS: DashboardLayoutOption[] = [
-  {
-    id: 'layout-frameless-icons',
-    nameAr: '1. أيقونات فقط دون إطارات',
-    nameEn: '1. Icons Only (No Frames)',
-    descriptionAr: 'عرض أيقونات التطبيق فقط مباشرة فوق خلفية الشاشة دون أي إطارات أو بطاقات',
-    descriptionEn: 'Clean icons directly over your background with no frames or cards',
-    previewBg: 'from-transparent via-transparent to-black/35'
-  },
-  {
-    id: 'layout-pure-icons',
-    nameAr: '2. واجهة الأيقونات الزجاجية الحرة',
-    nameEn: '2. Pure App Icons Showcase',
-    descriptionAr: 'أيقونات التطبيق بإطار خفيف شفاف يتفاعل مباشرة مع شكل الأيقونة ولون الثيم',
-    descriptionEn: 'Clean translucent app icons driven by your Icon Style and Theme Color',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-glass-hero-dock',
-    nameAr: '3. المنصة الزجاجية والشريط السفلي',
-    nameEn: '3. Glass Hero & Bottom Dock',
-    descriptionAr: 'إطار رئيسي شفاف في الأعلى وشريط سفلي سريع للأقسام الأخرى',
-    descriptionEn: 'Translucent focal frame above a 4-tile quick glass dock',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-vertical-rail',
-    nameAr: '4. القائمة الجانبية الزجاجية (اليسار)',
-    nameEn: '4. Left Glass Navigation Rail',
-    descriptionAr: 'عمود تنقل زجاجي جانبي مع ثلاث منصات عرض رئيسية شفافة',
-    descriptionEn: 'Vertical glass navigation rail paired with main media showcase cards',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-cinema-marquee',
-    nameAr: '5. أعمدة البوسترات الطولية',
-    nameEn: '5. Vertical Cinema Marquee',
-    descriptionAr: 'خمس بطاقات زجاجية طولية بمقاس بوستر سينمائي متناسق',
-    descriptionEn: 'Five tall transparent glass poster columns side by side',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-asymmetric-bento',
-    nameAr: '6. شبكة البنتو الزجاجية المتداخلة',
-    nameEn: '6. Asymmetric Glass Bento',
-    descriptionAr: 'توزيع بنتو غير متماثل بإطارات شفافة تبرز الأقسام بزوايا ناعمة',
-    descriptionEn: 'Multi-span asymmetric transparent bento grid with clear hierarchy',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-dual-cinema-split',
-    nameAr: '7. الشاشة المقسومة الزجاجية',
-    nameEn: '7. Dual Glass Cinema Split',
-    descriptionAr: 'نصف عريض شفاف يقابله مربع رباعي للأقسام الأخرى',
-    descriptionEn: 'Widescreen primary frame paired with a 2x2 transparent quad',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-floating-console-bar',
-    nameAr: '8. شريط الكونسول الزجاجي المعلق',
-    nameEn: '8. Floating Glass Console Bar',
-    descriptionAr: 'شريط زجاجي أفقي معلق يتوسطه إطار بارز شفاف مع بقية الأقسام',
-    descriptionEn: 'Elevated center-focused horizontal transparent glass console bar',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-pyramid-tier',
-    nameAr: '9. الهرم الزجاجي المزدوج',
-    nameEn: '9. Tiered Glass Pyramid',
-    descriptionAr: 'صف علوي مزدوج بإطارات شفافة يرتكز على صف سفلي ثلاثي',
-    descriptionEn: 'Two wide top glass hero frames over a three-frame bottom tier',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-right-command-panel',
-    nameAr: '10. الأشرطة الأفقية وبرج الأدوات',
-    nameEn: '10. Horizontal Strips & Utility Tower',
-    descriptionAr: 'ثلاثة أشرطة سينمائية عريضة شفافة بجانب عمود أدوات زجاجي مدمج',
-    descriptionEn: 'Stacked wide translucent banners flanked by a compact utility tower',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-chamfer-prism-grid',
-    nameAr: '11. الألواح الزجاجية المقطوعة الحواف',
-    nameEn: '11. Chamfered Glass Prism Grid',
-    descriptionAr: 'بطاقات هندسية مقصوصة الزوايا بإطار زجاجي شفاف مستقبلي',
-    descriptionEn: 'Architectural bevel-cut translucent prism frames in staggered rows',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-editorial-showcase',
-    nameAr: '12. الواجهة التحريرية الأنيقة',
-    nameEn: '12. Editorial Glass Stage',
-    descriptionAr: 'أشرطة طباعية زجاجية نظيفة بخطوط فاصلة دقيقة ومساحات مفتوحة للخلفية',
-    descriptionEn: 'Minimal editorial rows separated by crisp hairline glass dividers',
-    previewBg: 'from-[var(--theme-primary)]/15 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-orbital-medallions',
-    nameAr: '13. المدار الزجاجي الدائري',
-    nameEn: '13. Orbital Glass Medallions',
-    descriptionAr: 'أقراص زجاجية دائرية عائمة شفافة بتدرج ناعم ولون متغير حسب الثيم',
-    descriptionEn: 'Floating circular transparent glass medallions',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-leanback-lanes',
-    nameAr: '14. مسارات التلفاز الذكي',
-    nameEn: '14. Smart TV Leanback Lanes',
-    descriptionAr: 'مساران أفقيان منفصلان بإطارات شفافة بتجربة تحكم ريموت سلسة',
-    descriptionEn: 'Two distinct horizontal transparent TV rows',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-quadrant-hub',
-    nameAr: '15. الأرباع المحيطة بالمركز',
-    nameEn: '15. Four Quadrants & Center Hub',
-    descriptionAr: 'أربعة أجنحة زجاجية شفافة تحيط بزر مركزي بارز',
-    descriptionEn: 'Four balanced corner transparent frames surrounding a central hub',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-arch-gallery',
-    nameAr: '16. معرض الأقواس الزجاجية',
-    nameEn: '16. Arched Glass Gallery',
-    descriptionAr: 'بطاقات زجاجية شفافة مقوسة الأعلى تمنح مظهراً معمارياً فوق الخلفية',
-    descriptionEn: 'Five sculptural arch-topped transparent glass frames',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-compact-glass-stack',
-    nameAr: '17. القائمة الزجاجية العمودية',
-    nameEn: '17. Compact Vertical Glass Stack',
-    descriptionAr: 'عمود زجاجي شفاف مدمج في الوسط لتنقل سريع بأزرار الأعلى والأسفل',
-    descriptionEn: 'Slim centered transparent glass menu stack for rapid D-pad navigation',
-    previewBg: 'from-[var(--theme-primary)]/15 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-widescreen-ribbon',
-    nameAr: '18. الشريط البانورامي العريض',
-    nameEn: '18. Anamorphic Widescreen Ribbon',
-    descriptionAr: 'صف علوي بثلاث بطاقات عريضة شفافة فوق شريط أدوات نحيف',
-    descriptionEn: 'Three 16:9 widescreen transparent frames atop a slim bottom strip',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-stepped-skyline',
-    nameAr: '19. الأعمدة الزجاجية المتدرجة',
-    nameEn: '19. Stepped Glass Skyline',
-    descriptionAr: 'خمس ركائز زجاجية شفافة بارتفاعات متدرجة تتصاعد نحو المنتصف',
-    descriptionEn: 'Five stepped vertical transparent glass pillars rising toward center',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-split-header-deck',
-    nameAr: '20. بطاقات السطح المقسوم',
-    nameEn: '20. Split-Header Glass Deck',
-    descriptionAr: 'بطاقات زجاجية شفافة برأس لوني علوي شفاف وشريط تحكم سفلي',
-    descriptionEn: 'Transparent glass media frames with tinted header bands',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-zen-horizon',
-    nameAr: '21. الأفق الزجاجي المفتوح',
-    nameEn: '21. Zen Open Glass Horizon',
-    descriptionAr: 'شريط أفقي شفاف مفتوح الحواف يترك أكبر مساحة ممكنة للخلفية الطبيعية',
-    descriptionEn: 'Ultra-clean translucent horizontal ribbon leaving wallpaper visible',
-    previewBg: 'from-[var(--theme-primary)]/15 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-obsidian-hex-hive',
-    nameAr: '22. خلية السداسيات الشفافة',
-    nameEn: '22. Transparent Hex Hive Frames',
-    descriptionAr: 'إطارات سداسية شفافة كخلية النحل تظهر الخلفية من خلالها بوضوح',
-    descriptionEn: 'Transparent honeycomb frames with custom geometric emblems',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-solid-theater-marquee',
-    nameAr: '23. إطارات المسرح السينمائي الشفاف',
-    nameEn: '23. Glass Theater Marquee',
-    descriptionAr: 'منصة مسرحية شفافة بإطارات رفيعة وأدراج جانبية متصلة بالخلفية',
-    descriptionEn: 'Transparent cinema stage frames paired with a 3-drawer glass console',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-carbon-brushed-chassis',
-    nameAr: '24. الإطار المعدني المفرغ الشفاف',
-    nameEn: '24. Brushed Metallic Glass Chassis',
-    descriptionAr: 'هيكل زجاجي شفاف بحواف معدنية مصقولة تظهر الخلفية عبره بالكامل',
-    descriptionEn: 'Transparent glass deck with bevelled metallic edge frames',
-    previewBg: 'from-[var(--theme-secondary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-duotone-color-blocks',
-    nameAr: '25. الإطارات اللونية المزدوجة الشفافة',
-    nameEn: '25. Duotone Tinted Glass Frames',
-    descriptionAr: 'إطارات زجاجية شفافة بحواف مزدوجة اللون تتبع ثيم التطبيق المختار',
-    descriptionEn: 'Transparent duotone-bordered glass frames reactive to theme palette',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-isometric-diamond-deck',
-    nameAr: '26. إطارات المعين الماسي الشفافة',
-    nameEn: '26. Isometric Diamond Glass Crest',
-    descriptionAr: 'إطارات زجاجية شفافة متدرجة الارتفاع تتوجها شارات ماسية مضيئة',
-    descriptionEn: 'Transparent stepped glass frames crowned with diamond badges',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-matte-card-fan',
-    nameAr: '27. إطارات الاستوديو الدرعية الشفافة',
-    nameEn: '27. Studio Collector Glass Deck',
-    descriptionAr: 'إطارات زجاجية شفافة بحواف استوديو رفيعة وشارات درعية',
-    descriptionEn: 'Transparent collector glass frames with delicate foil borders',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-royal-monolith-dock',
-    nameAr: '28. الأجنحة والركيزة المركزية الشفافة',
-    nameEn: '28. Transparent Monolith Wing Frames',
-    descriptionAr: 'ركائز عمودية شفافة تحيط بالمنصة الوسطى دون حجب الخلفية',
-    descriptionEn: 'Transparent vertical wing pillars framing a dominant central monolith',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-split-panel-arcade',
-    nameAr: '29. وحدة التحكم العلوية والألواح الشفافة',
-    nameEn: '29. Top Console & Transparent Pads',
-    descriptionAr: 'شريط علوي شفاف يعلو ثلاث منصات ترفيه زجاجية شفافة بالكامل',
-    descriptionEn: 'Transparent top utility strip above three translucent glass pads',
-    previewBg: 'from-[var(--theme-primary)]/20 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-horizon-panorama-cards',
-    nameAr: '30. الأجنحة الثلاثية البانورامية الشفافة',
-    nameEn: '30. Triple-Column Transparent Panorama',
-    descriptionAr: 'توزيع متناظر بثلاثة أعمدة شفافة تظهر خلفية التطبيق بوضوح',
-    descriptionEn: 'Three-column symmetrical transparent frames letting wallpaper shine',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  },
-  {
-    id: 'layout-luxury-satin-frame',
-    nameAr: '31. إطارات الساتان المزدوجة الشفافة',
-    nameEn: '31. Satin Double-Bezel Transparent Frames',
-    descriptionAr: 'إطارات زجاجية شفافة بحدود معدنية مزدوجة فاخرة دون خلفية معتمة',
-    descriptionEn: 'Transparent glass frames with double metallic filigree borders',
-    previewBg: 'from-[var(--theme-primary)]/25 via-transparent to-black/50'
-  }
+export interface IconPackOption {
+  id: string;
+  nameAr: string;
+  nameEn: string;
+  descriptionAr: string;
+  descriptionEn: string;
+}
+
+export interface FrameShapeOption {
+  id: string;
+  nameAr: string;
+  nameEn: string;
+  descriptionAr: string;
+  descriptionEn: string;
+}
+
+// 40 Distinct Icon Art Packs (Unique vector shapes + distinct rendering styles per section)
+export const ICON_PACKS: IconPackOption[] = [
+  { id: 'pack-3d', nameAr: '1. مجسّم 3D الكلاسيكي', nameEn: '1. Classic 3D Volumetric', descriptionAr: 'أيقونات مجسمة بثلاثية الأبعاد وظلال عمق بارزة', descriptionEn: 'Volumetric sculpted shapes with beveled depth' },
+  { id: 'pack-glass', nameAr: '2. زجاجي بلوري Glass', nameEn: '2. Frosted Crystal Glass', descriptionAr: 'ألواح زجاجية شفافة بلمعان مائل ناعم', descriptionEn: 'Translucent glass panes with specular edge sheen' },
+  { id: 'pack-metallic', nameAr: '3. معدني ملكي فاخر', nameEn: '3. Royal Brushed Metallic', descriptionAr: 'سبائك معدنية مصقولة بتدرج الذهب الحقيقي', descriptionEn: 'Engraved metallic bullion with deep sheen gradients' },
+  { id: 'pack-neon', nameAr: '4. نيون مضيء كهربائي', nameEn: '4. Electric Dual Neon', descriptionAr: 'أنابيب ضوئية متوهجة بنواة بيضاء ساطعة', descriptionEn: 'Dual-pass luminous neon tubes with bright core' },
+  { id: 'pack-geometric', nameAr: '5. هندسي حاد عصري', nameEn: '5. Modern Bauhaus Geometric', descriptionAr: 'تشكيلات مضلّعة حادة الزوايا بقطع معمارية', descriptionEn: 'Sharp architectural polygons and bold geometric cuts' },
+  { id: 'pack-06', nameAr: '6. ستالايت رادار 3D', nameEn: '6. Satellite Dish 3D', descriptionAr: 'أطباق بث فضائية وسينما 3D مجسمة بتفاصيل عميقة', descriptionEn: '3D satellite telemetry dishes and cinema projectors' },
+  { id: 'pack-07', nameAr: '7. هوائي تلفاز كريستالي', nameEn: '7. Crystal TV & Slate', descriptionAr: 'شاشات كلاسيكية ولوحات كلاكيت زجاجية شفافة', descriptionEn: 'Frosted glass CRT silhouettes and translucent slates' },
+  { id: 'pack-08', nameAr: '8. سبائك البلاتين والذهب', nameEn: '8. Bullion Ticket & Horn', descriptionAr: 'تذاكر سينما وأبواق إخراج محفورة بالذهب المصقول', descriptionEn: 'Metallic megaphone, ticket stubs & bullion gears' },
+  { id: 'pack-09', nameAr: '9. نيون ليلي عريض', nameEn: '9. Heavy Arcade Neon', descriptionAr: 'خطوط نيون عريضة مستوحاة من صالات العرض الليلية', descriptionEn: 'Heavy glowing theater neon contours with halo glow' },
+  { id: 'pack-10', nameAr: '10. مخطط هندسي مزدوج', nameEn: '10. Dual-Line Blueprint', descriptionAr: 'خطوط هندسية مزدوجة دقيقة كالتصاميم المعمارية', descriptionEn: 'Fine precision architectural blueprint double strokes' },
+  { id: 'pack-11', nameAr: '11. مكعب إيزومتريك 3D', nameEn: '11. Isometric Cube 3D', descriptionAr: 'منظور إيزومتريك ثلاثي الأبعاد بزوايا هندسية حادة', descriptionEn: 'Three-face isometric extruded perspective cubes' },
+  { id: 'pack-12', nameAr: '12. زجاج موشوري مشقوق', nameEn: '12. Split Prism Glass', descriptionAr: 'طبقات زجاجية منشورية بتقسيم لوني مائل', descriptionEn: 'Diagonal faceted crystal glass layers with depth' },
+  { id: 'pack-13', nameAr: '13. نقش كروم داكن', nameEn: '13. Obsidian Chrome Cut', descriptionAr: 'قلب داكن محاط بحافة معدنية لامعة مقصوصة', descriptionEn: 'Dark obsidian core framed by gleaming metallic bevel' },
+  { id: 'pack-14', nameAr: '14. ليزر سيان/نيون دقيق', nameEn: '14. Precision Laser Neon', descriptionAr: 'أشعة ليزر رفيعة بتوهج نقي فائق الدقة', descriptionEn: 'Crisp hairline laser filaments with luminous bloom' },
+  { id: 'pack-15', nameAr: '15. كتل سويسرية ممتلئة', nameEn: '15. Solid Swiss Blocks', descriptionAr: 'تصميم جريء بكتل صلبة وثقوب سلبية واضحة', descriptionEn: 'Bold high-contrast solid silhouettes with sharp cutouts' },
+  { id: 'pack-16', nameAr: '16. أوريغامي مطوي 3D', nameEn: '16. Origami Faceted 3D', descriptionAr: 'طيات ورقية هندسية متدرجة الإضاءة والظل', descriptionEn: 'Folded origami facets with shaded polygonal planes' },
+  { id: 'pack-17', nameAr: '17. عدسات زجاجية دائرية', nameEn: '17. Frosted Lens Glass', descriptionAr: 'عدسات وحلقات بلورية ناعمة الحواف', descriptionEn: 'Smooth spherical glass lenses with frosted rim reflection' },
+  { id: 'pack-18', nameAr: '18. تروس معدنية مسننة', nameEn: '18. Forged Steel Metallic', descriptionAr: 'تصميم صناعي متين من المعدن المطروق المصقول', descriptionEn: 'Heavy forged industrial steel silhouettes with sheen' },
+  { id: 'pack-19', nameAr: '19. غليتش سايبربانك نيون', nameEn: '19. Cyberpunk Glitch Neon', descriptionAr: 'إزاحة رقمية متوهجة بأسلوب السايبربانك المستقبلي', descriptionEn: 'Offset futuristic neon silhouettes with cyber accents' },
+  { id: 'pack-20', nameAr: '20. استنسل مقصوص حديث', nameEn: '20. Stencil Cutout Modern', descriptionAr: 'رموز مقطعة بأسلوب الاستنسل المعماري النظيف', descriptionEn: 'Segmented stencil arcs and crisp broken vector strokes' },
+  { id: 'pack-21', nameAr: '21. طين 3D ناعم Cartoon', nameEn: '21. Soft Clay 3D Extrude', descriptionAr: 'أشكال دائرية منتفخة ناعمة بلمعة علوية 3D', descriptionEn: 'Puffy tactile clay 3D shapes with soft top gleam' },
+  { id: 'pack-22', nameAr: '22. ماسي زجاجي متعدد الأوجه', nameEn: '22. Diamond Cut Glass', descriptionAr: 'أيقونات منشورية كالألماس الشفاف متعددة الأضلاع', descriptionEn: 'Multi-facet diamond glass polygons with crisp edges' },
+  { id: 'pack-23', nameAr: '23. برونز وذهب معتق', nameEn: '23. Antiqued Gold Relief', descriptionAr: 'تدرجات معدنية عتيقة بنقوش بارزة ومزدوجة', descriptionEn: 'Engraved antique bullion finish with fine inner trim' },
+  { id: 'pack-24', nameAr: '24. نيون منقّط متقطع', nameEn: '24. Telemetry Dotted Neon', descriptionAr: 'حلقات رادار متقطعة متوهجة بأسلوب البث الحي', descriptionEn: 'Dashed pulse neon arcs and radar ring traces' },
+  { id: 'pack-25', nameAr: '25. خطوط رفيعة Monoline', nameEn: '25. Ultra Thin Monoline', descriptionAr: 'رسومات أحادية الخط رفيعة فائقة الأناقة والبساطة', descriptionEn: 'Featherlight monoline minimalist stroke vectors' },
+  { id: 'pack-26', nameAr: '26. واجهات عرض مكدّسة 3D', nameEn: '26. Cascading Ribbon 3D', descriptionAr: 'طبقات متتالية ثلاثية الأبعاد بظلال متدرجة', descriptionEn: 'Three-tier stacked shadow plates with front hero' },
+  { id: 'pack-27', nameAr: '27. زجاج نيوني مزدوج', nameEn: '27. Frosted Neon Hybrid', descriptionAr: 'مزيج بين شفافية الزجاج وتوهج الحواف المضيئة', descriptionEn: 'Translucent frosted body edged with bright neon outline' },
+  { id: 'pack-28', nameAr: '28. شارة درع معدنية', nameEn: '28. Emblem Crest Metallic', descriptionAr: 'رموز محمية داخل درع معدني ذهبي منقوش', descriptionEn: 'Metallic crest medallions framing precision glyphs' },
+  { id: 'pack-29', nameAr: '29. توهج بلازما مركز', nameEn: '29. Core Plasma Glow', descriptionAr: 'بؤرة ضوئية مشعة تتركز في قلب الأيقونة', descriptionEn: 'Radiant bright plasma core with deep aura glow' },
+  { id: 'pack-30', nameAr: '30. موزاييك بكسل هندسي', nameEn: '30. Retro Pixel Geometry', descriptionAr: 'هندسة مربعة كلاسيكية مستوحاة من البكسل والشاشات', descriptionEn: 'Sharp stepped arcade pixel-cut geometric architecture' },
+  { id: 'pack-31', nameAr: '31. حفر ليزري 3D عميق', nameEn: '31. Laser Etched 3D Slab', descriptionAr: 'أحجار 3D داكنة محفورة بالليزر بلون التطبيق', descriptionEn: 'Dark bevelled 3D slabs with laser-lit glyph etching' },
+  { id: 'pack-32', nameAr: '32. زجاج مرايا عاكس', nameEn: '32. Mirror Specular Glass', descriptionAr: 'زجاج عاكس بخطوط إضاءة حادة متقاطعة', descriptionEn: 'High-sheen mirror glass with diagonal reflection cuts' },
+  { id: 'pack-33', nameAr: '33. ميدالية ذهب خالص', nameEn: '33. Gold Medallion Seal', descriptionAr: 'ختم معدني دائري لامع بحواف محززة متقنة', descriptionEn: 'Coin-stamped metallic bullion with serrated trim ring' },
+  { id: 'pack-34', nameAr: '34. نيون هولوجرام متموج', nameEn: '34. Holo Spectrum Neon', descriptionAr: 'توهج هولوجرافي متدرج مع خطوط نيون مزدوجة', descriptionEn: 'Dual-tone holographic outline glow with inner shimmer' },
+  { id: 'pack-35', nameAr: '35. ثنائي اللون Duotone', nameEn: '35. Split Duotone Studio', descriptionAr: 'تعبئة ثنائية التباين تدمج اللون الأساسي واللمعان', descriptionEn: 'High-clarity split tone fills pairing primary & highlight' },
+  { id: 'pack-36', nameAr: '36. ظلال مرتفعة Floating 3D', nameEn: '36. Floating Elevated 3D', descriptionAr: 'عناصر طافية بارزة عن السطح بظل ساقط عميق', descriptionEn: 'Lifted layered vectors with crisp floating drop shadows' },
+  { id: 'pack-37', nameAr: '37. بلورة سداسية Glass', nameEn: '37. Hex Crystal Glass', descriptionAr: 'بنية زجاجية سداسية الأوجه بحدود فضية رفيعة', descriptionEn: 'Hexagonal faceted glass geometry with icy white rims' },
+  { id: 'pack-38', nameAr: '38. تيتانيوم مسحوب', nameEn: '38. Brushed Titanium Slate', descriptionAr: 'نسيج تيتانيوم خطي بتباين معدني أنيق', descriptionEn: 'Precision horizontal brushed titanium sheen strokes' },
+  { id: 'pack-39', nameAr: '39. دائرة نيون مستقبلية', nameEn: '39. Sci-Fi HUD Neon', descriptionAr: 'رموز شاشات التحكم المستقبلية المضيئة بالنيون', descriptionEn: 'Target telemetry rings & glowing sci-fi HUD vectors' },
+  { id: 'pack-40', nameAr: '40. تحفة آرت ديكو', nameEn: '40. Art Deco Luxury Gold', descriptionAr: 'تصميم هندسي كلاسيكي فاخر مستوحى من الأوسكار والسينما', descriptionEn: 'Stepped Art Deco cinema luxury filigree geometry' },
 ];
 
-// Apply CSS variables to document for dynamic coloring
-export function applyRoyalTheme(themeId: string) {
-  const theme = ROYAL_THEMES.find(t => t.id === themeId) || ROYAL_THEMES[0];
-  const hex = theme.primary.replace('#', '');
-  const r = parseInt(hex.slice(0, 2), 16) || 212;
-  const g = parseInt(hex.slice(2, 4), 16) || 175;
-  const b = parseInt(hex.slice(4, 6), 16) || 55;
+// 40 Distinct Independent Frame Shapes (Freely combinable with any of the 40 Icon Packs)
+export const FRAME_SHAPES: FrameShapeOption[] = [
+  { id: 'circle', nameAr: '1. دائري كلاسيكي', nameEn: '1. Classic Circle', descriptionAr: 'ميدالية دائرية متوازنة بحلقة تحديد', descriptionEn: 'Precision circular medallion with inner rim' },
+  { id: 'rounded-square', nameAr: '2. مربع بحواف ناعمة', nameEn: '2. Rounded Squircle', descriptionAr: 'مربع عصري بزوايا ناعمة متناسقة', descriptionEn: 'Balanced modern squircle frame' },
+  { id: 'hexagon', nameAr: '3. سداسي عمودي', nameEn: '3. Vertical Hexagon', descriptionAr: 'إطار سداسي الأضلاع بحدود مضاعفة', descriptionEn: 'Six-sided architectural hexagon rim' },
+  { id: 'geometric', nameAr: '4. مثمّن مقصوص الزوايا', nameEn: '4. Chamfered Octagon', descriptionAr: 'مثمّن هندسي مع علامات زاوية دقيقة', descriptionEn: 'Octagon silhouette with precision corner ticks' },
+  { id: 'glass', nameAr: '5. زجاجي شفاف', nameEn: '5. Frosted Glass Pane', descriptionAr: 'زجاج بلوري شفاف يتفاعل مع التغبيش والشفافية', descriptionEn: 'Frosted crystal frame with glass blur & sheen' },
+  { id: 'metallic', nameAr: '6. معدني ذهبي فاخر', nameEn: '6. Metallic Gold Bezel', descriptionAr: 'حافة معدنية مزدوجة بتدرج الذهب المعدني', descriptionEn: 'Double-bevel brushed metallic bullion rim' },
+  { id: 'frame-07', nameAr: '7. حلقتان مزدوجتان', nameEn: '7. Double Orbital Ring', descriptionAr: 'حلقة مزدوجة بمدار داخلي رفيع أنيق', descriptionEn: 'Concentric dual rings around core frame' },
+  { id: 'frame-08', nameAr: '8. سداسي أفقي عريض', nameEn: '8. Wide Flat Hexagon', descriptionAr: 'خلية نحل سداسية أفقية بحافة حادة', descriptionEn: 'Horizontal honeycomb hexagon silhouette' },
+  { id: 'frame-09', nameAr: '9. ماسة / معيّن', nameEn: '9. Diamond Rhombus', descriptionAr: 'إطار معيّن ماسي بزاوية 45 درجة', descriptionEn: 'Crisp rotated 45-degree diamond geometry' },
+  { id: 'frame-10', nameAr: '10. درع ملكي', nameEn: '10. Heraldic Shield', descriptionAr: 'إطار درع كلاسيكي متوج بحافة علوية مستقيمة', descriptionEn: 'Armor crest shield frame with tapered base' },
+  { id: 'frame-11', nameAr: '11. قوس كاتدرائي', nameEn: '11. Cathedral Arch', descriptionAr: 'قوس معماري دائري من الأعلى ومستوٍ من الأسفل', descriptionEn: 'Rounded architectural arch with flat base plinth' },
+  { id: 'frame-12', nameAr: '12. خماسي الأضلاع', nameEn: '12. Crown Pentagon', descriptionAr: 'خماسي الأضلاع متوازن بقمة بارزة', descriptionEn: 'Five-sided architectural pentagon crown' },
+  { id: 'frame-13', nameAr: '13. كبسولة بيضاوية', nameEn: '13. Stadium Pill Capsule', descriptionAr: 'كبسولة ناعمة فائقة الاستدارة الجانبية', descriptionEn: 'Ultra-smooth wide stadium pill bezel' },
+  { id: 'frame-14', nameAr: '14. ورقة قطرية يسرى', nameEn: '14. Diagonal Leaf Left', descriptionAr: 'زاويتان متقابلتان مستديرتان والأخريان حادتان', descriptionEn: 'Swept leaf curves on opposing top-left/bottom-right' },
+  { id: 'frame-15', nameAr: '15. نصل قطري أيمن', nameEn: '15. Diagonal Blade Right', descriptionAr: 'تدوير أنيق للزاويتين العكسيتين كالجوهرة', descriptionEn: 'Swept architectural curves on top-right/bottom-left' },
+  { id: 'frame-16', nameAr: '16. ختم نجمي 12 رأساً', nameEn: '16. Starburst Rosette', descriptionAr: 'ختم احتفالي بـ 12 نتوءاً نجمياً متساوياً', descriptionEn: '12-point prestige award seal silhouette' },
+  { id: 'frame-17', nameAr: '17. مربع متدرج الزوايا', nameEn: '17. Stepped Cross Corner', descriptionAr: 'زوايا داخلة بأسلوب الآرت ديكو الفاخر', descriptionEn: 'Inward stepped Art Deco corner rebates' },
+  { id: 'frame-18', nameAr: '18. تذكرة سينما مقصوصة', nameEn: '18. Cinema Ticket Stub', descriptionAr: 'أقواس جانبية مستديرة كبطاقات العرض السينمائي', descriptionEn: 'Perforated theater ticket notches on both sides' },
+  { id: 'frame-19', nameAr: '19. حلقة رادار متقطعة', nameEn: '19. Telemetry Radar Ring', descriptionAr: 'مدار دائري متقطع مستوحى من إشارات البث', descriptionEn: 'Segmented radar pulse arcs surrounding circle' },
+  { id: 'frame-20', nameAr: '20. حواضن علوية وسفلية', nameEn: '20. Top-Bottom Brackets', descriptionAr: 'إطار مفتوح الجانبين بقضبان علوية وسفلية', descriptionEn: 'Open side channel with crisp top/bottom rails' },
+  { id: 'frame-21', nameAr: '21. حواضن جانبية', nameEn: '21. Side Caliper Arcs', descriptionAr: 'أقواس جانبية تحتضن الأيقونة بلا إغلاق رأسي', descriptionEn: 'Precision left & right curved clamp brackets' },
+  { id: 'frame-22', nameAr: '22. هالة نيون مضيئة', nameEn: '22. Electric Neon Ring', descriptionAr: 'توهج نيون مزدوج السطوع حول دائرة داكنة', descriptionEn: 'Double neon tube circle with vivid radial aura' },
+  { id: 'frame-23', nameAr: '23. متوازي أضلاع مائل', nameEn: '23. Cyberpunk Skew Slab', descriptionAr: 'إطار مائل ديناميكي بروح الألعاب والمستقبل', descriptionEn: 'Dynamic slanted parallelogram HUD plate' },
+  { id: 'frame-24', nameAr: '24. وسادة 3D بارزة', nameEn: '24. Tactile 3D Cushion', descriptionAr: 'سمك سفلي مجسم ثلاثي الأبعاد بارز عن السطح', descriptionEn: 'Physical raised 3D keycap edge with base lip' },
+  { id: 'frame-25', nameAr: '25. إطار هندسي مزدوج', nameEn: '25. Blueprint Twin Line', descriptionAr: 'خطان متوازيان رفيعان بدقة الرسوم الهندسية', descriptionEn: 'Double concentric thin technical draft square' },
+  { id: 'frame-26', nameAr: '26. عدسة كاميرا L-زوايا', nameEn: '26. Viewfinder L-Corners', descriptionAr: 'أربع زوايا استهداف فقط كعدسات التصوير', descriptionEn: 'Minimal camera reticle L-corners only' },
+  { id: 'frame-27', nameAr: '27. سداسي زجاجي بلوري', nameEn: '27. Frosted Glass Hexagon', descriptionAr: 'شكل سداسي شفاف بتأثير الضباب واللمعان', descriptionEn: 'Translucent glass hexagon with icy specular edge' },
+  { id: 'frame-28', nameAr: '28. عدسة زجاجية دائرية', nameEn: '28. Frosted Glass Sphere', descriptionAr: 'كرة زجاجية شفافة بانعكاس إضاءة مائل', descriptionEn: 'Spherical crystal lens reacting to glass sliders' },
+  { id: 'frame-29', nameAr: '29. ميدالية معدنية دائرية', nameEn: '29. Metallic Coin Circle', descriptionAr: 'إطار دائري سميك متدرج من المعدن المصقول', descriptionEn: 'Heavy circular metallic coin ring with dark inset' },
+  { id: 'frame-30', nameAr: '30. شعار سداسي معدني', nameEn: '30. Metallic Hex Crest', descriptionAr: 'إطار سداسي بحدود معدنية متدرجة فاخرة', descriptionEn: 'Polygonal hexagon edged in brushed metallic alloy' },
+  { id: 'frame-31', nameAr: '31. درع معدني منقوش', nameEn: '31. Metallic Armor Shield', descriptionAr: 'درع حامي بطبقة معدنية لامعة مزدوجة', descriptionEn: 'Metallic crest bezel with deep armor inset' },
+  { id: 'frame-32', nameAr: '32. ألياف الكربون HUD', nameEn: '32. Carbon Tech Grid', descriptionAr: 'نسيج كربوني داكن بحدود لونية متوهجة', descriptionEn: 'Micro-woven carbon backdrop with crisp border' },
+  { id: 'frame-33', nameAr: '33. حوض أوبسيديان غائر', nameEn: '33. Obsidian Deep Inset', descriptionAr: 'إطار أسود داكن غائر بظل داخلي عميق', descriptionEn: 'Recessed dark obsidian well with inner rim glint' },
+  { id: 'frame-34', nameAr: '34. تاج بنتهاوس مقصوص', nameEn: '34. Crown Notched Slate', descriptionAr: 'قمة مقصوصة الزوايا مع قاعدة مستقيمة عريضة', descriptionEn: 'Top-beveled architectural slate with solid base' },
+  { id: 'frame-35', nameAr: '35. بطاقات متراكبة ثلاثية', nameEn: '35. Stacked Deck Cards', descriptionAr: 'تدرج خلفي مائل يوحي بثلاث بطاقات خلف بعضها', descriptionEn: 'Layered backing offset plates behind main card' },
+  { id: 'frame-36', nameAr: '36. هالة لونية مشعة', nameEn: '36. Radiant Aura Halo', descriptionAr: 'تدرج لوني محيطي مشع بإطار داخلي رفيع', descriptionEn: 'Luminous radial gradient ring with clean center' },
+  { id: 'frame-37', nameAr: '37. جوهرة عشارية الأضلاع', nameEn: '37. Decagon Jewel Cut', descriptionAr: 'مضلع بعشرة وجوه متساوية كبريق الأحجار الكريمة', descriptionEn: '10-sided faceted gem polygon with double line' },
+  { id: 'frame-38', nameAr: '38. مربع متوهج ناعم', nameEn: '38. Soft Neon Squircle', descriptionAr: 'زوايا ناعمة محاطة بتوهج داخلي وخارجي متناسق', descriptionEn: 'Smooth squircle rim emitting balanced soft glow' },
+  { id: 'frame-39', nameAr: '39. شارة شبه منحرف', nameEn: '39. Trapezoid Cut Badge', descriptionAr: 'تصميم شبه منحرف رياضي عريض القاعدة', descriptionEn: 'Tapered top aerodynamic trapezoid badge' },
+  { id: 'frame-40', nameAr: '40. لؤلؤي بحافة مزدوجة', nameEn: '40. Pearl Satin Bevel', descriptionAr: 'حافة لؤلؤية فاتحة رقيقة داخل إطار داكن فاخر', descriptionEn: 'Refined dual-bevel pearl trim with satin shine' },
+];
+
+// 40 Distinct Spatial Layouts for the 5 Core Sections (Live, Movies, Series, Playlist, Settings)
+export const DASHBOARD_LAYOUTS: DashboardLayoutOption[] = [
+  { id: 'layout-dock-row', nameAr: '1. الصف الأفقي المتوازن', nameEn: '1. Balanced Dock Row', descriptionAr: 'توزيع أفقي متساوٍ للأقسام الخمسة في صف واحد', descriptionEn: 'Five equal sections in one crisp horizontal row', previewBg: '' },
+  { id: 'layout-hero-dock', nameAr: '2. المنصة الكبرى والشريط', nameEn: '2. Hero Showcase & Dock', descriptionAr: 'قسم رئيسي عريض في الأعلى وأربعة أقسام أسفله', descriptionEn: 'Wide primary showcase banner above a 4-tile dock', previewBg: '' },
+  { id: 'layout-side-rail', nameAr: '3. الشريط الأيسر والمنصات', nameEn: '3. Left Rail & Stage (2+3)', descriptionAr: 'عمود تحكم يساراً مع 3 بطاقات عرض رئيسية يميناً', descriptionEn: 'Left 2-row utility rail beside 3 main stage cards', previewBg: '' },
+  { id: 'layout-bento-mosaic', nameAr: '4. شبكة البنتو المعمارية', nameEn: '4. Asymmetric Bento Mosaic', descriptionAr: 'عمود رئيسي طويل مع مصفوفة جانبية 2×2', descriptionEn: 'Tall left focal anchor beside a 2x2 asymmetric stack', previewBg: '' },
+  { id: 'layout-twin-spotlight', nameAr: '5. الهرم المزدوج (٢ + ٣)', nameEn: '5. Twin Spotlight (2+3)', descriptionAr: 'بطاقتان واسعتان في الأعلى فوق 3 بطاقات سفلية', descriptionEn: 'Two prominent wide top panels over 3 base cards', previewBg: '' },
+  { id: 'layout-center-spotlight', nameAr: '6. المنصة المركزية المتدرجة', nameEn: '6. Elevated Center Podium', descriptionAr: 'أيقونة رئيسية بارزة في الوسط وجناحين متدرجين', descriptionEn: 'Elevated focal center flanked by stepped side wings', previewBg: '' },
+  { id: 'layout-split-stage', nameAr: '7. الشاشة المقسومة (١ + ٤)', nameEn: '7. Split Cinema Stage (1+4)', descriptionAr: 'نصف شاشة للقسم الأول ونصف لشبكة 2×2', descriptionEn: '50% tall primary showcase paired with 2x2 companion grid', previewBg: '' },
+  { id: 'layout-vertical-list', nameAr: '8. القائمة العمودية المكدسة', nameEn: '8. Centered Vertical List', descriptionAr: 'صفوف أفقية أنيقة متراصة رأسياً في منتصف الشاشة', descriptionEn: 'Sleek vertical stack of full-row navigation strips', previewBg: '' },
+  { id: 'layout-orbital-hub', nameAr: '9. المحور المركزي والأجنحة', nameEn: '9. Orbital Hub & 4 Wings', descriptionAr: '4 زوايا خارجية تحيط بمحور مركزي في قلب الشاشة', descriptionEn: 'Four corner wings surrounding a floating central hub', previewBg: '' },
+  { id: 'layout-staircase-cascade', nameAr: '10. التدرج المتموج (٣ + ٢)', nameEn: '10. Staggered Wave (3+2)', descriptionAr: 'ثلاث منصات علوية متموجة تتبعها بطاقتان سفليتان', descriptionEn: 'Sculpted staggered trio above a centered dual utility deck', previewBg: '' },
+  { id: 'layout-11', nameAr: '11. الشريط العلوي والعملاق السفلي', nameEn: '11. Reverse Dock + Bottom Hero', descriptionAr: 'أربع بطاقات سريعة في الأعلى ومنصة ضخمة في الأسفل', descriptionEn: 'Four compact top tiles crowned above one wide bottom banner', previewBg: '' },
+  { id: 'layout-12', nameAr: '12. المنصات يساراً والشريط يميناً', nameEn: '12. Stage Left & Right Rail (3+2)', descriptionAr: 'ثلاث منصات طويلة يساراً وعمود تحكم أيمن', descriptionEn: 'Three main media stage cards paired with a right command rail', previewBg: '' },
+  { id: 'layout-13', nameAr: '13. الثلاثي العلوي والصفين (٣ + ٢)', nameEn: '13. Trio Top & Twin Rows', descriptionAr: '3 بطاقات وسطى كبرى فوق صفين عريضين سفليين', descriptionEn: 'Three equal media cards above two wide utility bars', previewBg: '' },
+  { id: 'layout-14', nameAr: '14. ثنائي عمودي + ثلاثي صفوف', nameEn: '14. 2 Tall + 3 Compact Strip', descriptionAr: 'بطاقتان كبيرتان بالأعلى وثلاثة أشرطة مضغوطة بالأسفل', descriptionEn: 'Twin large showcase panels over a 3-column horizontal strip', previewBg: '' },
+  { id: 'layout-15', nameAr: '15. ثلاثي مكدس + عمودين بارزين', nameEn: '15. 3 Stacked Rows + 2 Heroes', descriptionAr: '3 صفوف مرتبة على اليسار وبطاقتان عملاقتان على اليمين', descriptionEn: 'Left 3-row menu stack beside 2 large vertical hero cards', previewBg: '' },
+  { id: 'layout-16', nameAr: '16. الدرج الصاعد لليمين', nameEn: '16. Ascending Staircase', descriptionAr: 'خمس خطوات صاعدة تدريجياً من اليسار لليمين', descriptionEn: 'Five columns stepping upwards dynamically left-to-right', previewBg: '' },
+  { id: 'layout-17', nameAr: '17. الدرج الهابط لليمين', nameEn: '17. Descending Staircase', descriptionAr: 'خمس خطوات هابطة بانسيابية من اليسار لليمين', descriptionEn: 'Five columns cascading downwards smoothly left-to-right', previewBg: '' },
+  { id: 'layout-18', nameAr: '18. الوادي المقعّر (U-Shape)', nameEn: '18. Inverted U-Valley Podium', descriptionAr: 'جناحان مرتفعان على الطرفين ووسط منخفض متوازن', descriptionEn: 'High elevated outer wings framing a recessed center lane', previewBg: '' },
+  { id: 'layout-19', nameAr: '19. موجة زجزاج متناوبة', nameEn: '19. Alternating Zigzag Wave', descriptionAr: 'توزيع متناوب صعوداً وهبوطاً عبر الشاشة', descriptionEn: 'Alternating high/low stepped positions across 5 columns', previewBg: '' },
+  { id: 'layout-20', nameAr: '20. تشكيل الصليب الهندسي (+)', nameEn: '20. Architectural Plus Cross', descriptionAr: 'قسم علوي و3 أفقية بالوسط وقسم سفلي متمركز', descriptionEn: 'Balanced cross grid: 1 top crown, 3 center, 1 base anchor', previewBg: '' },
+  { id: 'layout-21', nameAr: '21. تشكيل إكس الماسي (X)', nameEn: '21. Diamond X-Pentad', descriptionAr: 'زاويتان علويتان وجسر وسطاني وزاويتان سفليتان', descriptionEn: 'Symmetric 2-1-2 X-pattern spanning across the stage', previewBg: '' },
+  { id: 'layout-22', nameAr: '22. شريط رأسي + ساحة ثلاثية', nameEn: '22. Top Strip + Rail + 3 Stage', descriptionAr: 'شريط كامل بالأعلى، وجانب أيمن بـ3 بطاقات رئيسية', descriptionEn: 'Full header strip with inner side tile beside 3 main tiles', previewBg: '' },
+  { id: 'layout-23', nameAr: '23. القلعة المركزية (٢ + ١ + ٢)', nameEn: '23. Center Citadel (2 | 1 | 2)', descriptionAr: 'برج مركزي طويل يتوسط عمودين ثنائيين عن اليمين واليسار', descriptionEn: 'Tall central monolith framed by two dual vertical flanks', previewBg: '' },
+  { id: 'layout-24', nameAr: '24. حرف L اليساري الممدود', nameEn: '24. L-Dock Left Anchor', descriptionAr: 'عمود يساري كامل الارتفاع مع جناح أفقي متعدد بالأسفل', descriptionEn: 'Full-height left showcase anchoring an L-shaped workspace', previewBg: '' },
+  { id: 'layout-25', nameAr: '25. حرف L اليميني المعكوس', nameEn: '25. L-Dock Right Anchor', descriptionAr: 'واجهة يمنى متكاملة مع صفوف متصلة من الجهة المقابلة', descriptionEn: 'Full-height right showcase paired with an L-hook grid', previewBg: '' },
+  { id: 'layout-26', nameAr: '26. شريط الكاروسيل المتدرج', nameEn: '26. Spotlight Carousel Strip', descriptionAr: 'الأيقونة الأولى مضاعفة العرض وتتقلص البقية بتناسق', descriptionEn: 'Double-width lead banner narrowing smoothly across 5 slots', previewBg: '' },
+  { id: 'layout-27', nameAr: '27. عمودان ٧٠/٣٠ غير متماثل', nameEn: '27. 70/30 Editorial Columns', descriptionAr: 'بطاقتان رئيسيتان 70% مقابل 3 صفوف أدوات 30%', descriptionEn: 'Two dominant media tiles (7 cols) beside 3 compact rows (5 cols)', previewBg: '' },
+  { id: 'layout-28', nameAr: '28. غلاف المجلة الفاخر', nameEn: '28. Magazine Cover Grid', descriptionAr: 'غلاف عريض ثلثي الشاشة + بطاقة ركن + 3 بطاقات أسفله', descriptionEn: 'Two-thirds top editorial headline + side square + 3 bottom', previewBg: '' },
+  { id: 'layout-29', nameAr: '29. لافتات سينمائية عريضة', nameEn: '29. Cinema Wide Banners', descriptionAr: 'خمس لافتات عريضة تمتد بعرض المساحة للتنقل المباشر', descriptionEn: 'Five full-bleed horizontal cinema marquee strips', previewBg: '' },
+  { id: 'layout-30', nameAr: '30. الشريحة الثلاثية (١ + ٢ + ٢)', nameEn: '30. Triple Tier (1 + 2 + 2)', descriptionAr: 'لافتة كبرى ثم بطاقتان متوسطتان ثم صفان رشيقان', descriptionEn: 'Lead banner over twin split feature cards over dual utility strips', previewBg: '' },
+  { id: 'layout-31', nameAr: '31. مصفوفة 2×2 + شريط سفلي', nameEn: '31. Quad Grid + Footer Bar', descriptionAr: 'شبكة 2×2 كبرى في الأعلى مع شريط عريض بالأسفل', descriptionEn: 'Crisp 2x2 primary quadrant deck above a wide bottom footer dock', previewBg: '' },
+  { id: 'layout-32', nameAr: '32. شريط علوي + شبكة 2×2', nameEn: '32. Slim Top Bar + 2x2 Quad', descriptionAr: 'شريط أداة علوي مضغوط فوق شبكة رباعية متساوية', descriptionEn: 'Compact top action bar presiding over a balanced 2x2 grid', previewBg: '' },
+  { id: 'layout-33', nameAr: '33. جناحان جانبيان + قلب ثلاثي', nameEn: '33. Wing-Focus-Wing Sandwich', descriptionAr: 'جناحان رفيعان يميناً ويساراً تحيط بـ 3 صفوف مركزية', descriptionEn: 'Two slim outer vertical flanks framing 3 stacked center strips', previewBg: '' },
+  { id: 'layout-34', nameAr: '34. القبة المعمارية المقوّسة', nameEn: '34. Rainbow Crown Arch', descriptionAr: 'انحناء علوي نحو المركز يشكل قبة قوس قزح أنيقة', descriptionEn: 'Smooth upward curve rising smoothly into a crowned zenith', previewBg: '' },
+  { id: 'layout-35', nameAr: '35. المهد المنحني للأسفل', nameEn: '35. Deep Cradle Curve', descriptionAr: 'تقوّس سفلي ناعم يضع الأيقونات الجانبية في الأعلى', descriptionEn: 'Concave hammock arc cradling the center tiles gently below', previewBg: '' },
+  { id: 'layout-36', nameAr: '36. الهرم المزدوج المتناظر', nameEn: '36. Centered Tiered Triad', descriptionAr: 'صف أول مفرد متمركز، تحته صفان ثنائيان متماثلان', descriptionEn: 'Centered single top showcase followed by twin 2-up decks', previewBg: '' },
+  { id: 'layout-37', nameAr: '37. زاوية الارتكاز 2×2 + عمود', nameEn: '37. Corner Anchor 2x2 + Spine', descriptionAr: 'مربع رباعي على جهة وعمود عمودي طويل في الجهة الأخرى', descriptionEn: 'Compact 2x2 cluster paired against a tall vertical fifth spine', previewBg: '' },
+  { id: 'layout-38', nameAr: '38. ميسونري غير متماثل', nameEn: '38. Asymmetric Twin Masonry', descriptionAr: 'تداخل حر بين أحجام طويلة ومتوسطة بروح التصميم الحديث', descriptionEn: 'Dynamic two-column masonry interleaving tall & short cards', previewBg: '' },
+  { id: 'layout-39', nameAr: '39. الزوايا المثبّتة والجسر', nameEn: '39. Pinned Four Corners + Core', descriptionAr: 'تباعد الأركان الأربعة مع جسر أفقي بارز في الوسط', descriptionEn: 'Four widely separated corner anchors bridged by central capsule', previewBg: '' },
+  { id: 'layout-40', nameAr: '40. شريط الكبسولات السريع', nameEn: '40. Compact Pill Capsules', descriptionAr: 'كبسولات أنيقة متراصة في شريط عائم خفيف المساحة', descriptionEn: 'Ultra-sleek minimal horizontal capsules in a compact dock', previewBg: '' },
+];
+
+const LEGACY_LAYOUT_MAP: Record<string, string> = {
+  'layout-frameless-icons': 'layout-dock-row',
+  'layout-pure-icons': 'layout-dock-row',
+  'layout-cinema-marquee': 'layout-dock-row',
+  'layout-arch-gallery': 'layout-34',
+  'layout-zen-horizon': 'layout-dock-row',
+  'layout-glass-hero-dock': 'layout-hero-dock',
+  'layout-vertical-rail': 'layout-side-rail',
+  'layout-right-command-panel': 'layout-12',
+  'layout-asymmetric-bento': 'layout-bento-mosaic',
+  'layout-solid-theater-marquee': 'layout-29',
+  'layout-dual-cinema-split': 'layout-split-stage',
+  'layout-matte-card-fan': 'layout-33',
+  'layout-floating-console-bar': 'layout-40',
+  'layout-orbital-medallions': 'layout-orbital-hub',
+  'layout-stepped-skyline': 'layout-16',
+  'layout-royal-monolith-dock': 'layout-23',
+  'layout-horizon-panorama-cards': 'layout-26',
+  'layout-pyramid-tier': 'layout-twin-spotlight',
+  'layout-luxury-satin-frame': 'layout-28',
+  'layout-leanback-lanes': 'layout-27',
+  'layout-editorial-showcase': 'layout-vertical-list',
+  'layout-compact-glass-stack': 'layout-vertical-list',
+  'layout-quadrant-hub': 'layout-31',
+  'layout-chamfer-prism-grid': 'layout-staircase-cascade',
+  'layout-widescreen-ribbon': 'layout-11',
+  'layout-split-header-deck': 'layout-22',
+  'layout-obsidian-hex-hive': 'layout-20',
+  'layout-carbon-brushed-chassis': 'layout-24',
+  'layout-duotone-color-blocks': 'layout-30',
+  'layout-isometric-diamond-deck': 'layout-21',
+  'layout-split-panel-arcade': 'layout-15',
+};
+
+export function normalizeDashboardLayoutId(layoutId?: string): string {
+  if (!layoutId) return 'layout-dock-row';
+  if (DASHBOARD_LAYOUTS.some(l => l.id === layoutId)) return layoutId;
+  return LEGACY_LAYOUT_MAP[layoutId] || 'layout-dock-row';
+}
+
+export function normalizeIconPackId(packId?: string): string {
+  if (packId && ICON_PACKS.some(p => p.id === packId)) return packId;
+  return 'pack-3d';
+}
+
+export function normalizeFrameShapeId(shapeId?: string): string {
+  if (shapeId && FRAME_SHAPES.some(f => f.id === shapeId)) return shapeId;
+  return 'rounded-square';
+}
+
+export function resolveDesignSettings(settings: {
+  iconDisplayMode?: 'icons-only' | 'with-frames';
+  iconPack?: string;
+  frameShape?: string;
+  dashboardLayout?: string;
+  icon3DStyle?: string;
+  glassOpacity?: number;
+  glassBlur?: number;
+}) {
+  const legacyStyleId = settings.icon3DStyle || '';
+  const legacyLayoutId = settings.dashboardLayout || '';
+
+  const iconDisplayMode: 'icons-only' | 'with-frames' =
+    settings.iconDisplayMode ||
+    (legacyLayoutId === 'layout-frameless-icons' || legacyStyleId.startsWith('style-borderless-')
+      ? 'icons-only'
+      : 'with-frames');
+
+  let iconPack = settings.iconPack || '';
+  if (!iconPack) {
+    if (legacyStyleId.includes('neon') || legacyStyleId.includes('cyber')) iconPack = 'pack-neon';
+    else if (legacyStyleId.includes('glass') || legacyStyleId.includes('crystal')) iconPack = 'pack-glass';
+    else if (legacyStyleId.includes('chrome') || legacyStyleId.includes('metal') || legacyStyleId.includes('gold')) iconPack = 'pack-metallic';
+    else if (legacyStyleId.includes('minimal') || legacyStyleId.includes('pixel') || legacyStyleId.includes('hud')) iconPack = 'pack-geometric';
+    else iconPack = 'pack-3d';
+  }
+  iconPack = normalizeIconPackId(iconPack);
+
+  let frameShape = settings.frameShape || '';
+  if (!frameShape) {
+    if (legacyStyleId.includes('neon') || legacyStyleId.includes('pill') || legacyStyleId.includes('hologram')) frameShape = 'circle';
+    else if (legacyStyleId.includes('jewel') || legacyLayoutId.includes('hex')) frameShape = 'hexagon';
+    else if (legacyStyleId.includes('hud') || legacyStyleId.includes('cyber') || legacyLayoutId.includes('chamfer')) frameShape = 'geometric';
+    else if (legacyStyleId.includes('glass')) frameShape = 'glass';
+    else if (legacyStyleId.includes('metal') || legacyStyleId.includes('chrome')) frameShape = 'metallic';
+    else frameShape = 'rounded-square';
+  }
+  frameShape = normalizeFrameShapeId(frameShape);
+
+  return {
+    iconDisplayMode,
+    iconPack,
+    frameShape,
+    layoutId: normalizeDashboardLayoutId(settings.dashboardLayout),
+    glassOpacity: typeof settings.glassOpacity === 'number' ? settings.glassOpacity : 16,
+    glassBlur: typeof settings.glassBlur === 'number' ? settings.glassBlur : 10,
+  };
+}
+
+export function normalizeHexColor(input?: string | null): string | null {
+  if (!input) return null;
+  let hex = input.trim().toUpperCase();
+  if (!hex.startsWith('#')) hex = '#' + hex;
+  if (/^#[0-9A-F]{3}$/.test(hex)) {
+    hex = '#' + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
+  }
+  return /^#[0-9A-F]{6}$/.test(hex) ? hex : null;
+}
+
+export function isValidHexColor(input?: string | null): boolean {
+  return normalizeHexColor(input) !== null;
+}
+
+function clampByte(n: number) {
+  return Math.max(0, Math.min(255, Math.round(n)));
+}
+
+function rgbToHex(r: number, g: number, b: number) {
+  return (
+    '#' +
+    [clampByte(r), clampByte(g), clampByte(b)]
+      .map(v => v.toString(16).padStart(2, '0'))
+      .join('')
+      .toUpperCase()
+  );
+}
+
+export function computePaletteFromHex(hexColor: string) {
+  const normalized = normalizeHexColor(hexColor) || '#D4AF37';
+  // True Metallic Gold signature gradient stops
+  if (normalized === '#D4AF37') {
+    return {
+      primary: '#D4AF37',
+      secondary: '#8C6A1D',
+      accent: '#F5E6A8',
+      mid: '#B8860B',
+      glow: 'rgba(212, 175, 55, 0.56)',
+      r: 212,
+      g: 175,
+      b: 55,
+    };
+  }
+  const clean = normalized.slice(1);
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  const secondary = rgbToHex(r * 0.58, g * 0.54, b * 0.45);
+  const mid = rgbToHex(r * 0.78, g * 0.75, b * 0.68);
+  const accent = rgbToHex(r + (255 - r) * 0.62, g + (255 - g) * 0.62, b + (255 - b) * 0.62);
+  return {
+    primary: normalized,
+    secondary,
+    accent,
+    mid,
+    glow: `rgba(${r}, ${g}, ${b}, 0.52)`,
+    r,
+    g,
+    b,
+  };
+}
+
+// Apply CSS variables & comprehensive theme rules across the entire Achour Player app
+export function applyRoyalTheme(
+  themeId: string,
+  customHex?: string | null,
+  glassOpacity?: number,
+  glassBlur?: number
+) {
+  const validCustom = normalizeHexColor(customHex);
+  const preset = ROYAL_THEMES.find(t => t.id === themeId) || ROYAL_THEMES[0];
+  const palette = validCustom
+    ? computePaletteFromHex(validCustom)
+    : preset.primary.toUpperCase() === '#D4AF37'
+    ? computePaletteFromHex('#D4AF37')
+    : {
+        ...computePaletteFromHex(preset.primary),
+        secondary: preset.secondary,
+        accent: preset.accent,
+        glow: preset.glow,
+      };
+
+  const { primary, secondary, accent, mid, glow, r, g, b } = palette;
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   const onPrimary = luminance > 0.52 ? '#090b10' : '#ffffff';
+  const metallicGrad = `linear-gradient(135deg, ${secondary} 0%, ${primary} 34%, ${accent} 58%, ${mid} 82%, ${secondary} 100%)`;
+
+  const alpha = Math.max(0, Math.min(0.85, (typeof glassOpacity === 'number' ? glassOpacity : 16) / 100));
+  const blurPx = Math.max(0, Math.min(24, typeof glassBlur === 'number' ? glassBlur : 10));
 
   const root = document.documentElement;
-  root.style.setProperty('--color-gold', theme.primary);
-  root.style.setProperty('--color-gold-dark', theme.secondary);
-  root.style.setProperty('--theme-primary', theme.primary);
-  root.style.setProperty('--theme-secondary', theme.secondary);
-  root.style.setProperty('--theme-accent', theme.accent);
-  root.style.setProperty('--theme-glow', theme.glow);
+  root.style.setProperty('--color-gold', primary);
+  root.style.setProperty('--color-gold-dark', secondary);
+  root.style.setProperty('--theme-primary', primary);
+  root.style.setProperty('--theme-secondary', secondary);
+  root.style.setProperty('--theme-accent', accent);
+  root.style.setProperty('--theme-mid', mid);
+  root.style.setProperty('--theme-glow', glow);
   root.style.setProperty('--theme-on-primary', onPrimary);
+  root.style.setProperty('--theme-metallic-grad', metallicGrad);
+  root.style.setProperty('--achour-glass-alpha', String(alpha));
+  root.style.setProperty('--achour-glass-blur', `${blurPx}px`);
 
-  // High-priority dynamic style injection to guarantee immediate color update across all components
+  // Ensure every opacity class suffix (.bg-gold/*, .text-gold/*, .border-gold/*, hover:*, ring:*, etc.) matches dynamically
+  const opacitySteps = [
+    5, 8, 10, 12, 15, 16, 18, 20, 22, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95
+  ];
+
+  const opacityRules = opacitySteps
+    .map((pct) => {
+      const a = (pct / 100).toFixed(2);
+      return `
+        .text-gold\\/${pct}, .text-amber-400\\/${pct}, .text-amber-300\\/${pct}, .text-yellow-400\\/${pct} { color: rgba(${r},${g},${b},${a}) !important; }
+        .bg-gold\\/${pct}, .bg-amber-500\\/${pct}, .bg-yellow-500\\/${pct} { background-color: rgba(${r},${g},${b},${a}) !important; }
+        .border-gold\\/${pct}, .border-amber-500\\/${pct}, .border-yellow-500\\/${pct} { border-color: rgba(${r},${g},${b},${a}) !important; }
+        .hover\\:bg-gold\\/${pct}:hover { background-color: rgba(${r},${g},${b},${a}) !important; }
+        .hover\\:border-gold\\/${pct}:hover, .hover\\:border-amber-500\\/${pct}:hover { border-color: rgba(${r},${g},${b},${a}) !important; }
+        .hover\\:text-gold\\/${pct}:hover { color: rgba(${r},${g},${b},${a}) !important; }
+        .focus\\:border-gold\\/${pct}:focus, .focus\\:bg-gold\\/${pct}:focus { border-color: rgba(${r},${g},${b},${a}) !important; }
+        .ring-gold\\/${pct}, .focus\\:ring-gold\\/${pct}:focus { --tw-ring-color: rgba(${r},${g},${b},${a}) !important; }
+        .shadow-gold\\/${pct}, .shadow-amber-500\\/${pct} { box-shadow: 0 0 22px rgba(${r},${g},${b},${Math.min(0.75, pct / 100 * 0.9).toFixed(2)}) !important; }
+      `;
+    })
+    .join('\n');
+
   let styleEl = document.getElementById('royal-theme-runtime') as HTMLStyleElement | null;
   if (!styleEl) {
     styleEl = document.createElement('style');
@@ -1611,200 +1832,89 @@ export function applyRoyalTheme(themeId: string) {
 
   styleEl.innerHTML = `
     :root, html, body, #root {
-      --color-gold: ${theme.primary} !important;
-      --color-gold-dark: ${theme.secondary} !important;
-      --theme-primary: ${theme.primary} !important;
-      --theme-secondary: ${theme.secondary} !important;
-      --theme-accent: ${theme.accent} !important;
-      --theme-glow: ${theme.glow} !important;
+      --color-gold: ${primary} !important;
+      --color-gold-dark: ${secondary} !important;
+      --theme-primary: ${primary} !important;
+      --theme-secondary: ${secondary} !important;
+      --theme-accent: ${accent} !important;
+      --theme-mid: ${mid} !important;
+      --theme-glow: ${glow} !important;
       --theme-on-primary: ${onPrimary} !important;
+      --theme-metallic-grad: ${metallicGrad} !important;
+      --achour-glass-alpha: ${alpha} !important;
+      --achour-glass-blur: ${blurPx}px !important;
     }
-    .text-gold, .text-amber-400, .text-amber-300, .text-yellow-400, .text-yellow-300 {
-      color: ${theme.primary} !important;
-    }
-    .text-gold\\/90, .text-amber-400\\/90, .text-amber-300\\/90 {
-      color: rgba(${r},${g},${b},0.9) !important;
-    }
-    .text-gold\\/85, .text-amber-400\\/85, .text-amber-300\\/85 {
-      color: rgba(${r},${g},${b},0.85) !important;
-    }
-    .text-gold\\/80, .text-amber-400\\/80, .text-amber-300\\/80 {
-      color: rgba(${r},${g},${b},0.8) !important;
-    }
-    .text-gold\\/75, .text-gold\\/70, .text-amber-400\\/70 {
-      color: rgba(${r},${g},${b},0.72) !important;
-    }
-    .text-gold\\/60, .text-gold\\/50 {
-      color: rgba(${r},${g},${b},0.6) !important;
+    .text-gold, .text-amber-400, .text-amber-300, .text-amber-200, .text-yellow-400, .text-yellow-300 {
+      color: ${primary} !important;
     }
     .bg-gold, .bg-amber-500, .bg-amber-600, .bg-yellow-500 {
-      background-color: ${theme.primary} !important;
+      background-color: ${primary} !important;
+      color: ${onPrimary};
     }
-    .border-gold, .border-amber-500, .border-yellow-500 {
-      border-color: ${theme.primary} !important;
+    .border-gold, .border-amber-500, .border-amber-400, .border-amber-300, .border-yellow-500 {
+      border-color: ${primary} !important;
     }
-    .border-gold\\/85 {
-      border-color: ${theme.primary}D9 !important;
+    .fill-gold, .fill-amber-500, .fill-amber-400, .fill-yellow-500 {
+      fill: ${primary} !important;
     }
-    .border-gold\\/75 {
-      border-color: ${theme.primary}BF !important;
+    .stroke-gold {
+      stroke: ${primary} !important;
     }
-    .border-gold\\/60, .border-amber-500\\/60, .border-yellow-500\\/60 {
-      border-color: ${theme.primary}99 !important;
+    .accent-gold {
+      accent-color: ${primary} !important;
     }
-    .border-gold\\/50, .border-amber-500\\/50, .border-yellow-500\\/50 {
-      border-color: ${theme.primary}80 !important;
-    }
-    .border-gold\\/45 {
-      border-color: ${theme.primary}73 !important;
-    }
-    .border-gold\\/40, .border-amber-500\\/40, .border-yellow-500\\/40 {
-      border-color: ${theme.primary}66 !important;
-    }
-    .border-gold\\/35 {
-      border-color: ${theme.primary}59 !important;
-    }
-    .border-gold\\/30, .border-amber-500\\/30, .border-yellow-500\\/30 {
-      border-color: ${theme.primary}4D !important;
-    }
-    .border-gold\\/20, .border-amber-500\\/20, .border-yellow-500\\/20 {
-      border-color: ${theme.primary}33 !important;
-    }
-    .bg-gold\\/5, .bg-amber-500\\/5 {
-      background-color: ${theme.primary}0D !important;
-    }
-    .bg-gold\\/10, .bg-amber-500\\/10 {
-      background-color: ${theme.primary}1A !important;
-    }
-    .bg-gold\\/15, .bg-amber-500\\/15 {
-      background-color: ${theme.primary}26 !important;
-    }
-    .bg-gold\\/20, .bg-amber-500\\/20 {
-      background-color: ${theme.primary}33 !important;
-    }
-    .bg-gold\\/25, .bg-amber-500\\/25 {
-      background-color: ${theme.primary}40 !important;
-    }
-    .bg-gold\\/30, .bg-amber-500\\/30 {
-      background-color: ${theme.primary}4D !important;
-    }
-    .bg-gold\\/35 {
-      background-color: ${theme.primary}59 !important;
-    }
-    .bg-gold\\/40 {
-      background-color: ${theme.primary}66 !important;
-    }
-    .bg-gold\\/45 {
-      background-color: ${theme.primary}73 !important;
-    }
-    .bg-gold\\/55 {
-      background-color: ${theme.primary}8C !important;
-    }
-    .bg-gold\\/70 {
-      background-color: ${theme.primary}B3 !important;
-    }
-    .bg-gold\\/75 {
-      background-color: ${theme.primary}BF !important;
-    }
-    .bg-gold\\/85 {
-      background-color: ${theme.primary}D9 !important;
-    }
-    .hover\\:bg-gold\\/70:hover {
-      background-color: ${theme.primary}B3 !important;
-    }
-    .hover\\:bg-gold\\/75:hover {
-      background-color: ${theme.primary}BF !important;
-    }
-    .fill-gold, .fill-amber-500, .fill-yellow-500 {
-      fill: ${theme.primary} !important;
-    }
+    ${opacityRules}
     .from-gold {
-      --tw-gradient-from: ${theme.primary} !important;
-      --tw-gradient-to: ${theme.primary}00 !important;
+      --tw-gradient-from: ${primary} !important;
+      --tw-gradient-to: ${primary}00 !important;
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
     }
     .via-gold {
-      --tw-gradient-to: ${theme.primary}00 !important;
-      --tw-gradient-stops: var(--tw-gradient-from), ${theme.primary} !important, var(--tw-gradient-to) !important;
+      --tw-gradient-to: ${primary}00 !important;
+      --tw-gradient-stops: var(--tw-gradient-from), ${primary} !important, var(--tw-gradient-to) !important;
     }
     .to-gold {
-      --tw-gradient-to: ${theme.primary} !important;
+      --tw-gradient-to: ${primary} !important;
     }
     .from-gold-dark {
-      --tw-gradient-from: ${theme.secondary} !important;
-      --tw-gradient-to: ${theme.secondary}00 !important;
+      --tw-gradient-from: ${secondary} !important;
+      --tw-gradient-to: ${secondary}00 !important;
       --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
     }
     .via-gold-dark {
-      --tw-gradient-to: ${theme.secondary}00 !important;
-      --tw-gradient-stops: var(--tw-gradient-from), ${theme.secondary} !important, var(--tw-gradient-to) !important;
+      --tw-gradient-to: ${secondary}00 !important;
+      --tw-gradient-stops: var(--tw-gradient-from), ${secondary} !important, var(--tw-gradient-to) !important;
     }
     .to-gold-dark {
-      --tw-gradient-to: ${theme.secondary} !important;
-    }
-    .shadow-gold\\/10, .shadow-amber-500\\/10 {
-      box-shadow: 0 0 15px ${theme.primary}1A !important;
-    }
-    .shadow-gold\\/20, .shadow-amber-500\\/20 {
-      box-shadow: 0 0 20px ${theme.primary}33 !important;
-    }
-    .shadow-gold\\/40, .shadow-amber-500\\/40 {
-      box-shadow: 0 0 30px ${theme.primary}66 !important;
+      --tw-gradient-to: ${secondary} !important;
     }
     .ring-gold, .ring-amber-500, .focus\\:ring-gold:focus, .focus\\:ring-amber-500:focus {
-      --tw-ring-color: ${theme.primary} !important;
-    }
-    .ring-gold\\/70, .ring-amber-500\\/70, .focus\\:ring-gold\\/70:focus {
-      --tw-ring-color: ${theme.primary}B3 !important;
-    }
-    .ring-gold\\/50, .focus\\:ring-gold\\/50:focus {
-      --tw-ring-color: ${theme.primary}80 !important;
+      --tw-ring-color: ${primary} !important;
     }
     .focus\\:border-gold:focus, .focus\\:border-amber-500:focus {
-      border-color: ${theme.primary} !important;
-    }
-    .focus\\:bg-gold\\/10:focus, .focus\\:bg-amber-500\\/10:focus {
-      background-color: ${theme.primary}1A !important;
+      border-color: ${primary} !important;
     }
     .hover\\:bg-gold:hover, .hover\\:bg-amber-500:hover {
-      background-color: ${theme.primary} !important;
-    }
-    .hover\\:bg-gold\\/10:hover {
-      background-color: ${theme.primary}1A !important;
-    }
-    .hover\\:bg-gold\\/15:hover {
-      background-color: ${theme.primary}26 !important;
-    }
-    .hover\\:bg-gold\\/20:hover {
-      background-color: ${theme.primary}33 !important;
-    }
-    .hover\\:bg-gold\\/30:hover {
-      background-color: ${theme.primary}4D !important;
+      background-color: ${primary} !important;
     }
     .hover\\:text-gold:hover, .hover\\:text-amber-400:hover,
     .group:hover .group-hover\\:text-gold {
-      color: ${theme.primary} !important;
+      color: ${primary} !important;
     }
     .group:hover .group-hover\\:bg-gold {
-      background-color: ${theme.primary} !important;
+      background-color: ${primary} !important;
+      color: ${onPrimary} !important;
     }
     .hover\\:border-gold:hover, .hover\\:border-amber-500:hover {
-      border-color: ${theme.primary} !important;
+      border-color: ${primary} !important;
     }
-    .hover\\:border-gold\\/60:hover {
-      border-color: ${theme.primary}99 !important;
+    ::selection {
+      background-color: rgba(${r},${g},${b},0.32);
+      color: #ffffff;
     }
-    .hover\\:border-gold\\/50:hover, .hover\\:border-amber-500\\/50:hover {
-      border-color: ${theme.primary}80 !important;
-    }
-    .hover\\:border-gold\\/40:hover, .hover\\:border-amber-500\\/40:hover {
-      border-color: ${theme.primary}66 !important;
-    }
-    
-    /* Keep native outline color synced without injecting duplicate :focus-visible box-shadow rings */
     :focus {
       outline: none !important;
-      outline-color: ${theme.primary} !important;
+      outline-color: ${primary} !important;
     }
   `;
 }

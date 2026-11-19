@@ -20,6 +20,20 @@
   border-color: var(--theme-primary, #D4AF37) !important;
 }
 
+/* Dashboard Home tiles focus: highlight the inner frame shape directly instead of a square outer card box */
+button[data-dashboard-kind][data-tv-active-focus="true"] {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+button[data-dashboard-kind][data-tv-active-focus="true"] div[class*="shrink-0"] {
+  border-color: var(--theme-primary, #D4AF37) !important;
+  box-shadow: 0 0 0 3.5px var(--theme-primary, #D4AF37), 0 0 24px var(--theme-glow, rgba(212,175,55,0.75)) !important;
+  transform: scale(1.06) !important;
+}
+
 [data-tv-theme-block="true"][data-tv-active-focus="true"] {
   outline: none !important;
   box-shadow: 0 0 0 2px #020205, 0 0 0 5px var(--theme-accent, #ffffff) !important;
@@ -50,18 +64,18 @@
   border-color: var(--theme-primary, #D4AF37) !important;
 }
 
-/* Crystal-clear unclipped TV focus for Series Season tabs & Episode rows */
+/* Crystal-clear unclipped inset TV focus for Series Season tabs & Episode rows (never overlaps neighboring rows) */
 [data-season-tab="true"][data-tv-active-focus="true"] {
   outline: none !important;
-  box-shadow: 0 0 0 2px #0b0d14, 0 0 0 4.5px var(--theme-primary, #D4AF37) !important;
+  box-shadow: inset 0 0 0 2.5px var(--theme-primary, #D4AF37) !important;
   border-color: var(--theme-primary, #D4AF37) !important;
 }
 
 [data-episode-item="true"][data-tv-active-focus="true"] {
   outline: none !important;
-  background-color: color-mix(in srgb, var(--theme-primary, #D4AF37) 24%, rgba(15, 18, 28, 0.92)) !important;
+  background-color: color-mix(in srgb, var(--theme-primary, #D4AF37) 22%, rgba(15, 18, 28, 0.94)) !important;
   border-color: var(--theme-primary, #D4AF37) !important;
-  box-shadow: 0 0 0 3px var(--theme-primary, #D4AF37) !important;
+  box-shadow: inset 0 0 0 2.5px var(--theme-primary, #D4AF37) !important;
 }
 
 [data-episode-item="true"][data-tv-active-focus="true"] p {
@@ -100,11 +114,21 @@ select[data-tv-active-focus="true"] {
     --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+
   body {
     font-family: var(--font-sans);
     background-color: transparent;
     color: #f3f4f6;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -357,27 +381,214 @@ html.achour-tv-perf [data-tv-vod-poster="true"][data-tv-active-focus="true"] {
 }
 
 
-/* TV-only dialogs: keep Movies compact while giving Series generous viewport height for Seasons & Episodes */
+/* TV-only dialogs: keep both Movies & Series compact, balanced, and cleanly inside screen bounds */
 html.achour-tv-ui [data-tv-details-dialog="true"] {
-  width: 78vw !important;
-  max-width: 960px !important;
-  max-height: 86vh !important;
+  width: min(64vw, 720px) !important;
+  max-width: 720px !important;
+  max-height: 72vh !important;
 }
 html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="true"].achour-tv-details-popup {
-  width: 82vw !important;
-  max-width: 1000px !important;
-  height: 84vh !important;
-  max-height: 86vh !important;
+  width: min(64vw, 720px) !important;
+  max-width: 720px !important;
+  height: min(70vh, 540px) !important;
+  max-height: 72vh !important;
 }
 html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="false"].achour-tv-details-popup {
-  width: 68vw !important;
-  max-width: 880px !important;
+  width: min(54vw, 620px) !important;
+  max-width: 620px !important;
   height: auto !important;
-  max-height: 82vh !important;
+  max-height: 68vh !important;
 }
 html.achour-tv-ui .achour-modal-backdrop > div:not([data-tv-details-dialog="true"]) {
   zoom: 0.86 !important;
   max-height: 78vh !important;
+}
+
+/* Dashboard Icons Placement (Vertical & Horizontal — Physical Left/Center/Right + Compact Top/Bottom Bar & Side Rails) */
+[data-dashboard-layout-stage="true"] > div {
+  flex: 0 0 auto !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-v="top"] {
+  justify-content: flex-start !important;
+  padding-top: 0.35rem !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-v="center"] {
+  justify-content: center !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-v="bottom"] {
+  justify-content: flex-end !important;
+  padding-bottom: 0.65rem !important;
+}
+
+/* Compact Bar Mode when docked Top or Bottom so icons visibly form a sleek Top/Bottom dock bar */
+[data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"]) > div {
+  gap: 0.5rem !important;
+}
+[data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"]) button[data-dashboard-kind] {
+  min-height: 0 !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+@media (max-width: 639px) {
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] .grid {
+    gap: 0.35rem !important;
+  }
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] .grid.grid-cols-2.sm\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] button[data-dashboard-kind] {
+    padding: 0.4rem 0.35rem !important;
+    gap: 0.25rem !important;
+  }
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] button[data-dashboard-kind] svg {
+    max-width: 26px !important;
+    max-height: 26px !important;
+  }
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] button[data-dashboard-kind] span {
+    font-size: 10px !important;
+  }
+  [data-dashboard-layout-stage="true"]:is([data-dashboard-v="top"], [data-dashboard-v="bottom"])[data-dashboard-h="center"] button[data-dashboard-kind] > div.w-full > div:nth-child(2) {
+    display: none !important;
+  }
+}
+
+[data-dashboard-layout-stage="true"][data-dashboard-h="center"] {
+  align-items: center !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-h="center"] > div {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Side-Rail Mode when docked Left or Right edge (unmistakably anchored to physical left or right in both RTL and LTR) */
+[data-dashboard-layout-stage="true"][data-dashboard-h="left"],
+[data-dashboard-layout-stage="true"][data-dashboard-h="right"] {
+  align-items: stretch !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-h="left"] > div {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: fit-content !important;
+  min-width: 175px !important;
+  max-width: min(56vw, 310px) !important;
+  padding-left: 0.35rem !important;
+  padding-right: 0.35rem !important;
+}
+[data-dashboard-layout-stage="true"][data-dashboard-h="right"] > div {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  width: fit-content !important;
+  min-width: 175px !important;
+  max-width: min(56vw, 310px) !important;
+  padding-left: 0.35rem !important;
+  padding-right: 0.35rem !important;
+}
+[data-dashboard-layout-stage="true"]:is([data-dashboard-h="left"], [data-dashboard-h="right"]) > div .grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  gap: 0.45rem !important;
+}
+[data-dashboard-layout-stage="true"]:is([data-dashboard-h="left"], [data-dashboard-h="right"]) button[data-dashboard-kind] {
+  min-height: 0 !important;
+  padding: 0.45rem 0.75rem !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: start !important;
+  gap: 0.6rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+[data-dashboard-layout-stage="true"]:is([data-dashboard-h="left"], [data-dashboard-h="right"]) button[data-dashboard-kind] svg {
+  max-width: 28px !important;
+  max-height: 28px !important;
+}
+
+/* Global App Windows / Modals Position Control (Center, Top, Bottom, Left, Right, Corners) */
+html[data-achour-window-pos] .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  flex-direction: row !important;
+}
+
+html[data-achour-window-pos="top"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="top-left"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="top-right"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  align-items: flex-start !important;
+  padding-top: 1rem !important;
+}
+
+html[data-achour-window-pos="bottom"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="bottom-left"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="bottom-right"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  align-items: flex-end !important;
+  padding-bottom: 1rem !important;
+}
+
+html[data-achour-window-pos="left"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="right"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]),
+html[data-achour-window-pos="center"] .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  align-items: center !important;
+}
+
+html:is([data-achour-window-pos="left"], [data-achour-window-pos="top-left"], [data-achour-window-pos="bottom-left"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  justify-content: flex-start !important;
+}
+
+html:is([data-achour-window-pos="right"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-right"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  justify-content: flex-end !important;
+}
+
+html:is([data-achour-window-pos="center"], [data-achour-window-pos="top"], [data-achour-window-pos="bottom"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) {
+  justify-content: center !important;
+}
+
+html:is([data-achour-window-pos="left"], [data-achour-window-pos="top-left"], [data-achour-window-pos="bottom-left"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) > * {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: min(76vw, 440px) !important;
+  max-width: min(76vw, 440px) !important;
+}
+
+html:is([data-achour-window-pos="right"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-right"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) > * {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  width: min(76vw, 440px) !important;
+  max-width: min(76vw, 440px) !important;
+}
+
+@media (min-width: 640px) {
+  html:is([data-achour-window-pos="left"], [data-achour-window-pos="right"], [data-achour-window-pos="top-left"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-left"], [data-achour-window-pos="bottom-right"])
+    .achour-modal-backdrop:not([data-modal-fullscreen="true"]) > * {
+    width: min(56vw, 560px) !important;
+    max-width: min(56vw, 560px) !important;
+  }
+}
+
+html:is([data-achour-window-pos="center"], [data-achour-window-pos="top"], [data-achour-window-pos="bottom"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html:is([data-achour-window-pos="top"], [data-achour-window-pos="bottom"], [data-achour-window-pos="top-left"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-left"], [data-achour-window-pos="bottom-right"])
+  .achour-modal-backdrop:not([data-modal-fullscreen="true"]) > * {
+  max-height: 68vh !important;
+}
+
+html:is([data-achour-window-pos="left"], [data-achour-window-pos="right"], [data-achour-window-pos="top-left"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-left"], [data-achour-window-pos="bottom-right"]).achour-tv-ui
+  [data-tv-details-dialog="true"] {
+  width: min(56vw, 720px) !important;
+  max-width: min(56vw, 720px) !important;
+}
+
+html:is([data-achour-window-pos="top"], [data-achour-window-pos="bottom"], [data-achour-window-pos="top-left"], [data-achour-window-pos="top-right"], [data-achour-window-pos="bottom-left"], [data-achour-window-pos="bottom-right"]).achour-tv-ui
+  [data-tv-details-dialog="true"] {
+  max-height: 72vh !important;
 }
 
 /* GPU-composited Splash Screen animations (zero JS main-thread animation overhead on Fire TV / low-RAM devices) */

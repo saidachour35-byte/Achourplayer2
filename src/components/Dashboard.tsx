@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Settings, RefreshCcw, LogOut, Plus, Tv, AlertCircle, CheckCircle2, 
   Clock, Upload, FolderPlus, Copy, Eye, Globe, Server, FileText, Check, X, Star,
-  Film, Clapperboard, Calendar, ShieldCheck, AlertTriangle, Sparkles, ArrowUpDown
+  Film, Clapperboard, Calendar, ShieldCheck, AlertTriangle, Sparkles, ArrowUpDown, Move, AppWindow
 } from 'lucide-react';
+import { SCREEN_POSITION_CELLS, WindowPositionButton, setGlobalWindowPosition } from './WindowPositionBar';
 import PlaylistManager from './PlaylistManager';
 import LivePlayer from './LivePlayer';
 import SettingsView from './SettingsView';
@@ -87,6 +88,7 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
   const [showAddModal, setShowAddModal] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
   const [showRepositionModal, setShowRepositionModal] = useState(false);
+  const [repositionFocusKind, setRepositionFocusKind] = useState<IconKind | null>(null);
   const [reorderingKind, setReorderingKind] = useState<IconKind | null>(null);
   const reorderBackupRef = useRef<{
     dashboardOrder?: string[];
@@ -96,6 +98,8 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
   const selectHoldTimerRef = useRef<NodeJS.Timeout | null>(null);
   const selectHoldTriggeredRef = useRef(false);
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const touchLongPressHandledRef = useRef(false);
+  const touchStartPosRef = useRef<{ x: number; y: number } | null>(null);
   const [activePlaylistData, setActivePlaylistData] = useState<Playlist | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -329,7 +333,7 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
 
   // Auto-Initial Focus for TV Remote Navigation once Splash finishes
   useEffect(() => {
-    if (startupSplashComplete && currentView === 'home' && !showExtractionModal && !showExitModal && !showAddModal) {
+    if (startupSplashComplete && currentView === 'home' && !showExtractionModal && !showExitModal && !showAddModal && !showRepositionModal) {
       const timer = setTimeout(() => {
         if (!getCurrentTVFocus()) {
           ensureInitialFocus();
@@ -337,7 +341,29 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [startupSplashComplete, currentView, showExtractionModal, showExitModal, showAddModal]);
+  }, [startupSplashComplete, currentView, showExtractionModal, showExitModal, showAddModal, showRepositionModal]);
+
+  // Focus first control inside Reposition Modal on open & restore focus to dashboard tile on close
+  const prevRepositionOpenRef = useRef(false);
+  useEffect(() => {
+    if (showRepositionModal) {
+      prevRepositionOpenRef.current = true;
+      const tId = setTimeout(() => {
+        const modal = document.querySelector<HTMLElement>('[data-tv-reposition-modal="true"]');
+        const firstBtn = modal?.querySelector<HTMLElement>('button[data-tv-focusable="true"]');
+        if (firstBtn) setTVFocus(firstBtn, { scroll: false });
+      }, 40);
+      return () => clearTimeout(tId);
+    } else if (prevRepositionOpenRef.current) {
+      prevRepositionOpenRef.current = false;
+      const targetKind = repositionFocusKind || 'live';
+      const tId = setTimeout(() => {
+        const el = document.querySelector<HTMLElement>(`[data-dashboard-kind="${targetKind}"]`);
+        if (el) setTVFocus(el, { scroll: false });
+      }, 40);
+      return () => clearTimeout(tId);
+    }
+  }, [showRepositionModal, repositionFocusKind]);
 
   // Cancel reorder mode cleanly on Back button (at MODAL priority so it intercepts before exit confirmation)
   useEffect(() => {
@@ -497,9 +523,6 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
       reorderBackupRef.current = null;
       const targetKind = reorderingKind;
       setReorderingKind(null);
-      try {
-        localStorage.setItem('achour_settings', JSON.stringify(settings));
-      } catch (err) {}
       if (targetKind) {
         setTimeout(() => {
           const el = document.querySelector<HTMLElement>(`[data-dashboard-kind="${targetKind}"]`);
@@ -509,14 +532,28 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (showAddModal || showExitModal || showExtractionModal || showRepositionModal) return;
+      if (showAddModal || showExitModal || showExtractionModal) return;
+
+      // Open Icons & Windows Position menu when TV Menu / ContextMenu / Info button is pressed
+      if (!showRepositionModal && !reorderingKind && (e.key === 'ContextMenu' || e.keyCode === 82 || e.keyCode === 457)) {
+        e.preventDefault();
+        e.stopPropagation();
+        const active = getCurrentTVFocus();
+        const focusedKind = (active?.getAttribute('data-dashboard-kind') as IconKind | null) || 'live';
+        setRepositionFocusKind(focusedKind);
+        setShowRepositionModal(true);
+        return;
+      }
+
       const action = parseTVKeyEvent(e);
 
       if (action === 'UP' || action === 'DOWN' || action === 'LEFT' || action === 'RIGHT') {
         e.preventDefault();
         e.stopPropagation();
         const dir = action.toLowerCase() as 'up' | 'down' | 'left' | 'right';
-        if (reorderingKind) {
+        if (showRepositionModal) {
+          navigateSpatial(dir, document.body, null);
+        } else if (reorderingKind) {
           handleTVReorderStep(reorderingKind, dir);
         } else {
           navigateSpatial(dir, document.body, null);
@@ -528,6 +565,16 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
         e.preventDefault();
         e.stopPropagation();
 
+        if (showRepositionModal) {
+          if (!e.repeat) {
+            const active = getCurrentTVFocus();
+            if (active && typeof active.click === 'function') {
+              active.click();
+            }
+          }
+          return;
+        }
+
         if (reorderingKind) {
           if (!e.repeat) {
             commitReorderMode();
@@ -538,7 +585,7 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
         const active = getCurrentTVFocus();
         const focusedKind = active?.getAttribute('data-dashboard-kind') as IconKind | null;
 
-        // On TV / Desktop (!isPhone): Long press OK enters direct on-screen reorder mode
+        // On TV / Desktop (!isPhone): Long press OK opens full Position & Reorder options menu
         if (!isPhone && focusedKind) {
           if (e.repeat) {
             if (selectHoldTimerRef.current) {
@@ -547,7 +594,8 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
             }
             if (!selectHoldTriggeredRef.current) {
               selectHoldTriggeredRef.current = true;
-              enterReorderMode(focusedKind);
+              setRepositionFocusKind(focusedKind);
+              setShowRepositionModal(true);
             }
             return;
           }
@@ -557,7 +605,8 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
             selectHoldTimerRef.current = setTimeout(() => {
               selectHoldTimerRef.current = null;
               selectHoldTriggeredRef.current = true;
-              enterReorderMode(focusedKind);
+              setRepositionFocusKind(focusedKind);
+              setShowRepositionModal(true);
             }, 460);
           }
           return;
@@ -790,13 +839,13 @@ if (currentView === 'settings') return (
 
         {/* App name only: the brand artwork is reserved for the splash screen */}
         <div dir="ltr" className="flex items-center justify-center min-w-0 pt-0.5">
-          <h1 className="text-sm sm:text-xl md:text-2xl font-semibold text-gold tracking-tight uppercase leading-none drop-shadow-md whitespace-nowrap">
+          <h1 className="text-sm sm:text-xl md:text-2xl font-bold text-gold tracking-wider uppercase leading-none drop-shadow-md whitespace-nowrap">
             ACHOUR PLAYER
           </h1>
         </div>
 
         {/* 3. Right Side: Clock & Date */}
-        <div className="flex items-start justify-end min-w-0">
+        <div className="flex items-start justify-end gap-2 sm:gap-3 min-w-0">
           <ClockDisplay settings={settings} isRtl={isRtl} />
           {/* Hidden focus buffer */}
           <div className="opacity-0 w-0 h-0 pointer-events-none" data-tv-header-end="true" />
@@ -911,57 +960,88 @@ if (currentView === 'settings') return (
 
         <AnimatePresence mode="wait">
           <motion.div
-            key={`hub-layout-${settings.dashboardLayout || "layout-frameless-icons"}`}
+            key={`hub-layout-${settings.dashboardLayout || "layout-dock-row"}`}
             initial={{ opacity: 0, scale: 0.985 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={{ duration: 0.18 }}
             onContextMenu={(e) => {
-              if (isMobileDevice()) {
-                e.preventDefault();
+              e.preventDefault();
+              const tileEl = (e.target as HTMLElement | null)?.closest?.('[data-dashboard-kind]') as HTMLElement | null;
+              const k = (tileEl?.getAttribute('data-dashboard-kind') as IconKind | null) || 'live';
+              setRepositionFocusKind(k);
+              setShowRepositionModal(true);
+            }}
+            onPointerDown={(e) => {
+              if (e.pointerType !== 'touch' && !isMobileDevice()) return;
+              if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+              touchLongPressHandledRef.current = false;
+              touchStartPosRef.current = { x: e.clientX, y: e.clientY };
+              const tileEl = (e.target as HTMLElement | null)?.closest?.('[data-dashboard-kind]') as HTMLElement | null;
+              const k = (tileEl?.getAttribute('data-dashboard-kind') as IconKind | null) || 'live';
+              longPressTimerRef.current = setTimeout(() => {
+                longPressTimerRef.current = null;
+                touchLongPressHandledRef.current = true;
+                setRepositionFocusKind(k);
                 setShowRepositionModal(true);
+              }, 550);
+            }}
+            onPointerMove={(e) => {
+              if (!longPressTimerRef.current || !touchStartPosRef.current) return;
+              const dx = Math.abs(e.clientX - touchStartPosRef.current.x);
+              const dy = Math.abs(e.clientY - touchStartPosRef.current.y);
+              if (dx > 12 || dy > 12) {
+                clearTimeout(longPressTimerRef.current);
+                longPressTimerRef.current = null;
               }
             }}
-            onPointerDown={() => {
-              if (!isMobileDevice()) return;
-              if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
-              longPressTimerRef.current = setTimeout(() => {
-                setShowRepositionModal(true);
-              }, 650);
-            }}
             onPointerUp={() => {
+              touchStartPosRef.current = null;
               if (longPressTimerRef.current) {
                 clearTimeout(longPressTimerRef.current);
                 longPressTimerRef.current = null;
               }
             }}
             onPointerCancel={() => {
+              touchStartPosRef.current = null;
+              touchLongPressHandledRef.current = false;
               if (longPressTimerRef.current) {
                 clearTimeout(longPressTimerRef.current);
                 longPressTimerRef.current = null;
               }
             }}
+            onClickCapture={(e) => {
+              if (touchLongPressHandledRef.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                touchLongPressHandledRef.current = false;
+              }
+            }}
+            data-dashboard-layout-stage="true"
+            data-dashboard-v={settings.dashboardAlignment || 'center'}
+            data-dashboard-h={settings.dashboardHorizontalAlignment || 'center'}
             className={`flex-1 min-h-0 flex flex-col ${
               settings.dashboardAlignment === 'top'
-                ? 'justify-start pt-6 sm:pt-10'
+                ? 'justify-start pt-2 sm:pt-4'
                 : settings.dashboardAlignment === 'bottom'
-                ? 'justify-end pb-8 sm:pb-12'
-                : 'justify-center my-auto'
-            } ${
-              settings.dashboardHorizontalAlignment === 'left'
-                ? 'items-start'
-                : settings.dashboardHorizontalAlignment === 'right'
-                ? 'items-end'
-                : 'items-center'
-            } w-full overflow-y-auto no-scrollbar px-2 sm:px-4`}
+                ? 'justify-end pb-3 sm:pb-6'
+                : 'justify-center'
+            } w-full overflow-y-auto no-scrollbar px-3 sm:px-6`}
           >
             <DashboardLayouts
               layoutId={settings.dashboardLayout}
               dashboardOrder={settings.dashboardOrder}
+              iconDisplayMode={settings.iconDisplayMode}
+              iconPack={settings.iconPack}
+              frameShape={settings.frameShape}
               active3DStyle={active3DStyle}
               iconSize={settings.iconScale || "md"}
               frameScale={settings.frameScale || "md"}
               tileSpacing={settings.tileSpacing || "md"}
+              glassOpacity={settings.glassOpacity ?? 16}
+              glassBlur={settings.glassBlur ?? 10}
+              dashboardAlignment={settings.dashboardAlignment}
+              dashboardHorizontalAlignment={settings.dashboardHorizontalAlignment}
               reorderingKind={reorderingKind}
               language={settings.language}
               isRtl={isRtl}
@@ -1052,92 +1132,181 @@ if (currentView === 'settings') return (
           language={settings.language}
         />
 
-        {/* Dashboard Icons Reposition Modal */}
+        {/* Dashboard Icons & Windows Reposition Modal */}
         <AnimatePresence>
           {showRepositionModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 achour-modal-backdrop"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.22)' }}
+              onClick={() => setShowRepositionModal(false)}
+            >
               <motion.div
+                role="dialog"
+                aria-modal="true"
+                data-tv-modal="true"
+                data-tv-reposition-modal="true"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="w-full max-w-lg rounded-3xl p-6 bg-[#0e121d] border border-gold/40 shadow-2xl flex flex-col gap-5 text-white"
+                onClick={(e) => e.stopPropagation()}
+                className="w-[min(86vw,440px)] max-h-[70vh] overflow-y-auto no-scrollbar rounded-3xl p-4 sm:p-5 bg-[#0e121d]/95 border border-gold/45 shadow-2xl flex flex-col gap-3.5 text-white"
                 dir={isRtl ? 'rtl' : 'ltr'}
               >
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <ArrowUpDown className="w-5 h-5 text-gold" />
-                    <h3 className="text-lg font-bold text-gold">
-                      {isRtl ? 'موضع الأيقونات على الشاشة' : 'Dashboard Icons Screen Position'}
+                <div className="flex items-center justify-between border-b border-white/10 pb-2.5 shrink-0">
+                  <div className="flex items-center gap-2">
+                    <ArrowUpDown className="w-4 h-4 text-gold shrink-0" />
+                    <h3 className="text-sm sm:text-base font-bold text-gold truncate">
+                      {isRtl ? 'موضع الأيقونات والنوافذ' : 'Icons & Windows Position'}
                     </h3>
                   </div>
-                  <button
-                    data-tv-focusable="true"
-                    tabIndex={0}
-                    onClick={() => setShowRepositionModal(false)}
-                    className="p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer"
-                  >
-                    <X size={18} />
-                  </button>
+                  <div className="flex items-center gap-1 shrink-0">
+                    <WindowPositionButton isRtl={isRtl} />
+                    <button
+                      data-tv-focusable="true"
+                      tabIndex={0}
+                      onClick={() => setShowRepositionModal(false)}
+                      className="p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      <X size={17} />
+                    </button>
+                  </div>
                 </div>
 
-                <p className="text-xs text-zinc-300">
-                  {isRtl
-                    ? 'اختر الموضع المناسب لعرض أيقونات التطبيق الرئيسية على شاشتك:'
-                    : 'Choose where you want the main app icons positioned on your screen:'}
-                </p>
+                {/* Quick Arrow Reorder Mode Trigger for TV & Phone */}
+                <button
+                  type="button"
+                  data-tv-focusable="true"
+                  tabIndex={0}
+                  onClick={() => {
+                    const target = repositionFocusKind || 'live';
+                    reorderBackupRef.current = {
+                      dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : undefined,
+                      dashboardAlignment: settings.dashboardAlignment,
+                      dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment,
+                    };
+                    setShowRepositionModal(false);
+                    setReorderingKind(target);
+                    setTimeout(() => {
+                      const el = document.querySelector<HTMLElement>(`[data-dashboard-kind="${target}"]`);
+                      if (el) setTVFocus(el, { scroll: false });
+                    }, 35);
+                  }}
+                  className="w-full py-2 px-3 rounded-xl bg-gold/15 hover:bg-gold/25 border border-gold/50 text-gold text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+                >
+                  <Move size={14} />
+                  <span>
+                    {isRtl
+                      ? 'تحريك الأيقونات بالأسهم على الشاشة (يسار / يمين / أعلى / أسفل)'
+                      : 'Move Icons with Arrows on Screen'}
+                  </span>
+                </button>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {[
-                    { id: 'top' as const, label: isRtl ? 'أعلى الشاشة' : 'Top', desc: isRtl ? 'رفع نحو الأعلى' : 'Upper area' },
-                    { id: 'center' as const, label: isRtl ? 'منتصف الشاشة' : 'Center', desc: isRtl ? 'الوضع الافتراضي' : 'Balanced center' },
-                    { id: 'bottom' as const, label: isRtl ? 'أسفل الشاشة' : 'Bottom', desc: isRtl ? 'تنزيل نحو الأسفل' : 'Lower dock' }
-                  ].map((opt) => {
-                    const active = (settings.dashboardAlignment || 'center') === opt.id;
-                    return (
-                      <button
-                        key={opt.id}
-                        data-tv-focusable="true"
-                        tabIndex={0}
-                        onClick={() => {
-                          const updated = { ...settings, dashboardAlignment: opt.id };
-                          onUpdateSettings(updated);
-                          localStorage.setItem('achour_settings', JSON.stringify(updated));
-                          setShowRepositionModal(false);
-                        }}
-                        className={`flex flex-col items-center justify-center p-4 rounded-2xl border text-center transition-all cursor-pointer ${
-                          active
-                            ? 'bg-gold/20 border-gold shadow-[0_0_15px_var(--theme-glow)] scale-[1.02]'
-                            : 'bg-white/[0.04] border-white/10 hover:border-gold/50 hover:bg-white/[0.08]'
-                        }`}
-                      >
-                        <span className="text-sm font-bold text-white mb-1">{opt.label}</span>
-                        <span className="text-[11px] text-zinc-400">{opt.desc}</span>
-                        {active && (
-                          <span className="mt-2 text-gold">
-                            <Check size={16} />
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
+                {/* 1. Home Icons 9-Zone Position */}
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-gold">
+                    <Move size={13} />
+                    <span>{isRtl ? 'موضع شريط أيقونات الرئيسية على الشاشة' : 'Dashboard Icons Position'}</span>
+                  </div>
+                  <div dir="ltr" className="grid grid-cols-3 gap-1.5">
+                    {[
+                      { v: 'top' as const, h: 'left' as const, ar: 'أعلى يسار', en: 'Top Left' },
+                      { v: 'top' as const, h: 'center' as const, ar: 'أعلى الشاشة', en: 'Top' },
+                      { v: 'top' as const, h: 'right' as const, ar: 'أعلى يمين', en: 'Top Right' },
+                      { v: 'center' as const, h: 'left' as const, ar: 'الجانب الأيسر', en: 'Left Side' },
+                      { v: 'center' as const, h: 'center' as const, ar: 'المنتصف', en: 'Center' },
+                      { v: 'center' as const, h: 'right' as const, ar: 'الجانب الأيمن', en: 'Right Side' },
+                      { v: 'bottom' as const, h: 'left' as const, ar: 'أسفل يسار', en: 'Bottom Left' },
+                      { v: 'bottom' as const, h: 'center' as const, ar: 'أسفل الشاشة', en: 'Bottom' },
+                      { v: 'bottom' as const, h: 'right' as const, ar: 'أسفل يمين', en: 'Bottom Right' },
+                    ].map((cell) => {
+                      const active =
+                        (settings.dashboardAlignment || 'center') === cell.v &&
+                        (settings.dashboardHorizontalAlignment || 'center') === cell.h;
+                      return (
+                        <button
+                          key={`${cell.v}-${cell.h}`}
+                          data-tv-focusable="true"
+                          tabIndex={0}
+                          onClick={() => {
+                            onUpdateSettings((prev) => ({
+                              ...prev,
+                              dashboardAlignment: cell.v,
+                              dashboardHorizontalAlignment: cell.h,
+                            }));
+                          }}
+                          className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
+                            active
+                              ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
+                              : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
+                          }`}
+                        >
+                          <div
+                            className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${
+                              cell.v === 'top' ? 'items-start' : cell.v === 'bottom' ? 'items-end' : 'items-center'
+                            } ${
+                              cell.h === 'left' ? 'justify-start' : cell.h === 'right' ? 'justify-end' : 'justify-center'
+                            }`}
+                          >
+                            <span className={`w-3.5 h-1.5 rounded-sm ${active ? 'bg-gold' : 'bg-gold/70'}`} />
+                          </div>
+                          <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-3 space-y-2">
+                {/* 2. App Windows / Popups 9-Zone Position */}
+                <div className="border-t border-white/10 pt-2.5 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs font-bold text-gold">
+                    <AppWindow size={13} />
+                    <span>{isRtl ? 'موضع النوافذ المنبثقة على الشاشة' : 'Popups & Windows Position'}</span>
+                  </div>
+                  <div dir="ltr" className="grid grid-cols-3 gap-1.5">
+                    {SCREEN_POSITION_CELLS.map((cell) => {
+                      const active = (settings.windowPosition || 'center') === cell.id;
+                      const alignV = cell.id.startsWith('top') ? 'items-start' : cell.id.startsWith('bottom') ? 'items-end' : 'items-center';
+                      const alignH = cell.id.endsWith('left') ? 'justify-start' : cell.id.endsWith('right') ? 'justify-end' : 'justify-center';
+                      return (
+                        <button
+                          key={cell.id}
+                          data-tv-focusable="true"
+                          tabIndex={0}
+                          onClick={() => {
+                            setGlobalWindowPosition(cell.id);
+                            onUpdateSettings((prev) => ({ ...prev, windowPosition: cell.id }));
+                          }}
+                          className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
+                            active
+                              ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
+                              : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
+                          }`}
+                        >
+                          <div className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${alignV} ${alignH}`}>
+                            <span className={`w-3.5 h-2 rounded-sm ${active ? 'bg-gold' : 'bg-gold/65'}`} />
+                          </div>
+                          <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-2.5 space-y-1.5">
                   <div className="text-xs font-bold text-gold">{isRtl ? 'ترتيب إطارات لوحة التحكم' : 'Reorder Dashboard Tiles'}</div>
-                  <p className="text-[11px] text-zinc-400">{isRtl ? 'استخدم الأسهم لتحريك الإطار. يتم حفظ الترتيب تلقائياً.' : 'Use the arrows to move a tile. The order is saved automatically.'}</p>
                   {(() => {
                     const base = ['live', 'movies', 'series', 'add', 'settings'];
                     const order = [...(settings.dashboardOrder || []), ...base].filter((value, index, list) => base.includes(value) && list.indexOf(value) === index);
                     const names: Record<string, string> = { live: isRtl ? 'المباشر' : 'Live', movies: isRtl ? 'الأفلام' : 'Movies', series: isRtl ? 'المسلسلات' : 'Series', add: isRtl ? 'إضافة قائمة' : 'Add Playlist', settings: isRtl ? 'الإعدادات' : 'Settings' };
                     return order.map((kind, index) => (
-                      <div key={kind} className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10">
-                        <span className="text-xs font-semibold text-white">{index + 1}. {names[kind]}</span>
-                        <div className="flex items-center gap-1">
+                      <div key={kind} className="flex items-center justify-between gap-2 px-2.5 py-1 rounded-xl bg-white/[0.04] border border-white/10">
+                        <span className="text-[11px] font-semibold text-white truncate">{index + 1}. {names[kind]}</span>
+                        <div className="flex items-center gap-1 shrink-0">
                           {(['left', 'up', 'down', 'right'] as const).map(direction => (
                             <button key={direction} data-tv-focusable="true" tabIndex={0}
                               onClick={() => moveDashboardTile(kind, direction)}
                               title={direction}
-                              className="w-7 h-7 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-sm font-black transition-colors">
+                              className="w-6 h-6 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-xs font-black transition-colors cursor-pointer">
                               {direction === 'left' ? '←' : direction === 'right' ? '→' : direction === 'up' ? '↑' : '↓'}
                             </button>
                           ))}
@@ -1147,14 +1316,14 @@ if (currentView === 'settings') return (
                   })()}
                 </div>
 
-                <div className="flex justify-end pt-2">
+                <div className="flex justify-end pt-1 shrink-0">
                   <button
                     data-tv-focusable="true"
                     tabIndex={0}
                     onClick={() => setShowRepositionModal(false)}
-                    className="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-sm font-medium text-white transition-colors cursor-pointer"
+                    className="px-5 py-2 rounded-xl bg-gold text-black hover:brightness-110 text-xs sm:text-sm font-bold transition-colors cursor-pointer"
                   >
-                    {isRtl ? 'إغلاق' : 'Close'}
+                    {isRtl ? 'تم' : 'Done'}
                   </button>
                 </div>
               </motion.div>

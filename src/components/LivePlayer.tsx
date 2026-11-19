@@ -16,6 +16,7 @@ import VodPlayerModal from './VodPlayerModal';
 import EPGGrid from './EPGGrid';
 import VirtualizedChannelList, { VirtualizedChannelListHandle } from './VirtualizedChannelList';
 import PositionEditModal from './PositionEditModal';
+import { WindowPositionButton } from './WindowPositionBar';
 import { collection, query, where, getDocs, doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import axios from 'axios';
@@ -483,7 +484,7 @@ const LiveHeaderClock: React.FC<{ language?: string; timeFormat?: string }> = Re
           hour12: timeFormat === '12h'
         })}
       </span>
-      <span className="text-[10px] font-medium text-zinc-400 font-sans mt-0.5 whitespace-nowrap">
+      <span className="text-[10px] font-medium text-gold opacity-85 font-sans mt-0.5 whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
         {now.toLocaleDateString(loc, {
           weekday: 'short',
           day: 'numeric',
@@ -972,7 +973,7 @@ const MultiViewSlotPlayer: React.FC<{
           slotIndex,
           activeStreamUrl,
           JSON.stringify({
-            title: channel.name || 'Achour TV',
+            title: channel.name || 'Achour Player',
             isLive: true,
             autoPlay: true,
             muted: isMutedRef.current,
@@ -1023,11 +1024,21 @@ const MultiViewSlotPlayer: React.FC<{
 
     const video = videoRef.current;
     if (!video) return;
+    video.defaultPlaybackRate = 1;
+    video.playbackRate = 1;
 
     if (Hls.isSupported()) {
       const hls = new Hls({
-        maxBufferLength: 8,
-        maxMaxBufferLength: 15,
+        lowLatencyMode: false,
+        maxBufferLength: 10,
+        maxMaxBufferLength: 18,
+        liveSyncDurationCount: 4,
+        liveMaxLatencyDurationCount: 10,
+        liveDurationInfinity: true,
+        maxLiveSyncPlaybackRate: 1,
+        maxAudioFramesDrift: 1,
+        highBufferWatchdogPeriod: 2,
+        nudgeMaxRetry: 3,
         enableWorker: true,
         capLevelToPlayerSize: true,
       });
@@ -1238,7 +1249,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       try {
         const isFav = favorites.includes(targetItem?.stream_id || '');
         native.playMedia(finalUrl, JSON.stringify({
-          title: targetItem?.name || 'Achour TV',
+          title: targetItem?.name || 'Achour Player',
           logo: targetItem?.stream_icon || '',
           stream_id: targetItem?.stream_id || '',
           type: mediaType,
@@ -1775,45 +1786,31 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
   const scrollModalItemIntoContainer = useCallback(
     (container: HTMLElement | null, child: HTMLElement | null, axis: 'x' | 'y') => {
       if (!container || !child) return;
-
-      // Compute offset coordinates relative to container (100% immune to parent CSS transform: scale)
-      let offsetY = 0;
-      let offsetX = 0;
-      let node: HTMLElement | null = child;
-      while (node && node !== container) {
-        offsetY += node.offsetTop;
-        offsetX += node.offsetLeft;
-        node = node.offsetParent as HTMLElement | null;
-      }
-      // Fallback if offsetParent chain skipped container
-      if (node !== container) {
-        offsetY = child.offsetTop;
-        offsetX = child.offsetLeft;
-      }
-
-      if (axis === 'y') {
-        const pad = 10;
-        const itemTop = offsetY;
-        const itemBottom = offsetY + child.offsetHeight;
-        const viewTop = container.scrollTop;
-        const viewBottom = viewTop + container.clientHeight;
-        if (itemTop - pad < viewTop) {
-          container.scrollTop = Math.max(0, itemTop - pad);
-        } else if (itemBottom + pad > viewBottom) {
-          container.scrollTop = Math.max(0, itemBottom + pad - container.clientHeight);
+      try {
+        const contRect = container.getBoundingClientRect();
+        const childRect = child.getBoundingClientRect();
+        if (axis === 'y' && contRect.height > 0) {
+          const pad = 8;
+          const scaleY = container.clientHeight / contRect.height;
+          const relTop = (childRect.top - contRect.top) * scaleY;
+          const relBottom = (childRect.bottom - contRect.top) * scaleY;
+          if (relTop < pad) {
+            container.scrollTop = Math.max(0, container.scrollTop + relTop - pad);
+          } else if (relBottom + pad > container.clientHeight) {
+            container.scrollTop = Math.max(0, container.scrollTop + relBottom + pad - container.clientHeight);
+          }
+        } else if (axis === 'x' && contRect.width > 0) {
+          const pad = 10;
+          const scaleX = container.clientWidth / contRect.width;
+          const relLeft = (childRect.left - contRect.left) * scaleX;
+          const relRight = (childRect.right - contRect.left) * scaleX;
+          if (relLeft < pad) {
+            container.scrollLeft = Math.max(0, container.scrollLeft + relLeft - pad);
+          } else if (relRight + pad > container.clientWidth) {
+            container.scrollLeft = Math.max(0, container.scrollLeft + relRight + pad - container.clientWidth);
+          }
         }
-      } else {
-        const pad = 12;
-        const itemLeft = offsetX;
-        const itemRight = offsetX + child.offsetWidth;
-        const viewLeft = container.scrollLeft;
-        const viewRight = viewLeft + container.clientWidth;
-        if (itemLeft - pad < viewLeft) {
-          container.scrollLeft = Math.max(0, itemLeft - pad);
-        } else if (itemRight + pad > viewRight) {
-          container.scrollLeft = Math.max(0, itemRight + pad - container.clientWidth);
-        }
-      }
+      } catch {}
     },
     []
   );
@@ -4749,8 +4746,8 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
           {/* Center Column: Multi View 1 2 4 */}
           <div className="flex items-center justify-center min-w-0 gap-3">
             {(mediaType === 'live' || mediaType === 'favorites') && (
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-zinc-200">
-                <span className="select-none text-zinc-300 font-bold">Multi View</span>
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-gold" style={{ color: 'var(--theme-primary)' }}>
+                <span className="select-none text-gold font-bold" style={{ color: 'var(--theme-primary)' }}>Multi View</span>
                 <div className="flex items-center gap-2">
                   {([1, 2, 4] as const).map((modeNum, idx) => (
                     <button
@@ -4784,10 +4781,11 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                           if (el) setTVFocus(el, { scroll: false });
                         }, 50);
                       }}
-                      className={`px-2.5 py-1 rounded-md bg-transparent flex items-center justify-center font-mono font-black text-sm sm:text-base transition-colors cursor-pointer outline-none ${
+                      style={{ color: 'var(--theme-primary)' }}
+                      className={`px-2.5 py-1 rounded-md flex items-center justify-center font-mono font-black text-sm sm:text-base transition-all cursor-pointer outline-none ${
                         multiViewActive && multiViewMode === modeNum
-                          ? 'text-gold'
-                          : 'text-white/80 hover:text-gold'
+                          ? 'text-gold bg-gold/20 border border-gold/60 shadow-[0_0_12px_var(--theme-glow)] scale-105 opacity-100'
+                          : 'bg-transparent text-gold opacity-85 hover:opacity-100'
                       }`}
                     >
                       {modeNum}
@@ -5068,184 +5066,183 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.98, opacity: 0 }}
                   transition={{ duration: 0.04 }}
-                  className={`achour-tv-details-popup w-[86%] sm:w-[82%] max-w-4xl ${hasSeasonsSection ? 'h-[86%] max-h-[88%]' : 'max-h-[82%]'} achour-glass-modal rounded-2xl p-3 sm:p-4 flex flex-col overflow-hidden ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
+                  className={`achour-tv-details-popup w-[88%] sm:w-[70%] max-w-xl ${hasSeasonsSection ? 'h-[70vh] sm:h-[72vh] max-h-[74vh]' : 'max-h-[70vh]'} achour-glass-modal rounded-2xl p-2.5 sm:p-3.5 flex flex-col overflow-hidden ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
                 >
                   {/* 1. Sticky Modal Title Bar */}
-                  <div className={`flex items-center justify-between pb-2 border-b border-white/10 shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                    <div className={`flex items-center gap-2.5 min-w-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                      <div className="p-1.5 sm:p-2 rounded-xl bg-gold/20 text-gold shrink-0">
-                        {mediaType === 'movie' ? <Film size={16} /> : <Clapperboard size={16} />}
+                  <div className={`flex items-center justify-between pb-1.5 border-b border-white/10 shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className={`flex items-center gap-2 min-w-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                      <div className="p-1.5 rounded-xl bg-gold/20 text-gold shrink-0">
+                        {mediaType === 'movie' ? <Film size={15} /> : <Clapperboard size={15} />}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-wider truncate">
+                        <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider truncate">
                           {movieDetailsModal.name}
                         </h2>
-                        <p className="text-[10px] sm:text-xs text-gold/85 font-bold uppercase truncate mt-0.5">
+                        <p className="text-[10px] text-gold/85 font-bold uppercase truncate">
                           {movieDetailsModal?.category_name || (mediaType === 'movie' ? (isRtl ? 'فيلم سينمائي' : 'Movie') : (isRtl ? 'مسلسل تلفزيوني' : 'TV Series'))}
                         </p>
                       </div>
                     </div>
-                    <button
-                      data-tv-focusable="true"
-                      data-tv-modal="details"
-                      data-modal-role="close"
-                      tabIndex={0}
-                      onClick={() => setMovieDetailsModal(null)}
-                      className="p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0"
-                      title={isRtl ? 'إغلاق (Esc)' : 'Close (Esc)'}
-                    >
-                      <X size={18} />
-                    </button>
+                    <div className="flex items-center gap-1 shrink-0">
+                      <WindowPositionButton isRtl={isRtl} tvModalTag="details" />
+                      <button
+                        data-tv-focusable="true"
+                        data-tv-modal="details"
+                        data-modal-role="close"
+                        tabIndex={0}
+                        onClick={() => setMovieDetailsModal(null)}
+                        className="p-1.5 text-zinc-400 hover:text-white focus:text-gold rounded-full transition-colors outline-none shrink-0"
+                        title={isRtl ? 'إغلاق (Esc)' : 'Close (Esc)'}
+                      >
+                        <X size={17} />
+                      </button>
+                    </div>
                   </div>
 
-                  {/* 2. Fixed Sticky Poster + Movie/Series Info & Synopsis (NEVER scrolls when browsing episodes) */}
-                  <div className={`${hasSeasonsSection ? 'py-1.5' : 'py-2'} flex flex-row gap-3 sm:gap-4 items-start shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  {/* 2. Fixed Sticky Poster + Info (Compact single strip on Series so Seasons & Episodes move up cleanly) */}
+                  <div className={`${hasSeasonsSection ? 'py-1.5 gap-2.5' : 'py-2 gap-3 sm:gap-4'} flex flex-row items-start shrink-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
                     {/* Fixed Poster */}
-                    <div className={`${hasSeasonsSection ? 'w-14 sm:w-16 md:w-20' : 'w-20 sm:w-24 md:w-28'} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`}>
-                    <img 
-                      src={mediaDetailInfo?.info?.cover_big || mediaDetailInfo?.info?.movie_image || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo} 
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover" 
-                      onError={e => { e.currentTarget.style.display = 'none'; }} 
-                      alt="" 
-                    />
-                  </div>
-
-                  {/* Fixed Details & Story Column */}
-                  <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 min-w-0">
-                    {(resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && (
-                      <div className="flex items-center flex-wrap gap-1.5 text-[11px] sm:text-xs font-bold">
-                        {resolvedRating && (
-                          <span className="px-2 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30">
-                            ★ {resolvedRating}
-                          </span>
-                        )}
-                        {resolvedRelease && (
-                          <span className="px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10">
-                            {resolvedRelease}
-                          </span>
-                        )}
-                        {resolvedDuration && (
-                          <span className="px-2 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10">
-                            {resolvedDuration}
-                          </span>
-                        )}
-                        {resolvedGenre && (
-                          <span className="px-2 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[260px]">
-                            {resolvedGenre}
-                          </span>
-                        )}
-                      </div>
-                    )}
-
-                    <div>
-                      <h3 className="text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5">
-                        {isRtl ? 'قصة العمل' : 'Synopsis & Plot'}
-                      </h3>
-                      {detailLoading && !resolvedPlot ? (
-                        <div className="flex items-center gap-2 py-1.5 text-gold text-xs font-bold">
-                          <div className="w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin" />
-                          <span>{isRtl ? 'جاري تحميل التفاصيل...' : 'Loading details...'}</span>
-                        </div>
-                      ) : (
-                        <p className={`text-xs sm:text-sm text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? 'line-clamp-2' : 'max-h-36 overflow-y-auto no-scrollbar'}`}>
-                          {resolvedPlot || (isRtl ? 'لا تتوفر قصة لهذا العمل في بيانات الاشتراك.' : 'No synopsis provided by the playlist.')}
-                        </p>
-                      )}
+                    <div className={`${hasSeasonsSection ? 'w-11 sm:w-14' : 'w-16 sm:w-22 md:w-24'} aspect-[2/3] rounded-xl overflow-hidden border border-gold/30 shrink-0 bg-white/[0.04]`}>
+                      <img 
+                        src={mediaDetailInfo?.info?.cover_big || mediaDetailInfo?.info?.movie_image || movieDetailsModal.stream_icon || movieDetailsModal.cover || movieDetailsModal.logo} 
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover" 
+                        onError={e => { e.currentTarget.style.display = 'none'; }} 
+                        alt="" 
+                      />
                     </div>
 
-                    {(resolvedCast || resolvedDirector) && (
-                      <div className="space-y-0.5 text-xs">
-                        {resolvedCast && (
-                          <p className={hasSeasonsSection ? 'truncate text-zinc-300' : 'line-clamp-2 text-zinc-300'}>
-                            <span className="font-black uppercase text-gold tracking-wider">
-                              {isRtl ? 'طاقم التمثيل: ' : 'Cast: '}
+                    {/* Fixed Details & Story Column */}
+                    <div className="flex-1 flex flex-col gap-1 min-w-0">
+                      {(resolvedRating || resolvedRelease || resolvedGenre || resolvedDuration) && (
+                        <div className="flex items-center flex-wrap gap-1 text-[10px] sm:text-[11px] font-bold">
+                          {resolvedRating && (
+                            <span className="px-1.5 py-0.5 rounded-md bg-gold/20 text-gold border border-gold/30">
+                              ★ {resolvedRating}
                             </span>
-                            {resolvedCast}
-                          </p>
+                          )}
+                          {resolvedRelease && (
+                            <span className="px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10">
+                              {resolvedRelease}
+                            </span>
+                          )}
+                          {!hasSeasonsSection && resolvedDuration && (
+                            <span className="px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-200 border border-white/10">
+                              {resolvedDuration}
+                            </span>
+                          )}
+                          {resolvedGenre && (
+                            <span className="px-1.5 py-0.5 rounded-md bg-white/10 text-zinc-300 border border-white/10 truncate max-w-[200px]">
+                              {resolvedGenre}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      <div>
+                        {!hasSeasonsSection && (
+                          <h3 className="text-[11px] sm:text-xs font-black uppercase text-gold tracking-widest mb-0.5">
+                            {isRtl ? 'قصة العمل' : 'Synopsis & Plot'}
+                          </h3>
                         )}
-                        {resolvedDirector && (
-                          <p className="truncate text-zinc-300">
-                            <span className="font-black uppercase text-gold tracking-wider">
-                              {isRtl ? 'الإخراج: ' : 'Director: '}
-                            </span>
-                            {resolvedDirector}
+                        {detailLoading && !resolvedPlot ? (
+                          <div className="flex items-center gap-2 py-1 text-gold text-xs font-bold">
+                            <div className="w-3.5 h-3.5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+                            <span>{isRtl ? 'جاري تحميل التفاصيل...' : 'Loading details...'}</span>
+                          </div>
+                        ) : (
+                          <p className={`text-[11px] sm:text-xs text-zinc-200 leading-snug font-medium ${hasSeasonsSection ? 'line-clamp-1 sm:line-clamp-2' : 'max-h-32 overflow-y-auto no-scrollbar'}`}>
+                            {resolvedPlot || (isRtl ? 'لا تتوفر قصة لهذا العمل في بيانات الاشتراك.' : 'No synopsis provided by the playlist.')}
                           </p>
                         )}
                       </div>
-                    )}
 
-                    {/* Subtitles & Audio Languages Badges extracted from subscription */}
-                    {Boolean(
-                      (mediaDetailInfo?.info?.subtitles && (mediaDetailInfo.info.subtitles.length > 0 || Object.keys(mediaDetailInfo.info.subtitles).length > 0)) ||
-                      (mediaDetailInfo?.movie_data?.subtitles && mediaDetailInfo.movie_data.subtitles.length > 0) ||
-                      mediaDetailInfo?.info?.audio ||
-                      mediaDetailInfo?.info?.audio_streams
-                    ) && (
-                      <div className="p-2 rounded-xl bg-white/[0.05] border border-white/10 flex flex-col gap-1.5">
-                        {Boolean((mediaDetailInfo?.info?.subtitles && (Array.isArray(mediaDetailInfo.info.subtitles) ? mediaDetailInfo.info.subtitles.length > 0 : Object.keys(mediaDetailInfo.info.subtitles).length > 0)) || (mediaDetailInfo?.movie_data?.subtitles && mediaDetailInfo.movie_data.subtitles.length > 0)) && (
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[10px] sm:text-xs text-emerald-400 font-bold flex items-center gap-1 shrink-0">
-                              <Layers size={13} />
-                              {isRtl ? 'الترجمة المتوفرة:' : 'Subtitles:'}
-                            </span>
-                            {(Array.isArray(mediaDetailInfo?.info?.subtitles)
-                              ? mediaDetailInfo.info.subtitles
-                              : Object.values(mediaDetailInfo?.info?.subtitles || mediaDetailInfo?.movie_data?.subtitles || {})
-                            ).slice(0, 6).map((sub: any, sIdx: number) => {
-                              const code = typeof sub === 'string' ? sub : (sub.language || sub.lang || sub.container || 'ar');
-                              return (
-                                <span key={sIdx} className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
-                                  {formatLanguageLabel(code, sIdx, 'subtitle')}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        )}
+                      {!hasSeasonsSection && (resolvedCast || resolvedDirector) && (
+                        <div className="space-y-0.5 text-xs">
+                          {resolvedCast && (
+                            <p className="line-clamp-2 text-zinc-300">
+                              <span className="font-black uppercase text-gold tracking-wider">
+                                {isRtl ? 'طاقم التمثيل: ' : 'Cast: '}
+                              </span>
+                              {resolvedCast}
+                            </p>
+                          )}
+                          {resolvedDirector && (
+                            <p className="truncate text-zinc-300">
+                              <span className="font-black uppercase text-gold tracking-wider">
+                                {isRtl ? 'الإخراج: ' : 'Director: '}
+                              </span>
+                              {resolvedDirector}
+                            </p>
+                          )}
+                        </div>
+                      )}
 
-                        {Boolean(mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams) && (
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[10px] sm:text-xs text-red-400 font-bold flex items-center gap-1 shrink-0">
-                              <Volume2 size={13} />
-                              {isRtl ? 'لغات الصوت:' : 'Audio:'}
-                            </span>
-                            {(Array.isArray(mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams)
-                              ? (mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams)
-                              : [mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams]
-                            ).slice(0, 6).map((aud: any, aIdx: number) => {
-                              const code = typeof aud === 'string' ? aud : (aud.language || aud.lang || 'Stereo');
-                              return (
-                                <span key={aIdx} className="px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-bold">
-                                  {formatLanguageLabel(code, aIdx, 'audio')}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        )}
-                      </div>
-                    )}
+                      {/* Subtitles & Audio Languages Badges extracted from subscription (Movies only to preserve Series episode room) */}
+                      {!hasSeasonsSection && Boolean(
+                        (mediaDetailInfo?.info?.subtitles && (mediaDetailInfo.info.subtitles.length > 0 || Object.keys(mediaDetailInfo.info.subtitles).length > 0)) ||
+                        (mediaDetailInfo?.movie_data?.subtitles && mediaDetailInfo.movie_data.subtitles.length > 0) ||
+                        mediaDetailInfo?.info?.audio ||
+                        mediaDetailInfo?.info?.audio_streams
+                      ) && (
+                        <div className="p-2 rounded-xl bg-white/[0.05] border border-white/10 flex flex-col gap-1.5">
+                          {Boolean((mediaDetailInfo?.info?.subtitles && (Array.isArray(mediaDetailInfo.info.subtitles) ? mediaDetailInfo.info.subtitles.length > 0 : Object.keys(mediaDetailInfo.info.subtitles).length > 0)) || (mediaDetailInfo?.movie_data?.subtitles && mediaDetailInfo.movie_data.subtitles.length > 0)) && (
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] sm:text-xs text-emerald-400 font-bold flex items-center gap-1 shrink-0">
+                                <Layers size={13} />
+                                {isRtl ? 'الترجمة المتوفرة:' : 'Subtitles:'}
+                              </span>
+                              {(Array.isArray(mediaDetailInfo?.info?.subtitles)
+                                ? mediaDetailInfo.info.subtitles
+                                : Object.values(mediaDetailInfo?.info?.subtitles || mediaDetailInfo?.movie_data?.subtitles || {})
+                              ).slice(0, 6).map((sub: any, sIdx: number) => {
+                                const code = typeof sub === 'string' ? sub : (sub.language || sub.lang || sub.container || 'ar');
+                                return (
+                                  <span key={sIdx} className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+                                    {formatLanguageLabel(code, sIdx, 'subtitle')}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          )}
+
+                          {Boolean(mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams) && (
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] sm:text-xs text-red-400 font-bold flex items-center gap-1 shrink-0">
+                                <Volume2 size={13} />
+                                {isRtl ? 'لغات الصوت:' : 'Audio:'}
+                              </span>
+                              {(Array.isArray(mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams)
+                                ? (mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams)
+                                : [mediaDetailInfo?.info?.audio || mediaDetailInfo?.info?.audio_streams]
+                              ).slice(0, 6).map((aud: any, aIdx: number) => {
+                                const code = typeof aud === 'string' ? aud : (aud.language || aud.lang || 'Stereo');
+                                return (
+                                  <span key={aIdx} className="px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 border border-red-500/30 text-[10px] font-bold">
+                                    {formatLanguageLabel(code, aIdx, 'audio')}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
 
                 {/* 3. Independently Scrollable Seasons & Episodes Area (Series Only) */}
                 {hasSeasonsSection && (
-                  <div className="flex-1 min-h-0 flex flex-col border-t border-white/10 pt-2 overflow-hidden">
-                    {/* Fixed Seasons Header & Tabs */}
-                    <div className="shrink-0 space-y-1 pb-1.5">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xs sm:text-sm font-black uppercase text-gold tracking-widest">
-                          {isRtl ? 'المواسم والحلقات' : 'Seasons & Episodes'}
-                        </h3>
-                        <span className="text-[11px] sm:text-xs text-zinc-400 font-bold">
-                          {seriesSeasonsData.length} {isRtl ? 'مواسم' : 'Seasons'}
-                        </span>
-                      </div>
-
+                  <div className="flex-1 min-h-0 flex flex-col border-t border-white/10 pt-1.5 overflow-hidden">
+                    {/* Fixed Seasons Header & Tabs (Compact & elevated) */}
+                    <div className="shrink-0 flex items-center gap-2.5 pb-1.5">
+                      <h3 className="text-[11px] sm:text-xs font-black uppercase text-gold tracking-wider shrink-0">
+                        {isRtl ? 'المواسم' : 'Seasons'} ({seriesSeasonsData.length})
+                      </h3>
                       <div
                         ref={detailsSeasonsScrollRef}
-                        className="relative flex items-center gap-2.5 overflow-x-auto no-scrollbar px-1.5 py-1.5"
+                        className="relative flex-1 flex items-center gap-2 overflow-x-auto no-scrollbar px-1 py-0.5"
                       >
                         {seriesSeasonsData.map((s, sIdx) => {
                           const isSelected = selectedSeasonNum === s.seasonNumber;
@@ -5258,7 +5255,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                               data-season-active={isSelected ? 'true' : 'false'}
                               tabIndex={0}
                               onClick={() => setSelectedSeasonNum(s.seasonNumber)}
-                              className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${
+                              className={`px-3 py-1 rounded-lg text-[11px] sm:text-xs font-bold whitespace-nowrap transition-colors border outline-none shrink-0 ${
                                 isSelected
                                   ? 'bg-gold text-black border-gold'
                                   : 'bg-white/[0.06] border-white/15 text-zinc-200 hover:text-white hover:border-gold/50'
@@ -5271,10 +5268,11 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                       </div>
                     </div>
 
-                    {/* ONLY Scrollable Episodes List (generous height & padding ensure focus rings never clip and all episodes are easy to view) */}
+                    {/* ONLY Scrollable Episodes List (flex-1 min-h-0 guarantees zero bottom overflow on phones & crisp non-overlapping rows) */}
                     <div
                       ref={detailsEpisodesScrollRef}
-                      className="relative flex-1 min-h-[180px] overflow-y-auto no-scrollbar space-y-2 py-2 px-1.5"
+                      style={{ scrollPaddingTop: 8, scrollPaddingBottom: 8 }}
+                      className="relative flex-1 min-h-0 overflow-y-auto no-scrollbar flex flex-col gap-2 py-2 px-1"
                     >
                       {activeEpisodes.length === 0 ? (
                         <div className="py-6 text-center text-xs sm:text-sm text-zinc-400 font-medium">
@@ -5315,6 +5313,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                               key={`${ep.stream_id}-${epIdx}`}
                               data-tv-focusable="true"
                               data-tv-modal="details"
+                              data-tv-focus-inset="true"
                               data-episode-item="true"
                               data-episode-id={epCleanId}
                               data-episode-resume={hasEpResume ? 'true' : 'false'}
@@ -5334,28 +5333,28 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                                   setMovieDetailsModal(null);
                                 }
                               }}
-                              className={`flex items-center justify-between p-2.5 rounded-xl border transition-colors group cursor-pointer outline-none ${
+                              className={`shrink-0 min-h-[42px] flex items-center justify-between px-3 py-2 rounded-xl border transition-colors group cursor-pointer outline-none ${
                                 hasEpResume
                                   ? 'bg-gold/[0.08] border-gold/45 hover:border-gold hover:bg-gold/15'
                                   : 'bg-white/[0.05] border-white/15 hover:border-gold/60 hover:bg-gold/15'
                               }`}
                             >
-                              <div className="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs sm:text-sm shrink-0">
+                              <div className="w-7 h-7 rounded-lg bg-gold/20 flex items-center justify-center text-gold font-mono font-bold text-xs shrink-0">
                                 {ep.episode || epIdx + 1}
                               </div>
-                              <div className={`min-w-0 flex-1 ${isRtl ? 'mr-3' : 'ml-3'}`}>
+                              <div className={`min-w-0 flex-1 ${isRtl ? 'mr-2.5' : 'ml-2.5'}`}>
                                 <div className="flex items-center gap-2 min-w-0">
-                                  <p className="text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors whitespace-normal break-words leading-snug flex-1">
+                                  <p className="text-xs sm:text-sm font-bold text-white group-hover:text-gold transition-colors truncate flex-1 leading-tight">
                                     {ep.name}
                                   </p>
                                   {isEpCompleted && (
-                                    <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1">
+                                    <span className="px-1.5 py-0.5 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold shrink-0 flex items-center gap-1">
                                       <Check size={10} />
                                       {isRtl ? 'تمت المشاهدة' : 'Watched'}
                                     </span>
                                   )}
                                   {hasEpResume && epProg && (
-                                    <span className="px-2 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0">
+                                    <span className="px-1.5 py-0.5 rounded-md bg-gold/20 border border-gold/40 text-gold text-[10px] font-mono font-bold shrink-0">
                                       {isRtl
                                         ? `توقفت عند ${formatPlaybackClock(epProg.positionSec)}`
                                         : `Paused ${formatPlaybackClock(epProg.positionSec)}`}
@@ -5363,12 +5362,12 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                                   )}
                                 </div>
                                 {epPct > 0 && (
-                                  <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1.5">
+                                  <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden mt-1">
                                     <div className="h-full bg-gold rounded-full" style={{ width: `${epPct}%` }} />
                                   </div>
                                 )}
                               </div>
-                              <Play size={14} className="text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" />
+                              <Play size={13} className="text-gold/80 shrink-0 opacity-75 group-hover:opacity-100 ml-2" />
                             </div>
                           );
                         })

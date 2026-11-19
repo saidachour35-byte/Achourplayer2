@@ -131,8 +131,9 @@ public class AchourNativePlayerView extends FrameLayout {
                         .setReadTimeoutMs(15000);
 
         persistentMediaSourceFactory = new DefaultMediaSourceFactory(persistentHttpFactory);
+        // Disable chunkless preparation so HlsSampleStreamWrapper reads initial segment PMT/PTS and locks Audio/Video TimestampAdjuster before starting renderers
         persistentHlsFactory = new HlsMediaSource.Factory(persistentHttpFactory)
-                .setAllowChunklessPreparation(true);
+                .setAllowChunklessPreparation(false);
 
         buildExoPlayer(context, false);
     }
@@ -141,10 +142,10 @@ public class AchourNativePlayerView extends FrameLayout {
         if (isMultiSlot) {
             return new DefaultLoadControl.Builder()
                     .setBufferDurationsMs(
-                            2500,   // minBufferMs (lightweight for 2-4 concurrent slots)
-                            7000,   // maxBufferMs
-                            450,    // bufferForPlaybackMs
-                            1000    // bufferForPlaybackAfterRebufferMs
+                            2800,   // minBufferMs (lightweight for 2-4 concurrent slots)
+                            7500,   // maxBufferMs
+                            1100,   // bufferForPlaybackMs (waits for aligned A/V keyframe before AudioTrack starts)
+                            1800    // bufferForPlaybackAfterRebufferMs
                     )
                     .setTargetBufferBytes(6 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
@@ -154,12 +155,12 @@ public class AchourNativePlayerView extends FrameLayout {
         if (forLive) {
             return new DefaultLoadControl.Builder()
                     .setBufferDurationsMs(
-                            3000,   // minBufferMs (keeps HTTP live socket draining continuously without server idle drops)
-                            8000,   // maxBufferMs (prevents 12-18s burst-idle stalls on TS/HLS IPTV streams)
-                            700,    // bufferForPlaybackMs (crisp zapping without immediate underrun)
-                            1400    // bufferForPlaybackAfterRebufferMs
+                            3800,   // minBufferMs (keeps HTTP live socket draining continuously without server idle drops)
+                            9500,   // maxBufferMs (prevents 12-18s burst-idle stalls on TS/HLS IPTV streams)
+                            1600,   // bufferForPlaybackMs (buffers ~1.6s aligned A/V GOP before AudioTrack starts to prevent lip-sync offset)
+                            2400    // bufferForPlaybackAfterRebufferMs
                     )
-                    .setTargetBufferBytes(10 * 1024 * 1024)
+                    .setTargetBufferBytes(12 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
                     .setBackBuffer(0, false)
                     .build();
@@ -196,7 +197,8 @@ public class AchourNativePlayerView extends FrameLayout {
 
         DefaultRenderersFactory renderersFactory =
                 new DefaultRenderersFactory(context)
-                        .setEnableDecoderFallback(true);
+                        .setEnableDecoderFallback(true)
+                        .setAllowedVideoJoiningTimeMs(5000L);
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
                 .setUsage(C.USAGE_MEDIA)
@@ -430,9 +432,12 @@ public class AchourNativePlayerView extends FrameLayout {
         }
 
         if (isLiveStream && isHlsStream) {
-            // Keep natural playlist live hold-back at steady 1.0x speed so Fire TV never starves or resamples audio every ~20s
+            // Anchor 3.5s behind live edge at steady 1.0x speed so AudioTrack never resamples or scrambles ahead of video
             item.setLiveConfiguration(
                     new MediaItem.LiveConfiguration.Builder()
+                            .setTargetOffsetMs(3500L)
+                            .setMinOffsetMs(2000L)
+                            .setMaxOffsetMs(8000L)
                             .setMinPlaybackSpeed(1.0f)
                             .setMaxPlaybackSpeed(1.0f)
                             .build()
@@ -479,7 +484,14 @@ public class AchourNativePlayerView extends FrameLayout {
         } catch (Exception ignored) {
         }
 
-        if (!isLiveStream) {
+        // Flush previous channel AudioTrack/MediaCodec clock before preparing a new live stream
+        if (isLiveStream) {
+            try {
+                player.stop();
+            } catch (Exception ignored) {
+            }
+            player.setPlaybackParameters(PlaybackParameters.DEFAULT);
+        } else {
             // Clear any previous overrides and start with subtitles OFF until explicitly selected by user
             TrackSelectionParameters resetParams = player.getTrackSelectionParameters()
                     .buildUpon()

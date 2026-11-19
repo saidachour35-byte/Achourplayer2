@@ -53,6 +53,23 @@ export interface Playlist {
   epgUrl?: string;
 }
 
+export type ScreenPosition =
+  | 'center'
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right';
+
+export type IconDisplayMode = 'icons-only' | 'with-frames';
+export type LegacyIconPackId = 'pack-3d' | 'pack-glass' | 'pack-metallic' | 'pack-neon' | 'pack-geometric';
+export type IconPackId = LegacyIconPackId | (string & {});
+export type LegacyFrameShapeId = 'circle' | 'rounded-square' | 'hexagon' | 'geometric' | 'glass' | 'metallic';
+export type FrameShapeId = LegacyFrameShapeId | (string & {});
+
 export interface AppSettings {
   language: Language;
   hiddenCategories: string[];
@@ -71,7 +88,13 @@ export interface AppSettings {
     series: string[];
   };
   royalThemeColor?: string;
+  customThemeColor?: string | null;
   icon3DStyle?: string;
+  iconDisplayMode?: IconDisplayMode;
+  iconPack?: IconPackId;
+  frameShape?: FrameShapeId;
+  glassOpacity?: number;
+  glassBlur?: number;
   backgroundStyle?: string;
   customBackground?: string | { type: 'image' | 'video'; url: string; name: string; } | null;
   vpnEnabled?: boolean;
@@ -86,6 +109,7 @@ export interface AppSettings {
   tileSpacing?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   dashboardAlignment?: 'top' | 'center' | 'bottom';
   dashboardHorizontalAlignment?: 'left' | 'center' | 'right';
+  windowPosition?: ScreenPosition;
   zoomScale?: number;
   settingsScale?: number;
   livePageScale?: number;
