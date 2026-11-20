@@ -1,3 +1,4 @@
+
 name: Build Android & Fire TV APKs (Achour Player)
 
 on:
@@ -16,10 +17,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js LTS
+      - name: Set up Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
@@ -68,7 +70,7 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleDebug assembleRelease --stacktrace --no-daemon
 
-      - name: Upload Fire TV & Android Signed APKs
+      - name: Upload Fire TV & Android APKs
         uses: actions/upload-artifact@v4
         with:
           name: AchourPlayer-FireTV-APKs
