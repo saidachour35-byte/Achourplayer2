@@ -3,10 +3,10 @@ package com.achourplayer.app;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,80 +28,69 @@ import androidx.media3.ui.PlayerView;
 
 import org.json.JSONObject;
 
-import java.security.SecureRandom;
-import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
 
 public class NativePlayerActivity extends AppCompatActivity {
 
+    private static final String TAG = "NativePlayerActivity";
+
     public static final String EXTRA_URL = "achour.extra.URL";
     public static final String EXTRA_OPTIONS = "achour.extra.OPTIONS";
 
+    private static final int MAX_RETRIES = 4;
+    private static final long RETRY_DELAY_MS = 800L;
+    private static final long MAX_RETRY_DELAY_MS = 5000L;
+
     private ExoPlayer player;
     private PlayerView playerView;
-    private OkHttpDataSource.Factory httpFactory;
     private DefaultMediaSourceFactory mediaSourceFactory;
 
     private String currentUrl = "";
     private String currentTitle = "Achour TV";
-    private boolean triedFallbackFormat = false;
     private int retryCount = 0;
-    private static final int MAX_RETRIES = 6;
+    private boolean retryScheduled = false;
+
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
-    private OkHttpClient createUnsafeOkHttpClient() {
-        ConnectionPool connectionPool = new ConnectionPool(5, 45, TimeUnit.SECONDS);
-        try {
-            final X509TrustManager trustManager = new X509TrustManager() {
-                @Override
-                public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+    private final Runnable retryRunnable = new Runnable() {
+        @Override
+        public void run() {
+            retryScheduled = false;
 
-                @Override
-                public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+            if (isFinishing() || isDestroyed() || player == null) {
+                return;
+            }
 
-                @Override
-                public X509Certificate[] getAcceptedIssuers() {
-                    return new X509Certificate[]{};
-                }
-            };
-
-            final SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, new TrustManager[]{trustManager}, new SecureRandom());
-            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
-
-            return new OkHttpClient.Builder()
-                    .sslSocketFactory(sslSocketFactory, trustManager)
-                    .hostnameVerifier((hostname, session) -> true)
-                    .connectionPool(connectionPool)
-                    .pingInterval(15, TimeUnit.SECONDS)
-                    .followRedirects(true)
-                    .followSslRedirects(true)
-                    .retryOnConnectionFailure(true)
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(25, TimeUnit.SECONDS)
-                    .build();
-        } catch (Exception e) {
-            return new OkHttpClient.Builder()
-                    .connectionPool(connectionPool)
-                    .pingInterval(15, TimeUnit.SECONDS)
-                    .followRedirects(true)
-                    .followSslRedirects(true)
-                    .retryOnConnectionFailure(true)
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(25, TimeUnit.SECONDS)
-                    .build();
+            Log.w(TAG, "Retrying playback, attempt " + retryCount);
+            player.prepare();
+            player.play();
         }
+    };
+
+    /**
+     * Uses OkHttp's standard TLS certificate and hostname verification.
+     * Do not install a trust-all TrustManager or hostname verifier here.
+     */
+    private OkHttpClient createOkHttpClient() {
+        ConnectionPool connectionPool =
+                new ConnectionPool(5, 45, TimeUnit.SECONDS);
+
+        return new OkHttpClient.Builder()
+                .connectionPool(connectionPool)
+                .pingInterval(15, TimeUnit.SECONDS)
+                .followRedirects(true)
+                .followSslRedirects(true)
+                .retryOnConnectionFailure(true)
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .build();
     }
 
     @Override
@@ -115,33 +104,39 @@ public class NativePlayerActivity extends AppCompatActivity {
         String optionsJson = getIntent().getStringExtra(EXTRA_OPTIONS);
 
         if (url == null || url.trim().isEmpty()) {
-            Toast.makeText(this, "Stream URL is missing", Toast.LENGTH_LONG).show();
+            Log.e(TAG, "Stream URL is missing");
             finish();
             return;
         }
 
         currentUrl = url.trim();
+
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "VLC/3.0.18 LibVLC/3.0.18");
         headers.put("Accept", "*/*");
         headers.put("Connection", "keep-alive");
 
         try {
-            JSONObject options = new JSONObject(optionsJson == null ? "{}" : optionsJson);
+            JSONObject options =
+                    new JSONObject(optionsJson == null ? "{}" : optionsJson);
+
             currentTitle = options.optString("title", currentTitle);
 
             JSONObject headerObject = options.optJSONObject("headers");
             if (headerObject != null) {
                 Iterator<String> keys = headerObject.keys();
+
                 while (keys.hasNext()) {
                     String key = keys.next();
                     String value = headerObject.optString(key, "");
+
                     if (!value.isEmpty()) {
                         headers.put(key, value);
                     }
                 }
             }
-        } catch (Exception ignored) {
+        } catch (Exception exception) {
+            Log.w(TAG, "Could not parse playback options", exception);
         }
 
         playerView = new PlayerView(this);
@@ -150,35 +145,42 @@ public class NativePlayerActivity extends AppCompatActivity {
         playerView.setShowBuffering(PlayerView.SHOW_BUFFERING_WHEN_PLAYING);
         setContentView(playerView);
 
-        OkHttpClient okHttpClient = createUnsafeOkHttpClient();
-        httpFactory = new OkHttpDataSource.Factory(okHttpClient);
-        httpFactory.setUserAgent("VLC/3.0.18 LibVLC/3.0.18");
+        OkHttpDataSource.Factory httpFactory =
+                new OkHttpDataSource.Factory(createOkHttpClient());
+        httpFactory.setUserAgent(headers.get("User-Agent"));
         httpFactory.setDefaultRequestProperties(headers);
 
-        DefaultExtractorsFactory extractorsFactory = new DefaultExtractorsFactory()
-                .setConstantBitrateSeekingEnabled(true)
-                .setTsExtractorFlags(
-                        DefaultTsPayloadReaderFactory.FLAG_ALLOW_NON_IDR_KEYFRAMES
-                                | DefaultTsPayloadReaderFactory.FLAG_DETECT_ACCESS_UNITS
-                );
+        DefaultExtractorsFactory extractorsFactory =
+                new DefaultExtractorsFactory()
+                        .setConstantBitrateSeekingEnabled(true)
+                        .setTsExtractorFlags(
+                                DefaultTsPayloadReaderFactory.FLAG_ALLOW_NON_IDR_KEYFRAMES
+                                        | DefaultTsPayloadReaderFactory.FLAG_DETECT_ACCESS_UNITS
+                        );
 
-        mediaSourceFactory = new DefaultMediaSourceFactory(httpFactory, extractorsFactory);
+        mediaSourceFactory =
+                new DefaultMediaSourceFactory(httpFactory, extractorsFactory);
 
-        DefaultLoadControl loadControl = new DefaultLoadControl.Builder()
-                .setBufferDurationsMs(8000, 25000, 2200, 3500)
-                .setTargetBufferBytes(24 * 1024 * 1024)
-                .setPrioritizeTimeOverSizeThresholds(true)
-                .setBackBuffer(2000, false)
-                .build();
+        DefaultLoadControl loadControl =
+                new DefaultLoadControl.Builder()
+                        .setBufferDurationsMs(8000, 25000, 2200, 3500)
+                        .setTargetBufferBytes(24 * 1024 * 1024)
+                        .setPrioritizeTimeOverSizeThresholds(true)
+                        .setBackBuffer(2000, false)
+                        .build();
 
-        DefaultRenderersFactory renderersFactory = new DefaultRenderersFactory(this)
-                .setEnableDecoderFallback(true)
-                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER);
+        DefaultRenderersFactory renderersFactory =
+                new DefaultRenderersFactory(this)
+                        .setEnableDecoderFallback(true)
+                        .setExtensionRendererMode(
+                                DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER
+                        );
 
-        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                .setUsage(C.USAGE_MEDIA)
-                .setContentType(C.AUDIO_CONTENT_TYPE_MOVIE)
-                .build();
+        AudioAttributes audioAttributes =
+                new AudioAttributes.Builder()
+                        .setUsage(C.USAGE_MEDIA)
+                        .setContentType(C.AUDIO_CONTENT_TYPE_MOVIE)
+                        .build();
 
         player = new ExoPlayer.Builder(this, renderersFactory)
                 .setLoadControl(loadControl)
@@ -191,55 +193,36 @@ public class NativePlayerActivity extends AppCompatActivity {
         player.addListener(new Player.Listener() {
             @Override
             public void onPlayerError(PlaybackException error) {
-                if (player == null) return;
-
-                if (error.errorCode == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
-                    if (retryCount < MAX_RETRIES) {
-                        retryCount++;
-                        player.seekToDefaultPosition();
-                        player.prepare();
-                        player.play();
-                    }
+                if (player == null || isFinishing() || isDestroyed()) {
                     return;
                 }
 
-                if (!triedFallbackFormat && currentUrl != null) {
-                    String altUrl = null;
-                    if (currentUrl.endsWith(".ts")) {
-                        altUrl = currentUrl.substring(0, currentUrl.length() - 3) + ".m3u8";
-                    } else if (currentUrl.endsWith(".m3u8")) {
-                        altUrl = currentUrl.substring(0, currentUrl.length() - 5) + ".ts";
-                    }
-                    if (altUrl != null) {
-                        triedFallbackFormat = true;
-                        currentUrl = altUrl;
-                        loadStream(currentUrl);
-                        return;
-                    }
+                Log.e(TAG, "Playback error: " + error.getErrorCodeName(), error);
+
+                if (retryCount >= MAX_RETRIES) {
+                    Log.e(TAG, "Maximum playback retries reached");
+                    return;
                 }
 
-                if (retryCount < MAX_RETRIES) {
-                    retryCount++;
-                    mainHandler.postDelayed(() -> {
-                        if (player != null) {
-                            player.prepare();
-                            player.play();
-                        }
-                    }, 400L * retryCount);
-                } else {
-                    Toast.makeText(
-                            NativePlayerActivity.this,
-                            "Playback error: " + error.getErrorCodeName(),
-                            Toast.LENGTH_LONG
-                    ).show();
+                if (retryScheduled) {
+                    return;
                 }
-            }
 
-            @Override
-            public void onPlaybackStateChanged(int playbackState) {
-                if (playbackState == Player.STATE_READY) {
-                    retryCount = 0;
+                retryCount++;
+
+                if (error.errorCode
+                        == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
+                    Log.w(TAG, "Live window lost; seeking to the live edge");
+                    player.seekToDefaultPosition();
                 }
+
+                long delay = Math.min(
+                        RETRY_DELAY_MS * retryCount,
+                        MAX_RETRY_DELAY_MS
+                );
+
+                retryScheduled = true;
+                mainHandler.postDelayed(retryRunnable, delay);
             }
         });
 
@@ -247,50 +230,77 @@ public class NativePlayerActivity extends AppCompatActivity {
     }
 
     private void loadStream(String streamUrl) {
-        if (player == null || streamUrl == null) return;
+        if (player == null || streamUrl == null || streamUrl.trim().isEmpty()) {
+            Log.e(TAG, "Cannot load an empty stream URL");
+            return;
+        }
 
-        MediaItem.Builder mediaItem = new MediaItem.Builder().setUri(streamUrl);
+        cancelScheduledRetry();
+        retryCount = 0;
+        currentUrl = streamUrl.trim();
 
-        String lowerUrl = streamUrl.toLowerCase();
-        int queryIdx = lowerUrl.indexOf('?');
-        String pathOnly = queryIdx >= 0 ? lowerUrl.substring(0, queryIdx) : lowerUrl;
+        MediaItem.Builder mediaItem =
+                new MediaItem.Builder().setUri(currentUrl);
 
-        if (pathOnly.endsWith(".mpd") || lowerUrl.contains(".mpd")) {
+        String lowerUrl = currentUrl.toLowerCase(Locale.ROOT);
+        int queryIndex = lowerUrl.indexOf('?');
+        String pathOnly = queryIndex >= 0
+                ? lowerUrl.substring(0, queryIndex)
+                : lowerUrl;
+
+        if (pathOnly.endsWith(".m3u8")) {
+            mediaItem.setMimeType(MimeTypes.APPLICATION_M3U8);
+        } else if (pathOnly.endsWith(".mpd")) {
             mediaItem.setMimeType(MimeTypes.APPLICATION_MPD);
-        } else if (pathOnly.endsWith(".ism") || pathOnly.endsWith(".isml")) {
+        } else if (pathOnly.endsWith(".ism")
+                || pathOnly.endsWith(".isml")) {
             mediaItem.setMimeType(MimeTypes.APPLICATION_SS);
         }
 
-        MediaMetadata metadata = new MediaMetadata.Builder()
-                .setTitle(currentTitle)
-                .build();
+        MediaMetadata metadata =
+                new MediaMetadata.Builder()
+                        .setTitle(currentTitle)
+                        .build();
+
+        MediaItem item = mediaItem.setMediaMetadata(metadata).build();
 
         player.setMediaSource(
-                mediaSourceFactory.createMediaSource(mediaItem.setMediaMetadata(metadata).build()),
+                mediaSourceFactory.createMediaSource(item),
                 true
         );
         player.prepare();
         player.play();
     }
 
+    private void cancelScheduledRetry() {
+        mainHandler.removeCallbacks(retryRunnable);
+        retryScheduled = false;
+    }
+
     @Override
     protected void onDestroy() {
+        cancelScheduledRetry();
         mainHandler.removeCallbacksAndMessages(null);
+
         if (playerView != null) {
             playerView.setPlayer(null);
         }
+
         if (player != null) {
             player.release();
             player = null;
         }
+
         super.onDestroy();
     }
 
     private void hideSystemUi() {
         Window window = getWindow();
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-            android.view.WindowInsetsController controller = window.getInsetsController();
+        if (android.os.Build.VERSION.SDK_INT
+                >= android.os.Build.VERSION_CODES.R) {
+            android.view.WindowInsetsController controller =
+                    window.getInsetsController();
 
             if (controller != null) {
                 controller.hide(
@@ -298,7 +308,8 @@ public class NativePlayerActivity extends AppCompatActivity {
                                 | android.view.WindowInsets.Type.navigationBars()
                 );
                 controller.setSystemBarsBehavior(
-                        android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                        android.view.WindowInsetsController
+                                .BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
                 );
             }
         } else {
