@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build Fire TV & Android APKs (Java 17)
+    name: Build Fire TV & Android APKs
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
