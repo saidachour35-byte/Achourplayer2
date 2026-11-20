@@ -251,3 +251,65 @@ public class NativePlayerActivity extends AppCompatActivity {
 
         MediaItem.Builder mediaItem = new MediaItem.Builder().setUri(streamUrl);
 
+        String lowerUrl = streamUrl.toLowerCase();
+        int queryIdx = lowerUrl.indexOf('?');
+        String pathOnly = queryIdx >= 0 ? lowerUrl.substring(0, queryIdx) : lowerUrl;
+
+        if (pathOnly.endsWith(".mpd") || lowerUrl.contains(".mpd")) {
+            mediaItem.setMimeType(MimeTypes.APPLICATION_MPD);
+        } else if (pathOnly.endsWith(".ism") || pathOnly.endsWith(".isml")) {
+            mediaItem.setMimeType(MimeTypes.APPLICATION_SS);
+        }
+
+        MediaMetadata metadata = new MediaMetadata.Builder()
+                .setTitle(currentTitle)
+                .build();
+
+        player.setMediaSource(
+                mediaSourceFactory.createMediaSource(mediaItem.setMediaMetadata(metadata).build()),
+                true
+        );
+        player.prepare();
+        player.play();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mainHandler.removeCallbacksAndMessages(null);
+        if (playerView != null) {
+            playerView.setPlayer(null);
+        }
+        if (player != null) {
+            player.release();
+            player = null;
+        }
+        super.onDestroy();
+    }
+
+    private void hideSystemUi() {
+        Window window = getWindow();
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+            android.view.WindowInsetsController controller = window.getInsetsController();
+
+            if (controller != null) {
+                controller.hide(
+                        android.view.WindowInsets.Type.statusBars()
+                                | android.view.WindowInsets.Type.navigationBars()
+                );
+                controller.setSystemBarsBehavior(
+                        android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                );
+            }
+        } else {
+            window.getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            );
+        }
+    }
+}
