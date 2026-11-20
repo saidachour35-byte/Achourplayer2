@@ -1,39 +1,8 @@
-# Dependencies & Build Outputs
 node_modules/
 build/
 dist/
 coverage/
 .DS_Store
 *.log
-*.zip
-*.bak
-
-# Environment & Secrets
-.env
-.env.*
+.env*
 !.env.example
-
-# Android / Capacitor / Gradle
-android/build/
-android/app/build/
-android/.gradle/
-android/local.properties
-android/captures/
-android/app/release/
-.gradle/
-*.apk
-*.aab
-*.ap_
-*.dex
-*.jks
-*.keystore
-android/keystore.properties
-
-# Nested import/export scratch folders
-/Achour1-main/
-/AchourPlayer-GitHub/
-/app/
-public/assets/aistudio/
-**/assets/aistudio/
-android/app/src/main/assets/public/assets/aistudio/
-*.zip
