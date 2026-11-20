@@ -29,6 +29,7 @@ jobs:
       - name: Sync complete project
         run: |
           rsync -a --delete \
+            --filter='P /source/' \
             --exclude='.git/' \
             --exclude='android/' \
             --exclude='.github/' \
