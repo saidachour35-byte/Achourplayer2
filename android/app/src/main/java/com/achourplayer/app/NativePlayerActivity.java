@@ -151,9 +151,9 @@ public class NativePlayerActivity extends AppCompatActivity {
         setContentView(playerView);
 
         OkHttpClient okHttpClient = createUnsafeOkHttpClient();
-        httpFactory = new OkHttpDataSource.Factory(okHttpClient)
-                .setUserAgent("VLC/3.0.18 LibVLC/3.0.18")
-                .setDefaultRequestProperties(headers);
+        httpFactory = new OkHttpDataSource.Factory(okHttpClient);
+        httpFactory.setUserAgent("VLC/3.0.18 LibVLC/3.0.18");
+        httpFactory.setDefaultRequestProperties(headers);
 
         DefaultExtractorsFactory extractorsFactory = new DefaultExtractorsFactory()
                 .setConstantBitrateSeekingEnabled(true)
@@ -203,7 +203,6 @@ public class NativePlayerActivity extends AppCompatActivity {
                     return;
                 }
 
-                // تبديل ذكي تلقائي بين .ts و .m3u8 إذا رفض السيرفر الصيغة الأولى
                 if (!triedFallbackFormat && currentUrl != null) {
                     String altUrl = null;
                     if (currentUrl.endsWith(".ts")) {
@@ -249,4 +248,6 @@ public class NativePlayerActivity extends AppCompatActivity {
 
     private void loadStream(String streamUrl) {
         if (player == null || streamUrl == null) return;
+
+        MediaItem.Builder mediaItem = new MediaItem.Builder().setUri(streamUrl);
 
