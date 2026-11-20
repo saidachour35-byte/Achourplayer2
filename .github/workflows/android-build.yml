@@ -1,4 +1,3 @@
-
 name: Build Android & Fire TV APKs (Achour Player)
 
 on:
@@ -36,7 +35,7 @@ jobs:
           npx cap sync android
           rm -rf android/app/src/main/assets/public/assets/aistudio
 
-      - name: Set up Java JDK 17
+      - name: Set up Java JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -59,8 +58,8 @@ jobs:
         run: |
           set -euo pipefail
           sdkmanager --sdk_root="$ANDROID_HOME" --install \
-            "platforms;android-34" \
-            "build-tools;34.0.0" \
+            "platforms;android-35" \
+            "build-tools;35.0.0" \
             "platform-tools"
 
       - name: Build Fire TV & Android APKs with Gradle
