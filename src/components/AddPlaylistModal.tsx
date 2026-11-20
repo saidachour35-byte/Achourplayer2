@@ -367,9 +367,11 @@ export default function AddPlaylistModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 achour-modal-backdrop select-none">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        initial={{ opacity: 0, scale: 0.97 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.97 }}
+        transition={{ duration: 0.08 }}
+        data-achour-window-cat="playlists"
         className={`w-full max-w-2xl max-h-[88vh] sm:max-h-[92vh] achour-glass-modal border-gold/35 rounded-3xl overflow-hidden flex flex-col ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
       >
         {/* Header */}

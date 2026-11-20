@@ -84,12 +84,18 @@ export default function EPGGrid({ isOpen, onClose, channels, epgData, onSelectCh
 
   return (
       <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
+        exit={{ opacity: 0, scale: 0.97 }}
+        transition={{ duration: 0.08 }}
         data-modal-fullscreen="true"
         className="fixed inset-0 z-[100] flex flex-col achour-modal-backdrop p-4 sm:p-8"
       >
+        <div
+          data-achour-window-cat="playerPopups"
+          data-achour-skip-tv-base="true"
+          className="w-full h-full flex-1 min-h-0 flex flex-col mx-auto my-auto"
+        >
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-6">
@@ -312,6 +318,7 @@ export default function EPGGrid({ isOpen, onClose, channels, epgData, onSelectCh
               <span>{isRtl ? 'التمرير أفقيًا للوقت، ورأسيًا للقنوات' : 'Scroll horizontal for time, vertical for channels'}</span>
             </div>
           </div>
+        </div>
         </div>
       </motion.div>
   );

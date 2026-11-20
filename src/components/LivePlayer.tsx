@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import Hls from 'hls.js';
-import { PLAYER_PACKAGES, getPlayerPackage } from '../utils/players';
+import { ExternalLaunchResult, isFireTVDevice, launchExternalPlayerSession } from '../utils/players';
 import { 
   Search, Zap, LayoutGrid, List, ArrowUpDown, Trash2, Clock, 
   Play, Pause, EyeOff, MonitorPlay, Plus, X, History, Database, 
@@ -841,10 +841,12 @@ const MultiViewSlotPlayer: React.FC<{
   isActive: boolean;
   isMuted: boolean;
   isFullscreenSlot?: boolean;
+  className?: string;
   settings: AppSettings;
   onSelectSlot: () => void;
   onToggleMute: (e: React.MouseEvent) => void;
   onOpenFullscreen: () => void;
+  onChangeChannel?: (e: React.MouseEvent) => void;
   onRemove: (e: React.MouseEvent) => void;
   slotIndex: number;
   isRtl: boolean;
@@ -853,10 +855,12 @@ const MultiViewSlotPlayer: React.FC<{
   isActive,
   isMuted,
   isFullscreenSlot = false,
+  className = '',
   settings,
   onSelectSlot,
   onToggleMute,
   onOpenFullscreen,
+  onChangeChannel,
   onRemove,
   slotIndex,
   isRtl,
@@ -875,13 +879,20 @@ const MultiViewSlotPlayer: React.FC<{
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // Sync audio mute/unmute instantly on native ExoPlayer slot
+  // Sync audio mute/unmute instantly on native ExoPlayer slot & HTML5 video
   useEffect(() => {
-    if (!isNativeActive) return;
-    try {
-      native.setMultiSlotVolume?.(slotIndex, isMuted ? 0 : 1);
-    } catch {}
-  }, [isNativeActive, isMuted, slotIndex]);
+    if (isNativeActive) {
+      try {
+        native.setMultiSlotVolume?.(slotIndex, isMuted ? 0 : 1);
+      } catch {}
+      return;
+    }
+    const v = videoRef.current;
+    if (v) {
+      v.muted = isMuted;
+      v.volume = isMuted ? 0 : 1;
+    }
+  }, [isNativeActive, isMuted, slotIndex, channel?.stream_id]);
 
   // Keep native ExoPlayer slot bounds & WebView transparency cutout synced on split <-> fullscreen <-> resize
   useEffect(() => {
@@ -1050,6 +1061,8 @@ const MultiViewSlotPlayer: React.FC<{
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
         if (destroyed) return;
         setLoading(false);
+        video.muted = isMutedRef.current;
+        video.volume = isMutedRef.current ? 0 : 1;
         video.play().catch(() => {});
       });
 
@@ -1075,6 +1088,8 @@ const MultiViewSlotPlayer: React.FC<{
       video.addEventListener('loadedmetadata', () => {
         if (destroyed) return;
         setLoading(false);
+        video.muted = isMutedRef.current;
+        video.volume = isMutedRef.current ? 0 : 1;
         video.play().catch(() => {});
       });
       video.addEventListener('error', () => {
@@ -1084,6 +1099,8 @@ const MultiViewSlotPlayer: React.FC<{
       });
     } else {
       video.src = activeStreamUrl;
+      video.muted = isMutedRef.current;
+      video.volume = isMutedRef.current ? 0 : 1;
       video.play().catch(() => {});
     }
 
@@ -1111,11 +1128,11 @@ const MultiViewSlotPlayer: React.FC<{
       tabIndex={0}
       onClick={onSelectSlot}
       onDoubleClick={onOpenFullscreen}
-      className={`group relative w-full h-full rounded-2xl overflow-hidden ${isNativeActive ? 'bg-transparent' : 'bg-black'} border transition-all cursor-pointer ${
+      className={`group relative w-full h-full rounded-2xl overflow-hidden ${isNativeActive ? 'bg-transparent' : 'bg-black'} border transition-colors cursor-pointer ${
         isActive
           ? 'border-gold shadow-[0_0_15px_var(--theme-glow)] ring-2 ring-gold/40'
           : 'border-white/15 hover:border-gold/50'
-      }`}
+      } ${className}`}
     >
       {!isNativeActive && (
         <video
@@ -1142,7 +1159,7 @@ const MultiViewSlotPlayer: React.FC<{
 
       {/* Top Bar Overlay */}
       <div className="absolute top-2 inset-x-2 flex items-center justify-between gap-1.5 z-20 pointer-events-auto">
-        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-black/75 backdrop-blur-sm border border-white/10 text-white min-w-0 max-w-[70%]">
+        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-black/75 backdrop-blur-sm border border-white/10 text-white min-w-0 max-w-[62%]">
           <span className="text-[10px] font-mono font-black text-gold">#{slotIndex + 1}</span>
           <span className="text-xs font-bold truncate">{channel.name}</span>
         </div>
@@ -1158,6 +1175,16 @@ const MultiViewSlotPlayer: React.FC<{
           >
             {!isMuted ? <Volume2 size={13} /> : <VolumeX size={13} />}
           </button>
+          {onChangeChannel && (
+            <button
+              onClick={onChangeChannel}
+              data-tv-focusable="true" tabIndex={0}
+              title={isRtl ? 'تغيير القناة' : 'Change channel'}
+              className="p-1.5 rounded-lg bg-black/70 hover:bg-gold hover:text-black text-white backdrop-blur-sm transition-colors cursor-pointer"
+            >
+              <Tv size={13} />
+            </button>
+          )}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -1219,11 +1246,100 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
     }
   }, [initialChannelToPlay?.stream_id]);
 
-  const launchExternalPlayer = (url: string, overrideChannel?: ParsedChannel, playbackType?: 'live' | 'movie' | 'series') => {
+  const [forceInternalPlaybackOnce, setForceInternalPlaybackOnce] = useState(false);
+  const [externalLaunchModal, setExternalLaunchModal] = useState<{
+    result: ExternalLaunchResult;
+    streamUrl: string;
+    channel: ParsedChannel;
+    playbackType: 'live' | 'movie' | 'series';
+    copied?: boolean;
+  } | null>(null);
+
+  const resolveDirectStreamUrl = (
+    rawUrl: string,
+    targetItem: ParsedChannel | null | undefined,
+    resolvedType: 'live' | 'movie' | 'series'
+  ): string => {
+    let finalUrl = (rawUrl || targetItem?.url || '').trim();
+    if (!finalUrl && activePlaylist?.type === 'xtream' && activePlaylist.username && activePlaylist.password && targetItem) {
+      let baseHost = streamingHost || (activePlaylist.url || '').trim()
+        .replace(/\/+$/, '')
+        .replace(/\/(player_api|get|index)\.php.*$/i, '')
+        .replace(/\/c\/?$/i, '')
+        .replace(/\?.*$/, '');
+      if (baseHost && !baseHost.startsWith('http://') && !baseHost.startsWith('https://')) {
+        baseHost = `http://${baseHost}`;
+      }
+      const effPlId = activePlaylist?.id || settings.activePlaylistId || 'default';
+      const cleanId = cleanVodEntityId(
+        (targetItem as any).xtream_id || targetItem.stream_id,
+        effPlId
+      ) || String(targetItem.stream_id || '').trim();
+
+      if (baseHost && cleanId) {
+        if (resolvedType === 'movie') {
+          const ext = targetItem.container_extension || mediaDetailInfo?.movie_data?.container_extension || 'mp4';
+          finalUrl = `${baseHost}/movie/${encodeURIComponent(activePlaylist.username)}/${encodeURIComponent(activePlaylist.password)}/${cleanId}.${ext}`;
+        } else if (resolvedType === 'series') {
+          const ext = targetItem.container_extension || 'mp4';
+          finalUrl = `${baseHost}/series/${encodeURIComponent(activePlaylist.username)}/${encodeURIComponent(activePlaylist.password)}/${cleanId}.${ext}`;
+        } else {
+          finalUrl = `${baseHost}/live/${encodeURIComponent(activePlaylist.username)}/${encodeURIComponent(activePlaylist.password)}/${cleanId}.ts`;
+        }
+      }
+    }
+
+    if (finalUrl.startsWith('/')) {
+      finalUrl = window.location.origin + finalUrl;
+    }
+    return finalUrl;
+  };
+
+  const launchExternalPlayer = async (
+    url: string,
+    overrideChannel?: ParsedChannel,
+    playbackType?: 'live' | 'movie' | 'series'
+  ): Promise<boolean> => {
     const targetItem = overrideChannel || selectedChannel;
     const effPlId = activePlaylist?.id || settings.activePlaylistId || 'default';
     const resolvedType = playbackType || (mediaType === 'series' ? 'series' : mediaType === 'movie' ? 'movie' : 'live');
+    const finalUrl = resolveDirectStreamUrl(url, targetItem, resolvedType);
+
+    const result = await launchExternalPlayerSession({
+      streamUrl: finalUrl,
+      playerName: settings.selectedPlayer || 'VLC for Android',
+      title: targetItem?.name || 'Achour Player',
+      logo: targetItem?.stream_icon || targetItem?.cover || targetItem?.logo || '',
+      streamId: targetItem?.stream_id || '',
+      mediaType: resolvedType,
+      isFavorite: favorites.includes(targetItem?.stream_id || ''),
+      isAndroidEnv: isAndroid(),
+      headers: (targetItem as any)?.headers,
+      userAgent: (targetItem as any)?.userAgent || (targetItem as any)?.http_user_agent,
+      referer: (targetItem as any)?.referer || (targetItem as any)?.http_referrer,
+    });
+
+    if (!result.ok) {
+      setStreamError(null);
+      setExternalLaunchModal({
+        result,
+        streamUrl: finalUrl,
+        channel: targetItem || ({
+          stream_id: 'external',
+          name: 'Stream',
+          url: finalUrl,
+          category_id: '',
+        } as ParsedChannel),
+        playbackType: resolvedType,
+        copied: false,
+      });
+      return false;
+    }
+
+    setExternalLaunchModal(null);
+    setStreamError(null);
     if (targetItem) {
+      addToRecents(targetItem);
       if (resolvedType === 'series') {
         addToWatchHistory('series', activeSeriesParentRef.current || targetItem, effPlId);
       } else if (resolvedType === 'movie') {
@@ -1233,50 +1349,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         saveLastWatchedChannel(targetItem, effPlId);
       }
     }
-
-    const player = settings.selectedPlayer || '';
-    const packageName = getPlayerPackage(player);
-    
-    // Resolve stream URL appropriately for Native APK vs Web Preview
-    let finalUrl = getPlatformUrl('stream', url, { vpnRegion: settings.vpnRegion || 'auto' });
-    if (finalUrl.startsWith('/')) {
-      finalUrl = window.location.origin + finalUrl;
-    }
-
-    // MEDIA3 NATIVE BRIDGE INTEGRATION (Android APK Wrapper)
-    const native = (window as any).AchourNative;
-    if (native && typeof native.playMedia === 'function') {
-      try {
-        const isFav = favorites.includes(targetItem?.stream_id || '');
-        native.playMedia(finalUrl, JSON.stringify({
-          title: targetItem?.name || 'Achour Player',
-          logo: targetItem?.stream_icon || '',
-          stream_id: targetItem?.stream_id || '',
-          type: mediaType,
-          isFavorite: isFav,
-          packageName: packageName || undefined,
-          headers: {
-            'User-Agent': 'Android/Media3/1.1.1',
-            'X-Requested-With': 'com.nathnetwork.iptvsmarters'
-          }
-        }));
-        return;
-      } catch (e) {
-        console.warn('Media3 Bridge Call Failed, falling back to Intent:', e);
-      }
-    }
-
-    // Safe Android Intent launch
-    try {
-      const intentUrl = packageName
-        ? `intent:${encodeURI(finalUrl)}#Intent;action=android.intent.action.VIEW;type=video/*;package=${packageName};end`
-        : `intent:${encodeURI(finalUrl)}#Intent;action=android.intent.action.VIEW;type=video/*;end`;
-        
-      window.location.href = intentUrl;
-    } catch (e) {
-      console.error('External player launch failed:', e);
-      setStreamError(isRtl ? 'تعذر تشغيل المشغل الخارجي. يرجى استخدام المشغل الداخلي.' : 'Could not launch external player. Please use the internal player.');
-    }
+    return true;
   };
 
 
@@ -1646,15 +1719,44 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
   const autoFocusedSeriesIdRef = useRef<string | null>(null);
 
   // Multi-View State (Live TV only)
-  const [multiViewMode, setMultiViewMode] = useState<1 | 2 | 4>(1);
+  const [multiViewMode, setMultiViewMode] = useState<1 | 2 | 3 | 4>(1);
   const [showMultiViewMenu, setShowMultiViewMenu] = useState(false);
   const [multiViewActive, setMultiViewActive] = useState(false);
+  const [multiViewFullSplit, setMultiViewFullSplit] = useState<boolean>(() => Boolean(settings.multiViewFullSplit));
   const [multiViewPickingSlot, setMultiViewPickingSlot] = useState<number | null>(null);
   const [multiViewFullscreenSlot, setMultiViewFullscreenSlot] = useState<number | null>(null);
   const [multiViewSlots, setMultiViewSlots] = useState<(ParsedChannel | null)[]>([null, null, null, null]);
   const [selectedSlotIndex, setSelectedSlotIndex] = useState<number>(0);
   const [audioSlotIndex, setAudioSlotIndex] = useState<number>(0);
   const preMultiViewChannelRef = useRef<ParsedChannel | null>(null);
+
+  const setMultiViewFullSplitPersist = useCallback((nextVal: boolean) => {
+    setMultiViewFullSplit(nextVal);
+    onUpdateSettings((prev) => ({ ...prev, multiViewFullSplit: nextVal }));
+  }, [onUpdateSettings]);
+
+  const toggleMultiViewFullSplit = useCallback(() => {
+    setMultiViewFullSplit((prev) => {
+      const next = !prev;
+      onUpdateSettings((s) => ({ ...s, multiViewFullSplit: next }));
+      return next;
+    });
+  }, [onUpdateSettings]);
+
+  // Complete Audio & Video Isolation: entering Multi-Screen immediately kills any hidden regular player (Web & Native APK)
+  useEffect(() => {
+    if (!multiViewActive) return;
+    setSelectedChannel(null);
+    setActivePlayingMovie(null);
+    setIsFullscreen(false);
+    setActiveVodPlayer(null);
+    const native = typeof window !== 'undefined' ? (window as any).AchourNative : null;
+    if (isNativeApp() && native?.hidePlayer) {
+      try {
+        native.hidePlayer();
+      } catch {}
+    }
+  }, [multiViewActive]);
 
   // Sync WebView transparency cutouts & guarantee native MultiView ExoPlayer cleanup on exit/unmount
   useEffect(() => {
@@ -1677,7 +1779,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       syncMultiViewNativeOverlay(multiViewFullscreenSlot !== null);
     });
     return () => cancelAnimationFrame(rafId);
-  }, [multiViewActive, multiViewMode, multiViewFullscreenSlot, multiViewSlots, selectedChannel?.stream_id, activeVodPlayer]);
+  }, [multiViewActive, multiViewMode, multiViewFullSplit, multiViewPickingSlot, multiViewFullscreenSlot, multiViewSlots, selectedChannel?.stream_id, activeVodPlayer]);
 
   useEffect(() => {
     return () => {
@@ -2069,24 +2171,24 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 
 
   const handleNextChannel = useCallback(() => {
-    if (!channels || channels.length === 0) return;
+    if (multiViewActive || !channels || channels.length === 0) return;
     const curIndex = channels.findIndex(c => c.stream_id === selectedChannel?.stream_id);
     const nextIndex = curIndex >= 0 ? (curIndex + 1) % channels.length : 0;
     const nextCh = channels[nextIndex];
     setSelectedChannel(nextCh);
     setActivePlayingMovie(nextCh);
     addToRecents(nextCh);
-  }, [channels, selectedChannel]);
+  }, [multiViewActive, channels, selectedChannel]);
 
   const handlePrevChannel = useCallback(() => {
-    if (!channels || channels.length === 0) return;
+    if (multiViewActive || !channels || channels.length === 0) return;
     const curIndex = channels.findIndex(c => c.stream_id === selectedChannel?.stream_id);
     const prevIndex = curIndex > 0 ? curIndex - 1 : channels.length - 1;
     const prevCh = channels[prevIndex];
     setSelectedChannel(prevCh);
     setActivePlayingMovie(prevCh);
     addToRecents(prevCh);
-  }, [channels, selectedChannel]);
+  }, [multiViewActive, channels, selectedChannel]);
 
 
 
@@ -2136,10 +2238,25 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
   const prevReorderTargetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
-    const hasActiveModal = !!(showOcr || showPinModal || showRemoteHelp || showOverlayChannelDrawer || movieDetailsModal || reorderTarget || showEpgGrid || showEpgTimeline || showAudioMenu || showSubMenu || showQualityMenu || isFullscreen);
+    const hasActiveModal = !!(externalLaunchModal || showOcr || showPinModal || showRemoteHelp || showOverlayChannelDrawer || movieDetailsModal || reorderTarget || showEpgGrid || showEpgTimeline || showAudioMenu || showSubMenu || showQualityMenu || isFullscreen);
     const priority = hasActiveModal ? BackPriority.MODAL : BackPriority.VIEW;
 
     const unregister = pushBackHandler(() => {
+      if (externalLaunchModal) {
+        setExternalLaunchModal(null);
+        setTimeout(() => {
+          if (movieDetailsModal) {
+            const target =
+              document.querySelector<HTMLElement>('[data-tv-modal="details"][data-modal-role="play"]') ||
+              document.querySelector<HTMLElement>('[data-tv-modal="details"]');
+            if (target) setTVFocus(target, { scroll: false });
+          } else {
+            tvFocusedPane.current = 'channels';
+            focusChannelAtIdx(tvFocusedChannelIndex.current);
+          }
+        }, 30);
+        return true;
+      }
       if (showOcr) { setShowOcr(false); return true; }
       if (showPinModal) { setShowPinModal(false); return true; }
       if (showRemoteHelp) { setShowRemoteHelp(false); return true; }
@@ -2157,6 +2274,12 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         setMultiViewPickingSlot(null);
         tvFocusedPane.current = 'multiview';
         setTimeout(() => { const el = document.getElementById(`multiview-slot-${selectedSlotIndex}`); if (el) setTVFocus(el); }, 40);
+        return true;
+      }
+      if (multiViewActive && multiViewFullSplit) {
+        setMultiViewFullSplitPersist(false);
+        tvFocusedPane.current = 'multiview';
+        setTimeout(() => { const el = document.getElementById(`multiview-slot-${Math.max(0, selectedSlotIndex)}`); if (el) setTVFocus(el); }, 40);
         return true;
       }
       if (movieDetailsModal) {
@@ -2217,8 +2340,8 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 
     return unregister;
   }, [
-    showOcr, showPinModal, showRemoteHelp, showOverlayChannelDrawer, reorderTarget,
-    showMultiViewMenu, multiViewFullscreenSlot, multiViewPickingSlot, selectedSlotIndex, movieDetailsModal, showEpgGrid, showEpgTimeline, showAudioMenu,
+    externalLaunchModal, showOcr, showPinModal, showRemoteHelp, showOverlayChannelDrawer, reorderTarget,
+    showMultiViewMenu, multiViewActive, multiViewFullSplit, setMultiViewFullSplitPersist, multiViewFullscreenSlot, multiViewPickingSlot, selectedSlotIndex, movieDetailsModal, showEpgGrid, showEpgTimeline, showAudioMenu,
     showSubMenu, showQualityMenu, isFullscreen, activeVodPlayer, mediaType, onBack
   ]);
 
@@ -2673,6 +2796,25 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
     }
   }, [reorderTarget]);
 
+  useEffect(() => {
+    if (!externalLaunchModal) return;
+    const timer = setTimeout(() => {
+      const firstBtn =
+        document.querySelector<HTMLElement>('[data-tv-modal="external-launch"][data-external-primary="true"]') ||
+        document.querySelector<HTMLElement>('[data-tv-modal="external-launch"]');
+      if (firstBtn) {
+        setTVFocus(firstBtn, { scroll: false });
+      }
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [externalLaunchModal]);
+
+  useEffect(() => {
+    if (!isFullscreen && !activeVodPlayer) {
+      setForceInternalPlaybackOnce(false);
+    }
+  }, [isFullscreen, activeVodPlayer, settings.useExternalPlayer]);
+
  
 
   // TV Remote OK Button Long-Press Detection Refs
@@ -2727,7 +2869,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       const isReorderShortcut = key === 'F3' || key === 'Yellow' || code === 114 || code === 405 ||
                                 key === 'm' || key === 'M' || key === 'r' || key === 'Menu' || code === 82 ||
                                 key === 'ContextMenu' || key === 'Guide' || code === 457;
-      if (isReorderShortcut && !reorderTarget && !movieDetailsModal && !isFullscreen && !activeVodPlayer) {
+      if (isReorderShortcut && !externalLaunchModal && !reorderTarget && !movieDetailsModal && !isFullscreen && !activeVodPlayer) {
         const activeEl = getCurrentTVFocus();
         if (activeEl) {
           const isCat = activeEl.getAttribute('data-tv-pane') === 'categories';
@@ -2754,6 +2896,30 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
             }
           }
         }
+      }
+
+      if (externalLaunchModal) {
+        const modalBtns = Array.from(document.querySelectorAll<HTMLElement>('[data-tv-modal="external-launch"]'));
+        if (modalBtns.length > 0) {
+          const currentEl = getCurrentTVFocus() || (document.activeElement as HTMLElement);
+          const activeIdx = modalBtns.indexOf(currentEl);
+          const cur = activeIdx >= 0 ? activeIdx : 0;
+
+          if (key === 'ArrowDown' || code === 40 || code === 20 || key === 'ArrowRight' || code === 39 || code === 22) {
+            e.preventDefault();
+            e.stopPropagation();
+            setTVFocus(modalBtns[Math.min(modalBtns.length - 1, cur + 1)], { scroll: true });
+          } else if (key === 'ArrowUp' || code === 38 || code === 19 || key === 'ArrowLeft' || code === 37 || code === 21) {
+            e.preventDefault();
+            e.stopPropagation();
+            setTVFocus(modalBtns[Math.max(0, cur - 1)], { scroll: true });
+          } else if (key === 'Enter' || code === 13 || key === 'Select' || code === 23) {
+            e.preventDefault();
+            e.stopPropagation();
+            modalBtns[cur]?.click();
+          }
+        }
+        return;
       }
 
       // If Movie/Series Details Modal is open, keep focus strictly trapped inside and scroll ONLY seasons/episodes
@@ -3025,12 +3191,16 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
           if (bestEl) {
             setTVFocus(bestEl, { scroll: false });
           } else if (isUp) {
-            tvFocusedPane.current = 'header';
-            const headerTabs = document.querySelectorAll<HTMLElement>('[data-tv-pane="header"]');
-            if (headerTabs.length > 0) setTVFocus(headerTabs[0], { scroll: true });
+            if (!(multiViewActive && multiViewFullSplit && multiViewFullscreenSlot === null && multiViewPickingSlot === null)) {
+              tvFocusedPane.current = 'header';
+              const headerTabs = document.querySelectorAll<HTMLElement>('[data-tv-pane="header"]');
+              if (headerTabs.length > 0) setTVFocus(headerTabs[0], { scroll: true });
+            }
           } else if ((isLeft && !isRtl) || (isRight && isRtl)) {
-            tvFocusedPane.current = 'channels';
-            focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+            if (!(multiViewActive && multiViewFullSplit && multiViewFullscreenSlot === null && multiViewPickingSlot === null)) {
+              tvFocusedPane.current = 'channels';
+              focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+            }
           }
         } else if (key === 'Enter' || code === 13 || key === 'Select' || code === 23) {
           e.preventDefault();
@@ -3276,7 +3446,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       const code = e.keyCode;
       const isOkKey = key === 'Enter' || code === 13 || key === 'Select' || code === 23;
 
-      if (isOkKey && tvFocusedPane.current === 'categories' && mediaType === 'live' && !isFullscreen && !activeVodPlayer && !reorderTarget && !movieDetailsModal) {
+      if (isOkKey && tvFocusedPane.current === 'categories' && mediaType === 'live' && !isFullscreen && !activeVodPlayer && !reorderTarget && !movieDetailsModal && !externalLaunchModal) {
         e.stopPropagation();
         if (okCatPressTimerRef.current) {
           clearTimeout(okCatPressTimerRef.current);
@@ -3292,7 +3462,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         return;
       }
 
-      if (isOkKey && tvFocusedPane.current === 'channels' && !isFullscreen && !activeVodPlayer && !reorderTarget && !movieDetailsModal) {
+      if (isOkKey && tvFocusedPane.current === 'channels' && !isFullscreen && !activeVodPlayer && !reorderTarget && !movieDetailsModal && !externalLaunchModal) {
         e.stopPropagation();
         if (okPressTimerRef.current) {
           clearTimeout(okPressTimerRef.current);
@@ -3325,7 +3495,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         okCatPressTimerRef.current = null;
       }
     };
-  }, [isRtl, mediaType, settings.viewMode, onBack, showPinModal, showEpgGrid, showEpgTimeline, showAudioMenu, showSubMenu, showQualityMenu, reorderTarget, activeVodPlayer, movieDetailsModal, isFullscreen, showControls, toggleControlsVisibility]);
+  }, [isRtl, mediaType, settings.viewMode, onBack, showPinModal, showEpgGrid, showEpgTimeline, showAudioMenu, showSubMenu, showQualityMenu, reorderTarget, activeVodPlayer, movieDetailsModal, externalLaunchModal, isFullscreen, showControls, toggleControlsVisibility]);
 
   const effectivePlaylistId = activePlaylist?.id || playlistId;
 
@@ -3915,7 +4085,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 
   // Initial focus setup for categories pane when LivePlayer mounts cleanly (or restore channel focus on fullscreen exit)
   useEffect(() => {
-    if (!loading && categories.length > 0 && !isFullscreen && !activeVodPlayer && !movieDetailsModal && !reorderTarget) {
+    if (!loading && categories.length > 0 && !isFullscreen && !activeVodPlayer && !movieDetailsModal && !reorderTarget && !externalLaunchModal) {
       const timer = setTimeout(() => {
         if (!getCurrentTVFocus()) {
           if (tvFocusedPane.current === 'channels' || tvFocusedPane.current === 'player') {
@@ -3929,7 +4099,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       }, 60);
       return () => clearTimeout(timer);
     }
-  }, [loading, categories.length, isFullscreen, activeVodPlayer, movieDetailsModal, reorderTarget, focusCategoryAtIdx, focusChannelAtIdx]);
+  }, [loading, categories.length, isFullscreen, activeVodPlayer, movieDetailsModal, reorderTarget, externalLaunchModal, focusCategoryAtIdx, focusChannelAtIdx]);
 
   useEffect(() => {
     const update = async () => {
@@ -4195,6 +4365,24 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
     }
     currentHighlightedChannelRef.current = ch.stream_id;
     addToRecents(ch);
+    if (multiViewActive && (mediaType === 'live' || mediaType === 'favorites')) {
+      let targetSlot = multiViewPickingSlot;
+      if (targetSlot === null) {
+        const emptyIdx = multiViewSlots.slice(0, multiViewMode).findIndex((s) => !s);
+        targetSlot = emptyIdx >= 0 ? emptyIdx : Math.min(Math.max(0, selectedSlotIndex), multiViewMode - 1);
+      }
+      setMultiViewSlots((prev) => {
+        const next = [...prev];
+        next[targetSlot!] = ch;
+        return next;
+      });
+      setSelectedSlotIndex(targetSlot);
+      setAudioSlotIndex((prev) => (prev >= 0 && prev < multiViewMode && multiViewSlots[prev] && prev !== targetSlot ? prev : targetSlot!));
+      setMultiViewPickingSlot(null);
+      tvFocusedPane.current = 'multiview';
+      setTimeout(() => { const el = document.getElementById(`multiview-slot-${targetSlot}`); if (el) setTVFocus(el); }, 50);
+      return;
+    }
     setSelectedChannel(ch);
     setActivePlayingMovie(ch);
 
@@ -4253,20 +4441,82 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       setIsFullscreen(true);
       setActiveVodPlayer(ch);
     }
-  }, [mediaType, settings.useExternalPlayer, settings.activePlaylistId, activePlaylist]);
+  }, [mediaType, settings.useExternalPlayer, settings.activePlaylistId, activePlaylist, multiViewActive, multiViewPickingSlot, multiViewMode, multiViewSlots, selectedSlotIndex]);
 
+
+  const handleRemoveMultiViewSlot = useCallback((slotIndex: number) => {
+    const remaining: ParsedChannel[] = [];
+    for (let i = 0; i < multiViewMode; i++) {
+      if (i !== slotIndex && multiViewSlots[i]) {
+        remaining.push(multiViewSlots[i]!);
+      }
+    }
+
+    if (remaining.length <= 1) {
+      const survivor = remaining[0] || null;
+      setMultiViewActive(false);
+      setMultiViewMode(1);
+      setMultiViewSlots([null, null, null, null]);
+      setMultiViewPickingSlot(null);
+      setMultiViewFullscreenSlot(null);
+      setSelectedSlotIndex(0);
+      setAudioSlotIndex(0);
+      setIsFullscreen(false);
+      setActiveVodPlayer(null);
+      if (survivor) {
+        setSelectedChannel(survivor);
+        setActivePlayingMovie(survivor);
+      } else {
+        setSelectedChannel(null);
+        setActivePlayingMovie(null);
+      }
+      tvFocusedPane.current = 'channels';
+      setTimeout(() => focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0), 40);
+      return;
+    }
+
+    const activeAudioId = audioSlotIndex >= 0 ? multiViewSlots[audioSlotIndex]?.stream_id : null;
+    const activeSelId = selectedSlotIndex >= 0 ? multiViewSlots[selectedSlotIndex]?.stream_id : null;
+    const newAudioIdx = activeAudioId ? Math.max(0, remaining.findIndex((c) => c.stream_id === activeAudioId)) : 0;
+    const newSelectedIdx = activeSelId ? Math.max(0, remaining.findIndex((c) => c.stream_id === activeSelId)) : 0;
+
+    const compacted: (ParsedChannel | null)[] = [
+      remaining[0] || null,
+      remaining[1] || null,
+      remaining[2] || null,
+      remaining[3] || null,
+    ];
+    const nextMode = (remaining.length >= 4 ? 4 : remaining.length === 3 ? 3 : 2) as 2 | 3 | 4;
+
+    setMultiViewSlots(compacted);
+    setMultiViewMode(nextMode);
+    setMultiViewFullscreenSlot(null);
+    setMultiViewPickingSlot(null);
+    setSelectedSlotIndex(newSelectedIdx);
+    setAudioSlotIndex(newAudioIdx);
+    tvFocusedPane.current = 'multiview';
+    setTimeout(() => {
+      const el = document.getElementById(`multiview-slot-${newSelectedIdx}`);
+      if (el) setTVFocus(el, { scroll: false });
+    }, 40);
+  }, [multiViewMode, multiViewSlots, audioSlotIndex, selectedSlotIndex, focusChannelAtIdx]);
 
   const handleChannelClick = useCallback((ch: ParsedChannel) => {
     if (!ch) return;
 
-    if (multiViewActive && multiViewPickingSlot !== null && (mediaType === 'live' || mediaType === 'favorites')) {
-      const targetSlot = multiViewPickingSlot;
+    if (multiViewActive && (mediaType === 'live' || mediaType === 'favorites')) {
+      let targetSlot = multiViewPickingSlot;
+      if (targetSlot === null) {
+        const emptyIdx = multiViewSlots.slice(0, multiViewMode).findIndex((s) => !s);
+        targetSlot = emptyIdx >= 0 ? emptyIdx : Math.min(Math.max(0, selectedSlotIndex), multiViewMode - 1);
+      }
       setMultiViewSlots(prev => {
         const next = [...prev];
-        next[targetSlot] = ch;
+        next[targetSlot!] = ch;
         return next;
       });
       setSelectedSlotIndex(targetSlot);
+      setAudioSlotIndex((prev) => (prev >= 0 && prev < multiViewMode && multiViewSlots[prev] && prev !== targetSlot ? prev : targetSlot!));
       setMultiViewPickingSlot(null);
       addToRecents(ch);
       tvFocusedPane.current = 'multiview';
@@ -4276,6 +4526,14 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 
     if (mediaType === 'movie' || mediaType === 'series') {
       handleOpenFullscreen(ch);
+      return;
+    }
+
+    if (settings.useExternalPlayer) {
+      setForceInternalPlaybackOnce(false);
+      setSelectedChannel(ch);
+      setActivePlayingMovie(ch);
+      void launchExternalPlayer(ch.url, ch, 'live');
       return;
     }
 
@@ -4289,7 +4547,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
       setActivePlayingMovie(ch);
       addToRecents(ch);
     }
-  }, [mediaType, selectedChannel?.stream_id, activeVodPlayer, handleOpenFullscreen, multiViewActive, multiViewPickingSlot]);
+  }, [mediaType, settings.useExternalPlayer, selectedChannel?.stream_id, activeVodPlayer, handleOpenFullscreen, multiViewActive, multiViewPickingSlot, multiViewMode, multiViewSlots, selectedSlotIndex]);
 
   useEffect(() => {
     handleHighlightChannelRef.current = handleHighlightChannel;
@@ -4304,7 +4562,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
   }, [handleChannelClick]);
 
   const switchChannelByOffset = useCallback((offset: number) => {
-    if (filteredChannels.length === 0) return;
+    if (multiViewActive || filteredChannels.length === 0) return;
     const currentCh = selectedChannel;
     const currentIndex = currentCh ? filteredChannels.findIndex(c => c.stream_id === currentCh.stream_id) : 0;
     const safeCurrentIndex = currentIndex >= 0 ? currentIndex : 0;
@@ -4315,7 +4573,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
     setSelectedChannel(nextCh);
     setActivePlayingMovie(nextCh);
     addToRecents(nextCh);
-  }, [filteredChannels, selectedChannel]);
+  }, [multiViewActive, filteredChannels, selectedChannel]);
 
   const touchStartY = useRef<number | null>(null);
   const touchStartX = useRef<number | null>(null);
@@ -4743,12 +5001,12 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
             <h1 className="text-sm sm:text-base font-black text-gold tracking-tighter uppercase italic leading-none drop-shadow-md whitespace-nowrap">ACHOUR PLAYER</h1>
           </div>
 
-          {/* Center Column: Multi View 1 2 4 */}
+          {/* Center Column: Multi View 1 2 4 + Full TV Split Toggle */}
           <div className="flex items-center justify-center min-w-0 gap-3">
             {(mediaType === 'live' || mediaType === 'favorites') && (
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-gold" style={{ color: 'var(--theme-primary)' }}>
+              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-gold" style={{ color: 'var(--theme-primary)' }}>
                 <span className="select-none text-gold font-bold" style={{ color: 'var(--theme-primary)' }}>Multi View</span>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   {([1, 2, 4] as const).map((modeNum, idx) => (
                     <button
                       key={modeNum}
@@ -4757,14 +5015,20 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                       data-header-index={idx}
                       tabIndex={0}
                       onClick={() => {
-                        if (multiViewActive && multiViewMode === modeNum) {
+                        if (modeNum === 1 || (multiViewActive && multiViewMode === modeNum)) {
+                          const returnChannel =
+                            multiViewSlots[Math.max(0, selectedSlotIndex)] ||
+                            multiViewSlots.find(Boolean) ||
+                            preMultiViewChannelRef.current ||
+                            null;
                           setMultiViewActive(false);
+                          setMultiViewMode(1);
                           setMultiViewSlots([null, null, null, null]);
                           setMultiViewPickingSlot(null);
                           setMultiViewFullscreenSlot(null);
-                          if (preMultiViewChannelRef.current) {
-                            setSelectedChannel(preMultiViewChannelRef.current);
-                            setActivePlayingMovie(preMultiViewChannelRef.current);
+                          if (returnChannel) {
+                            setSelectedChannel(returnChannel);
+                            setActivePlayingMovie(returnChannel);
                           }
                           tvFocusedPane.current = 'channels';
                           setTimeout(() => focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0), 40);
@@ -4772,6 +5036,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                         }
                         preMultiViewChannelRef.current = selectedChannel;
                         setSelectedChannel(null); setActivePlayingMovie(null);
+                        setIsFullscreen(false); setActiveVodPlayer(null);
                         setMultiViewSlots([null, null, null, null]); setMultiViewMode(modeNum);
                         setSelectedSlotIndex(0); setAudioSlotIndex(0); setMultiViewPickingSlot(null);
                         setMultiViewFullscreenSlot(null); setMultiViewActive(true);
@@ -4782,8 +5047,8 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                         }, 50);
                       }}
                       style={{ color: 'var(--theme-primary)' }}
-                      className={`px-2.5 py-1 rounded-md flex items-center justify-center font-mono font-black text-sm sm:text-base transition-all cursor-pointer outline-none ${
-                        multiViewActive && multiViewMode === modeNum
+                      className={`px-2.5 py-1 rounded-md flex items-center justify-center font-mono font-black text-sm sm:text-base transition-colors cursor-pointer outline-none ${
+                        multiViewActive && (multiViewMode === modeNum || (modeNum === 4 && multiViewMode === 3))
                           ? 'text-gold bg-gold/20 border border-gold/60 shadow-[0_0_12px_var(--theme-glow)] scale-105 opacity-100'
                           : 'bg-transparent text-gold opacity-85 hover:opacity-100'
                       }`}
@@ -4791,6 +5056,25 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                       {modeNum}
                     </button>
                   ))}
+                  {multiViewActive && (
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      data-tv-pane="header"
+                      data-header-index={3}
+                      tabIndex={0}
+                      onClick={toggleMultiViewFullSplit}
+                      title={isRtl ? 'التبديل بين تقسيم ملء شاشة التلفاز والوضع العادي' : 'Toggle Full-TV-Screen Split Mode'}
+                      className={`px-2.5 py-1 rounded-lg border text-[11px] sm:text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer outline-none whitespace-nowrap ${
+                        multiViewFullSplit
+                          ? 'bg-gold text-[var(--theme-on-primary,#090b10)] border-gold shadow-[0_0_12px_var(--theme-glow)]'
+                          : 'bg-gold/15 text-gold border-gold/45 hover:bg-gold/25 hover:border-gold'
+                      }`}
+                    >
+                      <Maximize size={13} />
+                      <span>{multiViewFullSplit ? (isRtl ? 'الوضع العادي' : 'Classic') : (isRtl ? 'ملء الشاشة' : 'Full Split')}</span>
+                    </button>
+                  )}
                 </div>
               </div>
             )}
@@ -4908,30 +5192,149 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
         {/* Column 3: Small Player Area + Program Guide Under Mini Player (Only for Live & Favorites) */}
         {(mediaType === 'live' || mediaType === 'favorites') && (
           <main className="flex-1 flex flex-col gap-3 bg-transparent relative min-w-0 h-full overflow-hidden p-2 sm:p-3">
-            {multiViewActive ? (
-              <div data-multiview-container="true" className={`${multiViewFullscreenSlot !== null ? `fixed inset-0 z-[90] ${isNativeApp() && (window as any).AchourNative?.showMultiSlot ? 'bg-transparent' : 'bg-black'} p-1 grid-cols-1 grid-rows-1` : 'flex-1 min-h-0'} grid gap-2 ${multiViewFullscreenSlot === null ? (multiViewMode === 1 ? 'grid-cols-1 grid-rows-1' : multiViewMode === 2 ? 'grid-cols-2 grid-rows-1' : 'grid-cols-2 grid-rows-2') : ''}`}>
-                {Array.from({ length: multiViewFullscreenSlot !== null ? 1 : multiViewMode }, (_, visibleIndex) => {
-                  const slotIndex = multiViewFullscreenSlot !== null ? multiViewFullscreenSlot : visibleIndex;
-                  const slotChannel = multiViewSlots[slotIndex];
-                  return slotChannel ? (
-                    <MultiViewSlotPlayer key={`multiview-${slotIndex}-${slotChannel.stream_id}`} channel={slotChannel}
-                      slotIndex={slotIndex} isActive={selectedSlotIndex === slotIndex} isMuted={audioSlotIndex !== slotIndex}
-                      isFullscreenSlot={multiViewFullscreenSlot === slotIndex}
-                      settings={settings} isRtl={isRtl}
-                      onSelectSlot={() => { setSelectedSlotIndex(slotIndex); setAudioSlotIndex(slotIndex); tvFocusedPane.current = 'multiview'; }}
-                      onToggleMute={(e) => { e.stopPropagation(); setAudioSlotIndex(current => current === slotIndex ? -1 : slotIndex); }}
-                      onOpenFullscreen={() => { setSelectedSlotIndex(slotIndex); setMultiViewFullscreenSlot(slotIndex); }}
-                      onRemove={(e) => { e.stopPropagation(); setMultiViewSlots(prev => { const next = [...prev]; next[slotIndex] = null; return next; }); }} />
-                  ) : (
-                    <button key={`multiview-empty-${slotIndex}`} id={`multiview-slot-${slotIndex}`} data-tv-focusable="true" data-multiview-slot="true" data-slot-index={slotIndex} tabIndex={0}
-                      onClick={() => { setSelectedSlotIndex(slotIndex); setMultiViewPickingSlot(slotIndex); tvFocusedPane.current = 'channels'; focusChannelAtIdx(0); }}
-                      className="w-full h-full min-h-0 rounded-2xl border-2 border-dashed border-white/20 bg-black/35 flex flex-col items-center justify-center gap-2 text-zinc-300 hover:border-gold/70 hover:text-gold transition-colors">
-                      <Plus size={28} /><span className="text-xs font-bold">{isRtl ? `اختر قناة للخانة ${slotIndex + 1}` : `Select channel for slot ${slotIndex + 1}`}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            ) : (
+            {multiViewActive ? (() => {
+              const isFullTvSplit = multiViewFullSplit && multiViewFullscreenSlot === null && multiViewPickingSlot === null;
+              const isNativeSplit = isNativeApp() && Boolean((window as any).AchourNative?.showMultiSlot);
+              const gridColsRowsClass =
+                multiViewFullscreenSlot !== null
+                  ? 'grid-cols-1 grid-rows-1'
+                  : multiViewMode === 1
+                    ? 'grid-cols-1 grid-rows-1'
+                    : multiViewMode === 2
+                      ? 'grid-cols-2 grid-rows-1'
+                      : 'grid-cols-2 grid-rows-2';
+
+              const outerContainerClass =
+                multiViewFullscreenSlot !== null
+                  ? `fixed inset-0 z-[90] ${isNativeSplit ? 'bg-transparent' : 'bg-black'} p-1 flex flex-col`
+                  : isFullTvSplit
+                    ? `fixed inset-0 z-[85] ${isNativeSplit ? 'bg-transparent' : 'bg-black'} p-1 flex flex-col gap-1`
+                    : 'flex-1 min-h-0 flex flex-col gap-2';
+
+              return (
+                <div data-multiview-container="true" className={outerContainerClass}>
+                  {isFullTvSplit && (
+                    <div className="h-9 px-2.5 rounded-xl bg-black/80 border border-gold/30 flex items-center justify-between gap-2 shrink-0 z-30">
+                      <div className="flex items-center gap-2 text-xs font-bold text-gold">
+                        <Monitor size={14} />
+                        <span>
+                          {isRtl
+                            ? `تقسيم الشاشة الكاملة (${multiViewMode} شاشات)`
+                            : `Full TV Split (${multiViewMode} Screens)`}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          data-tv-focusable="true"
+                          tabIndex={0}
+                          onClick={() => setMultiViewFullSplitPersist(false)}
+                          className="px-2.5 py-1 rounded-lg bg-gold/15 hover:bg-gold border border-gold/45 hover:border-gold text-xs font-bold text-gold hover:text-[var(--theme-on-primary,#090b10)] flex items-center gap-1.5 transition-colors cursor-pointer"
+                        >
+                          <LayoutGrid size={13} />
+                          <span>{isRtl ? 'الوضع العادي' : 'Classic View'}</span>
+                        </button>
+                        <button
+                          type="button"
+                          data-tv-focusable="true"
+                          tabIndex={0}
+                          onClick={() => {
+                            const returnChannel =
+                              multiViewSlots[Math.max(0, selectedSlotIndex)] ||
+                              multiViewSlots.find(Boolean) ||
+                              preMultiViewChannelRef.current ||
+                              null;
+                            setMultiViewActive(false);
+                            setMultiViewMode(1);
+                            setMultiViewSlots([null, null, null, null]);
+                            setMultiViewPickingSlot(null);
+                            setMultiViewFullscreenSlot(null);
+                            if (returnChannel) {
+                              setSelectedChannel(returnChannel);
+                              setActivePlayingMovie(returnChannel);
+                            }
+                            tvFocusedPane.current = 'channels';
+                            setTimeout(() => focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0), 40);
+                          }}
+                          className="px-2.5 py-1 rounded-lg bg-gold/25 hover:bg-gold border border-gold text-xs font-bold text-gold hover:text-[var(--theme-on-primary,#090b10)] shadow-[0_0_10px_var(--theme-glow)] flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <X size={13} />
+                          <span>{isRtl ? 'إغلاق التقسيم' : 'Exit Multi-View'}</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className={`flex-1 min-h-0 grid ${isFullTvSplit ? 'gap-1' : 'gap-2'} ${gridColsRowsClass}`}>
+                    {Array.from({ length: multiViewFullscreenSlot !== null ? 1 : multiViewMode }, (_, visibleIndex) => {
+                      const slotIndex = multiViewFullscreenSlot !== null ? multiViewFullscreenSlot : visibleIndex;
+                      const slotChannel = multiViewSlots[slotIndex];
+                      const spanClass = multiViewFullscreenSlot === null && multiViewMode === 3 && slotIndex === 0 ? 'row-span-2' : '';
+
+                      return slotChannel ? (
+                        <MultiViewSlotPlayer
+                          key={`multiview-${slotIndex}-${slotChannel.stream_id}`}
+                          channel={slotChannel}
+                          slotIndex={slotIndex}
+                          isActive={selectedSlotIndex === slotIndex}
+                          isMuted={audioSlotIndex !== slotIndex}
+                          isFullscreenSlot={multiViewFullscreenSlot === slotIndex}
+                          className={spanClass}
+                          settings={settings}
+                          isRtl={isRtl}
+                          onSelectSlot={() => {
+                            setSelectedSlotIndex(slotIndex);
+                            setAudioSlotIndex(slotIndex);
+                            tvFocusedPane.current = 'multiview';
+                          }}
+                          onToggleMute={(e) => {
+                            e.stopPropagation();
+                            setAudioSlotIndex(current => current === slotIndex ? -1 : slotIndex);
+                          }}
+                          onChangeChannel={(e) => {
+                            e.stopPropagation();
+                            setSelectedSlotIndex(slotIndex);
+                            setMultiViewFullscreenSlot(null);
+                            setMultiViewPickingSlot(slotIndex);
+                            tvFocusedPane.current = 'channels';
+                            focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+                          }}
+                          onOpenFullscreen={() => {
+                            setSelectedSlotIndex(slotIndex);
+                            setMultiViewFullscreenSlot(slotIndex);
+                          }}
+                          onRemove={(e) => {
+                            e.stopPropagation();
+                            handleRemoveMultiViewSlot(slotIndex);
+                          }}
+                        />
+                      ) : (
+                        <button
+                          key={`multiview-empty-${slotIndex}`}
+                          id={`multiview-slot-${slotIndex}`}
+                          data-tv-focusable="true"
+                          data-multiview-slot="true"
+                          data-slot-index={slotIndex}
+                          tabIndex={0}
+                          onClick={() => {
+                            setSelectedSlotIndex(slotIndex);
+                            setMultiViewPickingSlot(slotIndex);
+                            tvFocusedPane.current = 'channels';
+                            focusChannelAtIdx(tvFocusedChannelIndex.current >= 0 ? tvFocusedChannelIndex.current : 0);
+                          }}
+                          className={`w-full h-full min-h-0 rounded-2xl border-2 border-dashed border-white/20 bg-black/35 flex flex-col items-center justify-center gap-2 text-zinc-300 hover:border-gold/70 hover:text-gold transition-colors ${spanClass}`}
+                        >
+                          <Plus size={28} />
+                          <span className="text-xs font-bold">
+                            {isRtl ? `اختر قناة للخانة ${slotIndex + 1}` : `Select channel for slot ${slotIndex + 1}`}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })() : (
               <>
             {/* Top Player Section - Small Video Player (Unfocusable by D-Pad) */}
             <div
@@ -4967,8 +5370,8 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
 )}
 </div>
 
-      {/* Unified Live Player (Preview & Fullscreen) */}
-      {(mediaType === 'live' || mediaType === 'favorites') && selectedChannel && (
+      {/* Unified Live Player (Preview & Fullscreen) - Strictly unmounted in Multi-Screen and External Player mode for complete audio/video isolation */}
+      {!multiViewActive && (!settings.useExternalPlayer || forceInternalPlaybackOnce) && (mediaType === 'live' || mediaType === 'favorites') && selectedChannel && (
         <VodPlayerModal
           key="live-player"
           media={selectedChannel}
@@ -5061,6 +5464,7 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                   aria-modal="true"
                   data-tv-modal="true"
                   data-tv-details-dialog="true"
+                  data-achour-window-cat="details"
                   data-has-seasons={hasSeasonsSection ? 'true' : 'false'}
                   initial={{ scale: 0.98, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -5325,8 +5729,9 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                                 setSelectedChannel(ep);
                                 setActivePlayingMovie(ep);
                                 if (settings.useExternalPlayer) {
-                                  launchExternalPlayer(ep.url, ep, 'series');
-                                  setMovieDetailsModal(null);
+                                  void launchExternalPlayer(ep.url, ep, 'series').then((opened) => {
+                                    if (opened) setMovieDetailsModal(null);
+                                  });
                                 } else {
                                   setVodResumeOverride({ mode: 'prompt' });
                                   setActiveVodPlayer(ep);
@@ -5390,8 +5795,9 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                         setSelectedChannel(movieDetailsModal);
                         setActivePlayingMovie(movieDetailsModal);
                         if (settings.useExternalPlayer) {
-                          launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, 'movie');
-                          setMovieDetailsModal(null);
+                          void launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, 'movie').then((opened) => {
+                            if (opened) setMovieDetailsModal(null);
+                          });
                         } else {
                           setVodResumeOverride({ mode: 'prompt' });
                           setActiveVodPlayer(movieDetailsModal);
@@ -5414,8 +5820,9 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
                         setSelectedChannel(movieDetailsModal);
                         setActivePlayingMovie(movieDetailsModal);
                         if (settings.useExternalPlayer) {
-                          launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, 'movie');
-                          setMovieDetailsModal(null);
+                          void launchExternalPlayer(movieDetailsModal.url, movieDetailsModal, 'movie').then((opened) => {
+                            if (opened) setMovieDetailsModal(null);
+                          });
                         } else {
                           setVodResumeOverride({ mode: 'prompt' });
                           setActiveVodPlayer(movieDetailsModal);
@@ -5584,7 +5991,13 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
           epgData={xmltvData}
           onSelectChannel={(ch) => {
             const found = channels.find((c: any) => (c.stream_id === ch.stream_id) || (c.id === ch.id) || (c.name === ch.name));
-            if (found) setSelectedChannel(found);
+            if (found) {
+              if (multiViewActive) {
+                handleChannelClick(found);
+              } else {
+                setSelectedChannel(found);
+              }
+            }
             setShowEpgGrid(false);
           }}
           settings={settings}
@@ -5599,6 +6012,188 @@ export default function LivePlayer({ onBack, settings, onUpdateSettings, userId,
           }} 
           language={settings.language}
         />
+      )}
+
+      {/* External Player Installation / Launch Fallback Modal */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {externalLaunchModal && (() => {
+            const { result, streamUrl, channel, playbackType, copied } = externalLaunchModal;
+            const fireTv = isFireTVDevice();
+            const playerLabel = result.profile.name;
+            const pkgLabel = result.resolvedPackage || result.profile.packageName;
+
+            let titleText = isRtl ? 'تعذر فتح المشغّل الخارجي' : 'Could not open External Player';
+            let descText = '';
+            if (result.reason === 'firetv_incompatible' || (fireTv && !result.profile.fireTvCompatible)) {
+              titleText = isRtl ? `${playerLabel} غير متوافق مع Fire TV Stick` : `${playerLabel} is not compatible with Fire TV Stick`;
+              descText = isRtl
+                ? `تطبيق ${playerLabel} (${pkgLabel}) مُصمم للهواتف اللمسية ولا يعمل بشكل موثوق على Amazon Fire TV Stick أو لم يتم تثبيته. ننصح باستخدام VLC for Android أو Just Player أو المشغّل الداخلي.`
+                : `${playerLabel} (${pkgLabel}) is built for touch devices and is not compatible with Amazon Fire TV Stick, or is not installed. Try VLC for Android, Just Player, or the internal player.`;
+            } else if (result.reason === 'not_installed') {
+              titleText = isRtl ? `المشغّل ${playerLabel} غير مثبّت على الجهاز` : `${playerLabel} is not installed on this device`;
+              descText = isRtl
+                ? `لم يتم العثور على الحزمة (${pkgLabel}) على جهاز Android أو Fire TV الخاص بك. ثبّت التطبيق أولاً أو شغّل المحتوى الآن بالمشغّل الداخلي.`
+                : `Package (${pkgLabel}) was not found on your Android or Fire TV device. Install the app first or play now using the internal player.`;
+            } else if (result.reason === 'unsupported_platform') {
+              titleText = isRtl ? 'المشغّلات الخارجية متاحة على أجهزة Android فقط' : 'External players require Android / Fire TV';
+              descText = isRtl
+                ? `أنت تستخدم متصفح الويب حالياً، ولا يمكنه استدعاء تطبيق (${pkgLabel}) عبر نظام Android Intent. يمكنك تشغيل البث بالمشغّل الداخلي أو نسخ الرابط.`
+                : `You are currently in a web browser, which cannot invoke Android Intent packages (${pkgLabel}). You can play with the internal player or copy the stream URL.`;
+            } else if (result.reason === 'missing_url') {
+              titleText = isRtl ? 'رابط البث غير متوفر' : 'Stream URL unavailable';
+              descText = isRtl
+                ? 'تعذر استخراج رابط بث مباشر لهذا المحتوى حالياً.'
+                : 'Could not resolve a direct playback URL for this item.';
+            } else {
+              descText = isRtl
+                ? `تعذر تشغيل البث عبر ${playerLabel} (${pkgLabel}). يمكنك تجربة التشغيل بالمشغّل الداخلي فوراً.`
+                : `Failed to start playback in ${playerLabel} (${pkgLabel}). You can switch to the internal player right away.`;
+            }
+
+            const startInternalFallback = (persistInternal: boolean) => {
+              if (persistInternal) {
+                onUpdateSettings((prev) => ({ ...prev, useExternalPlayer: false }));
+              }
+              setExternalLaunchModal(null);
+              if (playbackType === 'live') {
+                if (!persistInternal) {
+                  setForceInternalPlaybackOnce(true);
+                }
+                setSelectedChannel(channel);
+                setActivePlayingMovie(channel);
+                setIsFullscreen(true);
+                setActiveVodPlayer(channel);
+              } else {
+                setMovieDetailsModal(null);
+                setSelectedChannel(channel);
+                setActivePlayingMovie(channel);
+                setVodResumeOverride({ mode: 'prompt' });
+                setActiveVodPlayer(channel);
+              }
+            };
+
+            return (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.08 }}
+                dir={isRtl ? 'rtl' : 'ltr'}
+                className="fixed inset-0 z-[260] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md select-none"
+                onClick={() => setExternalLaunchModal(null)}
+              >
+                <motion.div
+                  role="dialog"
+                  aria-modal="true"
+                  initial={{ scale: 0.96, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.96, opacity: 0 }}
+                  transition={{ duration: 0.08 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className={`w-full max-w-lg rounded-3xl border border-amber-400/35 bg-zinc-950/95 p-5 sm:p-6 shadow-2xl flex flex-col gap-4 ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-3 min-w-0">
+                      <div className="w-11 h-11 rounded-2xl bg-amber-500/20 border border-amber-400/35 text-amber-400 flex items-center justify-center shrink-0">
+                        <AlertTriangle size={22} />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-base sm:text-lg font-black text-white leading-snug">
+                          {titleText}
+                        </h3>
+                        <p className="text-xs text-amber-300/90 font-mono mt-0.5 truncate">
+                          {playerLabel}{pkgLabel ? ` • ${pkgLabel}` : ''}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      data-tv-modal="external-launch"
+                      tabIndex={0}
+                      onClick={() => setExternalLaunchModal(null)}
+                      className="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-zinc-300 hover:text-white transition-colors shrink-0"
+                      aria-label={isRtl ? 'إغلاق' : 'Close'}
+                    >
+                      <X size={18} />
+                    </button>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed bg-white/[0.04] border border-white/10 rounded-2xl p-3.5">
+                    {descText}
+                  </p>
+
+                  <div className="flex flex-col gap-2.5">
+                    {streamUrl && (
+                      <>
+                        <button
+                          type="button"
+                          data-tv-focusable="true"
+                          data-tv-modal="external-launch"
+                          data-external-primary="true"
+                          tabIndex={0}
+                          onClick={() => startInternalFallback(false)}
+                          className="w-full py-3 px-4 rounded-xl bg-gold hover:bg-gold/90 text-black font-black text-sm flex items-center justify-center gap-2 transition-colors outline-none"
+                        >
+                          <Play size={16} className="fill-black" />
+                          <span>{isRtl ? 'تشغيل بالمشغّل الداخلي الآن' : 'Play with Internal Player Now'}</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          data-tv-focusable="true"
+                          data-tv-modal="external-launch"
+                          tabIndex={0}
+                          onClick={() => startInternalFallback(true)}
+                          className="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors outline-none"
+                        >
+                          <MonitorPlay size={15} className="text-gold" />
+                          <span>{isRtl ? 'اعتماد المشغّل الداخلي وحفظه في الإعدادات' : 'Switch & Save Internal Player in Settings'}</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          data-tv-focusable="true"
+                          data-tv-modal="external-launch"
+                          tabIndex={0}
+                          onClick={async () => {
+                            try {
+                              if (navigator.clipboard?.writeText) {
+                                await navigator.clipboard.writeText(streamUrl);
+                                setExternalLaunchModal((prev) => prev ? { ...prev, copied: true } : prev);
+                              }
+                            } catch {}
+                          }}
+                          className="w-full py-2 px-4 rounded-xl bg-white/[0.04] hover:bg-white/10 border border-white/10 text-zinc-300 font-bold text-xs flex items-center justify-center gap-2 transition-colors outline-none"
+                        >
+                          {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
+                          <span>
+                            {copied
+                              ? (isRtl ? 'تم نسخ رابط البث' : 'Stream URL Copied')
+                              : (isRtl ? 'نسخ رابط البث المباشر' : 'Copy Stream URL')}
+                          </span>
+                        </button>
+                      </>
+                    )}
+
+                    <button
+                      type="button"
+                      data-tv-focusable="true"
+                      data-tv-modal="external-launch"
+                      tabIndex={0}
+                      onClick={() => setExternalLaunchModal(null)}
+                      className="w-full py-2 px-4 rounded-xl bg-transparent hover:bg-white/10 border border-white/10 text-zinc-400 hover:text-white font-bold text-xs transition-colors outline-none"
+                    >
+                      {isRtl ? 'إغلاق' : 'Close'}
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })()}
+        </AnimatePresence>,
+        document.body
       )}
     </div>
   );

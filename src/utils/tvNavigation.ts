@@ -246,11 +246,23 @@ export function syncActiveFocusElement(target: HTMLElement | null): void {
     return;
   }
 
-  // Unconditionally sweep the entire DOM to eliminate duplicate or orphaned focus attributes
-  const existing = document.querySelectorAll<HTMLElement>('[data-tv-active-focus="true"]');
-  for (let i = 0; i < existing.length; i++) {
-    if (existing[i] !== target) {
-      existing[i].removeAttribute('data-tv-active-focus');
+  // Fast O(1) clear when tracking the previously focused element; full DOM fallback only on initial/detached state
+  if (activeTVFocusEl && activeTVFocusEl !== target) {
+    activeTVFocusEl.removeAttribute('data-tv-active-focus');
+    if (!activeTVFocusEl.isConnected) {
+      const existing = document.querySelectorAll<HTMLElement>('[data-tv-active-focus="true"]');
+      for (let i = 0; i < existing.length; i++) {
+        if (existing[i] !== target) {
+          existing[i].removeAttribute('data-tv-active-focus');
+        }
+      }
+    }
+  } else if (!activeTVFocusEl) {
+    const existing = document.querySelectorAll<HTMLElement>('[data-tv-active-focus="true"]');
+    for (let i = 0; i < existing.length; i++) {
+      if (existing[i] !== target) {
+        existing[i].removeAttribute('data-tv-active-focus');
+      }
     }
   }
 
@@ -305,39 +317,44 @@ export function setTVFocus(
   if (options.scroll !== false) {
     try {
       // Scroll ONLY genuine inner overflow containers (never root document / shell / live-root)
+      // Check geometry overflow BEFORE getComputedStyle to avoid costly style recalculations on TV devices
       let p = target.parentElement;
       while (p && p !== document.body && p !== document.documentElement) {
         if (
           !p.classList.contains('achour-app-shell') &&
           !p.hasAttribute('data-live-root')
         ) {
-          const cs = window.getComputedStyle(p);
-          const canScrollY = (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && p.scrollHeight > p.clientHeight + 2;
-          const canScrollX = (cs.overflowX === 'auto' || cs.overflowX === 'scroll') && p.scrollWidth > p.clientWidth + 2;
-          if (canScrollY || canScrollX) {
-            const pRect = p.getBoundingClientRect();
-            const tRect = target.getBoundingClientRect();
-            if (canScrollY && pRect.height > 0) {
-              const scaleY = p.clientHeight / pRect.height;
-              const topRel = (tRect.top - pRect.top) * scaleY;
-              const botRel = (tRect.bottom - pRect.top) * scaleY;
-              if (topRel < 8) {
-                p.scrollTop = Math.max(0, p.scrollTop + topRel - 8);
-              } else if (botRel + 8 > p.clientHeight) {
-                p.scrollTop = Math.max(0, p.scrollTop + botRel + 8 - p.clientHeight);
+          const hasOverflowY = p.scrollHeight > p.clientHeight + 2;
+          const hasOverflowX = p.scrollWidth > p.clientWidth + 2;
+          if (hasOverflowY || hasOverflowX) {
+            const cs = window.getComputedStyle(p);
+            const canScrollY = hasOverflowY && (cs.overflowY === 'auto' || cs.overflowY === 'scroll');
+            const canScrollX = hasOverflowX && (cs.overflowX === 'auto' || cs.overflowX === 'scroll');
+            if (canScrollY || canScrollX) {
+              const pRect = p.getBoundingClientRect();
+              const tRect = target.getBoundingClientRect();
+              if (canScrollY && pRect.height > 0) {
+                const scaleY = p.clientHeight / pRect.height;
+                const topRel = (tRect.top - pRect.top) * scaleY;
+                const botRel = (tRect.bottom - pRect.top) * scaleY;
+                if (topRel < 8) {
+                  p.scrollTop = Math.max(0, p.scrollTop + topRel - 8);
+                } else if (botRel + 8 > p.clientHeight) {
+                  p.scrollTop = Math.max(0, p.scrollTop + botRel + 8 - p.clientHeight);
+                }
               }
-            }
-            if (canScrollX && pRect.width > 0) {
-              const scaleX = p.clientWidth / pRect.width;
-              const leftRel = (tRect.left - pRect.left) * scaleX;
-              const rightRel = (tRect.right - pRect.left) * scaleX;
-              if (leftRel < 8) {
-                p.scrollLeft = Math.max(0, p.scrollLeft + leftRel - 8);
-              } else if (rightRel + 8 > p.clientWidth) {
-                p.scrollLeft = Math.max(0, p.scrollLeft + rightRel + 8 - p.clientWidth);
+              if (canScrollX && pRect.width > 0) {
+                const scaleX = p.clientWidth / pRect.width;
+                const leftRel = (tRect.left - pRect.left) * scaleX;
+                const rightRel = (tRect.right - pRect.left) * scaleX;
+                if (leftRel < 8) {
+                  p.scrollLeft = Math.max(0, p.scrollLeft + leftRel - 8);
+                } else if (rightRel + 8 > p.clientWidth) {
+                  p.scrollLeft = Math.max(0, p.scrollLeft + rightRel + 8 - p.clientWidth);
+                }
               }
+              break;
             }
-            break;
           }
         }
         p = p.parentElement;

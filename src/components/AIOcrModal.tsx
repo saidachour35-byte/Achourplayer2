@@ -61,8 +61,10 @@ export default function AIOcrModal({ onClose, onSelectChannel, language = 'en' }
   return (
     <div className={`fixed inset-0 z-[100] flex items-center justify-center p-4 achour-modal-backdrop ${isRtl ? 'font-cairo' : 'font-sans'}`}>
       <motion.div
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
+        initial={{ scale: 0.96, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.08 }}
+        data-achour-window-cat="confirm"
         className="w-full max-w-2xl achour-glass-modal border-gold/35 rounded-[2.5rem] overflow-hidden"
       >
         <div className={`flex items-center justify-between p-6 border-b border-white/10 bg-white/[0.04] ${isRtl ? 'flex-row-reverse' : ''}`}>

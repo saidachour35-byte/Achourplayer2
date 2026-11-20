@@ -64,8 +64,10 @@ export default function ExtractionProgressModal({
       className={`fixed inset-0 z-[100] flex items-center justify-center achour-modal-backdrop p-3 ${isRtl ? 'font-cairo' : 'font-sans'}`}
     >
       <motion.div
-        initial={{ scale: 0.95, y: 8 }}
-        animate={{ scale: 1, y: 0 }}
+        initial={{ scale: 0.97, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.08 }}
+        data-achour-window-cat="playlists"
         style={{ transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'center center' }}
         className="w-[90vw] max-w-md achour-glass-modal border-gold/40 rounded-2xl p-4 sm:p-5 relative overflow-hidden"
       >

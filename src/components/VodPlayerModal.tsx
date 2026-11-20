@@ -316,14 +316,14 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
     year: 'numeric'
   });
 
-  const getQualityBadge = (resStr: string): string => {
+  const formatVideoResolution = (resStr: string): string => {
     if (!resStr) return '';
     const match = resStr.match(/(\d+)\s*[x×]\s*(\d+)/i);
     if (match) {
       const w = parseInt(match[1], 10);
       const h = parseInt(match[2], 10);
       if (w > 0 && h > 0) {
-        return `${w}×${h}`;
+        return `${w}x${h}`;
       }
     }
     return '';
@@ -861,6 +861,24 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
       lastNativeSubsRawRef.current = '';
 
       const playbackKey = `${vodId}__${resolvedEpisodeIndex}__${activeStreamUrl}`;
+      const syncNativeResolution = () => {
+        try {
+          if (typeof native.getVideoResolution === 'function') {
+            const res = native.getVideoResolution() || '';
+            if (res !== lastNativeResRawRef.current) {
+              lastNativeResRawRef.current = res;
+              if (res && /(\d+)\s*[x×]\s*(\d+)/i.test(res)) {
+                const m = res.match(/(\d+)\s*[x×]\s*(\d+)/i);
+                if (m && parseInt(m[1], 10) > 0 && parseInt(m[2], 10) > 0) {
+                  const nextRes = `${parseInt(m[1], 10)}x${parseInt(m[2], 10)}`;
+                  setRealResolution(prev => (prev === nextRes ? prev : nextRes));
+                }
+              }
+            }
+          }
+        } catch {}
+      };
+      syncNativeResolution();
       const pollInterval = setInterval(() => {
         try {
           const nowTs = Date.now();
@@ -869,19 +887,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
             startedPlaybackKeyRef.current = playbackKey;
             onPlaybackStartedRef.current?.(activeVodRef.current);
           }
-          if (typeof native.getVideoResolution === 'function') {
-            const res = native.getVideoResolution() || '';
-            if (res !== lastNativeResRawRef.current) {
-              lastNativeResRawRef.current = res;
-              if (res && /(\d+)\s*[x×]\s*(\d+)/i.test(res)) {
-                const m = res.match(/(\d+)\s*[x×]\s*(\d+)/i);
-                if (m && parseInt(m[1], 10) > 0 && parseInt(m[2], 10) > 0) {
-                  const nextRes = `${m[1]}×${m[2]}`;
-                  setRealResolution(prev => (prev === nextRes ? prev : nextRes));
-                }
-              }
-            }
-          }
+          syncNativeResolution();
           if (!isLive) {
             const pos = Number(native.getCurrentPosition()) / 1000;
             const dur = Number(native.getDuration()) / 1000;
@@ -984,7 +990,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
             }
           }
         } catch (e) {}
-      }, isLive ? 1000 : 500);
+      }, 300);
 
       return () => {
         clearInterval(pollInterval);
@@ -1088,6 +1094,9 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
           name: lvl.height ? `${lvl.height}p` : `Level ${index + 1}`
         }));
         setHlsQualities(qualities);
+        if (data.levels.length === 1 && data.levels[0].width > 0 && data.levels[0].height > 0 && video.videoWidth === 0) {
+          setRealResolution(`${data.levels[0].width}x${data.levels[0].height}`);
+        }
 
         let extractedTracks: AudioTrackOption[] = [];
         if (hls.audioTracks && hls.audioTracks.length > 0) {
@@ -1141,6 +1150,9 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
       });
 
       hls.on(Hls.Events.FRAG_PARSED, () => {
+        if (video.videoWidth > 0 && video.videoHeight > 0) {
+          setRealResolution(`${video.videoWidth}x${video.videoHeight}`);
+        }
         if (video.paused && shouldAutoPlayRef.current && !waitingForPromptRef.current) {
           video.play().catch(() => {});
         }
@@ -1149,7 +1161,9 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
       hls.on(Hls.Events.LEVEL_SWITCHED, (_, data) => {
         const level = hls?.levels?.[data.level];
         if (level && level.width > 0 && level.height > 0) {
-          setRealResolution(`${level.width}×${level.height}`);
+          setRealResolution(`${level.width}x${level.height}`);
+        } else if (video.videoWidth > 0 && video.videoHeight > 0) {
+          setRealResolution(`${video.videoWidth}x${video.videoHeight}`);
         }
       });
 
@@ -1274,7 +1288,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
 
     const updateResolutionMeta = () => {
       if (video.videoWidth > 0 && video.videoHeight > 0) {
-        setRealResolution(`${video.videoWidth}×${video.videoHeight}`);
+        setRealResolution(`${video.videoWidth}x${video.videoHeight}`);
       }
     };
 
@@ -1371,12 +1385,18 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
 
     const handlePlaying = () => {
       if (!activeStreamUrl) return;
+      updateResolutionMeta();
       applyPendingSeek();
       const playKey = `${vodId}__${resolvedEpisodeIndex}__${activeStreamUrl}`;
       if (startedPlaybackKeyRef.current !== playKey) {
         startedPlaybackKeyRef.current = playKey;
         onPlaybackStartedRef.current?.(activeVodRef.current);
       }
+    };
+
+    const handleCanPlay = () => {
+      updateResolutionMeta();
+      applyPendingSeek();
     };
 
     const handleVideoError = () => {
@@ -1390,7 +1410,8 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
     };
 
     video.addEventListener('loadedmetadata', handleLoadedMetaData);
-    video.addEventListener('canplay', applyPendingSeek);
+    video.addEventListener('loadeddata', updateResolutionMeta);
+    video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('timeupdate', handleTimeUpdate);
     video.addEventListener('pause', handlePause);
     video.addEventListener('ended', handleEnded);
@@ -1400,7 +1421,8 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
     return () => {
       video.removeEventListener('resize', updateResolutionMeta);
       video.removeEventListener('loadedmetadata', handleLoadedMetaData);
-      video.removeEventListener('canplay', applyPendingSeek);
+      video.removeEventListener('loadeddata', updateResolutionMeta);
+      video.removeEventListener('canplay', handleCanPlay);
       video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('pause', handlePause);
       video.removeEventListener('ended', handleEnded);
@@ -2440,7 +2462,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         {/* 3. Auto-Next Episode Overlay */}
         {showAutoNextPrompt && !isPreview && (
           <div onClick={(e) => e.stopPropagation()} className="absolute inset-0 z-50 achour-modal-backdrop flex items-center justify-center p-6">
-            <div className="achour-glass-modal border-gold/40 rounded-2xl p-6 max-w-md w-full text-center space-y-4">
+            <div data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="achour-glass-modal border-gold/40 rounded-2xl p-6 max-w-md w-full text-center space-y-4">
               <div className="w-14 h-14 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto border border-gold/30">
                 <Play className="w-7 h-7 fill-current mr-0.5" />
               </div>
@@ -2475,7 +2497,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         {/* 4. Resume Last Position Prompt (Movies & Series VOD Only - NEVER for Live TV) */}
         {!isLive && showResumePrompt && !isPreview && (
           <div onClick={(e) => e.stopPropagation()} className="absolute inset-0 z-50 achour-modal-backdrop flex items-center justify-center p-6">
-            <div className="achour-glass-modal border-gold/40 rounded-2xl p-6 max-w-md w-full text-center space-y-4">
+            <div data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="achour-glass-modal border-gold/40 rounded-2xl p-6 max-w-md w-full text-center space-y-4">
               <div className="w-14 h-14 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto border border-gold/30">
                 <RotateCcw className="w-7 h-7" />
               </div>
@@ -2509,117 +2531,164 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {/* 7. Player Centered Floating Glassmorphism Control Bar (Live TV & VOD) */}
-        <div
-          style={!isPreview ? { transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'bottom center' } : undefined}
-          className={`absolute bottom-5 inset-x-0 z-30 px-4 flex justify-center pointer-events-none transition-opacity duration-300 ${
-            showControls && !isPreview ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {isLive ? (
+        {(() => {
+          const liveBarSize = settings?.liveBarSize || 'default';
+          const isLiveFull = isLive && liveBarSize === 'full';
+          const isLiveCompact = isLive && liveBarSize === 'compact';
+          const outerStyle = !isPreview && !isLiveFull
+            ? { transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'bottom center' }
+            : undefined;
+          const outerPosClass = isLiveFull
+            ? 'bottom-3 inset-x-0 px-1.5 sm:px-2.5'
+            : isLiveCompact
+            ? 'bottom-4 inset-x-0 px-4'
+            : 'bottom-5 inset-x-0 px-4';
+
+          return (
             <div
-              onClick={(e) => {
-                e.stopPropagation();
-                resetControlsTimeout();
-                setLiveFocusMode('bar');
-              }}
-              onPointerDownCapture={() => {
-                resetControlsTimeout();
-                setLiveFocusMode('bar');
-              }}
-              onFocusCapture={() => {
-                resetControlsTimeout();
-                setLiveFocusMode('bar');
-              }}
-              className={`w-full max-w-6xl font-sans dir-ltr select-none ${
-                showControls && !isPreview ? 'pointer-events-auto' : 'pointer-events-none'
+              style={outerStyle}
+              className={`absolute ${outerPosClass} z-30 flex justify-center pointer-events-none transition-opacity duration-300 ${
+                showControls && !isPreview ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {/* Single Centered Lightly-Dimmed Translucent Live Bar */}
-              <div
-                className="w-full bg-black/45 border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] rounded-3xl px-4 py-3 sm:px-6 sm:py-4.5 flex items-center justify-between gap-3 sm:gap-4 min-w-0"
-              >
-                {/* 2. Channel Number */}
-                <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[var(--theme-primary,#e5a00d)] text-black font-mono font-black text-sm sm:text-lg rounded-2xl shrink-0 shadow-inner">
-                  {String(channelIndex).padStart(3, '0')}
-                </div>
-
-                {/* 3. Channel Logo */}
-                <div className="w-13 h-13 sm:w-20 sm:h-20 rounded-2xl bg-white/95 border border-white/25 p-1.5 sm:p-2 flex items-center justify-center overflow-hidden shrink-0 shadow-md">
-                  {(activeVod.stream_icon || activeVod.logo || activeVod.cover) ? (
-                    <img
-                      src={activeVod.stream_icon || activeVod.logo || activeVod.cover}
-                      alt=""
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-contain"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                  ) : (
-                    <Tv className="w-7 h-7 sm:w-10 sm:h-10 text-black" />
-                  )}
-                </div>
-
-                {/* 4. Channel Name + EPG Program Name + Start/End + Progress + Next Program */}
-                <div className="flex flex-col flex-1 min-w-0 justify-center">
-                  <div className="flex items-center justify-between gap-2.5 min-w-0">
-                    <h2 className="text-base sm:text-2xl font-black text-white truncate leading-tight">
-                      {activeVod.name || activeVod.title || (isRtl ? 'قناة مباشرة' : 'Live Channel')}
-                    </h2>
-                    {currentProg?.start && currentProg?.stop && (
-                      <span className="text-xs sm:text-base font-mono font-bold text-zinc-200 whitespace-nowrap shrink-0">
-                        {formatTimeHHMM(currentProg.start)} - {formatTimeHHMM(currentProg.stop)}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center justify-between gap-2.5 min-w-0 mt-1">
-                    <span className="text-xs sm:text-lg font-bold text-zinc-200/95 truncate">
-                      {currentProg?.title || (isRtl ? 'لا تتوفر بيانات برنامج حالية' : 'No program information available')}
-                    </span>
-                    {nextProg?.title && (
-                      <span className="hidden sm:inline text-xs sm:text-base font-semibold text-zinc-400 truncate max-w-[55%] shrink-0">
-                        {isRtl ? `التالي: ${nextProg.title}` : `Next: ${nextProg.title}`}
-                      </span>
-                    )}
-                  </div>
-                  <div className="w-full h-2 sm:h-2.5 bg-white/20 rounded-full overflow-hidden mt-2">
-                    <div
-                      className="h-full bg-[var(--theme-primary,#e5a00d)] rounded-full transition-all duration-300"
-                      style={{ width: `${currentProg ? (currentProgPercent || 5) : 0}%` }}
-                    />
-                  </div>
-                </div>
-
-                {/* 5. Clock Time & Date inside the bar */}
-                <div className="flex flex-col items-end shrink-0 px-2 text-right">
-                  <span className="text-base sm:text-xl font-mono font-black text-gold leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
-                    {formattedClockTime}
-                  </span>
-                  <span className="text-[11px] sm:text-sm font-bold text-gold opacity-85 leading-tight whitespace-nowrap" style={{ color: 'var(--theme-primary)' }}>
-                    {formattedClockDate}
-                  </span>
-                </div>
-
-                {/* 6. Favorite Toggle Button */}
-                {onToggleFavorite && (
-                  <button
-                    onClick={() => onToggleFavorite(activeVod)}
-                    data-tv-focusable="true"
-                    data-tv-live-item="fav"
-                    data-tv-focus-inset="true"
-                    tabIndex={0}
-                    className="p-2.5 sm:p-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/15 transition-transform active:scale-125 focus:outline-none shrink-0"
-                    title={isFavorite ? (isRtl ? 'إزالة من المفضلة' : 'Remove Favorite') : (isRtl ? 'إضافة للمفضلة' : 'Add Favorite')}
+              {isLive ? (
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    resetControlsTimeout();
+                    setLiveFocusMode('bar');
+                  }}
+                  onPointerDownCapture={() => {
+                    resetControlsTimeout();
+                    setLiveFocusMode('bar');
+                  }}
+                  onFocusCapture={() => {
+                    resetControlsTimeout();
+                    setLiveFocusMode('bar');
+                  }}
+                  className={`w-full ${isLiveFull ? 'max-w-none' : isLiveCompact ? 'max-w-3xl' : 'max-w-6xl'} font-sans dir-ltr select-none ${
+                    showControls && !isPreview ? 'pointer-events-auto' : 'pointer-events-none'
+                  }`}
+                >
+                  {/* Single Centered Lightly-Dimmed Translucent Live Bar */}
+                  <div
+                    className={`w-full bg-black/45 border border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex items-center justify-between min-w-0 ${
+                      isLiveCompact
+                        ? 'rounded-2xl px-3 py-2 sm:px-4 sm:py-2.5 gap-2 sm:gap-2.5'
+                        : 'rounded-3xl px-4 py-3 sm:px-6 sm:py-4.5 gap-3 sm:gap-4'
+                    }`}
                   >
-                    <Star className={`w-6 h-6 sm:w-7 sm:h-7 ${isFavorite ? 'text-amber-400 fill-amber-400' : 'text-zinc-300'}`} />
-                  </button>
-                )}
+                    {/* 2. Channel Number */}
+                    <div
+                      className={`bg-[var(--theme-primary,#e5a00d)] text-black font-mono font-black shrink-0 shadow-inner ${
+                        isLiveCompact
+                          ? 'px-2 py-1 sm:px-2.5 sm:py-1 text-xs sm:text-sm rounded-xl'
+                          : 'px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-lg rounded-2xl'
+                      }`}
+                    >
+                      {String(channelIndex).padStart(3, '0')}
+                    </div>
 
-                {/* 7. Measured Video Resolution Badge (Always visible, stable slot, never disappears) */}
-                <div className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/25 bg-black/45 text-[var(--theme-primary,#e5a00d)] font-black text-xs sm:text-base shrink-0 font-mono shadow-sm min-w-[70px] text-center">
-                  {getQualityBadge(realResolution) || 'HD'}
+                    {/* 3. Channel Logo */}
+                    <div
+                      className={`bg-white/95 border border-white/25 flex items-center justify-center overflow-hidden shrink-0 shadow-md ${
+                        isLiveCompact
+                          ? 'w-9 h-9 sm:w-12 sm:h-12 rounded-xl p-1'
+                          : 'w-13 h-13 sm:w-20 sm:h-20 rounded-2xl p-1.5 sm:p-2'
+                      }`}
+                    >
+                      {(activeVod.stream_icon || activeVod.logo || activeVod.cover) ? (
+                        <img
+                          src={activeVod.stream_icon || activeVod.logo || activeVod.cover}
+                          alt=""
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-contain"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                      ) : (
+                        <Tv className={isLiveCompact ? 'w-5 h-5 sm:w-6 sm:h-6 text-black' : 'w-7 h-7 sm:w-10 sm:h-10 text-black'} />
+                      )}
+                    </div>
+
+                    {/* 4. Channel Name + EPG Program Name + Start/End + Progress + Next Program */}
+                    <div className="flex flex-col flex-1 min-w-0 justify-center">
+                      <div className="flex items-center justify-between gap-2.5 min-w-0">
+                        <h2 className={`font-black text-white truncate leading-tight ${isLiveCompact ? 'text-xs sm:text-base' : 'text-base sm:text-2xl'}`}>
+                          {activeVod.name || activeVod.title || (isRtl ? 'قناة مباشرة' : 'Live Channel')}
+                        </h2>
+                        {currentProg?.start && currentProg?.stop && (
+                          <span className={`font-mono font-bold text-zinc-200 whitespace-nowrap shrink-0 ${isLiveCompact ? 'text-[10px] sm:text-xs' : 'text-xs sm:text-base'}`}>
+                            {formatTimeHHMM(currentProg.start)} - {formatTimeHHMM(currentProg.stop)}
+                          </span>
+                        )}
+                      </div>
+                      <div className={`flex items-center justify-between gap-2.5 min-w-0 ${isLiveCompact ? 'mt-0.5' : 'mt-1'}`}>
+                        <span className={`font-bold text-zinc-200/95 truncate ${isLiveCompact ? 'text-[11px] sm:text-xs' : 'text-xs sm:text-lg'}`}>
+                          {currentProg?.title || (isRtl ? 'لا تتوفر بيانات برنامج حالية' : 'No program information available')}
+                        </span>
+                        {nextProg?.title && (
+                          <span className={`hidden sm:inline font-semibold text-zinc-400 truncate max-w-[55%] shrink-0 ${isLiveCompact ? 'text-[11px] sm:text-xs' : 'text-xs sm:text-base'}`}>
+                            {isRtl ? `التالي: ${nextProg.title}` : `Next: ${nextProg.title}`}
+                          </span>
+                        )}
+                      </div>
+                      <div className={`w-full bg-white/20 rounded-full overflow-hidden ${isLiveCompact ? 'h-1.5 mt-1' : 'h-2 sm:h-2.5 mt-2'}`}>
+                        <div
+                          className="h-full bg-[var(--theme-primary,#e5a00d)] rounded-full transition-all duration-300"
+                          style={{ width: `${currentProg ? (currentProgPercent || 5) : 0}%` }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* 5. Clock Time & Date inside the bar */}
+                    <div className={`flex flex-col items-end shrink-0 text-right ${isLiveCompact ? 'px-1' : 'px-2'}`}>
+                      <span className={`font-mono font-black text-gold leading-tight whitespace-nowrap ${isLiveCompact ? 'text-xs sm:text-sm' : 'text-base sm:text-xl'}`} style={{ color: 'var(--theme-primary)' }}>
+                        {formattedClockTime}
+                      </span>
+                      <span className={`font-bold text-gold opacity-85 leading-tight whitespace-nowrap ${isLiveCompact ? 'text-[9px] sm:text-[11px]' : 'text-[11px] sm:text-sm'}`} style={{ color: 'var(--theme-primary)' }}>
+                        {formattedClockDate}
+                      </span>
+                    </div>
+
+                    {/* 6. Favorite Toggle Button */}
+                    {onToggleFavorite && (
+                      <button
+                        onClick={() => onToggleFavorite(activeVod)}
+                        data-tv-focusable="true"
+                        data-tv-live-item="fav"
+                        data-tv-focus-inset="true"
+                        tabIndex={0}
+                        className={`bg-white/10 hover:bg-white/20 border border-white/15 transition-transform active:scale-125 focus:outline-none shrink-0 ${
+                          isLiveCompact ? 'p-1.5 sm:p-2 rounded-xl' : 'p-2.5 sm:p-3.5 rounded-2xl'
+                        }`}
+                        title={isFavorite ? (isRtl ? 'إزالة من المفضلة' : 'Remove Favorite') : (isRtl ? 'إضافة للمفضلة' : 'Add Favorite')}
+                      >
+                        <Star className={`${isLiveCompact ? 'w-4 h-4 sm:w-5 sm:h-5' : 'w-6 h-6 sm:w-7 sm:h-7'} ${isFavorite ? 'text-amber-400 fill-amber-400' : 'text-zinc-300'}`} />
+                      </button>
+                    )}
+
+                    {/* 7. Measured Raw Video Resolution (Direct text on bar, zero box/frame/background) */}
+                    {(() => {
+                      const qualityLabel = formatVideoResolution(realResolution);
+                      return (
+                        <span
+                          aria-hidden={!qualityLabel}
+                          aria-label={qualityLabel || undefined}
+                          className={`${
+                            isLiveCompact ? 'w-[68px] sm:w-[86px] text-[10px] sm:text-xs' : 'w-[82px] sm:w-[104px] text-xs sm:text-base'
+                          } font-black shrink-0 font-mono inline-flex items-center justify-center text-center whitespace-nowrap select-none ${
+                            qualityLabel
+                              ? 'text-[var(--theme-primary,#e5a00d)]'
+                              : 'text-transparent pointer-events-none'
+                          }`}
+                        >
+                          {qualityLabel || '\u00A0'}
+                        </span>
+                      );
+                    })()}
+                  </div>
                 </div>
-              </div>
-            </div>
-          ) : (
+              ) : (
             /* Single Centered Theme-Aware Glassmorphism VOD Bar (Movies & Series) — ZERO scattered outer elements */
             <div
               dir="ltr"
@@ -2852,10 +2921,12 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
             </div>
           )}
         </div>
+          );
+        })()}
 
         {/* 8. POPUPS */}
         {activePopup === 'audio' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-72 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-72 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Languages className="w-4 h-4" />
@@ -2896,7 +2967,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'subtitles' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-28 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-80 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-28 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-80 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <SubtitleIcon className="w-4 h-4" />
@@ -2964,7 +3035,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'subtitle-settings' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-80 space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-80 space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Settings className="w-4 h-4" />
@@ -3073,7 +3144,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'quality' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-72 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-72 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Zap className="w-4 h-4" />
@@ -3123,7 +3194,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'aspect' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Maximize2 className="w-4 h-4" />
@@ -3172,7 +3243,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'speed' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Sliders className="w-4 h-4" />
@@ -3216,7 +3287,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'sleep' && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-200">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-popup-container absolute bottom-24 right-6 z-40 achour-glass-modal border-gold/40 rounded-2xl p-4 w-64 space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-75">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <h4 className="text-sm font-bold text-gold flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -3261,7 +3332,7 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
         )}
 
         {activePopup === 'episodes' && isSeries && (
-          <div onClick={(e) => e.stopPropagation()} className="vod-drawer-container absolute inset-y-0 right-0 z-50 w-80 sm:w-96 achour-glass-modal border-l border-gold/30 p-5 flex flex-col animate-in slide-in-from-right duration-300">
+          <div onClick={(e) => e.stopPropagation()} data-achour-window-cat="playerPopups" data-achour-skip-tv-base="true" className="vod-drawer-container absolute inset-y-0 right-0 z-50 w-80 sm:w-96 achour-glass-modal border-l border-gold/30 p-5 flex flex-col animate-in slide-in-from-right duration-100">
             <div className="flex items-center justify-between pb-4 border-b border-white/10">
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <ListVideo className="w-5 h-5 text-gold" />

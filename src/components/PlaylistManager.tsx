@@ -72,6 +72,24 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const minimizedModalRef = useRef(false);
+  const fetchSeqRef = useRef(0);
+  const deletedIdsRef = useRef<Set<string>>((() => {
+    try {
+      const raw = localStorage.getItem('achour_deleted_playlist_ids');
+      const arr = raw ? JSON.parse(raw) : [];
+      return new Set(Array.isArray(arr) ? arr.filter((x) => typeof x === 'string') : []);
+    } catch {
+      return new Set<string>();
+    }
+  })());
+
+  const persistDeletedId = (id: string) => {
+    deletedIdsRef.current.add(id);
+    try {
+      const arr = Array.from(deletedIdsRef.current).slice(-200);
+      localStorage.setItem('achour_deleted_playlist_ids', JSON.stringify(arr));
+    } catch {}
+  };
 
   // Listen to background extraction progress events
   useEffect(() => {
@@ -205,6 +223,7 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
   const { t, isRtl } = useI18n(settings.language);
 
   const fetchPlaylists = async () => {
+    const seq = ++fetchSeqRef.current;
     try {
       const rawLocal = localStorage.getItem('achour_local_playlists');
       const localList: Playlist[] = rawLocal ? JSON.parse(rawLocal) : [];
@@ -219,11 +238,15 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
         console.warn('Could not fetch remote playlists (using offline cache):', fireErr);
       }
 
-      // Merge avoiding duplicates by id and legacy same-credential clones
+      if (fetchSeqRef.current !== seq) return;
+
+      // Merge avoiding duplicates by id and legacy same-credential clones, excluding deleted IDs
       const combinedMap = new Map<string, Playlist>();
-      localList.forEach(p => { if (p?.id) combinedMap.set(p.id, p); });
+      localList.forEach(p => {
+        if (p?.id && !deletedIdsRef.current.has(p.id)) combinedMap.set(p.id, p);
+      });
       firestoreList.forEach(p => {
-        if (!p?.id) return;
+        if (!p?.id || deletedIdsRef.current.has(p.id)) return;
         const existing = combinedMap.get(p.id);
         combinedMap.set(p.id, existing ? { ...existing, ...p } : p);
       });
@@ -267,9 +290,11 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
         }
         return p;
       })).then((hydrated) => {
-        setPlaylists(hydrated);
+        if (fetchSeqRef.current !== seq) return;
+        const safeHydrated = hydrated.filter(p => !deletedIdsRef.current.has(p.id));
+        setPlaylists(safeHydrated);
         try {
-          localStorage.setItem('achour_local_playlists', JSON.stringify(hydrated));
+          localStorage.setItem('achour_local_playlists', JSON.stringify(safeHydrated));
         } catch {}
       }).catch(() => {});
     } catch (err) {
@@ -423,6 +448,8 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
       await ExtractionService.purgeStorageForSwitch(keepM3uKeys);
 
       // 2. Save new playlist locally with the canonical ID immediately
+      fetchSeqRef.current += 1;
+      deletedIdsRef.current.delete(canonicalId);
       const localItem: Playlist = {
         id: canonicalId,
         ...playlistPayload,
@@ -504,33 +531,95 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
   };
 
   const handleDelete = async (id: string) => {
+    // 1. Invalidate any in-flight fetches & immediately mark ID as deleted (persisted)
+    persistDeletedId(id);
+    fetchSeqRef.current += 1;
+
+    const targetItem = playlists.find(p => p.id === id);
+    const remaining = playlists.filter(p => p.id !== id);
+
+    // 2. Immediately update React state & modals without waiting for IndexedDB or Firestore
+    setPlaylists(remaining);
+    if (inspectPlaylist?.id === id) setInspectPlaylist(null);
+    if (selectedPendingPlaylist?.id === id) setSelectedPendingPlaylist(null);
+
+    try {
+      if (ExtractionService.isExtracting(id)) {
+        ExtractionService.cancel(id);
+      }
+      if (extractionPlaylist?.id === id) {
+        setShowExtractionModal(false);
+        setExtractionProgress(null);
+        setExtractionPlaylist(null);
+      }
+    } catch {}
+
+    // 3. Synchronously update localStorage persisted playlists and M3U file keys
+    try {
+      const rawLocal = localStorage.getItem('achour_local_playlists');
+      const list: Playlist[] = rawLocal ? JSON.parse(rawLocal) : [];
+      const filteredLocal = Array.isArray(list) ? list.filter(p => p.id !== id) : remaining;
+      localStorage.setItem('achour_local_playlists', JSON.stringify(filteredLocal));
+    } catch (e) {
+      console.warn('Local playlist delete error', e);
+    }
+
+    if (targetItem) {
+      try {
+        if (targetItem.name) localStorage.removeItem('achour_m3u_file_' + targetItem.name);
+        if (targetItem.url?.startsWith('local_file://')) {
+          const fname = targetItem.url.replace('local_file://', '');
+          localStorage.removeItem('achour_m3u_file_' + fname);
+          try {
+            localStorage.removeItem('achour_m3u_file_' + decodeURIComponent(fname));
+          } catch {}
+        }
+      } catch {}
+    }
+
+    // 4. Immediately reassign or clear activePlaylistId if we deleted the active playlist
+    const wasActive = settings.activePlaylistId === id;
+    if (wasActive) {
+      onUpdateSettings(prev => ({ ...prev, activePlaylistId: remaining[0]?.id || null }));
+    }
+
+    // Ensure TV focus remains valid after row removal
+    requestAnimationFrame(() => {
+      ensureInitialFocus();
+    });
+
+    // 5. Perform IndexedDB, storage purge, and Firestore deletion in background
     try {
       await clearPlaylistData(id);
-
-      try {
-        const rawLocal = localStorage.getItem('achour_local_playlists');
-        if (rawLocal) {
-          const list: Playlist[] = JSON.parse(rawLocal);
-          localStorage.setItem('achour_local_playlists', JSON.stringify(list.filter(p => p.id !== id)));
-        }
-      } catch (e) {
-        console.warn('Local playlist delete error', e);
-      }
-
-      try {
-        await deleteDoc(doc(db, 'playlists', id));
-      } catch (fireErr) {
-        console.warn('Firestore playlist delete warning:', fireErr);
-      }
-
-      if (settings.activePlaylistId === id) {
-        await ExtractionService.purgeStorageForSwitch();
-        const remaining = playlists.filter(p => p.id !== id);
-        onUpdateSettings(prev => ({ ...prev, activePlaylistId: remaining[0]?.id || null }));
-      }
-      await fetchPlaylists();
     } catch (err) {
-      console.error('Error deleting playlist:', err);
+      console.warn('clearPlaylistData delete notice:', err);
+    }
+
+    if (wasActive) {
+      try {
+        await ExtractionService.purgeStorageForSwitch();
+      } catch (err) {
+        console.warn('purgeStorageForSwitch delete notice:', err);
+      }
+    }
+
+    try {
+      await deleteDoc(doc(db, 'playlists', id));
+      if (targetItem) {
+        const targetSig = `${targetItem.type}|${(targetItem.url || '').trim().toLowerCase()}|${targetItem.username || ''}|${targetItem.password || ''}|${targetItem.macAddress || ''}`;
+        const q = query(collection(db, 'playlists'), where('userId', '==', userId));
+        const snap = await getDocs(q);
+        for (const docSnap of snap.docs) {
+          const d = docSnap.data() as Partial<Playlist>;
+          const dSig = `${d.type}|${(d.url || '').trim().toLowerCase()}|${d.username || ''}|${d.password || ''}|${d.macAddress || ''}`;
+          if (dSig === targetSig) {
+            persistDeletedId(docSnap.id);
+            await deleteDoc(doc(db, 'playlists', docSnap.id));
+          }
+        }
+      }
+    } catch (fireErr) {
+      console.warn('Firestore playlist delete warning:', fireErr);
     }
   };
 
@@ -661,11 +750,11 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
                   </p>
                 </div>
               ) : (
-                playlists.map((p, pIdx) => {
+                playlists.map((p) => {
                   const isActive = settings.activePlaylistId === p.id;
                   return (
                     <div
-                      key={`${p.id}-${pIdx}`}
+                      key={p.id}
                       className={`flex items-center justify-between p-3 rounded-xl border transition-colors group relative ${
                         isActive 
                           ? 'border-gold bg-gold/15' 
@@ -763,6 +852,7 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
 
                         {/* Delete Button */}
                         <button 
+                          type="button"
                           data-tv-focusable="true"
                           tabIndex={0}
                           onClick={(e) => { 
@@ -951,9 +1041,11 @@ export default function PlaylistManager({ userId, settings, onUpdateSettings, on
               aria-modal="true"
               data-tv-modal="true"
               data-tv-inspect-modal="true"
-              initial={{ scale: 0.9, opacity: 0 }}
+              data-achour-window-cat="playlists"
+              initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.97, opacity: 0 }}
+              transition={{ duration: 0.08 }}
               style={{ transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'center center' }}
               className={`w-full max-w-md max-h-[85vh] overflow-y-auto achour-glass-modal border-gold/45 rounded-2xl p-4 flex flex-col space-y-3 ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
             >

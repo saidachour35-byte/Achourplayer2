@@ -92,10 +92,11 @@ export default function ExitConfirmModal({
           onClick={onCancel}
         >
           <motion.div
-            initial={{ scale: 0.9, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            initial={{ scale: 0.96, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.96, opacity: 0 }}
+            transition={{ duration: 0.08 }}
+            data-achour-window-cat="confirm"
             onClick={(e) => e.stopPropagation()}
             className={`w-full max-w-md achour-glass-modal border-2 border-gold/40 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden ${
               isRtl ? 'font-cairo text-right' : 'font-sans text-left'

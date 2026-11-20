@@ -45,6 +45,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   glassOpacity: 16,
   glassBlur: 10,
   backgroundStyle: 'bg-raouche-rocks-beirut',
+  backgroundOpacity: 62,
   customBackground: null,
   vpnEnabled: true,
   vpnRegion: 'auto',
@@ -59,6 +60,16 @@ const DEFAULT_SETTINGS: AppSettings = {
   dashboardHorizontalAlignment: 'center',
   windowPosition: 'center',
   zoomScale: 85,
+  windowScales: {
+    global: 100,
+    details: 100,
+    playerPopups: 100,
+    confirm: 100,
+    settings: 100,
+    playlists: 100,
+  },
+  multiViewFullSplit: false,
+  liveBarSize: 'default',
   seekStep: 10,
   dashboardFocusMode: 'frame',
   dashboardLabelColorMode: 'theme',
@@ -142,6 +153,10 @@ export default function App() {
         viewMode: resolvedViewMode,
         language: lang || 'en',
         backgroundStyle: bgValid ? parsed.backgroundStyle : DEFAULT_SETTINGS.backgroundStyle,
+        backgroundOpacity:
+          typeof parsed.backgroundOpacity === 'number' && !Number.isNaN(parsed.backgroundOpacity)
+            ? Math.max(0, Math.min(100, Math.round(parsed.backgroundOpacity)))
+            : DEFAULT_SETTINGS.backgroundOpacity,
         searchHistory: {
           ...DEFAULT_SETTINGS.searchHistory,
           ...(parsed.searchHistory || {})
@@ -223,6 +238,26 @@ export default function App() {
     document.documentElement.setAttribute('data-achour-window-pos', settings.windowPosition || 'center');
     const scaleVal = Math.max(0.6, Math.min(1.5, ((settings.zoomScale || 100) * 0.95) / 100));
     document.documentElement.style.setProperty('--achour-zoom-scale', String(scaleVal));
+
+    const ws = settings.windowScales || {};
+    const globalWScale = (typeof ws.global === 'number' ? ws.global : 100) / 100;
+    const calcWindowFactor = (val?: number) => {
+      const f = globalWScale * ((typeof val === 'number' ? val : 100) / 100);
+      return Math.max(0.6, Math.min(1.45, Number(f.toFixed(3))));
+    };
+    const wDetails = calcWindowFactor(ws.details);
+    const wPlayer = calcWindowFactor(ws.playerPopups);
+    const wConfirm = calcWindowFactor(ws.confirm);
+    const wSettings = calcWindowFactor(ws.settings);
+    const wPlaylists = calcWindowFactor(ws.playlists);
+
+    const rootStyle = document.documentElement.style;
+    rootStyle.setProperty('--achour-wscale-details', String(wDetails));
+    rootStyle.setProperty('--achour-wscale-player', String(wPlayer));
+    rootStyle.setProperty('--achour-wscale-confirm', String(wConfirm));
+    rootStyle.setProperty('--achour-wscale-settings', String(wSettings));
+    rootStyle.setProperty('--achour-wscale-playlists', String(wPlaylists));
+
     applyRoyalTheme(
       settings.royalThemeColor || 'pure-metallic-gold',
       settings.customThemeColor,
@@ -396,7 +431,7 @@ export default function App() {
         }}
       >
         <div
-          className={`bg-transparent transition-transform duration-200 ${isRestricted ? 'opacity-25 pointer-events-none' : ''}`}
+          className={`bg-transparent transition-transform duration-75 ${isRestricted ? 'opacity-25 pointer-events-none' : ''}`}
           style={{
             transform: `scale(${effectiveScale})`,
             transformOrigin: isRtl ? 'top right' : 'top left',

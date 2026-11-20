@@ -114,9 +114,11 @@ export default function PositionEditModal({
       className="fixed inset-0 z-[100] flex items-center justify-center p-3 achour-modal-backdrop select-none"
     >
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.97, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
+        exit={{ scale: 0.97, opacity: 0 }}
+        transition={{ duration: 0.08 }}
+        data-achour-window-cat="playerPopups"
         style={{ transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'center center' }}
         className={`w-full max-w-xs achour-glass-modal border-gold/50 rounded-2xl p-3.5 flex flex-col space-y-2.5 max-h-[88vh] overflow-y-auto no-scrollbar ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
       >

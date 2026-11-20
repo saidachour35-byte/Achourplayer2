@@ -6,14 +6,19 @@ import {
   MonitorPlay, Clock, Check, X, Eye, Search, Trash2,
   Tv, Film, Clapperboard, Palette, Sparkles, Image,
   Upload, RefreshCw, Volume2, VolumeX, Shield, Maximize2,
-  ArrowUpDown, Type, AppWindow, Target
+  ArrowUpDown, Type, AppWindow, Target, Frame, Grid, Layers, Sliders, SunMoon, AlertTriangle
 } from 'lucide-react';
-import { saveCustomPlayerPackage } from '../utils/players';
-import { AppSettings, Language, TimeFormat, ViewMode, VodSortBy, PosterSize, Playlist, ScreenPosition } from '../types';
+import {
+  EXTERNAL_PLAYER_PROFILES,
+  isFireTVDevice,
+  probeExternalPlayerInstalled,
+  saveCustomPlayerPackage
+} from '../utils/players';
+import { AppSettings, Language, TimeFormat, ViewMode, VodSortBy, PosterSize, Playlist, ScreenPosition, LiveBarSize } from '../types';
 import { SCREEN_POSITION_CELLS, WindowPositionButton } from './WindowPositionBar';
 import { useI18n } from '../utils/i18n';
 import { getPlatformUrl } from '../utils/platform';
-import DashboardDesignStudio, { StudioTabId } from './DashboardDesignStudio';
+import DesignSubViewContent, { DesignSubViewId } from './DesignSubViews';
 import { xtreamFetch } from '../utils/iptv';
 import axios from 'axios';
 import { collection, query, where, getDocs, doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
@@ -43,9 +48,29 @@ interface SettingsViewProps {
   onTriggerSplash?: () => void;
 }
 
+const DESIGN_SUBVIEW_IDS = new Set<string>([
+  'background-opacity',
+  'window-sizes',
+  'design-display',
+  'design-icons',
+  'design-frames',
+  'design-layouts',
+  'design-icon-size',
+  'design-frame-size',
+  'design-spacing',
+  'design-alignment',
+  'design-order',
+  'design-colors',
+  'design-custom-color',
+  'design-glass-opacity',
+  'design-glass-blur',
+  'design-focus-mode',
+  'design-label-color',
+]);
+
 type SettingsSubView =
   | 'main'
-  | 'design-studio'
+  | DesignSubViewId
   | 'language'
   | 'time'
   | 'view'
@@ -65,14 +90,17 @@ type SettingsSubView =
   | 'settings-scale'
   | 'live-scale'
   | 'vod-scale'
+  | 'live-bar-size'
   | 'seek-step';
 
 export const DEFAULT_PLAYERS = [
   'Achour Player (مدمج - Native)',
+  'VLC for Android',
   'VLC Media Player',
   'MX Player Pro',
   'ExoPlayer',
   'MPV Player',
+  'Nova Player',
   'Nova Video Player',
   'Just Player',
   'IJK Player',
@@ -166,7 +194,14 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
   const [catLoading, setCatLoading] = useState(false);
   const [catSearch, setCatSearch] = useState('');
   const [catFilterTab, setCatFilterTab] = useState<'all' | 'visible' | 'hidden'>('all');
-  const [playersTab, setPlayersTab] = useState<'internal' | 'external' | 'custom'>('internal');
+  const [playersTab, setPlayersTab] = useState<'internal' | 'external' | 'custom'>(() => {
+    if (!settings.useExternalPlayer) return 'internal';
+    const isBuiltInExternal = EXTERNAL_PLAYER_PROFILES.some(
+      (p) => p.id === settings.selectedPlayer || p.aliases?.includes(settings.selectedPlayer)
+    );
+    return isBuiltInExternal ? 'external' : 'custom';
+  });
+  const [externalInstallMap, setExternalInstallMap] = useState<Record<string, boolean | 'unknown'>>({});
   const [splashTab, setSplashTab] = useState<'style' | 'sound'>('style');
   const [historyClearSuccess, setHistoryClearSuccess] = useState<string | null>(null);
   const [confirmClearType, setConfirmClearType] = useState<WatchHistoryType | null>(null);
@@ -174,15 +209,28 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
   const [syncInProgress] = useState(false);
   const [syncNotification, setSyncNotification] = useState<string | null>(null);
   const [showUploadPasteModal, setShowUploadPasteModal] = useState(false);
-  const [studioTab, setStudioTab] = useState<StudioTabId>('display');
 
   const channelFileInputRef = useRef<HTMLInputElement | null>(null);
   const { t, isRtl } = useI18n(settings.language);
 
-  const openDesignStudio = (tab: StudioTabId) => {
-    setStudioTab(tab);
-    setSubView('design-studio');
-  };
+  useEffect(() => {
+    if (subView !== 'players' || playersTab !== 'external') return;
+    let cancelled = false;
+    Promise.all(
+      EXTERNAL_PLAYER_PROFILES.map(async (p) => {
+        const res = await probeExternalPlayerInstalled(p.packageName, p.fallbackPackages);
+        return [p.id, res.installed] as const;
+      })
+    ).then((entries) => {
+      if (cancelled) return;
+      const next: Record<string, boolean | 'unknown'> = {};
+      entries.forEach(([id, status]) => {
+        next[id] = status;
+      });
+      setExternalInstallMap(next);
+    }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [subView, playersTab]);
 
   // Reset error cleanly whenever switching subviews or inner filter tabs
   useEffect(() => {
@@ -230,6 +278,34 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       const action = parseTVKeyEvent(e);
       const activeEl = document.activeElement;
 
+      // In Background Opacity view, Left ALWAYS decreases by 1% and Right ALWAYS increases by 1%
+      if (subView === 'background-opacity') {
+        if (action === 'RIGHT') {
+          e.preventDefault();
+          e.stopPropagation();
+          onUpdateSettings((prev) => {
+            const cur =
+              typeof prev.backgroundOpacity === 'number' && !Number.isNaN(prev.backgroundOpacity)
+                ? Math.round(prev.backgroundOpacity)
+                : 62;
+            return { ...prev, backgroundOpacity: Math.min(100, cur + 1) };
+          });
+          return;
+        }
+        if (action === 'LEFT') {
+          e.preventDefault();
+          e.stopPropagation();
+          onUpdateSettings((prev) => {
+            const cur =
+              typeof prev.backgroundOpacity === 'number' && !Number.isNaN(prev.backgroundOpacity)
+                ? Math.round(prev.backgroundOpacity)
+                : 62;
+            return { ...prev, backgroundOpacity: Math.max(0, cur - 1) };
+          });
+          return;
+        }
+      }
+
       if (isTextInput(activeEl)) {
         if (action === 'UP') {
           e.preventDefault(); e.stopPropagation(); navigateSpatial('up', document.body);
@@ -259,7 +335,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
 
     window.addEventListener('keydown', handleKeyDown, { capture: true });
     return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
-  }, [subView, onBack]);
+  }, [subView, onBack, onUpdateSettings]);
 
   const [pastedM3uText, setPastedM3uText] = useState('');
   const [pastedM3uName, setPastedM3uName] = useState('');
@@ -629,13 +705,45 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     return list.filter(c => c.category_name.toLowerCase().includes(q));
   }, [categories, catSearch, catFilterTab, subView, settings.hiddenLiveCategories, settings.hiddenMovieCategories, settings.hiddenSeriesCategories]);
 
-  // Grouped settings for structured display (1 single Unified Design Studio tile + zero duplicate entries)
-  const settingsGroups = [
+  const currentBgOpacity =
+    typeof settings.backgroundOpacity === 'number' && !Number.isNaN(settings.backgroundOpacity)
+      ? Math.max(0, Math.min(100, Math.round(settings.backgroundOpacity)))
+      : 62;
+
+  // Grouped settings for structured display (each customization option has its own independent tile)
+  const settingsGroups: Array<{
+    title: string;
+    items: Array<{
+      icon: React.ComponentType<any>;
+      label: string;
+      subLabel?: string;
+      action: () => void;
+    }>;
+  }> = [
     {
       title: isRtl ? 'المظهر وتصميم الواجهة' : 'Appearance & UI Design',
       items: [
-        { icon: Palette, label: isRtl ? 'استوديو التصميم الموحّد — Achour Player' : 'Unified Design Studio — Achour Player', action: () => openDesignStudio('display') },
-        { icon: Target, label: isRtl ? 'نمط الفوكس ولون النصوص (40 إطاراً)' : 'TV Focus Mode & Label Colors', action: () => openDesignStudio('focus_text') },
+        {
+          icon: SunMoon,
+          label: 'Background Opacity',
+          subLabel: isRtl ? `تعتيم الخلفية · ${currentBgOpacity}%` : `${currentBgOpacity}%`,
+          action: () => setSubView('background-opacity'),
+        },
+        { icon: Palette, label: isRtl ? 'ألوان التطبيق' : 'App Theme Colors', action: () => setSubView('design-colors') },
+        { icon: Sparkles, label: isRtl ? 'لون مخصص (HEX)' : 'Custom Color (HEX)', action: () => setSubView('design-custom-color') },
+        { icon: Eye, label: isRtl ? 'طريقة عرض الأيقونات' : 'Icon Display Mode', action: () => setSubView('design-display') },
+        { icon: Sparkles, label: isRtl ? 'شكل الأيقونات (40)' : 'Icon Styles (40)', action: () => setSubView('design-icons') },
+        { icon: Frame, label: isRtl ? 'شكل الإطارات (40)' : 'Frame Shapes (40)', action: () => setSubView('design-frames') },
+        { icon: Grid, label: isRtl ? 'تخطيطات الواجهة (40)' : 'Interface Layouts (40)', action: () => setSubView('design-layouts') },
+        { icon: Maximize2, label: isRtl ? 'حجم الأيقونات' : 'Icon Size', action: () => setSubView('design-icon-size') },
+        { icon: Frame, label: isRtl ? 'حجم الإطارات' : 'Frame Size', action: () => setSubView('design-frame-size') },
+        { icon: Sliders, label: isRtl ? 'المسافة بين الأقسام' : 'Section Spacing', action: () => setSubView('design-spacing') },
+        { icon: AppWindow, label: isRtl ? 'محاذاة الأقسام' : 'Screen Alignment', action: () => setSubView('design-alignment') },
+        { icon: ArrowUpDown, label: isRtl ? 'ترتيب الأقسام الخمسة' : 'Reorder Sections', action: () => setSubView('design-order') },
+        { icon: Sliders, label: isRtl ? 'شفافية البطاقات' : 'Glass Opacity', action: () => setSubView('design-glass-opacity') },
+        { icon: Layers, label: isRtl ? 'التأثير الضبابي (Blur)' : 'Frosted Glass Blur', action: () => setSubView('design-glass-blur') },
+        { icon: Target, label: isRtl ? 'نمط الفوكس' : 'TV Focus Mode', action: () => setSubView('design-focus-mode') },
+        { icon: Type, label: isRtl ? 'لون نصوص الواجهة' : 'Section Label Colors', action: () => setSubView('design-label-color') },
         { icon: AppWindow, label: t('window_position'), action: () => setSubView('window-position') },
         { icon: Image, label: t('app_backgrounds'), action: () => setSubView('backgrounds') },
         { icon: Volume2, label: t('splash_intro'), action: () => setSubView('splash-intro') },
@@ -645,9 +753,21 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     {
       title: isRtl ? 'الأحجام' : 'Sizes & Scaling',
       items: [
+        { icon: AppWindow, label: isRtl ? 'أحجام جميع النوافذ' : 'Window & Popup Sizes', subLabel: `${settings.windowScales?.global ?? 100}%`, action: () => setSubView('window-sizes') },
         { icon: Maximize2, label: t('screen_zoom'), action: () => setSubView('screen-zoom') },
         { icon: Maximize2, label: isRtl ? 'تكبير صفحة الإعدادات' : 'Settings Page Size', action: () => setSubView('settings-scale') },
         { icon: Tv, label: isRtl ? 'تكبير صفحة المباشر' : 'Live Page Size', action: () => setSubView('live-scale') },
+        {
+          icon: Tv,
+          label: isRtl ? 'حجم شريط البث المباشر' : 'Live Bar Size',
+          subLabel:
+            (settings.liveBarSize || 'default') === 'full'
+              ? (isRtl ? 'ملء عرض الشاشة' : 'Full Screen Width')
+              : (settings.liveBarSize || 'default') === 'compact'
+              ? (isRtl ? 'حجم أصغر' : 'Smaller Size')
+              : (isRtl ? 'الحجم الحالي' : 'Current Size'),
+          action: () => setSubView('live-bar-size')
+        },
         { icon: Film, label: isRtl ? 'تكبير الأفلام والمسلسلات' : 'Movies & Series Page Size', action: () => setSubView('vod-scale') },
         { icon: Clock, label: t('seek_step'), action: () => setSubView('seek-step') },
       ]
@@ -656,7 +776,12 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       title: isRtl ? 'نسب العرض إلى الارتفاع والتشغيل' : 'Aspect Ratios & Playback',
       items: [
         { icon: LayoutGrid, label: t('view_mode'), action: () => setSubView('view') },
-        { icon: MonitorPlay, label: t('players_title'), action: () => setSubView('players') },
+        {
+          icon: MonitorPlay,
+          label: t('players_title'),
+          subLabel: `${settings.useExternalPlayer ? (isRtl ? 'خارجي' : 'External') : (isRtl ? 'مدمج' : 'Internal')} · ${settings.selectedPlayer || 'Achour Player'}`,
+          action: () => setSubView('players')
+        },
         { icon: ArrowUpDown, label: t('sort_by'), action: () => setSubView('vod-sort') },
         { icon: Film, label: t('poster_size'), action: () => setSubView('poster-size') },
         { icon: Type, label: t('poster_titles'), action: () => setSubView('poster-titles') },
@@ -895,19 +1020,22 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
     );
   }
 
-  // SUBVIEW: UNIFIED LIVE UI DESIGN STUDIO
-  if (subView === 'design-studio') {
+  // SUBVIEWS: BACKGROUND OPACITY & SEPARATED UI DESIGN OPTIONS (instant auto-save)
+  if (DESIGN_SUBVIEW_IDS.has(subView)) {
     return (
-      <DashboardDesignStudio
-        settings={settings}
-        initialTab={studioTab}
-        isRtl={isRtl}
-        t={t}
-        onCommit={(nextDesign) => {
-          onUpdateSettings((prev) => ({ ...prev, ...nextDesign }));
-        }}
+      <SubViewContainer
+        title={subView === 'background-opacity' ? 'Background Opacity' : ''}
         onBack={() => setSubView('main')}
-      />
+        isRtl={isRtl}
+      >
+        <DesignSubViewContent
+          subView={subView as DesignSubViewId}
+          settings={settings}
+          onUpdateSettings={onUpdateSettings}
+          isRtl={isRtl}
+          t={t}
+        />
+      </SubViewContainer>
     );
   }
 
@@ -980,6 +1108,54 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                 <span className="text-lg font-mono font-bold text-gold">{value}%</span>
                 {scaleConfig.current === value && <Check size={14} className="text-gold" />}
               </button>
+            ))}
+          </div>
+        </div>
+      </SubViewContainer>
+    );
+  }
+
+  // SUBVIEW: LIVE FULLSCREEN BAR SIZE (Current / Full Width / Smaller)
+  if (subView === 'live-bar-size') {
+    const currentBarSize: LiveBarSize = settings.liveBarSize || 'default';
+    const barSizeOptions: Array<{ id: LiveBarSize; label: string; desc: string }> = [
+      {
+        id: 'default',
+        label: isRtl ? 'الحجم الحالي' : 'Current Size',
+        desc: isRtl ? 'يبقى الشريط في منتصف الشاشة وبحجمه الحالي' : 'Centered at current default size',
+      },
+      {
+        id: 'full',
+        label: isRtl ? 'ملء عرض الشاشة' : 'Full Screen Width',
+        desc: isRtl ? 'تكبير الشريط ليصبح بعرض الشاشة بالكامل' : 'Expand bar to full screen width',
+      },
+      {
+        id: 'compact',
+        label: isRtl ? 'حجم أصغر' : 'Smaller Size',
+        desc: isRtl ? 'تصغير الشريط عن حجمه الحالي' : 'Smaller compact bar size',
+      },
+    ];
+    return (
+      <SubViewContainer title={isRtl ? 'حجم شريط البث المباشر (Live)' : 'Live Bar Size'} onBack={() => setSubView('main')} isRtl={isRtl}>
+        <div className="space-y-3">
+          <p className="text-xs sm:text-sm text-zinc-300">
+            {isRtl
+              ? 'يتحكم في حجم شريط القنوات المباشرة (Live) فقط في وضع ملء الشاشة:'
+              : 'Controls the Live TV fullscreen control bar size only:'}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            {barSizeOptions.map((opt) => (
+              <TileOptionButton
+                key={opt.id}
+                title={opt.label}
+                subtitle={opt.desc}
+                active={currentBarSize === opt.id}
+                onClick={() => {
+                  updateSetting('liveBarSize', opt.id);
+                  setSubView('main');
+                }}
+                isRtl={isRtl}
+              />
             ))}
           </div>
         </div>
@@ -1064,14 +1240,9 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       { id: 'IJK Player', name: 'FFmpeg / IJK', desc: isRtl ? 'استجابة سريعة للبث المباشر' : 'Low-latency live decoder' },
       { id: 'MPV Player', name: 'MPV Bitrate', desc: isRtl ? 'معالجة عالية الجودة للأفلام' : 'High bitrate movie decoder' },
     ];
-    const externalApps = [
-      { id: 'VLC Media Player', name: 'VLC for Android', pkg: 'org.videolan.vlc' },
-      { id: 'MX Player Pro', name: 'MX Player Pro', pkg: 'com.mxtech.videoplayer.pro' },
-      { id: 'Just Player', name: 'Just Player', pkg: 'com.brouken.player' },
-      { id: 'Nova Video Player', name: 'Nova Player', pkg: 'com.archos.mediacenter.videofree' },
-      { id: 'KMPlayer', name: 'KMPlayer', pkg: 'com.kmplayer' },
-    ];
+    const externalApps = EXTERNAL_PLAYER_PROFILES;
     const customList = (settings.externalPlayers || []).filter(p => !DEFAULT_PLAYERS.includes(p));
+    const onFireTv = isFireTVDevice();
 
     return (
       <SubViewContainer title={t('players_title')} onBack={() => setSubView('main')} isRtl={isRtl}>
@@ -1106,8 +1277,8 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                     data-tv-focusable="true"
                     tabIndex={0}
                     onClick={() => {
-                      updateSetting('useExternalPlayer', false);
-                      handlePlayerSelect(p.id);
+                      onUpdateSettings(prev => ({ ...prev, useExternalPlayer: false, selectedPlayer: p.id }));
+                      setSubView('main');
                     }}
                     className={`p-3.5 rounded-2xl border transition-colors flex flex-col justify-between min-h-[96px] cursor-pointer ${
                       isActive ? 'border-gold bg-gold/15' : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
@@ -1125,30 +1296,65 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
           )}
 
           {playersTab === 'external' && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-              {externalApps.map((p) => {
-                const isActive = settings.useExternalPlayer && settings.selectedPlayer === p.id;
-                return (
-                  <button
-                    key={p.id}
-                    data-tv-focusable="true"
-                    tabIndex={0}
-                    onClick={() => {
-                      updateSetting('useExternalPlayer', true);
-                      handlePlayerSelect(p.id);
-                    }}
-                    className={`p-3.5 rounded-2xl border transition-colors flex flex-col justify-between min-h-[96px] cursor-pointer ${
-                      isActive ? 'border-gold bg-gold/15' : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
-                    } ${isRtl ? 'text-right' : 'text-left'}`}
-                  >
-                    <div className="flex items-start justify-between gap-2 w-full">
-                      <span className="text-sm sm:text-base font-medium text-white leading-snug">{p.name}</span>
-                      {isActive && <Check className="text-gold shrink-0" size={16} />}
-                    </div>
-                    <span className="text-xs font-mono text-zinc-400 mt-1.5 truncate block">{p.pkg}</span>
-                  </button>
-                );
-              })}
+            <div className="space-y-2.5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+                {externalApps.map((p) => {
+                  const isActive =
+                    settings.useExternalPlayer &&
+                    (settings.selectedPlayer === p.id || Boolean(p.aliases?.includes(settings.selectedPlayer)));
+                  const installStatus = externalInstallMap[p.id];
+                  const showFireTvWarn = !p.fireTvCompatible;
+                  return (
+                    <button
+                      key={p.id}
+                      data-tv-focusable="true"
+                      tabIndex={0}
+                      onClick={() => {
+                        onUpdateSettings(prev => ({ ...prev, useExternalPlayer: true, selectedPlayer: p.id }));
+                        setSubView('main');
+                      }}
+                      className={`p-3.5 rounded-2xl border transition-colors flex flex-col justify-between min-h-[112px] cursor-pointer ${
+                        isActive ? 'border-gold bg-gold/15' : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
+                      } ${isRtl ? 'text-right' : 'text-left'}`}
+                    >
+                      <div className="flex items-start justify-between gap-2 w-full">
+                        <span className="text-sm sm:text-base font-medium text-white leading-snug">{p.name}</span>
+                        {isActive && <Check className="text-gold shrink-0" size={16} />}
+                      </div>
+                      <div className="mt-1.5 space-y-1">
+                        <span className="text-[11px] font-mono text-zinc-400 truncate block">{p.packageName}</span>
+                        <div className="flex flex-wrap items-center gap-1">
+                          {installStatus === true && (
+                            <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold">
+                              {isRtl ? 'مثبّت' : 'Installed'}
+                            </span>
+                          )}
+                          {installStatus === false && (
+                            <span className="px-1.5 py-0.5 rounded bg-rose-500/20 border border-rose-500/40 text-rose-300 text-[10px] font-bold">
+                              {isRtl ? 'غير مثبّت' : 'Not installed'}
+                            </span>
+                          )}
+                          {showFireTvWarn && (
+                            <span className={`px-1.5 py-0.5 rounded border text-[10px] font-bold flex items-center gap-1 ${
+                              onFireTv
+                                ? 'bg-amber-500/25 border-amber-400/60 text-amber-200'
+                                : 'bg-amber-500/15 border-amber-500/35 text-amber-300'
+                            }`}>
+                              <AlertTriangle size={10} />
+                              {isRtl ? 'للهاتف (غير متوافق مع Fire TV)' : 'Phone only (No Fire TV)'}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+              <p className="text-xs text-zinc-400 px-1">
+                {isRtl
+                  ? 'عند اختيار مشغّل خارجي سيتم فتح القنوات والأفلام والمسلسلات عبره تلقائياً مع تمرير ترويسات HTTP المطلوبة، وفي حال عدم تثبيته على الجهاز يمكنك الرجوع فوراً للمشغّل الداخلي.'
+                  : 'Selecting an external app launches Live, Movies, and Series directly with required HTTP headers, with instant fallback to the internal player if not installed.'}
+              </p>
             </div>
           )}
 
@@ -1234,9 +1440,8 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                   key={bg.id}
                   data-tv-focusable="true"
                   tabIndex={0}
-                  onFocus={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
                   onClick={() => handleSelectBackground(bg.id)}
-                  className={`p-2.5 rounded-2xl border transition-colors flex flex-col justify-between cursor-pointer ${
+                  className={`achour-perf-grid-item p-2.5 rounded-2xl border transition-colors duration-100 flex flex-col justify-between cursor-pointer ${
                     isActive ? 'border-gold bg-gold/15' : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
                   } ${isRtl ? 'text-right' : 'text-left'}`}
                 >
@@ -1375,9 +1580,8 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                     key={`${cat.category_id}-${idx}`}
                     data-tv-focusable="true"
                     tabIndex={0}
-                    onFocus={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
                     onClick={() => toggleCategoryVisibility(cat.category_id)}
-                    className={`flex items-center justify-between p-2.5 rounded-2xl transition-colors border min-h-[60px] cursor-pointer ${
+                    className={`achour-perf-grid-item flex items-center justify-between p-2.5 rounded-2xl transition-colors duration-100 border min-h-[60px] cursor-pointer ${
                       isHidden
                         ? 'border-red-500/45 bg-red-950/30'
                         : 'border-white/10 bg-white/[0.04] hover:border-gold/40 hover:bg-white/[0.09]'
@@ -1656,9 +1860,8 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                   key={catCard.view}
                   data-tv-focusable="true"
                   tabIndex={0}
-                  onFocus={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
                   onClick={() => setSubView(catCard.view)}
-                  className={`px-3.5 py-2.5 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 flex items-center justify-between transition-colors cursor-pointer ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}
+                  className={`px-3.5 py-2.5 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 flex items-center justify-between transition-colors duration-100 cursor-pointer ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}
                 >
                   <div className={`flex items-center gap-2.5 min-w-0 ${isRtl ? 'flex-row-reverse' : ''}`}>
                     <div className="p-1.5 rounded-xl bg-gold/15 text-gold shrink-0">
@@ -1687,16 +1890,22 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
                         key={idx}
                         data-tv-focusable="true"
                         tabIndex={0}
-                        onFocus={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
                         onClick={item.action}
-                        className="flex flex-col items-center justify-center p-3 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 transition-colors group h-[84px] sm:h-[90px] text-center cursor-pointer gap-2"
+                        className="flex flex-col items-center justify-center p-3 bg-white/[0.04] hover:bg-white/[0.09] rounded-2xl border border-white/10 hover:border-gold/50 transition-colors duration-100 group h-[84px] sm:h-[90px] text-center cursor-pointer gap-2"
                       >
                         <div className="p-1.5 rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-black transition-colors shrink-0">
                           <Icon size={17} />
                         </div>
-                        <span className="text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate w-full leading-snug">
-                          {item.label}
-                        </span>
+                        <div className="w-full min-w-0">
+                          <span className="text-xs sm:text-sm font-medium text-white group-hover:text-gold truncate w-full leading-snug block">
+                            {item.label}
+                          </span>
+                          {item.subLabel && (
+                            <span className="text-[10px] text-zinc-400 truncate w-full leading-none block mt-0.5">
+                              {item.subLabel}
+                            </span>
+                          )}
+                        </div>
                       </button>
                     );
                   })}
@@ -1720,6 +1929,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
             role="dialog"
             aria-modal="true"
             data-tv-modal="confirm-clear"
+            data-achour-window-cat="confirm"
             style={{ transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'center center' }}
             className={`w-full max-w-md achour-glass-modal border border-gold/45 rounded-3xl p-5 flex flex-col gap-4 ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
           >
@@ -1781,6 +1991,7 @@ export default function SettingsView({ onBack, settings, onUpdateSettings, userI
       {showUploadPasteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 achour-modal-backdrop select-none">
           <div
+            data-achour-window-cat="settings"
             style={{ transform: 'scale(var(--achour-zoom-scale, 0.95))', transformOrigin: 'center center' }}
             className={`w-full max-w-lg achour-glass-modal border-gold/45 rounded-3xl p-5 flex flex-col gap-3 ${isRtl ? 'font-cairo text-right' : 'text-left'}`}
           >

@@ -63,6 +63,13 @@ export default function AnimatedBackground({ settings }: AnimatedBackgroundProps
       ? customBg.url
       : null;
 
+  const bgOpacityPct =
+    typeof settings.backgroundOpacity === 'number' && !Number.isNaN(settings.backgroundOpacity)
+      ? Math.max(0, Math.min(100, Math.round(settings.backgroundOpacity)))
+      : 62;
+  const baseOverlayAlpha = bgOpacityPct / 100;
+  const scrimFactor = bgOpacityPct <= 62 ? bgOpacityPct / 62 : 1;
+
   return (
     <div className="achour-animated-bg fixed inset-0 pointer-events-none z-0 overflow-hidden select-none bg-black">
       {customImageUrl ? (
@@ -82,11 +89,21 @@ export default function AnimatedBackground({ settings }: AnimatedBackgroundProps
         )
       )}
 
-      {/* Balanced Dark Contrast Overlay (preserves natural scenery while ensuring crisp text readability) */}
-      <div className="absolute inset-0 bg-black/62 pointer-events-none" />
-
-      {/* Top and Bottom Ambient Gradient Scrim (protects header, clock, channel lists & settings) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/75 pointer-events-none" />
+      {/* Dynamic Dark Contrast Overlay (0% = original natural colors, 62% = default balanced look, 100% = full dim) */}
+      {bgOpacityPct > 0 && (
+        <>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ backgroundColor: `rgba(0, 0, 0, ${baseOverlayAlpha})` }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, ${(0.7 * scrimFactor).toFixed(3)}), rgba(0, 0, 0, ${(0.2 * scrimFactor).toFixed(3)}), rgba(0, 0, 0, ${(0.75 * scrimFactor).toFixed(3)}))`,
+            }}
+          />
+        </>
+      )}
     </div>
   );
 }

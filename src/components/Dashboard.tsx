@@ -6,7 +6,7 @@ import {
   Clock, Upload, FolderPlus, Copy, Eye, Globe, Server, FileText, Check, X, Star,
   Film, Clapperboard, Calendar, ShieldCheck, AlertTriangle, Sparkles, ArrowUpDown, Move, AppWindow
 } from 'lucide-react';
-import { SCREEN_POSITION_CELLS, WindowPositionButton, setGlobalWindowPosition } from './WindowPositionBar';
+import { SCREEN_POSITION_CELLS, setGlobalWindowPosition } from './WindowPositionBar';
 import PlaylistManager from './PlaylistManager';
 import LivePlayer from './LivePlayer';
 import SettingsView from './SettingsView';
@@ -25,7 +25,8 @@ import { getLastWatchedChannel } from '../utils/watchHistoryService';
 import ExitConfirmModal from './ExitConfirmModal';
 import ExtractionProgressModal from './ExtractionProgressModal';
 import DashboardLayouts, { IconKind } from './DashboardLayouts';
-import { isMobileDevice } from '../utils/platform';
+import { isMobileDevice, isTVDevice } from '../utils/platform';
+import { isFireTVDevice } from '../utils/players';
 import { setTVFocus } from '../utils/tvNavigation';
 
 interface DashboardProps {
@@ -89,6 +90,8 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
   const [showExitModal, setShowExitModal] = useState(false);
   const [showRepositionModal, setShowRepositionModal] = useState(false);
   const [repositionFocusKind, setRepositionFocusKind] = useState<IconKind | null>(null);
+  const repositionBodyRef = useRef<HTMLDivElement | null>(null);
+  const isFireOrTvDevice = React.useMemo(() => (isTVDevice() || isFireTVDevice()) && !isMobileDevice(), []);
   const [reorderingKind, setReorderingKind] = useState<IconKind | null>(null);
   const reorderBackupRef = useRef<{
     dashboardOrder?: string[];
@@ -236,11 +239,21 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
 
   const fetchActivePlaylist = async () => {
     try {
+      let deletedIds = new Set<string>();
+      try {
+        const rawDel = localStorage.getItem('achour_deleted_playlist_ids');
+        const arrDel = rawDel ? JSON.parse(rawDel) : [];
+        if (Array.isArray(arrDel)) deletedIds = new Set(arrDel.filter((x) => typeof x === 'string'));
+      } catch {}
+
       // 1. Check local playlists first if active
       const localSaved = localStorage.getItem('achour_local_playlists');
-      const localList: Playlist[] = localSaved ? JSON.parse(localSaved) : [];
+      const localListRaw: Playlist[] = localSaved ? JSON.parse(localSaved) : [];
+      const localList: Playlist[] = Array.isArray(localListRaw)
+        ? localListRaw.filter(p => p?.id && !deletedIds.has(p.id))
+        : [];
 
-      if (settings.activePlaylistId) {
+      if (settings.activePlaylistId && !deletedIds.has(settings.activePlaylistId)) {
         const localFound = localList.find(p => p.id === settings.activePlaylistId);
         if (localFound) {
           setActivePlaylistName(localFound.name || 'IPTV');
@@ -250,7 +263,7 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
 
         try {
           const snap = await getDoc(doc(db, 'playlists', settings.activePlaylistId));
-          if (snap.exists()) {
+          if (snap.exists() && !deletedIds.has(snap.id)) {
             const data = { id: snap.id, ...snap.data() } as Playlist;
             setActivePlaylistName(data.name || 'IPTV');
             setActivePlaylistData(data);
@@ -261,13 +274,24 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
         }
       }
 
+      // Check local list fallback before querying Firestore so we prefer current local state
+      if (localList.length > 0) {
+        setActivePlaylistName(localList[0].name || 'IPTV');
+        setActivePlaylistData(localList[0]);
+        if (settings.activePlaylistId !== localList[0].id) {
+          onUpdateSettings(prev => ({ ...prev, activePlaylistId: localList[0].id }));
+        }
+        return;
+      }
+
       // Check Firestore list
       const playlistsPath = 'playlists';
       try {
         const q = query(collection(db, playlistsPath), where('userId', '==', userId));
         const res = await getDocs(q);
-        if (!res.empty) {
-          const first = { id: res.docs[0].id, ...res.docs[0].data() } as Playlist;
+        const validDoc = res.docs.find(d => !deletedIds.has(d.id));
+        if (validDoc) {
+          const first = { id: validDoc.id, ...validDoc.data() } as Playlist;
           setActivePlaylistName(first.name || 'IPTV');
           setActivePlaylistData(first);
           onUpdateSettings(prev => ({ ...prev, activePlaylistId: first.id }));
@@ -275,14 +299,6 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
         }
       } catch (err) {
         console.warn('Firestore playlist fetch note (offline cache fallback active):', err);
-      }
-
-      // Check local list fallback
-      if (localList.length > 0) {
-        setActivePlaylistName(localList[0].name || 'IPTV');
-        setActivePlaylistData(localList[0]);
-        onUpdateSettings(prev => ({ ...prev, activePlaylistId: localList[0].id }));
-        return;
       }
 
       setActivePlaylistName('');
@@ -349,8 +365,13 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
     if (showRepositionModal) {
       prevRepositionOpenRef.current = true;
       const tId = setTimeout(() => {
+        if (repositionBodyRef.current) {
+          repositionBodyRef.current.scrollTop = 0;
+        }
         const modal = document.querySelector<HTMLElement>('[data-tv-reposition-modal="true"]');
-        const firstBtn = modal?.querySelector<HTMLElement>('button[data-tv-focusable="true"]');
+        const firstBtn =
+          modal?.querySelector<HTMLElement>('[data-rep-row="1"][data-tv-focusable="true"]') ||
+          modal?.querySelector<HTMLElement>('button[data-tv-focusable="true"]');
         if (firstBtn) setTVFocus(firstBtn, { scroll: false });
       }, 40);
       return () => clearTimeout(tId);
@@ -552,7 +573,98 @@ export default function Dashboard({ userId, settings, onUpdateSettings, onTrigge
         e.stopPropagation();
         const dir = action.toLowerCase() as 'up' | 'down' | 'left' | 'right';
         if (showRepositionModal) {
-          navigateSpatial(dir, document.body, null);
+          const modalEl = document.querySelector<HTMLElement>('[data-tv-reposition-modal="true"]');
+          if (modalEl) {
+            const btns = Array.from(modalEl.querySelectorAll<HTMLElement>('[data-rep-row]'));
+            if (btns.length > 0) {
+              const rowMap = new Map<number, HTMLElement[]>();
+              for (const b of btns) {
+                const r = parseInt(b.getAttribute('data-rep-row') || '0', 10);
+                if (!rowMap.has(r)) rowMap.set(r, []);
+                rowMap.get(r)!.push(b);
+              }
+              const rowNums = Array.from(rowMap.keys()).sort((a, b) => a - b);
+              const cur = getCurrentTVFocus() || (document.activeElement as HTMLElement | null);
+              const curRowIdx = cur
+                ? rowNums.findIndex((r) => rowMap.get(r)!.includes(cur))
+                : -1;
+
+              let targetEl: HTMLElement | null = null;
+              if (curRowIdx === -1) {
+                targetEl = rowMap.get(rowNums[Math.min(1, rowNums.length - 1)])?.[0] || btns[0];
+              } else {
+                const curRowNum = rowNums[curRowIdx];
+                const curRowItems = rowMap.get(curRowNum)!;
+                const curColIdx = Math.max(0, curRowItems.indexOf(cur!));
+
+                if (dir === 'left' || dir === 'right') {
+                  // Physical Left/Right inside row based on visual x-order
+                  const sortedByX = [...curRowItems].sort(
+                    (a, b) => a.getBoundingClientRect().left - b.getBoundingClientRect().left
+                  );
+                  const visualIdx = Math.max(0, sortedByX.indexOf(cur!));
+                  const nextVisualIdx =
+                    dir === 'left'
+                      ? Math.max(0, visualIdx - 1)
+                      : Math.min(sortedByX.length - 1, visualIdx + 1);
+                  targetEl = sortedByX[nextVisualIdx] || cur;
+                } else {
+                  const nextRowArrIdx =
+                    dir === 'down'
+                      ? Math.min(rowNums.length - 1, curRowIdx + 1)
+                      : Math.max(0, curRowIdx - 1);
+                  const nextRowNum = rowNums[nextRowArrIdx];
+                  const nextRowItems = rowMap.get(nextRowNum)!;
+                  if (nextRowItems.length === 1) {
+                    targetEl = nextRowItems[0];
+                  } else if (cur) {
+                    const curCenterX = cur.getBoundingClientRect().left + cur.getBoundingClientRect().width / 2;
+                    let bestItem = nextRowItems[Math.min(curColIdx, nextRowItems.length - 1)];
+                    let bestDx = Infinity;
+                    for (const cand of nextRowItems) {
+                      const r = cand.getBoundingClientRect();
+                      const dx = Math.abs(r.left + r.width / 2 - curCenterX);
+                      if (dx < bestDx) {
+                        bestDx = dx;
+                        bestItem = cand;
+                      }
+                    }
+                    targetEl = bestItem;
+                  } else {
+                    targetEl = nextRowItems[0];
+                  }
+                }
+              }
+
+              if (targetEl) {
+                setTVFocus(targetEl, { scroll: false });
+                const body = repositionBodyRef.current;
+                if (body && body.contains(targetEl)) {
+                  const targetRowNum = parseInt(targetEl.getAttribute('data-rep-row') || '0', 10);
+                  if (targetRowNum <= 1) {
+                    body.scrollTop = 0;
+                  } else {
+                    const bRect = body.getBoundingClientRect();
+                    const tRect = targetEl.getBoundingClientRect();
+                    if (bRect.height > 0) {
+                      const scaleY = body.clientHeight / bRect.height;
+                      const topRel = (tRect.top - bRect.top) * scaleY;
+                      const botRel = (tRect.bottom - bRect.top) * scaleY;
+                      const pad = 20;
+                      if (topRel < pad) {
+                        body.scrollTop = Math.max(0, body.scrollTop + topRel - pad);
+                      } else if (botRel + pad > body.clientHeight) {
+                        body.scrollTop = Math.min(
+                          Math.max(0, body.scrollHeight - body.clientHeight),
+                          body.scrollTop + botRel + pad - body.clientHeight
+                        );
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         } else if (reorderingKind) {
           handleTVReorderStep(reorderingKind, dir);
         } else {
@@ -961,10 +1073,10 @@ if (currentView === 'settings') return (
         <AnimatePresence mode="wait">
           <motion.div
             key={`hub-layout-${settings.dashboardLayout || "layout-dock-row"}`}
-            initial={{ opacity: 0, scale: 0.985 }}
+            initial={{ opacity: 0, scale: 0.99 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.985 }}
-            transition={{ duration: 0.18 }}
+            exit={{ opacity: 0, scale: 0.99 }}
+            transition={{ duration: 0.07 }}
             onContextMenu={(e) => {
               e.preventDefault();
               const tileEl = (e.target as HTMLElement | null)?.closest?.('[data-dashboard-kind]') as HTMLElement | null;
@@ -1135,196 +1247,225 @@ if (currentView === 'settings') return (
           language={settings.language}
         />
 
-        {/* Dashboard Icons & Windows Reposition Modal */}
+        {/* Dashboard Icons & Windows Reposition Modal (Locked remote-scroll on Fire TV / TV; touch-scrollable on Phone) */}
         <AnimatePresence>
           {showRepositionModal && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 achour-modal-backdrop"
-              style={{ backgroundColor: 'rgba(0, 0, 0, 0.22)' }}
+              className={`fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 ${
+                isFireOrTvDevice ? 'touch-none overscroll-none' : ''
+              }`}
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.42)' }}
               onClick={() => setShowRepositionModal(false)}
+              onWheel={isFireOrTvDevice ? (e) => e.preventDefault() : undefined}
             >
               <motion.div
                 role="dialog"
                 aria-modal="true"
                 data-tv-modal="true"
                 data-tv-reposition-modal="true"
-                initial={{ opacity: 0, scale: 0.95 }}
+                data-achour-window-cat="settings"
+                initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.08 }}
                 onClick={(e) => e.stopPropagation()}
-                className="w-[min(86vw,440px)] max-h-[70vh] overflow-y-auto no-scrollbar rounded-3xl p-4 sm:p-5 bg-[#0e121d]/95 border border-gold/45 shadow-2xl flex flex-col gap-3.5 text-white"
+                className="w-[min(90vw,440px)] h-[min(78vh,600px)] max-h-[82vh] overflow-hidden rounded-3xl p-4 sm:p-5 bg-[#0e121d]/95 border border-gold/45 shadow-2xl flex flex-col gap-3 text-white select-none"
                 dir={isRtl ? 'rtl' : 'ltr'}
               >
+                {/* Fixed Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-2.5 shrink-0">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
                     <ArrowUpDown className="w-4 h-4 text-gold shrink-0" />
                     <h3 className="text-sm sm:text-base font-bold text-gold truncate">
                       {isRtl ? 'موضع الأيقونات والنوافذ' : 'Icons & Windows Position'}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-1 shrink-0">
-                    <WindowPositionButton isRtl={isRtl} />
-                    <button
-                      data-tv-focusable="true"
-                      tabIndex={0}
-                      onClick={() => setShowRepositionModal(false)}
-                      className="p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer"
-                    >
-                      <X size={17} />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Quick Arrow Reorder Mode Trigger for TV & Phone */}
-                <button
-                  type="button"
-                  data-tv-focusable="true"
-                  tabIndex={0}
-                  onClick={() => {
-                    const target = repositionFocusKind || 'live';
-                    reorderBackupRef.current = {
-                      dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : undefined,
-                      dashboardAlignment: settings.dashboardAlignment,
-                      dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment,
-                    };
-                    setShowRepositionModal(false);
-                    setReorderingKind(target);
-                    setTimeout(() => {
-                      const el = document.querySelector<HTMLElement>(`[data-dashboard-kind="${target}"]`);
-                      if (el) setTVFocus(el, { scroll: false });
-                    }, 35);
-                  }}
-                  className="w-full py-2 px-3 rounded-xl bg-gold/15 hover:bg-gold/25 border border-gold/50 text-gold text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
-                >
-                  <Move size={14} />
-                  <span>
-                    {isRtl
-                      ? 'تحريك الأيقونات بالأسهم على الشاشة (يسار / يمين / أعلى / أسفل)'
-                      : 'Move Icons with Arrows on Screen'}
-                  </span>
-                </button>
-
-                {/* 1. Home Icons 9-Zone Position */}
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-gold">
-                    <Move size={13} />
-                    <span>{isRtl ? 'موضع شريط أيقونات الرئيسية على الشاشة' : 'Dashboard Icons Position'}</span>
-                  </div>
-                  <div dir="ltr" className="grid grid-cols-3 gap-1.5">
-                    {[
-                      { v: 'top' as const, h: 'left' as const, ar: 'أعلى يسار', en: 'Top Left' },
-                      { v: 'top' as const, h: 'center' as const, ar: 'أعلى الشاشة', en: 'Top' },
-                      { v: 'top' as const, h: 'right' as const, ar: 'أعلى يمين', en: 'Top Right' },
-                      { v: 'center' as const, h: 'left' as const, ar: 'الجانب الأيسر', en: 'Left Side' },
-                      { v: 'center' as const, h: 'center' as const, ar: 'المنتصف', en: 'Center' },
-                      { v: 'center' as const, h: 'right' as const, ar: 'الجانب الأيمن', en: 'Right Side' },
-                      { v: 'bottom' as const, h: 'left' as const, ar: 'أسفل يسار', en: 'Bottom Left' },
-                      { v: 'bottom' as const, h: 'center' as const, ar: 'أسفل الشاشة', en: 'Bottom' },
-                      { v: 'bottom' as const, h: 'right' as const, ar: 'أسفل يمين', en: 'Bottom Right' },
-                    ].map((cell) => {
-                      const active =
-                        (settings.dashboardAlignment || 'center') === cell.v &&
-                        (settings.dashboardHorizontalAlignment || 'center') === cell.h;
-                      return (
-                        <button
-                          key={`${cell.v}-${cell.h}`}
-                          data-tv-focusable="true"
-                          tabIndex={0}
-                          onClick={() => {
-                            onUpdateSettings((prev) => ({
-                              ...prev,
-                              dashboardAlignment: cell.v,
-                              dashboardHorizontalAlignment: cell.h,
-                            }));
-                          }}
-                          className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
-                            active
-                              ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
-                              : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
-                          }`}
-                        >
-                          <div
-                            className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${
-                              cell.v === 'top' ? 'items-start' : cell.v === 'bottom' ? 'items-end' : 'items-center'
-                            } ${
-                              cell.h === 'left' ? 'justify-start' : cell.h === 'right' ? 'justify-end' : 'justify-center'
-                            }`}
-                          >
-                            <span className={`w-3.5 h-1.5 rounded-sm ${active ? 'bg-gold' : 'bg-gold/70'}`} />
-                          </div>
-                          <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* 2. App Windows / Popups 9-Zone Position */}
-                <div className="border-t border-white/10 pt-2.5 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs font-bold text-gold">
-                    <AppWindow size={13} />
-                    <span>{isRtl ? 'موضع النوافذ المنبثقة على الشاشة' : 'Popups & Windows Position'}</span>
-                  </div>
-                  <div dir="ltr" className="grid grid-cols-3 gap-1.5">
-                    {SCREEN_POSITION_CELLS.map((cell) => {
-                      const active = (settings.windowPosition || 'center') === cell.id;
-                      const alignV = cell.id.startsWith('top') ? 'items-start' : cell.id.startsWith('bottom') ? 'items-end' : 'items-center';
-                      const alignH = cell.id.endsWith('left') ? 'justify-start' : cell.id.endsWith('right') ? 'justify-end' : 'justify-center';
-                      return (
-                        <button
-                          key={cell.id}
-                          data-tv-focusable="true"
-                          tabIndex={0}
-                          onClick={() => {
-                            setGlobalWindowPosition(cell.id);
-                            onUpdateSettings((prev) => ({ ...prev, windowPosition: cell.id }));
-                          }}
-                          className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
-                            active
-                              ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
-                              : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
-                          }`}
-                        >
-                          <div className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${alignV} ${alignH}`}>
-                            <span className={`w-3.5 h-2 rounded-sm ${active ? 'bg-gold' : 'bg-gold/65'}`} />
-                          </div>
-                          <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-2.5 space-y-1.5">
-                  <div className="text-xs font-bold text-gold">{isRtl ? 'ترتيب إطارات لوحة التحكم' : 'Reorder Dashboard Tiles'}</div>
-                  {(() => {
-                    const base = ['live', 'movies', 'series', 'add', 'settings'];
-                    const order = [...(settings.dashboardOrder || []), ...base].filter((value, index, list) => base.includes(value) && list.indexOf(value) === index);
-                    const names: Record<string, string> = { live: isRtl ? 'المباشر' : 'Live', movies: isRtl ? 'الأفلام' : 'Movies', series: isRtl ? 'المسلسلات' : 'Series', add: isRtl ? 'إضافة قائمة' : 'Add Playlist', settings: isRtl ? 'الإعدادات' : 'Settings' };
-                    return order.map((kind, index) => (
-                      <div key={kind} className="flex items-center justify-between gap-2 px-2.5 py-1 rounded-xl bg-white/[0.04] border border-white/10">
-                        <span className="text-[11px] font-semibold text-white truncate">{index + 1}. {names[kind]}</span>
-                        <div className="flex items-center gap-1 shrink-0">
-                          {(['left', 'up', 'down', 'right'] as const).map(direction => (
-                            <button key={direction} data-tv-focusable="true" tabIndex={0}
-                              onClick={() => moveDashboardTile(kind, direction)}
-                              title={direction}
-                              className="w-6 h-6 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-xs font-black transition-colors cursor-pointer">
-                              {direction === 'left' ? '←' : direction === 'right' ? '→' : direction === 'up' ? '↑' : '↓'}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    ));
-                  })()}
-                </div>
-
-                <div className="flex justify-end pt-1 shrink-0">
                   <button
                     data-tv-focusable="true"
+                    data-rep-row={0}
                     tabIndex={0}
                     onClick={() => setShowRepositionModal(false)}
-                    className="px-5 py-2 rounded-xl bg-gold text-black hover:brightness-110 text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+                    className="p-1.5 rounded-full hover:bg-white/10 text-zinc-400 hover:text-white transition-colors cursor-pointer shrink-0"
+                    aria-label={isRtl ? 'إغلاق' : 'Close'}
+                  >
+                    <X size={17} />
+                  </button>
+                </div>
+
+                {/* Inner Body: locked on Fire TV / TV (moves with D-pad focus), freely scrollable on Phone */}
+                <div
+                  ref={repositionBodyRef}
+                  onWheel={isFireOrTvDevice ? (e) => e.preventDefault() : undefined}
+                  onTouchMove={isFireOrTvDevice ? (e) => e.preventDefault() : undefined}
+                  className={`flex-1 min-h-0 flex flex-col gap-3.5 px-0.5 py-0.5 ${
+                    isFireOrTvDevice
+                      ? 'overflow-hidden touch-none overscroll-none'
+                      : 'overflow-y-auto no-scrollbar touch-pan-y overscroll-contain'
+                  }`}
+                >
+                  {/* Quick Arrow Reorder Mode Trigger for TV & Phone */}
+                  <button
+                    type="button"
+                    data-tv-focusable="true"
+                    data-rep-row={1}
+                    tabIndex={0}
+                    onClick={() => {
+                      const target = repositionFocusKind || 'live';
+                      reorderBackupRef.current = {
+                        dashboardOrder: settings.dashboardOrder ? [...settings.dashboardOrder] : undefined,
+                        dashboardAlignment: settings.dashboardAlignment,
+                        dashboardHorizontalAlignment: settings.dashboardHorizontalAlignment,
+                      };
+                      setShowRepositionModal(false);
+                      setReorderingKind(target);
+                      setTimeout(() => {
+                        const el = document.querySelector<HTMLElement>(`[data-dashboard-kind="${target}"]`);
+                        if (el) setTVFocus(el, { scroll: false });
+                      }, 35);
+                    }}
+                    className="w-full py-2 px-3 rounded-xl bg-gold/15 hover:bg-gold/25 border border-gold/50 text-gold text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shrink-0"
+                  >
+                    <Move size={14} />
+                    <span>
+                      {isRtl
+                        ? 'تحريك الأيقونات بالأسهم على الشاشة (يسار / يمين / أعلى / أسفل)'
+                        : 'Move Icons with Arrows on Screen'}
+                    </span>
+                  </button>
+
+                  {/* 1. Home Icons 9-Zone Position */}
+                  <div className="space-y-1.5 shrink-0">
+                    <div className="flex items-center gap-2 text-xs font-bold text-gold">
+                      <Move size={13} />
+                      <span>{isRtl ? 'موضع شريط أيقونات الرئيسية على الشاشة' : 'Dashboard Icons Position'}</span>
+                    </div>
+                    <div dir="ltr" className="grid grid-cols-3 gap-1.5">
+                      {[
+                        { v: 'top' as const, h: 'left' as const, ar: 'أعلى يسار', en: 'Top Left' },
+                        { v: 'top' as const, h: 'center' as const, ar: 'أعلى الشاشة', en: 'Top' },
+                        { v: 'top' as const, h: 'right' as const, ar: 'أعلى يمين', en: 'Top Right' },
+                        { v: 'center' as const, h: 'left' as const, ar: 'الجانب الأيسر', en: 'Left Side' },
+                        { v: 'center' as const, h: 'center' as const, ar: 'المنتصف', en: 'Center' },
+                        { v: 'center' as const, h: 'right' as const, ar: 'الجانب الأيمن', en: 'Right Side' },
+                        { v: 'bottom' as const, h: 'left' as const, ar: 'أسفل يسار', en: 'Bottom Left' },
+                        { v: 'bottom' as const, h: 'center' as const, ar: 'أسفل الشاشة', en: 'Bottom' },
+                        { v: 'bottom' as const, h: 'right' as const, ar: 'أسفل يمين', en: 'Bottom Right' },
+                      ].map((cell, idx) => {
+                        const active =
+                          (settings.dashboardAlignment || 'center') === cell.v &&
+                          (settings.dashboardHorizontalAlignment || 'center') === cell.h;
+                        const rowNum = 2 + Math.floor(idx / 3);
+                        return (
+                          <button
+                            key={`${cell.v}-${cell.h}`}
+                            data-tv-focusable="true"
+                            data-rep-row={rowNum}
+                            tabIndex={0}
+                            onClick={() => {
+                              onUpdateSettings((prev) => ({
+                                ...prev,
+                                dashboardAlignment: cell.v,
+                                dashboardHorizontalAlignment: cell.h,
+                              }));
+                            }}
+                            className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
+                              active
+                                ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
+                                : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
+                            }`}
+                          >
+                            <div
+                              className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${
+                                cell.v === 'top' ? 'items-start' : cell.v === 'bottom' ? 'items-end' : 'items-center'
+                              } ${
+                                cell.h === 'left' ? 'justify-start' : cell.h === 'right' ? 'justify-end' : 'justify-center'
+                              }`}
+                            >
+                              <span className={`w-3.5 h-1.5 rounded-sm ${active ? 'bg-gold' : 'bg-gold/70'}`} />
+                            </div>
+                            <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 2. App Windows / Popups 9-Zone Position */}
+                  <div className="border-t border-white/10 pt-2.5 space-y-1.5 shrink-0">
+                    <div className="flex items-center gap-2 text-xs font-bold text-gold">
+                      <AppWindow size={13} />
+                      <span>{isRtl ? 'موضع النوافذ المنبثقة على الشاشة' : 'Popups & Windows Position'}</span>
+                    </div>
+                    <div dir="ltr" className="grid grid-cols-3 gap-1.5">
+                      {SCREEN_POSITION_CELLS.map((cell, idx) => {
+                        const active = (settings.windowPosition || 'center') === cell.id;
+                        const alignV = cell.id.startsWith('top') ? 'items-start' : cell.id.startsWith('bottom') ? 'items-end' : 'items-center';
+                        const alignH = cell.id.endsWith('left') ? 'justify-start' : cell.id.endsWith('right') ? 'justify-end' : 'justify-center';
+                        const rowNum = 5 + Math.floor(idx / 3);
+                        return (
+                          <button
+                            key={cell.id}
+                            data-tv-focusable="true"
+                            data-rep-row={rowNum}
+                            tabIndex={0}
+                            onClick={() => {
+                              setGlobalWindowPosition(cell.id);
+                              onUpdateSettings((prev) => ({ ...prev, windowPosition: cell.id }));
+                            }}
+                            className={`py-1.5 px-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 ${
+                              active
+                                ? 'bg-gold/25 border-gold text-gold shadow-[0_0_12px_var(--theme-glow)]'
+                                : 'bg-white/[0.04] border-white/10 text-zinc-200 hover:border-gold/50'
+                            }`}
+                          >
+                            <div className={`w-9 h-5 rounded border border-white/20 bg-black/50 p-0.5 flex ${alignV} ${alignH}`}>
+                              <span className={`w-3.5 h-2 rounded-sm ${active ? 'bg-gold' : 'bg-gold/65'}`} />
+                            </div>
+                            <span className="text-[10px] font-bold leading-tight">{isRtl ? cell.ar : cell.en}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-2.5 space-y-1.5 shrink-0 pb-1">
+                    <div className="text-xs font-bold text-gold">{isRtl ? 'ترتيب إطارات لوحة التحكم' : 'Reorder Dashboard Tiles'}</div>
+                    {(() => {
+                      const base = ['live', 'movies', 'series', 'add', 'settings'];
+                      const order = [...(settings.dashboardOrder || []), ...base].filter((value, index, list) => base.includes(value) && list.indexOf(value) === index);
+                      const names: Record<string, string> = { live: isRtl ? 'المباشر' : 'Live', movies: isRtl ? 'الأفلام' : 'Movies', series: isRtl ? 'المسلسلات' : 'Series', add: isRtl ? 'إضافة قائمة' : 'Add Playlist', settings: isRtl ? 'الإعدادات' : 'Settings' };
+                      return order.map((kind, index) => (
+                        <div key={kind} className="flex items-center justify-between gap-2 px-2.5 py-1 rounded-xl bg-white/[0.04] border border-white/10">
+                          <span className="text-[11px] font-semibold text-white truncate">{index + 1}. {names[kind]}</span>
+                          <div className="flex items-center gap-1 shrink-0">
+                            {(['left', 'up', 'down', 'right'] as const).map(direction => (
+                              <button key={direction} data-tv-focusable="true" data-rep-row={8 + index} tabIndex={0}
+                                onClick={() => moveDashboardTile(kind, direction)}
+                                title={direction}
+                                className="w-6 h-6 rounded-lg bg-white/10 hover:bg-gold hover:text-black text-zinc-200 text-xs font-black transition-colors cursor-pointer">
+                                {direction === 'left' ? '←' : direction === 'right' ? '→' : direction === 'up' ? '↑' : '↓'}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      ));
+                    })()}
+                  </div>
+                </div>
+
+                {/* Fixed Footer */}
+                <div className={`flex items-center gap-2 pt-2 border-t border-white/10 shrink-0 ${isFireOrTvDevice ? 'justify-between' : 'justify-end'}`}>
+                  {isFireOrTvDevice && (
+                    <span className="text-[10px] text-zinc-400 truncate">
+                      {isRtl ? 'التنقل عبر أسهم الريموت فقط' : 'Navigate with Remote Arrows'}
+                    </span>
+                  )}
+                  <button
+                    data-tv-focusable="true"
+                    data-rep-row={13}
+                    tabIndex={0}
+                    onClick={() => setShowRepositionModal(false)}
+                    className="px-5 py-2 rounded-xl bg-gold text-black hover:brightness-110 text-xs sm:text-sm font-bold transition-colors cursor-pointer shrink-0"
                   >
                     {isRtl ? 'تم' : 'Done'}
                   </button>

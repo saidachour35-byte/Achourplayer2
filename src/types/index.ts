@@ -6,6 +6,7 @@ export type ViewMode = 'list' | 'grid';
 export type PlaylistType = 'm3u' | 'xtream' | 'stalker' | 'portal';
 export type VodSortBy = 'newest' | 'oldest' | 'alpha' | 'rating';
 export type PosterSize = 'small' | 'medium' | 'large';
+export type LiveBarSize = 'default' | 'full' | 'compact';
 
 export interface Channel {
   id: string;
@@ -70,6 +71,15 @@ export type IconPackId = LegacyIconPackId | (string & {});
 export type LegacyFrameShapeId = 'circle' | 'rounded-square' | 'hexagon' | 'geometric' | 'glass' | 'metallic';
 export type FrameShapeId = LegacyFrameShapeId | (string & {});
 
+export interface WindowSizeScales {
+  global?: number;
+  details?: number;
+  playerPopups?: number;
+  confirm?: number;
+  settings?: number;
+  playlists?: number;
+}
+
 export interface AppSettings {
   language: Language;
   hiddenCategories: string[];
@@ -96,6 +106,7 @@ export interface AppSettings {
   glassOpacity?: number;
   glassBlur?: number;
   backgroundStyle?: string;
+  backgroundOpacity?: number;
   customBackground?: string | { type: 'image' | 'video'; url: string; name: string; } | null;
   vpnEnabled?: boolean;
   vpnRegion?: string;
@@ -114,6 +125,9 @@ export interface AppSettings {
   settingsScale?: number;
   livePageScale?: number;
   vodPageScale?: number;
+  liveBarSize?: LiveBarSize;
+  windowScales?: WindowSizeScales;
+  multiViewFullSplit?: boolean;
   categoryOrders?: Record<string, string[]>;
   channelOrders?: Record<string, string[]>;
   parentalPassword?: string;

@@ -176,7 +176,7 @@ export const TvPreviewModal: React.FC<TvPreviewModalProps> = ({
       className="fixed inset-0 z-[99998] achour-modal-backdrop flex flex-col items-center justify-center p-3 sm:p-5 select-none"
       dir={isRtl ? 'rtl' : 'ltr'}
     >
-      <div className="w-full max-w-6xl achour-glass-modal border-2 border-[var(--theme-primary,#D4AF37)]/50 rounded-3xl overflow-hidden flex flex-col max-h-[92vh]">
+      <div data-achour-window-cat="settings" className="w-full max-w-6xl achour-glass-modal border-2 border-[var(--theme-primary,#D4AF37)]/50 rounded-3xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Header Bar */}
         <div className="bg-white/[0.04] px-4 py-2.5 border-b border-white/10 flex flex-wrap items-center justify-between gap-2 shrink-0">
           <div className="flex items-center gap-2">

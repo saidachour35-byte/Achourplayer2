@@ -124,6 +124,26 @@ button[data-dashboard-kind][data-dashboard-focus-mode="icon"][data-preview-focus
   text-shadow: 0 0 14px var(--theme-glow, rgba(212, 175, 55, 0.9)) !important;
 }
 
+/* Lightweight GPU-friendly focus contour & instant response on Android TV / Fire TV */
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-focus-mode="frame"][data-tv-active-focus="true"] svg.dashboard-frame-svg,
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-focus-mode="both"][data-tv-active-focus="true"] svg.dashboard-frame-svg,
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-focus-mode="frame"][data-tv-active-focus="true"] .dashboard-frame-wrap:not(:has(svg.dashboard-frame-svg)),
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-focus-mode="both"][data-tv-active-focus="true"] .dashboard-frame-wrap:not(:has(svg.dashboard-frame-svg)) {
+  filter: drop-shadow(0 0 8px var(--theme-primary, #D4AF37)) !important;
+  transition: transform 0.08s ease !important;
+}
+
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-focus-mode="icon"][data-tv-active-focus="true"] .dashboard-icon-wrap,
+html.achour-tv-perf button[data-dashboard-kind][data-dashboard-icons-only="true"][data-tv-active-focus="true"] .dashboard-icon-wrap {
+  filter: drop-shadow(0 0 10px var(--theme-primary, #D4AF37)) !important;
+  transition: transform 0.08s ease !important;
+}
+
+.achour-perf-grid-item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 136px;
+}
+
 [data-tv-theme-block="true"][data-tv-active-focus="true"] {
   outline: none !important;
   box-shadow: 0 0 0 2px #020205, 0 0 0 5px var(--theme-accent, #ffffff) !important;
@@ -474,24 +494,64 @@ html.achour-tv-perf [data-tv-vod-poster="true"][data-tv-active-focus="true"] {
 /* TV-only dialogs: keep both Movies & Series compact, balanced, and cleanly inside screen bounds */
 html.achour-tv-ui [data-tv-details-dialog="true"] {
   width: min(64vw, 720px) !important;
-  max-width: 720px !important;
-  max-height: 72vh !important;
+  max-width: min(720px, calc(94vw / var(--achour-wscale-details, 1))) !important;
+  max-height: min(72vh, calc(90vh / var(--achour-wscale-details, 1))) !important;
 }
 html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="true"].achour-tv-details-popup {
   width: min(64vw, 720px) !important;
-  max-width: 720px !important;
+  max-width: min(720px, calc(94vw / var(--achour-wscale-details, 1))) !important;
   height: min(70vh, 540px) !important;
-  max-height: 72vh !important;
+  max-height: min(72vh, calc(90vh / var(--achour-wscale-details, 1))) !important;
 }
 html.achour-tv-ui [data-tv-details-dialog="true"][data-has-seasons="false"].achour-tv-details-popup {
   width: min(54vw, 620px) !important;
-  max-width: 620px !important;
+  max-width: min(620px, calc(94vw / var(--achour-wscale-details, 1))) !important;
   height: auto !important;
-  max-height: 68vh !important;
+  max-height: min(68vh, calc(90vh / var(--achour-wscale-details, 1))) !important;
 }
-html.achour-tv-ui .achour-modal-backdrop > div:not([data-tv-details-dialog="true"]) {
+html.achour-tv-ui .achour-modal-backdrop > div:not([data-tv-details-dialog="true"]):not([data-achour-window-cat]) {
   zoom: 0.86 !important;
   max-height: 78vh !important;
+}
+
+/* Comprehensive Per-Category & Global Window/Modal Scaling (100% / 1.0 = exact original size) */
+[data-achour-window-cat="details"] {
+  zoom: var(--achour-wscale-details, 1) !important;
+  max-width: calc(95vw / var(--achour-wscale-details, 1));
+  max-height: calc(92vh / var(--achour-wscale-details, 1));
+}
+[data-achour-window-cat="playerPopups"] {
+  zoom: var(--achour-wscale-player, 1) !important;
+  max-width: calc(95vw / var(--achour-wscale-player, 1));
+  max-height: calc(92vh / var(--achour-wscale-player, 1));
+}
+[data-achour-window-cat="confirm"] {
+  zoom: var(--achour-wscale-confirm, 1) !important;
+  max-width: calc(95vw / var(--achour-wscale-confirm, 1));
+  max-height: calc(92vh / var(--achour-wscale-confirm, 1));
+}
+[data-achour-window-cat="settings"] {
+  zoom: var(--achour-wscale-settings, 1) !important;
+  max-width: calc(95vw / var(--achour-wscale-settings, 1));
+  max-height: calc(92vh / var(--achour-wscale-settings, 1));
+}
+[data-achour-window-cat="playlists"] {
+  zoom: var(--achour-wscale-playlists, 1) !important;
+  max-width: calc(95vw / var(--achour-wscale-playlists, 1));
+  max-height: calc(92vh / var(--achour-wscale-playlists, 1));
+}
+
+html.achour-tv-ui [data-achour-window-cat="playerPopups"]:not([data-achour-skip-tv-base="true"]) {
+  zoom: calc(0.86 * var(--achour-wscale-player, 1)) !important;
+}
+html.achour-tv-ui [data-achour-window-cat="confirm"] {
+  zoom: calc(0.86 * var(--achour-wscale-confirm, 1)) !important;
+}
+html.achour-tv-ui [data-achour-window-cat="settings"] {
+  zoom: calc(0.86 * var(--achour-wscale-settings, 1)) !important;
+}
+html.achour-tv-ui [data-achour-window-cat="playlists"] {
+  zoom: calc(0.86 * var(--achour-wscale-playlists, 1)) !important;
 }
 
 /* Dashboard Icons Placement (Vertical & Horizontal — Physical Left/Center/Right + Compact Top/Bottom Bar & Side Rails) */

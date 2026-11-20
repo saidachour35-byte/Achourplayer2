@@ -41,9 +41,11 @@ export default function PinUnlockModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 achour-modal-backdrop select-none">
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
+        exit={{ scale: 0.96, opacity: 0 }}
+        transition={{ duration: 0.08 }}
+        data-achour-window-cat="confirm"
         className={`w-full max-w-sm achour-glass-modal border-gold/40 rounded-3xl p-6 text-center ${isRtl ? 'font-cairo' : ''}`}
       >
         <div className="w-14 h-14 mx-auto rounded-2xl bg-gold/15 text-gold flex items-center justify-center mb-4">

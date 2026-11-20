@@ -62,6 +62,7 @@ export const UploadModal: React.FC<UploadModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 achour-modal-backdrop animate-in fade-in duration-200">
       <div 
+        data-achour-window-cat="playlists"
         className="w-full max-w-lg achour-glass-modal rounded-2xl overflow-hidden p-6 relative"
         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
         onDragLeave={() => setIsDragging(false)}
