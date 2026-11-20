@@ -842,8 +842,9 @@ export const VodPlayerModal: React.FC<VodPlayerModalProps> = ({
             startPositionMs: startPositionSec > 0 ? Math.round(startPositionSec * 1000) : 0,
             subtitles: !isLive && externalSubtitles.length > 0 ? externalSubtitles : undefined,
             headers: {
-              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
+  'User-Agent': 'Android/Media3/1.4.1',
+  'X-Requested-With': 'com.achourplayer.app'
+}
           }),
           initialBounds.x,
           initialBounds.y,
