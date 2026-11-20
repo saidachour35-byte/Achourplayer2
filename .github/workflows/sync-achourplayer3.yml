@@ -1,0 +1,44 @@
+
+name: Sync Achourplayer3 into Achourplayer2
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Achourplayer2
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Checkout Achourplayer3
+        uses: actions/checkout@v4
+        with:
+          repository: saidachour35-byte/Achourplayer3
+          ref: main
+          path: source
+
+      - name: Sync app files
+        run: |
+          rsync -a --delete source/src/ src/
+          rsync -a --delete source/public/ public/
+
+      - name: Save changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src public
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "Sync updates from Achourplayer3"
+            git push
+          fi
