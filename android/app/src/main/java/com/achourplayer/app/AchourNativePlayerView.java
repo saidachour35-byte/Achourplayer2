@@ -53,6 +53,7 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
 
 public class AchourNativePlayerView extends FrameLayout {
@@ -63,7 +64,7 @@ public class AchourNativePlayerView extends FrameLayout {
     private DefaultMediaSourceFactory persistentMediaSourceFactory;
     private HlsMediaSource.Factory persistentHlsFactory;
     private int retryCount = 0;
-    private static final int MAX_RETRIES = 5;
+    private static final int MAX_RETRIES = 6;
 
     private String currentUrl = "";
     private String currentOptionsJson = "{}";
@@ -123,40 +124,45 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     private OkHttpClient createUnsafeOkHttpClient() {
+        ConnectionPool connectionPool = new ConnectionPool(5, 45, TimeUnit.SECONDS);
         try {
-            final TrustManager[] trustAllCerts = new TrustManager[]{
-                    new X509TrustManager() {
-                        @Override
-                        public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+            final X509TrustManager trustManager = new X509TrustManager() {
+                @Override
+                public void checkClientTrusted(X509Certificate[] chain, String authType) {}
 
-                        @Override
-                        public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+                @Override
+                public void checkServerTrusted(X509Certificate[] chain, String authType) {}
 
-                        @Override
-                        public X509Certificate[] getAcceptedIssuers() {
-                            return new X509Certificate[]{};
-                        }
-                    }
+                @Override
+                public X509Certificate[] getAcceptedIssuers() {
+                    return new X509Certificate[]{};
+                }
             };
 
             final SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, trustAllCerts, new SecureRandom());
+            sslContext.init(null, new TrustManager[]{trustManager}, new SecureRandom());
             final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
             return new OkHttpClient.Builder()
-                    .sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts)
+                    .sslSocketFactory(sslSocketFactory, trustManager)
                     .hostnameVerifier((hostname, session) -> true)
+                    .connectionPool(connectionPool)
+                    .pingInterval(15, TimeUnit.SECONDS)
                     .followRedirects(true)
                     .followSslRedirects(true)
-                    .connectTimeout(12, TimeUnit.SECONDS)
-                    .readTimeout(20, TimeUnit.SECONDS)
+                    .retryOnConnectionFailure(true)
+                    .connectTimeout(15, TimeUnit.SECONDS)
+                    .readTimeout(25, TimeUnit.SECONDS)
                     .build();
         } catch (Exception e) {
             return new OkHttpClient.Builder()
+                    .connectionPool(connectionPool)
+                    .pingInterval(15, TimeUnit.SECONDS)
                     .followRedirects(true)
                     .followSslRedirects(true)
-                    .connectTimeout(12, TimeUnit.SECONDS)
-                    .readTimeout(20, TimeUnit.SECONDS)
+                    .retryOnConnectionFailure(true)
+                    .connectTimeout(15, TimeUnit.SECONDS)
+                    .readTimeout(25, TimeUnit.SECONDS)
                     .build();
         }
     }
@@ -192,7 +198,7 @@ public class AchourNativePlayerView extends FrameLayout {
 
         persistentMediaSourceFactory = new DefaultMediaSourceFactory(persistentHttpFactory, extractorsFactory);
         persistentHlsFactory = new HlsMediaSource.Factory(persistentHttpFactory)
-                .setAllowChunklessPreparation(true);
+                .setAllowChunklessPreparation(false);
 
         buildExoPlayer(context, false);
     }
@@ -200,25 +206,35 @@ public class AchourNativePlayerView extends FrameLayout {
     private DefaultLoadControl createLoadControl(boolean forLive) {
         if (isMultiSlot) {
             return new DefaultLoadControl.Builder()
-                    .setBufferDurationsMs(2800, 7500, 1100, 1800)
-                    .setTargetBufferBytes(6 * 1024 * 1024)
+                    .setBufferDurationsMs(3500, 9000, 1400, 2200)
+                    .setTargetBufferBytes(8 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
                     .setBackBuffer(0, false)
                     .build();
         }
         if (forLive) {
             return new DefaultLoadControl.Builder()
-                    .setBufferDurationsMs(3800, 9500, 1600, 2400)
-                    .setTargetBufferBytes(12 * 1024 * 1024)
+                    .setBufferDurationsMs(
+                            8000,
+                            25000,
+                            2200,
+                            3500
+                    )
+                    .setTargetBufferBytes(24 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
-                    .setBackBuffer(0, false)
+                    .setBackBuffer(2000, false)
                     .build();
         }
         return new DefaultLoadControl.Builder()
-                .setBufferDurationsMs(6000, 18000, 600, 1500)
-                .setTargetBufferBytes(16 * 1024 * 1024)
+                .setBufferDurationsMs(
+                        10000,
+                        30000,
+                        1500,
+                        2500
+                )
+                .setTargetBufferBytes(24 * 1024 * 1024)
                 .setPrioritizeTimeOverSizeThresholds(true)
-                .setBackBuffer(3000, false)
+                .setBackBuffer(5000, false)
                 .build();
     }
 
@@ -278,7 +294,6 @@ public class AchourNativePlayerView extends FrameLayout {
                     return;
                 }
 
-                // Smart fallback for Xtream/IPTV URLs (.ts <-> .m3u8)
                 if (currentIsLive && !triedFallbackFormat && currentUrl != null) {
                     String altUrl = null;
                     if (currentUrl.endsWith(".ts")) {
@@ -493,14 +508,14 @@ public class AchourNativePlayerView extends FrameLayout {
             item.setMimeType(MimeTypes.APPLICATION_SS);
         }
 
-        if (isLiveStream && isHlsStream) {
+        if (isLiveStream) {
             item.setLiveConfiguration(
                     new MediaItem.LiveConfiguration.Builder()
-                            .setTargetOffsetMs(3500L)
-                            .setMinOffsetMs(2000L)
-                            .setMaxOffsetMs(8000L)
-                            .setMinPlaybackSpeed(1.0f)
-                            .setMaxPlaybackSpeed(1.0f)
+                            .setTargetOffsetMs(5000L)
+                            .setMinOffsetMs(2500L)
+                            .setMaxOffsetMs(12000L)
+                            .setMinPlaybackSpeed(0.97f)
+                            .setMaxPlaybackSpeed(1.03f)
                             .build()
             );
         }
@@ -564,7 +579,13 @@ public class AchourNativePlayerView extends FrameLayout {
         MediaItem builtItem = item.build();
         long initialPosMs = (!isLiveStream && startPositionMs > 0L) ? startPositionMs : C.TIME_UNSET;
 
-        if (persistentMediaSourceFactory != null) {
+        if (isHlsStream && persistentHlsFactory != null) {
+            if (initialPosMs != C.TIME_UNSET) {
+                player.setMediaSource(persistentHlsFactory.createMediaSource(builtItem), initialPosMs);
+            } else {
+                player.setMediaSource(persistentHlsFactory.createMediaSource(builtItem), true);
+            }
+        } else if (persistentMediaSourceFactory != null) {
             if (initialPosMs != C.TIME_UNSET) {
                 player.setMediaSource(persistentMediaSourceFactory.createMediaSource(builtItem), initialPosMs);
             } else {
