@@ -22,13 +22,15 @@ import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.TrackSelectionParameters;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
-import androidx.media3.datasource.DefaultHttpDataSource;
+import androidx.media3.datasource.okhttp.OkHttpDataSource;
 import androidx.media3.exoplayer.DefaultLoadControl;
 import androidx.media3.exoplayer.DefaultRenderersFactory;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.hls.HlsMediaSource;
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory;
+import androidx.media3.extractor.DefaultExtractorsFactory;
+import androidx.media3.extractor.ts.DefaultTsPayloadReaderFactory;
 import androidx.media3.ui.AspectRatioFrameLayout;
 import androidx.media3.ui.CaptionStyleCompat;
 import androidx.media3.ui.PlayerView;
@@ -37,21 +39,35 @@ import androidx.media3.ui.SubtitleView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import okhttp3.OkHttpClient;
 
 public class AchourNativePlayerView extends FrameLayout {
 
     private ExoPlayer player;
     private PlayerView playerView;
-    private DefaultHttpDataSource.Factory persistentHttpFactory;
+    private OkHttpDataSource.Factory persistentHttpFactory;
     private DefaultMediaSourceFactory persistentMediaSourceFactory;
     private HlsMediaSource.Factory persistentHlsFactory;
     private int retryCount = 0;
     private static final int MAX_RETRIES = 5;
+
+    private String currentUrl = "";
+    private String currentOptionsJson = "{}";
+    private boolean triedFallbackFormat = false;
 
     private final boolean isMultiSlot;
     private boolean configuredForLive = false;
@@ -106,6 +122,45 @@ public class AchourNativePlayerView extends FrameLayout {
         initialize(context);
     }
 
+    private OkHttpClient createUnsafeOkHttpClient() {
+        try {
+            final TrustManager[] trustAllCerts = new TrustManager[]{
+                    new X509TrustManager() {
+                        @Override
+                        public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+
+                        @Override
+                        public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+
+                        @Override
+                        public X509Certificate[] getAcceptedIssuers() {
+                            return new X509Certificate[]{};
+                        }
+                    }
+            };
+
+            final SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, trustAllCerts, new SecureRandom());
+            final SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+
+            return new OkHttpClient.Builder()
+                    .sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts)
+                    .hostnameVerifier((hostname, session) -> true)
+                    .followRedirects(true)
+                    .followSslRedirects(true)
+                    .connectTimeout(12, TimeUnit.SECONDS)
+                    .readTimeout(20, TimeUnit.SECONDS)
+                    .build();
+        } catch (Exception e) {
+            return new OkHttpClient.Builder()
+                    .followRedirects(true)
+                    .followSslRedirects(true)
+                    .connectTimeout(12, TimeUnit.SECONDS)
+                    .readTimeout(20, TimeUnit.SECONDS)
+                    .build();
+        }
+    }
+
     private void initialize(Context context) {
         setFocusable(false);
         setFocusableInTouchMode(false);
@@ -124,16 +179,20 @@ public class AchourNativePlayerView extends FrameLayout {
                 LayoutParams.MATCH_PARENT
         ));
 
-        persistentHttpFactory =
-                new DefaultHttpDataSource.Factory()
-                        .setAllowCrossProtocolRedirects(true)
-                        .setConnectTimeoutMs(8000)
-                        .setReadTimeoutMs(15000);
+        OkHttpClient okHttpClient = createUnsafeOkHttpClient();
+        persistentHttpFactory = new OkHttpDataSource.Factory(okHttpClient)
+                .setUserAgent("VLC/3.0.18 LibVLC/3.0.18");
 
-        persistentMediaSourceFactory = new DefaultMediaSourceFactory(persistentHttpFactory);
-        // Disable chunkless preparation so HlsSampleStreamWrapper reads initial segment PMT/PTS and locks Audio/Video TimestampAdjuster before starting renderers
+        DefaultExtractorsFactory extractorsFactory = new DefaultExtractorsFactory()
+                .setConstantBitrateSeekingEnabled(true)
+                .setTsExtractorFlags(
+                        DefaultTsPayloadReaderFactory.FLAG_ALLOW_NON_IDR_KEYFRAMES
+                                | DefaultTsPayloadReaderFactory.FLAG_DETECT_ACCESS_UNITS
+                );
+
+        persistentMediaSourceFactory = new DefaultMediaSourceFactory(persistentHttpFactory, extractorsFactory);
         persistentHlsFactory = new HlsMediaSource.Factory(persistentHttpFactory)
-                .setAllowChunklessPreparation(false);
+                .setAllowChunklessPreparation(true);
 
         buildExoPlayer(context, false);
     }
@@ -141,12 +200,7 @@ public class AchourNativePlayerView extends FrameLayout {
     private DefaultLoadControl createLoadControl(boolean forLive) {
         if (isMultiSlot) {
             return new DefaultLoadControl.Builder()
-                    .setBufferDurationsMs(
-                            2800,   // minBufferMs (lightweight for 2-4 concurrent slots)
-                            7500,   // maxBufferMs
-                            1100,   // bufferForPlaybackMs (waits for aligned A/V keyframe before AudioTrack starts)
-                            1800    // bufferForPlaybackAfterRebufferMs
-                    )
+                    .setBufferDurationsMs(2800, 7500, 1100, 1800)
                     .setTargetBufferBytes(6 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
                     .setBackBuffer(0, false)
@@ -154,24 +208,14 @@ public class AchourNativePlayerView extends FrameLayout {
         }
         if (forLive) {
             return new DefaultLoadControl.Builder()
-                    .setBufferDurationsMs(
-                            3800,   // minBufferMs (keeps HTTP live socket draining continuously without server idle drops)
-                            9500,   // maxBufferMs (prevents 12-18s burst-idle stalls on TS/HLS IPTV streams)
-                            1600,   // bufferForPlaybackMs (buffers ~1.6s aligned A/V GOP before AudioTrack starts to prevent lip-sync offset)
-                            2400    // bufferForPlaybackAfterRebufferMs
-                    )
+                    .setBufferDurationsMs(3800, 9500, 1600, 2400)
                     .setTargetBufferBytes(12 * 1024 * 1024)
                     .setPrioritizeTimeOverSizeThresholds(true)
                     .setBackBuffer(0, false)
                     .build();
         }
         return new DefaultLoadControl.Builder()
-                .setBufferDurationsMs(
-                        6000,   // minBufferMs (smooth Wi-Fi jitter absorption for VOD)
-                        18000,  // maxBufferMs
-                        600,    // bufferForPlaybackMs
-                        1500    // bufferForPlaybackAfterRebufferMs
-                )
+                .setBufferDurationsMs(6000, 18000, 600, 1500)
                 .setTargetBufferBytes(16 * 1024 * 1024)
                 .setPrioritizeTimeOverSizeThresholds(true)
                 .setBackBuffer(3000, false)
@@ -198,6 +242,7 @@ public class AchourNativePlayerView extends FrameLayout {
         DefaultRenderersFactory renderersFactory =
                 new DefaultRenderersFactory(context)
                         .setEnableDecoderFallback(true)
+                        .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
                         .setAllowedVideoJoiningTimeMs(5000L);
 
         AudioAttributes audioAttributes = new AudioAttributes.Builder()
@@ -210,7 +255,6 @@ public class AchourNativePlayerView extends FrameLayout {
                 .setMediaSourceFactory(persistentMediaSourceFactory)
                 .build();
 
-        // Only single-player holds Android AudioFocus so 2-4 MultiView ExoPlayers never pause each other
         player.setAudioAttributes(audioAttributes, !isMultiSlot);
         player.setVideoScalingMode(C.VIDEO_SCALING_MODE_SCALE_TO_FIT);
         player.setSeekParameters(SeekParameters.CLOSEST_SYNC);
@@ -220,6 +264,7 @@ public class AchourNativePlayerView extends FrameLayout {
             public void onPlayerError(PlaybackException error) {
                 mainHandler.removeCallbacks(retryRunnable);
                 if (player == null) return;
+
                 if (error.errorCode == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
                     if (retryCount < MAX_RETRIES) {
                         retryCount++;
@@ -232,12 +277,28 @@ public class AchourNativePlayerView extends FrameLayout {
                     }
                     return;
                 }
+
+                // Smart fallback for Xtream/IPTV URLs (.ts <-> .m3u8)
+                if (currentIsLive && !triedFallbackFormat && currentUrl != null) {
+                    String altUrl = null;
+                    if (currentUrl.endsWith(".ts")) {
+                        altUrl = currentUrl.substring(0, currentUrl.length() - 3) + ".m3u8";
+                    } else if (currentUrl.endsWith(".m3u8")) {
+                        altUrl = currentUrl.substring(0, currentUrl.length() - 5) + ".ts";
+                    }
+                    if (altUrl != null) {
+                        triedFallbackFormat = true;
+                        setMediaInternal(altUrl, currentOptionsJson, true);
+                        return;
+                    }
+                }
+
                 if (retryCount < MAX_RETRIES) {
                     retryCount++;
                     if (currentIsLive) {
                         player.seekToDefaultPosition();
                     }
-                    mainHandler.postDelayed(retryRunnable, 250L * retryCount);
+                    mainHandler.postDelayed(retryRunnable, 350L * retryCount);
                 } else {
                     cachedHasError = true;
                     cachedIsPlaying = false;
@@ -337,7 +398,15 @@ public class AchourNativePlayerView extends FrameLayout {
     }
 
     public void setMedia(String url, String optionsJson) {
+        triedFallbackFormat = false;
+        setMediaInternal(url, optionsJson, false);
+    }
+
+    private void setMediaInternal(String url, String optionsJson, boolean isFallbackAttempt) {
         if (url == null || url.trim().isEmpty()) return;
+
+        this.currentUrl = url.trim();
+        this.currentOptionsJson = optionsJson == null ? "{}" : optionsJson;
 
         if (getVisibility() != VISIBLE) {
             setVisibility(VISIBLE);
@@ -347,7 +416,9 @@ public class AchourNativePlayerView extends FrameLayout {
         }
 
         mainHandler.removeCallbacks(retryRunnable);
-        retryCount = 0;
+        if (!isFallbackAttempt) {
+            retryCount = 0;
+        }
         cachedPositionMs = 0L;
         cachedDurationMs = 0L;
         cachedIsEnded = false;
@@ -363,13 +434,13 @@ public class AchourNativePlayerView extends FrameLayout {
         float initialVolume = 1f;
         long startPositionMs = 0L;
         Map<String, String> headers = new HashMap<>();
-        headers.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+        headers.put("User-Agent", "VLC/3.0.18 LibVLC/3.0.18");
+        headers.put("Accept", "*/*");
+        headers.put("Connection", "keep-alive");
 
         JSONObject parsedOptions = null;
         try {
-            parsedOptions = new JSONObject(
-                    optionsJson == null ? "{}" : optionsJson
-            );
+            parsedOptions = new JSONObject(this.currentOptionsJson);
 
             title = parsedOptions.optString("title", title);
             isLiveStream = parsedOptions.optBoolean("isLive", false);
@@ -407,32 +478,22 @@ public class AchourNativePlayerView extends FrameLayout {
             persistentHttpFactory.setDefaultRequestProperties(headers);
         }
 
-        String trimmedUrl = url.trim();
+        String trimmedUrl = this.currentUrl;
         MediaItem.Builder item = new MediaItem.Builder()
                 .setUri(trimmedUrl);
 
         String lowerUrl = trimmedUrl.toLowerCase();
         int queryIdx = lowerUrl.indexOf('?');
         String pathOnly = queryIdx >= 0 ? lowerUrl.substring(0, queryIdx) : lowerUrl;
-        boolean isHlsStream = false;
+        boolean isHlsStream = pathOnly.endsWith(".m3u8") || lowerUrl.contains(".m3u8");
 
-        if (pathOnly.endsWith(".m3u8") || lowerUrl.contains(".m3u8")) {
-            item.setMimeType(MimeTypes.APPLICATION_M3U8);
-            isHlsStream = true;
-        } else if (pathOnly.endsWith(".ts") || pathOnly.endsWith(".mpegts")) {
-            item.setMimeType(MimeTypes.VIDEO_MP2T);
-        } else if (pathOnly.endsWith(".mp4") || pathOnly.endsWith(".m4v") || pathOnly.endsWith(".mov")) {
-            item.setMimeType(MimeTypes.APPLICATION_MP4);
-        } else if (pathOnly.endsWith(".mkv") || pathOnly.endsWith(".webm")) {
-            item.setMimeType(MimeTypes.VIDEO_MATROSKA);
-        } else if (pathOnly.endsWith(".avi")) {
-            item.setMimeType(MimeTypes.VIDEO_AVI);
-        } else if (pathOnly.endsWith(".flv")) {
-            item.setMimeType(MimeTypes.VIDEO_FLV);
+        if (pathOnly.endsWith(".mpd") || lowerUrl.contains(".mpd")) {
+            item.setMimeType(MimeTypes.APPLICATION_MPD);
+        } else if (pathOnly.endsWith(".ism") || pathOnly.endsWith(".isml")) {
+            item.setMimeType(MimeTypes.APPLICATION_SS);
         }
 
         if (isLiveStream && isHlsStream) {
-            // Anchor 3.5s behind live edge at steady 1.0x speed so AudioTrack never resamples or scrambles ahead of video
             item.setLiveConfiguration(
                     new MediaItem.LiveConfiguration.Builder()
                             .setTargetOffsetMs(3500L)
@@ -484,7 +545,6 @@ public class AchourNativePlayerView extends FrameLayout {
         } catch (Exception ignored) {
         }
 
-        // Flush previous channel AudioTrack/MediaCodec clock before preparing a new live stream
         if (isLiveStream) {
             try {
                 player.stop();
@@ -492,7 +552,6 @@ public class AchourNativePlayerView extends FrameLayout {
             }
             player.setPlaybackParameters(PlaybackParameters.DEFAULT);
         } else {
-            // Clear any previous overrides and start with subtitles OFF until explicitly selected by user
             TrackSelectionParameters resetParams = player.getTrackSelectionParameters()
                     .buildUpon()
                     .clearOverridesOfType(C.TRACK_TYPE_AUDIO)
@@ -504,13 +563,8 @@ public class AchourNativePlayerView extends FrameLayout {
 
         MediaItem builtItem = item.build();
         long initialPosMs = (!isLiveStream && startPositionMs > 0L) ? startPositionMs : C.TIME_UNSET;
-        if (isHlsStream && persistentHlsFactory != null) {
-            if (initialPosMs != C.TIME_UNSET) {
-                player.setMediaSource(persistentHlsFactory.createMediaSource(builtItem), initialPosMs);
-            } else {
-                player.setMediaSource(persistentHlsFactory.createMediaSource(builtItem), true);
-            }
-        } else if (persistentMediaSourceFactory != null) {
+
+        if (persistentMediaSourceFactory != null) {
             if (initialPosMs != C.TIME_UNSET) {
                 player.setMediaSource(persistentMediaSourceFactory.createMediaSource(builtItem), initialPosMs);
             } else {
@@ -888,4 +942,3 @@ public class AchourNativePlayerView extends FrameLayout {
         }
     }
 }
-
